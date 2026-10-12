@@ -70,7 +70,17 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 - テストを弱めていないか、失敗を隠していないか
 - 見た目：キャラが別人に見えない、足元が揃う、頭上カウンターが頭上にある、判定（F9表示）と絵が大きくずれない
 
-## 4. 現在の状態：ART3B呼吸待機・Unity全合格
+## 4. 現在の状態：ART3Cしゃがみ・再制作指示書、Unity全合格
+
+- 現行指示書は[ART3_CROUCH](codex_tasks/ART3_CROUCH.md)。新待機を参照して同倍率の立ち/しゃがみ原画を各1枚生成し、立ち由来の倍率でしゃがみへ接続。全員224×160px/コマ・足元159・PPU50、8F/6fps、体/頭±2px・靴の下12行固定。新待機/その他PNG/Timing/スプライトIDを保持。
+- **今回のUnity実行：BuildAll成功、EditMode326/326・PlayMode29/29、失敗/スキップ0、Windowsビルド成功**。TestResults/art3c_*。新しゃがみ接続・倍率・足/顔・ループの3ケースを追加、既存アサーション維持。素材24F＋既存待機24F回帰、425ファイル再生成一致、ZIP内84ファイル照合合格。
+- 詳細な固定条件/容姿/プロンプト/加工/JSON/検査は[再制作指示書](SPRITE_GENERATION_GUIDE.md)。参照PNG・パレット・全文プロンプト・採用済み待機/しゃがみは[持ち出しZIP](../art_source/sprite_generation_kit.zip)。別環境でもこの一式を渡せる。
+- 最新起動はBuild/art3c/AniBato.exe、保持ビルドはart3c/art3b。[プレビューと同倍率比較](art_wip/art3c_previews.md)は素材の確認。[実機撮影](screenshots/art3c_previews.md)は最前面確保に失敗し画像未保存、新しゃがみのWindows目視確認は残課題。
+- [RESUME](RESUME.md)冒頭と[art3c_final](codex_logs/art3c_final.md)から再開。原画/最終プロンプト/倍率/8枚はart_source/art3_crouch/、再現はBuildArt3Crouch.ps1 -RebuildCheck、キットはBuildSpriteGenerationKit.ps1。コミット名`Add fixed-size crouch sprites and portable generation guide`、反映先origin main。tasklist/git statusで反映と同時編集なしを確認。
+- 次は実機のしゃがみ確認またはwalk/dash/攻撃などの新絵柄化が候補。新たな指示書を先に作り、同セル/立ち基準倍率/共通32色を維持。実キー撮影前は必ず「PCに触らないで」と案内し、最前面チェックを無効にしない。
+- 追加の大きさ確認：待機との頭部帯幅差0〜1px、靴の下8行の幅差0〜3px、等倍/3倍目視済み。測定領域と基準は指示書§3・proportion-check.json。CompareArt3Proportions.ps1を再生成とキット作成に組み込み、今後も頭/靴の比較を必須とした。追加後も425ファイル再生成一致。
+
+### ART3B完了時の履歴
 
 - 現行指示書は[ART3_BREATHING](codex_tasks/ART3_BREATHING.md)。ART3の透真・蓮・千鶴を採用して8F/6fpsの体呼吸をゲームへ接続。今後も[SPRITE_SPEC](SPRITE_SPEC.md)の224×160px/コマ・足元159・PPU50に固定する。体/頭±2px、靴は固定、旧rawと待機以外のPNGは保持。
 - **今回のUnity実行：BuildAll成功、EditMode323/323・PlayMode29/29、失敗/スキップ0、Windowsビルド成功**。TestResults/art3b_*。新しいアセット回帰3ケース追加、既存アサーション維持。24Fの画素/接地検査と388ファイル再生成一致も合格。
@@ -80,7 +90,7 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 ### 6B完了時の履歴
 
 - ユーザーが「6bは終わったよ」と確認。保存済み証跡：BuildAll exit 0、**EditMode320/320・PlayMode29/29（失敗・スキップ0）**、Windowsビルド exit 0・Success。TestResults/phase6b_runner.txt、phase6b_EditMode.xml、phase6b_PlayMode.xml、phase6b_buildall.log、phase6b_build.logで確認した。
-- 6B完了時はTitle/Battleの生成シーンとBuild/phase6b/AniBato.exeが実在。現在の最新ビルドは上のART3Bを参照。
+- 6B完了時はTitle/Battleの生成シーンとBuild/phase6b/AniBato.exeが実在。現在の最新ビルドは上のART3Cを参照。
 - 実装コミット9560ed4（6A・6B）はGitHub origin mainへ反映済み。資料更新開始時の作業ツリーはclean。今回は保存済み結果を読み、Unityの再実行や実キー入力は行っていない。
 - USB HID・機器の後始末・旧シーン停止の修正を含め、全PlayModeが合格。背景・中割り・カメラ・左右表記・ダッシュ設定・必須24テスト/12成果物表も実装済み。
 - 比較画像はdocs/screenshots/phase6b_*.png（サムネ・オフライン投影図）。6B実機撮影・物理パッド2台・3比率/144Hzの手動所見・全14課題の通し確認・実SO810試合集計の記録は今回確認できていない。自動テストの合格と分ける。

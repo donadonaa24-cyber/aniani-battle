@@ -34,6 +34,8 @@
 - シーン・アセットは手書きYAMLではなく、Editorスクリプト（`AniBato.EditorTools.ProjectBuilder.BuildAll` 等、`-executeMethod` で実行可能）で生成する。
 - 巨大な1ファイルにしない。システムごとにクラスを分ける。
 - ピクセルアートは `docs/SPRITE_SPEC.md` に従い、今後すべて1コマ224×160px・足元159px・PPU50へ統一。原画を保管し、キャラごとの身長差とクリップ間の倍率を維持する。
+- 他の担当/生成サービスへの詳細な指示は[docs/SPRITE_GENERATION_GUIDE.md](docs/SPRITE_GENERATION_GUIDE.md)。参照PNG・全文プロンプト・共通32色・採用済み出力は[art_source/sprite_generation_kit.zip](art_source/sprite_generation_kit.zip)に同梱。しゃがみ等の別姿勢も立ち基準から倍率を固定し、ポーズごとに独立拡縮しない。
+- 新ポーズはセル寸法だけで合格にせず、採用済み待機の頭/髪・靴と部分の大きさを比較し、等倍/整数拡大で目視する。詳細指示書§3の部位基準を参照。しゃがみの高さに合わせて頭や足を拡大しない。
 - テスト：`Assets/_Project/Tests/EditMode`、`Assets/_Project/Tests/PlayMode`。
 
 ## Unityコマンド（参考）

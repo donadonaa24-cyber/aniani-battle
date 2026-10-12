@@ -2,6 +2,8 @@
 
 ユーザー指定「今後もすべて同じサイズ」を、生成物をゲームへ渡す共通規格として固定する。
 
+別サービス/別担当へ渡す詳しい条件・キャラ別設定・コピペ用プロンプト・JSON・加工/検査手順は[再制作指示書](SPRITE_GENERATION_GUIDE.md)。参照PNG/パレット/全文プロンプトを含む自己完結した[生成キット](../art_source/sprite_generation_kit/README.md)と[ZIP](../art_source/sprite_generation_kit.zip)を用意済み。今後の生成でもこのセットを渡す。
+
 | 項目 | 固定値 |
 |---|---|
 | 全キャラ・全モーションの1コマ | **224×160px**、透過PNG、同じ余白込みキャンバス |
@@ -34,3 +36,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildArt3I
 > Same original character and costume as the approved idle reference. Every exported frame must use a 224x160 transparent canvas, PPU50, feet baseline y159, torso anchor x112, unchanged character proportions and pixel scale. Crisp square pixel clusters, coherent limited palette, no crossfade, ghost limbs, gradients or blurred outlines. Use the same standing-height reference across all motions. Preserve enough clear transparent margin so no extremity clips the cell. Never rescale the entire character independently for each frame.
 
 SpriteForgeとUnityインポータはセル寸法・PPU・基準位置の違反をエラーにする。体の上下動・靴固定・顔/胴の厳密な画素移動・二値alpha・色数・headHeights・GIF復号と再生成一致を検査する。新キャラでも同じセル/PPUを使用し、身長だけを設計した値にする。
+
+## ART3Cしゃがみ
+
+新待機の容姿/衣装を維持し、同倍率の立ち/しゃがみ2姿勢を生成。立ち外接高さを物差しに、しゃがみへ同じ倍率を適用する。頭や靴を縮小せず膝と腰を曲げる。全3人8F/6fps、224×160、足固定の体±2px呼吸。中立の実高さは透真91/蓮77/千鶴84px。原画/分割領域/倍率はart_source/art3_crouch/、実装用8枚・横シート・JSON・GIFはready/<キャラ>/。
+
+再現はtools/SpriteForge/BuildArt3Crouch.ps1（-RebuildCheckまたは-VerifyOnly）。idleは保持し、crouchだけprebuiltSheetで接続する。再制作条件は上の詳細指示書へ集約し、新モーションも同セル/同倍率/共通パレットを使う。
+
+追加ポーズだけ人物が大きくなることを防ぐため、待機との頭/髪・靴の部分寸法比較と等倍目視を必須とする。今回の頭部帯幅差は0〜1px・靴の下8行の幅差は0〜3px。測定領域と基準値は詳細指示書§3とart_source/art3_crouch/proportion-check.json、再検査はCompareArt3Proportions.ps1。別角度は投影幅が変わるため、数値だけで頭や足を拡縮しない。

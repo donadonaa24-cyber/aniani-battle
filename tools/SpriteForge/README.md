@@ -1,5 +1,16 @@
 # ART3B：共通サイズの呼吸待機
 
+現行のしゃがみはART3C。[再制作指示書](../../docs/SPRITE_GENERATION_GUIDE.md)に参照/容姿/寸法/共通パレット/全文プロンプト/加工/検査の条件を集約した。自己完結した生成キットはBuildSpriteGenerationKit.ps1でフォルダとZIPに出力し、ZIP内の全ファイルのSHA-256も確認する。
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildArt3Crouch.ps1 -RebuildCheck
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildSpriteGenerationKit.ps1
+```
+
+ArtThreeCrouchは生成された立ち/しゃがみのペアを分離し、立ちの外接高さから決めた同倍率でしゃがみを加工する。1枚の基準から8F/6fpsの体呼吸を作り、靴と顔/衣装を保持。crouchだけ差し替え、idleと他モーションのPNGを維持する。GIF書き出しは同一内容なら更新せず、変更時は一時ファイルから置換し、Windowsの閲覧中GIFを直接切り詰めない。
+
+CompareArt3Proportions.ps1は採用待機としゃがみの頭部帯/靴の下8行の幅を比較し、proportion-check.jsonへ測定領域を保存する。BuildArt3Crouchとキット作成にも組み込み済み。セル寸法/全体身長だけで済ませず頭/靴も基準と照合する。部分の投影幅は姿勢で変わるため、等倍/整数拡大の目視確認を併用する。
+
 `BuildArt3Idle.ps1` は採用済みART3静止絵から体と頭が上下±2px動く8F/6fpsの待機を作り、全3キャラのidleへ接続する。靴の下12行を固定し、顔・衣装は整数行移動で保持する。生成した呼吸4キーは動きの参考として保存する。前後画像の混合はしない。
 
 ```powershell

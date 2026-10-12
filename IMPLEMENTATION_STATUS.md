@@ -1,6 +1,20 @@
-# 実装状況：ART3B呼吸待機・Unity全合格（2026-10-12）
+# 実装状況：ART3Cしゃがみ・再制作指示書完了（2026-10-13）
 
-## 最新作業：3人の呼吸待機をゲームへ接続
+## 最新作業：3人の新しゃがみと持ち出し用生成キット
+
+[ART3_CROUCH](docs/codex_tasks/ART3_CROUCH.md)を作成してから内蔵image_genで同倍率の立ち/しゃがみ原画を各1枚生成。立ちの実高さを物差しにしてしゃがみへ同じ倍率を適用し、頭/靴のサイズを保持。1枚から整数行移動で8Fの体呼吸を作り、crouchへ接続しました。
+
+- **全員224×160px/コマ・8F/6fps・足元159・PPU50**。中立しゃがみの実高さは透真91/蓮77/千鶴84px。顔/衣装の画素と靴の下12行を固定し、体/頭±2px。新待機と他モーションのPNG・Timing/スプライトIDを保持。
+- [実装用素材](art_source/art3_crouch/README.md)：各8枚・1792×160横シート・JSON・等倍GIF、原画/全文プロンプト/分割矩形/倍率を保存。[動くプレビューと同倍率比較PNG](docs/art_wip/art3c_previews.md)を目視確認。
+- [詳細な再制作指示書](docs/SPRITE_GENERATION_GUIDE.md)と[持ち出しZIP](art_source/sprite_generation_kit.zip)に参照9PNG・原画3PNG・パレット・プロンプト・規格・採用済み待機/しゃがみを同梱。今後も同じセットで別環境/Claudeへ渡せる。
+- **Unity BuildAll成功・EditMode326/326・PlayMode29/29・Windowsビルド成功、失敗/スキップ0**。TestResults/art3c_*。新しゃがみのCrouch状態接続/8F/ループ/倍率/足と顔の画素保持を検査する3ケース追加、既存アサーション維持。
+- 素材24F・既存待機24F回帰合格、全106クリップ584F、**425ファイル再生成SHA-256一致**。ZIP内84ファイル照合、Unity API参照コンパイル警告/エラー0。メモリマップ中のGIF書き換え失敗を修正し、同一内容/変更内容の保存と復号を確認。
+- 起動：**Build/art3c/AniBato.exe**。保持ビルドはart3c/art3b。[実機撮影](docs/screenshots/art3c_previews.md)は最前面確保に失敗しスクショ未保存。Windows版での新しゃがみ目視確認は未了。プレビューを実画面として扱わない。
+- [完了報告](docs/codex_logs/art3c_final.md)、[RESUME](docs/RESUME.md)とHANDOFFを更新。コミット名`Add fixed-size crouch sprites and portable generation guide`、反映先origin main。Claude交代時はtasklist/git statusから確認。
+- 次：実機のしゃがみ確認、またはwalk/dash/攻撃の新絵柄化。新しい指示書を先に作成。物理パッド/144Hz等の手動確認も残る。
+- 大きさの追加確認：待機との頭部帯幅差は0〜1px、靴の下8行の幅差は0〜3px。等倍/3倍で頭/靴を目視確認し、部分基準と測定記録を再制作指示書/キットへ追加。CompareArt3Proportions.ps1を再生成/キット作成にも組み込み、追加後も425ファイル一致。
+
+## ART3B完了時の履歴：3人の呼吸待機をゲームへ接続
 
 [ART3_IDLE](docs/codex_tasks/ART3_IDLE.md)で生成した透真・蓮・千鶴の3枚を採用。[ART3_BREATHING](docs/codex_tasks/ART3_BREATHING.md)を作成してから呼吸キーを内蔵image_genで各4姿勢生成・保存した。最終8コマは静止原画から整数行移動で作り、顔・衣装の細部を保持。体と頭が上下±2px、靴は固定、8F/6fpsでループする。
 

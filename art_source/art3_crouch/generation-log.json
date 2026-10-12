@@ -1,0 +1,58 @@
+{
+  "task": "ART3_CROUCH",
+  "tool": "built-in image_gen",
+  "date": "2026-10-12",
+  "images": [
+    {
+      "character": "toma",
+      "file": "generated/toma_crouch_pair_v1.png",
+      "references": [
+        {
+          "file": "art_source/art3_idle/toma_idle_v1.png",
+          "role": "Approved identity and costume"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/toma/idle_00.png",
+          "role": "Authoritative game pixel scale, palette and standing height"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: same-character CROUCH sprite pose sheet for あにあにバトル！！.\nInput image 1 is the approved high-resolution static idle drawing: identity, face, hairstyle, costume and anatomy reference. Input image 2 is the EXACT approved 224x160 game frame: pixel scale, palette and relative proportions reference.\nCreate a genuinely TRANSPARENT PNG with EXACTLY TWO full-body poses in ONE HORIZONTAL ROW: LEFT approved STANDING IDLE, RIGHT a low grounded CROUCH. Both face RIGHT at the SAME side/three-quarter angle. Two equal rectangular cells, a wide clear transparent gap, identical ground baseline and generous clear margins. No letters, labels, numbers, borders, scenery, floor shadow or checkerboard.\nThe LEFT standing character must match the references, acting as a ruler for the RIGHT crouch. Draw both characters at exactly the SAME camera and pixel magnification. Head, face, hands, accessories and shoes must have the SAME size in both cells. Crouch by bending knees and hips and lowering the torso, never by shrinking the whole figure or vertically squashing it. Aim for crouching total silhouette height around 65-80% of standing, with thighs visibly bent and both soles planted. Both knees bend naturally; no kneeling on the floor, sitting or jumping. Keep the head angle and expression unchanged and face clearly readable. Prepared hands remain near the torso, with exactly TWO arms, TWO hands, TWO legs and TWO shoes. No merged legs, duplicated fingers, melted face, altered eyes, lost accessories or clipped extremities.\nSubject: Toma: tousled black hair, blue eyes, charcoal business suit, white shirt, dark blue-violet tie, black trousers and black leather shoes. Keep the small black rectangular tablet/device held securely near his hip above the bent thigh; no new weapon.\nStyle: coherent crisp game pixel clusters, square logical pixels, same sharp outlines and color blocking as input image 2, 32-color limited palette, restrained shading. NO blur, antialiasing, gradients, noisy stippling, watercolor, photoreal shading, crossfade, ghost body parts or motion effects. Treat the result as an enlarged low-resolution sprite sheet with one consistent logical pixel grid.\nProduction contract: EACH final cell is 224x160 logical pixels, feet baseline y159, torso anchor x112, PPU50, pivot(0.5,0). Standing height reference is 124 logical pixels. The crouch must use that exact same physical scale. Output one two-pose sheet, transparent background.",
+      "transparent_background": true,
+      "review": "Two right-facing full-body poses, matching head and shoes; knees and hips bent, both soles grounded. Standing-left pose is the common-scale ruler; crouch-right pose will not be independently resized."
+    },
+    {
+      "character": "ren",
+      "file": "generated/ren_crouch_pair_v1.png",
+      "references": [
+        {
+          "file": "art_source/art3_idle/ren_idle_v1.png",
+          "role": "Approved identity and costume"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/ren/idle_00.png",
+          "role": "Authoritative game pixel scale, palette and standing height"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: same-character CROUCH sprite pose sheet for あにあにバトル！！.\nInput image 1 is the approved high-resolution static idle drawing: identity, face, hairstyle, costume and anatomy reference. Input image 2 is the EXACT approved 224x160 game frame: pixel scale, palette and relative proportions reference.\nCreate a genuinely TRANSPARENT PNG with EXACTLY TWO full-body poses in ONE HORIZONTAL ROW: LEFT approved STANDING IDLE, RIGHT a low grounded CROUCH. Both face RIGHT at the SAME side/three-quarter angle. Two equal rectangular cells, a wide clear transparent gap, identical ground baseline and generous clear margins. No letters, labels, numbers, borders, scenery, floor shadow or checkerboard.\nThe LEFT standing character must match the references, acting as a ruler for the RIGHT crouch. Draw both characters at exactly the SAME camera and pixel magnification. Head, face, hands, accessories and shoes must have the SAME size in both cells. Crouch by bending knees and hips and lowering the torso, never by shrinking the whole figure or vertically squashing it. Aim for crouching total silhouette height around 65-80% of standing, with thighs visibly bent and both soles planted. Both knees bend naturally; no kneeling on the floor, sitting or jumping. Keep the head angle and expression unchanged and face clearly readable. Prepared hands remain near the torso, with exactly TWO arms, TWO hands, TWO legs and TWO shoes. No merged legs, duplicated fingers, melted face, altered eyes, lost accessories or clipped extremities.\nSubject: Ren: small human boy, brown hair, teal eyes, cream dog-face hood with brown floppy ears, cream sleeves and teal cuffs, red-orange scarf with bone clasp, paw mitts, dark shorts with orange hems, red/cream/teal cape and cream tail, white socks and colorful sneakers. Keep all these features; the cape and tail may settle behind him without touching the floor.\nStyle: coherent crisp game pixel clusters, square logical pixels, same sharp outlines and color blocking as input image 2, 32-color limited palette, restrained shading. NO blur, antialiasing, gradients, noisy stippling, watercolor, photoreal shading, crossfade, ghost body parts or motion effects. Treat the result as an enlarged low-resolution sprite sheet with one consistent logical pixel grid.\nProduction contract: EACH final cell is 224x160 logical pixels, feet baseline y159, torso anchor x112, PPU50, pivot(0.5,0). Standing height reference is 100 logical pixels. The crouch must use that exact same physical scale. Output one two-pose sheet, transparent background.",
+      "transparent_background": true,
+      "review": "Two right-facing full-body poses, matching head and shoes; knees and hips bent, both soles grounded. Standing-left pose is the common-scale ruler; crouch-right pose will not be independently resized."
+    },
+    {
+      "character": "chizuru",
+      "file": "generated/chizuru_crouch_pair_v1.png",
+      "references": [
+        {
+          "file": "art_source/art3_idle/chizuru_idle_v1.png",
+          "role": "Approved identity and costume"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/chizuru/idle_00.png",
+          "role": "Authoritative game pixel scale, palette and standing height"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: same-character CROUCH sprite pose sheet for あにあにバトル！！.\nInput image 1 is the approved high-resolution static idle drawing: identity, face, hairstyle, costume and anatomy reference. Input image 2 is the EXACT approved 224x160 game frame: pixel scale, palette and relative proportions reference.\nCreate a genuinely TRANSPARENT PNG with EXACTLY TWO full-body poses in ONE HORIZONTAL ROW: LEFT approved STANDING IDLE, RIGHT a low grounded CROUCH. Both face RIGHT at the SAME side/three-quarter angle. Two equal rectangular cells, a wide clear transparent gap, identical ground baseline and generous clear margins. No letters, labels, numbers, borders, scenery, floor shadow or checkerboard.\nThe LEFT standing character must match the references, acting as a ruler for the RIGHT crouch. Draw both characters at exactly the SAME camera and pixel magnification. Head, face, hands, accessories and shoes must have the SAME size in both cells. Crouch by bending knees and hips and lowering the torso, never by shrinking the whole figure or vertically squashing it. Aim for crouching total silhouette height around 65-80% of standing, with thighs visibly bent and both soles planted. Both knees bend naturally; no kneeling on the floor, sitting or jumping. Keep the head angle and expression unchanged and face clearly readable. Prepared hands remain near the torso, with exactly TWO arms, TWO hands, TWO legs and TWO shoes. No merged legs, duplicated fingers, melted face, altered eyes, lost accessories or clipped extremities.\nSubject: Chizuru: brown bob hair, brown eyes, orange sweater, navy flared skirt, bare legs and white sneakers. Keep the skirt naturally draped over the bent hips/thighs, with modest coverage and readable separated knees and shoes. No chef clothes.\nStyle: coherent crisp game pixel clusters, square logical pixels, same sharp outlines and color blocking as input image 2, 32-color limited palette, restrained shading. NO blur, antialiasing, gradients, noisy stippling, watercolor, photoreal shading, crossfade, ghost body parts or motion effects. Treat the result as an enlarged low-resolution sprite sheet with one consistent logical pixel grid.\nProduction contract: EACH final cell is 224x160 logical pixels, feet baseline y159, torso anchor x112, PPU50, pivot(0.5,0). Standing height reference is 112 logical pixels. The crouch must use that exact same physical scale. Output one two-pose sheet, transparent background.",
+      "transparent_background": true,
+      "review": "Two right-facing full-body poses, matching head and shoes; knees and hips bent, both soles grounded. Standing-left pose is the common-scale ruler; crouch-right pose will not be independently resized."
+    }
+  ]
+}

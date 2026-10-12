@@ -65,7 +65,7 @@ namespace AniBato.SpriteForge
             Directory.CreateDirectory(Path.GetDirectoryName(path)); int w = sheet.Width / count, h = sheet.Height;
             var colors = new[] { Pixels.Opaque(34, 39, 49) }.Concat(palette).Distinct().ToArray();
             var index = new Dictionary<int, int>(); for (int i = 0; i < colors.Length; i++) index[colors[i]] = i;
-            using (var stream = File.Create(path)) using (var output = new BinaryWriter(stream))
+            using (var stream = new MemoryStream()) using (var output = new BinaryWriter(stream))
             {
                 output.Write(System.Text.Encoding.ASCII.GetBytes("GIF89a")); output.Write((ushort)w); output.Write((ushort)h); output.Write((byte)0xf7); output.Write((byte)0); output.Write((byte)0);
                 for (int i = 0; i < 256; i++) { int c = i < colors.Length ? colors[i] : colors[0]; output.Write((byte)Pixels.R(c)); output.Write((byte)Pixels.G(c)); output.Write((byte)Pixels.B(c)); }
@@ -84,6 +84,17 @@ namespace AniBato.SpriteForge
                     output.Write((byte)0);
                 }
                 output.Write((byte)0x3b);
+                output.Flush();
+                byte[] bytes = stream.ToArray();
+                // Desktop previewers can memory-map GIFs. Avoid truncating an open mapped file.
+                if (File.Exists(path) && File.ReadAllBytes(path).SequenceEqual(bytes)) return;
+                string temporary = path + ".write-" + Guid.NewGuid().ToString("N");
+                try
+                {
+                    File.WriteAllBytes(temporary, bytes);
+                    if (File.Exists(path)) File.Replace(temporary, path, null); else File.Move(temporary, path);
+                }
+                finally { if (File.Exists(temporary)) File.Delete(temporary); }
             }
         }
     }

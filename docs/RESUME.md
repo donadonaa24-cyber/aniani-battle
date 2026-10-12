@@ -1,6 +1,22 @@
-# 再開メモ：ART3B呼吸待機・Codex/Claude交代（2026-10-12）
+# 再開メモ：ART3C完了・Codex/Claude交代（2026-10-13）
 
-## 現在の区切り：3人の新しい呼吸待機、Unity全合格
+## 現在の区切り：3人の新しゃがみ・再制作指示書、Unity全合格
+
+- 指示書：[ART3_CROUCH](codex_tasks/ART3_CROUCH.md)。採用済み新待機を参照し、内蔵image_genで全3人の立ち/しゃがみ原画を生成。立ちの外接高さ由来の共通倍率でしゃがみを正規化し、頭/靴を小さくする処理は使わない。
+- 固定：**224×160px/コマ、足元159、PPU50、8F/6fps、体/頭±2px、靴の下12行固定**。中立高さは透真91/蓮77/千鶴84px。顔/衣装は単一採用絵の整数行移動。待機やその他のPNG、既存Timing/スプライトIDは保持。
+- 出力：[art3_crouch](../art_source/art3_crouch/README.md)の各8枚・横シート・JSON・GIF、原画/全文プロンプト/分割矩形/共通倍率。ゲームcrouch/AnimationSetへ接続し、Title/BattleはBuildAllで再生成。
+- 他環境向け：[詳細な再制作指示書](SPRITE_GENERATION_GUIDE.md)、[持ち出しZIP](../art_source/sprite_generation_kit.zip)。参照9PNG/原画3PNG・全プロンプト・共通32色・spec.json・待機/しゃがみの採用出力を同梱。今後の全モーションでも同じセルと立ち倍率を使う。
+- **今回のUnity実行：BuildAll成功・EditMode326/326・PlayMode29/29・Windowsビルド成功、失敗/スキップ0**。TestResults/art3c_*、テスト終了2026-10-13 00:00:49/00:02:08 JST。既存アサーション維持、新しゃがみ接続/倍率/足/顔/ループの3ケース追加。
+- 素材24F＋待機24F回帰、425ファイル再生成SHA-256一致（106クリップ584F）、ZIP内84ファイル照合合格。Unity API参照コンパイル警告/エラー0。メモリマップ中のGIF保存問題は同一内容の書き込み省略/変更内容の置換で修正、復号検査合格。
+- 起動：**Build/art3c/AniBato.exe**、保持ビルドart3c/art3b。[プレビュー](art_wip/art3c_previews.md)は素材比較。[実機撮影](screenshots/art3c_previews.md)は最前面確保に失敗し未保存、Windows画面の新しゃがみ目視確認は残す。撮影前は必ず「PCに触らないで」と案内、安全チェックを維持。
+- 完了記録：[art3c_final](codex_logs/art3c_final.md)。コミット名`Add fixed-size crouch sprites and portable generation guide`、反映先origin main。開始時はclean、このフォルダに別active担当なし。前回ART3Bの7084a3fもpush済み。交代時はgit log/statusで今回の実際の反映を確認する。
+- **Claudeへ交代**：AGENTS→HANDOFF→本書→STATUSを読み、tasklist/git statusで同時編集を防ぐ。再現はBuildArt3Crouch.ps1 -RebuildCheck（または-VerifyOnly）、キットはBuildSpriteGenerationKit.ps1。新Unity変更はrun_unity.ps1 -Tag <新作業名>を外部承認で全4工程。次の作業の指示書を先に作る。
+- 次の候補：実機のしゃがみ確認、walk/dash/攻撃等の新絵柄化。6Bの物理パッド/144Hz等の手動確認は下の履歴。完了済み6Bや待機の作り直しは不要。
+- 大きさの追加確認：頭部帯幅は透真37→37/蓮58→59/千鶴43→44px、靴の下8行の幅差0〜3px。等倍/3倍で目視確認、proportion-check.jsonと指示書§3へ保存。新ポーズも採用待機の頭/靴を基準に比較する。部分比較をBuildArt3Crouch/キット作成へ組み込み、追加後も425ファイル一致。
+
+---
+
+## ART3B完了時の履歴：3人の新しい呼吸待機、Unity全合格
 
 - 指示書：[ART3_IDLE](codex_tasks/ART3_IDLE.md) → [ART3_BREATHING](codex_tasks/ART3_BREATHING.md)。ユーザーの追加依頼で3枚とも採用し、体が上下して呼吸する待機をゲームへ接続した。
 - 固定規格：[SPRITE_SPEC](SPRITE_SPEC.md)。全員・今後の全モーションは**224×160px/コマ、足元y159、PPU50**。身長は透真124/蓮100/千鶴112。8F/6fps、体±2px、靴の下12行は完全固定。

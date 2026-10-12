@@ -104,6 +104,18 @@ Tomaのスーツ・端末とRenの犬耳フード/衣装/マント/尻尾は正�
 
 共通の画風参考はユーザー添付のピクセルアート比較画像。ドットの輪郭・色面・陰影だけを参考にし、画像の騎士・剣・衣装・SNS画面は転載していない。比較画像そのものをリポジトリへ保存・Assetsへコピーしていない。生成原画は保持し、ART3Bでゲーム用idleへ接続。生成4キーの細部変化を避け、最終8コマは各1枚絵から作る。旧rawは他モーションの縮尺・パレット基準として保持。衣装と容姿は正式資料、本作の待機姿勢と呼吸は独自表現。[固定制作規格](SPRITE_SPEC.md)、[実装用出力](../art_source/art3_idle/breathing/README.md)を参照。
 
+## ART3C：新しゃがみ・持ち出し用再制作資料（2026-10-13）
+
+| 保存先 | 元資料・作成方法 | 用途 |
+|---|---|---|
+| art_source/art3_crouch/generated/{toma,ren,chizuru}_crouch_pair_v1.png | 各人のart3_idle/<キャラ>_idle_v1.pngを容姿/衣装、breathing/ready/<キャラ>/idle_00.pngを倍率/色の参照にして内蔵image_gen | 同倍率の立ち/しゃがみ2姿勢原画。立ちを倍率の物差しにする |
+| art3_crouch/generation-log.json・normalization.json | 最終全文プロンプト/参照の役割、実分割矩形/共通倍率/配置の記録 | 再制作・Claudeへの交代資料 |
+| art3_crouch/normalized/・ready/<キャラ>/、Art/Sprites/<キャラ>/crouch.png/json | ArtThreeCrouch/SpriteForgeによる同倍率正規化、既存全クリップ共通32色、単一姿勢の整数行移動 | 各8F/6fps、224×160/コマ。靴の下12行固定・体/頭±2px |
+| docs/art_wip/art3c_*_crouch_preview.gif・art3c_pose_comparison.png | 採用済みゲームPNGの整数3倍表示 | 動作と待機/しゃがみの同倍率比較。Unity実画面ではない |
+| art_source/sprite_generation_kit/・同.zip | 上記自作原画/採用済み待機/しゃがみのコピーと制作条件/パレット/プロンプト/検査用SHA-256 | 他環境向け自己完結した再制作キット。元ファイルは保持 |
+
+画像生成は内蔵image_genを使用し、APIキー・有料アセット・出典不明の第三者素材は追加していない。参考のSNS比較画像や騎士のキャラを転載していない。容姿/衣装は採用済み自作資料を維持し、本作のしゃがみ/呼吸は独自表現。原画と旧素材を保存、立ち由来の倍率でしゃがみの頭/靴を保持。最終24Fは各1枚の画素から作る。[詳細な再制作指示書](SPRITE_GENERATION_GUIDE.md)、[実装用出力](../art_source/art3_crouch/README.md)。
+
 ## フェーズ5B：既存キーフレームからの中割り・idle整合（履歴、6Aで混合を廃止）
 
 | 保存先 | 元資料・作成方法 | 用途 |

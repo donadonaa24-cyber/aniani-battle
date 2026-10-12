@@ -1,0 +1,161 @@
+[
+    {
+        "character":  "toma",
+        "headRoiDepth":  25,
+        "approvedIdleHeadBounds":  [
+                                       97,
+                                       36,
+                                       37,
+                                       25
+                                   ],
+        "crouchHeadBounds":  [
+                                 103,
+                                 69,
+                                 37,
+                                 25
+                             ],
+        "headWidthDelta":  0,
+        "approvedIdleShoeBounds":  [
+                                       [
+                                           81,
+                                           152,
+                                           14,
+                                           8
+                                       ],
+                                       [
+                                           117,
+                                           152,
+                                           24,
+                                           6
+                                       ]
+                                   ],
+        "crouchShoeBounds":  [
+                                 [
+                                     79,
+                                     152,
+                                     16,
+                                     8
+                                 ],
+                                 [
+                                     114,
+                                     152,
+                                     25,
+                                     6
+                                 ]
+                             ],
+        "shoeWidthDeltas":  [
+                                2,
+                                1
+                            ],
+        "shoeRoiTop":  152,
+        "visualReviewRequired":  true,
+        "maxHeadWidthDelta":  2,
+        "maxShoeWidthDelta":  3
+    },
+    {
+        "character":  "ren",
+        "headRoiDepth":  31,
+        "approvedIdleHeadBounds":  [
+                                       90,
+                                       60,
+                                       58,
+                                       31
+                                   ],
+        "crouchHeadBounds":  [
+                                 91,
+                                 83,
+                                 59,
+                                 31
+                             ],
+        "headWidthDelta":  1,
+        "approvedIdleShoeBounds":  [
+                                       [
+                                           89,
+                                           152,
+                                           17,
+                                           8
+                                       ],
+                                       [
+                                           123,
+                                           152,
+                                           23,
+                                           8
+                                       ]
+                                   ],
+        "crouchShoeBounds":  [
+                                 [
+                                     93,
+                                     152,
+                                     17,
+                                     8
+                                 ],
+                                 [
+                                     119,
+                                     152,
+                                     26,
+                                     8
+                                 ]
+                             ],
+        "shoeWidthDeltas":  [
+                                0,
+                                3
+                            ],
+        "shoeRoiTop":  152,
+        "visualReviewRequired":  true,
+        "maxHeadWidthDelta":  2,
+        "maxShoeWidthDelta":  3
+    },
+    {
+        "character":  "chizuru",
+        "headRoiDepth":  34,
+        "approvedIdleHeadBounds":  [
+                                       92,
+                                       48,
+                                       43,
+                                       34
+                                   ],
+        "crouchHeadBounds":  [
+                                 94,
+                                 76,
+                                 44,
+                                 34
+                             ],
+        "headWidthDelta":  1,
+        "approvedIdleShoeBounds":  [
+                                       [
+                                           84,
+                                           152,
+                                           17,
+                                           8
+                                       ],
+                                       [
+                                           127,
+                                           152,
+                                           20,
+                                           7
+                                       ]
+                                   ],
+        "crouchShoeBounds":  [
+                                 [
+                                     82,
+                                     152,
+                                     17,
+                                     8
+                                 ],
+                                 [
+                                     117,
+                                     152,
+                                     21,
+                                     8
+                                 ]
+                             ],
+        "shoeWidthDeltas":  [
+                                0,
+                                1
+                            ],
+        "shoeRoiTop":  152,
+        "visualReviewRequired":  true,
+        "maxHeadWidthDelta":  2,
+        "maxShoeWidthDelta":  3
+    }
+]

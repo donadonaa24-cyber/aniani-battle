@@ -1,0 +1,100 @@
+{
+    "schemaVersion":  1,
+    "game":  "AniBato",
+    "cellWidth":  224,
+    "cellHeight":  160,
+    "baseline":  159,
+    "torsoAnchorX":  112,
+    "coordinateOrigin":  "top-left",
+    "pixelsPerUnit":  50,
+    "pivot":  [
+                  0.5,
+                  0
+              ],
+    "alphaValues":  [
+                        0,
+                        255
+                    ],
+    "maxColorsPerCharacter":  32,
+    "frames":  8,
+    "fps":  6,
+    "sheetWidth":  1792,
+    "sheetHeight":  160,
+    "fixedFeetRows":  [
+                          148,
+                          159
+                      ],
+    "fullTranslationEndRow":  132,
+    "breathingOffsets":  [
+                             0,
+                             -1,
+                             -2,
+                             -1,
+                             0,
+                             1,
+                             2,
+                             1
+                         ],
+    "rounding":  "midpoint-to-even",
+    "previewScale":  3,
+    "previewGifDelayCentiseconds":  17,
+    "interpolation":  "Point",
+    "mipmaps":  false,
+    "compression":  "Uncompressed",
+    "independentPoseResize":  false,
+    "partScaleCheck":  "proportion-check.json",
+    "compareHeadAndShoesWithApprovedIdle":  true,
+    "characters":  [
+                       {
+                           "key":  "toma",
+                           "standingHeight":  124,
+                           "crouchNeutralHeight":  91,
+                           "crouchHeadHeights":  [
+                                                     91,
+                                                     92,
+                                                     93,
+                                                     92,
+                                                     91,
+                                                     90,
+                                                     89,
+                                                     90
+                                                 ],
+                           "authoritativeReference":  "references/toma_standing_224x160.png",
+                           "referenceSha256":  "1BADD063BF849CDD7D796AC274E51C5BC7D1BA740724680D568F85ED72EA9940"
+                       },
+                       {
+                           "key":  "ren",
+                           "standingHeight":  100,
+                           "crouchNeutralHeight":  77,
+                           "crouchHeadHeights":  [
+                                                     77,
+                                                     78,
+                                                     79,
+                                                     78,
+                                                     77,
+                                                     76,
+                                                     75,
+                                                     76
+                                                 ],
+                           "authoritativeReference":  "references/ren_standing_224x160.png",
+                           "referenceSha256":  "E73510134D9FFF11486B2DFCE1A183C8001E144E5404F9BC1789B0D795C5539E"
+                       },
+                       {
+                           "key":  "chizuru",
+                           "standingHeight":  112,
+                           "crouchNeutralHeight":  84,
+                           "crouchHeadHeights":  [
+                                                     84,
+                                                     85,
+                                                     86,
+                                                     85,
+                                                     84,
+                                                     83,
+                                                     82,
+                                                     83
+                                                 ],
+                           "authoritativeReference":  "references/chizuru_standing_224x160.png",
+                           "referenceSha256":  "0916A1633112E9DFAF111BE3C9BD6A17FF356FA5BFD7EA9CE35AF5350D051302"
+                       }
+                   ]
+}

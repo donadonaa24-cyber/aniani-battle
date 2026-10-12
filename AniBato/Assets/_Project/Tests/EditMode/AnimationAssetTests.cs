@@ -53,6 +53,51 @@ namespace AniBato.Tests
             }
             finally { UnityEngine.Object.DestroyImmediate(texture); }
         }
+        [TestCase("toma", "Touma", 91)]
+        [TestCase("ren", "Ren", 77)]
+        [TestCase("chizuru", "Chizuru", 84)]
+        public void ArtThreeCrouchPreservesPixelsFeetScaleAndCrouchStateBinding(string key, string assetName, int crouchHeight)
+        {
+            const int width = 224, height = 160, count = 8;
+            var character = AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/_Project/Data/" + assetName + ".asset");
+            var set = character.Animations; var clip = set.Find("crouch");
+            Assert.That(clip.Fps, Is.EqualTo(6)); Assert.That(clip.Loop, Is.True);
+            Assert.That(clip.Frames.Length, Is.EqualTo(count));
+            Assert.That(clip.HeadHeights, Is.EqualTo(new[] { crouchHeight, crouchHeight + 1, crouchHeight + 2, crouchHeight + 1,
+                crouchHeight, crouchHeight - 1, crouchHeight - 2, crouchHeight - 1 }));
+            for (int frame = 0; frame < count; frame++)
+            {
+                var sample = new AnimationSample { State = AnimationState.Crouch, Age = frame * 10 };
+                Assert.That(set.TrySprite(sample, out Sprite sprite), Is.True);
+                Assert.That(sprite, Is.SameAs(clip.Frames[frame]), "Crouch must use every new frame at 6fps.");
+                Assert.That(sprite.rect.size, Is.EqualTo(new Vector2(width, height)));
+                Assert.That(sprite.pixelsPerUnit, Is.EqualTo(50));
+                Assert.That(sprite.pivot, Is.EqualTo(new Vector2(112, 0)));
+            }
+            Assert.That(set.TrySprite(new AnimationSample { State = AnimationState.Crouch, Age = 80 }, out Sprite wrapped), Is.True);
+            Assert.That(wrapped, Is.SameAs(clip.Frames[0]));
+            var texture = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+            try
+            {
+                Assert.That(ImageConversion.LoadImage(texture, File.ReadAllBytes("Assets/_Project/Art/Sprites/" + key + "/crouch.png")), Is.True);
+                Assert.That(texture.width, Is.EqualTo(width * count)); Assert.That(texture.height, Is.EqualTo(height));
+                var pixels = texture.GetPixels32(); var colors = new System.Collections.Generic.HashSet<Color32>();
+                int[] offsets = { 0, -1, -2, -1, 0, 1, 2, 1 }; int bodyChanges = 0;
+                for (int frame = 0; frame < count; frame++) for (int y = 0; y < height; y++) for (int x = 0; x < width; x++)
+                {
+                    Color32 color = pixels[y * texture.width + frame * width + x];
+                    Assert.That(color.a, Is.EqualTo(0).Or.EqualTo(255)); if (color.a != 0) colors.Add(color);
+                    if (y < 12) Assert.That(color, Is.EqualTo(pixels[y * texture.width + x]), "Crouch shoes must stay planted.");
+                    int sourceY = y + offsets[frame];
+                    if (y >= 28 && sourceY >= 0 && sourceY < height)
+                        Assert.That(color, Is.EqualTo(pixels[sourceY * texture.width + x]), "Crouch face and torso must keep their pixels.");
+                    if (frame == 2 && y >= 28 && y < crouchHeight / 2 && !color.Equals(pixels[y * texture.width + x])) bodyChanges++;
+                }
+                Assert.That(bodyChanges, Is.GreaterThan(0));
+                Assert.That(colors.Count, Is.LessThanOrEqualTo(32));
+            }
+            finally { UnityEngine.Object.DestroyImmediate(texture); }
+        }
         [TestCase("toma", "Touma", 124, "toma-keyvisual-cutin.png")]
         [TestCase("ren", "Ren", 100, "ren-dog-rook.png")]
         [TestCase("chizuru", "Chizuru", 112, "chizuru-casual-cutin.png")]
