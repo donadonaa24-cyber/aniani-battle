@@ -1,5 +1,5 @@
 {
-    "schemaVersion":  1,
+    "schemaVersion":  2,
     "game":  "AniBato",
     "cellWidth":  224,
     "cellHeight":  160,
@@ -96,5 +96,106 @@
                            "authoritativeReference":  "references/chizuru_standing_224x160.png",
                            "referenceSha256":  "0916A1633112E9DFAF111BE3C9BD6A17FF356FA5BFD7EA9CE35AF5350D051302"
                        }
-                   ]
+                   ],
+    "groundJumpStartupTicks":  2,
+    "landingTicks":  8,
+    "shallowHeight":  {
+                          "toma":  104,
+                          "chizuru":  98,
+                          "ren":  89
+                      },
+    "groundJumpState":  15,
+    "jumpStartupAnimationState":  34,
+    "actionNormalization":  "actions/normalized/*-scale.json",
+    "actionSelection":  "actions/source-selection.json",
+    "actionPrompts":  "actions/generation-log.json",
+    "motions":  [
+                    {
+                        "name":  "jump",
+                        "loop":  false,
+                        "keys":  [
+                                     1,
+                                     1,
+                                     1,
+                                     2,
+                                     2,
+                                     2
+                                 ],
+                        "fps":  15,
+                        "state":  3,
+                        "frames":  6
+                    },
+                    {
+                        "name":  "fall",
+                        "loop":  true,
+                        "keys":  [
+                                     3,
+                                     3,
+                                     3,
+                                     3,
+                                     3,
+                                     3
+                                 ],
+                        "fps":  15,
+                        "state":  4,
+                        "frames":  6
+                    },
+                    {
+                        "fps":  15,
+                        "state":  5,
+                        "keys":  [
+                                     1,
+                                     -1
+                                 ],
+                        "negativeKey":  "approved-idle-00",
+                        "name":  "land",
+                        "frames":  2,
+                        "loop":  false,
+                        "aliasState":  34
+                    },
+                    {
+                        "name":  "guard",
+                        "loop":  true,
+                        "keys":  [
+                                     1,
+                                     1,
+                                     1,
+                                     1,
+                                     1,
+                                     1
+                                 ],
+                        "fps":  15,
+                        "state":  15,
+                        "frames":  6
+                    },
+                    {
+                        "name":  "dodge",
+                        "loop":  false,
+                        "keys":  [
+                                     1,
+                                     2,
+                                     3
+                                 ],
+                        "fps":  12,
+                        "state":  16,
+                        "frames":  3
+                    },
+                    {
+                        "name":  "dash",
+                        "loop":  true,
+                        "keys":  [
+                                     1,
+                                     1,
+                                     2,
+                                     2,
+                                     3,
+                                     3,
+                                     4,
+                                     4
+                                 ],
+                        "fps":  15,
+                        "state":  2,
+                        "frames":  8
+                    }
+                ]
 }

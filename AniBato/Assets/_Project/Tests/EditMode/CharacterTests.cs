@@ -29,6 +29,7 @@ namespace AniBato.Tests
             Idle(sim, c.GroundNormals[0].StartupFrames + 1);
             Assert.That(sim.P2.NormalHitCount, Is.EqualTo(1));
             var air = Create(character); air.Tick(new FrameInput(pressed: InputButtons.Jump), default);
+            Idle(air, air.Rules.GroundJumpStartupFrames);
             air.Tick(new FrameInput(pressed: InputButtons.Attack), default);
             Assert.That(air.P1.Attack.AirborneAttack, Is.True);
             Assert.That(air.P1.Attack.Definition.Name, Is.EqualTo(c.AirNormals[0].Name));

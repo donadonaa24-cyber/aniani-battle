@@ -1,0 +1,211 @@
+[
+    {
+        "character":  "chizuru",
+        "group":  "dash",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/chizuru_dash_keys_v1.png",
+        "width":  2098,
+        "height":  749,
+        "adopted":  false,
+        "reason":  "head band exceeds approved idle width tolerance; regenerated without independent part scaling",
+        "sha256":  "B6EF5FCFA42E05CF317576212A18DCD63D1432A54421901D70DF1123C9F9C46D"
+    },
+    {
+        "character":  "chizuru",
+        "group":  "dash",
+        "version":  2,
+        "file":  "art_source/art3_actions/generated/chizuru_dash_keys_v2.png",
+        "width":  1983,
+        "height":  793,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "F616CFAC19A2D59E38D6696171AB039EB7D9994BBD48CC6E27A5470DF9234A79"
+    },
+    {
+        "character":  "chizuru",
+        "group":  "dodge",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/chizuru_dodge_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "9D2718EB7865E3E0F406C028AAFB35CA4B396E08FC6A2A53379702DC60F9F000"
+    },
+    {
+        "character":  "chizuru",
+        "group":  "guard",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/chizuru_guard_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "E640EBE77A53E073F2B95C772627A1EFBD4A18799145AF491FE8D5DDB1709575"
+    },
+    {
+        "character":  "chizuru",
+        "group":  "jump",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/chizuru_jump_keys_v1.png",
+        "width":  1659,
+        "height":  948,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "F409024E3B4843F4D5D2076D210E43F382523CDE68F6DACAAE5EE2391BB89F5F"
+    },
+    {
+        "character":  "chizuru",
+        "group":  "jump_start",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/chizuru_jump_start_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "45913A54207E9FB0EE8CFC23B09C6F2877E300878CEF22C6123956AA7D64DD42"
+    },
+    {
+        "character":  "ren",
+        "group":  "dash",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/ren_dash_keys_v1.png",
+        "width":  2098,
+        "height":  749,
+        "adopted":  false,
+        "reason":  "head band exceeds approved idle width tolerance; regenerated without independent part scaling",
+        "sha256":  "FCF08B19A15CE4C20D4620CB173BD88E0C0455012E4B5E217CC4A284D6934B12"
+    },
+    {
+        "character":  "ren",
+        "group":  "dash",
+        "version":  2,
+        "file":  "art_source/art3_actions/generated/ren_dash_keys_v2.png",
+        "width":  2098,
+        "height":  749,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "2464C10B6DAA1BBCFEAB986D4FC873F5894ED0FFAEDE86DE8BB6C984DD8DB4D1"
+    },
+    {
+        "character":  "ren",
+        "group":  "dodge",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/ren_dodge_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  false,
+        "reason":  "cape clipped at raw image border",
+        "sha256":  "588534B95F53E65C284CDAEAF301103D123B17511508E31AC765937FEEAE97E6"
+    },
+    {
+        "character":  "ren",
+        "group":  "dodge",
+        "version":  2,
+        "file":  "art_source/art3_actions/generated/ren_dodge_keys_v2.png",
+        "width":  2098,
+        "height":  749,
+        "adopted":  false,
+        "reason":  "head band exceeds approved idle width tolerance; regenerated without independent part scaling",
+        "sha256":  "8E8F92FB2B06F0B703D5650297AE6D9C09669B1AAA8E4AF433F3A3DF0609E609"
+    },
+    {
+        "character":  "ren",
+        "group":  "dodge",
+        "version":  3,
+        "file":  "art_source/art3_actions/generated/ren_dodge_keys_v3.png",
+        "width":  2098,
+        "height":  749,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "41AAC0B85D8BEF27764FAFCB2F17EBA375DF9B731AD58EB9E1B068808FF165CE"
+    },
+    {
+        "character":  "ren",
+        "group":  "guard",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/ren_guard_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "22108233B2338C4AD44F1C854F3DD6F7FCF656DFD213CFEA381DC0698EA2215B"
+    },
+    {
+        "character":  "ren",
+        "group":  "jump",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/ren_jump_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "5E761754AF9C84F23D9459CBAD2D6A5743E5F58D05959A3D45837ED59C65EE49"
+    },
+    {
+        "character":  "ren",
+        "group":  "jump_start",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/ren_jump_start_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "6BB3365D69214C757F9C344D47C8CB95EA56BD8A50D6B9E2BCE0E9A13C181C22"
+    },
+    {
+        "character":  "toma",
+        "group":  "dash",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/toma_dash_keys_v1.png",
+        "width":  1855,
+        "height":  848,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "FBDD709CDD5EC3DD25D9973A44352B4FF7C8F111C4C97C604BF5AE50958ED025"
+    },
+    {
+        "character":  "toma",
+        "group":  "dodge",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/toma_dodge_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "869F4E4EC0E2E5E13AC1D942B1A66353E92A7F40923D6D2128A7EEF8DC3C8EA1"
+    },
+    {
+        "character":  "toma",
+        "group":  "guard",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/toma_guard_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "6C48AD82DC9DAF4E91256D9AA34877628493A27E35B83E0F2FB5761FC5AB296A"
+    },
+    {
+        "character":  "toma",
+        "group":  "jump",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/toma_jump_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "E8F4D0E593F601781E7EAB182A9CF0C6C8751BE22ABC19DBCD6D12926C9F6DBE"
+    },
+    {
+        "character":  "toma",
+        "group":  "jump_start",
+        "version":  1,
+        "file":  "art_source/art3_actions/generated/toma_jump_start_keys_v1.png",
+        "width":  1484,
+        "height":  1060,
+        "adopted":  true,
+        "reason":  "adopted after fixed-scale/head-band/margin and visual checks",
+        "sha256":  "5C859D826FF72BB3F591B5A4E23AD9D59C2E12E888FA2874CA7B7D5F541585A4"
+    }
+]

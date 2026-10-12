@@ -146,6 +146,7 @@ namespace AniBato.Battle
         public int MaxHeartsLostPerCombo;
         public int DropThroughFrames;
         public int DropThroughHoldFrames;
+        public int GroundJumpStartupFrames;
         public float DropThroughSpeed;
         public float DirectionThreshold;
         public bool EnableRingOut;
@@ -164,7 +165,7 @@ namespace AniBato.Battle
         {
             if (MatchSeconds < 1 || InitialHearts < 1 || NormalHitsPerHeart < 1 || InputBufferFrames < 1 ||
                 DoubleTapFrames < 1 || ComboWindowFrames < 1 || MaxComboHits < 1 || MaxHeartsLostPerCombo < 1 ||
-                DropThroughFrames < 1 || DropThroughSpeed <= 0 || DirectionThreshold <= 0 || DirectionThreshold > 1)
+                DropThroughFrames < 1 || GroundJumpStartupFrames < 0 || DropThroughSpeed <= 0 || DirectionThreshold <= 0 || DirectionThreshold > 1)
                 throw new ArgumentException("対戦ルールの定義が不正です。");
             _ = DurationTicks;
             Defense.Validate(); Gauge.Validate();

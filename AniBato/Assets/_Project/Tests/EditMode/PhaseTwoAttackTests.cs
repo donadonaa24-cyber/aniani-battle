@@ -230,6 +230,7 @@ namespace AniBato.Tests
         {
             var sim = BattleTestFactory.Create();
             sim.Tick(new FrameInput(pressed: buttons), default);
+            if (expected == FighterMode.Jump) BattleTestFactory.Idle(sim, sim.Rules.GroundJumpStartupFrames);
             Assert.That(sim.P1.Mode, Is.EqualTo(expected));
         }
         [Test]

@@ -9,7 +9,7 @@ namespace AniBato.Presentation
         Idle, Move, Dash, Jump, Fall, Land, Attack1, Attack2, Attack3, AirAttack,
         SpecialNeutral, SpecialSide, SpecialUp, SpecialDown, Ultimate, Guard, Dodge,
         Counter, CounterSuccess, Hitstun, Knockback, KO, Win, Lose,
-        Crouch, CrouchAttack, BackAttack, AirNeutral, AirForward, AirBack, AirUp, AirDown, AirForwardUp, AirForwardDown
+        Crouch, CrouchAttack, BackAttack, AirNeutral, AirForward, AirBack, AirUp, AirDown, AirForwardUp, AirForwardDown, JumpStartup
     }
     [Serializable]
     public struct AnimationBinding
@@ -109,6 +109,7 @@ namespace AniBato.Presentation
                 case FighterMode.Move: return AnimationState.Move;
                 case FighterMode.Dash: return AnimationState.Dash;
                 case FighterMode.Jump: return AnimationState.Jump;
+                case FighterMode.JumpStartup: return AnimationState.JumpStartup;
                 case FighterMode.Fall: return AnimationState.Fall;
                 case FighterMode.Guard: return AnimationState.Guard;
                 case FighterMode.Dodge: return AnimationState.Dodge;

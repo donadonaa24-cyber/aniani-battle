@@ -129,6 +129,44 @@ namespace AniBato.Tests
             Assert.That(counters.Length, Is.EqualTo(2)); Assert.That(counters.All(t => t.text == "0/3"), Is.True);
         }
         [UnityTest]
+        public IEnumerator NewActionsRenderForAllThreeFightersAndJumpShowsTwoPlantedTicks()
+        {
+            var runner = Object.FindAnyObjectByType<BattleRunner>(); var controller = Object.FindAnyObjectByType<InputController>();
+            var view = Object.FindObjectsByType<FighterView>().Single(v => v.PlayerIndex == 0);
+            var body = view.transform.Find("Body").GetComponent<SpriteRenderer>();
+            runner.enabled = false; // Drive exactly one real runner tick per assertion, independent of render frame rate.
+            runner.SetPaused(false);
+            for (int c = 0; c < 3; c++)
+            {
+                var data = runner.Setup.Character(c);
+                runner.BeginMatch(data, runner.Setup.Character((c + 1) % 3), runner.CurrentStage, false);
+                yield return PressKeys(keyboard[controller.Bindings.P1.Jump]); controller.Capture();
+                for (int tick = 0; tick < 2; tick++)
+                {
+                    runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
+                    Assert.That(runner.Simulation.P1.Grounded, Is.True); Assert.That(runner.Simulation.P1.JumpsUsed, Is.Zero);
+                    Assert.That(view.RenderedSample.State, Is.EqualTo(AniBato.Presentation.AnimationState.JumpStartup));
+                    Assert.That(body.sprite, Is.SameAs(data.Animations.Find("land").Frames[0])); Assert.That(view.UsesAnimationSprites, Is.True);
+                    if (tick == 0) { yield return ReleaseKeys(keyboard[controller.Bindings.P1.Jump]); controller.Capture(); }
+                }
+                runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
+                Assert.That(runner.Simulation.P1.Grounded, Is.False); Assert.That(runner.Simulation.P1.JumpsUsed, Is.EqualTo(1));
+                Assert.That(body.sprite, Is.SameAs(data.Animations.Find("jump").Frames[0]));
+                Key[] keys = { controller.Bindings.P1.Guard, controller.Bindings.P1.Dodge, controller.Bindings.P1.Dash };
+                string[] clips = { "guard", "dodge", "dash" };
+                for (int action = 0; action < keys.Length; action++)
+                {
+                    runner.RestartMatch(); yield return PressKeys(keyboard[keys[action]]); controller.Capture();
+                    runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
+                    Assert.That(body.sprite, Is.SameAs(data.Animations.Find(clips[action]).Frames[0]), data.name + "/" + clips[action]);
+                    Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one)); Assert.That(view.UsesAnimationSprites, Is.True);
+                    yield return ReleaseKeys(keyboard[keys[action]]); controller.Capture();
+                }
+            }
+            runner.enabled = true;
+            yield return null;
+        }
+        [UnityTest]
         public IEnumerator TwoKeyboardPlayersMoveIndependentlyAndRRestartsFinishedMatch()
         {
             var runner = Object.FindAnyObjectByType<BattleRunner>();

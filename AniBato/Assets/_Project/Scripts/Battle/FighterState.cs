@@ -1,6 +1,6 @@
 ﻿namespace AniBato.Battle
 {
-    public enum FighterMode { Idle, Move, Dash, Jump, Fall, Attack, Special, Guard, Dodge, Counter, Hitstun, Knockback, Recovery, KO, Crouch }
+    public enum FighterMode { Idle, Move, Dash, Jump, Fall, Attack, Special, Guard, Dodge, Counter, Hitstun, Knockback, Recovery, KO, Crouch, JumpStartup }
 
     public sealed class FighterState
     {
@@ -18,6 +18,8 @@
         public int HitstopRemaining { get; internal set; }
         public int HitstunRemaining { get; internal set; }
         public int JumpsUsed { get; internal set; }
+        public int JumpStartupRemaining { get; internal set; }
+        internal float JumpStartupDirection;
         public int AirDashesUsed { get; internal set; }
         public int DashRemaining { get; internal set; }
         public int DashDirection { get; internal set; }
@@ -54,7 +56,7 @@
         internal readonly System.Collections.Generic.HashSet<long> JustExcludedAttacks = new System.Collections.Generic.HashSet<long>();
         public int ImmunityFrom(int attacker) => FollowupImmunity[attacker];
         public bool CanControlMovement => Attack == null && HitstunRemaining == 0 && ParalysisRemaining == 0 && !ParalyzedThisTick &&
-            Mode != FighterMode.Guard && Mode != FighterMode.Dodge && Mode != FighterMode.Counter && Mode != FighterMode.Recovery;
+            Mode != FighterMode.Guard && Mode != FighterMode.Dodge && Mode != FighterMode.Counter && Mode != FighterMode.Recovery && Mode != FighterMode.JumpStartup;
         internal bool FrozenThisTick;
         public bool IsFrozenThisTick => FrozenThisTick;
         internal bool ParalyzedThisTick;

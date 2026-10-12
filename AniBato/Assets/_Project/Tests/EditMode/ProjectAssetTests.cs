@@ -37,7 +37,8 @@ namespace AniBato.Tests
             Assert.That(simulation.Match.RemainingTicks, Is.EqualTo(4200));
             Assert.That(AssetDatabase.LoadAssetAtPath<SceneAsset>(ProjectBuilder.ScenePath), Is.Not.Null);
             Assert.That(EditorBuildSettings.scenes[0].path, Is.EqualTo(ProjectBuilder.TitleScenePath));
-            Assert.That(rules.Definition.SchemaVersion, Is.EqualTo(6));
+            Assert.That(rules.Definition.SchemaVersion, Is.EqualTo(7));
+            Assert.That(rules.Definition.GroundJumpStartupFrames, Is.EqualTo(2));
             var setup = AssetDatabase.LoadAssetAtPath<BattleSetup>(root + "BattleSetup.asset");
             Assert.That(setup, Is.Not.Null); Assert.That(setup.Characters.Length, Is.EqualTo(3));
             Assert.That(setup.CpuDifficulties.Length, Is.EqualTo(3));

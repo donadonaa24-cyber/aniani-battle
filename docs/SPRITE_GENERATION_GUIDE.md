@@ -153,3 +153,33 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/verify/run_unity.ps1 -
 ```
 
 原画/最終プロンプトはart_source/art3_crouch/。参照/パレット/全文プロンプト/規格/採用済みシートはart_source/sprite_generation_kit/、持ち出し用はart_source/sprite_generation_kit.zip。Windows PowerShell用のスクリプトはASCII、Unityはサンドボックス外・-nographicsなし。新作業の指示書を先に作り、原画を消さず、結果と残課題をRESUMEへ記録する。
+
+## 10. ART3D：ジャンプ・ガード・回避・ダッシュの固定条件
+
+すべて同じ224×160セル・PPU50・pivot(0.5,0)・共通32色。採用待機と同じ倍率/頭部/靴で新しいポーズを描く。現在の実装は次の通り。番号0は原画に添えた立ちの物差しで、ゲーム用待機を差し替える画像ではない。
+
+| 原画グループ | 原画内の並び | ゲームへの割当（キー番号） | フレーム/fps/loop |
+|---|---|---|---|
+| jump | 立ち0、上昇1、頂点2、下降3 | jump=[1,1,1,2,2,2]、fall=[3,3,3,3,3,3] | jump6F/15/false、fall6F/15/true |
+| jump_start | 立ち0、浅いかがみ1 | land=[1,採用待機00]、地上予備はlandのコマ0 | land2F/15/false |
+| guard | 立ち0、胸元を守る構え1 | [1,1,1,1,1,1] | 6F/15/true |
+| dodge | 立ち0、準備1、低い横回避2、復帰3 | [1,2,3] | 3F/12/false |
+| dash | 立ち0、足運び4姿勢1〜4 | [1,1,2,2,3,3,4,4] | 8F/15/true |
+
+地上ジャンプはユーザー指定の**2tick（60Hz、約0.033秒）接地した浅いかがみ→踏切**。スタミナは予備開始で1度だけ支払い、中断しても払い戻さない。踏切の初速/重力と空中2段ジャンプは既存値。予備中に新しく押した行動はバッファに残す。被弾/場外/足場消失で予備を中断し、ヒットストップは残りtickを止める。FighterMode末尾JumpStartup=15、AnimationState末尾JumpStartup=34を追加、State34と既存Land=5は同じlandへ接続。着地8tickの最初4tickが浅いかがみ、次4tickが採用待機。通常しゃがみの深い姿勢を流用しない。浅いかがみの実高さは透真104/蓮89/千鶴98px。
+
+原画の指示では「完全な人物を透明な間隔と外周余白で分離」「立ちと全キーを同じ画素倍率」「頭は同じ角度・幅、手は顎より下」「蓮のマントは肩より下」「速度線・二重の腕脚・新しい装備を描かない」を明示する。ジャンプ原画4人/ガード・浅いかがみ2人/回避4人/ダッシュ5人は、各々1キャラの複数姿勢である。3キャラを1枚に混ぜない。ダッシュは脚の接触/通過と重なりを変える4姿勢を描く。ガードは盾を追加しない。全文の実プロンプトはactions/generation-log.jsonに同梱。
+
+採用原画の立ち高さで倍率sを決め、全キーへ同じModalShrinkを適用する。4連結成分の実マスクから人物を取り出し、内部の分離した瞳等もその人物の外接矩形に完全に含まれる場合に保持する。隣のマントがx方向に重なっても、推測の格子や矩形だけで隣人の画素を混ぜない。図形が接触・画像端で欠ける原画は再生成。空中3キーの共通中心はmin(159−立ち基準高さ/2,157−(正規化後最大空中高さ−1)/2)で、一番背の高いキーにも下2pxの余白を確保する。姿勢ごとの独立リサイズ/独立中心合わせはしない。
+
+normalized/*-scale.jsonに各原画寸法・全キーの分割矩形/面積・共通倍率/配置・頭部帯幅を保存。51キー（15立ち物差し＋36動作）すべての頭部帯幅は待機基準±2px以内。靴は走る/空中/回避で角度と接地足が変わるため、下8行の幅だけを靴全体サイズと取り違えない。同倍率で頭/靴/手足を等倍と3倍で目視照合する。今回採用は蓮dodge v3/dash v2、千鶴dash v2、他はv1。不採用4原画も残し、source-selection.jsonで実際の採用を明示。部分の拡縮や検査値の緩和で通さない。
+
+PNGはready/actions/<キャラ>/<clip>_00.png〜、横シート、JSON、等倍GIF。3倍プレビューはゲームに取り込まない。6クリップ/人93Fを差し替え、全106クリップ584Fと既存スプライトID/Timingを維持する。再現コマンド：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildArt3Actions.ps1 -RebuildCheck
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildSpriteGenerationKit.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/verify/run_unity.ps1 -Tag art3d
+```
+
+キットのactions/に全文プロンプト・採用選択・倍率記録・検査結果・原画・生成ツールを、ready/actions/に実装PNGを格納。再生成ツールの実行には、元リポジトリのmanifest/旧raw/forge-report（既存共通パレット）が必要。別環境で新規生成する場合も、同梱の参照/パレット/仕様を優先し、ゲーム用出力の検査を行う。

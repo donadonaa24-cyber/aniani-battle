@@ -153,6 +153,7 @@ namespace AniBato.Tests
         public void AirDodgeIsAvailableAndRecoversBeforeMovement()
         {
             var sim = BattleTestFactory.Create(); sim.Tick(PhaseTwoTestFactory.Button(InputButtons.Jump), default);
+            BattleTestFactory.Idle(sim, sim.Rules.GroundJumpStartupFrames);
             sim.Tick(new FrameInput(1, pressed: InputButtons.Dodge), default);
             Assert.That(sim.P1.Mode, Is.EqualTo(FighterMode.Dodge)); Assert.That(sim.P1.Grounded, Is.False);
             Assert.That(sim.P1.Velocity.X, Is.EqualTo(sim.Rules.Defense.AirDodgeSpeed));

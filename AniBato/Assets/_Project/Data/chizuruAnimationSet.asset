@@ -200,7 +200,7 @@ MonoBehaviour:
     - {fileID: 759844240, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
     - {fileID: -1568287824, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
     - {fileID: -1506703188, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
-    HeadHeights: 49000000550000005300000056000000550000004e000000570000004e000000i
+    HeadHeights: 6c0000006c0000006e0000006e0000006c0000006c0000006e0000006e000000i
     Fps: 15
     Loop: 1
   - Name: dodge
@@ -208,7 +208,7 @@ MonoBehaviour:
     - {fileID: 1512027293, guid: 4ee4ac0d7a7b9b14cb377c00b7b6405e, type: 3}
     - {fileID: -1008745253, guid: 4ee4ac0d7a7b9b14cb377c00b7b6405e, type: 3}
     - {fileID: -2052478744, guid: 4ee4ac0d7a7b9b14cb377c00b7b6405e, type: 3}
-    HeadHeights: 6f000000470000006f000000i
+    HeadHeights: 690000005800000070000000i
     Fps: 12
     Loop: 0
   - Name: fall
@@ -219,7 +219,7 @@ MonoBehaviour:
     - {fileID: -606100674, guid: b283fcf6b2fd67f4fb438bf87138f78a, type: 3}
     - {fileID: 1888325968, guid: b283fcf6b2fd67f4fb438bf87138f78a, type: 3}
     - {fileID: 661779981, guid: b283fcf6b2fd67f4fb438bf87138f78a, type: 3}
-    HeadHeights: 63000000630000006b0000006b0000006b00000063000000i
+    HeadHeights: 750000007500000075000000750000007500000075000000i
     Fps: 15
     Loop: 1
   - Name: guard
@@ -230,7 +230,7 @@ MonoBehaviour:
     - {fileID: 1799557824, guid: 0640bf7ffec073c4885b31efda24d891, type: 3}
     - {fileID: -1529643738, guid: 0640bf7ffec073c4885b31efda24d891, type: 3}
     - {fileID: 541595127, guid: 0640bf7ffec073c4885b31efda24d891, type: 3}
-    HeadHeights: 6f0000006f0000006200000062000000620000006f000000i
+    HeadHeights: 6c0000006c0000006c0000006c0000006c0000006c000000i
     Fps: 15
     Loop: 1
   - Name: hitstun
@@ -261,7 +261,7 @@ MonoBehaviour:
     - {fileID: -1042921064, guid: 109761c7f33a7644b87d845a78a1b255, type: 3}
     - {fileID: -492749988, guid: 109761c7f33a7644b87d845a78a1b255, type: 3}
     - {fileID: 760934825, guid: 109761c7f33a7644b87d845a78a1b255, type: 3}
-    HeadHeights: 6a0000006a0000005e0000005e0000006c0000006c000000i
+    HeadHeights: 7c0000007c0000007c000000730000007300000073000000i
     Fps: 15
     Loop: 0
   - Name: knockback
@@ -283,7 +283,7 @@ MonoBehaviour:
     Frames:
     - {fileID: 1583198666, guid: 142ecb849c6543640ac268f62013aa42, type: 3}
     - {fileID: 1135791564, guid: 142ecb849c6543640ac268f62013aa42, type: 3}
-    HeadHeights: 580000006c000000i
+    HeadHeights: 6200000070000000i
     Fps: 15
     Loop: 0
   - Name: lose
@@ -471,6 +471,9 @@ MonoBehaviour:
     Clip: ko
     ActiveFrame: 0
   - State: 5
+    Clip: land
+    ActiveFrame: 0
+  - State: 34
     Clip: land
     ActiveFrame: 0
   - State: 23

@@ -23,10 +23,11 @@ MonoBehaviour:
     MaxHeartsLostPerCombo: 1
     DropThroughFrames: 12
     DropThroughHoldFrames: 18
+    GroundJumpStartupFrames: 2
     DropThroughSpeed: 8
     DirectionThreshold: 0.5
     EnableRingOut: 1
-    SchemaVersion: 6
+    SchemaVersion: 7
     Defense:
       GuardReleaseFrames: 6
       GuardStunFrames: 10

@@ -116,6 +116,12 @@ Tomaのスーツ・端末とRenの犬耳フード/衣装/マント/尻尾は正�
 
 画像生成は内蔵image_genを使用し、APIキー・有料アセット・出典不明の第三者素材は追加していない。参考のSNS比較画像や騎士のキャラを転載していない。容姿/衣装は採用済み自作資料を維持し、本作のしゃがみ/呼吸は独自表現。原画と旧素材を保存、立ち由来の倍率でしゃがみの頭/靴を保持。最終24Fは各1枚の画素から作る。[詳細な再制作指示書](SPRITE_GENERATION_GUIDE.md)、[実装用出力](../art_source/art3_crouch/README.md)。
 
+## ART3D：ジャンプ・ガード・回避・ダッシュ（2026-10-13）
+
+内蔵image_genで採用済みART3待機原画と224×160ゲーム待機を参照し、全3人の動作原画15枚を採用。不採用4枚を含む19枚をart_source/art3_actions/generated/へ保持。全文プロンプト/参照の役割はgeneration-log.json、採用版はsource-selection.json。容姿・衣装は既存自作資料、動作は本作独自表現。第三者キャラ/装備/素材は追加していない。
+
+AtlasPoseSplitter/ActionAtlasBuilder/ArtThreeActionsで実マスク分離、立ち由来の共通倍率、既存32色で51キーを正規化。頭部帯幅±2px以内の検査と目視を行い、6クリップ/人93FをArt/Spritesへ接続。ready/に固定セルPNG/シート/JSON/GIF。新予備状態はlandと同じ浅い姿勢を使い、全106クリップ584Fを保持。[素材比較](art_wip/art3d_previews.md)、[再制作条件](SPRITE_GENERATION_GUIDE.md)§10、持ち出しキットへ保存。原画の端切れ/頭部幅超過を再生成し、検査値の緩和や部分拡縮は行っていない。
+
 ## フェーズ5B：既存キーフレームからの中割り・idle整合（履歴、6Aで混合を廃止）
 
 | 保存先 | 元資料・作成方法 | 用途 |

@@ -90,7 +90,7 @@
                     pixelsPerUnit = manifest.pixelsPerUnit, targetHeight = manifest.targetHeight, baseline = manifest.baseline, bindings = outputBindings, headHeights = headHeights };
                 WriteJson(Path.Combine(output, clip.Definition.name + ".json"), metadata);
                 reports.Add(new { name = clip.Definition.name, frames = details, outputFrames = outputCount,
-                    synthesis = !String.IsNullOrEmpty(clip.Definition.prebuiltSheet) ? "single-reference-body-breathing" : clip.Definition.stableIdle ? "single-reference-breathing" : (clip.Definition.sourceClip ?? "").EndsWith("_phase6b") ? "drawn-key-inbetweens" : "clean-key-hold", headHeights = headHeights });
+                    synthesis = !String.IsNullOrEmpty(clip.Definition.prebuiltSheet) ? clip.Definition.prebuiltSheet.StartsWith("art_source/art3_actions/") ? "drawn-action-key-hold" : "single-reference-body-breathing" : clip.Definition.stableIdle ? "single-reference-breathing" : (clip.Definition.sourceClip ?? "").EndsWith("_phase6b") ? "drawn-key-inbetweens" : "clean-key-hold", headHeights = headHeights });
             }
             WriteJson(Path.Combine(output, "forge-report.json"), new { schemaVersion = 1, sourceReferenceHeight = referenceHeight, commonScale = scale,
                 keyTolerance = manifest.keyTolerance, palette = palette.Select(c => "#" + (c & 0xffffff).ToString("X6")).ToArray(), clips = reports });

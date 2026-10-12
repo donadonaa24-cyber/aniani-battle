@@ -17,7 +17,8 @@ namespace AniBato.Tests
         public void DoubleJumpAirDashAndLandingResetAirResources()
         {
             var sim = BattleTestFactory.Create();
-            sim.Tick(new FrameInput(pressed: InputButtons.Jump), default); Assert.That(sim.P1.JumpsUsed, Is.EqualTo(1));
+            sim.Tick(new FrameInput(pressed: InputButtons.Jump), default);
+            BattleTestFactory.Idle(sim, sim.Rules.GroundJumpStartupFrames); Assert.That(sim.P1.JumpsUsed, Is.EqualTo(1));
             BattleTestFactory.Idle(sim, 5); sim.Tick(new FrameInput(pressed: InputButtons.Jump), default);
             Assert.That(sim.P1.JumpsUsed, Is.EqualTo(2));
             sim.Tick(new FrameInput(1, pressed: InputButtons.Dash), default); Assert.That(sim.P1.AirDashesUsed, Is.EqualTo(1));

@@ -1,4 +1,6 @@
-# 調整値：フェーズ6B
+# 調整値：フェーズ6B・ART3D
+
+ART3D（2026-10-13）のユーザー決定でBattleRules.Definition.GroundJumpStartupFrames=2（schema7）。地上ジャンプは2tick接地してから従来初速で踏切、空中2段は即時。スタミナは予備開始で従来コストを1度だけ支払い、中断時は払い戻さない。予備の見た目のみ浅いかがみで、通常しゃがみのHurtbox縮小は適用しない。着地Timing.LandingTicks=8は維持し、landの最初4tickが浅いかがみ、次4tickが待機。速度/重力/無敵/防御コストを変更しない。旧6BのCPU集計値は履歴として保持し、今回の2tick追加後の集計とは扱わない。
 
 6Bは攻撃・スタミナ・CPUの数値を変更しない。CPU810試合の.NET既定値集計はふつう48.09秒・縮小23.7%・超必殺65.6%・自滅近似0を維持（TestResults/phase6b-cpu-final.*）。生成済みSO集計・対人調整はClaude待ち。
 

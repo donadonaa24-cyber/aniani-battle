@@ -83,6 +83,7 @@ namespace AniBato.Tests
         public void EmptyStaminaAllowsGroundJumpAndUpRecovery(int character)
         {
             var ground = Create(character: character); ground.P1.StaminaUnits = 0; ground.Tick(Button(InputButtons.Jump), default);
+            BattleTestFactory.Idle(ground, ground.Rules.GroundJumpStartupFrames);
             Assert.That(ground.P1.Velocity.Y, Is.GreaterThan(0)); Assert.That(ground.P1.Grounded, Is.False);
             var air = Create(character: character); air.P1.StaminaUnits = 0; air.P1.Position = new BattleVector(19, -1); air.P1.Grounded = false; air.P1.JumpsUsed = 2;
             air.Tick(Button(InputButtons.Special, -1, 1), default); BattleTestFactory.Idle(air, 5);

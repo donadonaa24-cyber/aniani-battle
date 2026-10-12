@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "mode": "built-in image_gen",
+  "images": [
+    {
+      "character": "toma",
+      "action": "jump",
+      "prompt": "Use case: identity-preserve. Asset: production pixel-art key-pose strip for the original game あにあにバトル！！. Reference image 1 is the approved larger Toma drawing, only for identity/costume detail. Reference image 2 is the authoritative 224x160 game idle: MATCH its exact head, hair, eye, shoe proportions, pixel scale and palette. Toma: young human man, messy black hair, blue eyes, charcoal business suit, white shirt, dark blue-violet tie, black trousers and black leather shoes, black rectangular handheld tablet near the rear hip. Keep his original costume and tablet readable in ALL poses.\nCreate ONE horizontal strip with EXACTLY FOUR separate complete figures, left to right: (1) the approved standing idle as a scale ruler; (2) upward jump with one knee lifted and arms balancing; (3) compact midair apex, both knees modestly bent and feet clearly separated; (4) descending jump with legs lowered and knees prepared for landing, hands balancing. All face RIGHT at the same side/three-quarter reference angle; keep the face and head angle the same, rigid identical head/hair and shoe size. The first idle figure and EVERY jump figure use IDENTICAL magnification, never shrink or enlarge a pose to fill its cell. Bend joints to change height. Two arms, two legs, same shoes, no duplicate or merged limbs. Do not raise arms above the head. All four figures have equal clear transparent cells, generous transparent gaps, and lowest shoe tips aligned to one imaginary layout row; no ground or shadow. Jumps are poses only, not a baked upward trajectory.\nFinal contract: each exported game frame 224x160 transparent RGBA, PPU50, torso x112, standing-height ruler 124px. With that common scale head/hair width should match the approved game's approximately 37px band, shoe sizes unchanged (standing lower silhouettes 14/24px). Square coherent pixel clusters, restrained 32-color palette matching image 2, sharp dark outlines. No smooth painting, antialiasing, gradients, blur, ghosting, smeared face, changed outfit, motion streaks, sparkles, text, labels, borders, checkerboard or background. Genuine transparency. Preserve enough margin; no clipped hair, hands, shoes or tablet.",
+      "file": "generated/toma_jump_keys_v1.png",
+      "references": [
+        {
+          "file": "art_source/art3_idle/toma_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/toma/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "ren",
+      "action": "jump",
+      "prompt": "Use case: identity-preserve. Production pixel-art jump key strip for あにあにバトル！！. Image 1 is approved large Ren, supporting costume detail. Image 2 is authoritative 224x160 game idle, MATCH its exact face/head/hood/ear/shoe proportions, scale and palette. Ren is the same small HUMAN boy with brown hair and teal eyes inside cream dog-face hood with floppy brown ears, cream sleeves with teal cuffs, red-orange scarf and bone clasp, paw mittens, dark shorts with orange hems, cream/teal/red cape and dog tail, white socks and colorful red/cream/teal sneakers. Preserve these clothing pieces and all accessories in every pose. Never replace him with an animal or a new costume.\nONE horizontal strip, EXACTLY FOUR full figures with generous transparent separation, ordered: LEFT(1) approved standing idle as a scale ruler; (2) upward jump with one knee lifted and both paw mittens balancing; (3) compact airborne apex with both knees modestly folded, shoes clearly separate, cape naturally following; RIGHT(4) falling pose with knees lowered ready to land and mittens balancing. All face RIGHT at the same reference angle. Keep the exact same head/face/hood angle in all four, same head and shoes size, equal figure magnification. Legs bend without independently resizing the pose. Two arms, two legs, readable mittens/feet, no merged knees. Arms remain below the hood top. All equal transparent layout cells, lowest shoe tips on one imaginary layout baseline only; no floor/shadow or upward trajectory baked into the art.\nFinal contract: 224x160 transparent cell, PPU50, torso x112, standing ruler100px. At this scale Ren's dog hood/ears/head band is approximately58px wide and sneaker lower silhouette17/23px: do NOT enlarge his head or feet for short airborne poses. Crisp squared pixel clusters and black/brown outlines, coherent restrained colors matching image2. No smooth illustration, blurry edges, gradients, antialiasing, changed outfit, missing tail/cape, extra limbs, ghosts, motion streaks, text, labels, borders, checkerboard or background. Genuine transparent PNG and no cropped extremities.",
+      "file": "generated/ren_jump_keys_v1.png",
+      "references": [
+        {
+          "file": "art_source/art3_idle/ren_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/ren/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "chizuru",
+      "action": "jump",
+      "prompt": "Use case: identity-preserve. Production pixel-art jump key strip for original game あにあにバトル！！. Image1 approved larger Chizuru is supporting identity/clothes detail. Image2 authoritative 224x160 game idle controls the EXACT head/face/hair and sneaker size, pixel scale and palette. Chizuru is the same brown-bob-haired brown-eyed young human woman in orange long-sleeve sweater, navy flared skirt, bare lower legs and white sneakers. Her established casual clothes, face and original proportions must stay the same. No chef clothes, new accessories or outfit changes.\nDraw ONE horizontal strip with EXACTLY FOUR separate full figures, left-to-right: (1) approved standing idle as scale ruler; (2) upward jump, one knee raised, forearms balancing below the head; (3) airborne apex, knees modestly folded with clearly separated white sneakers and skirt naturally covering the bent thighs; (4) descending posture, legs lowered, knees soft ready for landing, arms balancing. All face RIGHT in the same side/three-quarter reference angle and keep the same head/face angle and expression. No exposing underwear; skirt hangs naturally and covers thighs. Two arms and two legs, readable hands/feet, no fused joints or extra limbs. Same physical head, hair, hands, shoes and body magnification in every pose, never rescale a short jump to fill a cell. Equal transparent cells and generous transparent gaps, outer margins on both ends. Lowest sneaker tips aligned to one imaginary layout row only, no ground/shadow/trajectory.\nFinal game contract: 224x160 transparent cell, PPU50, torso x112, standing ruler112px. Match approved head/hair band width approximately43px and sneaker lower widths17/20px at this standing scale, no enlarged head/feet. Pixel art: crisp square clusters, sharp dark contour, restrained colors from image2, coherent pixel detail. No smooth anime painting, blurred outlines, gradients, antialiasing, motion streaks, ghost limbs, labels, text, panels, checkerboard or background. Genuine transparent PNG. Every limb and clothing edge must remain fully inside the image.",
+      "file": "generated/chizuru_jump_keys_v1.png",
+      "references": [
+        {
+          "file": "art_source/art3_idle/chizuru_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/chizuru/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "toma",
+      "action": "jump_start",
+      "prompt": "Use case: identity-preserve. Production pixel-art pre-jump anticipation and landing recoil for original game あにあにバトル！！. Image1 approved larger Toma supports original identity/clothing detail. Image2 authoritative 224x160 idle controls exact face/head/hair/shoe proportions, magnification and palette. Character: young human man, messy black hair, blue eyes, charcoal business suit, white shirt, dark blue-violet tie, black trousers and leather shoes, black rectangular handheld tablet at rear hip. Preserve suit and tablet, no new gear.\nONE horizontal strip, EXACTLY TWO separate complete figures: LEFT approved standing idle as the unchanging scale ruler; RIGHT a SHALLOW grounded knee bend for a two-tick jump windup and soft landing recoil. Slightly hinge hips forward, flex both knees and lower the hips by about 10% of standing height. This is a small spring-loaded anticipation, not a deep squat, seated pose, kneel or compressed miniature. Both soles remain planted. Arms retain the ready posture below head level. All original clothing/accessories readable. Two arms/two legs, clean joints. Keep identical head/face angle and expression, same head/hair/shoes physical size in both figures. Same side/three-quarter RIGHT-facing view, equal magnification, generous transparent gap/margins and same ground row.\nFinal contract: 224x160 transparent cells, standing ruler 124px, torso x112, feet y159, PPU50. Approximate head band width 37px and standing shoe lower widths 14/24px at that shared standing scale. The crouch should be about90% of standing height, achieved by knees and hips bending, NEVER scaling a shorter pose to fill a cell. Crisp square pixel clusters, dark outline, limited coherent colors matching image2. No antialiasing, blur, gradients, ghost limbs, larger heads/feet, missing accessories, motion trails, labels, text, frame borders, floor shadows, checkerboard or background. Genuine transparency, full figure visible.",
+      "file": "generated/toma_jump_start_keys_v1.png",
+      "references": [
+        {
+          "file": "art_source/art3_idle/toma_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/toma/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "ren",
+      "action": "jump_start",
+      "file": "generated/ren_jump_start_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Ren supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: small HUMAN boy with brown hair, teal eyes, cream dog-face hood with floppy brown ears, cream sleeves/teal cuffs, red-orange scarf/bone clasp, paw mittens, dark shorts/orange hems, cream/teal/red cape, dog tail, white socks, red/cream/teal sneakers. Preserve all original accessories. Preserve all original accessories in ALL figures.\nONE horizontal strip, EXACTLY TWO separate complete figures. LEFT: approved standing idle as fixed scale ruler. RIGHT: SHALLOW grounded knee bend for two-tick jump anticipation and soft landing recoil. Hinge hips only slightly, flex both knees and lower the hips by about10% of standing height. Keep head upright, both soles planted, paw mittens in ready position, original hood/ears/cape/tail/scarf fully visible. This is a small spring-loaded movement, NOT a deep squat, seated/kneeling pose, or compressed miniature. Standing and anticipation share one ground row and identical head/shoe sizes.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 100px standing height, head/hair band approximately58px wide, standing lower shoe widths17/23px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/ren_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/ren/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "chizuru",
+      "action": "jump_start",
+      "file": "generated/chizuru_jump_start_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Chizuru supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: brown-bob-haired, brown-eyed young human woman, orange long-sleeve sweater, navy flared skirt covering thighs, bare lower legs, white sneakers. Casual outfit, NO chef clothing and NO new gear. Preserve all original accessories in ALL figures.\nONE horizontal strip, EXACTLY TWO separated full figures. LEFT: approved standing idle as fixed scale ruler. RIGHT: SHALLOW grounded knee bend for a two-tick pre-jump windup and soft landing recoil. Slightly hinge hips, flex both knees, lower hips about10% of standing height; both white sneaker soles planted. Retain brown bob/face angle and orange sweater/navy skirt. Skirt naturally covers thighs; no underwear showing. Arms in the same relaxed ready posture. Small spring-loaded stance, NOT a deep crouch, kneeling, sitting or vertically squashed figure. Same head/hair/shoes size, same ground row, original body magnification.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 112px standing height, head/hair band approximately43px wide, standing lower shoe widths17/20px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/chizuru_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/chizuru/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "toma",
+      "action": "guard",
+      "file": "generated/toma_guard_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Toma supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: young human man, messy black hair, blue eyes, charcoal business suit, white shirt, dark blue-violet tie, black trousers and leather shoes, black rectangular handheld tablet at rear hip. Preserve suit and tablet, no new gear. Preserve all original accessories in ALL figures.\nExactly TWO separated full-body figures: LEFT standing scale ruler matching reference Image 2 at identical head/shoe size; RIGHT grounded defensive guard, knees only slightly soft, front forearm held across UPPER CHEST BELOW THE CHIN, rear hand keeps the original black tablet protected at the rear hip. Head upright and unobstructed; no hands, props, shoulders or effects inside the hair/face area. Both shoes grounded on a common floor line. Do not introduce a shield or new equipment. Right figure uses the EXACT SAME HEAD, FACE and SHOE scale and perspective as left standing ruler.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 124px standing height, head/hair band approximately37px wide, standing lower shoe widths14/24px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/toma_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/toma/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "ren",
+      "action": "guard",
+      "file": "generated/ren_guard_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Ren supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: small HUMAN boy with brown hair, teal eyes, cream dog-face hood with floppy brown ears, cream sleeves/teal cuffs, red-orange scarf/bone clasp, paw mittens, dark shorts/orange hems, cream/teal/red cape, dog tail, white socks, red/cream/teal sneakers. Preserve all original accessories. Preserve all original accessories in ALL figures.\nExactly TWO separated full-body figures: LEFT standing scale ruler matching reference Image 2; RIGHT grounded defensive guard with soft knees and both paw mitten forearms raised protectively across UPPER CHEST, BELOW CHIN. Dog hood, floppy ears and face entirely unobstructed at original identical size; hands are ordinary original mittens and do not get oversized. Head upright in the same side-three-quarter angle. Feet on one common floor line. Retain scarf, cape, tail, shorts and original sneakers. No shield or effects. Same head and shoe scale in both figures.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 100px standing height, head/hair band approximately58px wide, standing lower shoe widths17/23px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/ren_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/ren/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "chizuru",
+      "action": "guard",
+      "file": "generated/chizuru_guard_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Chizuru supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: brown-bob-haired, brown-eyed young human woman, orange long-sleeve sweater, navy flared skirt covering thighs, bare lower legs, white sneakers. Casual outfit, NO chef clothing and NO new gear. Preserve all original accessories in ALL figures.\nExactly TWO separated full-body figures: LEFT standing scale ruler matching reference Image 2; RIGHT grounded defensive guard with knees slightly soft, both forearms protectively held together across UPPER CHEST BELOW CHIN, elbows below shoulders. Keep brown bob and face upright and completely unobstructed, identical head size/angle as standing ruler. Navy skirt stays modest and covers thighs; two bare lower legs and original white sneakers on common floor. Orange sweater unchanged. No shield, weapon or effects. Same head, hand, leg and shoe scale as standing.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 112px standing height, head/hair band approximately43px wide, standing lower shoe widths17/20px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/chizuru_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/chizuru/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "toma",
+      "action": "dodge",
+      "file": "generated/toma_dodge_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Toma supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: young human man, messy black hair, blue eyes, charcoal business suit, white shirt, dark blue-violet tie, black trousers and leather shoes, black rectangular handheld tablet at rear hip. Preserve suit and tablet, no new gear. Preserve all original accessories in ALL figures.\nExactly FOUR separate full-body figures arranged left to right: (0) standing scale ruler matching reference Image 2, (1) soft-kneed evasive preparation, (2) low lateral evasive lunge toward RIGHT with torso leaning forward about 20 degrees, front knee bent and rear leg extended behind, (3) recovery into the original ready stance. This is a sliding sidestep, not a somersault. Keep HEAD UPRIGHT at identical camera angle and size in every pose. Same original head, shoe and limb proportions across ALL FOUR figures. Tablet stays in rear hand/hip, arms and tablet below neck; no trails or extra limbs. At least one full shoe contacts the common floor line in each grounded figure. All complete silhouettes well separated, even broad poses.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 124px standing height, head/hair band approximately37px wide, standing lower shoe widths14/24px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/toma_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/toma/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "ren",
+      "action": "dodge",
+      "file": "generated/ren_dodge_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Ren supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: small HUMAN boy with brown hair, teal eyes, cream dog-face hood with floppy brown ears, cream sleeves/teal cuffs, red-orange scarf/bone clasp, paw mittens, dark shorts/orange hems, cream/teal/red cape, dog tail, white socks, red/cream/teal sneakers. Preserve all original accessories. Preserve all original accessories in ALL figures.\nExactly FOUR well-separated full-body figures arranged left to right: (0) original standing scale ruler from Image 2, (1) soft-kneed evasive preparation, (2) low lateral evasive lunge toward RIGHT, front knee bent and rear leg extended behind with torso leaning forward 15 degrees, (3) recovery into original ready stance. A sliding sidestep, not a roll. Keep HEAD/DOG HOOD UPRIGHT with identical side-three-quarter angle, original hood/ear width and face size in all four figures. Same original mittens, limbs and sneaker size. Cape and scarf trail modestly BEHIND/BELLOW shoulders and remain disconnected from adjacent figures; leave ample transparent separation even if silhouettes broad. No trails, motion blurs, duplicate limbs or new gear. At least one whole shoe touches the common floor in each pose.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 100px standing height, head/hair band approximately58px wide, standing lower shoe widths17/23px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/ren_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/ren/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "chizuru",
+      "action": "dodge",
+      "file": "generated/chizuru_dodge_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Chizuru supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: brown-bob-haired, brown-eyed young human woman, orange long-sleeve sweater, navy flared skirt covering thighs, bare lower legs, white sneakers. Casual outfit, NO chef clothing and NO new gear. Preserve all original accessories in ALL figures.\nExactly FOUR separated full-body figures left to right with clear outer margins and generous gaps: (0) standing scale ruler matching reference Image 2, (1) evasive preparation with knees softly bent, (2) low lateral dodge toward RIGHT with front knee bent and rear leg extended behind, torso leaning forward 15 degrees, (3) recovery to the ready stance. A sliding sidestep, not rolling. Head remains upright at identical side-three-quarter camera angle, brown bob size unchanged in all poses. Arms below chin, two ordinary hands. Navy skirt fully covers thighs in the deep lunge, no exposed underwear. Original orange sweater and white sneakers, limb and shoe sizes identical to standing ruler. At least one whole shoe on common floor in every pose. No blurs, trails, duplicates or extra limbs.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 112px standing height, head/hair band approximately43px wide, standing lower shoe widths17/20px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/chizuru_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/chizuru/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "ren",
+      "action": "dodge",
+      "file": "generated/ren_dodge_keys_v2.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Ren supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: small HUMAN boy with brown hair, teal eyes, cream dog-face hood with floppy brown ears, cream sleeves/teal cuffs, red-orange scarf/bone clasp, paw mittens, dark shorts/orange hems, cream/teal/red cape, dog tail, white socks, red/cream/teal sneakers. Preserve all original accessories. Preserve all original accessories in ALL figures.\nCreate EXACTLY FOUR full-body poses at a somewhat SMALLER composition scale so everything fits with at least 60 source pixels of transparent OUTER MARGIN and at least 70 pixels clear gap between characters. ALL silhouettes including cape tips, sneakers and ears must be entirely inside canvas and NEVER touch each other or canvas edges. Pose0 is standing ruler exactly matching Image2's proportions; pose1 soft-knee dodge preparation; pose2 low evasive sliding lunge right with rear leg extended; pose3 recovery ready stance. Every pose same original upright head/dog hood camera, WIDTH and size, same small hands and sneaker dimensions. Cape trails modestly down/behind, no oversized flaring. Head unobstructed. Preserve reference outfit/colors/accessories. A sidestep, no roll, no duplicate limbs or trails. Common foot-ground line.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 100px standing height, head/hair band approximately58px wide, standing lower shoe widths17/23px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/ren_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/ren/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "ren",
+      "action": "dodge",
+      "file": "generated/ren_dodge_keys_v3.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Ren supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: small HUMAN boy with brown hair, teal eyes, cream dog-face hood with floppy brown ears, cream sleeves/teal cuffs, red-orange scarf/bone clasp, paw mittens, dark shorts/orange hems, cream/teal/red cape, dog tail, white socks, red/cream/teal sneakers. Preserve all original accessories. Preserve all original accessories in ALL figures.\nEXACTLY FOUR full-body figures, wide landscape canvas, 60px outer transparent margins, 70px gaps. Figure0 original upright standing ruler. Figure1 soft-kneed preparation. Figure2 moderately LOW lateral lunge to right, torso upright, front knee bent, rear leg extends behind; keep dog hood and ears EXACTLY THE SAME WIDTH/HEIGHT as standing hood, head neither grows nor flares, head remains upright. Figure3 original standing recovery. In all figures CAPE MUST HANG LOW FROM BACK BELOW SHOULDER, cape upper edge must stay well below chin; DO NOT let cape flare up into head/hood area. Scarf tails low. Keep original cream dog hood ears, face and hair identical dimensions. Same sneaker dimensions and two legs. Every pose one shoe or both shoes grounded. All silhouettes complete with margins, no effects, no rolls, no extra limbs.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 100px standing height, head/hair band approximately58px wide, standing lower shoe widths17/23px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/ren_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/ren/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "toma",
+      "action": "dash",
+      "file": "generated/toma_dash_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Toma supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: young human man, messy black hair, blue eyes, charcoal business suit, white shirt, dark blue-violet tie, black trousers and leather shoes, black rectangular handheld tablet at rear hip. Preserve suit and tablet, no new gear. Preserve all original accessories in ALL figures.\nExactly FIVE full-body figures in a WIDE LANDSCAPE CANVAS, ample outer margins and clear gaps, all silhouettes complete and disconnected. Pose0 original standing scale ruler, poses1-4 FOUR DISTINCT RUNNING stride phases toward RIGHT: front leg reaches forward contact, legs pass under hips, opposite leg reaches forward contact, opposite passing phase. Alternate front and rear legs naturally; at least one shoe at common foot-floor line in each running pose. Torso leans 15 degrees forward but HEAD STAYS UPRIGHT at identical original side-three-quarter angle and EXACT SAME SIZE as ruler, same limb and leather shoe dimensions. One normal front arm swings below chin, rear hand keeps black tablet at rear hip. Original suit/jacket/tie, no new gear. No duplicate feet, speed trails, smoke or blurs. DO NOT draw five identical stances.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 124px standing height, head/hair band approximately37px wide, standing lower shoe widths14/24px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/toma_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/toma/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "ren",
+      "action": "dash",
+      "file": "generated/ren_dash_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Ren supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: small HUMAN boy with brown hair, teal eyes, cream dog-face hood with floppy brown ears, cream sleeves/teal cuffs, red-orange scarf/bone clasp, paw mittens, dark shorts/orange hems, cream/teal/red cape, dog tail, white socks, red/cream/teal sneakers. Preserve all original accessories. Preserve all original accessories in ALL figures.\nEXACTLY FIVE full-body figures on wide landscape canvas, shrink ALL composition uniformly to leave 60px transparent outer margins and 70px gaps. Pose0 upright standing ruler from Image2. Poses1-4 four DISTINCT RUNNING stride phases right: reach/contact one leg, passing beneath hips, reach/contact opposite leg, opposite passing. At least one whole original sneaker at common floor line per pose. Same original compact HUMAN child proportions, cream dog hood/ears EXACT SAME SIZE and upright camera angle in all five. Body can lean 10 degrees but hood doesn't rotate/grow. Arms below chin and mittens normal size. Cape and scarf stay LOW BELOW SHOULDERS behind torso, not flaring into head band or neighboring figure. Retain tail, shorts, scarf clasp, cape edging, all original colors. No smoke, blur, new gear or extra limbs. Running keys must visibly alternate leg overlap/order, not identical stances.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 100px standing height, head/hair band approximately58px wide, standing lower shoe widths17/23px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/ren_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/ren/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "chizuru",
+      "action": "dash",
+      "file": "generated/chizuru_dash_keys_v1.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Chizuru supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: brown-bob-haired, brown-eyed young human woman, orange long-sleeve sweater, navy flared skirt covering thighs, bare lower legs, white sneakers. Casual outfit, NO chef clothing and NO new gear. Preserve all original accessories in ALL figures.\nExactly FIVE complete full-body figures on wide landscape canvas with ample transparent outer margins and wide gaps. Pose0 original standing ruler; poses1-4 four DISTINCT RUNNING strides right: forward contact one leg, legs passing beneath hips, forward contact opposite leg, opposite passing. Alternate leading legs/overlap order visibly. At least one whole white sneaker touches common floor in each pose. Torso leans slightly forward, head stays upright same side-three-quarter camera angle and EXACT SAME bob/face size as ruler. Same orange sweater/navy skirt with thighs covered, bare lower legs and identical sneaker sizes. Natural arm swing BELOW CHIN, only two hands and feet each. No new gear, trail, blur, exposed underwear or clipped silhouette. All figures same character and drawing scale.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 112px standing height, head/hair band approximately43px wide, standing lower shoe widths17/20px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/chizuru_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/chizuru/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "ren",
+      "action": "dash",
+      "file": "generated/ren_dash_keys_v2.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Ren supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: small HUMAN boy with brown hair, teal eyes, cream dog-face hood with floppy brown ears, cream sleeves/teal cuffs, red-orange scarf/bone clasp, paw mittens, dark shorts/orange hems, cream/teal/red cape, dog tail, white socks, red/cream/teal sneakers. Preserve all original accessories. Preserve all original accessories in ALL figures.\nEXACTLY FIVE complete well-separated full-body figures on wide canvas, transparent 80px outer margins. IMPORTANT original approved standing body height100 pixel units and DOG HOOD WIDTH58 pixel units: hood including ears must be 58% of standing height, NEVER61% or more. Match reference2 hood-to-full-height proportions exactly. Same hood/face/shoe size in ALL poses. Pose0 ORIGINAL STANDING RULER straight knees; poses1-4 compact four running stride phases right: one extended front contact with rear lifted, one legs passing with high front knee, opposite foot extended front with nearer leg lifted rear, opposite passing with nearer knee up. Visibly alternate knees/foot depth order and arm swing. Head upright in same original camera. All limbs complete, same sneakers, arms below chin. Cape held low below shoulders to avoid entering head band. Every running pose at least one shoe at common groundline. No texts/blur/trails/new gear.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 100px standing height, head/hair band approximately58px wide, standing lower shoe widths17/23px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/ren_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/ren/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    },
+    {
+      "character": "chizuru",
+      "action": "dash",
+      "file": "generated/chizuru_dash_keys_v2.png",
+      "prompt": "Use case: identity-preserve. Production pixel-art key strip for original platform fighter あにあにバトル！！. Reference Image1 approved larger Chizuru supports identity and clothing details; Image2 authoritative 224x160 game idle controls exact face/head/hair/shoe sizes, pixel scale and palette. Character: brown-bob-haired, brown-eyed young human woman, orange long-sleeve sweater, navy flared skirt covering thighs, bare lower legs, white sneakers. Casual outfit, NO chef clothing and NO new gear. Preserve all original accessories in ALL figures.\nEXACTLY FIVE complete full-body figures in a wide landscape canvas with transparent margins. Pose0 original upright standing ruler. Critical standing-height112 units, bob/head width43 units (38.4% of standing height), same head width and face-size for EVERY RUNNING POSE, never enlarged. Use the identical approved bob/head proportions from Image2. Poses1-4 FOUR VERY DISTINCT running phases right: (1) long stride with nearer leg fully extended toward right and far leg bent backward, (2) passing phase nearer knee HIGH IN FRONT and far leg nearly straight grounded under hips, (3) OPPOSITE long stride far leg fully extended right and nearer leg bent back, (4) opposite passing far knee raised in front with nearer leg straight grounded. Alternate leg silhouette/overlap clearly, each 2legs/2shoes/2arms. Arms swing below chin. Torso slight forward lean, head stays upright original side-three-quarter angle, same shoes/limbs as ruler. Original orange sweater and modest navy skirt covering upper thighs, white sneakers. No blur, effects, labels or new gear.\nAll figures face RIGHT in the exact same side/three-quarter reference angle. Preserve rigid same face/head angle, eye color and expression. Same physical head/hair/hands/shoes and body magnification in every pose. Two arms, two legs with readable joints and separate shoes. Never independently enlarge or shrink a shorter pose to fill a cell. First standing figure is the scale ruler: 112px standing height, head/hair band approximately43px wide, standing lower shoe widths17/20px when normalized. Arms always below the head. Final contract224x160 transparent cells, PPU50, torso x112, feet baseliney159 for grounded keys. Crisp square pixel clusters and sharp dark outlines, restrained coherent32-color palette matching Image2, minimal shading. Equal layout cells; at least a wide clear transparent gap between COMPLETE figures; generous exterior margins, no cropped extremities. Genuine transparent background.\nNo smooth painting, antialiasing, blur, gradients, afterimages, ghost limbs, motion trails, extra equipment, different costume, missing accessories, changed head angle, larger head or feet, text, labels, borders, checkerboard, ground, floor shadows, glowing shield or effects.",
+      "references": [
+        {
+          "file": "art_source/art3_idle/chizuru_idle_v1.png",
+          "role": "Approved larger identity and costume; Image 1"
+        },
+        {
+          "file": "art_source/art3_idle/breathing/ready/chizuru/idle_00.png",
+          "role": "Authoritative game scale, head/shoes and palette; Image 2"
+        }
+      ],
+      "transparent_background": true
+    }
+  ]
+}

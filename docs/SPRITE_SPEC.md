@@ -2,6 +2,8 @@
 
 ユーザー指定「今後もすべて同じサイズ」を、生成物をゲームへ渡す共通規格として固定する。
 
+ART3Dのジャンプ/下降/浅い予備・着地/ガード/回避/ダッシュもこの規格。個々のフレーム数/fps/キー割当・空中アンカー・地上2tick予備は[再制作指示書](SPRITE_GENERATION_GUIDE.md)§10、原画/倍率/出力はart_source/art3_actions/。頭部帯幅は全51キーで採用待機±2px以内、靴の向き/投影も目視確認。既存106クリップ584Fを維持。
+
 別サービス/別担当へ渡す詳しい条件・キャラ別設定・コピペ用プロンプト・JSON・加工/検査手順は[再制作指示書](SPRITE_GENERATION_GUIDE.md)。参照PNG/パレット/全文プロンプトを含む自己完結した[生成キット](../art_source/sprite_generation_kit/README.md)と[ZIP](../art_source/sprite_generation_kit.zip)を用意済み。今後の生成でもこのセットを渡す。
 
 | 項目 | 固定値 |

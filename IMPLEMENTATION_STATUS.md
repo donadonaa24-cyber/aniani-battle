@@ -1,6 +1,21 @@
-# 実装状況：ART3Cしゃがみ・再制作指示書完了（2026-10-13）
+# 実装状況：ART3D基本動作・地上ジャンプ予備、Unity全合格（2026-10-13）
 
-## 最新作業：3人の新しゃがみと持ち出し用生成キット
+## 最新作業：ジャンプ・ガード・回避・ダッシュ＋浅い予備/着地
+
+[ART3_ACTIONS](docs/codex_tasks/ART3_ACTIONS.md)を先に作成して全3人の新動作を順番に生成・確認し、18クリップ93Fへ接続。固定224×160/PPU50、立ち由来の倍率、頭部帯幅±2px以内、靴/関節も目視確認。採用15原画＋不採用4原画を保存。全106クリップ584F、既存ID/Timing/待機/しゃがみを維持。
+
+- **Unity：BuildAll成功・EditMode357/357・PlayMode30/30・Windowsビルド成功。失敗/スキップ0。** TestResults/art3d_*、2026-10-13 01:53:43/01:55:04 JST終了。初回のschema期待値と追加テストの入力反映待ちを修正して全4工程再合格、旧アサーション維持。
+- ユーザーが選んだ地上2tick予備→同初速で踏切、空中2段即時。schema7/GroundJumpStartupFrames=2、新状態は既存landへ接続。スタミナ1度消費・中断払い戻しなし、入力保持、被弾/足場/場外/ヒット停止を検査。着地8tickは浅いかがみ4tick→採用待機4tick。
+- 純C#317/317、API参照コンパイル警告/エラー0。素材93F＋待機/しゃがみ回帰、665ファイル再生成一致。再制作指示書§10/キット更新、ZIP341ファイル照合合格。[出力](art_source/art3_actions/README.md)/[プレビュー](docs/art_wip/art3d_previews.md)/[最終報告](docs/codex_logs/art3d_final.md)。
+- 最新起動Build/art3d/AniBato.exe、保持art3d/art3c。実機撮影は最前面確保できずキー送信前に停止、[スクショ未保存](docs/screenshots/art3d_previews.md)。Windows目視は残る。旧TestResults111件を容量管理で整理、dotnet類/過去の最終報告は保持。
+- 全合格した区切りを`Add fixed-size action sprites and two-tick jump anticipation`でcommit・origin mainへ通常pushする。SHA/反映はgit log/statusで確認。Claude交代はRESUME冒頭/HANDOFF§4から。次の候補は実機確認、walk/攻撃/勝敗等の新絵柄化、6B手動確認。次の指示書を先に書く。
+
+### ART3D制作中の履歴（以下は当時の状態）
+
+- 途中の区切り：全4動作＋浅い予備/着地、採用15原画＋不採用4原画を保存。51キーの立ち倍率/224×160/頭部帯幅±2px検査・目視確認。18クリップ93Fを接続、全106クリップ584Fを保持。原画/全文プロンプト/採用選択/共通倍率/実装用PNGはart_source/art3_actions/。665ファイル再生成SHA-256一致、待機/しゃがみ回帰合格。再制作指示書§10とZIP更新、339ファイル照合合格。
+- 地上JumpStartupを実装：2tick接地した浅いかがみ→同じ初速で踏切。空中2段即時、予備開始でスタミナ1度消費、中断は払い戻さない。新行動のバッファを保持。着地8tickはかがみ4tick→待機4tick。純C#317/317、API参照コンパイル警告/エラー0。Unity初回はBuildAll/ビルド成功、Edit356/357・Play29/30。旧schema6固定期待を7+予備2の検査へ修正、追加Playテストを実入力イベント反映待ちへ修正。該当テスト確認後、全4工程を再実行する。まだ全合格/commit前。ZIPは原画寸法/採否記録追加後340ファイル照合合格。
+
+## ART3C完了時の履歴：3人の新しゃがみと持ち出し用生成キット
 
 [ART3_CROUCH](docs/codex_tasks/ART3_CROUCH.md)を作成してから内蔵image_genで同倍率の立ち/しゃがみ原画を各1枚生成。立ちの実高さを物差しにしてしゃがみへ同じ倍率を適用し、頭/靴のサイズを保持。1枚から整数行移動で8Fの体呼吸を作り、crouchへ接続しました。
 

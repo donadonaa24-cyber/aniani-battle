@@ -7,7 +7,7 @@ namespace AniBato.Battle
         {
             MatchSeconds = 70, InitialHearts = 3, NormalHitsPerHeart = 3, InputBufferFrames = 6,
             DoubleTapFrames = 12, ComboWindowFrames = 40, MaxComboHits = 3, MaxHeartsLostPerCombo = 1,
-            DropThroughFrames = 12, DropThroughSpeed = 8, DirectionThreshold = 0.5f, EnableRingOut = true,
+            DropThroughFrames = 12, DropThroughSpeed = 8, DirectionThreshold = 0.5f, EnableRingOut = true, GroundJumpStartupFrames = 2,
             SchemaVersion = 4, Defense = PhaseTwoDefaults.Defense(), Gauge = PhaseTwoDefaults.Gauge(), Shrink = StageShrinkDefinition.Default,
             ComboFinishKnockback = new BattleVector(18, 14), ComboFinishHitstunFrames = 24, FollowupImmunityFrames = 48
         };

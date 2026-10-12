@@ -98,6 +98,92 @@ namespace AniBato.Tests
             }
             finally { UnityEngine.Object.DestroyImmediate(texture); }
         }
+        private static System.Collections.Generic.IEnumerable<object[]> ActionCases()
+        {
+            string[] keys = { "toma", "ren", "chizuru" }, assets = { "Touma", "Ren", "Chizuru" };
+            string[] clips = { "jump", "fall", "land", "guard", "dodge", "dash" };
+            AnimationState[] states = { AnimationState.Jump, AnimationState.Fall, AnimationState.Land, AnimationState.Guard, AnimationState.Dodge, AnimationState.Dash };
+            int[] counts = { 6, 6, 2, 6, 3, 8 };
+            bool[] loops = { false, true, false, true, false, true };
+            for (int character = 0; character < 3; character++) for (int c = 0; c < clips.Length; c++)
+                yield return new object[] { keys[character], assets[character], clips[c], states[c], counts[c], c == 4 ? 12 : 15, loops[c] };
+        }
+        [TestCaseSource(nameof(ActionCases))]
+        public void NewActionClipsUseEveryFixedFrameAtOriginalTiming(string key, string assetName, string name, AnimationState state, int count, int fps, bool loop)
+        {
+            var set = AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/_Project/Data/" + assetName + ".asset").Animations;
+            var clip = set.Find(name);
+            Assert.That(clip.Frames.Length, Is.EqualTo(count)); Assert.That(clip.Fps, Is.EqualTo(fps)); Assert.That(clip.Loop, Is.EqualTo(loop));
+            for (int f = 0; f < count; f++)
+            {
+                var sample = new AnimationSample { State = state, Age = f * 60 / fps };
+                Assert.That(set.TrySprite(sample, out Sprite sprite), Is.True); Assert.That(sprite, Is.SameAs(clip.Frames[f]));
+                Assert.That(sprite.rect.size, Is.EqualTo(new Vector2(224, 160))); Assert.That(sprite.pivot, Is.EqualTo(new Vector2(112, 0)));
+                Assert.That(sprite.pixelsPerUnit, Is.EqualTo(50)); Assert.That(set.HeadHeight(sample), Is.EqualTo(clip.HeadHeights[f]));
+            }
+            Assert.That(set.TrySprite(new AnimationSample { State = state, Age = count * 60 / fps }, out Sprite end), Is.True);
+            Assert.That(end, Is.SameAs(clip.Frames[loop ? 0 : count - 1]));
+            var texture = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+            try
+            {
+                Assert.That(ImageConversion.LoadImage(texture, File.ReadAllBytes("Assets/_Project/Art/Sprites/" + key + "/" + name + ".png")), Is.True);
+                Assert.That(texture.width, Is.EqualTo(224 * count)); Assert.That(texture.height, Is.EqualTo(160));
+                var pixels = texture.GetPixels32(); var colors = new System.Collections.Generic.HashSet<Color32>();
+                for (int f = 0; f < count; f++)
+                {
+                    int top = -1, bottom = 160;
+                    for (int y = 0; y < 160; y++) for (int x = 0; x < 224; x++)
+                    {
+                        Color32 color = pixels[y * texture.width + f * 224 + x]; Assert.That(color.a, Is.EqualTo(0).Or.EqualTo(255));
+                        if (color.a == 0) continue; colors.Add(color); top = Math.Max(top, y); bottom = Math.Min(bottom, y);
+                        Assert.That(x, Is.InRange(2, 221)); Assert.That(y, Is.LessThanOrEqualTo(156));
+                    }
+                    Assert.That(clip.HeadHeights[f], Is.EqualTo(top + 1));
+                    if (name != "jump" && name != "fall") Assert.That(bottom, Is.Zero, "Grounded actions must keep the foot baseline.");
+                }
+                Assert.That(colors.Count, Is.LessThanOrEqualTo(32));
+            }
+            finally { UnityEngine.Object.DestroyImmediate(texture); }
+        }
+        [TestCase("toma", "Touma")][TestCase("ren", "Ren")][TestCase("chizuru", "Chizuru")]
+        public void RealJumpStartupAndLandingUseShallowPoseThenApprovedIdle(string key, string assetName)
+        {
+            var data = AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/_Project/Data/" + assetName + ".asset"); var set = data.Animations;
+            var rules = AssetDatabase.LoadAssetAtPath<BattleRules>("Assets/_Project/Data/BattleRules.asset").ToDefinition();
+            Assert.That(rules.GroundJumpStartupFrames, Is.EqualTo(2)); Assert.That(set.Timing.LandingTicks, Is.EqualTo(8));
+            var sim = new AniBato.Battle.BattleSimulation(data.ToDefinition(), data.ToDefinition(), rules, AniBato.Battle.PhaseOneDefaults.Stage());
+            var player = new FighterAnimationPlayer(); player.Configure(set.Timing); player.Reset(sim.P1, sim.Match);
+            sim.Tick(new AniBato.Battle.FrameInput(pressed: AniBato.Battle.InputButtons.Jump), default);
+            for (int tick = 0; tick < 2; tick++)
+            {
+                player.Advance(sim.P1, sim.Match, false, false, false);
+                Assert.That(player.Sample.State, Is.EqualTo(AnimationState.JumpStartup)); Assert.That(sim.P1.Grounded, Is.True);
+                Assert.That(set.TrySprite(player.Sample, out Sprite sprite), Is.True); Assert.That(sprite, Is.SameAs(set.Find("land").Frames[0]));
+                sim.Tick(default, default);
+            }
+            Assert.That(sim.P1.Grounded, Is.False); player.Advance(sim.P1, sim.Match, false, false, false);
+            Assert.That(player.Sample.State, Is.EqualTo(AnimationState.Jump));
+            int flight = 0;
+            while (!sim.P1.Grounded && flight++ < 180) { sim.Tick(default, default); player.Advance(sim.P1, sim.Match, false, false, false); }
+            Assert.That(sim.P1.Grounded, Is.True);
+            for (int tick = 0; tick < 8; tick++)
+            {
+                Assert.That(player.Sample.State, Is.EqualTo(AnimationState.Land));
+                Assert.That(set.TrySprite(player.Sample, out Sprite sprite), Is.True); Assert.That(sprite, Is.SameAs(set.Find("land").Frames[tick < 4 ? 0 : 1]));
+                sim.Tick(default, default); player.Advance(sim.P1, sim.Match, false, false, false);
+            }
+            Assert.That(player.Sample.State, Is.EqualTo(AnimationState.Idle));
+            var land = new Texture2D(2, 2); var idle = new Texture2D(2, 2);
+            try
+            {
+                Assert.That(ImageConversion.LoadImage(land, File.ReadAllBytes("Assets/_Project/Art/Sprites/" + key + "/land.png")), Is.True);
+                Assert.That(ImageConversion.LoadImage(idle, File.ReadAllBytes("Assets/_Project/Art/Sprites/" + key + "/idle.png")), Is.True);
+                var lp = land.GetPixels32(); var ip = idle.GetPixels32();
+                for (int y = 0; y < 160; y++) for (int x = 0; x < 224; x++)
+                    Assert.That(lp[y * land.width + 224 + x], Is.EqualTo(ip[y * idle.width + x]), "Landing must return to the exact approved idle drawing.");
+            }
+            finally { UnityEngine.Object.DestroyImmediate(land); UnityEngine.Object.DestroyImmediate(idle); }
+        }
         [TestCase("toma", "Touma", 124, "toma-keyvisual-cutin.png")]
         [TestCase("ren", "Ren", 100, "ren-dog-rook.png")]
         [TestCase("chizuru", "Chizuru", 112, "chizuru-casual-cutin.png")]
@@ -154,6 +240,13 @@ namespace AniBato.Tests
             var before = AssetDatabase.LoadAllAssetsAtPath(path).OfType<Sprite>().OrderBy(sprite => sprite.name).ToArray();
             Assert.That(before.Length, Is.EqualTo(8));
             var ids = before.Select(sprite => { AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sprite, out string guid, out long id); return guid + "/" + id; }).ToArray();
+            var actionIds = new System.Collections.Generic.Dictionary<string, string[]>();
+            foreach (string name in new[] { "jump", "fall", "land", "guard", "dodge", "dash" })
+            {
+                string actionPath = "Assets/_Project/Art/Sprites/" + key + "/" + name + ".png";
+                actionIds[actionPath] = AssetDatabase.LoadAllAssetsAtPath(actionPath).OfType<Sprite>().OrderBy(sprite => sprite.name)
+                    .Select(sprite => { AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sprite, out string guid, out long id); return guid + "/" + id; }).ToArray();
+            }
             var setBefore = AssetDatabase.LoadAssetAtPath<CharacterAnimationSet>("Assets/_Project/Data/" + key + "AnimationSet.asset");
             var timing = setBefore.Timing;
             var setAfter = AniBato.EditorTools.AnimationSetBuilder.Build(key); AssetDatabase.SaveAssets();
@@ -161,6 +254,12 @@ namespace AniBato.Tests
             var after = AssetDatabase.LoadAllAssetsAtPath(path).OfType<Sprite>().OrderBy(sprite => sprite.name).ToArray();
             var afterIds = after.Select(sprite => { AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sprite, out string guid, out long id); return guid + "/" + id; }).ToArray();
             Assert.That(afterIds, Is.EqualTo(ids));
+            foreach (var entry in actionIds)
+            {
+                var actual = AssetDatabase.LoadAllAssetsAtPath(entry.Key).OfType<Sprite>().OrderBy(sprite => sprite.name)
+                    .Select(sprite => { AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sprite, out string guid, out long id); return guid + "/" + id; }).ToArray();
+                Assert.That(actual, Is.EqualTo(entry.Value), entry.Key);
+            }
         }
         [TestCase(0, "Touma")] [TestCase(1, "Ren")] [TestCase(2, "Chizuru")]
         public void ImportedFramesFreezeAndFlipWithTheirCharacterSample(int index, string assetName)

@@ -103,6 +103,7 @@ namespace AniBato.EditorTools
             { var gauge = definition.Gauge; gauge.OnHit = defaults.Gauge.OnHit; gauge.OnDamaged = defaults.Gauge.OnDamaged; definition.Gauge = gauge; }
             definition.SchemaVersion = Math.Max(4, definition.SchemaVersion); definition = BalanceMigration.Rules(definition);
             if (definition.SchemaVersion < 6) { definition.DropThroughHoldFrames = 18; definition.SchemaVersion = 6; }
+            if (definition.SchemaVersion < 7) { definition.GroundJumpStartupFrames = defaults.GroundJumpStartupFrames; definition.SchemaVersion = 7; }
             asset.Definition = definition;
         }
         private static void UpgradeBindings(InputBindings asset)

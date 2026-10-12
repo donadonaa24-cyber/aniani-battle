@@ -11,6 +11,7 @@ namespace AniBato.Tests
         [TestCase(FighterMode.Move, AnimationState.Move)]
         [TestCase(FighterMode.Dash, AnimationState.Dash)]
         [TestCase(FighterMode.Jump, AnimationState.Jump)]
+        [TestCase(FighterMode.JumpStartup, AnimationState.JumpStartup)]
         [TestCase(FighterMode.Fall, AnimationState.Fall)]
         [TestCase(FighterMode.Guard, AnimationState.Guard)]
         [TestCase(FighterMode.Dodge, AnimationState.Dodge)]
