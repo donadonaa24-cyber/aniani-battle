@@ -1,0 +1,43 @@
+# Unity generated
+AniBato/[Ll]ibrary/
+AniBato/[Tt]emp/
+AniBato/[Oo]bj/
+AniBato/[Bb]uild/
+AniBato/[Bb]uilds/
+AniBato/[Ll]ogs/
+AniBato/[Uu]ser[Ss]ettings/
+AniBato/MemoryCaptures/
+AniBato/*.csproj
+AniBato/*.sln
+AniBato/*.slnx
+AniBato/*.user
+AniBato/*.pidb
+AniBato/*.booproj
+AniBato/*.unityproj
+AniBato/.vs/
+AniBato/.idea/
+AniBato/TestResults*.xml
+AniBato/*.log
+
+# Build output (repo root)
+Build/
+TestResults/
+tools/Validation/obj/
+tools/Validation/bin/
+
+# OS / misc
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Secrets
+.env
+*.pem
+*.key
+docs/art_reference/_style_local/
+
+# Rejected image-generation revisions (kept locally for audit)
+art_source/rejected/
+
+# Raw Codex session transcripts (large, contain local paths). Keep prompts and *_final.md reports.
+docs/codex_logs/*_run.log

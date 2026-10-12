@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839613febdf871a44ab2acd1d5fe2b97, type: 3}
+  m_Name: StageFestival
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.StageData
+  SharedGeometry: {fileID: 11400000, guid: eaaae333f5366f94bb26133ed8e22f91, type: 2}
+  DisplayName: "Battle \xE0 la carte"
+  Theme: 2
+  TimeVariant: "\u591C"
+  BgmKey: stage_2
+  ShrinkMessage: "\u6587\u5316\u796D\u7D42\u4E86\u30FB\u4E2D\u592E\u3078\u96C6\u5408"
+  Thumbnail: {fileID: 21300000, guid: 0e236c9affe076241ada54317e8fb794, type: 3}
+  Background: {r: 0.055, g: 0.045, b: 0.065, a: 1}
+  FarColor: {r: 0.121, g: 0.0935, b: 0.1045, a: 0.55}
+  MidColor: {r: 0.22, g: 0.17, b: 0.19, a: 1}
+  FloorColor: {r: 0.22, g: 0.17, b: 0.19, a: 1}
+  Accent: {r: 0.48, g: 0.37, b: 0.28, a: 1}
+  FarParallax: 0.06
+  MidParallax: 0.12
+  Platforms: []
+  LeftBlastLine: 0
+  RightBlastLine: 0
+  BottomBlastLine: 0
+  SpawnP1:
+    X: 0
+    Y: 0
+  SpawnP2:
+    X: 0
+    Y: 0

@@ -1,0 +1,10 @@
+﻿{
+    "name":  "AniBato.Game",
+    "rootNamespace":  "AniBato.Game",
+    "references":  [
+                       "AniBato.Battle",
+                       "Unity.InputSystem",
+                       "UnityEngine.UI",
+                       "AniBato.Presentation"
+                   ]
+}

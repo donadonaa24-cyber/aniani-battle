@@ -1,0 +1,4 @@
+あなたはこのリポジトリのメイン開発者です。AGENTS.md、IMPLEMENTATION_STATUS.md、docs/RESUME.md、docs/HANDOFF_TO_CODEX.md（§2の落とし穴）を読み、docs/codex_tasks/PHASE5.md の指示書に従って「フェーズ4検証結果を受けた修正」と「フェーズ5（CPU・ゲームパッド・効果音/BGM・演出、CPU同士の自動対戦によるゲージ検証）」を実装してください。原本仕様は docs/SPEC_ORIGINAL.md です。
+Claudeが修正した ProjectBuilder.BuildScene の構造（NewScene前にisTitleを決め、NewScene後にアセットを読み直す）は維持してください。新しい asmdef を作ったらテストasmdefの references に追加すること。
+途中で確認を求めず最後まで実装・検証してください。git commit はしないでください。
+完了したら IMPLEMENTATION_STATUS.md と docs/RESUME.md 等を更新し、最終メッセージで「変更概要／検証結果（Unity未検証の点は明記）／CPUバランス集計の要点／既知の問題／Claudeに実機で見てほしい点」を日本語で報告してください。

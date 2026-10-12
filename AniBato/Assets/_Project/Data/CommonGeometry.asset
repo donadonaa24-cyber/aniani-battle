@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3fb58bf095b694b8de0c43f883cb4d, type: 3}
+  m_Name: CommonGeometry
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.StageGeometryData
+  Platforms:
+  - Bounds:
+      Center:
+        X: 0
+        Y: -0.6
+      Size:
+        X: 36
+        Y: 1.2
+    OneWay: 0
+  - Bounds:
+      Center:
+        X: -8
+        Y: 4
+      Size:
+        X: 7
+        Y: 0.35
+    OneWay: 1
+  - Bounds:
+      Center:
+        X: 8
+        Y: 4
+      Size:
+        X: 7
+        Y: 0.35
+    OneWay: 1
+  LeftBlastLine: -24
+  RightBlastLine: 24
+  BottomBlastLine: -10
+  SpawnP1:
+    X: -5
+    Y: 1.1
+  SpawnP2:
+    X: 5
+    Y: 1.1

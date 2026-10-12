@@ -1,0 +1,142 @@
+﻿using System;
+using AniBato.Battle;
+using UnityEngine;
+using AniBato.Presentation;
+
+namespace AniBato.Game
+{
+    public sealed class BattleRunner : MonoBehaviour
+    {
+        [SerializeField] private CharacterData p1;
+        [SerializeField] private CharacterData p2;
+        [SerializeField] private BattleRules rules;
+        [SerializeField] private StageData stage;
+        [SerializeField] private InputController input;
+        [SerializeField] private BattleSetup setup;
+        [SerializeField] private PresentationSettings presentation;
+        private readonly int[] selected = new int[2];
+        private readonly FixedTickClock clock = new FixedTickClock();
+        public RenderSnapshots RenderState { get; } = new RenderSnapshots();
+        public double RenderFraction => clock.Fraction;
+        public BattleVector RenderPosition(int player) => RenderState.FighterPosition(player, clock.Fraction, Paused);
+        public BattleVector RenderPosition(Projectile shot) => RenderState.ProjectilePosition(shot, clock.Fraction, Paused);
+        private int suppressInputFrame = -1;
+        private ICpuBrain cpuBrain;
+        public CpuDifficulty Difficulty { get; private set; }
+        public ICpuBrain CpuBrain => cpuBrain;
+        private readonly FighterAnimationPlayer[] animations = { new FighterAnimationPlayer(), new FighterAnimationPlayer() };
+        public AnimationSample Animation(int player) => animations[player].Sample;
+        public bool DebugBoxes { get; private set; }
+        public bool ManagedByFlow { get; private set; }
+        public bool Paused { get; private set; }
+        public bool CpuOpponent { get; private set; }
+        public StageData CurrentStage => stage;
+        public BattleSimulation Simulation { get; private set; }
+        public event Action<BattleEvent> EventProduced;
+        public event Action MatchRestarted;
+        public void Configure(CharacterData player1, CharacterData player2, BattleRules battleRules, StageData stageData, InputController controller)
+        { p1 = player1; p2 = player2; rules = battleRules; stage = stageData; input = controller; }
+        public BattleSetup Setup => setup;
+        public CharacterData Character(int player) => player == 0 ? p1 : p2;
+        public void ConfigureSetup(BattleSetup value) => setup = value;
+        public void ConfigurePresentation(PresentationSettings value)
+        { presentation = value; RenderState.DiscontinuityDistance = value.InterpolationDiscontinuityDistance; }
+        private int MaximumCatchupTicks => presentation ? System.Math.Max(1, presentation.MaximumCatchupTicks) : 5;
+        public void SetManagedByFlow() { ManagedByFlow = true; SetPaused(true); }
+        private void Awake() { if (presentation) RenderState.DiscontinuityDistance = presentation.InterpolationDiscontinuityDistance; }
+        public void SetPaused(bool value)
+        { Paused = value; suppressInputFrame = Time.frameCount; clock.Reset(); if (Simulation != null) RenderState.Reset(Simulation); if (input) input.Clear(); }
+        public void BeginMatch(CharacterData first, CharacterData second, StageData selectedStage, bool cpu, CpuDifficulty difficulty = CpuDifficulty.Normal)
+        { p1 = first; p2 = second; stage = selectedStage; CpuOpponent = cpu; Difficulty = difficulty; RestartMatch(); }
+        private void Start()
+        {
+            if (setup)
+            {
+                selected[0] = setup.Player1Index; selected[1] = setup.Player2Index;
+                p1 = setup.Character(selected[0]); p2 = setup.Character(selected[1]);
+            }
+            if (!ManagedByFlow) { FramePacing.Load(); RestartMatch(); }
+        }
+        public void SelectCharacter(int player, int index)
+        {
+            if (player < 0 || player > 1) throw new ArgumentOutOfRangeException(nameof(player));
+            if (!setup) throw new InvalidOperationException("キャラ切替用のBattleSetupが未設定です。BuildAllを実行してください。");
+            if (Simulation != null && !Simulation.Match.IsFinished) throw new InvalidOperationException("キャラ変更は試合終了後です。");
+            var data = setup.Character(index); selected[player] = index;
+            if (player == 0) p1 = data; else p2 = data;
+        }
+        public void RestartMatch()
+        {
+            if (!p1 || !p2 || !rules || !stage || !input)
+                throw new InvalidOperationException("BattleRunnerの設定が欠落しています。BuildAllを実行してください。");
+            Simulation = new BattleSimulation(p1.ToDefinition(), p2.ToDefinition(), rules.ToDefinition(), stage.ToGeometry());
+            if (CpuOpponent)
+            {
+                if (!setup || setup.CpuDifficulties == null || setup.CpuDifficulties.Length != 3 || !setup.CpuDifficulties[(int)Difficulty])
+                    throw new InvalidOperationException("CPU難易度データが未生成です。BuildAllを実行してください。");
+                cpuBrain = new CpuBrain(setup.CpuDifficulties[(int)Difficulty].ToDefinition(), setup.CpuSeed);
+            }
+            else cpuBrain = null;
+            animations[0].Configure(p1.Animations ? p1.Animations.Timing : AnimationTiming.Default);
+            animations[1].Configure(p2.Animations ? p2.Animations.Timing : AnimationTiming.Default);
+            clock.Reset(); RenderState.Reset(Simulation); input.Clear(); animations[0].Reset(Simulation.P1, Simulation.Match); animations[1].Reset(Simulation.P2, Simulation.Match); MatchRestarted?.Invoke();
+        }
+        private void Update()
+        {
+            if (Time.frameCount == suppressInputFrame) { input.Clear(); return; }
+            input.Capture();
+            if (input.DebugBoxesPressed) DebugBoxes = !DebugBoxes;
+            if (input.FullscreenPressed) Screen.fullScreen = !Screen.fullScreen;
+            if (Paused) { input.Clear(); return; }
+            if (Simulation == null) return;
+            if (Simulation.Match.IsFinished)
+            {
+                if (setup && !ManagedByFlow)
+                    for (int player = 0; player < 2; player++)
+                    {
+                        int delta = input.CharacterSelectionDelta(player);
+                        if (delta != 0) SelectCharacter(player, (selected[player] + delta + setup.Characters.Length) % setup.Characters.Length);
+                    }
+                if (!ManagedByFlow && input.RematchPressed) RestartMatch(); else clock.Advance(Time.unscaledDeltaTime, AdvanceTick, MaximumCatchupTicks); return;
+            }
+            AdvanceRenderFrame(Time.unscaledDeltaTime);
+        }
+        public void AdvanceRenderFrame(double elapsedSeconds)
+        { if (!Paused && Simulation != null) clock.Advance(elapsedSeconds, AdvanceTick, MaximumCatchupTicks); }
+        private void AdvanceTick()
+        {
+            if (Simulation.Match.IsFinished)
+            {
+                RenderState.Reset(Simulation);
+                animations[0].Advance(Simulation.P1, Simulation.Match, false, false, false);
+                animations[1].Advance(Simulation.P2, Simulation.Match, false, false, false); return;
+            }
+            bool cinematic = Simulation.CutInRemainingFrames > 0;
+            var first = input.Consume(0); var second = input.Consume(1);
+            RenderState.BeforeTick(Simulation);
+            Simulation.Tick(first, CpuOpponent ? cpuBrain.NextInput(Simulation, 1) : second);
+            RenderState.AfterTick(Simulation);
+            var success = new bool[2];
+            foreach (BattleEvent battleEvent in Simulation.Events)
+            {
+                if (battleEvent.Kind == BattleEventKind.CounterSuccess) success[battleEvent.SourcePlayer] = true;
+                EventProduced?.Invoke(battleEvent);
+            }
+            cinematic |= Simulation.CutInRemainingFrames > 0;
+            animations[0].Advance(Simulation.P1, Simulation.Match, Simulation.P1.IsFrozenThisTick, cinematic, success[0]);
+            animations[1].Advance(Simulation.P2, Simulation.Match, Simulation.P2.IsFrozenThisTick, cinematic, success[1]);
+        }
+        public Sprite EffectSprite(string name, int age)
+        {
+            if (setup && setup.Characters != null)
+                foreach (var data in setup.Characters)
+                    if (data && data.Animations) { var sprite = data.Animations.Effect(name, age); if (sprite) return sprite; }
+            for (int i = 0; i < 2; i++) { var data = Character(i); if (data && data.Animations) { var sprite = data.Animations.Effect(name, age); if (sprite) return sprite; } }
+            return null;
+        }
+        private void OnApplicationFocus(bool focus) { if (!focus) clock.Reset(); }
+    }
+}
+
+
+

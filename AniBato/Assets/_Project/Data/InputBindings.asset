@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6d950aa859dab4da35636cd31e08f7, type: 3}
+  m_Name: InputBindings
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.InputBindings
+  P1:
+    Left: 15
+    Right: 18
+    Up: 37
+    Down: 33
+    Jump: 1
+    Attack: 24
+    Special: 25
+    Guard: 26
+    Dodge: 51
+    Counter: 23
+    Ultimate: 35
+    Dash: 20
+    AlternateLeft: 
+    AlternateRight: 
+    AlternateUp: 
+    AlternateDown: 
+    AlternateJump: 
+    AlternateAttack: 
+    AlternateSpecial: 
+    AlternateGuard: 
+    AlternateDodge: 
+    AlternateCounter: 
+    AlternateUltimate: 
+    AlternateDash: 
+  P2:
+    Left: 61
+    Right: 62
+    Up: 63
+    Down: 64
+    Jump: 56
+    Attack: 71
+    Special: 69
+    Guard: 66
+    Dodge: 52
+    Counter: 67
+    Ultimate: 68
+    Dash: 54
+    AlternateLeft: 
+    AlternateRight: 
+    AlternateUp: 
+    AlternateDown: 
+    AlternateJump: 54000000i
+    AlternateAttack: 55000000i
+    AlternateSpecial: 56000000i
+    AlternateGuard: 57000000i
+    AlternateDodge: 58000000i
+    AlternateCounter: 59000000i
+    AlternateUltimate: 5a000000i
+    AlternateDash: 4d000000i
+  Rematch: 32
+  Fullscreen: 104
+  SchemaVersion: 2

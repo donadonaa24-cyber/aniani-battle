@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed44b181944168943a577d272b61608e, type: 3}
+  m_Name: CpuEasy
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.CpuDifficultyData
+  Definition:
+    ReactionFrames: 18
+    DecisionFrames: 10
+    SchemaVersion: 5
+    AttackRestFrames: 105
+    WhiffApproachAttempts: 12
+    AttackChance: 0.65
+    SpecialChance: 0.1
+    ComboChance: 0.3
+    GuardChance: 0.25
+    DodgeChance: 0.12
+    CounterChance: 0.06
+    JustChance: 0.02
+    JumpChance: 0.05
+    EdgeMargin: 2.2
+    CloseDistance: 2.5
+    MediumDistance: 7
+    RetreatDistance: 1.2

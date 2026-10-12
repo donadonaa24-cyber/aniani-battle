@@ -1,0 +1,4 @@
+あなたはこのリポジトリのメイン開発者です。AGENTS.md、IMPLEMENTATION_STATUS.md、docs/RESUME.md を読み、docs/codex_tasks/PHASE4.md の指示書に従って「フェーズ4（ステージ縮小・3ステージ・タイトル〜リザルトまでの画面とゲーム進行）」を実装してください。原本仕様は docs/SPEC_ORIGINAL.md です。画像生成ツールを使ってよい。
+前提：ART2 は Claude が Unity で検証済み（BuildAll成功、EditMode 194/194、PlayMode 10/10、Windowsビルド成功）。Claude が PlayModeTests の asmdef に AniBato.Presentation の参照を追加した。新しい asmdef を作ったらテストasmdefの references への追加を忘れないこと（.NET代替コンパイルでは検出できない）。
+途中で確認を求めず最後まで実装・検証してください。git commit はしないでください。
+完了したら IMPLEMENTATION_STATUS.md と docs/RESUME.md 等を更新し、最終メッセージで「変更概要／検証結果（Unity未検証の点は明記）／既知の問題／Claudeに実機で見てほしい画面と操作」を日本語で報告してください。

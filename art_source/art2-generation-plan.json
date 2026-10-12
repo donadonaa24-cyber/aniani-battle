@@ -1,0 +1,94 @@
+{
+  "common": "Use case: stylized-concept. Asset type: one animation sprite strip for a 2D side-scrolling fighting game. Reference images: exact character design and approved idle identity. SAME face, outfit, head size, anatomical proportions and source scale as idle. Screen RIGHT facing side to three-quarter side view. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, NO antialiasing. ONE horizontal row, equal-width cells, all bodies and props fully visible, generous pure magenta empty gaps at least40px between complete silhouettes. SAME ground baseline for grounded poses. Flat pure #FF00FF magenta background; no shadows/text/labels/borders/extra characters/detached effects.  Canvas3:1 even for two frames; keep anatomical scale and vacant space.",
+  "characters": {
+    "toma": {
+      "design": "Young adult man about seven heads tall, messy black hair, blue eyes, calm sharp face, open black suit jacket, white shirt, loosened navy tie, black trousers, black leather shoes, rugged black tablet with orange edge light. Keep tablet near rear hip unless raised for a move.",
+      "poses": {
+        "walk": "SIX right-facing natural walking steps with alternating feet, compact strides, same upright proportions as idle.",
+        "dash": "FOUR right-facing low sprint steps, torso inclined, jacket and tie streaming backward, tablet gripped securely.",
+        "jump": "THREE rising airborne poses: knees lifting, extending upward, reaching apex. Same body proportions, jacket lifted, facing right.",
+        "fall": "TWO airborne descending poses, knees slightly tucked, arms balancing, jacket and tie lifted, right-facing.",
+        "land": "TWO grounded landing poses: bent knees absorbing impact, rising toward idle.",
+        "attack1": "THREE compact jab poses: chamber fist, full rightward horizontal jab ACTIVE in frame2, retract. Tablet remains near rear hip.",
+        "attack2": "THREE compact elbow-strike poses: twist preparation, extended rightward elbow ACTIVE in frame2, recover. Different silhouette from jab.",
+        "attack3": "FOUR rightward roundhouse kick poses: chamber knee, fully extended horizontal kick ACTIVE in frame2, lower leg, recover. Tablet gripped. All limbs uncropped.",
+        "air_attack": "EXACTLY THREE airborne kick frames: knees tucked, rightward horizontal fully extended kick ACTIVE frame2, retract. Critical scale lock: hair top to chin130 source pixels, shoulder width150px, source head and torso EXACT same dimensions as idle. Because knees are tucked each silhouette is only around430-460px high, with unused magenta space above. Do NOT enlarge airborne body to fill height. Layout image3 idle is the physical ruler.",
+        "special_neutral": "FOUR observation-pulse poses: lift tablet, aim tablet, extend tablet toward right ACTIVE in frame3, retract. Orange tablet edge light only; emitted pulse must be separate sprite, no detached effects.",
+        "special_side": "FOUR low fast interception-step poses: crouched preparation, push off, low forward step ACTIVE in frame3, brake. Jacket/tie flow backward, tablet gripped.",
+        "special_up": "FOUR emergency-rise poses: tuck knees, leap straight upward ACTIVE in frame2, extend upward with jacket flared, apex. No flames/jets.",
+        "special_down": "FOUR field-blocking poses: lift tablet, brace, hold tablet forward upright at chest ACTIVE in frame3, lower. Blue blocking FIELD will be separate; no field drawn here.",
+        "ultimate": "FOUR boundary-break rush poses: draw tablet near chest, wind forward, strongest forward lunge tablet extended ACTIVE in frame3, brake. Blue-orange glow belongs to separate sprite; keep physical character uncropped.",
+        "guard": "EXACTLY TWO nearly-identical UPRIGHT tablet guard breathing frames. Same body/head pixel size as idle (reference source upright height682, hair-top to chin130px, jacket shoulders approx150px). Tablet raised before chest and free hand by chin. Both frames upright with only 3px breathing difference, NO crouch. Sparse wide canvas remains magenta outside characters.",
+        "dodge": "THREE right-facing evade poses: prepare, deeply duck and shift low ACTIVE in frame2, stand recovering.",
+        "counter": "THREE counter poses: cautious open-hand parry stance frame1 (different from tablet guard), rightward sweeping forearm parry success ACTIVE in frame2, recover.",
+        "hitstun": "TWO grounded light-hit recoil poses, shoulders backward, tablet held securely, no injury.",
+        "knockback": "EXACTLY TWO backward-knockback airborne poses, face right, torso reclined diagonally, knees bent, tablet gripped. Critical scale lock: hair top to chin130 source pixels, shoulders150px, head and torso EXACT size of idle reference. Projected bent silhouettes only about440-480px tall, unused magenta space above/below. No injuries. Wide sparse 3:1 strip.",
+        "ko": "THREE grounded defeat poses: standing stunned, kneeling, collapsed seated/kneeling head down. No blood.",
+        "win": "FOUR victory poses: relaxed right-facing, straighten navy tie, close tablet to side, calm slight smile.",
+        "lose": "TWO post-match defeated poses, on one knee with tablet down and bowed head, slumped kneeling. Body physical size unchanged."
+      }
+    },
+    "ren": {
+      "design": "Energetic innocent boy about4.5-5 heads tall, NOT superdeformed. Dark brown hair, blue-green eyes, small fang, dog-face cream hood with floppy brown ears worn on head, white jacket, red scarf with white bone emblem and paw brooch, red-and-teal trimmed cape, black shorts, paw mittens, red paw sneakers, fluffy cream tail. Keep cape/tail/hood ears gently moving with each pose.",
+      "poses": {
+        "walk": "EXACTLY FOUR upright natural walking poses: forward right foot, pass position, forward left foot, pass position. Same hood/head/torso size as idle: full upright663px, hood-top to scarf approx230px. Cape and tail move gently behind, full body and all cape/ears/tail uncropped. FOUR evenly spaced complete silhouettes with at least80px FULL-HEIGHT MAGENTA GAPS. Keep idle physical scale, not shrunk. Tighten cape width only by natural folds.",
+        "dash": "FOUR fast right-facing sprint steps leaning forward, cape trailing behind, compact stride, tail and dog ears flutter.",
+        "jump": "THREE rising airborne jump poses, knees tucked then extend, cape/tail/ears lift, facing right.",
+        "fall": "TWO descending airborne poses, legs slightly tucked, cape/tail/ears lift, facing right.",
+        "land": "TWO grounded landing poses: bent knees, recover upward; cape and ears settle.",
+        "attack1": "THREE paw-mitten punch poses: windup, full rightward horizontal punch ACTIVE in frame2, retract.",
+        "attack2": "THREE alternate paw punch poses: wind opposite mitten near shoulder, opposite-arm rightward hook ACTIVE in frame2, retract. Distinct from jab.",
+        "attack3": "EXACTLY THREE finishing flying kick poses: chamber knee, fully extended rightward horizontal flying kick ACTIVE frame2, return feet under body frame3. Source hood/head/torso SAME size as idle, reference upright663px. Cape flows behind, ears and tail swing. Use THREE equal-width cells across3:1 canvas, fully EMPTY FULL-HEIGHT MAGENTA GAPS at least100px between all silhouettes including cape/tail and extended toe. NO four frames.",
+        "air_attack": "THREE airborne paw-punch poses: windup, full rightward paw strike ACTIVE in frame2, retract.",
+        "special_neutral": "FOUR rook-line thrust poses: draw both paws back, lean, straight rightward long paw thrust ACTIVE in frame3, retract; cape extends rearward. No detached effects.",
+        "special_side": "FOUR horizontal straight-rush poses: crouch, launch, compact horizontal shoulder/body tackle ACTIVE in frame3, brake. Head faces right, cape and tail stream left. No detached effects.",
+        "special_up": "FOUR straight vertical leap poses: squat, launch directly UP with both paws overhead ACTIVE in frame2, extend vertical, apex. No sideways tilt. Cape/ears/tail trail down.",
+        "special_down": "FOUR ambush poses: deeply crouch with BOTH mittens on/near ground (CLEARLY DIFFERENT from standing counter parry), lower predator crouch, forward spring tackle ACTIVE in frame3, recover. Cape streams behind.",
+        "ultimate": "FOUR cross-break poses: crouched ready, leap straight up, explosive rightward horizontal dash ACTIVE in frame3, brake smiling. Cross light belongs to separate sprite. Full body no cropping.",
+        "guard": "TWO standing guard poses with both paw mittens covering upper chest/face, alert right-facing, subtly moving ears.",
+        "dodge": "THREE evade poses: prepare, deeply duck to right ACTIVE in frame2, rise. Keep hood/cape/tail.",
+        "counter": "EXACTLY THREE UPRIGHT standing parry poses: frame1 open paw palm forward inviting attack at chest height, frame2 open paw pushed sideways in a shoulder-height defensive parry (ACTIVE success), frame3 retract palm to chest. NOT the low ambush crouch. Show ONLY physical boy, hands, clothing, dog hood and tail. ABSOLUTELY NO arc, NO glow, NO streak, NO particles, NO motion trails, NO speed lines anywhere. Full upright body663px matching idle, dog hood-top to scarf approx230px, unchanged physical scale.",
+        "hitstun": "TWO grounded light recoil poses with surprised face and backward shoulders, ears bounce, no injuries.",
+        "knockback": "TWO airborne knocked-back poses, knees tucked leaning backward, cape billows, face right, no injuries.",
+        "ko": "THREE defeat poses: stunned standing, knees collapse, seated head down. No injuries/blood.",
+        "win": "FOUR cheerful victory poses: grin, raise paws, both arms high celebrating, joyful paws high. Cape/tail/ears bounce.",
+        "lose": "TWO sad seated post-match poses: seated head bowed, seated dejected with paws on knees and floppy ears. Same physical body scale."
+      }
+    }
+  },
+  "effects": [
+    {
+      "character": "toma",
+      "name": "pulse",
+      "frames": 4,
+      "fps": 12,
+      "loop": true,
+      "description": "Exactly FOUR isolated connected blue-cyan pulse projectiles firing RIGHT, round bright cyan core with thin dark navy contour and small orange edge accents, slightly changing shell rhythm. Each projectile about430px wide and500px tall in source image. Pure connected compact pulse, not a fireball. One row with full-height magenta gaps80px minimum. No detached dots or lines."
+    },
+    {
+      "character": "toma",
+      "name": "field",
+      "frames": 2,
+      "fps": 12,
+      "loop": true,
+      "description": "Exactly TWO isolated connected elliptical blocking fields: cyan-blue holographic ellipse with orange perimeter markers and simple connected analysis grid inside, source silhouette approx610px wide and460px tall. Slight brightness/line-position difference. The outer ellipse and interior grid lines are connected into one shape. One row with huge empty magenta gap300px. No detached text/symbols or particles."
+    },
+    {
+      "character": "toma",
+      "name": "boundary_glow",
+      "frames": 4,
+      "fps": 16,
+      "loop": false,
+      "description": "Exactly FOUR isolated connected blue-orange forward rush auras, source silhouette approx340px wide and610px tall. Open oval cyan outline and connected orange streaks sweeping RIGHT, expanding then diminishing. The aura is an effect behind a person but DRAW NO PERSON. All lines connected into ONE silhouette per frame. Four equal cells with magenta gaps at least80px, no disconnected sparks."
+    },
+    {
+      "character": "ren",
+      "name": "cross_light",
+      "frames": 3,
+      "fps": 18,
+      "loop": false,
+      "description": "Exactly THREE isolated connected orthogonal CROSS light effects for a rook fighter. Warm gold-cream centre with red-teal edge accents, horizontal and vertical straight bars intersect to form a PLUS cross (not diagonal X). Source total cross about600px wide and500px tall in every frame. Frame1 thin emerging cross, frame2 brightest thicker cross, frame3 fading narrower cross; same length/bounds. Three equal cells with at least120px full-height magenta gaps. Solid connected forms, no detached rays or sparks."
+    }
+  ],
+  "note": "Exact final per-call prompts, including field regeneration and symbol-only edits, are in art2-generation-log.json. Final fps/frame counts are in character manifests."
+}

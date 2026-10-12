@@ -1,0 +1,5 @@
+{
+  "name": "AniBato.PlayModeTests",
+  "references": ["AniBato.Battle", "AniBato.Game", "AniBato.Presentation", "Unity.InputSystem", "Unity.InputSystem.TestFramework", "UnityEngine.UI"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

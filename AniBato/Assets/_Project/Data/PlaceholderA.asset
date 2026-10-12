@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f074248a1e5b290478e1a8e11e84cdba, type: 3}
+  m_Name: PlaceholderA
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.CharacterData
+  Movement:
+    Name: "\u4EEE\u30AD\u30E3\u30E9A"
+    HurtboxSize:
+      X: 1.1
+      Y: 2.2
+    MoveSpeed: 9.5
+    DashSpeed: 17
+    GroundDashFrames: 14
+    AirDashFrames: 10
+    JumpSpeed: 20
+    Gravity: 72
+    MaxFallSpeed: 26
+    FastFallSpeed: 36
+    MaxJumps: 2
+    MaxAirDashes: 1
+    GroundNormals: []
+    AirNormals: []
+    Specials: []
+    Ultimate:
+      Name: 
+      Kind: 0
+      IsCloseRange: 0
+      StartupFrames: 0
+      ActiveFrames: 0
+      DamageDelayFrames: 0
+      RecoveryFrames: 0
+      Hitbox:
+        Center:
+          X: 0
+          Y: 0
+        Size:
+          X: 0
+          Y: 0
+      HitstopFrames: 0
+      HitstunFrames: 0
+      Knockback:
+        X: 0
+        Y: 0
+      PiercesNormalDodge: 0
+      SpawnProjectile: 0
+      ProjectileSpeed: 0
+      ProjectileLifetimeFrames: 0
+      ActiveVelocity:
+        X: 0
+        Y: 0
+      ProjectileLaunchVelocity:
+        X: 0
+        Y: 0
+      ProjectileGravity: 0
+      HasSecondaryHitbox: 0
+      SecondaryHitbox:
+        Center:
+          X: 0
+          Y: 0
+        Size:
+          X: 0
+          Y: 0
+      NonDamaging: 0
+      ParalysisFrames: 0
+      MarkFrames: 0
+      SelfHealNormalHits: 0
+      SelfBuff:
+        DurationFrames: 0
+        MoveMultiplier: 0
+        DashMultiplier: 0
+        StartupMultiplier: 0
+      KnockbackMultiplier: 0
+      CooldownFrames: 0
+      ProjectileEraseCount: 0
+      GuardedRecoveryFrames: 0
+      RequiresFollowup: 0
+      StanceFrames: 0
+    Counter:
+      Buff:
+        DurationFrames: 0
+        MoveMultiplier: 0
+        DashMultiplier: 0
+        StartupMultiplier: 0
+      SelfHealNormalHits: 0
+      KnockbackMultiplier: 0
+    UltimateCutInFrames: 0
+  TempoSchemaVersion: 0
+  GroundNormals:
+  - {fileID: 11400000, guid: 0ae52300387372b4294bd00d0ff2d968, type: 2}
+  - {fileID: 11400000, guid: 5d6bbb72aeacc384083c0ca2ff951250, type: 2}
+  - {fileID: 11400000, guid: 5bfb260eab08fbd4b8f59594824ec667, type: 2}
+  AirNormals:
+  - {fileID: 11400000, guid: 17acd4980497c0a429d57c82211e7259, type: 2}
+  - {fileID: 11400000, guid: 839f80743a64dee498f1b8ede088356a, type: 2}
+  - {fileID: 11400000, guid: c4eca1fd1861d6f4b844fbbd4dc60d95, type: 2}
+  Specials:
+  - {fileID: 11400000, guid: 44050ebddae99d945a4cc41cb08bad52, type: 2}
+  - {fileID: 11400000, guid: 89b9d1110b797c945bec9248ea084658, type: 2}
+  - {fileID: 11400000, guid: 9926a625b6923cc45a6605d2ecb2ffa8, type: 2}
+  - {fileID: 11400000, guid: 67511344a387e9a45a1a915dc2f46a17, type: 2}
+  Ultimate: {fileID: 11400000, guid: ae7d1810d6886cf40948893a0a6bca05, type: 2}
+  Tint: {r: 0.1, g: 0.8, b: 1, a: 1}
+  RoundShape: 0
+  Silhouette: 0
+  Portrait: {fileID: 0}
+  Animations: {fileID: 0}
+  SpriteEffects:
+    SchemaVersion: 0
+    ProjectileClip: 
+    DownSpecialClip: 
+    UltimateClip: 
+    ProjectileScale: 0.5
+    DownSpecialScale: 1
+    UltimateScale: 1
+    DownSpecialOpacity: 0.35
+    DownSpecialOffset: {x: 0, y: 0}
+    UltimateOffset: {x: 0, y: 0}
+    SideSpecialTint: {r: 1, g: 1, b: 1, a: 1}

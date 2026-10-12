@@ -1,0 +1,4 @@
+あなたはこのリポジトリのメイン開発者です。AGENTS.md、IMPLEMENTATION_STATUS.md、docs/RESUME.md、docs/HANDOFF_TO_CODEX.md（§2の落とし穴）、docs/REVIEW_NOTES.md を読み、docs/codex_tasks/PHASE5B.md の指示書に従って、0（PlayMode回帰5件の修正）→ A（カクつき解消：描画補間・フレームペーシング・アニメ増量・ボイリング対策）→ B（試合テンポのバランス調整とCPU集計の再実施）の順に実装してください。原本仕様は docs/SPEC_ORIGINAL.md です。画像生成ツールを使ってよい。
+シミュレーションの決定性を壊さないこと。原本の確定ルール（特殊=ハート1、通常3ヒット=ハート1、超必殺=ハート2、ハート3）は変えないこと。テストのアサーションを弱めないこと。新しい asmdef を作ったらテストasmdefの references に追加すること。
+途中で確認を求めず最後まで実装・検証してください。git commit はしないでください。
+完了したら IMPLEMENTATION_STATUS.md と docs/RESUME.md 等を更新し、最終メッセージで「変更概要／検証結果（Unity未検証の点は明記）／CPU集計の before→after／作り直したアニメとプレビューGIFの場所／既知の問題／Claudeに実機で見てほしい点」を日本語で報告してください。

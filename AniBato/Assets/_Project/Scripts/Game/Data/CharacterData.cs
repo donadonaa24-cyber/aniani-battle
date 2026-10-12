@@ -1,0 +1,53 @@
+﻿using System;
+using AniBato.Battle;
+using UnityEngine;
+
+namespace AniBato.Game
+{
+    [CreateAssetMenu(menuName = "あにバト/キャラクター")]
+    public sealed class CharacterData : ScriptableObject
+    {
+        public CharacterDefinition Movement;
+        public int TempoSchemaVersion;
+        public AttackData[] GroundNormals;
+        public AttackData[] AirNormals;
+        public AttackData[] Specials;
+        public AttackData Ultimate;
+        public Color Tint = Color.cyan;
+        public bool RoundShape;
+        public int Silhouette; // 0: equipment, 1: dog ears, 2: chef hat (crossover placeholders).
+        public Sprite Portrait;
+        public CharacterAnimationSet Animations;
+        public CharacterSpriteEffects SpriteEffects;
+        public CharacterDefinition ToDefinition()
+        {
+            var result = Movement;
+            result.GroundNormals = Convert(GroundNormals);
+            result.AirNormals = Convert(AirNormals);
+            result.Specials = Convert(Specials);
+            result.Ultimate = Ultimate ? Ultimate.ToDefinition() : throw new ArgumentException("超必殺技が未設定です。");
+            return result.Snapshot();
+        }
+        private static AttackDefinition[] Convert(AttackData[] assets)
+        {
+            if (assets == null) throw new ArgumentException("攻撃アセットが未設定です。");
+            var result = new AttackDefinition[assets.Length];
+            for (int i = 0; i < result.Length; i++)
+                result[i] = assets[i] ? assets[i].ToDefinition() : throw new ArgumentException("通常攻撃アセットが欠落しています。");
+            return result;
+        }
+    }
+    [Serializable]
+    public sealed class CharacterSpriteEffects
+    {
+        // Inline Unity serialization may materialize an empty object: null alone is not
+        // an initialization marker. Version0 keeps the existing presentation fallback.
+        public int SchemaVersion;
+        public string ProjectileClip, DownSpecialClip, UltimateClip;
+        public float ProjectileScale = 0.5f, DownSpecialScale = 1f, UltimateScale = 1f;
+        public float DownSpecialOpacity = 0.35f;
+        public Vector2 DownSpecialOffset, UltimateOffset;
+        public Color SideSpecialTint = Color.white;
+    }
+}
+

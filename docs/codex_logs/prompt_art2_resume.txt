@@ -1,0 +1,4 @@
+PCシャットダウンで中断していました。作業を再開してください。
+docs/codex_tasks/ART2.md の残り（透真・蓮の残りのアニメ生成と加工・Unity取り込み、PlayModeテスト残り6件の修正）を完了してください。art_source/raw/ にある生成済みの原画（透真 idle/walk/dash/jump/fall、蓮 idle）は品質を確認したうえで再利用し、不足分のみ生成すること。中断時に書きかけだったファイル（特に AniBato/Assets/_Project/Tests/PlayMode/BattleSceneTests.cs）は、壊れていないか最初に確認すること。
+Claudeが修正した AnimationSetBuilder.cs の寸法チェックと、BattleSceneTests.cs の IsolateInput()/RestoreInput() 構造は維持してください。git commit はしないでください。
+完了したら IMPLEMENTATION_STATUS.md 等を更新し、最終メッセージで「変更概要／生成枚数・作り直し枚数／検証結果（Unity未検証の点は明記）／既知の問題／ClaudeにUnityで確認してほしい点」を日本語で報告してください。

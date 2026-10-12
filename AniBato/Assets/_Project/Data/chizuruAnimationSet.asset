@@ -1,0 +1,349 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b54807a1767c94daad275a36926443, type: 3}
+  m_Name: chizuruAnimationSet
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.CharacterAnimationSet
+  Timing:
+    LandingTicks: 8
+    CounterSuccessTicks: 12
+    KnockoutTicks: 24
+  Clips:
+  - Name: air_attack
+    Frames:
+    - {fileID: 859925332, guid: 4b406dbb74ef3424e81f3b27a237997c, type: 3}
+    - {fileID: 417478802, guid: 4b406dbb74ef3424e81f3b27a237997c, type: 3}
+    - {fileID: 1563408361, guid: 4b406dbb74ef3424e81f3b27a237997c, type: 3}
+    - {fileID: -1232773236, guid: 4b406dbb74ef3424e81f3b27a237997c, type: 3}
+    - {fileID: 2021473049, guid: 4b406dbb74ef3424e81f3b27a237997c, type: 3}
+    - {fileID: 1995400305, guid: 4b406dbb74ef3424e81f3b27a237997c, type: 3}
+    HeadHeights: 600000006000000060000000600000006600000066000000i
+    Fps: 15
+    Loop: 0
+  - Name: attack1
+    Frames:
+    - {fileID: -1636787030, guid: 3470afdf70317744dbba89bc1f5914ac, type: 3}
+    - {fileID: 1949243467, guid: 3470afdf70317744dbba89bc1f5914ac, type: 3}
+    - {fileID: 163487083, guid: 3470afdf70317744dbba89bc1f5914ac, type: 3}
+    - {fileID: -2022404633, guid: 3470afdf70317744dbba89bc1f5914ac, type: 3}
+    - {fileID: 1181795548, guid: 3470afdf70317744dbba89bc1f5914ac, type: 3}
+    - {fileID: -919497626, guid: 3470afdf70317744dbba89bc1f5914ac, type: 3}
+    HeadHeights: 6f0000006f0000006f0000006f0000006f0000006f000000i
+    Fps: 15
+    Loop: 0
+  - Name: attack2
+    Frames:
+    - {fileID: 660708114, guid: c05e12016f282ca49be5aace3f498a3f, type: 3}
+    - {fileID: -2025686255, guid: c05e12016f282ca49be5aace3f498a3f, type: 3}
+    - {fileID: -1837620367, guid: c05e12016f282ca49be5aace3f498a3f, type: 3}
+    - {fileID: -1172815154, guid: c05e12016f282ca49be5aace3f498a3f, type: 3}
+    - {fileID: -1247355309, guid: c05e12016f282ca49be5aace3f498a3f, type: 3}
+    - {fileID: 98875632, guid: c05e12016f282ca49be5aace3f498a3f, type: 3}
+    HeadHeights: 6b0000006b0000006b0000006b0000006b0000006b000000i
+    Fps: 15
+    Loop: 0
+  - Name: attack3
+    Frames:
+    - {fileID: -550039955, guid: ba7428bc4900bb3449895ea6504e20df, type: 3}
+    - {fileID: 1917500886, guid: ba7428bc4900bb3449895ea6504e20df, type: 3}
+    - {fileID: -1229066383, guid: ba7428bc4900bb3449895ea6504e20df, type: 3}
+    - {fileID: -1511568447, guid: ba7428bc4900bb3449895ea6504e20df, type: 3}
+    - {fileID: -1962524682, guid: ba7428bc4900bb3449895ea6504e20df, type: 3}
+    - {fileID: 1469027854, guid: ba7428bc4900bb3449895ea6504e20df, type: 3}
+    HeadHeights: 6d0000006d0000006d0000006d0000006d0000006d000000i
+    Fps: 15
+    Loop: 0
+  - Name: counter
+    Frames:
+    - {fileID: -1963236668, guid: 312211fd9736a874b844da262490ace3, type: 3}
+    - {fileID: 444192934, guid: 312211fd9736a874b844da262490ace3, type: 3}
+    - {fileID: -1278520913, guid: 312211fd9736a874b844da262490ace3, type: 3}
+    HeadHeights: 6b000000690000006b000000i
+    Fps: 12
+    Loop: 0
+  - Name: curry_wave
+    Frames:
+    - {fileID: -835485267, guid: 77648f5e51458234a85e756366d4445a, type: 3}
+    - {fileID: 1931320814, guid: 77648f5e51458234a85e756366d4445a, type: 3}
+    - {fileID: -1772879495, guid: 77648f5e51458234a85e756366d4445a, type: 3}
+    - {fileID: 159843840, guid: 77648f5e51458234a85e756366d4445a, type: 3}
+    HeadHeights: 570000005b0000005c00000052000000i
+    Fps: 12
+    Loop: 0
+  - Name: dash
+    Frames:
+    - {fileID: -1007066678, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
+    - {fileID: -691811751, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
+    - {fileID: 1497104257, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
+    - {fileID: 699132933, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
+    - {fileID: 1057351009, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
+    - {fileID: 759844240, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
+    - {fileID: -1568287824, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
+    - {fileID: -1506703188, guid: 86c020e521bcdc74fb2f7c2f56a127c1, type: 3}
+    HeadHeights: 4900000053000000530000005300000053000000530000005300000049000000i
+    Fps: 15
+    Loop: 1
+  - Name: dodge
+    Frames:
+    - {fileID: 1512027293, guid: 4ee4ac0d7a7b9b14cb377c00b7b6405e, type: 3}
+    - {fileID: -1008745253, guid: 4ee4ac0d7a7b9b14cb377c00b7b6405e, type: 3}
+    - {fileID: -2052478744, guid: 4ee4ac0d7a7b9b14cb377c00b7b6405e, type: 3}
+    HeadHeights: 6f000000470000006f000000i
+    Fps: 12
+    Loop: 0
+  - Name: fall
+    Frames:
+    - {fileID: -557543544, guid: b283fcf6b2fd67f4fb438bf87138f78a, type: 3}
+    - {fileID: 1456071665, guid: b283fcf6b2fd67f4fb438bf87138f78a, type: 3}
+    - {fileID: -2013320947, guid: b283fcf6b2fd67f4fb438bf87138f78a, type: 3}
+    - {fileID: -606100674, guid: b283fcf6b2fd67f4fb438bf87138f78a, type: 3}
+    - {fileID: 1888325968, guid: b283fcf6b2fd67f4fb438bf87138f78a, type: 3}
+    - {fileID: 661779981, guid: b283fcf6b2fd67f4fb438bf87138f78a, type: 3}
+    HeadHeights: 63000000630000006b0000006b0000006b00000063000000i
+    Fps: 15
+    Loop: 1
+  - Name: guard
+    Frames:
+    - {fileID: -1355536469, guid: 0640bf7ffec073c4885b31efda24d891, type: 3}
+    - {fileID: 1775696936, guid: 0640bf7ffec073c4885b31efda24d891, type: 3}
+    - {fileID: -1861265640, guid: 0640bf7ffec073c4885b31efda24d891, type: 3}
+    - {fileID: 1799557824, guid: 0640bf7ffec073c4885b31efda24d891, type: 3}
+    - {fileID: -1529643738, guid: 0640bf7ffec073c4885b31efda24d891, type: 3}
+    - {fileID: 541595127, guid: 0640bf7ffec073c4885b31efda24d891, type: 3}
+    HeadHeights: 6f0000006f0000006200000062000000620000006f000000i
+    Fps: 15
+    Loop: 1
+  - Name: hitstun
+    Frames:
+    - {fileID: -1225366775, guid: f275a1ba27db24e4e9338233b2aab772, type: 3}
+    - {fileID: -553033694, guid: f275a1ba27db24e4e9338233b2aab772, type: 3}
+    HeadHeights: 6900000066000000i
+    Fps: 8
+    Loop: 1
+  - Name: idle
+    Frames:
+    - {fileID: 1438416677, guid: 682a3d15fd9a91f4998ada67496cc34c, type: 3}
+    - {fileID: 729747747, guid: 682a3d15fd9a91f4998ada67496cc34c, type: 3}
+    - {fileID: 1590683264, guid: 682a3d15fd9a91f4998ada67496cc34c, type: 3}
+    - {fileID: 1154820261, guid: 682a3d15fd9a91f4998ada67496cc34c, type: 3}
+    - {fileID: -920600795, guid: 682a3d15fd9a91f4998ada67496cc34c, type: 3}
+    - {fileID: -1877226398, guid: 682a3d15fd9a91f4998ada67496cc34c, type: 3}
+    - {fileID: -1297130681, guid: 682a3d15fd9a91f4998ada67496cc34c, type: 3}
+    - {fileID: 758074836, guid: 682a3d15fd9a91f4998ada67496cc34c, type: 3}
+    HeadHeights: 6f0000006e0000006e0000006e0000006f000000700000007000000070000000i
+    Fps: 12
+    Loop: 1
+  - Name: jump
+    Frames:
+    - {fileID: -1078434137, guid: 109761c7f33a7644b87d845a78a1b255, type: 3}
+    - {fileID: 1640417606, guid: 109761c7f33a7644b87d845a78a1b255, type: 3}
+    - {fileID: 1241653699, guid: 109761c7f33a7644b87d845a78a1b255, type: 3}
+    - {fileID: -1042921064, guid: 109761c7f33a7644b87d845a78a1b255, type: 3}
+    - {fileID: -492749988, guid: 109761c7f33a7644b87d845a78a1b255, type: 3}
+    - {fileID: 760934825, guid: 109761c7f33a7644b87d845a78a1b255, type: 3}
+    HeadHeights: 6a0000006a0000005e0000005e0000006c0000006c000000i
+    Fps: 15
+    Loop: 0
+  - Name: knockback
+    Frames:
+    - {fileID: 310123953, guid: 487c6e76342ffd64e8d4eacbf10babd3, type: 3}
+    - {fileID: 2051538346, guid: 487c6e76342ffd64e8d4eacbf10babd3, type: 3}
+    HeadHeights: 6600000064000000i
+    Fps: 8
+    Loop: 1
+  - Name: ko
+    Frames:
+    - {fileID: -1810892023, guid: a8b3c7439d12e044da410feddf26989d, type: 3}
+    - {fileID: -1891399978, guid: a8b3c7439d12e044da410feddf26989d, type: 3}
+    - {fileID: -964820781, guid: a8b3c7439d12e044da410feddf26989d, type: 3}
+    HeadHeights: 640000004600000021000000i
+    Fps: 8
+    Loop: 0
+  - Name: land
+    Frames:
+    - {fileID: 1583198666, guid: 142ecb849c6543640ac268f62013aa42, type: 3}
+    - {fileID: 1135791564, guid: 142ecb849c6543640ac268f62013aa42, type: 3}
+    HeadHeights: 580000006c000000i
+    Fps: 15
+    Loop: 0
+  - Name: lose
+    Frames:
+    - {fileID: -243663445, guid: 2a3116c78621585408dd682cc37a0de6, type: 3}
+    - {fileID: 1861869095, guid: 2a3116c78621585408dd682cc37a0de6, type: 3}
+    HeadHeights: 7000000069000000i
+    Fps: 6
+    Loop: 1
+  - Name: mogu
+    Frames:
+    - {fileID: 129821001, guid: 62e5e459a5f07b6439d8d44effa62de5, type: 3}
+    - {fileID: -414953396, guid: 62e5e459a5f07b6439d8d44effa62de5, type: 3}
+    HeadHeights: 5c0000005c000000i
+    Fps: 8
+    Loop: 1
+  - Name: rice_ball
+    Frames:
+    - {fileID: 1468447863, guid: 010cd8096e46d7d469c5636203372c83, type: 3}
+    - {fileID: -1215478702, guid: 010cd8096e46d7d469c5636203372c83, type: 3}
+    - {fileID: -486326992, guid: 010cd8096e46d7d469c5636203372c83, type: 3}
+    - {fileID: 286590828, guid: 010cd8096e46d7d469c5636203372c83, type: 3}
+    HeadHeights: 57000000580000005700000058000000i
+    Fps: 12
+    Loop: 1
+  - Name: special_down
+    Frames:
+    - {fileID: -1032858469, guid: 5b4b358dec7416548953416d3dcc47db, type: 3}
+    - {fileID: 219311192, guid: 5b4b358dec7416548953416d3dcc47db, type: 3}
+    - {fileID: -306709253, guid: 5b4b358dec7416548953416d3dcc47db, type: 3}
+    - {fileID: 121423375, guid: 5b4b358dec7416548953416d3dcc47db, type: 3}
+    - {fileID: 1110543457, guid: 5b4b358dec7416548953416d3dcc47db, type: 3}
+    - {fileID: 806057082, guid: 5b4b358dec7416548953416d3dcc47db, type: 3}
+    HeadHeights: 6e0000006e0000006e0000006e0000006e0000006e000000i
+    Fps: 15
+    Loop: 0
+  - Name: special_neutral
+    Frames:
+    - {fileID: 1620378861, guid: 78e6cd4579f482648af277c38f4feda4, type: 3}
+    - {fileID: 1654577920, guid: 78e6cd4579f482648af277c38f4feda4, type: 3}
+    - {fileID: 1514385034, guid: 78e6cd4579f482648af277c38f4feda4, type: 3}
+    - {fileID: -678805056, guid: 78e6cd4579f482648af277c38f4feda4, type: 3}
+    - {fileID: 962332660, guid: 78e6cd4579f482648af277c38f4feda4, type: 3}
+    - {fileID: 1409775121, guid: 78e6cd4579f482648af277c38f4feda4, type: 3}
+    HeadHeights: 690000006900000069000000690000006900000069000000i
+    Fps: 15
+    Loop: 0
+  - Name: special_side
+    Frames:
+    - {fileID: 23395557, guid: fce7ef1a93f64da4fbbd3aa860b923a1, type: 3}
+    - {fileID: -320224375, guid: fce7ef1a93f64da4fbbd3aa860b923a1, type: 3}
+    - {fileID: 3626340, guid: fce7ef1a93f64da4fbbd3aa860b923a1, type: 3}
+    - {fileID: 1313233539, guid: fce7ef1a93f64da4fbbd3aa860b923a1, type: 3}
+    - {fileID: -696785641, guid: fce7ef1a93f64da4fbbd3aa860b923a1, type: 3}
+    - {fileID: -89956341, guid: fce7ef1a93f64da4fbbd3aa860b923a1, type: 3}
+    HeadHeights: 5f0000005f0000005f0000005f0000005f0000005f000000i
+    Fps: 15
+    Loop: 0
+  - Name: special_up
+    Frames:
+    - {fileID: -1828471912, guid: 7df61d31dec1a9a4cae87a14a7cef341, type: 3}
+    - {fileID: 421072593, guid: 7df61d31dec1a9a4cae87a14a7cef341, type: 3}
+    - {fileID: -662137, guid: 7df61d31dec1a9a4cae87a14a7cef341, type: 3}
+    - {fileID: -456864108, guid: 7df61d31dec1a9a4cae87a14a7cef341, type: 3}
+    - {fileID: 379685729, guid: 7df61d31dec1a9a4cae87a14a7cef341, type: 3}
+    - {fileID: -1389727569, guid: 7df61d31dec1a9a4cae87a14a7cef341, type: 3}
+    HeadHeights: 5a00000070000000700000006e0000006e00000070000000i
+    Fps: 15
+    Loop: 0
+  - Name: ultimate
+    Frames:
+    - {fileID: -72702565, guid: fb269935770b0fd49a3193fea2e4619a, type: 3}
+    - {fileID: -1496639670, guid: fb269935770b0fd49a3193fea2e4619a, type: 3}
+    - {fileID: 1393690751, guid: fb269935770b0fd49a3193fea2e4619a, type: 3}
+    - {fileID: 2102008689, guid: fb269935770b0fd49a3193fea2e4619a, type: 3}
+    HeadHeights: 64000000730000006100000064000000i
+    Fps: 10
+    Loop: 0
+  - Name: walk
+    Frames:
+    - {fileID: -222837399, guid: b5f803e5a844638468f0f7621a54df0c, type: 3}
+    - {fileID: 897271367, guid: b5f803e5a844638468f0f7621a54df0c, type: 3}
+    - {fileID: -528473552, guid: b5f803e5a844638468f0f7621a54df0c, type: 3}
+    - {fileID: -2083086029, guid: b5f803e5a844638468f0f7621a54df0c, type: 3}
+    - {fileID: 2026856271, guid: b5f803e5a844638468f0f7621a54df0c, type: 3}
+    - {fileID: 47310419, guid: b5f803e5a844638468f0f7621a54df0c, type: 3}
+    - {fileID: 2061779925, guid: b5f803e5a844638468f0f7621a54df0c, type: 3}
+    - {fileID: 41815403, guid: b5f803e5a844638468f0f7621a54df0c, type: 3}
+    HeadHeights: 6700000067000000670000006700000067000000670000006700000067000000i
+    Fps: 15
+    Loop: 1
+  - Name: win
+    Frames:
+    - {fileID: -614068960, guid: bac9d7471822ba74fb2dedeef9c4cccb, type: 3}
+    - {fileID: -851892814, guid: bac9d7471822ba74fb2dedeef9c4cccb, type: 3}
+    - {fileID: 641518604, guid: bac9d7471822ba74fb2dedeef9c4cccb, type: 3}
+    - {fileID: 777881917, guid: bac9d7471822ba74fb2dedeef9c4cccb, type: 3}
+    HeadHeights: 6e0000006e000000710000006e000000i
+    Fps: 8
+    Loop: 1
+  Bindings:
+  - State: 9
+    Clip: air_attack
+    ActiveFrame: 2
+  - State: 6
+    Clip: attack1
+    ActiveFrame: 2
+  - State: 7
+    Clip: attack2
+    ActiveFrame: 2
+  - State: 8
+    Clip: attack3
+    ActiveFrame: 2
+  - State: 17
+    Clip: counter
+    ActiveFrame: 0
+  - State: 18
+    Clip: counter
+    ActiveFrame: 1
+  - State: 2
+    Clip: dash
+    ActiveFrame: 2
+  - State: 16
+    Clip: dodge
+    ActiveFrame: 1
+  - State: 4
+    Clip: fall
+    ActiveFrame: 0
+  - State: 15
+    Clip: guard
+    ActiveFrame: 0
+  - State: 19
+    Clip: hitstun
+    ActiveFrame: 0
+  - State: 0
+    Clip: idle
+    ActiveFrame: 0
+  - State: 3
+    Clip: jump
+    ActiveFrame: 0
+  - State: 20
+    Clip: knockback
+    ActiveFrame: 0
+  - State: 21
+    Clip: ko
+    ActiveFrame: 0
+  - State: 5
+    Clip: land
+    ActiveFrame: 0
+  - State: 23
+    Clip: lose
+    ActiveFrame: 0
+  - State: 13
+    Clip: special_down
+    ActiveFrame: 3
+  - State: 10
+    Clip: special_neutral
+    ActiveFrame: 3
+  - State: 11
+    Clip: special_side
+    ActiveFrame: 3
+  - State: 12
+    Clip: special_up
+    ActiveFrame: 2
+  - State: 14
+    Clip: ultimate
+    ActiveFrame: 2
+  - State: 1
+    Clip: walk
+    ActiveFrame: 0
+  - State: 22
+    Clip: win
+    ActiveFrame: 0
+  PixelsPerUnit: 50
+  StandingHeight: 112

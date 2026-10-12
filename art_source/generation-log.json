@@ -1,0 +1,212 @@
+{
+  "tool": "built-in image_gen",
+  "referencePaths": [
+    "%USERPROFILE%/OneDrive/デスクトップ/anianiバトル！！/docs/art_reference/characters/chizuru_casual_sheet.webp",
+    "%USERPROFILE%/OneDrive/デスクトップ/anianiバトル！！/docs/art_reference/characters/chizuru_casual_fullbody.webp",
+    "%USERPROFILE%/OneDrive/デスクトップ/anianiバトル！！/docs/art_wip/chizuru_idle_test.png"
+  ],
+  "commonPrompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters.",
+  "adoptedNewImages": 26,
+  "generatedOutputsIncludingRevisions": 36,
+  "remakeOutputs": 10,
+  "approvedIdle": "docs/art_wip/chizuru_idle_test.png (copied unchanged to art_source/raw/chizuru/idle.png)",
+  "initialAdditionalStrips": [
+    {
+      "name": "attack1",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly THREE frames: jab wind-up with lead elbow folded, fully extended straight horizontal rightward punch (ACTIVE pose), arm pulled back for recovery. Stance on same baseline.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-b466a942-ebff-4523-92e3-926801047f16.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "attack2",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly THREE frames: hook wind-up with shoulder twisting, strong rightward horizontal hook arm extended (ACTIVE pose), return to guard. Same ground baseline.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-61850e9c-287b-4682-ae19-f1219bd61dac.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "attack3",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly FOUR frames: knee lift wind-up, fully extended side kick to screen RIGHT at waist height (ACTIVE pose), knee retracts, grounded fighting stance. Stable support foot baseline.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-9b604dfc-5e91-4369-aec7-790a8548704d.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "air_attack",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly THREE airborne frames: knee tucked preparation, fully extended rightward flying kick (ACTIVE), knee retraction recovery. Preserve body proportions; full body shown, no floor.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-195ad839-eb87-40e0-9564-8ffb4663b2a1.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "special_side",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly FOUR frames: takes grip on dark gray FRYING PAN, pan held ahead of chest with circular metal bowl facing right, lunges forward pushing the pan rightward (ACTIVE), retracts pan and returns stance. Pan directly attached to gripping hand, no duplicated pans, no effects.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-65d6f2e9-1dc6-4d44-8ef3-d7cfd20777c1.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "special_neutral",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly FOUR frames: holding ONE triangular white rice ball with black seaweed at chest, overhand throw wind-up, fully extended throwing arm pointing right (ACTIVE, rice ball now released so empty hand), arm recovering. No detached rice ball: projectile is separate asset. Same ground baseline.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-ac4ca98f-091d-4d3c-961a-e659a0fbdb8f.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "special_up",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly FOUR airborne spinning uppercut frames holding ONE long-handled silver LADLE: wind-up crouch, right-facing rising ladle overhead (ACTIVE), turning three-quarter back with ladle overhead, right-facing recovery with ladle raised. No effects or detached props. Character scale same as idle.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-f21bb610-d0f7-490f-adc0-80016cd9aaa2.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "special_down",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly FOUR grounded eating frames: holding triangular rice ball with black seaweed in both hands at chest, lifting to mouth, small bite and chewing with content face (ACTIVE), lowering partly eaten rice ball. Same body size and foot baseline.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-edd23a70-bdc3-4efb-9f83-6b2a7d42db69.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "ultimate",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly SIX grounded animation frames: gripping large silver cooking pot with both hands at waist, raises pot chest height, raises full curry pot triumphantly above head, tilts pot toward screen RIGHT to serve curry (ACTIVE), lowers emptied pot, satisfied recovery holding pot waist high. Curry brown with orange vegetables clearly inside pot. No detached food or steam, separate effect later. All props in frame.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-b1ac8e39-098d-4efd-ae6b-16c202f0d6af.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "dodge",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly THREE grounded evasive frames: upright preparation, deep crouch leaning forward avoiding high attack, rise back to fighting stance. No ghost images, effects or motion blur.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-ccb4421b-4cde-48cb-a7d1-e65ecfcbf0f6.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "guard",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly TWO grounded blocking frames: forearms crossed before face, forearms braced slightly closer with knees bent. Both frames defensive and facing RIGHT.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-d2fb8657-d675-4aa6-af75-282599ef7039.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "counter",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly THREE grounded counter frames: guarded ready palms, fully extended decisive rightward open-palm parry swipe (ACTIVE), return to ready stance. Full-body distinct frames.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-b50a93ba-fc6a-4f44-9133-aa1c37db49cb.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "hitstun",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly TWO right-facing grounded damage recoil frames: torso leans backward with startled pained face, stronger flinch with shoulders recoiling and arms lifted. No impact effects.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-b36f1e90-5dc0-404b-8a52-42f7274d4085.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "knockback",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly TWO airborne hurt poses: body knocked backwards towards LEFT with bent knees and face still toward RIGHT, second more reclined backward midair arms flailing. No effects.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-80ddb087-7f65-42c1-9b12-cb996eba772d.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "ko",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly THREE defeat frames: recoiling stunned upright, collapsing knees to ground, resting curled on side fully clothed. Horizontal collapse fits cell, consistent anatomy and scale. No blood, no injury details.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-67142367-9d8b-4e1e-bdab-bfa4c149d4e3.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "win",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly FOUR grounded joyful victory frames: relaxed smile right-facing, one fist lifted in small celebration, both hands raised delighted cheer, relaxed cheerful fist pose. Match identity, no text/effects.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-8b077e4f-f242-4186-b3f7-d4dec5ac7860.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "lose",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 620 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly TWO grounded disappointed post-match frames: head bowed and shoulders slumped, hands folded in front and dejected face. Same casual outfit and brown bob.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-e1cfa6f7-5507-48f1-bc7d-b3f1807b2b2c.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "rice_ball",
+      "prompt": "Exactly FOUR isolated triangular rice ball sprites rotating clockwise through 0, 90, 180, 270 degrees. NO person. White textured rice with black rectangular seaweed patch, dense arcade pixel art dark outline limited palette. Each rice ball 90 pixels high approximately. Horizontal evenly spaced single row, pure flat #FF00FF background, no shadow/text/frame.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-5cd620d3-ab3b-4fa2-9ad9-b09c31a7649f.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "mogu",
+      "prompt": "Exactly TWO isolated small triangular rice ball chewing-status icons: a rice ball with a tiny bite mark, rice ball with slightly larger bite. NO person, NO words or letters, no face. White rice black seaweed, dense pixel art dark outline, each about 90 pixels high. One horizontal row on pure flat magenta #FF00FF.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-b81a3a7e-6e38-4c5a-b57f-b70209031ef7.png",
+      "savedExitCode": 0
+    },
+    {
+      "name": "curry_wave",
+      "prompt": "Exactly FOUR isolated sprites of warm curry steam-wave effect flowing right: small amber cream plume, expanding arc steam, broad rightward curved wave, dissipating small curls. NO person or pot. Dense cel-shaded arcade pixel art with dark outline, golden-brown and cream palette, each effect about 150 pixels high. One horizontal row equally spaced on pure flat #FF00FF, no text/shadow/border.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-1a252635-91c3-41f4-af71-a84b794979a9.png",
+      "savedExitCode": 0
+    }
+  ],
+  "initialMovementStrips": [
+    {
+      "name": "walk",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-e8bcd30e-4945-4685-abff-e78c8d67e61d.png"
+    },
+    {
+      "name": "dash",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-6203609a-ffd6-48ac-b78a-2552a42bae66.png"
+    },
+    {
+      "name": "jump",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-fd27bc54-8e42-4532-8277-3e59acd072e5.png"
+    },
+    {
+      "name": "fall",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-e56474a9-c5e9-4afe-98a6-cee2fc437317.png"
+    },
+    {
+      "name": "land",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-cf74240f-fb49-406a-ac2c-4be61c192e45.png"
+    }
+  ],
+  "revisions": [
+    {
+      "name": "walk",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 675 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly SIX natural right-facing walking frames. Keep stance compact and legs alternating; torso and face the SAME size as reference idle. Upright frames head-to-sole 675 pixels within a 724-high strip. Character top about20, soles about695. Narrow steps to keep each silhouette in its own cell; full-height magenta gap at least25px between them.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-974e390a-efd2-45ec-986a-99e9df035689.png"
+    },
+    {
+      "name": "attack1",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 675 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly THREE right-facing jab frames: anticipation folded elbow, extended horizontal jab ACTIVE, retract to guard. Upright SAME 675pixel head-to-sole size as idle.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-911919eb-0410-44c1-b822-77038e1d42af.png"
+    },
+    {
+      "name": "special_neutral",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 675 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly FOUR upright right-facing rice ball throwing frames: hold rice ball, wind up, fully extended right throwing arm with EMPTY hand (ACTIVE, projectile separate), retract arm. SAME 675pixel head-to-sole size as idle; compact stance; full-height magenta gaps25px minimum.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-8c46d306-31a0-4c09-af52-30291988bc31.png"
+    },
+    {
+      "name": "ultimate",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 675 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly SIX compact mostly-upright right-facing curry pot poses. Frame1 grip pot waist high, frame2 pot chest high, frame3 pot above head, frame4 tilt pot rightward slightly ACTIVE (NO spilled/detached curry: curry stays inside pot), frame5 lower pot, frame6 satisfied smile holding empty pot. Feet close together. Same physical body size as idle; upright body from head to sole675px, pot-overhead adds space above. Enlarge canvas height to1000 if required but keep physical character size675px. Full-height magenta empty gaps at least30px between ALL 6 silhouettes. Narrow pot no wider than shoulders. No chef clothes.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-683cf834-80fb-448e-9862-09610d1f6dae.png"
+    },
+    {
+      "name": "special_side",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 675 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly FOUR right-facing frying-pan rush poses: grip pan close chest, lean forward gripping pan, extend pan rightward ACTIVE with compact legs under torso, retract pan. SAME head/torso/leg size as idle, upright reference height675px. Entire pose fits one quarter-width cell, pure magenta empty column gap25px minimum between silhouettes. Keep pan attached and no long rear stride.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-ce691cd8-e852-448a-a005-03abef4a2bc0.png"
+    },
+    {
+      "name": "dodge",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 675 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly THREE right-facing dodge poses, upright preparation, deep crouch ACTIVE, rise to upright. The two upright poses must have675pixel head-to-sole body height matching reference idle. Deep crouch naturally shorter but identical physical anatomy. Same foot baseline.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-cd7256cf-ca41-4498-b21c-91c6edb7fa2c.png"
+    },
+    {
+      "name": "ko",
+      "prompt": "Use case: stylized-concept. Production sprite strip for a 2D side-scrolling fighting game. Reference 1 and 2 are exact character design; reference 3 is the approved idle identity and style. ONE horizontal row, screen RIGHT facing side to three-quarter side view, 5-6 head proportions. Brown bob hair, brown eyes, orange slightly rolled long-sleeved sweater, navy flared skirt, white sneakers. NO chef clothes or hat. Exact same face, outfit, proportions as approved idle. Dense 1990s arcade fighting-game pixel art, dark outlines, 3-4 cel-shading levels, limited palette, no antialiasing. Character head-to-sole height about 675 pixels as reference, same source scale for all frames, uniform equal-width cells, lots of empty space between frames, identical ground baseline for grounded poses. Full body and props fully visible. Wide horizontal strip. Pure flat #FF00FF background. No shadows, text, labels, frames, borders, detached effects, speed lines, extra characters. ANIMATION: Exactly THREE knockout poses, stunned recoil standing, kneeling collapsed, curled on side on ground. Upright frame675pixel head-to-sole height matching idle; identical body/head scale in kneeling and lying poses. No blood. Full-height magenta gaps30px between silhouettes.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-166e873f-ee8d-4adc-b36d-b6fc35d39555.png"
+    },
+    {
+      "name": "curry_wave",
+      "prompt": "Exactly FOUR distinct isolated SOLID connected golden cream curry steam-wave pixel sprites in one horizontal row. No person or pot. First small arc, second rounded swelling wave, third broad rightward crest, fourth diminished curl. Each sprite one connected silhouette; fully separated with pure #FF00FF magenta empty vertical gaps150px wide. No dispersed tiny particles or disconnected curls. Dark outline, three shades, cel-shaded pixel-art, no antialiasing, no text/borders/shadows.",
+      "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-c4fb8856-9eaa-498d-8e39-d6cc86916885.png"
+    }
+  ],
+  "firstSideRevision": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-6788d2e0-1f23-404e-9fe7-ce42521cce52.png",
+  "finalUltimate": {
+    "frames": 4,
+    "activeFrame": 2,
+    "prompt": "Exact casual identity and wide stance from approved idle. Four full-size poses, gripping curry pot at waist, raising above head, tilting toward right to serve, recovering pot to waist smiling. Body target675px, separate silhouettes with50px magenta gaps, no detached food/steam, no chef outfit.",
+    "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-c159c83c-9091-4536-a8cf-cfa81fc06869.png"
+  },
+  "cutin": {
+    "path": "AniBato/Assets/_Project/Art/Characters/chizuru-casual-cutin.png",
+    "prompt": "Based on supplied casual fullbody and character sheet: exact brown bob, brown eyes, orange sweater, navy skirt. Joyful confident waist-up right-facing portrait, small raised celebratory fist. Polished cel-shaded anime illustration on genuinely transparent background, no chef clothing/hat/scarf/text.",
+    "generatedPath": "%USERPROFILE%\\\\.codex\\generated_images\\01a12bb1-925b-79a3-bcca-d57186f0293c\\exec-c4024710-7cdf-46c5-98bf-27988917f98a.png"
+  },
+  "acceptance": "All26 strips auto-split to manifest count, all final sheets and cut-in visually reviewed. Intermediate revisions retained locally in art_source/rejected/chizuru."
+}

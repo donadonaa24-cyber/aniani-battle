@@ -1,0 +1,15 @@
+﻿{
+    "name":  "AniBato.EditorTools",
+    "rootNamespace":  "AniBato.EditorTools",
+    "references":  [
+                       "AniBato.Battle",
+                       "AniBato.Game",
+                       "Unity.InputSystem",
+                       "UnityEngine.UI",
+                       "AniBato.Presentation",
+                       "Unity.2D.Sprite.Editor"
+                   ],
+    "includePlatforms":  [
+                             "Editor"
+                         ]
+}

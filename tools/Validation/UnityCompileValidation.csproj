@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <UnityEditorRoot Condition="'$(UnityEditorRoot)' == ''">C:/Program Files/Unity/Hub/Editor/6000.6.0f1/Editor</UnityEditorRoot>
+    <Nullable>disable</Nullable>
+    <DefineConstants>UNITY_EDITOR;UNITY_STANDALONE_WIN;UNITY_INCLUDE_TESTS;ENABLE_INPUT_SYSTEM</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../AniBato/Assets/_Project/**/*.cs" />
+    <Reference Include="$(UnityEditorRoot)/Data/Managed/UnityEngine/*.dll" />
+    <Reference Include="../../AniBato/Library/ScriptAssemblies/Unity.InputSystem.dll" />
+    <Reference Include="../../AniBato/Library/ScriptAssemblies/Unity.InputSystem.TestFramework.dll" />
+    <Reference Include="../../AniBato/Library/ScriptAssemblies/UnityEngine.UI.dll" />
+    <Reference Include="../../AniBato/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll" />
+    <Reference Include="../../AniBato/Library/ScriptAssemblies/UnityEngine.TestRunner.dll" />
+    <Reference Include="../../AniBato/Library/ScriptAssemblies/UnityEditor.TestRunner.dll" />
+    <Reference Include="../../AniBato/Library/PackageCache/com.unity.ext.nunit@0198eae3b53e/net472/unity-custom/nunit.framework.dll" />
+  </ItemGroup>
+</Project>
+

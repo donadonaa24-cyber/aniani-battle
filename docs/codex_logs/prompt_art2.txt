@@ -1,0 +1,4 @@
+あなたはこのリポジトリのメイン開発者です。AGENTS.md と IMPLEMENTATION_STATUS.md を読み、docs/codex_tasks/ART2.md の指示書に従って「透真・蓮のドット絵スプライト（ART1と同じパイプライン）」と「PlayModeテスト残り6件の修正」を実装してください。画像生成ツールを使ってよい。添付画像は透真・蓮の参考資料と、採用済みの千鶴の試作です。
+Claudeが修正した AnimationSetBuilder.cs と BattleSceneTests.cs の構造（指示書参照）は維持してください。
+途中で確認を求めず最後まで実装・検証してください。git commit はしないでください。
+完了したら IMPLEMENTATION_STATUS.md 等を更新し、最終メッセージで「変更概要／生成枚数・作り直し枚数／検証結果（Unity未検証の点は明記）／既知の問題／ClaudeにUnityで確認してほしい点」を日本語で報告してください。

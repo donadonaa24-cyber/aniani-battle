@@ -1,0 +1,17 @@
+﻿{
+    "name":  "AniBato.EditModeTests",
+    "references":  [
+                       "AniBato.Battle",
+                       "AniBato.Game",
+                       "AniBato.EditorTools",
+                       "Unity.InputSystem",
+                       "UnityEngine.UI",
+                       "AniBato.Presentation"
+                   ],
+    "includePlatforms":  [
+                             "Editor"
+                         ],
+    "optionalUnityReferences":  [
+                                    "TestAssemblies"
+                                ]
+}

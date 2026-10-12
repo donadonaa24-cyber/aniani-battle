@@ -1,0 +1,437 @@
+{
+    "character":  "chizuru",
+    "sourceDirectory":  "art_source/raw/chizuru",
+    "outputDirectory":  "AniBato/Assets/_Project/Art/Sprites/chizuru",
+    "contactPath":  "docs/art_wip/chizuru_contact.png",
+    "targetHeight":  112,
+    "cellWidth":  224,
+    "cellHeight":  160,
+    "baseline":  159,
+    "paletteSize":  32,
+    "keyTolerance":  90,
+    "pixelsPerUnit":  50,
+    "animations":  [
+                       {
+                           "name":  "idle",
+                           "frames":  4,
+                           "fps":  12,
+                           "loop":  true,
+                           "anchor":  "feet",
+                           "validateHeight":  true,
+                           "bindings":  [
+                                            {
+                                                "State":  0,
+                                                "Clip":  "idle",
+                                                "ActiveFrame":  0
+                                            }
+                                        ],
+                           "inbetweenFrames":  8,
+                           "stableIdle":  true
+                       },
+                       {
+                           "name":  "walk",
+                           "frames":  6,
+                           "fps":  15,
+                           "loop":  true,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  1,
+                                                "Clip":  "walk",
+                                                "ActiveFrame":  0
+                                            }
+                                        ],
+                           "inbetweenFrames":  8,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "dash",
+                           "frames":  4,
+                           "fps":  15,
+                           "loop":  true,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  2,
+                                                "Clip":  "dash",
+                                                "ActiveFrame":  1
+                                            }
+                                        ],
+                           "inbetweenFrames":  8,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "jump",
+                           "frames":  3,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "center",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  3,
+                                                "Clip":  "jump",
+                                                "ActiveFrame":  0
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "fall",
+                           "frames":  2,
+                           "fps":  15,
+                           "loop":  true,
+                           "anchor":  "center",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  4,
+                                                "Clip":  "fall",
+                                                "ActiveFrame":  0
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "land",
+                           "frames":  2,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  5,
+                                                "Clip":  "land",
+                                                "ActiveFrame":  0
+                                            }
+                                        ]
+                       },
+                       {
+                           "name":  "attack1",
+                           "frames":  3,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  6,
+                                                "Clip":  "attack1",
+                                                "ActiveFrame":  1
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "attack2",
+                           "frames":  3,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  7,
+                                                "Clip":  "attack2",
+                                                "ActiveFrame":  1
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "attack3",
+                           "frames":  4,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  8,
+                                                "Clip":  "attack3",
+                                                "ActiveFrame":  1
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "air_attack",
+                           "frames":  3,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "center",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  9,
+                                                "Clip":  "air_attack",
+                                                "ActiveFrame":  1
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "special_neutral",
+                           "frames":  4,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  10,
+                                                "Clip":  "special_neutral",
+                                                "ActiveFrame":  2
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "special_side",
+                           "frames":  4,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  11,
+                                                "Clip":  "special_side",
+                                                "ActiveFrame":  2
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "special_up",
+                           "frames":  4,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "center",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  12,
+                                                "Clip":  "special_up",
+                                                "ActiveFrame":  1
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "special_down",
+                           "frames":  4,
+                           "fps":  15,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  13,
+                                                "Clip":  "special_down",
+                                                "ActiveFrame":  2
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "ultimate",
+                           "frames":  4,
+                           "fps":  10,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  14,
+                                                "Clip":  "ultimate",
+                                                "ActiveFrame":  2
+                                            }
+                                        ]
+                       },
+                       {
+                           "name":  "guard",
+                           "frames":  2,
+                           "fps":  15,
+                           "loop":  true,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  15,
+                                                "Clip":  "guard",
+                                                "ActiveFrame":  0
+                                            }
+                                        ],
+                           "inbetweenFrames":  6,
+                           "stableIdle":  false
+                       },
+                       {
+                           "name":  "dodge",
+                           "frames":  3,
+                           "fps":  12,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  16,
+                                                "Clip":  "dodge",
+                                                "ActiveFrame":  1
+                                            }
+                                        ]
+                       },
+                       {
+                           "name":  "counter",
+                           "frames":  3,
+                           "fps":  12,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  17,
+                                                "Clip":  "counter",
+                                                "ActiveFrame":  0
+                                            },
+                                            {
+                                                "State":  18,
+                                                "Clip":  "counter",
+                                                "ActiveFrame":  1
+                                            }
+                                        ]
+                       },
+                       {
+                           "name":  "hitstun",
+                           "frames":  2,
+                           "fps":  8,
+                           "loop":  true,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  19,
+                                                "Clip":  "hitstun",
+                                                "ActiveFrame":  0
+                                            }
+                                        ]
+                       },
+                       {
+                           "name":  "knockback",
+                           "frames":  2,
+                           "fps":  8,
+                           "loop":  true,
+                           "anchor":  "center",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  20,
+                                                "Clip":  "knockback",
+                                                "ActiveFrame":  0
+                                            }
+                                        ]
+                       },
+                       {
+                           "name":  "ko",
+                           "frames":  3,
+                           "fps":  8,
+                           "loop":  false,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  21,
+                                                "Clip":  "ko",
+                                                "ActiveFrame":  0
+                                            }
+                                        ]
+                       },
+                       {
+                           "name":  "win",
+                           "frames":  4,
+                           "fps":  8,
+                           "loop":  true,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  22,
+                                                "Clip":  "win",
+                                                "ActiveFrame":  0
+                                            }
+                                        ]
+                       },
+                       {
+                           "name":  "lose",
+                           "frames":  2,
+                           "fps":  6,
+                           "loop":  true,
+                           "anchor":  "feet",
+                           "validateHeight":  false,
+                           "bindings":  [
+                                            {
+                                                "State":  23,
+                                                "Clip":  "lose",
+                                                "ActiveFrame":  0
+                                            }
+                                        ]
+                       },
+                       {
+                           "name":  "rice_ball",
+                           "frames":  4,
+                           "fps":  12,
+                           "loop":  true,
+                           "anchor":  "effect",
+                           "validateHeight":  false,
+                           "bindings":  [
+
+                                        ]
+                       },
+                       {
+                           "name":  "mogu",
+                           "frames":  2,
+                           "fps":  8,
+                           "loop":  true,
+                           "anchor":  "effect",
+                           "validateHeight":  false,
+                           "bindings":  [
+
+                                        ]
+                       },
+                       {
+                           "name":  "curry_wave",
+                           "frames":  4,
+                           "fps":  12,
+                           "loop":  false,
+                           "anchor":  "effect",
+                           "validateHeight":  false,
+                           "bindings":  [
+
+                                        ]
+                       }
+                   ],
+    "anchorRgbMin":  [
+                         115,
+                         45,
+                         0
+                     ],
+    "anchorRgbMax":  [
+                         255,
+                         180,
+                         85
+                     ],
+    "anchorRedGreenRatio":  1.5
+}

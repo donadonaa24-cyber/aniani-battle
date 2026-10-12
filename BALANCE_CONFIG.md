@@ -1,0 +1,318 @@
+# フェーズ5 調整値
+
+`BuildAll` 後の `Assets/_Project/Data/*.asset` をInspectorで変更します。シミュレーション開始時に純C#定義へコピーされ、再戦時に再読込します。`PhaseOneDefaults` / `PhaseTwoDefaults` / `PhaseThreeDefaults` はアセット生成とテスト用の初期値です。再実行では既存の調整値を保持します。旧フェーズ1アセットの初回移行だけ、新しいルール項目・特殊4枠・超必殺枠・P2代替キーを補います。以下の仮キャラ表は旧データの記録として保持し、現在の3キャラ初期値は末尾にまとめます。
+
+## 確定ルールの初期設定
+
+| アセット / 項目 | 初期値 | 意味 |
+| --- | --- | --- |
+| BattleRules / MatchSeconds | 70秒 | 60Hzで4200tick。ヒットストップ中も時間は進む |
+| BattleRules / InitialHearts | 3 | 開始ハート |
+| BattleRules / NormalHitsPerHeart | 3 | 通常被弾の累計3回でハート-1、蓄積0 |
+| BattleRules / MaxComboHits | 3 | 1つの連続ヒット追跡単位の上限 |
+| BattleRules / MaxHeartsLostPerCombo | 1 | 同一コンボでのハート減少上限。超必殺の例外フックあり |
+| BattleRules / EnableRingOut | true | 基礎場外判定。左右・下のラインを越えると即敗北 |
+| tick rate | 60Hz（固定） | ルールではなく処理契約。全フレーム数の基準 |
+
+## 暫定の移動・地形
+
+| アセット / 項目 | 初期値 | 意味 |
+| --- | --- | --- |
+| PlaceholderA/B / MoveSpeed | 9.5 u/s | 左右移動 |
+| PlaceholderA/B / DashSpeed | 17 u/s | 主足場36uを約2.12秒で走破 |
+| GroundDashFrames | 14F | 地上ダッシュの最低継続。進行方向の保持で延長 |
+| AirDashFrames | 10F | 空中ダッシュの長さ。この間は重力なし |
+| JumpSpeed / Gravity | 20 u/s / 72 u/s² | 1段ジャンプの同じ高さまでの滞空は約0.55秒 |
+| MaxFallSpeed / FastFallSpeed | 26 / 36 u/s | 落下の上限と急降下速度 |
+| MaxJumps / MaxAirDashes | 2 / 1 | 着地で回復。歩いて足場を離れた場合は地上ジャンプを消費 |
+| HurtboxSize | 1.1 × 2.2u | 自前AABBのキャラ寸法 |
+| Stage / メイン足場 | 幅36u、上面y=0、厚み1.2u | 固体AABB |
+| Stage / 小足場 | 中心x=-8/+8、y=4、幅7u、厚み0.35u | 下から通り抜け、下入力で降りる。到達には2段ジャンプを利用 |
+| Stage / 場外ライン | 左-24、右24、下-10u | キャラ中心が厳密に越えた場合に判定 |
+| Stage / 出現位置 | (-5, 1.1) / (5, 1.1) | 主足場上 |
+| BattleRules / DropThroughFrames | 12F | 下入力後、小足場の着地判定を無視する期間 |
+| DropThroughSpeed | 8 u/s | 足場を降り始める下向き速度 |
+
+## 暫定の攻撃・入力
+
+| アセット / 項目 | 初期値 | 意味 |
+| --- | --- | --- |
+| GroundNormal1〜3、AirNormal1〜3 / StartupFrames | 4F | 開始フレーム0から4F後に判定有効 |
+| ActiveFrames / RecoveryFrames | 3F / 8F | 持続 / 硬直 |
+| Hitbox | 相対中心(1.4, 0.1)、サイズ2.2 × 1.8u | 向きに合わせ左右反転 |
+| HitstopFrames / HitstunFrames | 4F / 8F | 接触後の停止 / 被弾硬直 |
+| Knockback | (2, 0) u/s | 通常の小さな押し出し。連続3ヒットだけ下記フィニッシュ値を使用 |
+| Kind / IsCloseRange | Normal / true | 特殊・超必殺・近距離カウンターの判別用 |
+| BattleRules / ComboWindowFrames | 40F | 前ヒットから40tick以内を連続として追跡 |
+| InputBufferFrames | 6F | 押下を次の行動可能tickまで保持 |
+| DoubleTapFrames | 12F | 同方向を2回タップする受付間隔 |
+| DirectionThreshold | 0.5 | ダブルタップ・下入力の判定しきい値 |
+
+通常蓄積は時間・移動・ジャンプ・防御では回復しません。連打予約は現在の攻撃完了後に次段を開始し、4段目へは連結しません。通常3連続でフィニッシュし、追撃禁止期間の後は新しいコンボです。特殊を挟むと通常連続数だけを0に戻し、ハート減少上限は保持します。上限でBREAKを止めた場合は蓄積を閾値-1（2/3）に留めます。
+
+## フィニッシュ・防御（BattleRules.Definition）
+
+| 項目 | 初期値 | 意味 |
+| --- | --- | --- |
+| ComboFinishKnockback | (18, 14) u/s | 連続3通常の吹っ飛び。Xは攻撃方向へ反転 |
+| ComboFinishHitstunFrames | 24F | Knockback中の操作不能 |
+| FollowupImmunityFrames | 48F | 同じ攻撃者の全攻撃から追撃無効 |
+| Defense.GuardReleaseFrames | 6F | ガード解除の硬直 |
+| GuardStunFrames / GuardPushSpeed | 10F / 3u/s | 通常ガード成功時の硬直・押し返し |
+| JustWindowFrames | 5F | 年齢0〜4F、ガード・回避共通 |
+| JustGuardStunFrames | 2F | ジャストガード後のガード硬直 |
+| JustAttackerStunFrames | 12F | ジャスト防御成功時、近接攻撃者の硬直 |
+| DodgeInvulnerableFrames | 12F | 回避状態の長さ。超必殺・貫通フラグを除き無敵 |
+| DodgeRecoveryFrames | 12F | 通常回避後の回復硬直 |
+| JustDodgeRecoveryFrames | 3F | ジャスト回避成功からの短い回復硬直 |
+| GroundDodgeSpeed / AirDodgeSpeed | 15 / 12u/s | 向きまたは押下方向への回避。回避中の重力なし |
+| CounterWindowFrames | 8F | 年齢0〜7Fに近距離通常を受け付ける |
+| CounterFailureFrames | 24F | 受付終了後の空振り硬直 |
+| CounterSuccessFrames | 6F | 成功後の自分の回復硬直 |
+| CounterCooldownFrames | 45F | 受付開始から再カウンターを禁止 |
+| CounterTargetStunFrames | 14F | カウンターを受けた側の硬直 |
+| CounterTargetImmunityFrames | 12F | カウンター成功者からの追撃を短時間禁止 |
+| CounterKnockback | (4, 3) u/s | 攻撃者を逆方向へ弾く |
+
+攻撃フレーム・被弾硬直・防御年齢・回復硬直はヒットストップ中に停止します。コンボウィンドウ、追撃禁止、カウンター再受付制限は試合tickで進み、ヒットストップ中も減ります。接触解決で設定する硬直は次tickから消費します。カウンター失敗・通常回避の回復期間は受付終了tickから数えます。
+
+## 仮特殊・仮超必殺（各キャラ独立AttackData）
+
+| 枠 | 発生 / 持続 / 硬直 | 相対判定中心 / サイズ | その他 |
+| --- | --- | --- | --- |
+| Neutral 飛び道具 | 6 / 8 / 18F | (1.2, 0.2) / (0.9, 0.9)u | SpawnProjectile=true、18u/s、寿命90F、IsCloseRange=false |
+| Side 突進 | 6 / 8 / 18F | (1.3, 0) / (2.4, 2.2)u | ActiveVelocity=(22, 0)u/s、近距離 |
+| Up 上昇復帰 | 2 / 18 / 18F | (0, 1) / (2, 3)u | ActiveVelocity=(4, 28)u/s、近距離、着地まで再使用不可 |
+| Down その場 | 6 / 8 / 18F | (0, 0) / (4, 2.6)u | ActiveVelocity=(0, 0)、近距離 |
+| Ultimate 仮超必殺 | 14 / 4 / 60F | (2.2, 0) / (5, 3.5)u | 近距離、PiercesNormalDodge=true、ハート-2 |
+
+特殊共通：Kind=Special、ハート-1、HitstopFrames=3、HitstunFrames=12、Knockback=(5, 4)u/s、通常回避貫通=false。超必殺：Kind=Ultimate、HitstopFrames=8、HitstunFrames=24、Knockback=(12, 8)u/s。通常：SpawnProjectile=false、PiercesNormalDodge=false、ActiveVelocity=(0, 0)。ActiveVelocityは持続中に適用し、その後に通常重力を計算します。飛び道具の持続は独立した寿命を使い、発射時の向き・攻撃IDを保持します。
+
+## 作品リンクゲージ（BattleRules.Definition.Gauge）
+
+| 項目 | 初期値 | 意味 |
+| --- | --- | --- |
+| Maximum / UltimateCost / UltimateMaxUses | 100 / 100 / 1 | 上限・消費・1試合の使用上限 |
+| OnHit / OnDamaged | 14 / 10 | フェーズ5で12/8から変更。命中／被弾1回につき増加。防御された攻撃は除く |
+| OnCounter | 20 | カウンター成功。受けた側はOnDamagedも増加 |
+| OnJustGuard / OnJustDodge | 18 / 18 | ジャスト成功1回につき増加 |
+
+ゲージは0開始、100でクランプ。消費後の命中でもOnHitが増えますが、使用回数が残っていなければ再発動不可。現在は通常3命中=42、3被弾=30、5命中＋3被弾=100。カウンター20／ジャスト18は据え置きです。
+
+`Presentation.asset` のカメラサイズ6〜19、余白3u、追従速度8、頭上位置+1.7u、カウンター反応0.2秒、BREAK表示0.55秒、被弾点滅0.18秒は表示専用で、戦闘判定に影響しません。
+
+追加表示値：PopupSeconds=0.7秒、PopupHeight=2.6u、GuardTint=(0.25,0.65,1,1)、DodgeTint=(0.65,1,0.8,0.45)、CounterTint=(1,0.85,0.15,1)、ProjectileTint=(1,0.65,0.2,1)。入力のPrimary＋Alternate配列はInspectorで編集可能。SchemaVersion=2は移行管理値で、対戦性能には影響しません。
+
+## ゲージ到達の想定（フェーズ3時点、最終調整はフェーズ5）
+
+獲得量は変更せず、通常3命中で攻撃者36・被弾者24。命中だけなら9回（108→100）、被弾だけなら13回（104→100）、通常8命中＋被弾1回なら104→100です。通常の被弾だけでは途中でハートを失うため、13被弾は実戦目標ではありません。3連コンボ2回＋カウンター1回＋被弾1回で72+20+8=100。ジャスト2回＋通常4命中＋カウンター1回でも36+48+20=104です。
+
+成功する3連コンボを約8〜12秒に1回作れれば、3セット・約24〜36秒で100へ到達する想定です。最速の攻撃列自体は約1秒で3ヒットに届くので、立ち回り・再接近・防御の成功率が支配的であり、この秒数は測定結果ではありません。千鶴の蓄積回復も到達時間へ影響します。70秒中に狙えば1回撃てること、容易な連打で早期満タンにならないことを、フェーズ5のCPU同士の試合で実測・調整します。
+
+## 3キャラの移動・固有効果（全初期値、60Hz）
+
+| 項目 | 透真 / Touma.asset | 蓮 / Ren.asset | 千鶴 / Chizuru.asset |
+| --- | --- | --- | --- |
+| MoveSpeed / DashSpeed (u/s) | 10 / 19 | 10.5 / 20 | 9 / 16 |
+| GroundDashFrames / AirDashFrames | 14 / 12 | 12 / 10 | 14 / 10 |
+| JumpSpeed (u/s) | 21 | 20 | 19 |
+| Gravity (u/s²) | 72 | 72 | 72 |
+| MaxFallSpeed / FastFallSpeed (u/s) | 26 / 36 | 26 / 36 | 26 / 36 |
+| MaxJumps / MaxAirDashes | 2 / 1 | 2 / 1 | 2 / 1 |
+| HurtboxSize (u) | 1.1 × 2.2 | 1.1 × 2.2 | 1.1 × 2.2 |
+| UltimateCutInFrames | 30 (0.5秒) | 30 (0.5秒) | 30 (0.5秒) |
+| Counter.Buff.DurationFrames | 180 (3秒) | 0 | 0 |
+| Counter.Buff.Move / Dash / Startup倍率 | 1.25 / 1.3 / 1 | 0 / 0 / 0 (未使用) | 0 / 0 / 0 (未使用) |
+| Counter.KnockbackMultiplier | 0 (=1) | 2 | 0 (=1) |
+| Counter.SelfHealNormalHits | 0 | 0 | 1 |
+| Tint (RGBA) / Silhouette / RoundShape | (0.1,0.8,1,1) / 0 / false | (1,0.38,0.2,1) / 1 / true | (0.4,0.85,0.3,1) / 2 / false |
+
+強化中の透真は移動12.5u/s、ダッシュ24.7u/s。バフ・マーク・特殊クールダウンは試合tickで減り、ヒットストップでも減ります。カットインでは止まります。倍率0は後方互換のため1倍として扱います。強化は重ね掛けせず、新たなデータで置換・持続時間を更新します。Startup倍率は開始する攻撃の発生Fへ乗算し切り上げます。構えの発生は最低1Fです。
+
+## 通常攻撃18個（各キャラ Ground1〜3 / Air1〜3）
+
+全通常共通：Kind=Normal、IsCloseRange=true、ActiveFrames=3、HitstopFrames=4、HitstunFrames=8。DamageDelayFrames=0、移動量0、飛び道具なし、通常回避貫通なし、追加効果なし。
+
+| キャラ / 列 | 1段 発生/持続/硬直F | 2段 | 3段 | 判定中心 / サイズu | Knockback (u/s) |
+| --- | --- | --- | --- | --- | --- |
+| 透真 地上 | 3/3/7 | 4/3/7 | 5/3/10 | (1.3,0.1) / (2,1.8) | (1.5,0) |
+| 透真 空中 | 4/3/8 | 5/3/8 | 6/3/11 | (1.3,-0.2) / (2,2.2) | (1.5,0) |
+| 蓮 地上 | 4/3/8 | 5/3/8 | 6/3/11 | (1.6,0.1) / (2.6,1.8) | (2.5,0) |
+| 蓮 空中 | 5/3/9 | 6/3/9 | 7/3/12 | (1.6,-0.2) / (2.6,2.2) | (2.5,0) |
+| 千鶴 地上 | 5/3/9 | 6/3/9 | 7/3/12 | (1.8,0.1) / (3,1.8) | (2,0) |
+| 千鶴 空中 | 6/3/10 | 7/3/10 | 8/3/13 | (1.8,-0.2) / (3,2.2) | (2,0) |
+
+3連通常のフィニッシュは共通ルールのKnockback=(18,14)、Hitstun=24、追撃禁止48Fを使用します。
+
+## 特殊12個・超必殺3個
+
+全特殊共通：Kind=Special、Hitstop=3、Hitstun=12、Knockback=(5,4)、通常回避貫通なし。食事はNonDamaging=trueの補助技で、接触ダメージ・ゲージ獲得・対象ヒットを発生させません。これ以外の特殊は1ハート。全超必殺共通：Kind=Ultimate、Hitstop=8、Hitstun=24、Knockback=(12,8)、通常回避貫通=true、2ハート、100消費、1試合1回。
+
+| キャラ / 枠 / 技名 | 発生/持続/硬直F | 判定中心 / サイズu | ActiveVelocity (u/s) | 個別効果 |
+| --- | --- | --- | --- | --- |
+| 透真 N 観測パルス | 6/1/18 | (1.1,0.2) / (0.9,0.9) | (0,0) | 飛び道具14u/s、寿命30F、マーク90F、近距離=false |
+| 透真 横 遮断ステップ | 3/6/20 | (1.1,0) / (1.6,2) | (28,0) | DamageDelayFrames=4。移動開始後4Fは打撃なし、最後2Fだけ打撃 |
+| 透真 上 緊急上昇 | 2/18/22 | (0,0.8) / (1.2,1.5) | (2,30) | 着地まで1回 |
+| 透真 下 遮断フィールド | 4/18/20 | (0,0) / (4,3) | (0,0) | ProjectileEraseCount=-1、持続中に重なった敵弾を消す |
+| 透真 超 境界突破 | 8/12/66 | (1.3,0) / (2.4,2.8) | (38,0) | 前方突進 |
+| 蓮 N 飛車ライン | 10/4/24 | (3.5,0) / (7,1.2) | (0,0) | 長い近接直線判定 |
+| 蓮 横 直線番長 | 5/14/28 | (1.2,0) / (2.2,2.2) | (32,0) | 通常ガードされるとその時点から42F回復硬直 |
+| 蓮 上 縦抜け | 2/18/24 | (0,1) / (1.6,2.6) | (0,29) | 着地まで1回 |
+| 蓮 下 飛車の構え・急襲 | 12/10/24 | (1.5,0) / (2.8,2) | (34,0) | RequiresFollowup=true、発生直前に最大60F待機、通常/特殊の新規押下で急襲 |
+| 蓮 超 十字突破 | 12/5/72 | (0,0) / (12,2)＋(0,0) / (2,10) | (0,0) | 二つのAABBの和集合。交差部分も1ヒット、四隅は範囲外 |
+| 千鶴 N 爆弾おにぎり | 8/1/22 | (1.2,0.3) / (0.9,0.9) | (0,0) | 飛び道具10u/s、初期Y速度8u/s、重力24u/s²、寿命60F、麻痺30F、近距離=false |
+| 千鶴 横 フライパン突撃 | 6/10/26 | (1.3,0) / (2.6,2.2) | (22,0) | ProjectileEraseCount=1、正面判定に重なった敵弾を1個消す |
+| 千鶴 上 おたま旋風 | 3/20/24 | (0,0.7) / (2.4,2.6) | (1,27) | 1ヒット、着地まで1回 |
+| 千鶴 下 ひとくち休憩 | 24/1/35 | (0,0) / (1,1)、打撃なし | (0,0) | SelfHealNormalHits=1、CooldownFrames=240、開始24F後に1回だけ蓄積を回復 |
+| 千鶴 超 満腹カレー！ | 16/6/72 | (1.5,0) / (10,5) | (0,0) | 広い範囲 |
+
+表のN以外はIsCloseRange=true。記載のない追加項目は0/false：ProjectileLaunchVelocity=(0,0)、ProjectileGravity=0、HasSecondaryHitbox=false、NonDamaging=false、ParalysisFrames=0、MarkFrames=0、SelfHealNormalHits=0、SelfBuff全項目0、KnockbackMultiplier=0（=1）、CooldownFrames=0、ProjectileEraseCount=0、GuardedRecoveryFrames=0、RequiresFollowup=false、StanceFrames=0、DamageDelayFrames=0。飛び道具以外はSpawnProjectile=false・速度0・寿命0。上技に無敵・アーマーはありません。
+
+麻痺は入力不可30F、任意のAttackDataでも**最大45Fへクランプ**。被弾硬直と同時に減り、ヒットストップ・カットイン中は減りません。重力・吹っ飛び・追加被弾は有効です。食事の回復は0でクランプしハートは変えません。食事中断でもクールダウンを消費します。弾消去は自分の弾を消しません。放物線弾も地形では消滅しません。
+
+カットイン開始tickは通常の1tickとして時計を進め、その後の30回のTick呼び出しではMatch.TickCount・RemainingTicks・物理・全効果時間を停止します。停止中の押下は消費して破棄し、再開時の保持入力は有効。同tickの両者発動は最大値30Fを1回だけ使います。最終tickで発動しても時間切れを遅らせず、RemainingTicks=0で終了します。
+
+BattleSetup.asset：Characters=[透真,蓮,千鶴]、Player1Index=0、Player2Index=1。試合終了後のF1/F2とF3/F4は実行時の選択だけを変更し、アセットに書き込みません。再戦で反映。通常の勝敗・70秒・ゲージ・コンボ・防御数値は上記共通表を維持します。
+
+## ART1：表示スケール（戦闘数値は変更なし）
+
+千鶴は基準idle112px、全キャラ共通PPU50なので、見える身長は約2.24 world units。既存Hurtboxは1.1×2.2を保持し、スプライトの足元をHurtbox下端へ配置します。姿勢の全高や手持ち小物で当たり判定を拡縮しません。F9でHurtbox緑・有効近接Hitbox赤・弾黄を比較できます。現時点で判定サイズ・ダメージ・移動速度・攻撃Fの変更はありません。
+
+アニメの着地8F・成功反撃12F・KO24FはCharacterAnimationSet.Timingの表示値です。戦闘の硬直・無敵Fに影響しません。fps/loop/持続の絵番号はSpriteForgeマニフェスト→生成アニメセットから取得します。Inspectorで変更したTimingはBuildAllの再実行で保持します。
+
+PresentationSettingsには頭上数値の余白0.45、被弾Sprite透明度0.3、弾スケール0.5、もぐもぐスケール0.35/位置(0.7,0.2)、波スケール2.5/位置(1.7,-0.2)、判定線幅0.035を追加。これらは表示専用です。最終の絵と判定、アイコン/数値の重なりはUnityレビュー待ちです。
+
+## ART2：透真・蓮の表示（戦闘数値は変更なし）
+
+共通PPU50で、透真124px＝2.48u、千鶴112px＝2.24u、蓮100px＝2.0u。3キャラの既存Hurtbox1.1×2.2は保持し、足元をHurtbox下端に揃えます。移動/ダッシュ/ジャンプ、発生/持続/硬直、ヒット判定、ハート/ゲージ/防御は変更なし。実画面ではF9で絵と判定を比較してください。
+
+CharacterData.SpriteEffectsは表示専用。透真：pulse倍率0.65、field倍率1.8・中心(0,0)・透明度0.35、boundary_glow倍率1.2・位置(0.2,0)、横ステップTint=(0.55,0.85,1)。蓮：cross_light倍率6.6・中心(0,0)。エフェクトはCharacterAnimationSetから取得し、全キャラの仮図形フォールバックを維持します。既存のSpriteEffects調整値をBuildAllで上書きしません。千鶴は従来のPresentationSettingsの弾/波/アイコン表示値を継続使用します。
+
+上記倍率/位置/透明度はUnity実画面未検証。特にフィールド/十字光の範囲と頭上数値の重なりはClaudeレビューで調整してください。headHeightsは各フレームの実上端で、全245Fのメタデータ一致を検査済みです。蓮walk4F/attack3 3F、他クリップの枚数/fps/loop/持続姿勢は各マニフェストを参照。表現の枚数は戦闘F数に影響しません。
+SpriteEffects.SchemaVersion=1が初期化済みの印です。nullまたはversion0は未初期化と判断します（空のクラスがデシリアライズされても対応）。透真/蓮は初回BuildAllでversion1へ設定、千鶴はversion0のまま従来のPresentationSettingsへフォールバック。version1の表示調整値は再BuildAllで保持します。
+## フェーズ4：縮小・画面進行の調整値
+
+BattleRules.Definition.Shrinkに保存し、SchemaVersion 2以前から初回だけ既定値を移行する。SchemaVersion 3以降の調整値は再BuildAllで保持する。
+
+| 項目 | 既定値 | 意味 |
+| --- | --- | --- |
+| Enabled | true | 全テーマ共通の縮小を使用 |
+| WarningRemainingSeconds | 15 | 全体予告の残り秒数 |
+| StartRemainingSeconds | 10 | 縮小開始の残り秒数 |
+| Steps | 5 | 段数 |
+| StepIntervalFrames | 108 | 1段の間隔＝1.8秒 |
+| StepWarningFrames | 60 | 各区画の予告＝1秒 |
+| FinalWidthRatio | 0.30 | 主足場の最終幅比率 |
+| UpperPlatformsDisappearStep | 2 | 上部足場2つが消える段 |
+
+標準主足場幅36、中央X=0。各段の幅は30.96 / 25.92 / 20.88 / 15.84 / 10.8。消滅時刻は61.8 / 63.6 / 65.4 / 67.2 / 69.0秒、区画警告は60.8 / 62.6 / 64.4 / 66.2 / 68.0秒。最後の消滅が時間切れより前になるよう定義を検証する。警告時間は段間隔以下で、0にはできない。場外ラインやジャンプ・Hurtboxの値は変更しない。
+
+CommonGeometry.assetが全3テーマの共通地形。既存Stage.assetの地形調整値を初回コピーし、以後はCommonGeometryの値を保持する。テーマはStage（星の終わり）・StageBoard・StageFestival。色・BgmKey・TimeVariant・Thumbnail・FarParallax（0.06）・MidParallax（0.12）は見た目専用。文化祭の背景は最後の段で45%減光する。床の警告点滅は6tick間隔。
+
+GameFlowSettings.asset：CountdownNumberSeconds=1、FightBannerSeconds=0.5、ResultDelaySeconds=0.8。カウントダウンは戦闘時間を消費しない。リザルト待機中はシミュレーションを終了状態に保ち、表示アニメだけ60Hzで進める。
+
+## フェーズ5：CPU・ゲージの実測調整（履歴。現行値は末尾の5B）
+
+2026-10-12。最終CPUを固定し、全9組（同キャラ・両順含む）×seed1〜30×3難易度=810試合を旧ゲージ12/8と新14/10でそれぞれ実行。70秒、ハート3、縮小あり、初期ゲージ0。表は.NET直接駆動による既定値の結果で、Unity実アセットや実機の検証とは区別する。
+
+| 難易度 | 旧12/8の超必殺試合率 | 新14/10の超必殺試合率 | 新値の平均秒 | 新値のKO/場外/時間 |
+| --- | ---: | ---: | ---: | --- |
+| やさしい | 56.3% | 75.2% | 7.23 | 270/0/0 |
+| ふつう | 47.0% | **67.8%** | 4.83 | 270/0/0 |
+| むずかしい | 38.9% | 55.9% | 4.26 | 270/0/0 |
+
+目安の「ふつう同士で半数以上」を満たすため14/10を採用。20のカウンター、18の両ジャスト、最大100、消費100、1人1試合1回を維持。SchemaVersion4移行時、命中12・被弾8の組だけを更新し、独自調整は保持。各組合せの勝率・発動数・命中数は[CPU_BALANCE_REPORT.md](docs/CPU_BALANCE_REPORT.md)。raw CSVはTestResults/phase5-cpu-gauge-before.csvとphase5-cpu-final.csv。
+
+全810試合で両者の攻撃・ハート減少・決着を確認。自滅近似0だが、全試合ハート決着なので縮小実戦の頻度は評価できない。縮小時の生存は別の全4200tickテストで検証。平均4〜7秒の短さと相性／P1/P2差は実機調整課題であり、この表から人間相手の公平性・楽しさを確定しない。前節「フェーズ3時点のゲージ想定」は旧値の履歴。
+
+### CPU難易度の生成既定値
+
+調整アセットはCpuEasy.asset / CpuNormal.asset / CpuHard.asset。BattleSetup.CpuDifficultiesから選択難易度の定義をコピーし、seed=BattleSetup.CpuSeedで開始。再戦で履歴・乱数をリセット。同じseed・入力列で再現可能。
+
+| 項目 | やさしい | ふつう | むずかしい |
+| --- | ---: | ---: | ---: |
+| ReactionFrames | 18F | 8F | 3F |
+| DecisionFrames | 10F | 5F | 3F |
+| AttackChance | .65 | .90 | .90 |
+| SpecialChance | .12 | .22 | .22 |
+| ComboChance | .30 | .80 | .95 |
+| GuardChance | .12 | .50 | .70 |
+| DodgeChance | .08 | .25 | .45 |
+| CounterChance | .05 | .22 | .40 |
+| JustChance | .02 | .12 | .30 |
+| JumpChance | .05 | .05 | .05 |
+
+確率は条件が成立した判断機会での選択率で、実際の成功率ではない。EdgeMargin=2.2u、CloseDistance=2.5u、MediumDistance=7u。床外へ向かう行動は安全条件で抑止する。難易度変更が常に対人勝率を上げることは未検証。
+
+### 音・描画の生成既定値
+
+AudioSettings.asset：BgmVolume=.35、SeVolume=.65。ポーズから10%刻みで変更し、PlayerPrefsに保存。自作SE15種、4ループ、16kHzモノラル、BGMは8秒。Presentation.asset：ScreenShake=true、ShakeSeconds=.16、ShakeStrength=.12u、SparkSeconds=.22、JustFlashSeconds=.25、FinishSeconds=.85。揺れは端末設定でOFF可能。ジャスト時はSpriteを30Hzに短く抑え、火花の進行だけ0.5倍。戦闘tick／時計／当たり判定はそのまま。
+
+## フェーズ5B：現行のテンポ・表示調整（2026-10-12）
+
+PhaseFiveBDefaults→Editor BuildAll→ScriptableObject→純C#定義の経路で使用。旧Phase1〜3の作成定義は単独ルール回帰用に保持。数値は暫定バランスで、原本のハート3・通常3ヒット=1・特殊1・超必殺2・通常ガード不可・70秒・最後10秒縮小を変更しない。
+
+| 項目 | before | after |
+| --- | --- | --- |
+| ルール／CPU／キャラの調整スキーマ | 4／未付与／未付与 | 5／5／5 |
+| ハート減少直後の生存者無敵 | 0F | 75F。ヒットストップ中も減少、カットイン・ポーズは停止 |
+| 立て直し最低吹っ飛び | 技別のみ | X12・Y8。通常3段フィニッシュは従来(18,14)を維持 |
+| 画面内弾数／各プレイヤー | 制限なし | 1発 |
+| 命中／被弾ゲージ | 14／10 | 12／8 |
+| カウンター／ジャスト2種ゲージ | 20／18 | 16／14 |
+| 通常技・最大／消費ゲージ・超必殺回数 | 既存値・100・1回 | 維持 |
+| 追いつきtick／フレーム | 上限なし | Presentation.MaximumCatchupTicks=5、未処理時間を保持 |
+| 表示位置ジャンプ閾値 | なし | Presentation.InterpolationDiscontinuityDistance=5u |
+| 描画／VSync | tick位置そのまま／明示なし | 前後tick補間／同期ON、targetFrameRate=-1 |
+| メニュー／ポーズのフレームレート | なし | 同期・60・120・144・無制限、PlayerPrefs保存 |
+| ジャスト時Sprite間引き | 30Hz | 撤去、現tick基準。火花の表示スローは保持 |
+
+### 特殊のbefore/after（発生／持続／硬直、F）
+
+| キャラ・技 | before | after | 再使用 before→after | ガード時硬直 before→after |
+| --- | --- | --- | --- | --- |
+| 透真 観測パルス | 6/1/18 | 18/1/36 | 0→120 | 0→48（弾は発射後の自分の硬直を継続） |
+| 透真 遮断ステップ | 3/6/20 | 15/6/38 | 0→120 | 0→48 |
+| 透真 緊急上昇 | 2/18/22 | 維持 | 0→90 | 維持0 |
+| 透真 遮断フィールド | 4/18/20 | 16/18/38 | 0→120 | 0→48 |
+| 蓮 飛車ライン | 10/4/24 | 22/4/42 | 0→120 | 0→48 |
+| 蓮 直線番長 | 5/14/28 | 17/14/46 | 0→120 | 42→48 |
+| 蓮 縦抜け | 2/18/24 | 維持 | 0→90 | 維持0 |
+| 蓮 構え・急襲 | 12/10/24 | 24/10/42 | 0→120 | 0→48（構え60F維持） |
+| 千鶴 爆弾おにぎり | 8/1/22 | 20/1/40 | 0→120 | 0→48（弾は発射後の自分の硬直を継続） |
+| 千鶴 フライパン突撃 | 6/10/26 | 18/10/44 | 0→120 | 0→48 |
+| 千鶴 おたま旋風 | 3/20/24 | 維持 | 0→90 | 維持0 |
+| 千鶴 ひとくち休憩 | 24/1/35 | 維持 | 240維持 | 0維持 |
+
+CDは開始時に設定し毎tick減少、カットインとポーズでは停止。無敵中の被弾は接触収集から除外して多重ヒット集合を汚さず、無敵時間を更新しない。無敵中に自分が攻撃しても時間は延長せず通常どおり減る。特殊のダメージ／射程／持続／速度／放物線／追加効果、上復帰の発生・移動、通常技は維持。
+
+### CPU before→after（やさしい／ふつう／むずかしい）
+
+| 項目 | before | after |
+| --- | --- | --- |
+| 攻撃後の立て直し・間合い調整 | 0/0/0F | 105/120/90F（防御・場端復帰は可能） |
+| 無効な攻撃連続後に接近する閾値 | なし | 12/12/8回 |
+| SpecialChance | .12/.22/.22 | .10/.14/.14 |
+| GuardChance | .12/.50/.70 | .25/.82/.94 |
+| DodgeChance | .08/.25/.45 | .12/.38/.62 |
+| CounterChance | .05/.22/.40 | .06/.32/.55 |
+| JustChance | .02/.12/.30 | .02/.18/.55 |
+| 反応／判断間隔・通常／コンボ／ジャンプ・距離／移動 | 前節 | 維持 |
+
+条件付きの選択確率で、成功確率ではない。相手の特殊予備動作を遅延観測で防御する。攻撃後は距離を整え、相手の無敵中は無駄撃ちを避ける。防御された特殊の繰り返しを避け、失敗が続けば通常技の間合いへ接近。自分のヒット結果だけは即時フィードバックとして読む。
+
+### 集計と素材
+
+beforeは保存済みフェーズ5最終CSV、afterは現行純C#作成既定値、各270試合。実SOはUnity未実施。
+
+| 難易度 | 平均秒 before→after | 縮小到達 | 超必殺あり | 自滅近似 |
+| --- | --- | --- | --- | --- |
+| やさしい | 7.23→23.36 | 0→0% | 75.2→45.6% | 0→0 |
+| ふつう | 4.83→45.51 | 0→21.9% | 67.8→56.7% | 0→0 |
+| むずかしい | 4.26→44.28 | 0→17.0% | 55.9→59.3% | 0→0 |
+
+全810試合で両者攻撃・ハート減少。ふつう目標を満たす。組合せ表と命中数はdocs/CPU_BALANCE_REPORT.md、CSVはTestResults/phase5b-cpu-before.csv／phase5b-cpu-final.csv。対人の強さ・相性は実機判断が必要。
+
+アニメは3キャラ各idle/walk/dash8F（12/15/15fps）、jump/fall/attack1〜3/air_attack/特殊4種/guard6F・15fps。合計245→368F。224×160、PPU50、身長124/100/112、32色を維持。idleは同じ1枚から±1px呼吸、胴/足固定。現tickの発生・持続・硬直へ持続姿勢添字を再マップ。42GIFはdocs/art_wip/、旧加工結果はart_source/phase5b_keys/。局所中割りの大きな姿勢切替にはキーポーズ由来の差が残る。
+
+BuildAllの移行はSchema5初回だけ。既存の発生／硬直／CD／ガード時硬直／CPU確率／ゲージが旧既定値と一致するときだけ変更する。独自調整は保持し、同じ移行を繰り返しても数値を増やさない。アニメTimingも保持。

@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820845d9a4345534da474cdd60cf7131, type: 3}
+  m_Name: BattleRules
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.BattleRules
+  Definition:
+    MatchSeconds: 70
+    InitialHearts: 3
+    NormalHitsPerHeart: 3
+    InputBufferFrames: 6
+    DoubleTapFrames: 12
+    ComboWindowFrames: 40
+    MaxComboHits: 3
+    MaxHeartsLostPerCombo: 1
+    DropThroughFrames: 12
+    DropThroughSpeed: 8
+    DirectionThreshold: 0.5
+    EnableRingOut: 1
+    SchemaVersion: 5
+    Defense:
+      GuardReleaseFrames: 6
+      GuardStunFrames: 10
+      JustWindowFrames: 5
+      JustGuardStunFrames: 2
+      GuardPushSpeed: 3
+      DodgeInvulnerableFrames: 12
+      DodgeRecoveryFrames: 12
+      JustDodgeRecoveryFrames: 3
+      GroundDodgeSpeed: 15
+      AirDodgeSpeed: 12
+      CounterWindowFrames: 8
+      CounterFailureFrames: 24
+      CounterSuccessFrames: 6
+      CounterCooldownFrames: 45
+      CounterTargetStunFrames: 14
+      CounterTargetImmunityFrames: 12
+      JustAttackerStunFrames: 12
+      CounterKnockback:
+        X: 4
+        Y: 3
+    Gauge:
+      Maximum: 100
+      UltimateCost: 100
+      UltimateMaxUses: 1
+      OnHit: 12
+      OnDamaged: 8
+      OnCounter: 16
+      OnJustGuard: 14
+      OnJustDodge: 14
+    Shrink:
+      Enabled: 1
+      WarningRemainingSeconds: 15
+      StartRemainingSeconds: 10
+      Steps: 5
+      StepIntervalFrames: 108
+      StepWarningFrames: 60
+      FinalWidthRatio: 0.3
+      UpperPlatformsDisappearStep: 2
+    ComboFinishKnockback:
+      X: 18
+      Y: 14
+    ComboFinishHitstunFrames: 24
+    FollowupImmunityFrames: 48
+    HeartRecoveryFrames: 75
+    HeartRecoveryKnockback:
+      X: 12
+      Y: 8
+    ProjectileLimitPerOwner: 1

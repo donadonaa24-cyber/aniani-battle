@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839613febdf871a44ab2acd1d5fe2b97, type: 3}
+  m_Name: StageBoard
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.StageData
+  SharedGeometry: {fileID: 11400000, guid: eaaae333f5366f94bb26133ed8e22f91, type: 2}
+  DisplayName: "\u63A8\u3057\u99D2Battle"
+  Theme: 1
+  TimeVariant: "\u591C"
+  BgmKey: stage_1
+  ShrinkMessage: "\u76E4\u9762\u306E\u5916\u5074\u304C\u6D88\u3048\u307E\u3059"
+  Thumbnail: {fileID: 21300000, guid: bd208d539bdf1654eb15870fa090e62b, type: 3}
+  Background: {r: 0.06, g: 0.035, b: 0.045, a: 1}
+  FarColor: {r: 0.132, g: 0.077, b: 0.066, a: 0.55}
+  MidColor: {r: 0.24, g: 0.14, b: 0.12, a: 1}
+  FloorColor: {r: 0.24, g: 0.14, b: 0.12, a: 1}
+  Accent: {r: 0.55, g: 0.36, b: 0.22, a: 1}
+  FarParallax: 0.06
+  MidParallax: 0.12
+  Platforms: []
+  LeftBlastLine: 0
+  RightBlastLine: 0
+  BottomBlastLine: 0
+  SpawnP1:
+    X: 0
+    Y: 0
+  SpawnP2:
+    X: 0
+    Y: 0

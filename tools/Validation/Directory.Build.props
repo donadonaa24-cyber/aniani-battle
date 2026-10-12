@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <UseSharedCompilation>false</UseSharedCompilation>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)../../TestResults/dotnet/$(MSBuildProjectName)/obj/</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+    <OutputPath>$(MSBuildThisFileDirectory)../../TestResults/dotnet/$(MSBuildProjectName)/bin/</OutputPath>
+  </PropertyGroup>
+</Project>
