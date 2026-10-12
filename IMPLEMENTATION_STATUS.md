@@ -8,7 +8,7 @@
 - ユーザーが選んだ地上2tick予備→同初速で踏切、空中2段即時。schema7/GroundJumpStartupFrames=2、新状態は既存landへ接続。スタミナ1度消費・中断払い戻しなし、入力保持、被弾/足場/場外/ヒット停止を検査。着地8tickは浅いかがみ4tick→採用待機4tick。
 - 純C#317/317、API参照コンパイル警告/エラー0。素材93F＋待機/しゃがみ回帰、665ファイル再生成一致。再制作指示書§10/キット更新、ZIP341ファイル照合合格。[出力](art_source/art3_actions/README.md)/[プレビュー](docs/art_wip/art3d_previews.md)/[最終報告](docs/codex_logs/art3d_final.md)。
 - 最新起動Build/art3d/AniBato.exe、保持art3d/art3c。実機撮影は最前面確保できずキー送信前に停止、[スクショ未保存](docs/screenshots/art3d_previews.md)。Windows目視は残る。旧TestResults111件を容量管理で整理、dotnet類/過去の最終報告は保持。
-- 全合格した区切りを`Add fixed-size action sprites and two-tick jump anticipation`でcommit・origin mainへ通常pushする。SHA/反映はgit log/statusで確認。Claude交代はRESUME冒頭/HANDOFF§4から。次の候補は実機確認、walk/攻撃/勝敗等の新絵柄化、6B手動確認。次の指示書を先に書く。
+- 実装/素材コミット**52de881**（`Add fixed-size action sprites and two-tick jump anticipation`）をorigin mainへ通常push済み。HEAD/origin/main一致・clean確認後、この資料の反映記録だけを追記。Claude交代はRESUME冒頭/HANDOFF§4から。次の候補は実機確認、walk/攻撃/勝敗等の新絵柄化、6B手動確認。次の指示書を先に書く。
 
 ### ART3D制作中の履歴（以下は当時の状態）
 

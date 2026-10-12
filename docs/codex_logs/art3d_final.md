@@ -35,6 +35,6 @@
 
 保持ビルドはart3d/art3c。古いTestResultsのphase5/5b/6a/6bファイル111件を指定の容量管理で整理し、art3b/c/dとdotnet/dotnet-homeを保持。過去の最終報告は保持。公開対象のテキストに個人絶対パス/秘密パターンなし。
 
-全4工程合格後、この区切りを`Add fixed-size action sprites and two-tick jump anticipation`の名前でcommitし、origin mainへ通常pushする。実際のSHA/反映はgit log/statusで確認する。force pushなし。Claudeへは[RESUME](../RESUME.md)冒頭・[引き継ぎ書](../HANDOFF_TO_CODEX.md)§4・本報告を渡す。開始時tasklist/git status、同時編集禁止、次の指示書を先に作る。再現はBuildArt3Actions.ps1 -RebuildCheck（検査だけなら-VerifyOnly）、キット再作成はBuildSpriteGenerationKit.ps1。
+全4工程合格後、実装/素材コミット**52de881**（`Add fixed-size action sprites and two-tick jump anticipation`）をorigin mainへ通常push済み。HEAD/origin/main一致・cleanを確認して、この反映記録だけを追記。force pushなし。Claudeへは[RESUME](../RESUME.md)冒頭・[引き継ぎ書](../HANDOFF_TO_CODEX.md)§4・本報告を渡す。開始時tasklist/git status、同時編集禁止、次の指示書を先に作る。再現はBuildArt3Actions.ps1 -RebuildCheck（検査だけなら-VerifyOnly）、キット再作成はBuildSpriteGenerationKit.ps1。
 
 残課題はWindows実機画面の目視、walk/攻撃/勝敗などの新絵柄化、物理パッド/144Hz等の6B手動確認。次に進む場合は指示書から作る。今回のユーザー依頼は全4動作と予備/着地の素材生成・ゲーム接続まで完了。

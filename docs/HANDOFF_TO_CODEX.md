@@ -77,7 +77,7 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 - **Unity全4工程合格：BuildAll成功、EditMode357/357・PlayMode30/30（失敗/スキップ0）、Windowsビルド成功**。TestResults/art3d_*、Edit/Play終了01:53:43/01:55:04 JST。実入力→BattleRunner→SpriteRendererで3人の予備/踏切/防御/回避/ダッシュも検査。初回のschema6固定期待と追加テストの入力待ちを修正して全再実行、アサーションは維持。
 - 最新起動Build/art3d/AniBato.exe、保持art3d/art3c。実機撮影は事前声かけ後、最前面確保できずキー送信前に停止、PNG未保存。[素材比較/GIF](art_wip/art3d_previews.md)は実機スクショではない。[撮影の残課題](screenshots/art3d_previews.md)。再撮影前は必ず「PCに触らないで」と案内し安全チェックを維持。
 - [RESUME](RESUME.md)冒頭・[art3d_final](codex_logs/art3d_final.md)から交代。原画/全文プロンプト/採否/共通倍率/実装PNGはart_source/art3_actions/。BuildArt3Actions.ps1 -RebuildCheck（検査だけ-VerifyOnly）、BuildSpriteGenerationKit.ps1で再現。665ファイル再生成一致、ZIP341ファイル照合合格。[詳細条件](SPRITE_GENERATION_GUIDE.md)§10とキットを別環境へ渡せる。
-- 全合格した区切りを`Add fixed-size action sprites and two-tick jump anticipation`でcommit・origin mainへ通常pushする。実際のSHA/反映はgit log/statusで確認。次は実機目視、walk/攻撃/勝敗など新絵柄化、6Bの物理パッド/144Hz等の手動確認。新指示書を先に作り、開始時tasklist/git statusで同時編集を防ぐ。
+- 実装/素材コミット**52de881**（`Add fixed-size action sprites and two-tick jump anticipation`）をorigin mainへ通常push済み、HEAD/origin/main一致・cleanを確認後、この反映記録だけを追記。次は実機目視、walk/攻撃/勝敗など新絵柄化、6Bの物理パッド/144Hz等の手動確認。新指示書を先に作り、開始時tasklist/git statusで同時編集を防ぐ。
 
 ### ART3C完了時の履歴
 

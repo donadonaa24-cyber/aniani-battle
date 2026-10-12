@@ -7,7 +7,7 @@
 - **今回のUnity：BuildAll成功、EditMode357/357・PlayMode30/30、失敗/スキップ0、Windowsビルド成功**。TestResults/art3d_*、終了01:53:43/01:55:04 JST。旧アサーションを保持、全新コマ/予備/着地/ID検査と3人の実入力→SpriteRenderer検査を追加。
 - 純C#317/317、API参照コンパイル警告/エラー0、18クリップ93F＋待機/しゃがみ回帰、665ファイル再生成SHA-256一致。[指示書§10](SPRITE_GENERATION_GUIDE.md)/[持ち出しZIP](../art_source/sprite_generation_kit.zip)更新、ZIP341ファイル照合合格。原画/全文プロンプト/採否/倍率/実装PNGは[art3_actions](../art_source/art3_actions/README.md)。再現はBuildArt3Actions.ps1 -RebuildCheck、検査だけ-VerifyOnly、キットBuildSpriteGenerationKit.ps1。
 - 最新起動**Build/art3d/AniBato.exe**、保持ビルドart3d/art3c。実機撮影は声かけ後に最前面確保できずキー送信前に停止、[PNG未保存](screenshots/art3d_previews.md)。[素材比較/GIF](art_wip/art3d_previews.md)は実機スクショではない。PC操作可能と案内済み。Windows目視は残課題。
-- [最終報告](codex_logs/art3d_final.md)。全合格後に`Add fixed-size action sprites and two-tick jump anticipation`でcommitしorigin mainへ通常pushする区切り。実際のSHA/反映はgit log/statusから確認。ClaudeはAGENTS→HANDOFF→本書→STATUS、開始時tasklist/git statusで同時編集を防ぐ。次は実機画面の目視、walk/攻撃/勝敗等の新絵柄化、物理パッド/144Hzなど6B手動確認。新作業は指示書を先に作り、再撮影前にも「PCに触らないで」と案内。
+- [最終報告](codex_logs/art3d_final.md)。実装/素材コミット**52de881**（`Add fixed-size action sprites and two-tick jump anticipation`）をorigin mainへ通常push済み。push後にHEADとorigin/mainの一致・cleanを確認。この反映記録だけを最後に追記した。ClaudeはAGENTS→HANDOFF→本書→STATUS、開始時tasklist/git statusで同時編集を防ぐ。次は実機画面の目視、walk/攻撃/勝敗等の新絵柄化、物理パッド/144Hzなど6B手動確認。新作業は指示書を先に作り、再撮影前にも「PCに触らないで」と案内。
 
 ### ART3D制作中の履歴（以下の未完了表記は当時のもの）
 
