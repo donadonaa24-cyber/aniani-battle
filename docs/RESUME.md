@@ -1,4 +1,31 @@
-# 再開メモ：フェーズ6BのUnity検証・実機調整待ち（2026-10-12）
+# 再開メモ：6B完了・Codex/Claude交代手順（2026-10-12）
+
+**6Bは完了済み。Codexがメイン実装・レビュー・Unity検証・取りまとめを担当し、Claudeにも随時交代できる。** ユーザーの最新指定を優先する。以下の過去履歴にある「検証待ち／Codexはcommitしない」は現在の指示ではない。
+
+## 確認済みの状態
+
+- Unity：BuildAll成功、**EditMode320/320・PlayMode29/29、失敗・スキップ0、Windowsビルド成功**。TestResults/phase6b_runner.txt・各XML・生成/ビルドログを確認。今回は保存済み結果の確認で、再実行はしていない。
+- 実装コミット **9560ed4**（6A・6B）はorigin mainへpush済み。git ls-remoteでも一致。資料更新開始時はclean。
+- 起動：**Build/phase6b/AniBato.exe**。Title/Battleシーンも実在。ビルドはphase6a・phase6bの2つを保持。
+- 現在の作業：[PHASE6B_CLOSEOUT](codex_tasks/PHASE6B_CLOSEOUT.md)。担当分担と完了記録のみ更新。コード・アセット・テストは変更していない。
+- 画像：[phase6b比較一覧](screenshots/phase6b_previews.md)、docs/screenshots/phase6b_*.png。サムネ/オフライン投影図でありUnity実画面ではない。新しい実キー撮影は行っていない。
+
+## 次の作業・交代時の手順
+
+1. AGENTS → HANDOFF → 本書 → STATUSを読み、tasklistでcodex.exeと他担当の作業を確認。同じフォルダの同時編集は禁止。
+2. git statusと最新コミットを確認。記録更新の差分が残っていればPHASE6B_CLOSEOUTに沿って確認・commit/pushする。交代する担当に作業名・差分・検証結果を渡す。
+3. 次はユーザーの実プレイ所見を反映する具体的な修正を選び、docs/codex_tasks/に指示書を作ってから着手。新機能の範囲はまだ決めていない。
+4. 手動所見の記録が今回見つからなかった項目：物理DualSense/2台再接続、3比率/144Hzのカメラ・HUD・新中割り・縮小、全14課題、音。実SO810試合集計も未確認。必要に応じて次の確認対象にする。
+5. Unityはtools/verify/run_unity.ps1 -Tag <作業名>をサンドボックス外で承認申請。全4工程が合格した区切りでcommit・origin mainへpush。.NETだけで完了扱いにしない、アサーションを弱めない、-nographics/force push禁止。
+6. play_and_capture.ps1の前に必ずユーザーへ「PCに触らないで」と声をかける。実行結果とスクショを確認し、本書/STATUSへ記録する。
+
+カメラの全体常時表示と常時拡大、idleの目元/柄、サポート・追加キャラ・オンライン・正式音源などは改善候補/未実装。完了した6Bの再実装は不要。
+
+---
+
+## 以下は6B提出時の履歴（現在の結果・担当は上記を参照）
+
+# 再開メモ：フェーズ6BのUnity検証・実機調整待ち（提出時）
 
 [PHASE6B](codex_tasks/PHASE6B.md)のコード・素材・資料を更新。**commit/pushなし。6B Unity全実行はClaude担当、PlayMode全合格はまだ確認していない。** 6A履歴：BuildAll成功・EditMode305/305・PlayMode24/26・Windowsビルド成功（Build/phase6a/）。既存ポータルの試作版公開は別作業で、6Bでは公開していない。
 

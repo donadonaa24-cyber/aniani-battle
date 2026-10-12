@@ -1,5 +1,7 @@
 # PHASE 6B 指示書：仕上げ（見た目・カメラ・最終テスト・資料）（Claude → Codex）
 
+> **完了確認（2026-10-12）**：BuildAll成功・Unity EditMode320/320・PlayMode29/29・Windowsビルド成功。実装コミット9560ed4はorigin mainへ反映済み。ユーザーの最新指定により今後はCodexがレビュー・Unity検証・取りまとめも担当し、Claudeへ随時交代できる。末尾の「Codexはcommitしない」は提出時の分担として保持する。最新の状態はRESUME、記録更新の指示書はPHASE6B_CLOSEOUTを参照。
+
 ## Claudeによるフェーズ6A検証結果（Unity実機）
 - BuildAll成功、EditMode **305/305**、Windowsビルド成功（`Build/phase6a/`。古いビルドは保持ルールで自動削除）。
 - PlayMode **24/26**。失敗2件（`TestResults/phase6a_PlayMode.xml` / `.log`）：

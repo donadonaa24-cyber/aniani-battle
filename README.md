@@ -1,6 +1,6 @@
 # あにあにバトル！！（あにバト！！）
 
-オリジナル2D横スクロール対戦アクション。透真・蓮・千鶴によるCPU対戦・同一PCの2人対戦、練習とチュートリアルを備えます。現行ルールは[GAME_DESIGN](GAME_DESIGN.md)、原本[SPEC_ORIGINAL](docs/SPEC_ORIGINAL.md)は履歴として保持しています。6AはBuildAll・EditMode305/305・PlayMode24/26・WindowsビルドをClaudeが確認済み。**6Bで失敗2件のソース修正、背景・中割り・カメラ・操作設定を更新し、Unity再検証を待っています。** 最新手順は[RESUME](docs/RESUME.md)。
+オリジナル2D横スクロール対戦アクション。透真・蓮・千鶴によるCPU対戦・同一PCの2人対戦、練習とチュートリアルを備えます。現行ルールは[GAME_DESIGN](GAME_DESIGN.md)、原本[SPEC_ORIGINAL](docs/SPEC_ORIGINAL.md)は履歴として保持しています。**6B完了：BuildAll成功・Unity EditMode320/320・PlayMode29/29・Windowsビルド成功。** 実装コミット9560ed4はorigin mainへ反映済み。最新手順とCodex/Claudeの交代記録は[RESUME](docs/RESUME.md)。
 
 メインメニューの「練習モード」は、相手を棒立ち/ガード/ジャンプ/ふつうCPUから選び、ハート・時間固定を切り替えられます（ポーズ→練習設定）。入力と技名を表示します。「チュートリアル」は14段階の実操作課題。技表はキャラ選択のTab（パッドSHARE/BACK）かポーズから開き、左右でキャラ・上下でページを切り替えます。「キーコンフィグ」はP1/P2・キーボード/パッド別に変更・保存・初期化できます。重複は同じ設定内で入替。ボタン表記は最後に使った機器と現在の割り当てに自動追従します。
 
@@ -19,7 +19,7 @@
 
 ## 起動
 
-検証済みWindows版は `Build/phase6a/AniBato.exe` を起動します。6B版の `Build/phase6b/AniBato.exe` はClaudeのUnity検証・ビルド後に生成されます。最新2ビルドのみ保持するため、過去の実行ファイルは削除されることがあります。
+検証済みWindows版は **`Build/phase6b/AniBato.exe`** を起動します。ビルドはGit管理外で、検証したPC上に保存されます。最新2ビルドのみ保持するため、過去の実行ファイルは削除されることがあります。
 
 1. Unity Hubから **Unity 6000.6.0f1** で `AniBato/` を開きます。
 2. 更新後はメニュー「**あにバト → プロジェクト生成（フェーズ6B）**」を実行して、方向AttackData・スタミナ・アニメ・新背景/サムネ・タイトルと対戦シーンを生成します。
@@ -98,13 +98,13 @@ New-Item -ItemType Directory -Force -Path $resultPath | Out-Null
 & $unityExe -batchmode -projectPath $projectPath -runTests -testPlatform PlayMode -testResults (Join-Path $resultPath 'phase6b-playmode.xml') -logFile (Join-Path $resultPath 'phase6b-playmode.log')
 ```
 
-`-runTests` には `-quit` を付けません。**`-nographics` は使用しません**（Personalライセンスのヘッドレス権限不足で失敗するため）。CodexのサンドボックスではUnityライセンスIPCに接続できないため、Unityの生成・テスト・ビルドはClaudeが実行します。代替検証は [tools/Validation/README.md](tools/Validation/README.md) を参照してください。手動の操作感・画面確認と自動テストの結果は区別します。
+通常の全検証は `powershell -ExecutionPolicy Bypass -File tools/verify/run_unity.ps1 -Tag <作業名>` でBuildAll→EditMode→PlayMode→Windowsビルドを実行します。`-runTests` には `-quit` を付けません。**`-nographics` は使用しません**（Personalライセンスのヘッドレス権限不足で失敗するため）。Codexはサンドボックス外での実行を承認申請し、Claudeへ交代する場合も同じ手順・証跡を使います。代替検証は [tools/Validation/README.md](tools/Validation/README.md) を参照してください。.NETだけで完了扱いにせず、手動の操作感・画面確認と自動テストの結果を区別します。
 
-フェーズ6Bの.NET代替は307件成功、全C#とプレイヤー側の参照コンパイルは警告・エラー0。asmdef6件の参照確認済み。Unity想定はEditMode320／PlayMode29で、**未実行の想定件数は合格結果ではありません**。GameFlowSceneTestsとBattleSceneTestsの入力分離/復元構造を保持し、機器の後始末を補強しました。
+フェーズ6Bの.NET代替は307件成功、全C#とプレイヤー側の参照コンパイルは警告・エラー0。asmdef6件の参照確認済み。**Unity実結果はEditMode320成功／PlayMode29成功、失敗・スキップ0**（TestResults/phase6b_EditMode.xml・phase6b_PlayMode.xml）。GameFlowSceneTestsとBattleSceneTestsの入力分離/復元構造を保持し、機器の後始末を補強しました。
 
 再検証は `powershell -NoProfile -ExecutionPolicy Bypass -File tools/Validation/RunPhase6B.ps1`。CPU全9組×30seed×3難易度=810試合集計は[CPU_BALANCE_REPORT.md](docs/CPU_BALANCE_REPORT.md)。Unity生成済みデータは「CPU対戦集計」メニュー、または `AniBato.EditorTools.CpuBalanceReportBuilder.Write` でphase6b-cpu-unity.*へ別保存できます。
 
-設計は [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)、初期値は [BALANCE_CONFIG.md](BALANCE_CONFIG.md)、確定・暫定ルールは [GAME_DESIGN.md](GAME_DESIGN.md)。コミット・公開はこの作業では行いません。
+設計は [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)、初期値は [BALANCE_CONFIG.md](BALANCE_CONFIG.md)、確定・暫定ルールは [GAME_DESIGN.md](GAME_DESIGN.md)。Unity全検証が合格した区切りでcommit・origin mainへpushします。次の作業前に指示書を作り、同じフォルダで同時編集しません。実キー入力を送るplay_and_capture.ps1の前は、必ずユーザーへ「PCに触らないで」と声をかけます。
 
 ## ART2：3キャラのドット絵
 
@@ -117,7 +117,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildPhase
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/VerifyPhase6A.ps1 -Tag phase6b -Rebuild
 ```
 
-ツールの詳細は[tools/SpriteForge/README.md](tools/SpriteForge/README.md)。基準idleは透真124px/千鶴112px/蓮100px、224×160セル、各キャラ共通32色、PPU50です。現行584F、106GIFの全コマ復号、351ファイルの再生成SHA-256一致を検査。6BのUnityインポート・実動作はClaude待ちです。
+ツールの詳細は[tools/SpriteForge/README.md](tools/SpriteForge/README.md)。基準idleは透真124px/千鶴112px/蓮100px、224×160セル、各キャラ共通32色、PPU50です。現行584F、106GIFの全コマ復号、351ファイルの再生成SHA-256一致を検査。6BのUnity生成・アセットテスト・シーンテストは合格済み。新中割り・144Hz・物理パッドの手動所見は最新のRESUMEを参照してください。
 
 
 

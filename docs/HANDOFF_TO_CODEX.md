@@ -1,8 +1,8 @@
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
-> この文書は、Claude（レビュー・Unity検証・取りまとめ担当）が使用制限などで止まったときに、
-> **Codex が Claude の役割も引き受けて最後まで開発を続ける**ためのものです。
-> まず `AGENTS.md`、次に `docs/RESUME.md`、`IMPLEMENTATION_STATUS.md` を読んでから、この文書に従ってください。
+> 2026-10-12 ユーザー指定：**Codexが実装・レビュー・Unity検証・取りまとめを担当し、Claudeにも随時交代できる**ようにする。
+> 読む順序は `AGENTS.md` → 本書 → `docs/RESUME.md` → `IMPLEMENTATION_STATUS.md`。
+> **6Bは完了済み**。保存済みUnity結果とGitHub mainを確認した最新情報は§4。旧資料の「Claude待ち／Codexはcommitしない」は過去の分担であり、現在の指定ではない。
 
 ---
 
@@ -16,6 +16,7 @@
   5. `IMPLEMENTATION_STATUS.md` と `docs/RESUME.md` を更新し、ユーザーに日本語で短く報告する
 - 優先順位（原本仕様16章）：**遊べること ＞ 戦闘の気持ちよさ ＞ ルールの正確性と安定性 ＞ UI ＞ キャラ演出 ＞ 背景**。
 - 仕様に反する未完成状態を完成と偽らない。テストのアサーションを弱めて通さない。
+- Claudeへ交代しても同じ指示書・証跡・再開メモを使う。開始時にtasklistでcodex.exeを確認し、同じフォルダで別の担当が作業中なら編集を待つ。同時編集は禁止。
 
 ## 1. 絶対ルール（AGENTS.md より再掲）
 - 書き込みは `anianiバトル！！` フォルダ配下のみ。他のゲームのフォルダは読み取り専用。
@@ -69,15 +70,17 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 - テストを弱めていないか、失敗を隠していないか
 - 見た目：キャラが別人に見えない、足元が揃う、頭上カウンターが頭上にある、判定（F9表示）と絵が大きくずれない
 
-## 4. 現在の作業：6BのUnity再検証とカメラ実機調整待ち
+## 4. 現在の状態：6B完了・担当交代の記録更新
 
-- フェーズ1〜5BはUnity検証・初回コミット済み。6AはBuildAll成功・EditMode305/305・PlayMode24/26・Windowsビルド成功、未コミット。
-- 6BのPlayMode2件はUSB HIDレポート・機器の後始末・旧シーン停止でソース修正し、アサーションを維持。背景3枚・中割り3アトラスを品質確認して再利用、背景/サムネ・段階的カメラ・左右表記・ダッシュ2回ON/OFF・必須24テスト/12成果物表・資料を更新。
-- .NET307合格、Editor/Player参照コンパイル0警告/エラー、asmdef6件、CPU810試合、584F/106GIF・351ファイル再生成一致。6B Unity/実機は未実行。カメラの全体常時表示と常時拡大は未達で実機調整が必要。
-- 最新手順は RESUME.md、IMPLEMENTATION_STATUS.md、codex_logs/phase6b_final.md。現在のworkspace-write/承認不可では外部Unityを実行できない。権限を迂回せずClaudeへ引き継ぐ。
-- ClaudeがUnityを閉じ、tools/verify/run_unity.ps1 -Tag phase6b を実行。新アセット接続・失敗2件/全テスト・Windowsビルド・実機を確認。**ユーザーの今回の指定によりCodexはcommitしない。全合格後のcommit/pushはClaude担当。**
+- ユーザーが「6bは終わったよ」と確認。保存済み証跡：BuildAll exit 0、**EditMode320/320・PlayMode29/29（失敗・スキップ0）**、Windowsビルド exit 0・Success。TestResults/phase6b_runner.txt、phase6b_EditMode.xml、phase6b_PlayMode.xml、phase6b_buildall.log、phase6b_build.logで確認した。
+- Title/Battleの生成シーンとBuild/phase6b/AniBato.exeが実在。最新2ビルドはphase6a・phase6b。
+- 実装コミット9560ed4（6A・6B）はGitHub origin mainへ反映済み。資料更新開始時の作業ツリーはclean。今回は保存済み結果を読み、Unityの再実行や実キー入力は行っていない。
+- USB HID・機器の後始末・旧シーン停止の修正を含め、全PlayModeが合格。背景・中割り・カメラ・左右表記・ダッシュ設定・必須24テスト/12成果物表も実装済み。
+- 比較画像はdocs/screenshots/phase6b_*.png（サムネ・オフライン投影図）。6B実機撮影・物理パッド2台・3比率/144Hzの手動所見・全14課題の通し確認・実SO810試合集計の記録は今回確認できていない。自動テストの合格と分ける。
+- カメラの全体常時表示と常時拡大、idle目元/柄などは改善候補。完了した6Bを作り直さず、ユーザーの操作感に基づいて次の具体的な修正を選び、着手前にdocs/codex_tasks/へ指示書を書く。
+- 現在の記録作業はcodex_tasks/PHASE6B_CLOSEOUT.md。交代時はRESUME冒頭の作業名・差分・結果・次の手順から再開する。
 ## 5. 残りフェーズ（指示書は自分で `docs/codex_tasks/PHASE4.md` 等に書いてから着手）
-以下は工程全体の記録です。フェーズ4は実装・Unity検証済み、フェーズ5はソース・.NET検証済み。現在の再開地点は§4とRESUMEに従い、完了済みの素材やフェーズを作り直さないでください。
+以下は工程全体の計画履歴です。フェーズ1〜6Bは実装・Unity検証済み。現在の再開地点は§4とRESUMEに従い、完了済みの素材やフェーズを作り直さないでください。
 ### フェーズ4：ステージとゲーム進行（原本 6・8章）
 - 3ステージ（STAGE 01 星の終わり：近未来都市・青紺・電子光／STAGE 02 推し駒Battle：6×6盤面の闘技場・巨大な駒／STAGE 03 Battle à la carte：文化祭の調理場）。**地形・当たり判定は3つとも同一**（既存 `StageGeometry`）、背景・色・床の見た目だけ変える。背景は自作（画像生成可、出典記録）。
 - **ステージ縮小**：残り10秒（開始60秒）で警告 → 左右の床が段階的に消え、最後は中央の小足場のみ。全ステージ共通の `StageShrinkController`（シミュレーション側で決定的に）、背景演出は分離（星の終わり＝AI警告、推し駒＝外側のマス消失、à la carte＝文化祭終了）。キャラの立ち位置を考慮し突然消さない。
