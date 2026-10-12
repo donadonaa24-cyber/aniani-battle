@@ -21,9 +21,10 @@
             var sources = new List<Tuple<Animation, Raster, List<Rectangle>>>();
             foreach (var animation in manifest.animations)
             {
-                var source = Raster.Load(Path.Combine(input, animation.name + ".png"));
+                var source = Raster.Load(Path.Combine(input, (animation.sourceClip ?? animation.name) + ".png"));
                 Pixels.Key(source, manifest.keyTolerance); Pixels.RemoveSpecks(source, animation.anchor == "effect" ? 12 : 70);
                 var bounds = Pixels.Split(source, 12);
+                if (animation.sourceFrames != null) bounds = animation.sourceFrames.Select(index => bounds[index]).ToList();
                 if (bounds.Count != animation.frames) throw new InvalidOperationException(animation.name + ": expected " + animation.frames + " frames, detected " + bounds.Count + ". Repair the raw strip; no guessed grid slicing.");
                 sources.Add(Tuple.Create(animation, source, bounds));
             }
@@ -37,7 +38,7 @@
                 for (int i = 0; i < clip.Frames.Length; i++)
                 {
                     clip.Anchors[i] = source.Item1.anchor == "effect" ? source.Item3[i].Width * 0.5 : source.Item1.sourceAnchors != null ? source.Item1.sourceAnchors[i] : Pixels.TorsoAnchor(source.Item2, source.Item3[i], manifest.anchorRgbMin, manifest.anchorRgbMax, manifest.anchorRedGreenRatio);
-                    clip.Frames[i] = Pixels.ModalShrink(source.Item2, source.Item3[i], scale);
+                    clip.Frames[i] = Pixels.ModalShrink(source.Item2, source.Item3[i], scale * source.Item1.sourceScaleFactor);
                 }
                 clips.Add(clip);
             }
@@ -51,7 +52,7 @@
                 {
                     var frame = clip.Frames[i]; Pixels.Quantize(frame, palette);
                     var bounds = Pixels.Bounds(frame, 0, frame.Width);
-                    int xOffset = manifest.cellWidth / 2 - (int)Math.Round(clip.Anchors[i] * scale);
+                    int xOffset = manifest.cellWidth / 2 - (int)Math.Round(clip.Anchors[i] * scale * clip.Definition.sourceScaleFactor);
                     int yOffset = clip.Definition.anchor == "feet" ? manifest.baseline - bounds.Bottom + 1 :
                         (int)Math.Round(manifest.baseline - manifest.targetHeight * 0.5 - (bounds.Top + bounds.Bottom - 1) * 0.5);
                     headHeights[i] = manifest.baseline - yOffset - bounds.Top + 1;
@@ -71,15 +72,14 @@
                 var outputBindings = (clip.Definition.bindings ?? new Binding[0]).Select(binding => new Binding { State = binding.State, Clip = binding.Clip,
                     ActiveFrame = clip.Definition.inbetweenFrames > 0 ? (int)Math.Round((double)binding.ActiveFrame * (outputCount - 1) / Math.Max(1, clip.Frames.Length - 1)) : binding.ActiveFrame }).ToArray();
                 sheet.Save(Path.Combine(output, clip.Definition.name + ".png"));
-                if (clip.Definition.inbetweenFrames > 0)
-                    AnimationSmoothing.Preview(sheet, outputCount, clip.Definition.fps, palette,
+                AnimationSmoothing.Preview(sheet, outputCount, clip.Definition.fps, palette,
                         Within(root, "docs/art_wip/" + manifest.character + "_" + clip.Definition.name + "_preview.gif"));
                 var metadata = new Metadata { name = clip.Definition.name, frameCount = outputCount, cellWidth = manifest.cellWidth, cellHeight = manifest.cellHeight,
                     fps = clip.Definition.fps, loop = clip.Definition.loop, pivotY = (manifest.cellHeight - 1 - manifest.baseline + (clip.Definition.anchor == "effect" ? manifest.targetHeight * 0.5f : 0)) / manifest.cellHeight,
                     pixelsPerUnit = manifest.pixelsPerUnit, targetHeight = manifest.targetHeight, baseline = manifest.baseline, bindings = outputBindings, headHeights = headHeights };
                 WriteJson(Path.Combine(output, clip.Definition.name + ".json"), metadata);
                 reports.Add(new { name = clip.Definition.name, frames = details, outputFrames = outputCount,
-                    synthesis = clip.Definition.stableIdle ? "single-reference-breathing" : clip.Definition.inbetweenFrames > 0 ? "two-key-row-morph" : "original", headHeights = headHeights });
+                    synthesis = clip.Definition.stableIdle ? "single-reference-breathing" : (clip.Definition.sourceClip ?? "").EndsWith("_phase6b") ? "drawn-key-inbetweens" : "clean-key-hold", headHeights = headHeights });
             }
             WriteJson(Path.Combine(output, "forge-report.json"), new { schemaVersion = 1, sourceReferenceHeight = referenceHeight, commonScale = scale,
                 keyTolerance = manifest.keyTolerance, palette = palette.Select(c => "#" + (c & 0xffffff).ToString("X6")).ToArray(), clips = reports });

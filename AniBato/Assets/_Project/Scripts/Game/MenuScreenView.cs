@@ -1,6 +1,7 @@
 using AniBato.Battle;
 using UnityEngine;
 using UnityEngine.UI;
+using AniBato.Presentation;
 
 namespace AniBato.Game
 {
@@ -53,39 +54,55 @@ namespace AniBato.Game
             banner.rectTransform.anchoredPosition = screen == GameScreen.Countdown ? Vector2.zero : new Vector2(0, 285);
             for (int i = 0; i < cards.Length; i++) { cards[i].enabled = cardLabels[i].enabled = false; }
             heading.text = ""; subtitle.text = ""; options.text = "";
-            footer.text = "W/S・↑/↓・左スティック 選択    Enter / J / A 決定    Esc / K / B 戻る    F11 全画面";
+            var input = flow.Input;
+            footer.text = "方向入力 選択    " + input.ConfirmLabel(0) + " 決定    " + input.CancelLabel(0) + " / Esc 戻る    F11 全画面";
             if (screen == GameScreen.Title)
             {
                 heading.text = "あにあにバトル！！"; subtitle.text = "70秒、3つのハート。作品を超えて、勝負！";
                 options.text = "PRESS ANY KEY"; footer.text = "あにバト！！    /    aniani";
             }
             else if (screen == GameScreen.MainMenu)
-            { heading.text = "あにあにバトル！！"; subtitle.text = "モードを選択"; options.text = Choices(flow.MenuIndex, "CPU対戦", "2人対戦", "操作説明", "フレームレート  " + FramePacing.Label, "終了"); }
+            { heading.text = "あにあにバトル！！"; subtitle.text = "モードを選択"; options.rectTransform.sizeDelta = new Vector2(1740, 650); options.text = Choices(flow.MenuIndex, "CPU対戦", "2人対戦", "操作説明", "フレームレート  " + FramePacing.Label, "練習モード", "チュートリアル", "キーコンフィグ", LearningText.DashSetting(input), "終了"); }
             else if (screen == GameScreen.CharacterSelect) Characters(flow);
             else if (screen == GameScreen.StageSelect) Stages(flow);
             else if (screen == GameScreen.Pause)
             {
                 heading.text = "PAUSE"; subtitle.text = "音量は左右で調整 / 画面揺れは決定または左右で切替";
-                options.rectTransform.sizeDelta = new Vector2(1740, 620);
+                options.rectTransform.sizeDelta = new Vector2(1740, 680);
                 options.text = Choices(flow.MenuIndex, "再開", "操作説明", "キャラ選択へ", "タイトルへ",
                     "BGM音量  " + Mathf.RoundToInt((flow.Audio ? flow.Audio.BgmVolume : 0) * 100) + "%",
                     "SE音量  " + Mathf.RoundToInt((flow.Audio ? flow.Audio.SeVolume : 0) * 100) + "%",
-                    "画面揺れ  " + (flow.ScreenShakeEnabled ? "ON" : "OFF"), "フレームレート  " + FramePacing.Label);
+                    "画面揺れ  " + (flow.ScreenShakeEnabled ? "ON" : "OFF"), "フレームレート  " + FramePacing.Label,
+                    "技表", "練習設定", "キーコンフィグ", "開始ヒント  " + (flow.BasicHintsEnabled ? "ON" : "OFF"), LearningText.DashSetting(input));
             }
             else if (screen == GameScreen.Result) Result(flow);
             else if (screen == GameScreen.Controls)
             {
                 heading.text = "操作説明"; subtitle.text = "P1 / P2 キーボード ＆ ゲームパッド";
                 options.rectTransform.anchoredPosition = new Vector2(0, -275); options.rectTransform.sizeDelta = new Vector2(1740, 250);
-                var bindings = flow.Runner.GetComponent<InputController>().Bindings;
                 controlColumns[0].text = "操作\n移動\nジャンプ\n通常攻撃\n特殊攻撃\nガード\n回避\nカウンター\n超必殺\nダッシュ";
-                controlColumns[1].text = KeyboardColumn("P1", bindings.P1);
-                controlColumns[2].text = KeyboardColumn("P2", bindings.P2);
-                controlColumns[3].text = "パッド\n左スティック / 十字キー\nA / ×\nX / □\nY / △ ＋方向で4種\nLT / L2\nRT / R2\nRB / R1\nLB / L1\n左スティック押込";
+                controlColumns[1].text = KeyboardColumn("P1", input.EffectiveKeys(0));
+                controlColumns[2].text = KeyboardColumn("P2", input.EffectiveKeys(1));
+                controlColumns[3].text = "現在のP1操作\n左右 / 上下";
+                for (int action = 4; action <= 11; action++) controlColumns[3].text += "\n" + input.Label(0, (ControlAction)action);
                 options.fontSize = 25; options.text = RulesText;
-                footer.text = "左右2回入力でダッシュ / 下入力で急降下・上足場から降りる / Esc・Startでポーズ\nパッドは接続順にP1/P2へ割当。切断した機器の再接続は元の側。Enter / A / Esc / B で戻る";
+                footer.text = LearningText.DashHelp(input) + " 下でしゃがみ、下18F長押しで上足場から降下。空中の向き固定。\n" + input.Label(0, ControlAction.Pause) + " ポーズ / " + input.ConfirmLabel(0) + " または " + input.CancelLabel(0) + " で戻る";
             }
-            if (screen != GameScreen.Controls) options.fontSize = 38;
+            else if (screen == GameScreen.CommandList)
+            { heading.text = "技表  " + flow.Setup.Character(flow.CommandCharacter).Movement.Name; subtitle.text = "左右：キャラ / 上下：ページ " + (flow.CommandPage + 1) + "/2"; options.rectTransform.sizeDelta = new Vector2(1740, 680); options.text = LearningText.Commands(flow.Setup.Character(flow.CommandCharacter), input, flow.CommandPage); }
+            else if (screen == GameScreen.KeyConfig)
+            {
+                heading.text = "キーコンフィグ"; subtitle.text = flow.CapturingBinding ? "新しいボタンを押してください。Escで取消。" : "決定で変更 / 重複は同じ設定内で入替 / P1・P2は別保存";
+                var labels = new string[17]; labels[0] = "プレイヤー  P" + (flow.ConfigPlayer + 1); labels[1] = "機器  " + (flow.ConfigGamepad ? "パッド" : "キーボード");
+                var profile = input.Configuration.Profile(flow.ConfigPlayer, flow.ConfigGamepad);
+                var pad = input.AssignedGamepad(flow.ConfigPlayer);
+                var device = pad == null ? InputLabelDevice.Xbox : InputGlyphs.Detect(pad.layout, pad.description.product, pad.description.manufacturer);
+                for (int i = 0; i < 13; i++) labels[i + 2] = LearningText.Actions[i] + "  " + (flow.ConfigGamepad ? InputGlyphs.Pad(profile[(ControlAction)i], device) : ((UnityEngine.InputSystem.Key)profile[(ControlAction)i]).ToString());
+                labels[15] = "この割り当てを初期化"; labels[16] = LearningText.DashSetting(input) + "（両者共通）"; options.rectTransform.sizeDelta = new Vector2(1740, 760); options.text = Choices(flow.MenuIndex, labels);
+            }
+            else if (screen == GameScreen.PracticeSettings)
+            { heading.text = "練習設定"; subtitle.text = "練習・チュートリアルのみに適用"; options.text = Choices(flow.MenuIndex, "相手  " + new[] { "棒立ち", "ガード", "ジャンプ", "ふつうCPU" }[(int)flow.Practice.Opponent], "ハート固定  " + (flow.Practice.FreezeHearts ? "ON" : "OFF"), "時間固定  " + (flow.Practice.FreezeTimer ? "ON" : "OFF")); }
+            if (screen != GameScreen.Controls) options.fontSize = screen == GameScreen.KeyConfig ? 26 : screen == GameScreen.CommandList || screen == GameScreen.Pause ? 30 : 38;
         }
         private void Characters(GameFlowController flow)
         {
@@ -102,8 +119,7 @@ namespace AniBato.Game
                 cardLabels[i].color = flow.CpuMode && flow.CpuRow == i || flow.Ready(i) ? accent : Color.white;
             }
             options.text = flow.CpuMode ? (flow.CpuRow == 2 ? "▶ " : "") + "難易度  ◀ " + Difficulty(flow.Difficulty) + " ▶" : "";
-            footer.text = flow.CpuMode ? "P1 W/S 行選択 · A/D キャラ/難易度 · Enter/J 決定  |  パッド 左スティック＋A\nP2 ←/→ 相手 · ↑/↓ 難易度  |  Esc / K / B 戻る" :
-                "P1 A/D 選択 · J/Space/Enter 決定 · K 解除   |   P2 ←/→ 選択 · Delete/右Ctrl 決定 · End 解除\n各パッド 左スティック / 十字キー＋A 決定・B 解除/戻る   |   Esc メニューへ";
+            footer.text = "方向入力で選択 / P1 " + controller.ConfirmLabel(0) + " 決定・" + controller.CancelLabel(0) + " 戻る / P2 " + controller.ConfirmLabel(1) + " 決定・" + controller.CancelLabel(1) + " 戻る\n" + controller.CommandListLabel + " 技表 / Esc メニューへ";
             subtitle.text += "\n接続順: P1 " + controller.GamepadName(0) + " / P2 " + controller.GamepadName(1);
         }
         private void Stages(GameFlowController flow)
@@ -112,11 +128,14 @@ namespace AniBato.Game
             for (int i = 0; i < 3; i++)
             {
                 cards[i].enabled = cardLabels[i].enabled = true; cards[i].sprite = flow.Setup.Stages[i].Thumbnail;
-                cards[i].color = flow.StageIndex == i ? Color.white : new Color(0.5f, 0.55f, 0.65f);
+                cards[i].color = flow.StageIndex == i ? Color.white : new Color(0.8f, 0.82f, 0.86f);
                 cardLabels[i].text = (flow.StageIndex == i ? "▶ " : "") + flow.Setup.Stages[i].DisplayName;
                 cardLabels[i].color = flow.StageIndex == i ? accent : Color.white;
             }
             options.text = flow.StageIndex == 3 ? "▶ ランダム" : "ランダム";
+            var input = flow.Input;
+            footer.text = input.Label(0, ControlAction.Left) + " / " + input.Label(0, ControlAction.Right) +
+                "（パッド：左右）選択    " + input.ConfirmLabel(0) + " 決定    " + input.CancelLabel(0) + " / Esc 戻る\n上下でも選択可 / F11 全画面";
         }
         private void Result(GameFlowController flow)
         {
@@ -153,10 +172,10 @@ namespace AniBato.Game
         private static string KeyName(UnityEngine.InputSystem.Key key) => key.ToString().Replace("LeftArrow", "←").Replace("RightArrow", "→")
             .Replace("UpArrow", "↑").Replace("DownArrow", "↓").Replace("Right", "右").Replace("Left", "左");
         private const string RulesText = "70秒 / ハート3。通常攻撃の被弾3回でハート−1、コンボが途切れても被弾は残る。\n" +
-                "通常攻撃はガード不可。特殊はガード可。3ヒットコンボ後は大きく吹っ飛ぶ。\n" +
-                "LINK100で超必殺：命中でハート−2。通常ガード不可、ジャスト防御で防げる。\n" +
+                "全攻撃をガード可能。保持＋防御でスタミナ消費。しゃがみ攻撃はガード崩し＋蓄積1。\n" +
+                "LINK100で超必殺：命中でハート−2。スタミナ不足のガードを貫通。ジャストガード消費0。\n" +
                 "場外ラインを超えたら敗北。残り15秒で予告、10秒で縮小開始。\n" +
                 "時間切れはハートが多い側 → 被弾が少ない側 → 同数なら引き分け。\n" +
-                "P2テンキー：0 跳 / 1 通常 / 2 特殊 / 3 防御 / 4 回避 / 5 カウンター / 6 超必殺 / Enter ダッシュ";
+                "下でしゃがみ、上足場は下長押しで降下。空中の前後はキャラの向き基準。";
     }
 }

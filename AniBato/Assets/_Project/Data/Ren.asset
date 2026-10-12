@@ -29,11 +29,34 @@ MonoBehaviour:
     MaxAirDashes: 1
     GroundNormals: []
     AirNormals: []
+    DirectionalNormals: []
+    Stamina:
+      Maximum: 85
+      GroundRecoveryPerSecond: 26
+      ActiveRecoveryPerSecond: 6
+      RecoveryDelayFrames: 30
+      JumpCost: 6
+      AirJumpCost: 9
+      GroundDashCost: 6
+      AirDashCost: 11
+      DodgeCost: 14
+      GuardDrainPerSecond: 6
+      NormalGuardCost: 8
+      SpecialGuardCost: 20
+      UltimateGuardCost: 65
+      GuardBreakFrames: 18
+      GuardLockFrames: 36
+    CrouchHeightRatio: 0.55
+    DiagonalThreshold: 0.45
+    DiagonalFallbackVertical: 1
     Specials: []
     Ultimate:
       Name: 
       Kind: 0
       IsCloseRange: 0
+      NormalDirection: 0
+      BreaksGuard: 0
+      LandingRecoveryFrames: 0
       StartupFrames: 0
       ActiveFrames: 0
       DamageDelayFrames: 0
@@ -57,6 +80,7 @@ MonoBehaviour:
       ActiveVelocity:
         X: 0
         Y: 0
+      VerticalMotionOnStartOnly: 0
       ProjectileLaunchVelocity:
         X: 0
         Y: 0
@@ -94,6 +118,18 @@ MonoBehaviour:
       KnockbackMultiplier: 2
     UltimateCutInFrames: 30
   TempoSchemaVersion: 5
+  AccessibilitySchemaVersion: 6
+  DirectionalNormals:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 68b292a8294fff3439aac3ff48ede013, type: 2}
+  - {fileID: 11400000, guid: f67a2dd5f8394814daf37da85fc6a854, type: 2}
+  - {fileID: 11400000, guid: 765c5b104f16c234780545af2001195e, type: 2}
+  - {fileID: 11400000, guid: 8166301b056745f4c941b1cdef6846bc, type: 2}
+  - {fileID: 11400000, guid: 01f3f645865bc454cb0cce46ea94beee, type: 2}
+  - {fileID: 11400000, guid: 33d4010350df45a4f98b5b7b73517320, type: 2}
+  - {fileID: 11400000, guid: 0b53902dc8beb8e4b9d005df38ca3b81, type: 2}
+  - {fileID: 11400000, guid: 57b246f6f13c6f44a968016c2d701b18, type: 2}
+  - {fileID: 11400000, guid: 2f5fe459fb1aa954692088180ad110d6, type: 2}
   GroundNormals:
   - {fileID: 11400000, guid: 05daf31962a9c7e459c586045ebc5a41, type: 2}
   - {fileID: 11400000, guid: 0672c0a78e20a7d4aa979a52b896f0af, type: 2}

@@ -1,5 +1,6 @@
 using AniBato.Battle;
 using UnityEngine;
+using AniBato.Presentation;
 
 namespace AniBato.Game
 {
@@ -13,28 +14,29 @@ namespace AniBato.Game
         private BattleEffectsView effects;
         private Vector3 previousShake;
         private bool snap = true;
+        private float previousAspect;
         public void Configure(BattleRunner value, PresentationSettings settings) { runner = value; presentation = settings; }
         private void Awake() { cameraComponent = GetComponent<Camera>(); effects = runner.GetComponent<BattleEffectsView>(); }
-        private void OnEnable() { if (runner) runner.MatchRestarted += ResetTarget; }
+        private void OnEnable() { snap = true; if (runner) runner.MatchRestarted += ResetTarget; }
         private void OnDisable() { if (runner) runner.MatchRestarted -= ResetTarget; }
         private void ResetTarget() => snap = true;
         private void LateUpdate()
         {
             if (runner.Simulation == null) return;
             transform.position -= previousShake; previousShake = Vector3.zero;
-            if (runner.Paused) return;
+            if (cameraComponent.aspect != previousAspect) { snap = true; previousAspect = cameraComponent.aspect; }
+            if (runner.Paused && !snap) return;
             BattleVector p1 = runner.RenderPosition(0), p2 = runner.RenderPosition(1);
-            float centerX = Mathf.Clamp((p1.X + p2.X) * 0.5f, presentation.CameraXLimits.x, presentation.CameraXLimits.y);
-            float centerY = Mathf.Clamp((p1.Y + p2.Y) * 0.5f + 1.5f, presentation.CameraYLimits.x, presentation.CameraYLimits.y);
-            float horizontal = Mathf.Max(Mathf.Abs(p1.X - centerX), Mathf.Abs(p2.X - centerX));
-            float vertical = Mathf.Max(Mathf.Abs(p1.Y - centerY), Mathf.Abs(p2.Y - centerY));
-            float size = Mathf.Clamp(Mathf.Max((horizontal + presentation.CameraPadding) / cameraComponent.aspect,
-                vertical + presentation.CameraPadding), presentation.CameraMinSize, presentation.CameraMaxSize);
+            var frame = CameraFraming.Calculate(runner.Simulation.Stage, p1, p2, cameraComponent.aspect,
+                runner.Simulation.Match.TickCount == 0, presentation.CameraMinSize, presentation.CameraPadding,
+                presentation.CameraBoundaryInset, presentation.CameraHeadroom);
             bool frozen = runner.Simulation.P1.IsFrozenThisTick || runner.Simulation.P2.IsFrozenThisTick || runner.Simulation.CutInRemainingFrames > 0;
             float factor = snap ? 1 : frozen ? 0 : 1 - Mathf.Exp(-presentation.CameraFollowSpeed * Time.unscaledDeltaTime);
             snap = false;
-            transform.position = Vector3.Lerp(transform.position, new Vector3(centerX, centerY, -10), factor);
-            cameraComponent.orthographicSize = Mathf.Lerp(cameraComponent.orthographicSize, size, factor);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(frame.Center.X, frame.Center.Y, -10), factor);
+            cameraComponent.orthographicSize = CameraFraming.ContainingSize(frame,
+                new BattleVector(transform.position.x, transform.position.y), cameraComponent.aspect,
+                Mathf.Lerp(cameraComponent.orthographicSize, frame.Size, factor));
             if (!runner.Paused && effects && effects.ScreenShakeEnabled && effects.Feedback.ShakeRemaining > 0)
             {
                 float strength = presentation.ShakeStrength * Mathf.Clamp01(effects.Feedback.ShakeRemaining / presentation.ShakeSeconds);

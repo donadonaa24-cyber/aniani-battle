@@ -109,8 +109,8 @@ namespace AniBato.Tests
         [Test]
         public void FixedSeedSmallStudyLocksTempoShrinkAndUltimateTargets()
         {
-            var rows = CpuBalanceStudy.Run(new[] { PhaseFiveBDefaults.Character(0), PhaseFiveBDefaults.Character(1), PhaseFiveBDefaults.Character(2) },
-                PhaseFiveBDefaults.Rules(), PhaseOneDefaults.Stage(), new[] { CpuDefinition.ForDifficulty(1) }, 20);
+            var rows = CpuBalanceStudy.Run(new[] { PhaseSixADefaults.Character(0), PhaseSixADefaults.Character(1), PhaseSixADefaults.Character(2) },
+                PhaseSixADefaults.Rules(), PhaseOneDefaults.Stage(), new[] { CpuDefinition.ForDifficulty(1) }, 20);
             Assert.That(rows.Average(row => row.Ticks / 60d), Is.InRange(35, 55));
             Assert.That(rows.Count(row => row.Ticks >= 3600) / (double)rows.Count, Is.InRange(.20, .40));
             Assert.That(rows.Count(row => row.UltimateStarts > 0) / (double)rows.Count, Is.InRange(.5, .70));

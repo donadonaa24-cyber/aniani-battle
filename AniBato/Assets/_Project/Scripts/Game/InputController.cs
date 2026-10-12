@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using System.Collections.Generic;
+using AniBato.Presentation;
 
 namespace AniBato.Game
 {
@@ -59,8 +60,47 @@ namespace AniBato.Game
         { bool value = MenuKey(primary, action); if (alternatives != null) foreach (var key in alternatives) value |= MenuKey(key, action); return value; }
         private Keyboard assignedKeyboard;
         private readonly Vector2[] previousMenuAxes = new Vector2[2];
+        private readonly Vector2[] stickSamples = new Vector2[2], dpadSamples = new Vector2[2];
+        private readonly uint[] axesUpdates = { uint.MaxValue, uint.MaxValue };
+        private void SamplePadAxes(int player)
+        {
+            uint update = UnityEngine.InputSystem.LowLevel.InputState.updateCount;
+            if (axesUpdates[player] == update) return;
+            axesUpdates[player] = update;
+            var pad = assignedPads[player];
+            stickSamples[player] = pad != null && pad.added ? pad.leftStick.ReadValue() : Vector2.zero;
+            dpadSamples[player] = pad != null && pad.added ? pad.dpad.ReadValue() : Vector2.zero;
+        }
         public InputBindings Bindings => bindings;
-        public void Configure(InputBindings value) => bindings = value;
+        public ControlConfiguration Configuration { get; } = new ControlConfiguration();
+        private bool configurationReady;
+        private readonly InputLabelDevice[] labelDevice = { InputLabelDevice.Keyboard, InputLabelDevice.Keyboard };
+        public InputLabelDevice LabelDevice(int player) => labelDevice[player];
+        public void Configure(InputBindings value) { bindings = value; Configuration.Initialize(value); configurationReady = true; }
+        private void EnsureConfiguration() { if (!configurationReady && bindings) { Configuration.Initialize(bindings); configurationReady = true; } }
+        public PlayerKeyBindings EffectiveKeys(int player) { EnsureConfiguration(); return Configuration.Keyboard(player, bindings.ForPlayer(player)); }
+        public string Label(int player, ControlAction action)
+        {
+            EnsureConfiguration();
+            return labelDevice[player] == InputLabelDevice.Keyboard ? ((Key)Configuration.Profile(player, false)[action]).ToString() :
+                InputGlyphs.Pad(Configuration.Profile(player, true)[action], labelDevice[player]);
+        }
+        public string ConfirmLabel(int player) => labelDevice[player] == InputLabelDevice.Keyboard ? Label(player, ControlAction.Attack) : InputGlyphs.Pad(5, labelDevice[player]);
+        public string CancelLabel(int player) => labelDevice[player] == InputLabelDevice.Keyboard ? Label(player, ControlAction.Special) : InputGlyphs.Pad(14, labelDevice[player]);
+        public bool CaptureBinding(int player, bool gamepad, ControlAction action)
+        {
+            EnsureConfiguration();
+            if (gamepad)
+            {
+                var p = assignedPads[player]; if (p == null || !p.added) return false;
+                for (int id = 1; id <= 16; id++) if (Pressed(ControlConfiguration.PadButton(p, id)))
+                { Configuration.Profile(player, true).Rebind(action, id); Configuration.Save(player, true); blocked.Add(ControlConfiguration.PadButton(p, id)); Clear(); return true; }
+            }
+            else if (ActiveKeyboard != null) foreach (var key in ActiveKeyboard.allKeys)
+                if (key.keyCode != Key.Escape && key.keyCode != Key.F9 && key.keyCode != Key.F11 && key.keyCode != Key.Tab && Pressed(key))
+                { Configuration.Profile(player, false).Rebind(action, (int)key.keyCode); Configuration.Save(player, false); blocked.Add(key); Clear(); return true; }
+            return false;
+        }
         public void AssignKeyboard(Keyboard keyboard) { assignedKeyboard = keyboard; Clear(); }
 
         // Explicit device assignment; one gamepad cannot control both fighters.
@@ -69,7 +109,7 @@ namespace AniBato.Game
             if (player < 0 || player > 1) throw new System.ArgumentOutOfRangeException(nameof(player));
             if (pad != null && assignedPads[1 - player] == pad)
             { assignedPads[1 - player] = null; reservedPads[1 - player] = null; previousMenuAxes[1 - player] = Vector2.zero; }
-            assignedPads[player] = pad; reservedPads[player] = pad; previousMenuAxes[player] = Vector2.zero; Clear();
+            assignedPads[player] = pad; reservedPads[player] = pad; previousMenuAxes[player] = Vector2.zero; axesUpdates[player] = uint.MaxValue; Clear();
         }
         private void OnEnable() => InputSystem.onDeviceChange += OnDeviceChange;
         private void Start()
@@ -91,7 +131,7 @@ namespace AniBato.Game
             }
             if (change != InputDeviceChange.Removed && change != InputDeviceChange.Disconnected) return;
             for (int i = 0; i < assignedPads.Length; i++) if (assignedPads[i] == device)
-            { assignedPads[i] = null; previousMenuAxes[i] = Vector2.zero; }
+            { assignedPads[i] = null; previousMenuAxes[i] = Vector2.zero; axesUpdates[i] = uint.MaxValue; }
             // Native disconnects may be reported as Removed before Reconnected. Retain identity.
             if (assignedKeyboard == device) assignedKeyboard = null;
             Clear();
@@ -101,10 +141,12 @@ namespace AniBato.Game
             if (!bindings) return;
             for (int i = 0; i < 2; i++)
             {
-                FrameInput keyboard = ReadKeyboard(bindings.ForPlayer(i));
-                FrameInput pad = ReadGamepad(assignedPads[i]);
+                FrameInput keyboard = ReadKeyboard(EffectiveKeys(i));
+                FrameInput pad = ReadGamepad(assignedPads[i], i);
+                if (keyboard.Pressed != InputButtons.None || keyboard.X != 0 || keyboard.Y != 0) labelDevice[i] = InputLabelDevice.Keyboard;
+                if (pad.Pressed != InputButtons.None || pad.X != 0 || pad.Y != 0) SetPadLabel(i);
                 var input = new FrameInput(Mathf.Clamp(keyboard.X + pad.X, -1, 1), Mathf.Clamp(keyboard.Y + pad.Y, -1, 1),
-                    keyboard.Held | pad.Held, keyboard.Pressed | pad.Pressed);
+                    keyboard.Held | pad.Held, keyboard.Pressed | pad.Pressed, disableDoubleTapDash: !Configuration.DoubleTapDashEnabled);
                 latches[i].Sample(input);
             }
         }
@@ -120,26 +162,32 @@ namespace AniBato.Game
         public bool AnyMenuKeyPressed
         { get { bool value = false; if (ActiveKeyboard != null) foreach (var key in ActiveKeyboard.allKeys) value |= MenuButton(key, MenuAction.AnyKey); return value; } }
         public bool EscapePressed => MenuKey(Key.Escape, MenuAction.Cancel);
+        public bool CommandListPressed => MenuKey(Key.Tab, MenuAction.Start) || assignedPads[0] != null && MenuButton(assignedPads[0].selectButton, MenuAction.Start);
+        public string CommandListLabel => labelDevice[0] == InputLabelDevice.Keyboard ? "Tab" : InputGlyphs.Pad(16, labelDevice[0]);
         public MenuInput ReadMenu(int player)
         {
-            var keys = bindings.ForPlayer(player);
+            var keys = EffectiveKeys(player);
             int x = (AnyPressed(keys.Right, keys.AlternateRight) ? 1 : 0) - (AnyPressed(keys.Left, keys.AlternateLeft) ? 1 : 0);
             int y = (AnyPressed(keys.Down, keys.AlternateDown) ? 1 : 0) - (AnyPressed(keys.Up, keys.AlternateUp) ? 1 : 0);
             var confirmAction = player == 0 ? MenuAction.ConfirmP1 : MenuAction.ConfirmP2;
             bool confirm = MenuKeys(keys.Attack, keys.AlternateAttack, confirmAction) | MenuKeys(keys.Jump, keys.AlternateJump, confirmAction) | (player == 0 && MenuKey(Key.Enter, confirmAction));
             bool cancel = MenuKeys(keys.Special, keys.AlternateSpecial, MenuAction.Cancel);
+            if (x != 0 || y != 0 || confirm || cancel) labelDevice[player] = InputLabelDevice.Keyboard;
             var pad = assignedPads[player];
             Vector2 axes = Vector2.zero;
             bool start = false;
             if (pad != null && pad.added)
             {
-                axes = pad.leftStick.ReadValue(); if (pad.dpad.ReadValue().sqrMagnitude > axes.sqrMagnitude) axes = pad.dpad.ReadValue();
+                SamplePadAxes(player);
+                axes = stickSamples[player]; if (dpadSamples[player].sqrMagnitude > axes.sqrMagnitude) axes = dpadSamples[player];
                 if (Mathf.Abs(axes.x) > 0.5f && Mathf.Abs(previousMenuAxes[player].x) <= 0.5f) x += axes.x > 0 ? 1 : -1;
                 if (Mathf.Abs(axes.y) > 0.5f && Mathf.Abs(previousMenuAxes[player].y) <= 0.5f) y += axes.y > 0 ? -1 : 1;
                 confirm |= MenuButton(pad.buttonSouth, confirmAction);
                 cancel |= MenuButton(pad.buttonEast, MenuAction.Cancel);
-                start = MenuButton(pad.startButton, MenuAction.Start);
+                start = MenuButton(ControlConfiguration.PadButton(pad, Configuration.Profile(player, true)[ControlAction.Pause]), MenuAction.Start);
+                if (axes.sqrMagnitude > .1f || Edge(pad.buttonSouth) || Edge(pad.buttonEast) || start) SetPadLabel(player);
             }
+            start |= MenuKey((Key)Configuration.Profile(player, false)[ControlAction.Pause], MenuAction.Start);
             previousMenuAxes[player] = axes;
             return new MenuInput(System.Math.Sign(x), System.Math.Sign(y), confirm, cancel, start);
         }
@@ -165,16 +213,20 @@ namespace AniBato.Game
         }
         private void ReadButton(ButtonControl button, InputButtons flag, ref InputButtons held, ref InputButtons pressed)
         { if (button.isPressed && !blocked.Contains(button)) held |= flag; if (Pressed(button)) pressed |= flag; }
-        private FrameInput ReadGamepad(Gamepad pad)
+        private void SetPadLabel(int player)
+        { var p = assignedPads[player]; if (p != null) labelDevice[player] = InputGlyphs.Detect(p.layout, p.description.product, p.description.manufacturer); }
+        private FrameInput ReadGamepad(Gamepad pad, int player)
         {
             if (pad == null || !pad.added) return default;
             InputButtons held = InputButtons.None, pressed = InputButtons.None;
-            ReadButton(pad.buttonSouth, InputButtons.Jump, ref held, ref pressed); ReadButton(pad.buttonWest, InputButtons.Attack, ref held, ref pressed);
-            ReadButton(pad.buttonNorth, InputButtons.Special, ref held, ref pressed); ReadButton(pad.leftTrigger, InputButtons.Guard, ref held, ref pressed);
-            ReadButton(pad.rightTrigger, InputButtons.Dodge, ref held, ref pressed); ReadButton(pad.rightShoulder, InputButtons.Counter, ref held, ref pressed);
-            ReadButton(pad.leftShoulder, InputButtons.Ultimate, ref held, ref pressed); ReadButton(pad.leftStickButton, InputButtons.Dash, ref held, ref pressed);
-            Vector2 axis = pad.leftStick.ReadValue();
-            if (pad.dpad.ReadValue().sqrMagnitude > axis.sqrMagnitude) axis = pad.dpad.ReadValue();
+            var profile = Configuration.Profile(player, true);
+            for (int action = 4; action <= 11; action++)
+                ReadButton(ControlConfiguration.PadButton(pad, profile[(ControlAction)action]), (InputButtons)(1 << (action - 4)), ref held, ref pressed);
+            SamplePadAxes(player);
+            Vector2 axis = stickSamples[player];
+            var digital = new Vector2((ControlConfiguration.PadButton(pad, profile[ControlAction.Right]).isPressed ? 1 : 0) - (ControlConfiguration.PadButton(pad, profile[ControlAction.Left]).isPressed ? 1 : 0),
+                (ControlConfiguration.PadButton(pad, profile[ControlAction.Up]).isPressed ? 1 : 0) - (ControlConfiguration.PadButton(pad, profile[ControlAction.Down]).isPressed ? 1 : 0));
+            if (digital.sqrMagnitude > axis.sqrMagnitude) axis = digital;
             return new FrameInput(axis.x, axis.y, held, pressed);
         }
     }

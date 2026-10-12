@@ -1,18 +1,35 @@
 # あにあにバトル！！（あにバト！！）
 
-オリジナル2D横スクロール対戦アクション。透真・蓮・千鶴によるCPU対戦・同一PCの2人対戦です。原本は [SPEC_ORIGINAL](docs/SPEC_ORIGINAL.md)、現行は [PHASE5B](docs/codex_tasks/PHASE5B.md)。入力回帰・144Hz描画補間・アニメ・試合テンポを改善し、.NET230件と素材検査を完了。**5BのUnity生成・テスト・Windowsビルド・実機は未確認**です。最新手順は [RESUME](docs/RESUME.md)。以下のフェーズ5検証記述は過去の履歴です。
+オリジナル2D横スクロール対戦アクション。透真・蓮・千鶴によるCPU対戦・同一PCの2人対戦、練習とチュートリアルを備えます。現行ルールは[GAME_DESIGN](GAME_DESIGN.md)、原本[SPEC_ORIGINAL](docs/SPEC_ORIGINAL.md)は履歴として保持しています。6AはBuildAll・EditMode305/305・PlayMode24/26・WindowsビルドをClaudeが確認済み。**6Bで失敗2件のソース修正、背景・中割り・カメラ・操作設定を更新し、Unity再検証を待っています。** 最新手順は[RESUME](docs/RESUME.md)。
+
+メインメニューの「練習モード」は、相手を棒立ち/ガード/ジャンプ/ふつうCPUから選び、ハート・時間固定を切り替えられます（ポーズ→練習設定）。入力と技名を表示します。「チュートリアル」は14段階の実操作課題。技表はキャラ選択のTab（パッドSHARE/BACK）かポーズから開き、左右でキャラ・上下でページを切り替えます。「キーコンフィグ」はP1/P2・キーボード/パッド別に変更・保存・初期化できます。重複は同じ設定内で入替。ボタン表記は最後に使った機器と現在の割り当てに自動追従します。
+
+| 追加通常 | 入力（前後はキャラの向き基準） | 特徴 |
+|---|---|---|
+| 足払い | 地上↓＋通常 | ガード崩し＋被弾カウント1 |
+| 背面打ち | 地上背後＋通常 | 背後へ打撃、発生やや遅め |
+| 空中ニュートラル | 方向なし＋通常 | 周囲へ打撃 |
+| 空中前/後ろ | 前/背後＋通常 | 前は前進、後ろは向きを維持 |
+| 空中上/下 | ↑/↓＋通常 | 下は着地隙18F、メテオなし |
+| 空中斜め前上/下 | 前＋↑/↓＋通常 | 両軸0.45超、前進を伴う。下は着地隙14F |
+
+下入力でしゃがみ、上足場から降りるには下を18F長押し。空中では向きを変えません。スタミナは透真100/蓮85/千鶴125。地上ジャンプは不足でも可能、上復帰は消費なし。ガードは全攻撃を防ぎ、保持6/秒＋成立時 通常8/特殊20/超必殺65を消費。通常/特殊で不足すると無被弾ブレイク、超必殺で不足すると貫通しハート2。しゃがみ攻撃はジャストガードも崩し、ジャストガードはその他の技を消費0で防ぎます。対戦の基本操作ヒントは最初5秒だけ（ポーズでOFF可）。
+
+オフライン再検証：`powershell -NoProfile -ExecutionPolicy Bypass -File tools/Validation/RunPhase6B.ps1`。307件成功、参照コンパイル2系統は警告/エラー0、asmdef6件。CPU810試合の自滅近似0、ふつう平均48.09秒・縮小23.7%・超必殺65.6%。素材584F・106GIF。[背景/カメラ比較とwalk/dash](docs/screenshots/phase6b_previews.md)、[全GIF一覧](docs/art_wip/phase6a_previews.md)。
 
 ## 起動
 
+検証済みWindows版は `Build/phase6a/AniBato.exe` を起動します。6B版の `Build/phase6b/AniBato.exe` はClaudeのUnity検証・ビルド後に生成されます。最新2ビルドのみ保持するため、過去の実行ファイルは削除されることがあります。
+
 1. Unity Hubから **Unity 6000.6.0f1** で `AniBato/` を開きます。
-2. 更新後はメニュー「**あにバト → プロジェクト生成（フェーズ5B）**」を実行して、CPU難易度・音設定・3テーマ・タイトルと対戦シーンを生成します。
+2. 更新後はメニュー「**あにバト → プロジェクト生成（フェーズ6B）**」を実行して、方向AttackData・スタミナ・アニメ・新背景/サムネ・タイトルと対戦シーンを生成します。
 3. `Assets/_Project/Scenes/Title.unity` を開き、再生します。Windowsの起動シーンもTitleです。
 4. 任意キーでメニューへ。W/Sで「2人対戦」を選びEnter。P1はA/D→J、P2は←/→→Deleteでキャラを決定します。
 5. ステージをA/Dまたは←/→で選びEnter。3、2、1、FIGHTの後に70秒・ハート3で対戦します。試合終了後はリザルトの「再戦」を選びます。
 
 メインメニューとポーズの「フレームレート」でモニター同期／60／120／144／無制限を選択できます。既定はVSync同期、設定は端末保存。ハートを失った直後は75Fの立て直し無敵を点滅表示します。確定ダメージは通常3回でハート1、特殊1、超必殺2のままです。
 
-5Bのオフライン再検証は tools/Validation/RunPhase5B.ps1。ふつうCPUの平均4.83→45.51秒、縮小0→21.9%、超必殺67.8→56.7%。42アニメGIFは docs/art_wip/<character>_<clip>_preview.gif、更新素材は計368F。実機確認は [phase5b_final](docs/codex_logs/phase5b_final.md)。
+5Bの過去集計は平均45.51秒・縮小21.9%・超必殺56.7%。6Bでも6Aの戦闘数値とCPU集計を保持。[CPU_BALANCE_REPORT](docs/CPU_BALANCE_REPORT.md)、実機確認は[phase6b_final](docs/codex_logs/phase6b_final.md)を参照してください。
 
 再生成は既存の調整用ScriptableObjectの値を保持します。シーン構成は `ProjectBuilder` と `GameFlowBuilder` に記述してください。Build SettingsはTitleが先頭、Battleが2番目です。Battleは戦闘回帰テスト用の直接起動シーンとして残しています。
 
@@ -23,6 +40,8 @@ EscまたはパッドStartでポーズ。再開／操作説明／キャラ選択
 3ステージは星の終わり／推し駒Battle／Battle à la carte。開始55秒で予告、60秒で縮小開始、61.8・63.6・65.4・67.2・69秒で左右の床が消えます。各消滅の1秒前から対象区画が点滅します。上足場は63.6秒で消え、最後は中央幅10.8の足場のみ。床の消失は落下を起こし、場外ラインを超えて敗北します。
 
 ## 操作
+
+以下は既定の割り当てです。ゲーム内の操作説明は保存済みの現在の割り当てに追従します。「左右2回入力のダッシュ」はメインメニュー・ポーズ・キーコンフィグからON/OFFを切り替えられます（既定ON、P1/P2共通、端末保存）。OFFでもF／右Alt／L3の専用ボタンは有効です。割り当て初期化はこのON/OFF設定を変更しません。ステージ選択は左右、上下でも選択できます。
 
 | 操作 | P1 | P2（テンキー不要） | P2代替 | ゲームパッド |
 | --- | --- | --- | --- | --- |
@@ -36,8 +55,8 @@ EscまたはパッドStartでポーズ。再開／操作説明／キャラ選択
 | カウンター | I | PageUp | テンキー5 | 右肩ボタン |
 | 超必殺（LINK 100、1試合1回） | U | Home | テンキー6 | 左肩ボタン |
 | ダッシュ・空中ダッシュ | F / 左右2回タップ | 右Alt / 左右2回タップ | テンキーEnter | 左スティック押し込み / 左右2回タップ |
-| 急降下・小足場から降りる | S | ↓ | — | 下入力 |
-| ポーズ・再開 | Esc | 共通 | — | Start |
+| しゃがみ / 急降下 / 小足場から降りる | S（降下は18F長押し） | ↓（同じ） | — | 下入力（同じ） |
+| ポーズ・再開 | Esc | Backspace | — | OPTIONS / Start |
 | メニュー決定 | Enter / J / Space | Delete / 右Ctrl | テンキー0/1 | 南ボタン |
 | メニュー戻る・決定解除 | Esc / K | End | テンキー2 | 東ボタン |
 | 判定枠表示（Hurtbox緑/Hitbox赤/弾黄） | F9 | 共通 | — | キーボードF9 |
@@ -45,7 +64,7 @@ EscまたはパッドStartでポーズ。再開／操作説明／キャラ選択
 
 地上ダッシュは進行方向の保持で継続します。空中ダッシュは着地まで1回。上特殊も着地まで1回。P2はテンキーなしで操作でき、ノートPCによってDelete/Home等にはFn併用が必要です。`InputBindings.asset` の各PrimaryとAlternate配列で1行動に複数キーを指定できます。キーボードの同時押し制限は機種に依存します。
 
-通常はガードを貫通、特殊はガード可能。カウンターは近距離通常に有効。超必殺は通常ガード／回避を貫通し、直前5Fのジャストガード／回避で防げます。ガード解除後などには硬直があります。3連通常でCOMBO FINISHと大吹っ飛び、同じ相手からの追撃を短時間禁止します。
+通常/特殊/超必殺は必要スタミナがあればガード可能、しゃがみだけがガード崩しです。カウンターは近距離通常に有効。超必殺は不足したガードと通常回避を貫通し、直前5Fのジャストガード／回避で防げます。ガード解除・ブレイク後などには硬直があります。3連通常でCOMBO FINISHと大吹っ飛び、同じ相手からの追撃を短時間禁止します。
 
 ゲームパッドは接続順にP1/P2へ個別割り当てし、キャラ選択画面に機器名を表示します。切断した機器の枠を予約し、同じ機器を再接続すると元の側へ戻します。片方のパッドを両者へ割り当てません。XboxはA=ジャンプ／決定、X=通常、Y=特殊、LT=ガード、RT=回避、RB=カウンター、LB=超必殺、左スティック押込=ダッシュ、Start=ポーズ。PSは×/□/△/L2/R2/R1/L1に対応し、○=メニュー戻るです。操作説明画面にも表示します。画面遷移を起こしたボタン／機器だけを離すまで無効にし、他のボタン・パッド・Esc／Startは直ちに使えます。物理パッドでの確認は別途必要です。旧F1〜F4/Rは直接起動Battleの回帰確認だけで使用でき、Titleから始める正式画面では無効です。
 
@@ -74,32 +93,31 @@ $unityExe = 'C:\Program Files\Unity\Hub\Editor\6000.6.0f1\Editor\Unity.exe'
 $projectPath = Join-Path (Get-Location) 'AniBato'
 $resultPath = Join-Path (Get-Location) 'TestResults'
 New-Item -ItemType Directory -Force -Path $resultPath | Out-Null
-& $unityExe -batchmode -quit -projectPath $projectPath -executeMethod AniBato.EditorTools.ProjectBuilder.BuildAll -logFile (Join-Path $resultPath 'phase5b-build.log')
-& $unityExe -batchmode -projectPath $projectPath -runTests -testPlatform EditMode -testResults (Join-Path $resultPath 'phase5b-editmode.xml') -logFile (Join-Path $resultPath 'phase5b-editmode.log')
-& $unityExe -batchmode -projectPath $projectPath -runTests -testPlatform PlayMode -testResults (Join-Path $resultPath 'phase5b-playmode.xml') -logFile (Join-Path $resultPath 'phase5b-playmode.log')
+& $unityExe -batchmode -quit -projectPath $projectPath -executeMethod AniBato.EditorTools.ProjectBuilder.BuildAll -logFile (Join-Path $resultPath 'phase6b-build.log')
+& $unityExe -batchmode -projectPath $projectPath -runTests -testPlatform EditMode -testResults (Join-Path $resultPath 'phase6b-editmode.xml') -logFile (Join-Path $resultPath 'phase6b-editmode.log')
+& $unityExe -batchmode -projectPath $projectPath -runTests -testPlatform PlayMode -testResults (Join-Path $resultPath 'phase6b-playmode.xml') -logFile (Join-Path $resultPath 'phase6b-playmode.log')
 ```
 
 `-runTests` には `-quit` を付けません。**`-nographics` は使用しません**（Personalライセンスのヘッドレス権限不足で失敗するため）。CodexのサンドボックスではUnityライセンスIPCに接続できないため、Unityの生成・テスト・ビルドはClaudeが実行します。代替検証は [tools/Validation/README.md](tools/Validation/README.md) を参照してください。手動の操作感・画面確認と自動テストの結果は区別します。
 
-フェーズ5Bの.NET代替は230件成功、全C#とプレイヤー側の代替コンパイルは警告・エラー0。asmdef6件の参照確認済み。Unity標準想定はEditMode243／PlayMode23で、**5BのUnity BuildAll・テスト・Windowsビルド・実画面・音は未検証**です。前フェーズClaudeの225/225・15/20・Windows成功と混同しないでください。GameFlowSceneTestsとBattleSceneTestsのIsolateInput/RestoreInput構造は保持しています。
+フェーズ6Bの.NET代替は307件成功、全C#とプレイヤー側の参照コンパイルは警告・エラー0。asmdef6件の参照確認済み。Unity想定はEditMode320／PlayMode29で、**未実行の想定件数は合格結果ではありません**。GameFlowSceneTestsとBattleSceneTestsの入力分離/復元構造を保持し、機器の後始末を補強しました。
 
-再検証は `powershell -NoProfile -ExecutionPolicy Bypass -File tools/Validation/RunPhase5B.ps1`。CPUの全9組×30seed×3難易度=810試合集計は [CPU_BALANCE_REPORT.md](docs/CPU_BALANCE_REPORT.md)。ふつう同士の超必殺発動試合率56.7%。Unityで生成した実データの集計は「CPU対戦集計」メニュー、または `AniBato.EditorTools.CpuBalanceReportBuilder.Write` で別結果を保存できます。Claudeの実機確認手順は [phase5b_final.md](docs/codex_logs/phase5b_final.md)。
+再検証は `powershell -NoProfile -ExecutionPolicy Bypass -File tools/Validation/RunPhase6B.ps1`。CPU全9組×30seed×3難易度=810試合集計は[CPU_BALANCE_REPORT.md](docs/CPU_BALANCE_REPORT.md)。Unity生成済みデータは「CPU対戦集計」メニュー、または `AniBato.EditorTools.CpuBalanceReportBuilder.Write` でphase6b-cpu-unity.*へ別保存できます。
 
 設計は [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)、初期値は [BALANCE_CONFIG.md](BALANCE_CONFIG.md)、確定・暫定ルールは [GAME_DESIGN.md](GAME_DESIGN.md)。コミット・公開はこの作業では行いません。
 
 ## ART2：3キャラのドット絵
 
-全員23アニメ。5Bの中割り追加後は、透真が別エフェクトを含む26シート125フレーム、蓮24シート118フレーム、千鶴26シート125フレームです。作業結果は [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md)、Unity検証手順は [phase5b_final.md](docs/codex_logs/phase5b_final.md)。一覧は [透真](docs/art_wip/toma_contact.png)・[蓮](docs/art_wip/ren_contact.png)・[千鶴](docs/art_wip/chizuru_contact.png)、身長差は [3人の並び](docs/art_wip/all_characters_lineup.png) で確認できます。シェフ服Portraitは将来のAwakening用、千鶴は私服です。将来キャラ用に仮図形フォールバックを残しています。
+各キャラに方向10クリップを追加し、33アニメ・34状態に対応。別エフェクトを含め透真36シート197F、蓮34シート190F、千鶴36シート197Fです。Win/Loseをidle基準に作り直し、旧重ね合わせ処理を廃止しています。[106GIF](docs/art_wip/phase6a_previews.md)、[透真](docs/art_wip/toma_contact.png)・[蓮](docs/art_wip/ren_contact.png)・[千鶴](docs/art_wip/chizuru_contact.png)のcontactで確認できます。千鶴は私服、シェフ服Portraitは将来用。新規攻撃は描き下ろした1つの綺麗なキーを保持して再生するため、細かな動作の描き足しは今後の改善余地があります。
 
 加工済みPNGは同梱済みです。原画変更後は、リポジトリ直下で次を実行してからBuildAllしてください。
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildPhase5B.ps1
-powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/VerifyPhase5B.ps1 -Rebuild
-powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildArt2Previews.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildPhase6B.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/VerifyPhase6A.ps1 -Tag phase6b -Rebuild
 ```
 
-ツールの詳細は [tools/SpriteForge/README.md](tools/SpriteForge/README.md)。基準idleは透真124px/千鶴112px/蓮100px、224×160セル、各キャラ共通32色、PPU50です。現行368フレームの加工検査、42GIFの全コマ復号、217ファイル再生成のSHA-256一致は合格。5BのUnityインポート／実動作はClaude待ちで、.NET成功をUnity合格とは扱っていません。
+ツールの詳細は[tools/SpriteForge/README.md](tools/SpriteForge/README.md)。基準idleは透真124px/千鶴112px/蓮100px、224×160セル、各キャラ共通32色、PPU50です。現行584F、106GIFの全コマ復号、351ファイルの再生成SHA-256一致を検査。6BのUnityインポート・実動作はClaude待ちです。
 
 
 

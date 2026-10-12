@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AniBato.Game
 {
-    public enum GameScreen { Title, MainMenu, CharacterSelect, StageSelect, Countdown, Battle, Pause, Result, Controls }
+    public enum GameScreen { Title, MainMenu, CharacterSelect, StageSelect, Countdown, Battle, Pause, Result, Controls, CommandList, KeyConfig, PracticeSettings }
     public enum CpuDifficulty { Easy, Normal, Hard }
 
     [DefaultExecutionOrder(-100)]
@@ -18,6 +18,17 @@ namespace AniBato.Game
         [SerializeField] private GameObject world, hud;
         [SerializeField] private StageView stageView;
         private GameScreen controlsReturn;
+        private GameScreen panelReturn;
+        public InputController Input => input;
+        public bool PracticeMode { get; private set; }
+        public bool TutorialMode { get; private set; }
+        public PracticeOptions Practice { get; } = new PracticeOptions();
+        public int CommandCharacter { get; private set; }
+        public int CommandPage { get; private set; }
+        public int ConfigPlayer { get; private set; }
+        public bool ConfigGamepad { get; private set; }
+        public bool CapturingBinding { get; private set; }
+        public bool BasicHintsEnabled { get; private set; } = true;
         private float countdownElapsed, resultElapsed;
         private readonly bool[] ready = new bool[2];
         private int cpuRow;
@@ -50,6 +61,7 @@ namespace AniBato.Game
         private void Start()
         {
             FramePacing.Load();
+            BasicHintsEnabled = PlayerPrefs.GetInt("AniBato.BasicHints", 1) != 0;
             audioManager = runner.GetComponent<AudioManager>(); effects = runner.GetComponent<BattleEffectsView>();
             Player1Index = setup.Player1Index; Player2Index = setup.Player2Index;
             Show(GameScreen.Title, false);
@@ -62,6 +74,12 @@ namespace AniBato.Game
             bool cancel = input.EscapePressed || first.Cancel || second.Cancel || Screen == GameScreen.Pause && (first.Start || second.Start);
             int vertical = first.Vertical != 0 ? first.Vertical : second.Vertical;
             int horizontal = first.Horizontal != 0 ? first.Horizontal : second.Horizontal;
+            if (Screen == GameScreen.KeyConfig && CapturingBinding)
+            {
+                if (input.EscapePressed) { CapturingBinding = false; input.GuardScreenTransition(MenuAction.Cancel); }
+                else if (input.CaptureBinding(ConfigPlayer, ConfigGamepad, (AniBato.Presentation.ControlAction)(MenuIndex - 2))) CapturingBinding = false;
+                view.Render(this); return;
+            }
             if (audioManager)
             {
                 if (cancel) audioManager.Play(SoundCue.Cancel);
@@ -72,7 +90,7 @@ namespace AniBato.Game
             { if (input.AnyMenuKeyPressed || confirm || first.Start || second.Start) Show(GameScreen.MainMenu, true, MenuAction.AnyKey | MenuAction.Confirm | MenuAction.Start); }
             else if (Screen == GameScreen.Countdown)
             {
-                if (input.EscapePressed || first.Start || second.Start) { Show(GameScreen.Pause, true, input.EscapePressed ? MenuAction.Cancel : MenuAction.Start); return; }
+                if (first.Start || second.Start) { Show(GameScreen.Pause, true, MenuAction.Start); return; }
                 countdownElapsed += Time.unscaledDeltaTime;
                 if (CountdownText != previousCountdown) { previousCountdown = CountdownText; if (audioManager) audioManager.Play(SoundCue.Countdown); }
                 if (countdownElapsed >= settings.CountdownNumberSeconds * 3 + settings.FightBannerSeconds)
@@ -82,9 +100,10 @@ namespace AniBato.Game
             {
                 if (runner.Simulation.Match.IsFinished)
                 { resultElapsed += Time.unscaledDeltaTime; if (resultElapsed >= settings.ResultDelaySeconds) Show(GameScreen.Result, false); }
-                else if (input.EscapePressed || first.Start || second.Start) Show(GameScreen.Pause, true, input.EscapePressed ? MenuAction.Cancel : MenuAction.Start);
+                else if (first.Start || second.Start) Show(GameScreen.Pause, true, MenuAction.Start);
             }
-            else if (Screen == GameScreen.CharacterSelect) CharacterInput(first, second);
+            else if (Screen == GameScreen.CharacterSelect)
+            { if (input.CommandListPressed) OpenCommands(); else CharacterInput(first, second); }
             else if (Screen == GameScreen.StageSelect)
             {
                 StageIndex = Wrap(StageIndex + horizontal + vertical, setup.Stages.Length + 1);
@@ -93,17 +112,46 @@ namespace AniBato.Game
             }
             else if (Screen == GameScreen.Controls)
             { if (cancel || confirm) Show(controlsReturn, true, cancel ? MenuAction.Cancel : MenuAction.Confirm); }
+            else if (Screen == GameScreen.CommandList)
+            {
+                CommandCharacter = Wrap(CommandCharacter + horizontal, setup.Characters.Length);
+                CommandPage = Wrap(CommandPage + vertical, 2);
+                if (cancel || confirm) Show(panelReturn, true, cancel ? MenuAction.Cancel : MenuAction.Confirm);
+            }
+            else if (Screen == GameScreen.KeyConfig)
+            {
+                MenuIndex = Wrap(MenuIndex + vertical, 17);
+                if (MenuIndex == 0 && (horizontal != 0 || confirm)) ConfigPlayer = 1 - ConfigPlayer;
+                else if (MenuIndex == 1 && (horizontal != 0 || confirm)) ConfigGamepad = !ConfigGamepad;
+                else if (confirm && MenuIndex == 15) input.Configuration.Reset(ConfigPlayer, ConfigGamepad);
+                else if (MenuIndex == 16 && (horizontal != 0 || confirm)) input.Configuration.ToggleDoubleTapDash();
+                else if (confirm && MenuIndex >= 2 && MenuIndex < 15) { CapturingBinding = true; input.GuardScreenTransition(); }
+                if (cancel) Show(panelReturn, true, MenuAction.Cancel);
+            }
+            else if (Screen == GameScreen.PracticeSettings)
+            {
+                MenuIndex = Wrap(MenuIndex + vertical, 3);
+                if (horizontal != 0 || confirm)
+                {
+                    if (MenuIndex == 0) Practice.Opponent = (PracticeOpponent)Wrap((int)Practice.Opponent + (horizontal == 0 ? 1 : horizontal), 4);
+                    else if (MenuIndex == 1) Practice.FreezeHearts = !Practice.FreezeHearts;
+                    else Practice.FreezeTimer = !Practice.FreezeTimer;
+                }
+                if (cancel) Show(panelReturn, true, MenuAction.Cancel);
+            }
             else
             {
-                int count = Screen == GameScreen.Pause ? 8 : Screen == GameScreen.MainMenu ? 5 : 3;
+                int count = Screen == GameScreen.Pause ? 13 : Screen == GameScreen.MainMenu ? 9 : 3;
                 MenuIndex = Wrap(MenuIndex + vertical, count);
                 if (Screen == GameScreen.Pause)
                 {
                     if (audioManager && (MenuIndex == 4 || MenuIndex == 5) && horizontal != 0) audioManager.AdjustVolume(MenuIndex == 4, horizontal * .1f);
                     if (effects && MenuIndex == 6 && horizontal != 0) effects.ToggleShake();
                     if (MenuIndex == 7 && horizontal != 0) FramePacing.Cycle(horizontal);
+                    if (MenuIndex == 12 && horizontal != 0) input.Configuration.ToggleDoubleTapDash();
                 }
                 if (Screen == GameScreen.MainMenu && MenuIndex == 3 && horizontal != 0) FramePacing.Cycle(horizontal);
+                if (Screen == GameScreen.MainMenu && MenuIndex == 7 && horizontal != 0) input.Configuration.ToggleDoubleTapDash();
                 if (cancel)
                 {
                     if (Screen == GameScreen.MainMenu) Show(GameScreen.Title, true, MenuAction.Cancel);
@@ -145,9 +193,12 @@ namespace AniBato.Game
         {
             if (Screen == GameScreen.MainMenu)
             {
-                if (MenuIndex < 2) { CpuMode = MenuIndex == 0; Show(GameScreen.CharacterSelect); }
+                if (MenuIndex < 2) { CpuMode = MenuIndex == 0; PracticeMode = TutorialMode = false; Show(GameScreen.CharacterSelect); }
                 else if (MenuIndex == 2) Controls();
                 else if (MenuIndex == 3) FramePacing.Cycle(1);
+                else if (MenuIndex == 4 || MenuIndex == 5) { CpuMode = PracticeMode = true; TutorialMode = MenuIndex == 5; Show(GameScreen.CharacterSelect); }
+                else if (MenuIndex == 6) { panelReturn = Screen; Show(GameScreen.KeyConfig); }
+                else if (MenuIndex == 7) input.Configuration.ToggleDoubleTapDash();
                 else
                 {
 #if UNITY_EDITOR
@@ -164,6 +215,11 @@ namespace AniBato.Game
                 else if (MenuIndex < 4) Show(MenuIndex == 2 ? GameScreen.CharacterSelect : GameScreen.Title);
                 else if (MenuIndex == 6 && effects) effects.ToggleShake();
                 else if (MenuIndex == 7) FramePacing.Cycle(1);
+                else if (MenuIndex == 8) OpenCommands();
+                else if (MenuIndex == 9) { panelReturn = Screen; Show(GameScreen.PracticeSettings); }
+                else if (MenuIndex == 10) { panelReturn = Screen; Show(GameScreen.KeyConfig); }
+                else if (MenuIndex == 11) { BasicHintsEnabled = !BasicHintsEnabled; PlayerPrefs.SetInt("AniBato.BasicHints", BasicHintsEnabled ? 1 : 0); PlayerPrefs.Save(); }
+                else if (MenuIndex == 12) input.Configuration.ToggleDoubleTapDash();
             }
             else if (Screen == GameScreen.Result)
             {
@@ -172,6 +228,7 @@ namespace AniBato.Game
             }
         }
         private void Controls() { controlsReturn = Screen; Show(GameScreen.Controls); }
+        private void OpenCommands() { panelReturn = Screen; CommandCharacter = Player1Index; CommandPage = 0; Show(GameScreen.CommandList, true, MenuAction.Confirm | MenuAction.Start); }
         private void Resume(MenuAction action = MenuAction.Confirm)
         {
             bool countdown = countdownElapsed < settings.CountdownNumberSeconds * 3 + settings.FightBannerSeconds;
@@ -182,6 +239,7 @@ namespace AniBato.Game
         {
             if (StageIndex == setup.Stages.Length) StageIndex = Random.Range(0, setup.Stages.Length);
             world.SetActive(true); hud.SetActive(true);
+            runner.Practice = PracticeMode ? Practice : null; runner.Tutorial = TutorialMode ? new TutorialSession() : null;
             runner.BeginMatch(setup.Character(Player1Index), setup.Character(Player2Index), setup.Stages[StageIndex], CpuMode, Difficulty);
             stageView.Rebuild(setup.Stages[StageIndex]); countdownElapsed = resultElapsed = 0; previousCountdown = null;
             Show(GameScreen.Countdown);
@@ -192,7 +250,8 @@ namespace AniBato.Game
             Screen = screen; MenuIndex = screen == GameScreen.MainMenu ? mainMenuIndex : 0; if (guardInput) input.GuardScreenTransition(action); else input.Clear();
             if (screen == GameScreen.CharacterSelect) { ready[0] = ready[1] = false; cpuRow = 0; }
             bool visible = screen == GameScreen.Battle || screen == GameScreen.Countdown || screen == GameScreen.Pause || screen == GameScreen.Result ||
-                screen == GameScreen.Controls && controlsReturn == GameScreen.Pause;
+                screen == GameScreen.Controls && controlsReturn == GameScreen.Pause ||
+                (screen == GameScreen.CommandList || screen == GameScreen.KeyConfig || screen == GameScreen.PracticeSettings) && panelReturn == GameScreen.Pause;
             world.SetActive(visible); hud.SetActive(visible && screen != GameScreen.Result);
             if (audioManager) audioManager.SetMusic(visible && runner.CurrentStage ? (int)runner.CurrentStage.Theme + 1 : 0);
             if (!visible && effects) effects.ResetView();

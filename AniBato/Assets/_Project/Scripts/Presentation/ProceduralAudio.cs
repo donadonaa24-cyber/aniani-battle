@@ -15,7 +15,7 @@ namespace AniBato.Presentation
                 case BattleEventKind.Guarded: return SoundCue.Guard;
                 case BattleEventKind.JustGuard: case BattleEventKind.JustDodge: return SoundCue.Just;
                 case BattleEventKind.CounterSuccess: return SoundCue.Counter;
-                case BattleEventKind.Break: return SoundCue.Break;
+                case BattleEventKind.Break: case BattleEventKind.GuardBroken: return SoundCue.Break;
                 case BattleEventKind.ComboFinish: return SoundCue.ComboFinish;
                 case BattleEventKind.UltimateStarted: return SoundCue.Ultimate;
                 case BattleEventKind.KO: return SoundCue.KO;

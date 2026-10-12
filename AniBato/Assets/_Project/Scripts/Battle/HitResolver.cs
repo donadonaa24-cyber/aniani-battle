@@ -23,7 +23,7 @@ namespace AniBato.Battle
                 attack.Definition.SpawnProjectile || attack.Definition.NonDamaging || target.ImmunityFrom(attacker.PlayerIndex) > 0 ||
                 attacker.FrozenThisTick || attacker.Mode == FighterMode.KO || target.Mode == FighterMode.KO || target.HeartRecoveryRemaining > 0) return;
             if (attack.Overlaps(attacker, target.Hurtbox) && attack.MarkHit(target.PlayerIndex))
-                contacts.Add(new HitContact(attacker, target, attack));
+                contacts.Add(new HitContact(attacker, target, attack, facing: attack.Definition.NormalDirection == NormalDirection.Back || attack.Definition.NormalDirection == NormalDirection.AirBack ? -attacker.Facing : attacker.Facing));
         }
         public void Gather(Projectile projectile, FighterState target, List<HitContact> contacts)
         {

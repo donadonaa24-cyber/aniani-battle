@@ -21,16 +21,16 @@ namespace AniBato.SpriteForge
                 poses[i] = new Raster(width, height);
                 for (int y = 0; y < height; y++) Array.Copy(keys.Pixels, y * keys.Width + i * width, poses[i].Pixels, y * width, width);
             }
-            if (!clip.stableIdle && clip.anchor == "feet") AlignLandmarks(poses, manifest);
             for (int i = 0; i < count; i++)
             {
                 Raster pose;
-                if (clip.stableIdle) pose = Breathe(poses[0], i, count, manifest.baseline);
+                if (clip.stableIdle) pose = Breathe(poses[0], i, count, manifest.baseline, clip.headOffset);
                 else
                 {
                     double phase = clip.loop ? (double)i * clip.frames / count : (double)i * (clip.frames - 1) / (count - 1);
                     int a = (int)phase, b = clip.loop ? (a + 1) % clip.frames : Math.Min(clip.frames - 1, a + 1);
-                    pose = Morph(poses[a], poses[b], phase - a);
+                    // Hold one complete key drawing. Never merge pixels from adjacent poses.
+                    pose = poses[phase - a < .5 ? a : b];
                 }
                 if (clip.anchor == "feet") AlignFeet(pose, manifest.baseline);
                 Rectangle bounds = Pixels.Bounds(pose, 0, width); heads[i] = manifest.baseline - bounds.Top + 1;
@@ -38,13 +38,13 @@ namespace AniBato.SpriteForge
             }
             return result;
         }
-        private static Raster Breathe(Raster reference, int frame, int count, int baseline)
+        private static Raster Breathe(Raster reference, int frame, int count, int baseline, int offset)
         {
             var pose = new Raster(reference.Width, reference.Height);
             Rectangle bounds = Pixels.Bounds(reference, 0, reference.Width);
             // Fixed torso and planted feet. The upper silhouette moves by at most one pixel
             // over a symmetric cycle; every pixel/color comes from ONE reference drawing.
-            int shift = (int)Math.Round(Math.Sin(frame * Math.PI * 2 / count));
+            int shift = (int)Math.Round(Math.Sin(frame * Math.PI * 2 / count)) + offset;
             int chest = bounds.Top + bounds.Height * 2 / 5;
             for (int y = Math.Max(0, bounds.Top - 1); y <= baseline; y++) for (int x = 0; x < reference.Width; x++)
             {
@@ -52,78 +52,6 @@ namespace AniBato.SpriteForge
                 if (sourceY >= 0 && sourceY < reference.Height) pose.Pixels[y * pose.Width + x] = reference.Pixels[sourceY * reference.Width + x];
             }
             return pose;
-        }
-        private static Raster Morph(Raster a, Raster b, double phase)
-        {
-            if (phase < 1e-8) return a;
-            var pose = new Raster(a.Width, a.Height);
-            Raster source = phase < .5 ? a : b;
-            for (int y = 0; y < a.Height; y++)
-            {
-                var first = Runs(a, y); var second = Runs(b, y);
-                // Separate limbs must never be stretched through the transparent gap.
-                // Topology changes use the nearest key pose rather than inventing a smear.
-                if (first.Count != second.Count) { Array.Copy(source.Pixels, y * a.Width, pose.Pixels, y * a.Width, a.Width); continue; }
-                for (int run = 0; run < first.Count; run++)
-                {
-                    int la = first[run].Item1, ra = first[run].Item2, lb = second[run].Item1, rb = second[run].Item2;
-                    int sl = phase < .5 ? la : lb, sr = phase < .5 ? ra : rb;
-                    if (Math.Abs(la - lb) > 24 || Math.Abs(ra - rb) > 24 || Math.Max(ra-la+1,rb-lb+1) > 2 * Math.Min(ra-la+1,rb-lb+1))
-                    { Array.Copy(source.Pixels, y * source.Width + sl, pose.Pixels, y * pose.Width + sl, sr - sl + 1); continue; }
-                    int left = (int)Math.Round(la + (lb - la) * phase), right = (int)Math.Round(ra + (rb - ra) * phase);
-                    for (int x = left; x <= right; x++)
-                    {
-                        int sx = sl + (int)Math.Round((double)(x - left) * (sr - sl) / Math.Max(1, right - left));
-                        pose.Pixels[y * pose.Width + x] = source.Pixels[y * source.Width + sx];
-                    }
-                }
-            }
-            return pose;
-        }
-        private static List<Tuple<int,int>> Runs(Raster pose, int y)
-        {
-            var runs = new List<Tuple<int,int>>(); int start = -1;
-            for (int x = 0; x <= pose.Width; x++)
-            {
-                bool opaque = x < pose.Width && pose.Pixels[y * pose.Width + x] != 0;
-                if (opaque && start < 0) start = x;
-                if (!opaque && start >= 0) { runs.Add(Tuple.Create(start, x - 1)); start = -1; }
-            }
-            return runs;
-        }
-        private static void AlignLandmarks(Raster[] poses, Manifest manifest)
-        {
-            var bounds = poses.Select(pose => Pixels.Bounds(pose, 0, pose.Width)).ToArray();
-            var centers = poses.Select(pose => TorsoY(pose, manifest)).ToArray();
-            int top = bounds.Select(box => box.Top).OrderBy(value => value).ElementAt(poses.Length / 2);
-            int torso = centers.OrderBy(value => value).ElementAt(poses.Length / 2);
-            for (int frame = 0; frame < poses.Length; frame++)
-            {
-                // Correct small generation drift only. A duck, kick or deliberate lean
-                // keeps its own silhouette rather than being stretched into an idle pose.
-                if (Math.Abs(bounds[frame].Top - top) > 6 || Math.Abs(centers[frame] - torso) > 6) continue;
-                var original = poses[frame]; var aligned = new Raster(original.Width, original.Height);
-                for (int y = top; y <= manifest.baseline; y++)
-                {
-                    double sy = y <= torso ? bounds[frame].Top + (double)(y - top) * (centers[frame] - bounds[frame].Top) / Math.Max(1, torso - top) :
-                        centers[frame] + (double)(y - torso) * (manifest.baseline - centers[frame]) / Math.Max(1, manifest.baseline - torso);
-                    int sourceY = Math.Max(0, Math.Min(original.Height - 1, (int)Math.Round(sy)));
-                    Array.Copy(original.Pixels, sourceY * original.Width, aligned.Pixels, y * original.Width, original.Width);
-                }
-                poses[frame] = aligned;
-            }
-        }
-        private static int TorsoY(Raster pose, Manifest manifest)
-        {
-            double sum = 0, count = 0;
-            for (int y = 0; y < pose.Height; y++) for (int x = pose.Width / 2 - 18; x <= pose.Width / 2 + 18; x++)
-            {
-                int color = pose.Pixels[y * pose.Width + x];
-                if (color != 0 && Pixels.R(color) >= manifest.anchorRgbMin[0] && Pixels.R(color) <= manifest.anchorRgbMax[0] &&
-                    Pixels.G(color) >= manifest.anchorRgbMin[1] && Pixels.G(color) <= manifest.anchorRgbMax[1] && Pixels.B(color) >= manifest.anchorRgbMin[2] && Pixels.B(color) <= manifest.anchorRgbMax[2] &&
-                    (manifest.anchorRedGreenRatio <= 0 || Pixels.R(color) > Pixels.G(color) * manifest.anchorRedGreenRatio)) { sum += y; count++; }
-            }
-            var box = Pixels.Bounds(pose, 0, pose.Width); return count > 0 ? (int)Math.Round(sum / count) : box.Top + box.Height / 2;
         }
         private static void AlignFeet(Raster pose, int baseline)
         {

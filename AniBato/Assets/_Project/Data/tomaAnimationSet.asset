@@ -28,6 +28,83 @@ MonoBehaviour:
     HeadHeights: 6a0000006a00000067000000670000006a0000006a000000i
     Fps: 15
     Loop: 0
+  - Name: air_back
+    Frames:
+    - {fileID: -1149312890, guid: e9e314f8cac67ae4b8f9ee91b29e426c, type: 3}
+    - {fileID: -1440301944, guid: e9e314f8cac67ae4b8f9ee91b29e426c, type: 3}
+    - {fileID: -1988146937, guid: e9e314f8cac67ae4b8f9ee91b29e426c, type: 3}
+    - {fileID: -1491664328, guid: e9e314f8cac67ae4b8f9ee91b29e426c, type: 3}
+    - {fileID: 144590646, guid: e9e314f8cac67ae4b8f9ee91b29e426c, type: 3}
+    - {fileID: 774088364, guid: e9e314f8cac67ae4b8f9ee91b29e426c, type: 3}
+    HeadHeights: 6e0000006e0000006e0000006e0000006e0000006e000000i
+    Fps: 12
+    Loop: 0
+  - Name: air_down
+    Frames:
+    - {fileID: -1049198180, guid: 10ad81e61ad93704e94cf64d693dd33b, type: 3}
+    - {fileID: -1357533364, guid: 10ad81e61ad93704e94cf64d693dd33b, type: 3}
+    - {fileID: 1659988941, guid: 10ad81e61ad93704e94cf64d693dd33b, type: 3}
+    - {fileID: -555261023, guid: 10ad81e61ad93704e94cf64d693dd33b, type: 3}
+    - {fileID: 320908762, guid: 10ad81e61ad93704e94cf64d693dd33b, type: 3}
+    - {fileID: -850736451, guid: 10ad81e61ad93704e94cf64d693dd33b, type: 3}
+    HeadHeights: 7c0000007c0000007c0000007c0000007c0000007c000000i
+    Fps: 12
+    Loop: 0
+  - Name: air_forward
+    Frames:
+    - {fileID: -2096982046, guid: 63c67d32f5063cd4da35ce2188ebfa93, type: 3}
+    - {fileID: -1097539302, guid: 63c67d32f5063cd4da35ce2188ebfa93, type: 3}
+    - {fileID: 54374121, guid: 63c67d32f5063cd4da35ce2188ebfa93, type: 3}
+    - {fileID: 1075570487, guid: 63c67d32f5063cd4da35ce2188ebfa93, type: 3}
+    - {fileID: 1588182606, guid: 63c67d32f5063cd4da35ce2188ebfa93, type: 3}
+    - {fileID: -758249193, guid: 63c67d32f5063cd4da35ce2188ebfa93, type: 3}
+    HeadHeights: 7c0000007c0000007c0000007c0000007c0000007c000000i
+    Fps: 12
+    Loop: 0
+  - Name: air_forward_down
+    Frames:
+    - {fileID: -920705891, guid: dfd2b0138cddd634b8e3589b50cbc48c, type: 3}
+    - {fileID: 1420722029, guid: dfd2b0138cddd634b8e3589b50cbc48c, type: 3}
+    - {fileID: 1721168453, guid: dfd2b0138cddd634b8e3589b50cbc48c, type: 3}
+    - {fileID: 1882456788, guid: dfd2b0138cddd634b8e3589b50cbc48c, type: 3}
+    - {fileID: -1915492869, guid: dfd2b0138cddd634b8e3589b50cbc48c, type: 3}
+    - {fileID: 1252535072, guid: dfd2b0138cddd634b8e3589b50cbc48c, type: 3}
+    HeadHeights: 7c0000007c0000007c0000007c0000007c0000007c000000i
+    Fps: 12
+    Loop: 0
+  - Name: air_forward_up
+    Frames:
+    - {fileID: -1057587354, guid: 8786779771380ff4f8d1cc448abe154c, type: 3}
+    - {fileID: 760481902, guid: 8786779771380ff4f8d1cc448abe154c, type: 3}
+    - {fileID: -1432236081, guid: 8786779771380ff4f8d1cc448abe154c, type: 3}
+    - {fileID: 959938943, guid: 8786779771380ff4f8d1cc448abe154c, type: 3}
+    - {fileID: 1823677309, guid: 8786779771380ff4f8d1cc448abe154c, type: 3}
+    - {fileID: 997328589, guid: 8786779771380ff4f8d1cc448abe154c, type: 3}
+    HeadHeights: 7c0000007c0000007c0000007c0000007c0000007c000000i
+    Fps: 12
+    Loop: 0
+  - Name: air_neutral
+    Frames:
+    - {fileID: -540411392, guid: a9eb7d78069e326438ae13a982f46fac, type: 3}
+    - {fileID: 1976755276, guid: a9eb7d78069e326438ae13a982f46fac, type: 3}
+    - {fileID: 1115768424, guid: a9eb7d78069e326438ae13a982f46fac, type: 3}
+    - {fileID: -1660710647, guid: a9eb7d78069e326438ae13a982f46fac, type: 3}
+    - {fileID: 759522919, guid: a9eb7d78069e326438ae13a982f46fac, type: 3}
+    - {fileID: 441420285, guid: a9eb7d78069e326438ae13a982f46fac, type: 3}
+    HeadHeights: 7a0000007a0000007a0000007a0000007a0000007a000000i
+    Fps: 12
+    Loop: 0
+  - Name: air_up
+    Frames:
+    - {fileID: -680162673, guid: e253db3103fe49842bfa28552d8a6a8b, type: 3}
+    - {fileID: -278916224, guid: e253db3103fe49842bfa28552d8a6a8b, type: 3}
+    - {fileID: -1587604507, guid: e253db3103fe49842bfa28552d8a6a8b, type: 3}
+    - {fileID: -523310128, guid: e253db3103fe49842bfa28552d8a6a8b, type: 3}
+    - {fileID: 1173940595, guid: e253db3103fe49842bfa28552d8a6a8b, type: 3}
+    - {fileID: -2106984236, guid: e253db3103fe49842bfa28552d8a6a8b, type: 3}
+    HeadHeights: 7c0000007c0000007c0000007c0000007c0000007c000000i
+    Fps: 12
+    Loop: 0
   - Name: attack1
     Frames:
     - {fileID: 35169376, guid: 3bd719e3e54ec6942a247d51671f56d7, type: 3}
@@ -36,7 +113,7 @@ MonoBehaviour:
     - {fileID: 527482371, guid: 3bd719e3e54ec6942a247d51671f56d7, type: 3}
     - {fileID: -1434129425, guid: 3bd719e3e54ec6942a247d51671f56d7, type: 3}
     - {fileID: 510194867, guid: 3bd719e3e54ec6942a247d51671f56d7, type: 3}
-    HeadHeights: 7b0000007b0000007b0000007b0000007b0000007b000000i
+    HeadHeights: 7a0000007a0000007b0000007b0000007b0000007b000000i
     Fps: 15
     Loop: 0
   - Name: attack2
@@ -58,8 +135,19 @@ MonoBehaviour:
     - {fileID: -1866399071, guid: 745c6f06e8c6a4e43b94aad1fa32f37c, type: 3}
     - {fileID: 1911569566, guid: 745c6f06e8c6a4e43b94aad1fa32f37c, type: 3}
     - {fileID: 2045389058, guid: 745c6f06e8c6a4e43b94aad1fa32f37c, type: 3}
-    HeadHeights: 780000007800000078000000780000007800000078000000i
+    HeadHeights: 770000007900000079000000780000007800000079000000i
     Fps: 15
+    Loop: 0
+  - Name: back_attack
+    Frames:
+    - {fileID: 706078564, guid: 2b465d5d855ae9841b48bf0d586703ad, type: 3}
+    - {fileID: 1068263899, guid: 2b465d5d855ae9841b48bf0d586703ad, type: 3}
+    - {fileID: -1194461861, guid: 2b465d5d855ae9841b48bf0d586703ad, type: 3}
+    - {fileID: -882465152, guid: 2b465d5d855ae9841b48bf0d586703ad, type: 3}
+    - {fileID: -1876861422, guid: 2b465d5d855ae9841b48bf0d586703ad, type: 3}
+    - {fileID: 1973104711, guid: 2b465d5d855ae9841b48bf0d586703ad, type: 3}
+    HeadHeights: 7c0000007c0000007c0000007c0000007c0000007c000000i
+    Fps: 12
     Loop: 0
   - Name: boundary_glow
     Frames:
@@ -78,6 +166,30 @@ MonoBehaviour:
     HeadHeights: 7a0000007800000079000000i
     Fps: 12
     Loop: 0
+  - Name: crouch
+    Frames:
+    - {fileID: 729031262, guid: 98e9ada5550b0c44783e85538c9e8a15, type: 3}
+    - {fileID: 1968170417, guid: 98e9ada5550b0c44783e85538c9e8a15, type: 3}
+    - {fileID: 533762601, guid: 98e9ada5550b0c44783e85538c9e8a15, type: 3}
+    - {fileID: 1399245804, guid: 98e9ada5550b0c44783e85538c9e8a15, type: 3}
+    - {fileID: 934119701, guid: 98e9ada5550b0c44783e85538c9e8a15, type: 3}
+    - {fileID: -923018749, guid: 98e9ada5550b0c44783e85538c9e8a15, type: 3}
+    - {fileID: -313724227, guid: 98e9ada5550b0c44783e85538c9e8a15, type: 3}
+    - {fileID: 2128189142, guid: 98e9ada5550b0c44783e85538c9e8a15, type: 3}
+    HeadHeights: 5a0000005900000059000000590000005a0000005b0000005b0000005b000000i
+    Fps: 12
+    Loop: 1
+  - Name: crouch_attack
+    Frames:
+    - {fileID: 1109089106, guid: 756f9a0e35010434990847bb143622b2, type: 3}
+    - {fileID: -258245659, guid: 756f9a0e35010434990847bb143622b2, type: 3}
+    - {fileID: -102516313, guid: 756f9a0e35010434990847bb143622b2, type: 3}
+    - {fileID: -412756045, guid: 756f9a0e35010434990847bb143622b2, type: 3}
+    - {fileID: -820998749, guid: 756f9a0e35010434990847bb143622b2, type: 3}
+    - {fileID: 972948630, guid: 756f9a0e35010434990847bb143622b2, type: 3}
+    HeadHeights: 570000005700000057000000570000005700000057000000i
+    Fps: 12
+    Loop: 0
   - Name: dash
     Frames:
     - {fileID: 1572271889, guid: 16a291a65f2cdd54497adcf3de28bf4a, type: 3}
@@ -88,7 +200,7 @@ MonoBehaviour:
     - {fileID: 1983208719, guid: 16a291a65f2cdd54497adcf3de28bf4a, type: 3}
     - {fileID: -1856492737, guid: 16a291a65f2cdd54497adcf3de28bf4a, type: 3}
     - {fileID: -1062393782, guid: 16a291a65f2cdd54497adcf3de28bf4a, type: 3}
-    HeadHeights: 6000000060000000600000006000000060000000600000006000000060000000i
+    HeadHeights: 630000005f00000060000000600000005f000000630000006200000062000000i
     Fps: 15
     Loop: 1
   - Name: dodge
@@ -185,8 +297,14 @@ MonoBehaviour:
     Frames:
     - {fileID: -126623962, guid: d7e4370bf8ad4ab4a889dce3ad8d780b, type: 3}
     - {fileID: -650957333, guid: d7e4370bf8ad4ab4a889dce3ad8d780b, type: 3}
-    HeadHeights: 6b00000059000000i
-    Fps: 6
+    - {fileID: 266488447, guid: d7e4370bf8ad4ab4a889dce3ad8d780b, type: 3}
+    - {fileID: 1918892011, guid: d7e4370bf8ad4ab4a889dce3ad8d780b, type: 3}
+    - {fileID: -1420291778, guid: d7e4370bf8ad4ab4a889dce3ad8d780b, type: 3}
+    - {fileID: 309361445, guid: d7e4370bf8ad4ab4a889dce3ad8d780b, type: 3}
+    - {fileID: -2008362777, guid: d7e4370bf8ad4ab4a889dce3ad8d780b, type: 3}
+    - {fileID: 252191079, guid: d7e4370bf8ad4ab4a889dce3ad8d780b, type: 3}
+    HeadHeights: 7b0000007a0000007a0000007a0000007b0000007c0000007c0000007c000000i
+    Fps: 12
     Loop: 1
   - Name: pulse
     Frames:
@@ -205,7 +323,7 @@ MonoBehaviour:
     - {fileID: -1494572575, guid: f8b70a2bf9092594e8e2eaa50aae9c84, type: 3}
     - {fileID: -725970281, guid: f8b70a2bf9092594e8e2eaa50aae9c84, type: 3}
     - {fileID: -162228655, guid: f8b70a2bf9092594e8e2eaa50aae9c84, type: 3}
-    HeadHeights: 7c0000007c0000007c0000007c0000007c0000007c000000i
+    HeadHeights: 7c0000007b0000007b0000007c0000007c0000007c000000i
     Fps: 15
     Loop: 0
   - Name: special_neutral
@@ -227,7 +345,7 @@ MonoBehaviour:
     - {fileID: -825424811, guid: e72cd9c8ec83ed641a56e31f600b727d, type: 3}
     - {fileID: 1055890224, guid: e72cd9c8ec83ed641a56e31f600b727d, type: 3}
     - {fileID: 1124695538, guid: e72cd9c8ec83ed641a56e31f600b727d, type: 3}
-    HeadHeights: 4d000000550000005500000055000000550000005d000000i
+    HeadHeights: 4d0000005b0000005b00000055000000550000005d000000i
     Fps: 15
     Loop: 0
   - Name: special_up
@@ -260,7 +378,7 @@ MonoBehaviour:
     - {fileID: 548992910, guid: 4e38c589f5e60174f91887ceb311bb31, type: 3}
     - {fileID: 704169330, guid: 4e38c589f5e60174f91887ceb311bb31, type: 3}
     - {fileID: 198796168, guid: 4e38c589f5e60174f91887ceb311bb31, type: 3}
-    HeadHeights: 7300000073000000730000007300000073000000730000007300000073000000i
+    HeadHeights: 7500000073000000740000007400000073000000740000007300000073000000i
     Fps: 15
     Loop: 1
   - Name: win
@@ -269,13 +387,38 @@ MonoBehaviour:
     - {fileID: -397237862, guid: 126af22df04eacf49b986ba0b13a9b33, type: 3}
     - {fileID: 1076784387, guid: 126af22df04eacf49b986ba0b13a9b33, type: 3}
     - {fileID: 2106193718, guid: 126af22df04eacf49b986ba0b13a9b33, type: 3}
-    HeadHeights: 7c0000007c0000007c0000007c000000i
-    Fps: 8
+    - {fileID: -58530902, guid: 126af22df04eacf49b986ba0b13a9b33, type: 3}
+    - {fileID: -274698776, guid: 126af22df04eacf49b986ba0b13a9b33, type: 3}
+    - {fileID: 856119936, guid: 126af22df04eacf49b986ba0b13a9b33, type: 3}
+    - {fileID: 241825866, guid: 126af22df04eacf49b986ba0b13a9b33, type: 3}
+    HeadHeights: 7d0000007c0000007c0000007c0000007d0000007d0000007d0000007d000000i
+    Fps: 12
     Loop: 1
   Bindings:
   - State: 9
     Clip: air_attack
     ActiveFrame: 2
+  - State: 29
+    Clip: air_back
+    ActiveFrame: 0
+  - State: 31
+    Clip: air_down
+    ActiveFrame: 0
+  - State: 28
+    Clip: air_forward
+    ActiveFrame: 0
+  - State: 33
+    Clip: air_forward_down
+    ActiveFrame: 0
+  - State: 32
+    Clip: air_forward_up
+    ActiveFrame: 0
+  - State: 27
+    Clip: air_neutral
+    ActiveFrame: 0
+  - State: 30
+    Clip: air_up
+    ActiveFrame: 0
   - State: 6
     Clip: attack1
     ActiveFrame: 2
@@ -285,15 +428,24 @@ MonoBehaviour:
   - State: 8
     Clip: attack3
     ActiveFrame: 2
+  - State: 26
+    Clip: back_attack
+    ActiveFrame: 0
   - State: 17
     Clip: counter
     ActiveFrame: 0
   - State: 18
     Clip: counter
     ActiveFrame: 1
+  - State: 24
+    Clip: crouch
+    ActiveFrame: 0
+  - State: 25
+    Clip: crouch_attack
+    ActiveFrame: 0
   - State: 2
     Clip: dash
-    ActiveFrame: 2
+    ActiveFrame: 1
   - State: 16
     Clip: dodge
     ActiveFrame: 1

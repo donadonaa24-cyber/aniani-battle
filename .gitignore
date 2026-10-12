@@ -41,3 +41,6 @@ art_source/rejected/
 
 # Raw Codex session transcripts (large, contain local paths). Keep prompts and *_final.md reports.
 docs/codex_logs/*_run.log
+
+# Local Claude Code settings (contain local paths)
+.claude/

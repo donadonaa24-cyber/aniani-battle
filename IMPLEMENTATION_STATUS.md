@@ -1,4 +1,137 @@
-# 実装状況：フェーズ5B（2026-10-12）
+# 実装状況：フェーズ6B（2026-10-12）
+
+[PHASE6B](docs/codex_tasks/PHASE6B.md)のソース・素材・資料を更新。**Codexはcommit・pushを行っていない。6BのUnity BuildAll／EditMode／PlayMode／Windowsビルドと実機確認はClaude待ち。** 6AはClaudeがBuildAll成功、EditMode **305/305**、PlayMode **24/26**、Windowsビルド成功を確認済み。6Bの未実行結果と混同しない。
+
+## 6Bの変更
+
+- PlayMode失敗のDualSense入力を、破棄されるDeltaStateEventから**実際のUSB HID全状態レポート**へ変更。×・□・OPTIONS／A・X／Spaceの旧アサーションを維持。USBの全8行動入力と中立スティックも追加検査する。
+- デバイスは個別try/finallyとUnityTearDownで削除。旧Flow／Runner／Inputを止めてからfixtureを復元し、次のSetUpでも旧シーンを先に停止。スティック・十字キーは入力更新番号ごとに一度読み、メニューと戦闘で共有。後続CPUテストのキャッシュエラーは旧シーンとfixture状態交換時の読み取りが原因と考えられるが、解消の確定はUnity再実行後。
+- 内蔵image_genで背景3枚と中割り原画3アトラス（6姿勢/人）を生成。背景・サムネ6PNGを接続し、遠景・中景・床を分離。推し駒の6×6セルと外側消失、AI警告、文化祭の消灯・閉場表示を戦闘状態から描画する。原画と最終プロンプトは[phase6b](art_source/phase6b/generation-log.md)。すべて本作独自表現。
+- walkに2、dashに4の**描き下ろし姿勢**を各人追加。旧原画は保持し、専用のraw素材とmanifestへ接続。前後コマの混合なし。各8F・15fps、全106クリップ584Fの構成を維持。低優先度のidleの目元・模様の描き直しは行っていない。
+- カメラは表示専用CameraFraming。開始は場外ライン2u内側まで、対戦中は上足場・両者、上足場消失後は残存床と両者へ寄る。比率変更時にも再計算し、追従中の縮尺拡大は必要範囲を即確保。地形・Hurtbox・60Hz処理を変更しない。
+- 左右2回ダッシュON/OFF（既定ON、両者共通）をメインメニュー・ポーズ・キーコンフィグへ追加。PlayerPrefs保存、説明・技表・チュートリアルへ反映。OFFでも専用ボタン有効。設定はFrameInputへ含め、ラッチ・追いつきtick・リプレイでも保持。OFF時に古い自動ダッシュ予約と1回目の入力履歴を破棄する。
+- ステージ選択は左右の割り当てを表示し、上下でも選択可と明記。既存画面の操作表記・停止・設定行の対応を確認。README、ルール、調整値、構造・拡張資料を更新。
+
+## 6Bの検証
+
+| 検証 | 結果 / 証跡 |
+|---|---|
+| 純C# NUnit | **307成功・0失敗・0スキップ**。既存292＋新規15ケース。TestResults/phase6b-dotnet-battle.xml |
+| Editor／全テストのUnity API参照コンパイル | **警告0・エラー0**。phase6b-dotnet-unity-compile.log |
+| Player参照コンパイル | **警告0・エラー0**。phase6b-dotnet-player-compile.log |
+| asmdef | **既存6件の参照検査合格、新規なし**。両テストのPresentation参照を維持 |
+| CPU | **810試合、両者攻撃・ハート減少、自滅近似0**。ふつう48.09秒・縮小23.7%・超必殺65.6%。phase6b-cpu-final.*。純C#既定値であり実SO集計ではない |
+| 描画比率 | 1920×1080・1920×1200・1440×1080、開始/対戦/縮小/旧カメラ計12ケース。phase6b-camera-frames.json。包含テスト合格、実GPU未確認 |
+| 素材 | 全106GIF・584F、二値アルファ・32色・足元・控えめな結果姿勢・再生成一致を検査。phase6b-animation-verification.* |
+| Unity6B | **未実行**。想定EditMode320／PlayMode29は合格件数ではない。Claudeが全実行する |
+
+## 原本12章：必須テスト1〜24の対応表
+
+下表の純C#テストは6B .NETで合格。Unity6Aの合格履歴があっても、**6Bの実機・人手確認は全項目未実施**。PlayModeは自動Unity実行であり物理DualSenseの手動確認とは別。テストの削除・アサーション緩和は行っていない。
+
+| # | 原本項目 / 現行検査 | 自動テスト名 | Unity・実機確認 | ユーザー決定による旧→新 |
+|---:|---|---|---|---|
+| 1 | 通常1回＝1/3 | DamageTests.ThreeSeparateNormalsAccumulateAndBreakOneHeart（1回目） | 6A EditMode合格 / 6B実機待ち | 変更なし |
+| 2 | 通常2回＝2/3 | 同テスト（2回目） | 同上 | 変更なし |
+| 3 | 通常3回＝ハート−1・0/3 | 同テスト（3回目）、QueuedThreeAttackChainUsesUniqueIdsAndEnds | 同上 | 変更なし |
+| 4 | コンボ切れ後も蓄積保持 | DamageTests.AccumulationPersistsThroughTimeMoveJumpAndGuardInput | 同上 | 変更なし |
+| 5 | 特殊後も通常蓄積保持 | PhaseTwoAttackTests.Spec05_SpecialLosesOneHeartAndKeepsNormalAccumulation | 同上 | 変更なし |
+| 6 | 3コンボ吹っ飛び・追撃禁止 | PhaseTwoAttackTests.Spec06_ThreeHitComboFinishesAndBlocksSameAttackerThenExpires、TempoTests.ThreeNormalsBreakOneHeartAndComboLimitStillHoldsAfterRecovery | 同上 | 変更なし |
+| 7 | 通常ガード・しゃがみ崩し・不足時ブレイク | DefenseTests.UserDecision_NormalIsBlockedByBothFreshAndOldGuard、PhaseSixBattleTests.OrdinaryGuardBlocksEveryKindAndSpendsExactCost／CrouchBreaksEvenFreshGuardAndAddsExactlyOne | 同上、実機でスタミナと蓄積を確認 | **2026-10-12：通常貫通→全攻撃ガード＋消費。しゃがみはジャストも崩し蓄積1** |
+| 8 | 特殊ガード | DefenseTests.Spec08_SpecialIsGuardedWithDataDrivenStunAndPush、PhaseSixBattleTests.OrdinaryGuardBlocksEveryKindAndSpendsExactCost | 同上 | 防御可を保持、スタミナ消費を追加 |
+| 9 | 近距離通常へカウンター同tick優先 | DefenseTests.Spec09_CounterWinsSameTickInEitherPlayerOrder | 同上 | 変更なし |
+| 10 | カウンター失敗の隙 | DefenseTests.Spec10_CounterMissHasFullRecoveryAndCooldown | 同上 | 変更なし |
+| 11 | カウンターで蓄積1 | DefenseTests.Spec11_CounterBreaksAtThirdAccumulatedHitAndInvokesHookOnce | 同上 | 変更なし |
+| 12 | 超必殺ハート2 | PhaseTwoAttackTests.Spec12_UltimateCosts100LosesTwoHeartsAndPreservesAccumulation、CharacterTests.UltimateCosts100StartsOneCutInAndLosesTwoHeartsOnce | 同上 | 変更なし |
+| 13 | 超必殺ガードの十分/不足 | DefenseTests.UserDecision_UltimateIsGuardedButPiercesNormalDodge、PhaseSixBattleTests.EmptyStaminaBreaksNonUltimateWithoutDamageAndUltimateHitsTwo | 同上、実機で65以上/未満を確認 | **2026-10-12：通常ガード不可→必要スタミナがあれば防御、不足時のみハート2貫通** |
+| 14 | 超必殺ジャストガード/回避 | DefenseTests.Spec14_JustDefenseAvoidsUltimateAndRewardsGauge、PhaseSixBattleTests.JustGuardWithEmptyStaminaStillBlocksUltimateWithoutCost | 同上 | 防御可能を保持。ジャストガード成立消費0 |
+| 15 | 場外即敗北 | PhaseTwoAttackTests.Spec15_KnockbackCrossingBlastLineLosesImmediately、MatchTests.RingOutHasPriorityOverHeartKOAndTimeUp | 6A EditMode／RingOutResult PlayMode合格 / 6B待ち | 変更なし |
+| 16 | 70秒＝4200tick | MatchTests.Exactly4200TicksIs70SecondsAndFinishedMatchDoesNotAdvance | 6A EditMode合格 / 6B実機待ち | カットイン/ポーズを停止、ヒットストップは時計進行を保持 |
+| 17 | 残り10秒縮小 | StageShrinkTests.WarningAt15SecondsAndStartAtExactly10Seconds／EveryRemovalHasFullWarningAndFinalShapeIsOnlyCentral30Percent | 同上、6B背景演出待ち | 変更なし |
+| 18 | 0秒の正しい勝敗 | MatchTests.TimeUpUsesHeartsThenFewerAccumulatedHitsThenDraw、StageShrinkTests.TimeUpComparesHeartsThenAccumulationWithShrinkEnabled | 同上 | ハート→蓄積→引分の暫定規則を保持 |
+| 19 | 3キャラ操作可能 | CharacterTests.EachCharacterHasIndependentValidMovesAndGroundAirNormals、BattleSceneTests.Spec19_AllThreeCharactersMoveAndUseNormalsAndSpecialsOnBothPlayerSlots | 6A EditMode/PlayMode合格 / 6B実機待ち | 方向通常・スタミナを追加。歩行等の旧検査を維持 |
+| 20 | CPU対戦成立 | CpuTests.CpuMatchesAttackLoseHeartsAndFinishAcrossRoster、GameFlowSceneTests.TitleCpuBattleAdvancesToResultWithAudioAndEffectsEnabled | 6AタイトルCPU PlayMode合格。CpuSelectionのSetUp失敗は6B再実行待ち | 新ガード/スタミナへCPUを追従（6A） |
+| 21 | ローカル2人成立 | BattleSceneTests.TwoKeyboardPlayersMoveIndependentlyAndRRestartsFinishedMatch、GameFlowSceneTests.TitleToLocalBattleUsesSelectedCharactersAndStage／GamepadsNavigateBothCharacterSlotsAndStartPausesBattle | 6A PlayMode合格 / 6B・物理パッド待ち | 変更なし、キーコンフィグとダッシュOFFを追加 |
+| 22 | リザルト再戦 | GameFlowSceneTests.ResultRematchResetsEntireMatchAndKeepsSelection | 6A PlayMode合格 / 6B実機待ち | 変更なし |
+| 23 | 頭上カウンター追従 | BattleSceneTests.HeadCountersFollowMovingFighters／GeneratedSceneRunsAndCreatesBothFightersAndHeadCounters | 6A PlayMode合格 / 6Bカメラ・144Hz実機待ち | 位置補間を5Bから保持 |
+| 24 | 多重ヒット防止・高FPS | DamageTests.SameAttackOverlappingManyTicksOnlyHitsOnce、InputAndClockTests.PhaseTwoCombatAndEventsAreIdenticalAcrossRenderPartitions、PhaseSixBattleTests.StaminaAndGuardEventsAreIdenticalAcrossRenderRates、PhaseSixBTests.DashOptionSwitchesRemainDeterministicAcrossRenderRates | .NETの30/60/144/240Hz合格、6B実GPU待ち。旧144Hz描画PlayModeも維持 | インスタンスID・対象集合とtick契約を保持 |
+
+## 原本15章：成果物12項目
+
+| # | 成果物 | 実装状態 / 残り |
+|---:|---|---|
+| 1 | Unityプロジェクト | AniBato/、Unity6000.6.0f1。6BのBuildAllによるアセット接続・新.meta生成待ち |
+| 2 | 戦闘システム | 純C#60Hz、自前AABB、攻防・スタミナ・勝敗を実装。6B Unity回帰待ち |
+| 3 | 初期3キャラ | 透真・蓮・千鶴、方向通常・特殊・超必殺・106クリップ。新中割りの実画面確認待ち |
+| 4 | 初期3ステージ | 共通地形、縮小、背景/サムネ。6B実画面と消失演出確認待ち |
+| 5 | CPU対戦 | 3難易度・seed再現・810試合。.NET既定値確認済み、実SO集計待ち |
+| 6 | ローカル2人 | キーボード/パッド個別、再接続予約。物理パッド2台確認待ち |
+| 7 | UI・対戦演出 | 選択・ポーズ・結果・頭上UI・音・補間。6B比率/144Hz/音の実機確認待ち |
+| 8 | Windowsビルド | 6A Build/phase6a/あり。**6B最終ビルド未生成**、Claudeが検証後に生成。最新2つ保持 |
+| 9 | 操作説明 | 機器表記・再割当・練習・14課題・技表・ダッシュ設定。全14課題実機通し待ち |
+| 10 | 実装済み/未実装一覧 | 本書。サポート・追加6キャラ・時間帯差分・2対2/4人・オンライン等は未実装 |
+| 11 | テスト結果 | TestResults/phase6b-*に.NET証跡。Unity6B結果未取得、6A24/26を履歴として保持 |
+| 12 | 拡張設計資料 | docs/ARCHITECTURE.mdのキャラ追加・サポート・時間帯差分・入力/オンライン分離を更新 |
+
+## 既知の限界とClaudeへの引き継ぎ
+
+- **カメラ要実機調整**：開始の全体表示と近距離拡大を段階化した。全場外ライン内側を常時表示しつつ全比率で従来よりキャラを大きくする要望は、地形・絵の比率を維持する限り同時には満たせない。現在は上足場の収まりと縮小後の拡大を優先。1080p中央の透真は旧20.7%→対戦17.4%→縮小23.8%、蓮16.7%→14.0%→19.2%。対戦中の全体常時表示・常時拡大は未達として扱う。
+- スクショは[phase6b一覧](docs/screenshots/phase6b_previews.md)。6枚のサムネbefore/afterと12枚の**オフライン投影図**で代替し、Unityの実画面とは扱わない。背景中景・HUD・消失・追従の時間挙動は実機で確認する。
+- 権限はworkspace-write／承認不可。UnityライセンスIPCへ接続できないため、HANDOFF §2に従い外部担当へ引き継ぐ。権限迂回・Unityバッチ実行は行っていない。
+- Claude：Unityを閉じ `powershell -ExecutionPolicy Bypass -File tools/verify/run_unity.ps1 -Tag phase6b`。まず失敗2件＋新規USB/設定/カメラ回帰、その後全EditMode/PlayMode/Windowsビルド。BuildAll後のTitle/Battle実在・背景接続・Schema・.metaを確認。実DualSenseで全操作・再接続、3比率でカメラ/HUD、縮小、全14課題、144HzとGIFを確認。結果を本書/RESUMEへ追記してからClaudeがcommitする。
+
+---
+
+## 以下はフェーズ6A提出時の履歴（Unity結果は6B冒頭を参照）
+
+[PHASE6A](docs/codex_tasks/PHASE6A.md)の冒頭「追加のユーザー決定」を反映し、ソース・素材・オフライン検証を完了。**6AのUnity BuildAll／EditMode／PlayMode／Windowsビルド／実機は未実行、Claudeへ引き継ぐ。commit・pushなし。** 5BはClaudeがBuildAll成功・EditMode243/243・PlayMode23/23・Windowsビルド成功を確認済み。
+
+## 実装済み
+
+- 純C#の方向通常27技（3人×地上足払い/背面/空中7方向）。Kind=Normal、近距離カウンター対象、蓄積・3ヒット・コンボ上限・インスタンスIDを共有。空中の前/斜めは移動を伴い、背面の判定/吹っ飛びは実際の打撃方向へ向く。空中の向き固定、データ化した斜め閾値/未登録時フォールバック、下系の着地隙。
+- しゃがみ：足位置固定でHurtbox高さ55%、移動不可。上足場から降りるのは下18F長押し。単純な下/しゃがみ攻撃との衝突を回避。
+- 整数単位のStaminaSystem。各キャラの最大/回復/遅延/行動消費/ガード費用。拒否時のHUD赤点滅。地上ジャンプと上復帰の救済を実際の着地までテスト。
+- ユーザー決定のガード：全種類防御、保持/成立で消費、不足した通常/特殊は無被弾ブレイク、超必殺は貫通。ジャスト成立は消費0。しゃがみはジャストも崩して蓄積1、18F硬直・36Fガード不能。GuardBrokenイベント、HUD・SE。
+- 練習（棒立ち/ガード/ジャンプ/ふつうCPU）、ハート/時間の個別固定、場外の練習専用救済、入力/最後の技表示。14段階チュートリアル、2ページ技表、キャラ選択/ポーズから起動。
+- DualSense/PlayStation・Xbox・キーボードの表記切替、現在の割り当てに追従。キーコンフィグはP1/P2・機器別、変更/初期化/ローカル保存/重複入替。旧AlternateはPrimary変更時に無効、初期化で復元。対戦ヒントは開始5秒のみでOFF可。
+- CPUの通常ガード/しゃがみ崩し/スタミナ・上復帰温存、向き固定に合わせた突進安全判定。旧向きで蓮の構えから場外へ飛ぶケースと復帰資源を使い切るケースを回帰テスト化。
+- image_genで方向原画30キー、SpriteForgeで新規10クリップ/人。旧14主要クリップ/人の混合を廃止、綺麗なキー保持で再生。Win/Loseは単一idle原画を基準に胴/足固定・頭1〜2px。計106シート584F、106GIF。
+- BuildAllのSchema6移行・方向AttackData27個生成・新アニメ接続。既存数値・独自調整・Timing・NewScene前判定/後の再読込を維持。新asmdefなし。
+
+## 検証結果
+
+| 検証 | 結果 | 証跡 |
+|---|---|---|
+| 純C# NUnit・全既存回帰＋新規62ケース | **292成功／0失敗／0スキップ** | TestResults/phase6a-dotnet-battle.xml・.log |
+| Game/Editor/全テストのUnity API参照コンパイル | 警告0／エラー0 | phase6a-dotnet-unity-compile.log |
+| UNITY_EDITORなしのプレイヤー参照コンパイル | 警告0／エラー0 | phase6a-dotnet-player-compile.log |
+| asmdef参照 | 既存6件合格、新規なし | phase6a-assembly-references.json |
+| CPU全9組×30seed×3難易度 | **810試合、全試合両者攻撃/ハート減少、自滅近似0** | phase6a-cpu-final.csv・docs/CPU_BALANCE_REPORT.md |
+| 30/60/144/240Hz決定性 | 状態/スタミナ/イベント一致 | PhaseSixBattleTests・TempoTests |
+| 素材・GIF・再現性 | **584F、106GIF全復号、351ファイルSHA-256一致** | phase6a-animation-verification.json・.log |
+| 6AのUnity実行・実機 | **未実行** | Claude担当。EditMode305/PlayMode26は想定件数のみ |
+
+旧ルールの検査を新しい具体的な期待値へ置換し、既存テストの削除・アサーション緩和はなし。[置換一覧と必須24項目](docs/PHASE6A_TEST_CHANGES.md)。PlayModeには実DualSense/XInputテストデバイス、設定UI→保存→初期化、練習/技表停止の3件を追加。入力分離/復元の既存構造を維持。
+
+| 難易度 | 平均決着秒 | 縮小 | 超必殺あり | 自滅近似 |
+|---|---:|---:|---:|---:|
+| やさしい | 23.94 | 0% | 33.0% | 0 |
+| ふつう | **48.09** | **23.7%** | **65.6%** | **0** |
+| むずかしい | 47.66 | 28.1% | 67.4% | 0 |
+
+純C#既定値での集計。Unity生成済みSOの集計と対人難易度・相性の評価は未実行。
+
+## 変更ファイルと次の作業
+
+Battle：StaminaSystem/DirectionalAttackSelector/PhaseSixADefaults/PracticeSession新規、定義・状態・FSM・移動・防御・接触・CPU。Game：ControlConfiguration/LearningText新規、入力・画面進行・表示・Runner/HUD。Presentation：ControlProfile、方向アニメ・控えめな結果・GuardBroken音。Editor：Schema移行/AttackData生成/スタミナHUD/CPU集計。EditMode/PlayMode、SpriteForge、Validation、資料・原画・PNG/JSON/GIF。
+
+ClaudeはUnityを閉じて `powershell -ExecutionPolicy Bypass -File tools/verify/run_unity.ps1 -Tag phase6a`、次にCpuBalanceReportBuilder.Writeで実SO810試合を保存する。まずTitle/Battle実在・Schema6・方向27技・全34状態を確認。DualSenseの表記と割り当て、全14課題を順番にプレイ、スタミナのガード貫通/崩し、下長押し、空中斜め/後ろ、Win/Loseを確認。[詳細手順](docs/codex_logs/phase6a_final.md)。
+
+既知の限界：新規攻撃は描き下ろした綺麗な1キーを保持するため、連続した動作の描き足しは今後の改善余地。実機で絵とF9判定・新規原画の顔/衣装・144Hz操作感を確認する。シーン/新SO/.meta/実行ファイルは今回Unityで生成していない。背景/カメラの最終仕上げ、サポート・オンライン・正式音源は残作業。
+
+---
+
+## 以下はフェーズ5B提出時の履歴（その後ClaudeがUnity全合格を確認）
 
 指示書：[PHASE5B](docs/codex_tasks/PHASE5B.md)。**0 → A → Bのソース実装、素材生成、オフライン検証を完了。UnityでのBuildAll・EditMode・PlayMode・Windowsビルド・144Hz実機確認は未実行です。** commit／push／公開なし。
 

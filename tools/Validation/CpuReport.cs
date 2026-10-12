@@ -8,26 +8,26 @@ using AniBato.Battle;
 
 internal static class CpuReport
 {
-    public static int Trace(int first, int second, int seed)
+    public static int Trace(int first, int second, int seed, int difficulty = 2)
     {
-        var sim = new BattleSimulation(PhaseFiveBDefaults.Character(first), PhaseFiveBDefaults.Character(second), PhaseFiveBDefaults.Rules(), PhaseOneDefaults.Stage());
-        var a = new CpuBrain(CpuDefinition.ForDifficulty(2), (uint)seed); var b = new CpuBrain(CpuDefinition.ForDifficulty(2), (uint)seed ^ 0x9e3779b9u);
+        var sim = new BattleSimulation(PhaseSixADefaults.Character(first), PhaseSixADefaults.Character(second), PhaseSixADefaults.Rules(), PhaseOneDefaults.Stage());
+        var a = new CpuBrain(CpuDefinition.ForDifficulty(difficulty), (uint)seed); var b = new CpuBrain(CpuDefinition.ForDifficulty(difficulty), (uint)seed ^ 0x9e3779b9u);
         while (!sim.Match.IsFinished)
         {
             var x = a.NextInput(sim, 0); var y = b.NextInput(sim, 1);
-            if (x.Pressed != InputButtons.None || y.Pressed != InputButtons.None)
-                Console.WriteLine($"{sim.Match.TickCount}: P1 {sim.P1.Mode} x{sim.P1.Position.X:F2} stun{sim.P1.HitstunRemaining} act{sim.P1.ActionFrames} {x.Pressed} / P2 {sim.P2.Mode} x{sim.P2.Position.X:F2} stun{sim.P2.HitstunRemaining} act{sim.P2.ActionFrames} {y.Pressed}");
+            if (sim.P1.Position.Y < 0 || sim.P2.Position.Y < 0)
+                Console.WriteLine($"{sim.Match.TickCount}: P1 {sim.P1.Mode} ({sim.P1.Position.X:F2},{sim.P1.Position.Y:F2}) face{sim.P1.Facing} jump{sim.P1.JumpsUsed} sta{sim.P1.Stamina:F1} up{sim.P1.UpSpecialUsed} stun{sim.P1.HitstunRemaining} act{sim.P1.ActionFrames} input{x.X},{x.Y},{x.Pressed} / P2 {sim.P2.Mode} ({sim.P2.Position.X:F2},{sim.P2.Position.Y:F2}) face{sim.P2.Facing} jump{sim.P2.JumpsUsed} sta{sim.P2.Stamina:F1} up{sim.P2.UpSpecialUsed} input{y.X},{y.Y},{y.Pressed}");
             sim.Tick(x, y);
             foreach (var e in sim.Events) if (e.Kind == BattleEventKind.AttackStarted || e.Kind == BattleEventKind.Hit || e.Kind == BattleEventKind.CounterSuccess)
-                Console.WriteLine($"  {e.Kind} {e.SourcePlayer}->{e.TargetPlayer}, P1 {sim.P1.Mode} P2 {sim.P2.Mode}");
+                Console.WriteLine($"  {sim.Match.TickCount} {e.Kind} {e.SourcePlayer}->{e.TargetPlayer}, P1 {sim.P1.Mode} x{sim.P1.Position.X:F2} {sim.P1.Attack?.Definition.Name} P2 {sim.P2.Mode} x{sim.P2.Position.X:F2} {sim.P2.Attack?.Definition.Name}");
         }
         return 0;
     }
     public static int Write(string stem, bool legacyGauge = false)
     {
-        var rules = PhaseFiveBDefaults.Rules();
+        var rules = PhaseSixADefaults.Rules();
         if (legacyGauge) { var old = rules.Gauge; old.OnHit = 12; old.OnDamaged = 8; rules.Gauge = old; }
-        var rows = CpuBalanceStudy.Run(new[] { PhaseFiveBDefaults.Character(0), PhaseFiveBDefaults.Character(1), PhaseFiveBDefaults.Character(2) },
+        var rows = CpuBalanceStudy.Run(new[] { PhaseSixADefaults.Character(0), PhaseSixADefaults.Character(1), PhaseSixADefaults.Character(2) },
             rules, PhaseOneDefaults.Stage(), new[] { CpuDefinition.ForDifficulty(0), CpuDefinition.ForDifficulty(1), CpuDefinition.ForDifficulty(2) });
         string csv = CpuBalanceStudy.Csv(rows);
         var md = new StringBuilder("# CPU自動対戦集計\n\n.NET直接駆動。純C#の作成既定値を使用。Unity生成済みScriptableObjectでの結果ではありません。\n\n" +
@@ -44,7 +44,7 @@ internal static class CpuReport
             foreach (var matchup in g.GroupBy(r => new { r.Player1, r.Player2 }))
                 Append(md, matchup.ToArray(), difficulties[g.Key], names[matchup.Key.Player1] + "-" + names[matchup.Key.Player2]);
         }
-        string beforePath = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(stem)), "phase5b-cpu-before.csv");
+        string beforePath = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(stem)), "phase5b-cpu-final.csv");
         if (File.Exists(beforePath))
         {
             var before = File.ReadAllLines(beforePath).Skip(1).Where(line => !String.IsNullOrWhiteSpace(line)).Select(line => line.Split(',')).ToArray();
@@ -52,15 +52,15 @@ internal static class CpuReport
             foreach (var row in rows)
                 if (!before.Any(old => int.Parse(old[0]) == row.Difficulty && int.Parse(old[1]) == row.Player1 && int.Parse(old[2]) == row.Player2 && int.Parse(old[3]) == row.Seed))
                     throw new InvalidOperationException("before/afterの組合せ・seedが一致しません。");
-            var comparison = new StringBuilder("# フェーズ5B CPU集計：before → after\n\n" +
-                "beforeは保存済みフェーズ5最終CSV（ゲージ14/10/20/18）。afterはPhaseFiveBDefaultsと現行CPU（12/8/16/14）。両方とも純C#作成既定値、全9組×30seed×3難易度=810試合。Unity生成済みScriptableObjectの実集計ではありません。\n\n" +
+            var comparison = new StringBuilder("# フェーズ6A CPU集計：before → after\n\n" +
+                "beforeはClaude検証済みフェーズ5Bの純C#集計。afterはPhaseSixADefaultsと現行CPU。両方とも全9組×30seed×3難易度=810試合。生成済みScriptableObjectの実集計ではありません。\n\n" +
                 "| 難易度 | 平均決着秒 | 縮小到達率 | 超必殺あり試合率 | 自滅近似 |\n|---|---|---|---|---|\n");
             for (int d = 0; d < 3; d++)
             {
                 var old = before.Where(row => int.Parse(row[0]) == d).ToArray(); var now = rows.Where(row => row.Difficulty == d).ToArray();
                 comparison.AppendLine(FormattableString.Invariant($"| {difficulties[d]} | {old.Average(row => int.Parse(row[4]) / 60d):F2}→{now.Average(row => row.Ticks / 60d):F2} | {old.Count(row => int.Parse(row[4]) >= 3600) * 100d / old.Length:F1}→{now.Count(row => row.ShrinkReached) * 100d / now.Length:F1}% | {old.Count(row => int.Parse(row[10]) > 0) * 100d / old.Length:F1}→{now.Count(row => row.UltimateStarts > 0) * 100d / now.Length:F1}% | {old.Sum(row => int.Parse(row[12]))}→{now.Sum(row => row.UnforcedRingOuts)} |"));
             }
-            comparison.AppendLine("\nふつうは平均35〜55秒・縮小20〜40%・超必殺半数前後の目標を満たす。縮小は実際のShrink.Started、beforeは残り10秒への到達tickを使用。原本のハート3／通常3ヒット=1／特殊1／超必殺2／70秒は保持。対人難易度・相性・超必殺命中率は実機確認が必要。\n\nCSVはTestResults/phase5b-cpu-before.csv・phase5b-cpu-final.csv。実SOはCpuBalanceReportBuilder.Writeでphase5b-cpu-unity.csv/.mdへ別保存する。\n\n---\n");
+            comparison.AppendLine("\n目標：平均35〜55秒・縮小20〜40%・超必殺半数前後。原本のハート3／通常3ヒット=1／特殊1／超必殺2／70秒は保持。ガード相性はユーザー決定に従い変更。対人難易度・相性は実機確認が必要。\n\nCSVはTestResults/phase5b-cpu-final.csv・phase6a-cpu-final.csv。実SOはCpuBalanceReportBuilder.Writeでphase6a-cpu-unity.csv/.mdへ別保存。\n\n---\n");
             md.Insert(0, comparison.ToString());
         }
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(stem)));

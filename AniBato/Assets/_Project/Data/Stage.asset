@@ -18,12 +18,14 @@ MonoBehaviour:
   TimeVariant: "\u591C"
   BgmKey: stage_0
   ShrinkMessage: AREA RESTRICTION
-  Thumbnail: {fileID: 21300000, guid: 34077f292af7a174dba916e1b8abb392, type: 3}
-  Background: {r: 0.025, g: 0.04, b: 0.09, a: 1}
+  Thumbnail: {fileID: 21300000, guid: 7720fd835b8bdd3499e9c9cef0cb49c9, type: 3}
+  FarArtwork: {fileID: 21300000, guid: 047ba0faa111bd747a11533005aa9f93, type: 3}
+  AppearanceSchemaVersion: 1
+  Background: {r: 0.13, g: 0.2, b: 0.32, a: 1}
   FarColor: {r: 0.066, g: 0.11000001, b: 0.165, a: 0.55}
   MidColor: {r: 0.12, g: 0.2, b: 0.3, a: 1}
-  FloorColor: {r: 0.12, g: 0.2, b: 0.3, a: 1}
-  Accent: {r: 0.25, g: 0.5, b: 0.65, a: 1}
+  FloorColor: {r: 0.24, g: 0.34, b: 0.44, a: 1}
+  Accent: {r: 0.4, g: 0.67, b: 0.78, a: 1}
   FarParallax: 0.06
   MidParallax: 0.12
   Platforms:

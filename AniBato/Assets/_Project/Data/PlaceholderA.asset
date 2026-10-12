@@ -29,11 +29,34 @@ MonoBehaviour:
     MaxAirDashes: 1
     GroundNormals: []
     AirNormals: []
+    DirectionalNormals: []
+    Stamina:
+      Maximum: 0
+      GroundRecoveryPerSecond: 0
+      ActiveRecoveryPerSecond: 0
+      RecoveryDelayFrames: 0
+      JumpCost: 0
+      AirJumpCost: 0
+      GroundDashCost: 0
+      AirDashCost: 0
+      DodgeCost: 0
+      GuardDrainPerSecond: 0
+      NormalGuardCost: 0
+      SpecialGuardCost: 0
+      UltimateGuardCost: 0
+      GuardBreakFrames: 0
+      GuardLockFrames: 0
+    CrouchHeightRatio: 0
+    DiagonalThreshold: 0
+    DiagonalFallbackVertical: 0
     Specials: []
     Ultimate:
       Name: 
       Kind: 0
       IsCloseRange: 0
+      NormalDirection: 0
+      BreaksGuard: 0
+      LandingRecoveryFrames: 0
       StartupFrames: 0
       ActiveFrames: 0
       DamageDelayFrames: 0
@@ -57,6 +80,7 @@ MonoBehaviour:
       ActiveVelocity:
         X: 0
         Y: 0
+      VerticalMotionOnStartOnly: 0
       ProjectileLaunchVelocity:
         X: 0
         Y: 0
@@ -94,6 +118,8 @@ MonoBehaviour:
       KnockbackMultiplier: 0
     UltimateCutInFrames: 0
   TempoSchemaVersion: 0
+  AccessibilitySchemaVersion: 0
+  DirectionalNormals: []
   GroundNormals:
   - {fileID: 11400000, guid: 0ae52300387372b4294bd00d0ff2d968, type: 2}
   - {fileID: 11400000, guid: 5d6bbb72aeacc384083c0ca2ff951250, type: 2}

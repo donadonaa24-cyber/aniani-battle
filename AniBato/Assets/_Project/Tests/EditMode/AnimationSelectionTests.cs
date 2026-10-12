@@ -126,13 +126,18 @@ namespace AniBato.Tests
             Assert.That(player.Sample.State, Is.EqualTo(AnimationState.CounterSuccess)); Assert.That(player.Sample.FrameIndex(3, 12, false, 1), Is.EqualTo(1));
         }
         [Test]
-        public void MatchResultPlaysWinnerAndThenLoserRecoveryWithoutAdvancingSimulation()
+        public void MatchResultUsesCalmWinAndLoseFromFirstResultTickWithoutAdvancingSimulation()
         {
             var sim = Create(); var winner = new FighterAnimationPlayer(); var loser = new FighterAnimationPlayer(); winner.Reset(sim.P1, sim.Match); loser.Reset(sim.P2, sim.Match);
             sim.Match.Result = MatchResult.Player1Wins; sim.P2.Mode = FighterMode.KO; int tick = sim.Match.TickCount;
-            for (int i = 0; i < 25; i++) { winner.Advance(sim.P1, sim.Match, false, false, false); loser.Advance(sim.P2, sim.Match, false, false, false); }
+            for (int i = 0; i < 25; i++)
+            {
+                winner.Advance(sim.P1, sim.Match, false, false, false); loser.Advance(sim.P2, sim.Match, false, false, false);
+                Assert.That(winner.Sample.State, Is.EqualTo(AnimationState.Win)); Assert.That(loser.Sample.State, Is.EqualTo(AnimationState.Lose));
+            }
             Assert.That(winner.Sample.State, Is.EqualTo(AnimationState.Win)); Assert.That(winner.Sample.Age, Is.EqualTo(24));
             Assert.That(loser.Sample.State, Is.EqualTo(AnimationState.Lose)); Assert.That(sim.Match.TickCount, Is.EqualTo(tick));
+            Assert.That(loser.Sample.Age, Is.EqualTo(24));
         }
         [Test]
         public void RestartResetsAllPresentationTimers()

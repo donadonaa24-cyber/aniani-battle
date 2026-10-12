@@ -7,15 +7,16 @@ namespace AniBato.Tests
     public sealed class DefenseTests
     {
         [Test]
-        public void Spec07_NormalPiercesBothFreshAndOldGuard()
+        public void UserDecision_NormalIsBlockedByBothFreshAndOldGuard()
         {
             foreach (int age in new[] { 0, 6 })
             {
                 var sim = BattleTestFactory.Create(true, definition: PhaseTwoTestFactory.Character());
                 for (int i = 0; i < age; i++) sim.Tick(default, PhaseTwoTestFactory.Guard);
                 sim.Tick(PhaseTwoTestFactory.Button(InputButtons.Attack), PhaseTwoTestFactory.Guard);
-                Assert.That(sim.P2.NormalHitCount, Is.EqualTo(1));
-                Assert.That(sim.Events.Any(e => e.Kind == BattleEventKind.JustGuard), Is.False);
+                Assert.That(sim.P2.NormalHitCount, Is.Zero);
+                Assert.That(sim.P2.Hearts, Is.EqualTo(3));
+                Assert.That(sim.Events.Any(e => e.Kind == (age == 0 ? BattleEventKind.JustGuard : BattleEventKind.Guarded)), Is.True);
             }
         }
         [Test]
@@ -109,14 +110,15 @@ namespace AniBato.Tests
             Assert.That(sim.Events.Any(e => e.Kind == (button == InputButtons.Guard ? BattleEventKind.JustGuard : BattleEventKind.JustDodge)), Is.True);
         }
         [TestCase(InputButtons.Guard)] [TestCase(InputButtons.Dodge)]
-        public void Spec13_14_UltimatePiercesOldGuardAndNormalDodge(InputButtons button)
+        public void UserDecision_UltimateIsGuardedButPiercesNormalDodge(InputButtons button)
         {
             var sim = BattleTestFactory.Create(true, definition: PhaseTwoTestFactory.Character()); sim.P1.Gauge = 100;
             sim.Tick(default, button == InputButtons.Guard ? PhaseTwoTestFactory.Guard : PhaseTwoTestFactory.Button(button));
             for (int i = 0; i < 5; i++) sim.Tick(default, button == InputButtons.Guard ? PhaseTwoTestFactory.Guard : default);
             sim.P2.Position = new BattleVector(1.5f, 1.1f);
             sim.Tick(PhaseTwoTestFactory.Button(InputButtons.Ultimate), button == InputButtons.Guard ? PhaseTwoTestFactory.Guard : default);
-            Assert.That(sim.P2.Hearts, Is.EqualTo(1));
+            Assert.That(sim.P2.Hearts, Is.EqualTo(button == InputButtons.Guard ? 3 : 1));
+            Assert.That(sim.Events.Any(e => e.Kind == BattleEventKind.Guarded), Is.EqualTo(button == InputButtons.Guard));
         }
         [TestCase(InputButtons.Guard)] [TestCase(InputButtons.Dodge)]
         public void AlreadyOverlappingActiveUltimateCannotBecomeJustDefense(InputButtons button)
@@ -124,7 +126,8 @@ namespace AniBato.Tests
             var sim = BattleTestFactory.Create(true, definition: PhaseTwoTestFactory.Character());
             sim.P1.Attack = new AttackInstance(999, sim.P1.Definition.Ultimate, 0, false);
             sim.Tick(default, button == InputButtons.Guard ? PhaseTwoTestFactory.Guard : PhaseTwoTestFactory.Button(button));
-            Assert.That(sim.P2.Hearts, Is.EqualTo(1));
+            Assert.That(sim.P2.Hearts, Is.EqualTo(button == InputButtons.Guard ? 3 : 1));
+            Assert.That(sim.Events.Any(e => e.Kind == BattleEventKind.Guarded), Is.EqualTo(button == InputButtons.Guard));
             Assert.That(sim.Events.Any(e => e.Kind == BattleEventKind.JustGuard || e.Kind == BattleEventKind.JustDodge), Is.False);
         }
         [TestCase(4, true)] [TestCase(5, false)]

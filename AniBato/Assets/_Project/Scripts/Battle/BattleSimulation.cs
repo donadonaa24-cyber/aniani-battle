@@ -28,6 +28,7 @@ namespace AniBato.Battle
         public IReadOnlyList<Projectile> Projectiles => projectileSystem.Projectiles;
         public ICounterEffect CounterEffect { get => defense.CounterEffect; set { defense.CounterEffect = value; P1.CounterEffect = value; P2.CounterEffect = value; } }
         public int CutInRemainingFrames { get; private set; }
+        public PracticeOptions Practice { get; set; }
 
         public BattleSimulation(in CharacterDefinition p1, in CharacterDefinition p2, in BattleRuleDefinition rules, StageGeometry stage)
         {
@@ -46,7 +47,7 @@ namespace AniBato.Battle
             if (Match.IsFinished) return;
             // Cinematic ticks consume no match time, physics, status duration, or buffered actions.
             if (CutInRemainingFrames > 0) { CutInRemainingFrames--; return; }
-            Match.TickCount++; Match.RemainingTicks--;
+            Match.TickCount++; if (Practice == null || !Practice.FreezeTimer) Match.RemainingTicks--;
             Shrink.Tick(Match, events);
             MovementSystem.InvalidateGround(P1, Stage); MovementSystem.InvalidateGround(P2, Stage);
             defense.CaptureOverlaps(P1, P2, Projectiles); defense.CaptureOverlaps(P2, P1, Projectiles);
@@ -77,8 +78,10 @@ namespace AniBato.Battle
                 if (contact.Target.ImmunityFrom(contact.Attacker.PlayerIndex) > 0 || contact.Target.HeartRecoveryRemaining > 0) continue;
                 if (outcomes[i] == DefenseOutcome.Hit)
                     damage.Apply(contact, contact.Attacker.PlayerIndex == 0 ? comboP1 : comboP2, Match.TickCount, Rules, events);
-                else defense.Apply(contact, outcomes[i], contact.Target.PlayerIndex == 0 ? comboP1 : comboP2, damage, Match.TickCount, Rules, events);
+                else defense.Apply(contact, outcomes[i], outcomes[i] == DefenseOutcome.CrouchBreak || outcomes[i] == DefenseOutcome.Guard || outcomes[i] == DefenseOutcome.JustGuard ?
+                    (contact.Attacker.PlayerIndex == 0 ? comboP1 : comboP2) : (contact.Target.PlayerIndex == 0 ? comboP1 : comboP2), damage, Match.TickCount, Rules, events);
             }
+            Practice?.FinishTick(this);
             matchResolver.Resolve(Match, P1, P2, Stage, Rules, events);
         }
         private void EmitUltimate(FighterState fighter, int previousUses)

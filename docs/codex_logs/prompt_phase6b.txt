@@ -1,0 +1,3 @@
+あなたはこのリポジトリのメイン開発者です。AGENTS.md、IMPLEMENTATION_STATUS.md、docs/RESUME.md、docs/HANDOFF_TO_CODEX.md（§2の落とし穴）、docs/REVIEW_NOTES.md、docs/CONTROLS_REVIEW.md を読み、docs/codex_tasks/PHASE6B.md の指示書に従って、PlayMode失敗2件の修正（最優先）→ 見た目（背景・サムネ・カメラ・表記・中割り）→ ダッシュ2回入力ON/OFF設定 → 必須テスト対応表・資料の仕上げ、の順に実装してください。画像生成ツールを使ってよい。前後のコマを重ね合わせる中割りは禁止です。
+シミュレーションの決定性を壊さないこと。テストのアサーションを弱めないこと。新しい asmdef を作ったらテストasmdefの references に追加すること。git commit はしないでください（Claudeが検証後に行います）。
+完了したら IMPLEMENTATION_STATUS.md と docs/RESUME.md 等を更新し、指示書の「最終報告」の内容を日本語で報告してください。

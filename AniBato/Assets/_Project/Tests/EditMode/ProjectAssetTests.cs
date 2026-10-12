@@ -37,7 +37,7 @@ namespace AniBato.Tests
             Assert.That(simulation.Match.RemainingTicks, Is.EqualTo(4200));
             Assert.That(AssetDatabase.LoadAssetAtPath<SceneAsset>(ProjectBuilder.ScenePath), Is.Not.Null);
             Assert.That(EditorBuildSettings.scenes[0].path, Is.EqualTo(ProjectBuilder.TitleScenePath));
-            Assert.That(rules.Definition.SchemaVersion, Is.EqualTo(5));
+            Assert.That(rules.Definition.SchemaVersion, Is.EqualTo(6));
             var setup = AssetDatabase.LoadAssetAtPath<BattleSetup>(root + "BattleSetup.asset");
             Assert.That(setup, Is.Not.Null); Assert.That(setup.Characters.Length, Is.EqualTo(3));
             Assert.That(setup.CpuDifficulties.Length, Is.EqualTo(3));
@@ -50,6 +50,10 @@ namespace AniBato.Tests
                 Assert.That(character.Specials.All(a => a && a.IsSpecial), Is.True);
                 Assert.That(character.Ultimate.IsUltimate, Is.True);
                 Assert.That(character.GroundNormals.Length, Is.EqualTo(3));
+                Assert.That(character.DirectionalNormals.Length, Is.EqualTo(10));
+                Assert.That(character.DirectionalNormals.Skip(1).All(a => a && a.IsNormal), Is.True);
+                Assert.That(character.Movement.Stamina.Maximum, Is.GreaterThan(0));
+                Assert.That(character.AccessibilitySchemaVersion, Is.EqualTo(6));
                 Assert.That(character.Movement.UltimateCutInFrames, Is.EqualTo(30));
             }
             Assert.That(setup.Character(1).Portrait, Is.Not.Null); Assert.That(setup.Character(2).Portrait, Is.Not.Null);
@@ -65,12 +69,17 @@ namespace AniBato.Tests
             {
                 Assert.That(setup.Stages[i].SharedGeometry, Is.SameAs(geometry));
                 Assert.That(setup.Stages[i].Thumbnail, Is.Not.Null);
+                Assert.That(setup.Stages[i].FarArtwork, Is.Not.Null);
+                Assert.That(setup.Stages[i].AppearanceSchemaVersion, Is.EqualTo(1));
+                Assert.That(setup.Stages[i].Thumbnail.texture.width, Is.EqualTo(480));
+                Assert.That(setup.Stages[i].FarArtwork.texture.width, Is.EqualTo(1280));
                 Assert.That(setup.Stages[i].Theme, Is.EqualTo((StageTheme)i));
                 Assert.That(setup.Stages[i].ToGeometry().PlatformCount, Is.EqualTo(3));
             }
             Assert.That(AssetDatabase.LoadAssetAtPath<SceneAsset>(ProjectBuilder.TitleScenePath), Is.Not.Null);
             var rules = AssetDatabase.LoadAssetAtPath<BattleRules>("Assets/_Project/Data/BattleRules.asset").ToDefinition();
             Assert.That(rules.Shrink.Enabled, Is.True); Assert.That(rules.Shrink.StartRemainingSeconds, Is.EqualTo(10));
+            Assert.That(AssetDatabase.LoadAssetAtPath<PresentationSettings>("Assets/_Project/Data/Presentation.asset").CameraSchemaVersion, Is.EqualTo(1));
         }
         [Test]
         public void KeyboardBindingsDoNotOverlapBetweenPlayers()

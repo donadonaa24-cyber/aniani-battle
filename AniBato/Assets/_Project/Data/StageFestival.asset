@@ -18,12 +18,14 @@ MonoBehaviour:
   TimeVariant: "\u591C"
   BgmKey: stage_2
   ShrinkMessage: "\u6587\u5316\u796D\u7D42\u4E86\u30FB\u4E2D\u592E\u3078\u96C6\u5408"
-  Thumbnail: {fileID: 21300000, guid: 0e236c9affe076241ada54317e8fb794, type: 3}
-  Background: {r: 0.055, g: 0.045, b: 0.065, a: 1}
+  Thumbnail: {fileID: 21300000, guid: 04313fa3bbb92104594e95f286306b7c, type: 3}
+  FarArtwork: {fileID: 21300000, guid: 3aa86426b75ffe74db03e6467da31d69, type: 3}
+  AppearanceSchemaVersion: 1
+  Background: {r: 0.38, g: 0.31, b: 0.27, a: 1}
   FarColor: {r: 0.121, g: 0.0935, b: 0.1045, a: 0.55}
   MidColor: {r: 0.22, g: 0.17, b: 0.19, a: 1}
-  FloorColor: {r: 0.22, g: 0.17, b: 0.19, a: 1}
-  Accent: {r: 0.48, g: 0.37, b: 0.28, a: 1}
+  FloorColor: {r: 0.46, g: 0.36, b: 0.29, a: 1}
+  Accent: {r: 0.76, g: 0.56, b: 0.36, a: 1}
   FarParallax: 0.06
   MidParallax: 0.12
   Platforms: []

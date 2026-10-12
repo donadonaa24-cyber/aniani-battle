@@ -19,7 +19,7 @@
 
 ## 1. 絶対ルール（AGENTS.md より再掲）
 - 書き込みは `anianiバトル！！` フォルダ配下のみ。他のゲームのフォルダは読み取り専用。
-- **git commit / push / 公開はユーザーの明示的な許可があるまでしない**（現在すべて未コミット）。
+- Git：公開リポジトリ `https://github.com/donadonaa24-cyber/aniani-battle`（`main`）。**Unity検証が全合格した区切りで commit・push してよい**（2026-10-12 ユーザー許可）。force push・履歴書き換え禁止。秘密情報・個人情報（メール、PCユーザー名入りの絶対パス）を書かない。
 - 秘密情報を書かない、外部送信しない、有料・出典不明アセットを入れない。
 - `docs/art_reference/_style_local/` は他者のファンアート。画風の参考に見るだけ。Assets にコピーしない、キャラ・ポーズを写さない。
 - 千鶴の正装は**私服**（茶色ボブ、オレンジのセーター、紺のフレアスカート、白スニーカー）。シェフ服は将来の覚醒モード用に温存。
@@ -69,15 +69,13 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 - テストを弱めていないか、失敗を隠していないか
 - 見た目：キャラが別人に見えない、足元が揃う、頭上カウンターが頭上にある、判定（F9表示）と絵が大きくずれない
 
-## 4. 現在の作業：フェーズ5BのUnity検証待ち（2026-10-12）
+## 4. 現在の作業：6BのUnity再検証とカメラ実機調整待ち
 
-最新は[RESUME](RESUME.md)・[phase5b_final](codex_logs/phase5b_final.md)。フェーズ5はClaudeがBuildAll／EditMode225/225／PlayMode15/20／Windowsビルドを検証。5Bで5回帰のソース修正、描画補間とフレームペーシング、368F・42GIF、テンポ調整を完了。純C#230件成功、コンパイル警告・エラー0。ふつう45.51秒・縮小21.9%・超必殺56.7%。5BのUnity生成／テスト／ビルド／実機・実SO集計は未確認。現権限のIPC制約に従ってClaudeへ引き継ぐ。以下のフェーズ5提出時点の記録は履歴。
-- ART2はClaudeのUnity検証まで完了。原画・SpriteForge・3キャラ素材は維持し、再生成しない。
-- フェーズ4はBuildAll／EditMode204/204／PlayMode16/17／Windowsビルド成功。Title未生成をClaudeが修正し、残った画面入力持ち越しを今回Codexが修正。
-- フェーズ5のCPU3難易度・パッド再接続・手続きSE/BGM・音量／揺れ設定・演出を実装。純C#212成功、全ソース／プレイヤー用コンパイル警告0・エラー0、asmdef6件確認。CPU810試合のふつう超必殺率67.8%。
-- フェーズ5のUnity BuildAll／EditMode／PlayMode／Windowsビルド／実画面／実音は未実行。標準想定225／20件。手順は[phase5_final.md](codex_logs/phase5_final.md)、状態は[RESUME.md](RESUME.md)。
-- 現権限がworkspace-write／承認不可の場合、サンドボックス外Unity実行はできない。権限を迂回せず、AGENTS.mdの分担に従ってClaudeへ引き継ぐ。§2の手順は実行可能な担当者が行う。
-
+- フェーズ1〜5BはUnity検証・初回コミット済み。6AはBuildAll成功・EditMode305/305・PlayMode24/26・Windowsビルド成功、未コミット。
+- 6BのPlayMode2件はUSB HIDレポート・機器の後始末・旧シーン停止でソース修正し、アサーションを維持。背景3枚・中割り3アトラスを品質確認して再利用、背景/サムネ・段階的カメラ・左右表記・ダッシュ2回ON/OFF・必須24テスト/12成果物表・資料を更新。
+- .NET307合格、Editor/Player参照コンパイル0警告/エラー、asmdef6件、CPU810試合、584F/106GIF・351ファイル再生成一致。6B Unity/実機は未実行。カメラの全体常時表示と常時拡大は未達で実機調整が必要。
+- 最新手順は RESUME.md、IMPLEMENTATION_STATUS.md、codex_logs/phase6b_final.md。現在のworkspace-write/承認不可では外部Unityを実行できない。権限を迂回せずClaudeへ引き継ぐ。
+- ClaudeがUnityを閉じ、tools/verify/run_unity.ps1 -Tag phase6b を実行。新アセット接続・失敗2件/全テスト・Windowsビルド・実機を確認。**ユーザーの今回の指定によりCodexはcommitしない。全合格後のcommit/pushはClaude担当。**
 ## 5. 残りフェーズ（指示書は自分で `docs/codex_tasks/PHASE4.md` 等に書いてから着手）
 以下は工程全体の記録です。フェーズ4は実装・Unity検証済み、フェーズ5はソース・.NET検証済み。現在の再開地点は§4とRESUMEに従い、完了済みの素材やフェーズを作り直さないでください。
 ### フェーズ4：ステージとゲーム進行（原本 6・8章）
@@ -94,7 +92,7 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 ### フェーズ6：検証と仕上げ（原本 11・12・15章）
 - 必須テスト1〜24を一覧化し、自動テスト／実機確認のどちらで確認したかを `IMPLEMENTATION_STATUS.md` に表で記録。
 - 最終Windowsビルド（`Build/Release/`）、`README.md`（起動方法・操作）、`GAME_DESIGN.md`（確定／暫定ルール）、`BALANCE_CONFIG.md`、`IMPLEMENTATION_STATUS.md`（実装済み／未実装／既知の問題）、`docs/ARCHITECTURE.md`（将来拡張：キャラ追加・サポート・ステージ差分）を仕上げる。
-- 完成後、コミットしてよいかユーザーに確認する（許可があるまでコミットしない）。
+- 完成後、commit・push してユーザーに報告する。
 
 ## 6. 各作業の終わりにやること
 1. `tools\verify\run_unity.ps1` で全検証（失敗があれば直してから）

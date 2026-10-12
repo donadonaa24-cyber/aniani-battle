@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1f51d4b3a9bc445a4b3ef9f67064d9, type: 3}
+  m_Name: ChizuruAirNeutral
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
+  Definition:
+    Name: "\u5343\u9DB4 \u7A7A\u4E2D\u30CB\u30E5\u30FC\u30C8\u30E9\u30EB"
+    Kind: 0
+    IsCloseRange: 1
+    NormalDirection: 3
+    BreaksGuard: 0
+    LandingRecoveryFrames: 0
+    StartupFrames: 5
+    ActiveFrames: 4
+    DamageDelayFrames: 0
+    RecoveryFrames: 13
+    Hitbox:
+      Center:
+        X: 0
+        Y: 0
+      Size:
+        X: 3.3999999
+        Y: 2.1
+    HitstopFrames: 4
+    HitstunFrames: 8
+    Knockback:
+      X: 2
+      Y: 2
+    PiercesNormalDodge: 0
+    SpawnProjectile: 0
+    ProjectileSpeed: 0
+    ProjectileLifetimeFrames: 0
+    ActiveVelocity:
+      X: 0
+      Y: 0
+    VerticalMotionOnStartOnly: 0
+    ProjectileLaunchVelocity:
+      X: 0
+      Y: 0
+    ProjectileGravity: 0
+    HasSecondaryHitbox: 0
+    SecondaryHitbox:
+      Center:
+        X: 0
+        Y: 0
+      Size:
+        X: 0
+        Y: 0
+    NonDamaging: 0
+    ParalysisFrames: 0
+    MarkFrames: 0
+    SelfHealNormalHits: 0
+    SelfBuff:
+      DurationFrames: 0
+      MoveMultiplier: 0
+      DashMultiplier: 0
+      StartupMultiplier: 0
+    KnockbackMultiplier: 0
+    CooldownFrames: 0
+    ProjectileEraseCount: 0
+    GuardedRecoveryFrames: 0
+    RequiresFollowup: 0
+    StanceFrames: 0

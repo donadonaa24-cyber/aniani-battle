@@ -16,6 +16,10 @@
         public int frames, fps = 10;
         public int inbetweenFrames;
         public bool stableIdle;
+        public string sourceClip;
+        public int[] sourceFrames;
+        public double sourceScaleFactor = 1;
+        public int headOffset;
         public bool loop, validateHeight;
         public double[] sourceAnchors; // Optional anatomical root positions, pixels relative to each detected frame.
         public Binding[] bindings;

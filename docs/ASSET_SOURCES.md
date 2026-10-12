@@ -1,4 +1,19 @@
-﻿# 素材の出典・用途
+# 素材の出典・用途
+
+## フェーズ6B（2026-10-12）
+
+内蔵image_gen（APIキー/CLIなし）で背景3枚と中割り3アトラスを生成。背景は参照画像なし、本作独自の都市・巨大駒闘技場・文化祭。原作正史を追加確定しない。中割りは各キャラの所有walk/dash原画を参照し、同じ服・顔・等身の独立6姿勢/人を描いた。前後コマの混合・クロスフェードなし。他者ファンアート・第三者/有料素材は未使用。
+
+| 保存先 | 元画像・加工 | 用途 |
+|---|---|---|
+| art_source/phase6b/backgrounds/{city,board,festival}.png | 内蔵image_gen新規生成、原画を保持 | 3ステージ背景 |
+| Art/Stages/phase6b_*_background.png・*_thumbnail.png | 原画の縮小と自作足場サムネ、1280×720/480×270 | FarArtwork/Thumbnail。旧サムネ保持 |
+| art_source/phase6b/motion/{toma,ren,chizuru}.png | 所有rawのwalk/dashを参照したimage_gen、透過6姿勢/人 | walk2/dash4の中間姿勢 |
+| art_source/raw/*/{walk,dash}_phase6b.png | 新姿勢の分離・倍率整合、旧キーと順次配置 | SpriteForge入力。旧原画は上書きしない |
+| Art/Sprites/*/walk・dash PNG/JSON、docs/art_wip/*_preview.gif | 共通32色・二値アルファ・足元整合、1コマ1原画 | 各8F・15fps。既存idle/結果方式を維持 |
+| docs/screenshots/phase6b_*.png | 旧/新サムネ、実CameraFramingのオフライン投影 | Unity実画面の代替であることを明記 |
+
+最終プロンプト・保存先・加工方針は[生成記録](../art_source/phase6b/generation-log.md)。再開時に破損・品質を確認して生成済み素材を再利用した。背景/中割り以外の原画・ユーザー提供Portraitは維持。
 
 2026-10-12（JST）。原作側の資料はユーザー提供・本人作品です。元の別ゲームフォルダには書き込んでいません。新たな第三者アセット・有料アセットは導入していません。
 
@@ -62,7 +77,20 @@ Tomaのスーツ・端末とRenの犬耳フード/衣装/マント/尻尾は正�
 
 メロディとSEは本作独自の仮素材で、原作の楽曲・設定として確定しない。新しい画像・音ファイル、第三者素材、有料アセット、外部パッケージは導入していない。音の原本はコードで、.NETで波形の範囲・再現性を検証。Unityでの実音は未検証。3キャラ画像・原画と既存Portraitは保持した。
 
-## フェーズ5B：既存キーフレームからの中割り・idle整合
+## フェーズ6A：方向キー原画と控えめな勝敗（2026-10-12）
+
+| 保存先 | 元資料・作成方法 | 用途 |
+|---|---|---|
+| art_source/phase6a/{toma,ren,chizuru}-atlas.png | 各キャラの自作/ユーザー資料に基づく採用idle原画だけを参照して内蔵image_genで新規キーを描画 | しゃがみ・足払い・背面・空中5方向・斜め前上、各9ポーズ |
+| art_source/phase6a/diagonal-down.png | 同じ3人の採用idleを参照して内蔵image_gen | 斜め前下の3キー |
+| art_source/phase6a/prompts.json | 実際のプロンプトと参考/採用ファイルを記録 | 再制作・出典の確認 |
+| art_source/raw/<character>/新規10PNG | PhaseSixArtが不透明な連結成分から各ポーズを分離 | 原画の保管、前後の絵を混合しない |
+| Art/Sprites/<character>/全PNG・JSON | SpriteForge、既存14クリップの綺麗なキー保持＋idleの単一原画呼吸 | 計106シート584F。旧混合フレームを廃止 |
+| Win/Lose・docs/art_wip/*_preview.gif | idle原画の最初の1キーから胴/足を固定、頭位置±1px＋呼吸±1px | 結果画面と終了時の静かなポーズ、全106GIF |
+
+画像生成は内蔵ツールだけを使用し、APIキー/有料アセット/第三者ファンアートは使用していない。格闘・スタミナ・勝敗の表現は本作独自で、原作の正史設定として追加しない。既存原画・以前の加工バックアップは保管した。新規技のコマは1つの綺麗なキーを保持し、既存モーションも一度に1キーだけ使う。旧処理は下の履歴に残すが、現行生成経路では使用しない。
+
+## フェーズ5B：既存キーフレームからの中割り・idle整合（履歴、6Aで混合を廃止）
 
 | 保存先 | 元資料・作成方法 | 用途 |
 | --- | --- | --- |

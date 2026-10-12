@@ -1,4 +1,16 @@
-﻿# SpriteForge（Windows・外部パッケージ不要）
+# フェーズ6Bの生成経路
+
+`BuildPhase6B.ps1` は生成済み `art_source/phase6b` の背景3枚・中割り3アトラスを読み、背景1280×720・サムネ480×270とwalk/dashの追加原画を生成する。旧rawは保持し、各人walk2/dash4の独立した新姿勢を旧キーと順次配置する。混合・クロスフェードなし。manifestのsourceClipで新素材へ接続し、全106シート584F/106GIFを出力する。
+
+`VerifyPhase6A.ps1 -Tag phase6b -Rebuild` は既存の品質検査に加え、6クリップの新素材接続・8F・dash8種類/walk6種類以上を検査し、351ファイルのSHA-256一致を確認する。プレビュー比較は `RenderPhase6BPreviews.ps1`、生成プロンプトは `art_source/phase6b/generation-log.md`。原画を作り直す必要はなく、同梱素材から再現できる。
+
+## 6Aの方向通常生成（履歴・原画保持）
+
+`BuildPhase6A.ps1` は `art_source/phase6a` の内蔵image_gen原画を連結成分で分割し、新規10クリップ/キャラを生成する。元の顔・衣装参照は採用idleだけ。前後のコマを重ね合わせる処理は使用しない。通常モーションは1つの綺麗なキーを保持して再生し、idle/crouch/win/loseは単一原画から上部を1pxだけ動かす。勝敗の頭位置差を含めidle比2px以内、胴と足は固定する。
+
+全106シート584F、106GIF。`VerifyPhase6A.ps1 -Rebuild` は寸法・二値α・共有32色・足元・単一原画の胴/足/頭・控えめな結果姿勢・全GIF復号・SHA-256再現性を検査する。プロンプトは `art_source/phase6a/prompts.json`、一覧は `docs/art_wip/phase6a_previews.md`。以下の古い中割り説明は履歴で、現行生成経路へ再導入しない。
+
+# SpriteForge（Windows・外部パッケージ不要）
 
 リポジトリ直下で Windows PowerShell 5.1 から実行します。C#の画像処理をAdd-Typeでコンパイルし、System.Drawing／System.Web.Extensionsだけを使います。Unityやネットワーク、APIキーは不要です。
 

@@ -11,6 +11,9 @@ namespace AniBato.Battle
         public string Name;
         public AttackKind Kind;
         public bool IsCloseRange;
+        public NormalDirection NormalDirection;
+        public bool BreaksGuard;
+        public int LandingRecoveryFrames;
         public int StartupFrames;
         public int ActiveFrames;
         public int DamageDelayFrames;
@@ -24,6 +27,7 @@ namespace AniBato.Battle
         public float ProjectileSpeed;
         public int ProjectileLifetimeFrames;
         public BattleVector ActiveVelocity;
+        public bool VerticalMotionOnStartOnly;
         public BattleVector ProjectileLaunchVelocity;
         public float ProjectileGravity;
         public bool HasSecondaryHitbox;
@@ -46,7 +50,7 @@ namespace AniBato.Battle
 
         public void Validate()
         {
-            if (StartupFrames < 0 || ActiveFrames < 1 || DamageDelayFrames < 0 || DamageDelayFrames >= ActiveFrames || RecoveryFrames < 0 || HitstopFrames < 0 ||
+            if (LandingRecoveryFrames < 0 || StartupFrames < 0 || ActiveFrames < 1 || DamageDelayFrames < 0 || DamageDelayFrames >= ActiveFrames || RecoveryFrames < 0 || HitstopFrames < 0 ||
                 HitstunFrames < 0 || Hitbox.Size.X <= 0 || Hitbox.Size.Y <= 0 ||
                 (SpawnProjectile && (ProjectileSpeed <= 0 || ProjectileLifetimeFrames < 1)) ||
                 ProjectileGravity < 0 || ParalysisFrames < 0 || MarkFrames < 0 || SelfHealNormalHits < 0 ||
@@ -75,6 +79,10 @@ namespace AniBato.Battle
         public int MaxAirDashes;
         public AttackDefinition[] GroundNormals;
         public AttackDefinition[] AirNormals;
+        public AttackDefinition[] DirectionalNormals;
+        public StaminaDefinition Stamina;
+        public float CrouchHeightRatio, DiagonalThreshold;
+        public bool DiagonalFallbackVertical;
         public AttackDefinition[] Specials;
         public AttackDefinition Ultimate;
         public CounterEffectDefinition Counter;
@@ -90,6 +98,12 @@ namespace AniBato.Battle
                 throw new ArgumentException("キャラクターの移動定義が不正です。");
             ValidateNormals(GroundNormals);
             ValidateNormals(AirNormals);
+            Stamina.Validate();
+            if (CrouchHeightRatio < 0 || CrouchHeightRatio > 1 || DiagonalThreshold < 0 || DiagonalThreshold > 1)
+                throw new ArgumentException("Invalid directional input or crouch definition.");
+            if (DirectionalNormals != null)
+                foreach (var attack in DirectionalNormals)
+                    if (attack.ActiveFrames > 0) { attack.Validate(); if (!attack.IsNormal) throw new ArgumentException("Directional attacks must be normal."); }
             if (Specials == null || Specials.Length != 4) throw new ArgumentException("特殊攻撃は4枠必要です。");
             foreach (var attack in Specials)
             { attack.Validate(); if (!attack.IsSpecial) throw new ArgumentException("特殊攻撃の分類が不正です。"); }
@@ -100,6 +114,7 @@ namespace AniBato.Battle
             var copy = this;
             copy.GroundNormals = (AttackDefinition[])GroundNormals.Clone();
             copy.AirNormals = (AttackDefinition[])AirNormals.Clone();
+            copy.DirectionalNormals = DirectionalNormals == null ? null : (AttackDefinition[])DirectionalNormals.Clone();
             copy.Specials = (AttackDefinition[])Specials.Clone();
             return copy;
         }
@@ -130,6 +145,7 @@ namespace AniBato.Battle
         public int MaxComboHits;
         public int MaxHeartsLostPerCombo;
         public int DropThroughFrames;
+        public int DropThroughHoldFrames;
         public float DropThroughSpeed;
         public float DirectionThreshold;
         public bool EnableRingOut;

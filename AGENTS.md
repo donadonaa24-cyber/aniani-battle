@@ -14,8 +14,10 @@
 4. 必要に応じて `docs/SPEC_ORIGINAL.md`、`GAME_DESIGN.md`、`BALANCE_CONFIG.md`、`docs/ARCHITECTURE.md`
 
 ## 絶対ルール
-- 書き込みはこのフォルダ（`anianiバトル！！`）配下のみ。他のゲームのフォルダ（`推し駒battle`、`battle-a-la-carte*`、`あにあにの遊び場` 等）は**読み取り専用の参考資料**。
-- git commit / push / 公開 / 既存ファイルの破壊的削除はしない（Claude経由でユーザー許可を得てから）。
+- 書き込みはこのフォルダ（`anianiバトル！！`）配下のみ（指示書で明示された場合を除く）。他のゲームのフォルダ（`推し駒battle`、`battle-a-la-carte*`、`あにあにの遊び場` 等）は**読み取り専用の参考資料**。
+- GitHub：`https://github.com/donadonaa24-cyber/aniani-battle`（**公開リポジトリ**、ブランチ `main`）。ユーザー許可済み（2026-10-12）：**Unity検証（BuildAll・EditMode・PlayMode・ビルドが全合格）を通った区切りで commit・push してよい**。force push、履歴の書き換え、ブランチ削除、リポジトリ設定の変更はしない。
+- 公開リポジトリなので、秘密情報・個人情報（メールアドレス、PCユーザー名を含む絶対パス）を書かない。パスは `%USERPROFILE%` や相対パスで書く。`docs/codex_logs/*_run.log` はGit管理外。
+- 既存ファイルの破壊的削除はしない。他プロジェクト（あにあにポータル等）への書き込み・公開は、その都度ユーザー許可を得る。
 - APIキー・トークン・秘密情報を書かない。外部サーバーへデータを送らない。有料アセット・出典不明の第三者アセットを入れない。
 - 画像・音は自作の仮素材（コード生成テクスチャ、単色シェイプ、手続き生成SE）でよい。原作素材を使う場合は出典を `docs/ASSET_SOURCES.md` に記録する。
 - 資料で確認できない原作設定を「正史」として確定しない。本作独自の演出は独自表現と明記する。
@@ -39,6 +41,11 @@
 - **`-nographics` は付けない**（Personalライセンスではヘッドレス権限が無く exit 198 で失敗する）。
 - Codexのサンドボックス内ではUnityライセンスIPCに接続できないため、**Unityでの BuildAll／テスト／ビルドはClaudeが実行**して結果を返す。Codexは .NET 代替テスト（`tools/Validation`）で可能な範囲を検証し、Unity未検証の点を最終報告に明記する。
 - Claudeの検証結果は `TestResults/`（EditMode.xml、PlayMode.xml、各 .log）に置かれる。
+
+## 容量の管理（2026-10-12 ユーザー要望）
+- Windowsビルド（`Build/<作業名>/`）は1つ100〜160MB。**最新2つだけ残す**（`tools/verify/run_unity.ps1` が自動で古いものを削除）。過去の版は Git／GitHub から再現できるので、ビルドを溜めない。
+- `TestResults/` は直近2〜3回分の結果だけ残し、古い作業名のファイルは削除してよい（`TestResults/dotnet`・`dotnet-home` は .NET 検証用なので残す）。
+- `docs/codex_logs/*_run.log`（Git管理外）は、完了した作業のものを削除してよい。報告の `*_final.md` は残す。
 
 ## 作業終了時
 - `IMPLEMENTATION_STATUS.md` を更新（実装済み／未実装／テスト状況／既知の問題／次の作業）。

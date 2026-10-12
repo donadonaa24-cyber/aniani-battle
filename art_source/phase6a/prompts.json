@@ -1,0 +1,19 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-10-12",
+  "references": [
+    "art_source/raw/toma/idle.png",
+    "art_source/raw/ren/idle.png",
+    "art_source/raw/chizuru/idle.png"
+  ],
+  "outputs": [
+    "art_source/phase6a/toma-atlas.png",
+    "art_source/phase6a/ren-atlas.png",
+    "art_source/phase6a/chizuru-atlas.png",
+    "art_source/phase6a/diagonal-down.png"
+  ],
+  "atlasPrompt": "Use case: identity-preserve. Asset: original 2D platform fighting game pixel sprite key pose atlas. Reference is the exact character identity and costume from the attached idle sprite strip. Draw NEW poses, not overlays, not crossfades. One clean silhouette per pose. Create a 3 column by 3 row atlas with equal sized square cells on solid #ff00ff background, no text, no grids. Character full body fits inside every cell with ample margin, consistent scale and pixel art detail. The character's front is toward screen right, except rear strike reaches screen left without whole-body turn. Reading order nine cells: crouching ready (low squat), crouching low foot sweep toward right, back elbow strike toward left, airborne neutral compact kick, airborne forward punch toward right, airborne rear kick toward left, airborne upward punch, airborne down kick, airborne diagonal forward-up strike toward right. Keep exactly same face, hair, clothing, body proportions and palette. Two arms and two legs only. No effects, no shadows, no blended frames, no extra characters. These are independently drawn key poses for animation, sharp opaque pixels.",
+  "renSuffix": "Preserve the dog hood, shorts, red scarf, paw gloves, tail and teal eyes. Do not humanize the dog hood.",
+  "chizuruSuffix": "Preserve her brown bob haircut, orange sweater, navy pleated/flared skirt and white sneakers. Private casual clothing, no chef costume. Maintain modest action poses with skirt coverage.",
+  "diagonalPrompt": "Use case: identity-preserve. Game sprite key pose strip. Three references show three distinct original game characters: first black-haired black-suit young man Touma, second dog-hood boy Ren, third brown-bob casual orange-sweater navy-skirt girl Chizuru. Draw exactly ONE independently drawn full-body pose of EACH in that left to right order, in 3 equally spaced columns in a single row. Each character is airborne lunging diagonally forward and DOWN toward screen RIGHT, right fist or leading foot extended down-right. Do not mirror their identities. Maintain exact clothes and proportions from corresponding reference. Sharp anime pixel art. Full bodies with margins. Solid pure magenta #ff00ff background. No text, no effects, no motion smear, no double limbs, no overlays. These are clean keys for the forward-down aerial normal attack. Girl skirt must remain modest."
+}

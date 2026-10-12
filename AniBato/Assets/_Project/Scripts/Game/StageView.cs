@@ -64,7 +64,8 @@ namespace AniBato.Game
             }
             bool pending = sim.Shrink.PendingStep > 0;
             var current = sim.Stage[0].Bounds; var next = sim.Shrink.NextMainBounds;
-            backgroundView.SetShrinkStep(sim.Shrink.CompletedSteps, sim.Rules.Shrink.Steps);
+            backgroundView.SetShrinkStep(sim.Shrink.CompletedSteps, sim.Rules.Shrink.Steps,
+                sim.Shrink.WarningIssued, sim.Match.TickCount, current.Size.X / originalMain.Size.X);
             if (boardTiles != null)
                 for (int i = 0; i < boardTiles.Length; i++)
                 {

@@ -8,7 +8,8 @@ namespace AniBato.Presentation
     {
         Idle, Move, Dash, Jump, Fall, Land, Attack1, Attack2, Attack3, AirAttack,
         SpecialNeutral, SpecialSide, SpecialUp, SpecialDown, Ultimate, Guard, Dodge,
-        Counter, CounterSuccess, Hitstun, Knockback, KO, Win, Lose
+        Counter, CounterSuccess, Hitstun, Knockback, KO, Win, Lose,
+        Crouch, CrouchAttack, BackAttack, AirNeutral, AirForward, AirBack, AirUp, AirDown, AirForwardUp, AirForwardDown
     }
     [Serializable]
     public struct AnimationBinding
@@ -71,7 +72,7 @@ namespace AniBato.Presentation
             if (match.IsFinished)
             {
                 bool won = match.Result == (fighter.PlayerIndex == 0 ? MatchResult.Player1Wins : MatchResult.Player2Wins);
-                state = won ? AnimationState.Win : fighter.Mode == FighterMode.KO && resultAge <= timing.KnockoutTicks ? AnimationState.KO : AnimationState.Lose;
+                state = won ? AnimationState.Win : AnimationState.Lose;
             }
             else if (counterRemaining > 0 && fighter.Attack == null && fighter.HitstunRemaining == 0) state = AnimationState.CounterSuccess;
             else if (landingRemaining > 0 && (state == AnimationState.Idle || state == AnimationState.Move)) state = AnimationState.Land;
@@ -97,6 +98,8 @@ namespace AniBato.Presentation
             {
                 var attack = fighter.Attack;
                 if (attack.Definition.IsUltimate) return AnimationState.Ultimate;
+                if (attack.Definition.IsNormal && attack.Definition.NormalDirection != NormalDirection.Weak)
+                    return (AnimationState)((int)AnimationState.CrouchAttack + (int)attack.Definition.NormalDirection - 1);
                 if (attack.Definition.IsNormal) return attack.AirborneAttack ? AnimationState.AirAttack :
                     attack.ChainIndex == 0 ? AnimationState.Attack1 : attack.ChainIndex == 1 ? AnimationState.Attack2 : AnimationState.Attack3;
                 return (AnimationState)((int)AnimationState.SpecialNeutral + (int)fighter.CurrentSpecial);
@@ -110,6 +113,7 @@ namespace AniBato.Presentation
                 case FighterMode.Guard: return AnimationState.Guard;
                 case FighterMode.Dodge: return AnimationState.Dodge;
                 case FighterMode.Counter: return AnimationState.Counter;
+                case FighterMode.Crouch: return AnimationState.Crouch;
                 case FighterMode.Hitstun: return AnimationState.Hitstun;
                 case FighterMode.Knockback: return AnimationState.Knockback;
                 default: return AnimationState.Idle;

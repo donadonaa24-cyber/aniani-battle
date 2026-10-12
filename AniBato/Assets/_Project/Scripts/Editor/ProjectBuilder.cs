@@ -15,7 +15,7 @@ namespace AniBato.EditorTools
         public const string ScenePath = "Assets/_Project/Scenes/Battle.unity";
         public const string TitleScenePath = "Assets/_Project/Scenes/Title.unity";
 
-        [MenuItem("あにバト/プロジェクト生成（フェーズ5B）")]
+        [MenuItem("あにバト/プロジェクト生成（フェーズ6B）")]
         public static void BuildAll()
         {
             if (EditorApplication.isPlaying) throw new InvalidOperationException("再生を停止してから生成してください。");
@@ -23,7 +23,7 @@ namespace AniBato.EditorTools
             EnsureFolder(DataRoot); EnsureFolder("Assets/_Project/Scenes");
             ConfigurePlayerSettings();
             var rules = LoadOrCreate<BattleRules>("BattleRules");
-            if (rules.Definition.MatchSeconds == 0) rules.Definition = PhaseFiveBDefaults.Rules();
+            if (rules.Definition.MatchSeconds == 0) rules.Definition = PhaseSixADefaults.Rules();
             UpgradeRules(rules);
             EditorUtility.SetDirty(rules);
             var stage = LoadOrCreate<StageData>("Stage");
@@ -36,6 +36,12 @@ namespace AniBato.EditorTools
             UpgradeBindings(inputBindings);
             EditorUtility.SetDirty(inputBindings);
             var presentation = LoadOrCreate<PresentationSettings>("Presentation");
+            if (presentation.CameraSchemaVersion < 1)
+            {
+                if (presentation.CameraMinSize == 6) presentation.CameraMinSize = 5.2f;
+                if (presentation.CameraPadding == 3) presentation.CameraPadding = 1.2f;
+                presentation.CameraSchemaVersion = 1;
+            }
             EditorUtility.SetDirty(presentation);
             var audioSettings = LoadOrCreate<AudioSettings>("AudioSettings"); EditorUtility.SetDirty(audioSettings);
             var cpuDifficulties = new CpuDifficultyData[3];
@@ -78,7 +84,7 @@ namespace AniBato.EditorTools
             if (!System.IO.File.Exists(System.IO.Path.Combine(Application.dataPath, "_Project/Scenes/Title.unity")) ||
                 !System.IO.File.Exists(System.IO.Path.Combine(Application.dataPath, "_Project/Scenes/Battle.unity")))
                 throw new InvalidOperationException("Title/Battle scene generation is incomplete.");
-            Debug.Log("あにあにバトル！！ フェーズ5B生成完了: " + TitleScenePath);
+            Debug.Log("あにあにバトル！！ フェーズ6B生成完了: " + TitleScenePath);
         }
 
         private static void UpgradeRules(BattleRules asset)
@@ -95,7 +101,9 @@ namespace AniBato.EditorTools
             if (definition.SchemaVersion < 3) definition.Shrink = defaults.Shrink;
             if (definition.SchemaVersion < 4 && definition.Gauge.OnHit == 12 && definition.Gauge.OnDamaged == 8)
             { var gauge = definition.Gauge; gauge.OnHit = defaults.Gauge.OnHit; gauge.OnDamaged = defaults.Gauge.OnDamaged; definition.Gauge = gauge; }
-            definition.SchemaVersion = Math.Max(4, definition.SchemaVersion); asset.Definition = BalanceMigration.Rules(definition);
+            definition.SchemaVersion = Math.Max(4, definition.SchemaVersion); definition = BalanceMigration.Rules(definition);
+            if (definition.SchemaVersion < 6) { definition.DropThroughHoldFrames = 18; definition.SchemaVersion = 6; }
+            asset.Definition = definition;
         }
         private static void UpgradeBindings(InputBindings asset)
         {
@@ -196,16 +204,27 @@ namespace AniBato.EditorTools
         private static CharacterData CreatePlayable(string name, int index, Color color)
         {
             var data = LoadOrCreate<CharacterData>(name);
-            var defaults = PhaseFiveBDefaults.Character(index);
+            var defaults = PhaseSixADefaults.Character(index);
             if (data.Movement.MaxJumps == 0)
             {
                 var movement = defaults; movement.GroundNormals = null; movement.AirNormals = null;
-                movement.Specials = null; movement.Ultimate = default;
+                movement.Specials = null; movement.Ultimate = default; movement.DirectionalNormals = null;
                 data.Movement = movement; data.Tint = color; data.Silhouette = index; data.RoundShape = index == 1;
             }
             data.GroundNormals = PlayableAttacks(name + "Ground", data.GroundNormals, defaults.GroundNormals);
             data.AirNormals = PlayableAttacks(name + "Air", data.AirNormals, defaults.AirNormals);
             data.Specials = PlayableAttacks(name + "Special", data.Specials, defaults.Specials);
+            if (data.AccessibilitySchemaVersion < 6)
+            {
+                var movement = data.Movement;
+                if (!movement.Stamina.Enabled) movement.Stamina = defaults.Stamina;
+                if (movement.CrouchHeightRatio <= 0) movement.CrouchHeightRatio = defaults.CrouchHeightRatio;
+                if (movement.DiagonalThreshold <= 0) { movement.DiagonalThreshold = defaults.DiagonalThreshold; movement.DiagonalFallbackVertical = defaults.DiagonalFallbackVertical; }
+                data.Movement = movement; data.AccessibilitySchemaVersion = 6;
+            }
+            if (data.DirectionalNormals == null || data.DirectionalNormals.Length == 0) data.DirectionalNormals = new AttackData[10];
+            for (int direction = 1; direction < 10; direction++)
+                if (!data.DirectionalNormals[direction]) data.DirectionalNormals[direction] = PlayableAttack(name + (NormalDirection)direction, defaults.DirectionalNormals[direction]);
             if (data.TempoSchemaVersion < 5)
             {
                 var old = PhaseThreeDefaults.Character(index);
@@ -321,8 +340,8 @@ namespace AniBato.EditorTools
             var scaler = go.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1920, 1080); scaler.matchWidthOrHeight = 0.5f;
             Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            Text left = CreateText(go.transform, font, "Player 1 HUD", 34, new Vector2(0, 1), new Vector2(0, 1), new Vector2(36, -24), new Vector2(720, 170), TextAnchor.UpperLeft);
-            Text right = CreateText(go.transform, font, "Player 2 HUD", 34, new Vector2(1, 1), new Vector2(1, 1), new Vector2(-36, -24), new Vector2(720, 170), TextAnchor.UpperRight);
+            Text left = CreateText(go.transform, font, "Player 1 HUD", 30, new Vector2(0, 1), new Vector2(0, 1), new Vector2(36, -24), new Vector2(720, 210), TextAnchor.UpperLeft);
+            Text right = CreateText(go.transform, font, "Player 2 HUD", 30, new Vector2(1, 1), new Vector2(1, 1), new Vector2(-36, -24), new Vector2(720, 210), TextAnchor.UpperRight);
             Text time = CreateText(go.transform, font, "Timer", 58, new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -24), new Vector2(200, 100), TextAnchor.UpperCenter);
             Text result = CreateText(go.transform, font, "Match Result", 48, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(1500, 360), TextAnchor.MiddleCenter);
             result.enabled = false;
@@ -332,10 +351,18 @@ namespace AniBato.EditorTools
             Text popup2 = CreateText(go.transform, font, "P2 Battle Popup", 30, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(400, 110), TextAnchor.MiddleCenter);
             popup1.enabled = popup2.enabled = false;
             Text help = CreateText(go.transform, font, "Controls", 22, new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 16), new Vector2(1880, 88), TextAnchor.LowerCenter);
-            help.text = "P1: A/D 移動 · Space 跳 · J 通常 · 方向+K 特殊 · L 防御 · Shift 回避 · I カウンター · U 超必殺 · F ダッシュ\nP2: ←/→ 移動 · 右Ctrl 跳 · Delete 通常 · 方向+End 特殊 · PageDown 防御 · 右Shift 回避 · PageUp カウンター · Home 超必殺 · 右Alt ダッシュ | F9 判定表示 · F11 全画面";
+            help.text = "";
+            var bars = new Image[2];
+            for (int i = 0; i < 2; i++)
+            {
+                bars[i] = CreateImage(go.transform, "P" + (i + 1) + " Stamina", Vector2.zero, new Vector2(300, 8));
+                var rect = bars[i].rectTransform; rect.anchorMin = rect.anchorMax = new Vector2(i, 1);
+                rect.pivot = new Vector2(i, .5f); rect.anchoredPosition = new Vector2(i == 0 ? 36 : -36, -118);
+            }
             var hud = go.AddComponent<HUDController>();
             hud.Configure(runner, camera, presentation, left, right, time, result, new[] { counter1, counter2 });
             hud.ConfigurePopups(new[] { popup1, popup2 });
+            hud.ConfigureLearning(help, bars);
             BuildCutIn(go, runner, font);
             return go;
         }

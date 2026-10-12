@@ -12,6 +12,8 @@ namespace AniBato.Battle
             if (target.HeartRecoveryRemaining > 0) return;
             int beforeHearts = target.Hearts;
             var attack = contact.Attack;
+            if (target.Mode == FighterMode.Guard && attack.Definition.IsUltimate &&
+                !StaminaSystem.CanSpend(target, StaminaSystem.GuardCost(target, AttackKind.Ultimate))) StaminaSystem.Reject(target);
             combo.RegisterHit(tick, rules, attack.Definition.IsNormal);
             events.Add(new BattleEvent(BattleEventKind.Hit, tick, source.PlayerIndex, target.PlayerIndex, attack.Id, combo.HitCount, attack.Definition.Kind));
             if (attack.Definition.IsNormal)

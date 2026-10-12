@@ -17,17 +17,21 @@ namespace AniBato.Battle
         public readonly float ActionY;
         public readonly InputButtons Held;
         public readonly InputButtons Pressed;
+        // False for default(FrameInput), preserving the existing default-ON behavior.
+        // Stored with tick inputs so replays do not depend on local PlayerPrefs.
+        public readonly bool DisableDoubleTapDash;
         private readonly BattleVector[] buttonDirections;
         public FrameInput(float x = 0, float y = 0, InputButtons held = InputButtons.None, InputButtons pressed = InputButtons.None,
-            float? actionX = null, float? actionY = null)
+            float? actionX = null, float? actionY = null, bool disableDoubleTapDash = false)
         {
             X = Math.Max(-1f, Math.Min(1f, x)); Y = Math.Max(-1f, Math.Min(1f, y));
             Held = held; Pressed = pressed;
+            DisableDoubleTapDash = disableDoubleTapDash;
             ActionX = Math.Max(-1f, Math.Min(1f, actionX ?? X)); ActionY = Math.Max(-1f, Math.Min(1f, actionY ?? Y));
             buttonDirections = null;
         }
-        internal FrameInput(float x, float y, InputButtons held, InputButtons pressed, BattleVector[] directions)
-            : this(x, y, held, pressed) { buttonDirections = (BattleVector[])directions.Clone(); }
+        internal FrameInput(float x, float y, InputButtons held, InputButtons pressed, BattleVector[] directions, bool disableDoubleTapDash = false)
+            : this(x, y, held, pressed, disableDoubleTapDash: disableDoubleTapDash) { buttonDirections = (BattleVector[])directions.Clone(); }
         public BattleVector DirectionFor(InputButtons button)
         {
             if (buttonDirections == null) return new BattleVector(ActionX, ActionY);
@@ -37,7 +41,7 @@ namespace AniBato.Battle
         }
         public bool IsHeld(InputButtons button) => (Held & button) != 0;
         public bool IsPressed(InputButtons button) => (Pressed & button) != 0;
-        public FrameInput WithoutPressed() => new FrameInput(X, Y, Held);
+        public FrameInput WithoutPressed() => new FrameInput(X, Y, Held, disableDoubleTapDash: DisableDoubleTapDash);
     }
 
     /// <summary>Update samples OR their edges until the next simulation tick consumes them.</summary>
@@ -55,8 +59,8 @@ namespace AniBato.Battle
         }
         public FrameInput Consume()
         {
-            var input = pending == InputButtons.None ? new FrameInput(latest.X, latest.Y, latest.Held) :
-                new FrameInput(latest.X, latest.Y, latest.Held, pending, directions);
+            var input = pending == InputButtons.None ? new FrameInput(latest.X, latest.Y, latest.Held, disableDoubleTapDash: latest.DisableDoubleTapDash) :
+                new FrameInput(latest.X, latest.Y, latest.Held, pending, directions, latest.DisableDoubleTapDash);
             pending = InputButtons.None;
             return input;
         }

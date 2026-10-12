@@ -1,4 +1,35 @@
-# フェーズ5 アーキテクチャ
+# フェーズ6B アーキテクチャ
+
+## 6Bの表示・入力・検証契約
+
+CameraFramingは既存AniBato.Presentationの純C#に置く。StageGeometryと表示位置から必要矩形を計算し、CameraControllerだけがUnityの位置・縮尺へ適用。開始全体→上足場/両者→縮小中央、比率変更・追従中の包含を直接テストする。StageBackgroundViewはCameraController後に遠景を画面へ合わせ、中景と縮小セル/消灯、StageViewの床を表示する。戦闘・地形へ書き戻さない。
+
+ダッシュ端末設定はControlConfigurationからFrameInput.DisableDoubleTapDashへ転記。default入力は従来どおりON。LatchとWithoutPressedも保持し、FighterInputBufferはOFF時に自動ダッシュだけの予約と最初のタップ履歴を消す。専用Dash押下は保持。リプレイ/将来の通信入力にもフラグとボタンごとの押下方向を含め、受信先のPlayerPrefsを参照しない。
+
+DualSenseのPlayModeはUSB HID全状態レポートをQueueStateEventへ送り、DualSenseGamepadHIDの実パーサーを通す。差分イベント拒否はローカルInput Systemと[Unity公式実装](https://github.com/Unity-Technologies/InputSystem/blob/develop/Packages/com.unity.inputsystem/InputSystem/Runtime/Plugins/DualShock/DualShockGamepadHID.cs)を参照。fixture分離前に旧シーンを停止し、デバイスをfinally/UnityTearDownで削除後にランタイムを復元。ゲームは更新番号ごとに軸をサンプル。エラーを無視するLogAssert等は追加しない。
+
+BuildAllは背景・サムネ・PresentationのSchemaを接続。新asmdefなし、両テストのPresentation参照を維持。新.meta・シーン/SOはUnityのEditor APIで生成。BuildPhase6Bは原画を保持し、新姿勢の分離・倍率整合・減色・足元揃えを行う。隣接コマの混合なし。
+
+## 将来拡張の手順（未実装）
+
+1. **キャラ追加**：CharacterData→純C#CharacterDefinitionへ移動・Hurtbox・スタミナ・地上/空中通常・方向枠・特殊4枠・超必殺・カウンター効果を指定。AttackDataを独立アセットで用意し、CharacterAnimationSetに全状態と発生/持続/硬直対応を登録。Editor生成一覧/BattleSetupへ追加し、選択・コマ・定義コピー・CPU全組合せのテストを拡張する。汎用効果で表現できない技だけBattle側へ小さな拡張点を追加する。
+2. **サポート**：独立SupportDefinition/選択データとFrameInput新アクションを定義。ゲージ50消費・再使用・出現/退場・攻撃IDを純C#で扱い、ダメージはHitResolverへ接続。Gameは選択・表示のみ。設定や人物は原作資料の確認後に定める。
+3. **時間帯差分**：StageData.TimeVariantとFarArtwork・色・BGM等を差分データへまとめ、同じSharedGeometryを参照する。時間帯で当たり判定を変えず、共通縮小stepをテーマ別表示する契約を保つ。
+4. **オンライン**：入力取得→tick入力列→BattleSimulation→表示を維持し、受信/遅延/巻き戻し/状態保存/チェックサムを別層へ追加。現行floatは同ランタイムの再現性で、異CPU/OSのビット一致は保証しない。全状態・乱数・攻撃ID/対象集合・入力履歴・スタミナ・縮小・オプションを含むシリアライズ、固定小数点等の検討が必要。
+
+## 以下は6A以前の構造履歴
+
+ユーザー決定の新相性は[GAME_DESIGN](../GAME_DESIGN.md)が優先。`StaminaSystem`はBattle内で整数単位を60Hzで更新し、消費可否を行動開始前/ガード接触時に判定する。`DirectionalAttackSelector`は押下時の方向と保持されたFacingから通常の枠を選ぶ。CharacterDataから純C#へ変換した方向配列は試合ごとにコピーし、地上の形状だけを縮めるしゃがみは物理の足位置を変えない。
+
+ガードの防御意思を先に評価する既存順序を保持する。通常・特殊・超必殺の接触費用はApply時に消費し、同tickの複数接触には残量を再検査する。しゃがみのガード崩しは攻撃者の通常コンボへ登録し、ダメージ処理の蓄積/3ヒット/追撃禁止を共用する。GuardBrokenを表示専用イベントとして追加。
+
+PracticeOptionsは通常の戦闘相性を変えず、練習だけで時間消費・ハート減少・場外終了を救済する。TutorialSessionはtick状態/イベントによる課題判定と練習用のFrameInput生成を持ち、Game側は表示とメニューのみ。移動/攻撃の数値をGame側へ複製しない。超必殺課題のLINK補充もBattle側に閉じる。
+
+PresentationのControlProfileは機器に依存しない整数IDを保存/交換/初期化する。GameのControlConfigurationがKey/Gamepad Controlへ変換し、InputControllerが実際のラッチとlast-used機器を管理する。ScriptableObjectの既定割り当てを変更せず、PlayerPrefsへ端末保存する。新asmdefはなく、既存6アセンブリを継続する。
+
+BuildAllはルールSchema6・キャラAccessibilitySchema6へ初回移行し、方向AttackData27個を追加する。既存の移動・攻撃・特殊・CPU・アニメTimingと独自調整を保持する。NewScene前のTitle判定・後の依存アセット再読込は維持。新しいPNG/JSONのインポート・スライス・シーン・.meta・実行ファイルはClaudeのUnity実行で生成する。
+
+以下はフェーズ5〜5Bの構造履歴。ガード相性と空中Facing、スタミナ、学習画面は上の6A説明を使用する。
 
 ## 分離
 

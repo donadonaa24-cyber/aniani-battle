@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AniBato.Battle
 {
-    public enum DefenseOutcome { Hit, Guard, Dodge, Counter, JustGuard, JustDodge }
+    public enum DefenseOutcome { Hit, Guard, Dodge, Counter, JustGuard, JustDodge, GuardBreak, CrouchBreak }
     public interface ICounterEffect
     {
         void OnSuccess(FighterState defender, FighterState attacker, int tick, in BattleRuleDefinition rules, List<BattleEvent> events);
@@ -28,10 +28,12 @@ namespace AniBato.Battle
             bool just = target.DefenseAge < rules.Defense.JustWindowFrames && !target.JustExcludedAttacks.Contains(contact.Attack.Id);
             if (target.Mode == FighterMode.Counter && attack.IsNormal && attack.IsCloseRange && !contact.IsProjectile)
                 return DefenseOutcome.Counter;
-            if (target.Mode == FighterMode.Guard && !attack.IsNormal)
+            if (target.Mode == FighterMode.Guard)
             {
+                if (attack.IsNormal && attack.BreaksGuard) return DefenseOutcome.CrouchBreak;
                 if (just) return DefenseOutcome.JustGuard;
-                if (!attack.IsUltimate) return DefenseOutcome.Guard;
+                if (StaminaSystem.CanSpend(target, StaminaSystem.GuardCost(target, attack.Kind))) return DefenseOutcome.Guard;
+                return attack.IsUltimate ? DefenseOutcome.Hit : DefenseOutcome.GuardBreak;
             }
             if (target.Mode == FighterMode.Dodge)
             {
@@ -47,6 +49,14 @@ namespace AniBato.Battle
             BattleEventKind kind;
             switch (outcome)
             {
+                case DefenseOutcome.CrouchBreak:
+                    damage.Apply(contact, counterCombo, tick, rules, events);
+                    target.GuardLockRemaining = target.Definition.Stamina.GuardLockFrames;
+                    target.HitstunRemaining = Math.Max(target.HitstunRemaining, target.Definition.Stamina.GuardBreakFrames);
+                    kind = BattleEventKind.GuardBroken; break;
+                case DefenseOutcome.GuardBreak:
+                    target.StaminaUnits = 0; StaminaSystem.BreakGuard(target);
+                    kind = BattleEventKind.GuardBroken; break;
                 case DefenseOutcome.Counter:
                     int previousHearts = source.Hearts;
                     counterCombo.RegisterHit(tick, rules, false);
@@ -67,6 +77,13 @@ namespace AniBato.Battle
                     (target.CounterEffect ?? CounterEffect)?.OnSuccess(target, source, tick, rules, events); break;
                 case DefenseOutcome.Guard:
                 case DefenseOutcome.JustGuard:
+                    // Recheck after earlier contacts in the same tick consumed stamina.
+                    if (outcome == DefenseOutcome.Guard && !StaminaSystem.Spend(target, StaminaSystem.GuardCost(target, contact.Attack.Definition.Kind)))
+                    {
+                        if (contact.Attack.Definition.IsUltimate) damage.Apply(contact, counterCombo, tick, rules, events);
+                        else { target.StaminaUnits = 0; StaminaSystem.BreakGuard(target); events.Add(new BattleEvent(BattleEventKind.GuardBroken, tick, target.PlayerIndex, source.PlayerIndex, contact.Attack.Id)); }
+                        return;
+                    }
                     target.GuardStunRemaining = Math.Max(target.GuardStunRemaining,
                         outcome == DefenseOutcome.JustGuard ? definition.JustGuardStunFrames : definition.GuardStunFrames);
                     target.Velocity = new BattleVector(definition.GuardPushSpeed * contact.Facing, target.Velocity.Y);

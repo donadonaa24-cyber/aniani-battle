@@ -9,6 +9,8 @@ namespace AniBato.Game
     {
         public CharacterDefinition Movement;
         public int TempoSchemaVersion;
+        public int AccessibilitySchemaVersion;
+        public AttackData[] DirectionalNormals;
         public AttackData[] GroundNormals;
         public AttackData[] AirNormals;
         public AttackData[] Specials;
@@ -24,6 +26,7 @@ namespace AniBato.Game
             var result = Movement;
             result.GroundNormals = Convert(GroundNormals);
             result.AirNormals = Convert(AirNormals);
+            result.DirectionalNormals = DirectionalNormals == null ? null : ConvertDirections(DirectionalNormals);
             result.Specials = Convert(Specials);
             result.Ultimate = Ultimate ? Ultimate.ToDefinition() : throw new ArgumentException("超必殺技が未設定です。");
             return result.Snapshot();
@@ -34,6 +37,12 @@ namespace AniBato.Game
             var result = new AttackDefinition[assets.Length];
             for (int i = 0; i < result.Length; i++)
                 result[i] = assets[i] ? assets[i].ToDefinition() : throw new ArgumentException("通常攻撃アセットが欠落しています。");
+            return result;
+        }
+        private static AttackDefinition[] ConvertDirections(AttackData[] assets)
+        {
+            var result = new AttackDefinition[assets.Length];
+            for (int i = 0; i < assets.Length; i++) if (assets[i]) result[i] = assets[i].ToDefinition();
             return result;
         }
     }

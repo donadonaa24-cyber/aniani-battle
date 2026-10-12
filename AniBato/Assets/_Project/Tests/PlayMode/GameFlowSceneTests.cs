@@ -10,15 +10,19 @@ using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
+using AniBato.Presentation;
+using UnityEngine.InputSystem.DualShock;
 
 namespace AniBato.Tests
 {
     public sealed class GameFlowSceneTests : InputTestFixture
     {
         private Keyboard keyboard;
+        private readonly System.Collections.Generic.Dictionary<string, string> controlPrefs = new System.Collections.Generic.Dictionary<string, string>();
         private InputSettings.BackgroundBehavior previousBackgroundBehavior;
         private InputSettings.UpdateMode previousUpdateMode;
         private bool previousRunInBackground;
+        private int? doubleTapPref;
         // The Unity Test Framework runs [UnitySetUp] BEFORE [SetUp] (and [UnityTearDown] after [TearDown]),
         // so the fixture's automatic Setup/TearDown would isolate input too late. Suppress them and run the
         // isolation explicitly at the start of UnitySetUp / end of UnityTearDown instead.
@@ -51,7 +55,14 @@ namespace AniBato.Tests
         [UnitySetUp]
         public IEnumerator SetUp()
         {
+            var oldFlow = Object.FindAnyObjectByType<GameFlowController>(); if (oldFlow) oldFlow.enabled = false;
+            var oldRunner = Object.FindAnyObjectByType<BattleRunner>(); if (oldRunner) oldRunner.enabled = false;
+            var oldInput = Object.FindAnyObjectByType<InputController>(); if (oldInput) oldInput.enabled = false;
             IsolateInput();
+            doubleTapPref = PlayerPrefs.HasKey(ControlConfiguration.DoubleTapStorage) ? PlayerPrefs.GetInt(ControlConfiguration.DoubleTapStorage) : (int?)null;
+            PlayerPrefs.DeleteKey(ControlConfiguration.DoubleTapStorage);
+            for (int p = 0; p < 2; p++) foreach (string device in new[] { "pad", "keyboard" })
+            { string key = "AniBato.Controls.v1." + p + "." + device; controlPrefs[key] = PlayerPrefs.HasKey(key) ? PlayerPrefs.GetString(key) : null; PlayerPrefs.DeleteKey(key); }
             keyboard = InputSystem.AddDevice<Keyboard>();
             yield return SceneManager.LoadSceneAsync("Title");
             yield return null;
@@ -62,11 +73,28 @@ namespace AniBato.Tests
         [UnityTearDown]
         public IEnumerator CloseScene()
         {
+            try
+            {
+            // Stop the old scene before restoring InputTestFixture's global state buffers.
+            // Otherwise its Update can read controls from the previous isolated runtime.
+            var flow = Object.FindAnyObjectByType<GameFlowController>();
+            if (flow) flow.enabled = false;
             var runner = Object.FindAnyObjectByType<BattleRunner>();
             if (runner) runner.enabled = false;
-            if (keyboard != null && keyboard.added) InputSystem.RemoveDevice(keyboard);
+            var input = Object.FindAnyObjectByType<InputController>();
+            if (input) input.enabled = false;
+            foreach (var device in InputSystem.devices.ToArray()) InputSystem.RemoveDevice(device);
+            dualSenseButtons.Clear();
             yield return null;
-            RestoreInput();
+            foreach (var entry in controlPrefs) { if (entry.Value == null) PlayerPrefs.DeleteKey(entry.Key); else PlayerPrefs.SetString(entry.Key, entry.Value); }
+            controlPrefs.Clear(); PlayerPrefs.Save();
+            }
+            finally
+            {
+                if (doubleTapPref.HasValue) PlayerPrefs.SetInt(ControlConfiguration.DoubleTapStorage, doubleTapPref.Value);
+                else PlayerPrefs.DeleteKey(ControlConfiguration.DoubleTapStorage);
+                PlayerPrefs.Save(); RestoreInput();
+            }
         }
         private static IEnumerator WaitFor(System.Func<bool> condition, string message)
         {
@@ -81,7 +109,14 @@ namespace AniBato.Tests
             // Let the real dynamic PlayerLoop deliver each event before constructing the next.
             foreach (var button in buttons)
             {
-                if (pressed) Press(button, queueEventOnly: true); else Release(button, queueEventOnly: true);
+                if (button.device is DualSenseGamepadHID)
+                {
+                    // DualSense rejects DeltaStateEvent (the fixture's Press/Release format).
+                    // Deliver an actual USB HID report, with centered sticks and neutral hat.
+                    if (pressed) dualSenseButtons.Add(button); else dualSenseButtons.Remove(button);
+                    InputSystem.QueueStateEvent(button.device, DualSenseUsbReport.From((Gamepad)button.device, dualSenseButtons));
+                }
+                else if (pressed) Press(button, queueEventOnly: true); else Release(button, queueEventOnly: true);
                 yield return WaitFor(() => button.isPressed == pressed, button.path + " の入力イベントが反映されませんでした。");
             }
             // Callers also wait for Capture -> tick -> LateUpdate, not an assumed frame count.
@@ -104,6 +139,140 @@ namespace AniBato.Tests
             Assert.That(Flow.Runner.Simulation.Match.TickCount, Is.Zero);
             Assert.That(Flow.Runner.Simulation.Match.RemainingTicks, Is.EqualTo(4200));
             yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "カウントダウン後に対戦が始まりませんでした。");
+        }
+        [UnityTest]
+        public IEnumerator ActualDualSenseAndXboxDevicesSwitchAllActionLabels()
+        {
+            var controller = Object.FindAnyObjectByType<InputController>();
+            var dualSense = (Gamepad)InputSystem.AddDevice("DualSenseGamepadHID");
+            Gamepad xbox = null;
+            try
+            {
+            InputSystem.QueueStateEvent(dualSense, DualSenseUsbReport.From(dualSense, dualSenseButtons));
+            yield return null;
+            controller.AssignGamepad(0, dualSense);
+            yield return Tap(dualSense.buttonSouth);
+            Assert.That(controller.Label(0, ControlAction.Jump), Is.EqualTo("×")); Assert.That(controller.Label(0, ControlAction.Attack), Is.EqualTo("□"));
+            Assert.That(controller.Label(0, ControlAction.Pause), Is.EqualTo("OPTIONS"));
+            xbox = (Gamepad)InputSystem.AddDevice("XInputController"); controller.AssignGamepad(0, xbox);
+            yield return Tap(xbox.buttonSouth);
+            Assert.That(controller.Label(0, ControlAction.Jump), Is.EqualTo("A")); Assert.That(controller.Label(0, ControlAction.Attack), Is.EqualTo("X"));
+            yield return Tap(keyboard.dKey); Assert.That(controller.Label(0, ControlAction.Jump), Is.EqualTo("Space"));
+            }
+            finally
+            {
+                controller.AssignGamepad(0, null);
+                if (dualSense.added) InputSystem.RemoveDevice(dualSense);
+                if (xbox != null && xbox.added) InputSystem.RemoveDevice(xbox);
+                dualSenseButtons.Clear();
+            }
+        }
+        private readonly System.Collections.Generic.HashSet<ButtonControl> dualSenseButtons = new System.Collections.Generic.HashSet<ButtonControl>();
+        [UnityTest]
+        public IEnumerator DualSenseUsbReportsDeliverEveryBattleButtonAndRepeatedMenuPolling()
+        {
+            Flow.enabled = false; Flow.Runner.enabled = false;
+            var controller = Flow.Input;
+            var pad = (Gamepad)InputSystem.AddDevice("DualSenseGamepadHID");
+            try
+            {
+                controller.AssignGamepad(0, pad);
+                InputSystem.QueueStateEvent(pad, DualSenseUsbReport.From(pad, dualSenseButtons)); yield return null;
+                for (int action = 4; action <= 11; action++)
+                {
+                    var button = ControlConfiguration.PadButton(pad, controller.Configuration.Profile(0, true)[(ControlAction)action]);
+                    yield return PressKeys(button);
+                    var first = controller.ReadMenu(0); var second = controller.ReadMenu(0);
+                    Assert.That(first.Horizontal, Is.EqualTo(second.Horizontal)); Assert.That(first.Vertical, Is.EqualTo(second.Vertical));
+                    controller.Capture(); var frame = controller.Consume(0); var flag = (InputButtons)(1 << (action - 4));
+                    Assert.That(frame.IsHeld(flag), Is.True); Assert.That(frame.IsPressed(flag), Is.True);
+                    Assert.That(frame.X, Is.Zero); Assert.That(frame.Y, Is.Zero);
+                    yield return ReleaseKeys(button); controller.Capture(); Assert.That(controller.Consume(0).IsHeld(flag), Is.False);
+                }
+            }
+            finally { controller.AssignGamepad(0, null); if (pad.added) InputSystem.RemoveDevice(pad); dualSenseButtons.Clear(); }
+        }
+        [UnityTest]
+        public IEnumerator DoubleTapSettingUiPersistsAndDedicatedDashStillReachesBothPlayers()
+        {
+            yield return Tap(keyboard.enterKey);
+            for (int i = 0; i < 7; i++) yield return Tap(keyboard.sKey);
+            Assert.That(Flow.Input.Configuration.DoubleTapDashEnabled, Is.True);
+            yield return Tap(keyboard.enterKey); Assert.That(Flow.Input.Configuration.DoubleTapDashEnabled, Is.False);
+            var reload = new ControlConfiguration(); reload.Initialize(Flow.Input.Bindings); Assert.That(reload.DoubleTapDashEnabled, Is.False);
+            Assert.That(LearningText.DashHelp(Flow.Input), Does.Contain("OFF"));
+            yield return Tap(keyboard.wKey); yield return Tap(keyboard.enterKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.KeyConfig));
+            for (int i = 0; i < 16; i++) yield return Tap(keyboard.sKey);
+            yield return Tap(keyboard.enterKey); Assert.That(Flow.Input.Configuration.DoubleTapDashEnabled, Is.True);
+            Assert.That(Flow.CapturingBinding, Is.False);
+            yield return Tap(keyboard.enterKey); Assert.That(Flow.Input.Configuration.DoubleTapDashEnabled, Is.False);
+            Flow.enabled = false; Flow.Runner.enabled = false;
+            var input = Flow.Input; var pad = InputSystem.AddDevice<Gamepad>(); input.AssignGamepad(1, pad);
+            var dashKey = keyboard[input.EffectiveKeys(0).Dash];
+            yield return PressKeys(dashKey, pad.leftStickButton); input.Capture();
+            for (int p = 0; p < 2; p++)
+            { var frame = input.Consume(p); Assert.That(frame.DisableDoubleTapDash, Is.True); Assert.That(frame.IsPressed(InputButtons.Dash), Is.True); }
+            yield return ReleaseKeys(dashKey, pad.leftStickButton);
+        }
+        [UnityTest]
+        public IEnumerator CameraAndBoardBackdropFitThreeAspectRatiosWithoutChangingBattle()
+        {
+            yield return SelectLocalBattle(); Flow.enabled = false; Flow.Runner.SetPaused(true);
+            var sim = Flow.Runner.Simulation; int tick = sim.Match.TickCount; var position = sim.P1.Position;
+            var camera = Camera.main; var controller = camera.GetComponent<CameraController>();
+            controller.enabled = false; controller.enabled = true;
+            foreach (float aspect in new[] { 16f / 9, 16f / 10, 4f / 3 })
+            {
+                camera.aspect = aspect; yield return null; yield return null;
+                for (int i = 1; i < sim.Stage.PlatformCount; i++)
+                {
+                    var bounds = sim.Stage[i].Bounds;
+                    foreach (float x in new[] { bounds.Left, bounds.Right })
+                    {
+                        var v = camera.WorldToViewportPoint(new Vector3(x, bounds.Top, 0));
+                        Assert.That(v.x, Is.GreaterThan(0).And.LessThan(1)); Assert.That(v.y, Is.GreaterThan(0).And.LessThan(1));
+                    }
+                }
+            }
+            Assert.That(Object.FindObjectsByType<SpriteRenderer>().Count(s => s.name.StartsWith("Board Backdrop Cell ")), Is.EqualTo(36));
+            Assert.That(Object.FindObjectsByType<SpriteRenderer>().Single(s => s.name == "Far Painted Scenery").sprite, Is.Not.Null);
+            Assert.That(sim.Match.TickCount, Is.EqualTo(tick)); Assert.That(sim.P1.Position, Is.EqualTo(position));
+        }
+        [UnityTest]
+        public IEnumerator KeyConfigUiCapturesPersistsResetsAndSwapsPadDuplicates()
+        {
+            yield return Tap(keyboard.enterKey);
+            for (int i = 0; i < 6; i++) yield return Tap(keyboard.sKey);
+            yield return Tap(keyboard.enterKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.KeyConfig));
+            for (int i = 0; i < 6; i++) yield return Tap(keyboard.sKey);
+            yield return Tap(keyboard.enterKey); Assert.That(Flow.CapturingBinding, Is.True);
+            yield return Tap(keyboard.hKey); Assert.That(Flow.CapturingBinding, Is.False);
+            var controller = Flow.Input; Assert.That(controller.EffectiveKeys(0).Jump, Is.EqualTo(Key.H));
+            var reloaded = new ControlConfiguration(); reloaded.Initialize(controller.Bindings); Assert.That(reloaded.Keyboard(0, controller.Bindings.P1).Jump, Is.EqualTo(Key.H));
+            Assert.That(controller.EffectiveKeys(1).Jump, Is.EqualTo(Key.RightCtrl)); controller.Configuration.Reset(0, false);
+            Assert.That(controller.EffectiveKeys(0).Jump, Is.EqualTo(Key.Space));
+            var pad = InputSystem.AddDevice<Gamepad>(); controller.AssignGamepad(0, pad);
+            controller.Configuration.Profile(0, true).Rebind(ControlAction.Jump, 6); controller.Configuration.Save(0, true);
+            Assert.That(controller.Configuration.Profile(0, true)[ControlAction.Attack], Is.EqualTo(5));
+            yield return PressKeys(pad.buttonWest); controller.Capture(); Assert.That(controller.Consume(0).IsHeld(InputButtons.Jump), Is.True);
+            yield return ReleaseKeys(pad.buttonWest); controller.Configuration.Reset(0, true);
+        }
+        [UnityTest]
+        public IEnumerator TrainingAndCommandsKeepMatchStoppedInsidePanels()
+        {
+            yield return Tap(keyboard.enterKey);
+            for (int i = 0; i < 4; i++) yield return Tap(keyboard.sKey);
+            yield return Tap(keyboard.enterKey); Assert.That(Flow.PracticeMode, Is.True);
+            yield return Tap(keyboard.tabKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CommandList));
+            yield return Tap(keyboard.escapeKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CharacterSelect));
+            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
+            yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "Training did not start.");
+            yield return new WaitForSecondsRealtime(.2f); Assert.That(Flow.Runner.Simulation.Match.RemainingTicks, Is.EqualTo(4200));
+            Assert.That(Flow.Runner.Simulation.P2.Hearts, Is.EqualTo(3));
+            yield return Tap(keyboard.escapeKey); int tick = Flow.Runner.Simulation.Match.TickCount;
+            for (int i = 0; i < 8; i++) yield return Tap(keyboard.sKey);
+            yield return Tap(keyboard.enterKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CommandList));
+            yield return new WaitForSecondsRealtime(.15f); Assert.That(Flow.Runner.Simulation.Match.TickCount, Is.EqualTo(tick));
         }
         [UnityTest]
         public IEnumerator TitleToLocalBattleUsesSelectedCharactersAndStage()

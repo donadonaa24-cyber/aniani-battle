@@ -8,26 +8,34 @@ namespace AniBato.Battle
         private int lastTapDirection;
         private int lastTapTick = int.MinValue / 2;
         private int dashDirection;
+        private bool dashFromDoubleTap;
         public FighterInputBuffer() { for (int i = 0; i < expires.Length; i++) expires[i] = -1; }
 
         public void Push(in FrameInput input, int tick, in BattleRuleDefinition rules)
         {
+            if (input.DisableDoubleTapDash)
+            {
+                lastTapDirection = 0; lastTapTick = int.MinValue / 2;
+                if (dashFromDoubleTap) { expires[7] = -1; dashFromDoubleTap = false; }
+            }
             for (int i = 0; i < expires.Length; i++)
                 if (((int)input.Pressed & (1 << i)) != 0)
                 { expires[i] = tick + rules.InputBufferFrames - 1; directions[i] = input.DirectionFor((InputButtons)(1 << i)); }
             int direction = input.X > rules.DirectionThreshold ? 1 : input.X < -rules.DirectionThreshold ? -1 : 0;
-            if (direction != 0 && direction != previousDirection)
+            if (!input.DisableDoubleTapDash && direction != 0 && direction != previousDirection)
             {
                 if (lastTapDirection == direction && tick - lastTapTick <= rules.DoubleTapFrames)
                 {
                     expires[7] = tick + rules.InputBufferFrames - 1;
                     dashDirection = direction;
+                    dashFromDoubleTap = true;
                     lastTapTick = int.MinValue / 2;
                 }
                 else { lastTapDirection = direction; lastTapTick = tick; }
             }
             if (input.IsPressed(InputButtons.Dash))
             {
+                dashFromDoubleTap = false;
                 float dashX = input.DirectionFor(InputButtons.Dash).X;
                 dashDirection = dashX > rules.DirectionThreshold ? 1 : dashX < -rules.DirectionThreshold ? -1 : 0;
             }

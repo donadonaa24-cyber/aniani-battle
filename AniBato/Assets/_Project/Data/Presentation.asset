@@ -16,9 +16,12 @@ MonoBehaviour:
   MainPlatform: {r: 0.17, g: 0.24, b: 0.35, a: 1}
   UpperPlatform: {r: 0.3, g: 0.46, b: 0.58, a: 1}
   Warning: {r: 1, g: 0.65, b: 0.12, a: 1}
-  CameraMinSize: 6
+  CameraSchemaVersion: 1
+  CameraMinSize: 5.2
   CameraMaxSize: 19
-  CameraPadding: 3
+  CameraPadding: 1.2
+  CameraBoundaryInset: 2
+  CameraHeadroom: 2.5
   CameraFollowSpeed: 8
   CameraXLimits: {x: -8, y: 8}
   CameraYLimits: {x: -1, y: 7}

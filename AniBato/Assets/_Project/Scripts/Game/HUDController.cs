@@ -1,6 +1,7 @@
 ﻿using AniBato.Battle;
 using UnityEngine;
 using UnityEngine.UI;
+using AniBato.Presentation;
 
 namespace AniBato.Game
 {
@@ -19,9 +20,14 @@ namespace AniBato.Game
         private readonly float[] breakUntil = new float[2];
         private RectTransform canvasRect;
         private FighterView[] fighterViews;
+        private Image[] staminaBars;
+        private Text help;
+        private GameFlowController flow;
+        public void ConfigureLearning(Text hint, Image[] bars) { help = hint; staminaBars = bars; }
         private void Start()
         {
             fighterViews = Object.FindObjectsByType<FighterView>();
+            flow = Object.FindAnyObjectByType<GameFlowController>();
             foreach (var text in GetComponentsInChildren<Text>(true)) text.font = RuntimeFonts.Japanese;
         }
         private Text[] popups;
@@ -44,7 +50,7 @@ namespace AniBato.Game
             if (battleEvent.Kind == BattleEventKind.Break) breakUntil[target] = Time.unscaledTime + presentation.BreakSeconds;
             string label = battleEvent.Kind == BattleEventKind.CounterSuccess ? "COUNTER!" :
                 battleEvent.Kind == BattleEventKind.JustGuard ? "JUST GUARD!" : battleEvent.Kind == BattleEventKind.JustDodge ? "JUST DODGE!" :
-                battleEvent.Kind == BattleEventKind.ComboFinish ? "COMBO FINISH!" : battleEvent.Kind == BattleEventKind.Break ? "BREAK!" : null;
+                battleEvent.Kind == BattleEventKind.ComboFinish ? "COMBO FINISH!" : battleEvent.Kind == BattleEventKind.Break ? "BREAK!" : battleEvent.Kind == BattleEventKind.GuardBroken ? "GUARD BREAK!" : null;
             if (label != null)
             {
                 int player = battleEvent.Kind == BattleEventKind.ComboFinish || battleEvent.Kind == BattleEventKind.Break ? target : battleEvent.SourcePlayer;
@@ -60,6 +66,21 @@ namespace AniBato.Game
             UpdatePlayer(simulation.P2, p2Hud, 1, simulation.Rules.NormalHitsPerHeart);
             timer.text = Mathf.CeilToInt((float)simulation.Match.RemainingSeconds).ToString("00");
             timer.color = simulation.Match.RemainingSeconds <= 10 ? presentation.Warning : Color.white;
+            if (help)
+            {
+                var input = runner.GetComponent<InputController>();
+                if (runner.Practice != null)
+                {
+                    help.enabled = !runner.Paused;
+                    help.text = (runner.Tutorial == null ? "練習：" + runner.Practice.Opponent : LearningText.Tutorial(runner.Tutorial.Step, input)) +
+                        "\n入力 " + LearningText.InputDisplay(runner.LastPlayerInput, input) + " / 技 " + runner.LastMoveName + " / " + input.Label(0, ControlAction.Pause) + " 練習設定";
+                }
+                else
+                {
+                    help.enabled = !runner.Paused && !simulation.Match.IsFinished && simulation.Match.TickCount < 300 && (!flow || flow.BasicHintsEnabled);
+                    help.text = "跳 " + input.Label(0, ControlAction.Jump) + " / 攻撃 " + input.Label(0, ControlAction.Attack) + " / 特殊 方向＋" + input.Label(0, ControlAction.Special) + " / 防御 " + input.Label(0, ControlAction.Guard) + " / " + input.Label(0, ControlAction.Pause) + " ポーズ";
+                }
+            }
             result.enabled = simulation.Match.IsFinished && !runner.ManagedByFlow;
             if (result.enabled)
             {
@@ -72,9 +93,15 @@ namespace AniBato.Game
         private void UpdatePlayer(FighterState fighter, Text hud, int index, int threshold)
         {
             hud.text = fighter.Definition.Name + "\n" + new string('♥', fighter.Hearts) + new string('♡', runner.Simulation.Rules.InitialHearts - fighter.Hearts) +
-                "   " + fighter.NormalHitCount + "/" + threshold + "\nLINK " + fighter.Gauge + "/" + runner.Simulation.Rules.Gauge.Maximum +
+                "   " + fighter.NormalHitCount + "/" + threshold + "\nSTAMINA " + Mathf.FloorToInt(fighter.Stamina) + "/" + fighter.Definition.Stamina.Maximum + "\nLINK " + fighter.Gauge + "/" + runner.Simulation.Rules.Gauge.Maximum +
                 (GaugeSystem.CanUseUltimate(fighter, runner.Simulation.Rules) ? "  超必殺 READY" : fighter.UltimateUses > 0 ? "  超必殺 使用済" : "");
             if (fighter.BuffRemaining > 0) hud.text += "  機動強化";
+            if (staminaBars != null)
+            {
+                float fraction = fighter.Definition.Stamina.Maximum > 0 ? fighter.Stamina / fighter.Definition.Stamina.Maximum : 1;
+                staminaBars[index].rectTransform.sizeDelta = new Vector2(300 * fraction, 8);
+                staminaBars[index].color = fighter.StaminaRejectedRemaining > 0 && fighter.StaminaRejectedRemaining % 8 < 4 ? Color.red : new Color(.3f, .85f, .65f);
+            }
             if (fighter.MarkRemaining > 0) hud.text += "  解析マーク";
             if (fighter.ParalysisRemaining > 0) hud.text += "  もぐもぐ";
             if (fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0)

@@ -51,6 +51,12 @@ if ($Only -in 'all', 'build') {
     $code = Invoke-Unity @('-batchmode', '-quit', '-projectPath', (Q $Project), '-buildWindows64Player', (Q $exe), '-logFile', (Q $log))
     Write-Host "winbuild=$code"
     Select-String -Path $log -Pattern 'Build Finished' -Encoding UTF8 | ForEach-Object { $_.Line }
+    # Retention: Windows builds are ~100-160 MB each and every version is recoverable from git,
+    # so keep only the newest $KeepBuilds build folders (this one included).
+    $KeepBuilds = 2
+    $builds = Get-ChildItem (Join-Path $Root 'Build') -Directory | Where-Object { Test-Path (Join-Path $_.FullName 'AniBato.exe') } |
+        Sort-Object LastWriteTime -Descending
+    $builds | Select-Object -Skip $KeepBuilds | ForEach-Object { Write-Host "removing old build: $($_.Name)"; Remove-Item $_.FullName -Recurse -Force }
 }
 # Summary of test XML files for this tag (failed cases with message + first stack line).
 foreach ($plat in 'EditMode', 'PlayMode') {

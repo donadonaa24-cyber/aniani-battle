@@ -1,6 +1,6 @@
 ﻿namespace AniBato.Battle
 {
-    public enum FighterMode { Idle, Move, Dash, Jump, Fall, Attack, Special, Guard, Dodge, Counter, Hitstun, Knockback, Recovery, KO }
+    public enum FighterMode { Idle, Move, Dash, Jump, Fall, Attack, Special, Guard, Dodge, Counter, Hitstun, Knockback, Recovery, KO, Crouch }
 
     public sealed class FighterState
     {
@@ -23,6 +23,13 @@
         public int DashDirection { get; internal set; }
         public int DropThroughRemaining { get; internal set; }
         public bool FastFalling { get; internal set; }
+        public int DownHeldFrames { get; internal set; }
+        public int StaminaUnits { get; internal set; }
+        public float Stamina => StaminaUnits / (float)StaminaSystem.UnitsPerPoint;
+        public int StaminaDelayRemaining { get; internal set; }
+        public int StaminaRejectedRemaining { get; internal set; }
+        public int GuardLockRemaining { get; internal set; }
+        public bool Crouching => Grounded && (Mode == FighterMode.Crouch || Attack != null && Attack.Definition.NormalDirection == NormalDirection.Crouch);
         public AttackInstance Attack { get; internal set; }
         public int Gauge { get; internal set; }
         public int UltimateUses { get; internal set; }
@@ -52,12 +59,22 @@
         public bool IsFrozenThisTick => FrozenThisTick;
         internal bool ParalyzedThisTick;
         internal readonly FighterInputBuffer InputBuffer = new FighterInputBuffer();
-        public BattleRect Hurtbox => new BattleRect(Position, Definition.HurtboxSize);
+        public BattleRect Hurtbox
+        {
+            get
+            {
+                var size = Definition.HurtboxSize;
+                if (!Crouching || Definition.CrouchHeightRatio <= 0) return new BattleRect(Position, size);
+                float height = size.Y * Definition.CrouchHeightRatio;
+                return new BattleRect(new BattleVector(Position.X, Position.Y - (size.Y - height) * .5f), new BattleVector(size.X, height));
+            }
+        }
 
         internal FighterState(int player, in CharacterDefinition definition, BattleVector spawn, int hearts)
         {
             PlayerIndex = player; Definition = definition.Snapshot(); Position = spawn;
             Facing = player == 0 ? 1 : -1; Hearts = hearts;
+            StaminaUnits = Definition.Stamina.Maximum * StaminaSystem.UnitsPerPoint;
             CounterEffect = new DataCounterEffect(Definition.Counter);
         }
     }

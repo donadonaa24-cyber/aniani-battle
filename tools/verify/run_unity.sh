@@ -10,3 +10,5 @@ for plat in EditMode PlayMode; do
 done
 "$U" -batchmode -quit -projectPath "$P" -buildWindows64Player "$ROOT/Build/$T/AniBato.exe" -logFile "$ROOT/TestResults/${T}_build.log"; echo "winbuild=$?"
 grep -E "Build Finished" "$ROOT/TestResults/${T}_build.log"
+# Retention: keep only the newest 2 Windows builds (each ~100-160 MB; every version is recoverable from git).
+ls -1dt "$ROOT"/Build/*/ 2>/dev/null | tail -n +3 | while read -r d; do [ -f "$d/AniBato.exe" ] && echo "removing old build: $d" && rm -rf "$d"; done

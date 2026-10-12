@@ -15,6 +15,7 @@ namespace AniBato.Tests
     public sealed class BattleSceneTests : InputTestFixture
     {
         private Keyboard keyboard;
+        private readonly System.Collections.Generic.Dictionary<string, string> controlPrefs = new System.Collections.Generic.Dictionary<string, string>();
         private InputSettings.BackgroundBehavior previousBackgroundBehavior;
         private InputSettings.UpdateMode previousUpdateMode;
         private bool previousRunInBackground;
@@ -51,6 +52,8 @@ namespace AniBato.Tests
         public IEnumerator SetUp()
         {
             IsolateInput();
+            for (int p = 0; p < 2; p++) foreach (string device in new[] { "pad", "keyboard" })
+            { string key = "AniBato.Controls.v1." + p + "." + device; controlPrefs[key] = PlayerPrefs.HasKey(key) ? PlayerPrefs.GetString(key) : null; PlayerPrefs.DeleteKey(key); }
             keyboard = InputSystem.AddDevice<Keyboard>();
             yield return SceneManager.LoadSceneAsync("Battle");
             yield return null;
@@ -65,6 +68,8 @@ namespace AniBato.Tests
             if (runner) runner.enabled = false;
             if (keyboard != null && keyboard.added) InputSystem.RemoveDevice(keyboard);
             yield return null;
+            foreach (var entry in controlPrefs) { if (entry.Value == null) PlayerPrefs.DeleteKey(entry.Key); else PlayerPrefs.SetString(entry.Key, entry.Value); }
+            controlPrefs.Clear(); PlayerPrefs.Save();
             RestoreInput();
         }
         private static IEnumerator WaitFor(System.Func<bool> condition, string message)

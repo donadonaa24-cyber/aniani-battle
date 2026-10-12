@@ -24,7 +24,7 @@ namespace AniBato.EditorTools
             var rows = CpuBalanceStudy.Run(setup.Characters.Select(c => c.ToDefinition()).ToArray(), rules.ToDefinition(),
                 setup.Stages[0].ToGeometry(), setup.CpuDifficulties.Select(c => c.ToDefinition()).ToArray());
             string root = Path.GetFullPath(Path.Combine(Application.dataPath, "../.."));
-            string stem = Path.Combine(root, "TestResults/phase5b-cpu-unity"); Directory.CreateDirectory(Path.GetDirectoryName(stem));
+            string stem = Path.Combine(root, "TestResults/phase6b-cpu-unity"); Directory.CreateDirectory(Path.GetDirectoryName(stem));
             File.WriteAllText(stem + ".csv", CpuBalanceStudy.Csv(rows), new UTF8Encoding(false));
             var report = new StringBuilder("# CPU集計（Unityで生成済みのScriptableObject使用）\n\n各難易度・全9組×30seed。70秒、初期ゲージ0。時間=tick/60。自滅近似=場外敗者が直近120tickに被弾/カウンターを受けていない。\n\n");
             var gauge = rules.Definition.Gauge;

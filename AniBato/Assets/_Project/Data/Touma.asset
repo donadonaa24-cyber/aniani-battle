@@ -29,11 +29,34 @@ MonoBehaviour:
     MaxAirDashes: 1
     GroundNormals: []
     AirNormals: []
+    DirectionalNormals: []
+    Stamina:
+      Maximum: 100
+      GroundRecoveryPerSecond: 32
+      ActiveRecoveryPerSecond: 6
+      RecoveryDelayFrames: 30
+      JumpCost: 8
+      AirJumpCost: 12
+      GroundDashCost: 8
+      AirDashCost: 14
+      DodgeCost: 18
+      GuardDrainPerSecond: 6
+      NormalGuardCost: 8
+      SpecialGuardCost: 20
+      UltimateGuardCost: 65
+      GuardBreakFrames: 18
+      GuardLockFrames: 36
+    CrouchHeightRatio: 0.55
+    DiagonalThreshold: 0.45
+    DiagonalFallbackVertical: 1
     Specials: []
     Ultimate:
       Name: 
       Kind: 0
       IsCloseRange: 0
+      NormalDirection: 0
+      BreaksGuard: 0
+      LandingRecoveryFrames: 0
       StartupFrames: 0
       ActiveFrames: 0
       DamageDelayFrames: 0
@@ -57,6 +80,7 @@ MonoBehaviour:
       ActiveVelocity:
         X: 0
         Y: 0
+      VerticalMotionOnStartOnly: 0
       ProjectileLaunchVelocity:
         X: 0
         Y: 0
@@ -94,6 +118,18 @@ MonoBehaviour:
       KnockbackMultiplier: 0
     UltimateCutInFrames: 30
   TempoSchemaVersion: 5
+  AccessibilitySchemaVersion: 6
+  DirectionalNormals:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 836faa48a0f8be544be3002cce1d23bf, type: 2}
+  - {fileID: 11400000, guid: ca995cc32a5eb1441bd9067cf166b85b, type: 2}
+  - {fileID: 11400000, guid: 379af02b44b8c6b4a93d397f2c5b4b1a, type: 2}
+  - {fileID: 11400000, guid: c16a7be0c3f37584cab007ad17f33952, type: 2}
+  - {fileID: 11400000, guid: 2011708c6d682c241a191e22b6ee4127, type: 2}
+  - {fileID: 11400000, guid: 63ebc6856fa0a5f4d82622f2910e1ba7, type: 2}
+  - {fileID: 11400000, guid: 183a0578a12ebc442982454b96e2c589, type: 2}
+  - {fileID: 11400000, guid: 597a43bbaa02c8647b94ace718900174, type: 2}
+  - {fileID: 11400000, guid: f9794a06304cddc4dad61c36744d66ea, type: 2}
   GroundNormals:
   - {fileID: 11400000, guid: 265eb73c95633814280ea1c5b66d1d35, type: 2}
   - {fileID: 11400000, guid: 7a377d14467610a4e9d601cad1e855b9, type: 2}

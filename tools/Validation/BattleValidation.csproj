@@ -10,6 +10,8 @@
     <Compile Include="../../AniBato/Assets/_Project/Tests/EditMode/*.cs" Exclude="../../AniBato/Assets/_Project/Tests/EditMode/ProjectAssetTests.cs;../../AniBato/Assets/_Project/Tests/EditMode/AnimationAssetTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="CpuReport.cs" />
+    <Compile Include="PhaseSixReport.cs" />
+    <Compile Include="PhaseSixBCameraReport.cs" />
     <Compile Include="../../AniBato/Assets/_Project/Scripts/Presentation/*.cs" />
     <Reference Include="nunit.framework">
       <HintPath>../../AniBato/Library/PackageCache/com.unity.ext.nunit@0198eae3b53e/net472/unity-custom/nunit.framework.dll</HintPath>

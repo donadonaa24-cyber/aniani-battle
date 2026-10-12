@@ -22,7 +22,8 @@ namespace AniBato.Battle
             if (fighter.FrozenThisTick || fighter.Mode == FighterMode.KO) return;
             bool canControl = fighter.CanControlMovement;
             bool droppedThisTick = false;
-            if (canControl && fighter.Grounded && fighter.GroundPlatform >= 0 && stage[fighter.GroundPlatform].OneWay && input.Y < -rules.DirectionThreshold)
+            if (canControl && fighter.Grounded && fighter.GroundPlatform >= 0 && stage[fighter.GroundPlatform].OneWay && input.Y < -rules.DirectionThreshold &&
+                fighter.DownHeldFrames >= rules.DropThroughHoldFrames)
             {
                 fighter.DropThroughRemaining = rules.DropThroughFrames;
                 fighter.Grounded = false; fighter.GroundPlatform = -1;
@@ -73,10 +74,13 @@ namespace AniBato.Battle
             }
             if (landing >= 0)
             {
+                bool justLanded = oldPosition.Y - halfHeight > bestTop + .001f;
                 fighter.Position = new BattleVector(fighter.Position.X, bestTop + halfHeight);
                 fighter.Velocity = new BattleVector(fighter.Velocity.X, 0);
                 fighter.Grounded = true; fighter.GroundPlatform = landing;
                 fighter.JumpsUsed = 0; fighter.AirDashesUsed = 0; fighter.FastFalling = false;
+                if (justLanded && fighter.Attack != null && fighter.Attack.AirborneAttack && fighter.Attack.Definition.LandingRecoveryFrames > 0)
+                { fighter.ActionFrames = fighter.Attack.Definition.LandingRecoveryFrames; fighter.Attack = null; fighter.Mode = FighterMode.Recovery; }
                 // An up-special starting from the ground must launch before landing can restore it.
                 if (fighter.Attack == null || !fighter.Attack.Definition.IsSpecial || fighter.CurrentSpecial != SpecialSlot.Up)
                     fighter.UpSpecialUsed = false;

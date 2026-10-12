@@ -9,9 +9,12 @@ namespace AniBato.Game
         public Color MainPlatform = new Color(0.17f, 0.24f, 0.35f);
         public Color UpperPlatform = new Color(0.3f, 0.46f, 0.58f);
         public Color Warning = new Color(1, 0.65f, 0.12f);
-        public float CameraMinSize = 6;
+        public int CameraSchemaVersion;
+        public float CameraMinSize = 5.2f;
         public float CameraMaxSize = 19;
-        public float CameraPadding = 3;
+        public float CameraPadding = 1.2f;
+        public float CameraBoundaryInset = 2;
+        public float CameraHeadroom = 2.5f;
         public float CameraFollowSpeed = 8;
         public Vector2 CameraXLimits = new Vector2(-8, 8);
         public Vector2 CameraYLimits = new Vector2(-1, 7);

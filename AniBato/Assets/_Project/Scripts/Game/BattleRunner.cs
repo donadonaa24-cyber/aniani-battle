@@ -24,6 +24,10 @@ namespace AniBato.Game
         private ICpuBrain cpuBrain;
         public CpuDifficulty Difficulty { get; private set; }
         public ICpuBrain CpuBrain => cpuBrain;
+        public PracticeOptions Practice { get; set; }
+        public TutorialSession Tutorial { get; set; }
+        public FrameInput LastPlayerInput { get; private set; }
+        public string LastMoveName { get; private set; } = "";
         private readonly FighterAnimationPlayer[] animations = { new FighterAnimationPlayer(), new FighterAnimationPlayer() };
         public AnimationSample Animation(int player) => animations[player].Sample;
         public bool DebugBoxes { get; private set; }
@@ -70,6 +74,7 @@ namespace AniBato.Game
             if (!p1 || !p2 || !rules || !stage || !input)
                 throw new InvalidOperationException("BattleRunnerの設定が欠落しています。BuildAllを実行してください。");
             Simulation = new BattleSimulation(p1.ToDefinition(), p2.ToDefinition(), rules.ToDefinition(), stage.ToGeometry());
+            Simulation.Practice = Practice; Tutorial?.Reset(); LastPlayerInput = default; LastMoveName = "";
             if (CpuOpponent)
             {
                 if (!setup || setup.CpuDifficulties == null || setup.CpuDifficulties.Length != 3 || !setup.CpuDifficulties[(int)Difficulty])
@@ -113,13 +118,19 @@ namespace AniBato.Game
             }
             bool cinematic = Simulation.CutInRemainingFrames > 0;
             var first = input.Consume(0); var second = input.Consume(1);
+            LastPlayerInput = first; Tutorial?.Prepare(Simulation);
+            if (Tutorial != null) second = Tutorial.CoachInput(Simulation);
+            else if (Practice != null) second = Practice.Opponent == PracticeOpponent.Cpu ? cpuBrain.NextInput(Simulation, 1) : Practice.DummyInput(Simulation);
+            else if (CpuOpponent) second = cpuBrain.NextInput(Simulation, 1);
             RenderState.BeforeTick(Simulation);
-            Simulation.Tick(first, CpuOpponent ? cpuBrain.NextInput(Simulation, 1) : second);
+            Simulation.Tick(first, second);
+            Tutorial?.Observe(Simulation, first);
             RenderState.AfterTick(Simulation);
             var success = new bool[2];
             foreach (BattleEvent battleEvent in Simulation.Events)
             {
                 if (battleEvent.Kind == BattleEventKind.CounterSuccess) success[battleEvent.SourcePlayer] = true;
+                if (battleEvent.Kind == BattleEventKind.AttackStarted && battleEvent.SourcePlayer == 0 && Simulation.P1.Attack != null) LastMoveName = Simulation.P1.Attack.Definition.Name;
                 EventProduced?.Invoke(battleEvent);
             }
             cinematic |= Simulation.CutInRemainingFrames > 0;
