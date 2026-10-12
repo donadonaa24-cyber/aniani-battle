@@ -3,7 +3,7 @@
     public sealed class Manifest
     {
         public string character, sourceDirectory, outputDirectory, contactPath;
-        public int targetHeight = 112, cellWidth = 160, cellHeight = 160, baseline = 159, paletteSize = 32;
+        public int targetHeight = 112, cellWidth = 224, cellHeight = 160, baseline = 159, paletteSize = 32;
         public int keyTolerance = 90;
         public float pixelsPerUnit = 50;
         public int[] anchorRgbMin = new[] { 115, 45, 0 }, anchorRgbMax = new[] { 255, 180, 85 };
@@ -17,6 +17,7 @@
         public int inbetweenFrames;
         public bool stableIdle;
         public string sourceClip;
+        public string prebuiltSheet; // Workspace-relative, already aligned fixed-grid frames. Raw scale reference is unchanged.
         public int[] sourceFrames;
         public double sourceScaleFactor = 1;
         public int headOffset;

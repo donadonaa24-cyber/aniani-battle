@@ -56,7 +56,14 @@ if ($Only -in 'all', 'build') {
     $KeepBuilds = 2
     $builds = Get-ChildItem (Join-Path $Root 'Build') -Directory | Where-Object { Test-Path (Join-Path $_.FullName 'AniBato.exe') } |
         Sort-Object LastWriteTime -Descending
-    $builds | Select-Object -Skip $KeepBuilds | ForEach-Object { Write-Host "removing old build: $($_.Name)"; Remove-Item $_.FullName -Recurse -Force }
+    $buildRootPath = [IO.Path]::GetFullPath((Join-Path $Root 'Build'))
+    $builds | Select-Object -Skip $KeepBuilds | ForEach-Object {
+        $oldBuildPath = [IO.Path]::GetFullPath($_.FullName)
+        if (-not $oldBuildPath.StartsWith($buildRootPath + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase) -or
+            ($_.Attributes -band [IO.FileAttributes]::ReparsePoint)) { throw 'Unsafe build retention path; refusing to remove it.' }
+        Write-Host "removing old build: $($_.Name)"
+        Remove-Item -LiteralPath $oldBuildPath -Recurse -Force
+    }
 }
 # Summary of test XML files for this tag (failed cases with message + first stack line).
 foreach ($plat in 'EditMode', 'PlayMode') {

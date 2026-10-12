@@ -70,15 +70,22 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 - テストを弱めていないか、失敗を隠していないか
 - 見た目：キャラが別人に見えない、足元が揃う、頭上カウンターが頭上にある、判定（F9表示）と絵が大きくずれない
 
-## 4. 現在の状態：6B完了・担当交代の記録更新
+## 4. 現在の状態：ART3B呼吸待機・Unity全合格
+
+- 現行指示書は[ART3_BREATHING](codex_tasks/ART3_BREATHING.md)。ART3の透真・蓮・千鶴を採用して8F/6fpsの体呼吸をゲームへ接続。今後も[SPRITE_SPEC](SPRITE_SPEC.md)の224×160px/コマ・足元159・PPU50に固定する。体/頭±2px、靴は固定、旧rawと待機以外のPNGは保持。
+- **今回のUnity実行：BuildAll成功、EditMode323/323・PlayMode29/29、失敗/スキップ0、Windowsビルド成功**。TestResults/art3b_*。新しいアセット回帰3ケース追加、既存アサーション維持。24Fの画素/接地検査と388ファイル再生成一致も合格。
+- 最新起動はBuild/art3b/AniBato.exe。保持ビルドはart3b/phase6bの2つ。[実画面](screenshots/art3b_previews.md)で全3人の待機・接地・頭上数値を確認した。物理パッド/144Hz等の手動確認を今回済みとして扱わない。
+- 引き継ぎは[RESUME](RESUME.md)冒頭と[art3b_final](codex_logs/art3b_final.md)。原画/プロンプト/個別PNG8枚はart_source/art3_idle/、再現はBuildArt3Idle.ps1。完了一式のコミット名は`Add fixed-size breathing idle sprites for three fighters`、反映先origin main。次は移動/攻撃などの新絵柄化が候補で、指示書を先に作る。
+
+### 6B完了時の履歴
 
 - ユーザーが「6bは終わったよ」と確認。保存済み証跡：BuildAll exit 0、**EditMode320/320・PlayMode29/29（失敗・スキップ0）**、Windowsビルド exit 0・Success。TestResults/phase6b_runner.txt、phase6b_EditMode.xml、phase6b_PlayMode.xml、phase6b_buildall.log、phase6b_build.logで確認した。
-- Title/Battleの生成シーンとBuild/phase6b/AniBato.exeが実在。最新2ビルドはphase6a・phase6b。
+- 6B完了時はTitle/Battleの生成シーンとBuild/phase6b/AniBato.exeが実在。現在の最新ビルドは上のART3Bを参照。
 - 実装コミット9560ed4（6A・6B）はGitHub origin mainへ反映済み。資料更新開始時の作業ツリーはclean。今回は保存済み結果を読み、Unityの再実行や実キー入力は行っていない。
 - USB HID・機器の後始末・旧シーン停止の修正を含め、全PlayModeが合格。背景・中割り・カメラ・左右表記・ダッシュ設定・必須24テスト/12成果物表も実装済み。
 - 比較画像はdocs/screenshots/phase6b_*.png（サムネ・オフライン投影図）。6B実機撮影・物理パッド2台・3比率/144Hzの手動所見・全14課題の通し確認・実SO810試合集計の記録は今回確認できていない。自動テストの合格と分ける。
 - カメラの全体常時表示と常時拡大、idle目元/柄などは改善候補。完了した6Bを作り直さず、ユーザーの操作感に基づいて次の具体的な修正を選び、着手前にdocs/codex_tasks/へ指示書を書く。
-- 現在の記録作業はcodex_tasks/PHASE6B_CLOSEOUT.md。交代時はRESUME冒頭の作業名・差分・結果・次の手順から再開する。
+- 6B完了記録67a8d9cもorigin mainへpush済み。後続ART3の3枚はART3Bで採用・接続済み。交代時はRESUME冒頭の作業名・差分・結果・次の手順から再開する。
 ## 5. 残りフェーズ（指示書は自分で `docs/codex_tasks/PHASE4.md` 等に書いてから着手）
 以下は工程全体の計画履歴です。フェーズ1〜6Bは実装・Unity検証済み。現在の再開地点は§4とRESUMEに従い、完了済みの素材やフェーズを作り直さないでください。
 ### フェーズ4：ステージとゲーム進行（原本 6・8章）

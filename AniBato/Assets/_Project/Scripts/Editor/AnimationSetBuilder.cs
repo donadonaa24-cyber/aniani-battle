@@ -49,7 +49,7 @@ namespace AniBato.EditorTools
         private static void Validate(SpriteSheetMetadata data)
         {
             if (data == null || data.schemaVersion != 1 || String.IsNullOrEmpty(data.name) || data.name != Path.GetFileName(data.name) ||
-                data.frameCount < 1 || data.frameCount > 8 || data.cellWidth < 1 || data.cellHeight < 1 || data.fps < 1 || data.pixelsPerUnit != 50 ||
+                data.frameCount < 1 || data.frameCount > 8 || data.cellWidth != 224 || data.cellHeight != 160 || data.baseline != 159 || data.fps < 1 || data.pixelsPerUnit != 50 ||
                 data.pivotX < 0 || data.pivotX > 1 || data.pivotY < 0 || data.pivotY > 1 || data.headHeights == null || data.headHeights.Length != data.frameCount)
                 throw new InvalidOperationException("Invalid SpriteForge metadata.");
         }

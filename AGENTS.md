@@ -33,6 +33,7 @@
 - 数値はすべて ScriptableObject（`CharacterData`、`AttackData`、`BattleRules` 等）から。シミュレーションは ScriptableObject から変換した純C#の定義構造体を使う（テストではコード上で定義を作れる）。
 - シーン・アセットは手書きYAMLではなく、Editorスクリプト（`AniBato.EditorTools.ProjectBuilder.BuildAll` 等、`-executeMethod` で実行可能）で生成する。
 - 巨大な1ファイルにしない。システムごとにクラスを分ける。
+- ピクセルアートは `docs/SPRITE_SPEC.md` に従い、今後すべて1コマ224×160px・足元159px・PPU50へ統一。原画を保管し、キャラごとの身長差とクリップ間の倍率を維持する。
 - テスト：`Assets/_Project/Tests/EditMode`、`Assets/_Project/Tests/PlayMode`。
 
 ## Unityコマンド（参考）

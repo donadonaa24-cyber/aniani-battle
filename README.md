@@ -1,6 +1,8 @@
 # あにあにバトル！！（あにバト！！）
 
-オリジナル2D横スクロール対戦アクション。透真・蓮・千鶴によるCPU対戦・同一PCの2人対戦、練習とチュートリアルを備えます。現行ルールは[GAME_DESIGN](GAME_DESIGN.md)、原本[SPEC_ORIGINAL](docs/SPEC_ORIGINAL.md)は履歴として保持しています。**6B完了：BuildAll成功・Unity EditMode320/320・PlayMode29/29・Windowsビルド成功。** 実装コミット9560ed4はorigin mainへ反映済み。最新手順とCodex/Claudeの交代記録は[RESUME](docs/RESUME.md)。
+オリジナル2D横スクロール対戦アクション。透真・蓮・千鶴によるCPU対戦・同一PCの2人対戦、練習とチュートリアルを備えます。現行ルールは[GAME_DESIGN](GAME_DESIGN.md)、原本[SPEC_ORIGINAL](docs/SPEC_ORIGINAL.md)は履歴として保持しています。**ART3B完了：3人の新しい呼吸待機、BuildAll成功・Unity EditMode323/323・PlayMode29/29・Windowsビルド成功。** 最新手順とCodex/Claudeの交代記録は[RESUME](docs/RESUME.md)。
+
+待機中は足を接地させたまま体と頭が上下±2px動きます。全員224×160px/コマ、8F/6fps。[動くプレビュー](docs/art_wip/art3b_previews.md)、[実ゲーム撮影](docs/screenshots/art3b_previews.md)、[実装用PNGとGIF](art_source/art3_idle/breathing/README.md)。今後も[同じ制作規格](docs/SPRITE_SPEC.md)を使います。待機以外の動作は既存の絵柄を保持しています。
 
 メインメニューの「練習モード」は、相手を棒立ち/ガード/ジャンプ/ふつうCPUから選び、ハート・時間固定を切り替えられます（ポーズ→練習設定）。入力と技名を表示します。「チュートリアル」は14段階の実操作課題。技表はキャラ選択のTab（パッドSHARE/BACK）かポーズから開き、左右でキャラ・上下でページを切り替えます。「キーコンフィグ」はP1/P2・キーボード/パッド別に変更・保存・初期化できます。重複は同じ設定内で入替。ボタン表記は最後に使った機器と現在の割り当てに自動追従します。
 
@@ -19,7 +21,7 @@
 
 ## 起動
 
-検証済みWindows版は **`Build/phase6b/AniBato.exe`** を起動します。ビルドはGit管理外で、検証したPC上に保存されます。最新2ビルドのみ保持するため、過去の実行ファイルは削除されることがあります。
+検証済みWindows版は **`Build/art3b/AniBato.exe`** を起動します。ビルドはGit管理外で、検証したPC上に保存されます。最新2ビルドのみ保持するため、過去の実行ファイルは削除されることがあります。
 
 1. Unity Hubから **Unity 6000.6.0f1** で `AniBato/` を開きます。
 2. 更新後はメニュー「**あにバト → プロジェクト生成（フェーズ6B）**」を実行して、方向AttackData・スタミナ・アニメ・新背景/サムネ・タイトルと対戦シーンを生成します。

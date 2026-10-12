@@ -14,6 +14,45 @@ namespace AniBato.Tests
     {
         [Serializable] private sealed class Manifest { public Entry[] animations = Array.Empty<Entry>(); }
         [Serializable] private sealed class Entry { public string name = ""; public int frames = 0, fps = 0, inbetweenFrames = 0; public bool loop = false; public int OutputFrames => inbetweenFrames > 0 ? inbetweenFrames : frames; }
+        [TestCase("toma", "Touma", 124)]
+        [TestCase("ren", "Ren", 100)]
+        [TestCase("chizuru", "Chizuru", 112)]
+        public void ArtThreeIdleHasBodyBreathingWithFixedFeetSizeAndFacePixels(string key, string assetName, int standingHeight)
+        {
+            const int width = 224, height = 160, count = 8;
+            var character = AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/_Project/Data/" + assetName + ".asset");
+            var clip = character.Animations.Find("idle");
+            Assert.That(clip.Fps, Is.EqualTo(6)); Assert.That(clip.Loop, Is.True);
+            Assert.That(clip.Frames.Length, Is.EqualTo(count));
+            Assert.That(clip.HeadHeights, Is.EqualTo(new[] { standingHeight, standingHeight + 1, standingHeight + 2, standingHeight + 1,
+                standingHeight, standingHeight - 1, standingHeight - 2, standingHeight - 1 }));
+            foreach (var motion in character.Animations.Clips) foreach (var frame in motion.Frames)
+            {
+                Assert.That(frame.rect.size, Is.EqualTo(new Vector2(width, height)), motion.Name);
+                Assert.That(frame.pixelsPerUnit, Is.EqualTo(50), motion.Name);
+            }
+            var texture = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+            try
+            {
+                Assert.That(ImageConversion.LoadImage(texture, File.ReadAllBytes("Assets/_Project/Art/Sprites/" + key + "/idle.png")), Is.True);
+                Assert.That(texture.width, Is.EqualTo(width * count)); Assert.That(texture.height, Is.EqualTo(height));
+                var pixels = texture.GetPixels32(); var colors = new System.Collections.Generic.HashSet<Color32>();
+                int[] offsets = { 0, -1, -2, -1, 0, 1, 2, 1 }; int torsoChanges = 0;
+                for (int frame = 0; frame < count; frame++) for (int y = 0; y < height; y++) for (int x = 0; x < width; x++)
+                {
+                    Color32 color = pixels[y * texture.width + frame * width + x];
+                    Assert.That(color.a, Is.EqualTo(0).Or.EqualTo(255)); if (color.a != 0) colors.Add(color);
+                    if (y < 12) Assert.That(color, Is.EqualTo(pixels[y * texture.width + x]), "Shoes must stay planted.");
+                    int sourceY = y + offsets[frame];
+                    if (y >= 28 && sourceY >= 0 && sourceY < height)
+                        Assert.That(color, Is.EqualTo(pixels[sourceY * texture.width + x]), "Face and torso must translate without changing pixels.");
+                    if (frame == 2 && y >= 28 && y < standingHeight / 2 && !color.Equals(pixels[y * texture.width + x])) torsoChanges++;
+                }
+                Assert.That(torsoChanges, Is.GreaterThan(0), "The torso must breathe, not only the head.");
+                Assert.That(colors.Count, Is.LessThanOrEqualTo(32));
+            }
+            finally { UnityEngine.Object.DestroyImmediate(texture); }
+        }
         [TestCase("toma", "Touma", 124, "toma-keyvisual-cutin.png")]
         [TestCase("ren", "Ren", 100, "ren-dog-rook.png")]
         [TestCase("chizuru", "Chizuru", 112, "chizuru-casual-cutin.png")]

@@ -90,6 +90,20 @@ Tomaのスーツ・端末とRenの犬耳フード/衣装/マント/尻尾は正�
 
 画像生成は内蔵ツールだけを使用し、APIキー/有料アセット/第三者ファンアートは使用していない。格闘・スタミナ・勝敗の表現は本作独自で、原作の正史設定として追加しない。既存原画・以前の加工バックアップは保管した。新規技のコマは1つの綺麗なキーを保持し、既存モーションも一度に1キーだけ使う。旧処理は下の履歴に残すが、現行生成経路では使用しない。
 
+## ART3・ART3B：採用済み待機原画と呼吸アニメ（2026-10-12）
+
+| 保存先 | 元資料・作成方法 | 用途 |
+|---|---|---|
+| art_source/art3_idle/toma_idle_v1.png | docs/art_reference/characters/toma_sheet.webpを容姿/衣装の参照にして内蔵image_gen | 透真の右向き静止待機。ART3Bの基準絵 |
+| art_source/art3_idle/ren_idle_v1.png | docs/art_reference/characters/ren_dog_rook.pngを容姿/衣装の参照にして内蔵image_gen | 蓮の右向き静止待機。ART3Bの基準絵 |
+| art_source/art3_idle/chizuru_idle_v1.png | docs/art_reference/characters/chizuru_casual_sheet.webpを容姿/衣装の参照にして内蔵image_gen | 千鶴の私服・右向き静止待機。ART3Bの基準絵 |
+| art_source/art3_idle/breathing/generated/*_breathing_atlas.png | 上記静止絵を参照した内蔵image_gen。最終プロンプトはbreathing/generation-log.json | 各4キー、呼吸の動きの参考。ゲームへ直接使用しない |
+| Art/Sprites/<character>/idle.png・idle.json、breathing/ready/<character>/ | 上記静止絵をSpriteForgeで整数行移動、既存共通パレットへ減色 | 各8F/6fps、224×160/コマ、32色以内・二値alpha、靴固定・体±2px |
+| docs/art_wip/art3b_*_idle_preview.gif・art3b_idle_lineup.png | ゲーム用PNGの整数3倍表示 | 全員同倍率・同足位置の確認用。ゲーム素材は等倍 |
+| art_source/art3_idle/generation-log.json・README.md | 最終プロンプト・参照の役割、寸法とSHA-256を記録 | 再制作・Claudeへの交代資料 |
+
+共通の画風参考はユーザー添付のピクセルアート比較画像。ドットの輪郭・色面・陰影だけを参考にし、画像の騎士・剣・衣装・SNS画面は転載していない。比較画像そのものをリポジトリへ保存・Assetsへコピーしていない。生成原画は保持し、ART3Bでゲーム用idleへ接続。生成4キーの細部変化を避け、最終8コマは各1枚絵から作る。旧rawは他モーションの縮尺・パレット基準として保持。衣装と容姿は正式資料、本作の待機姿勢と呼吸は独自表現。[固定制作規格](SPRITE_SPEC.md)、[実装用出力](../art_source/art3_idle/breathing/README.md)を参照。
+
 ## フェーズ5B：既存キーフレームからの中割り・idle整合（履歴、6Aで混合を廃止）
 
 | 保存先 | 元資料・作成方法 | 用途 |

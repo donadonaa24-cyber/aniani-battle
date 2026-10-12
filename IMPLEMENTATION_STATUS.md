@@ -1,8 +1,23 @@
-# 実装状況：フェーズ6B完了・担当交代（2026-10-12）
+# 実装状況：ART3B呼吸待機・Unity全合格（2026-10-12）
+
+## 最新作業：3人の呼吸待機をゲームへ接続
+
+[ART3_IDLE](docs/codex_tasks/ART3_IDLE.md)で生成した透真・蓮・千鶴の3枚を採用。[ART3_BREATHING](docs/codex_tasks/ART3_BREATHING.md)を作成してから呼吸キーを内蔵image_genで各4姿勢生成・保存した。最終8コマは静止原画から整数行移動で作り、顔・衣装の細部を保持。体と頭が上下±2px、靴は固定、8F/6fpsでループする。
+
+- **今後の全キャラ・全モーション：224×160px/コマ、足元y159、PPU50。** 身長は透真124px／蓮100px／千鶴112pxを基準に維持。[制作規格](docs/SPRITE_SPEC.md)をAGENTS・SpriteForge・Unityインポータへ反映した。
+- [実装用出力](art_source/art3_idle/breathing/README.md)：全員の透過PNG8枚、1792×160の横シート、JSON、GIF。ゲーム用idle・AnimationSet・Title/Battleを更新。旧rawの縮尺・パレットを保持し、他の動作のPNGは変更なし。
+- 素材検査：新idle24F、靴の完全固定・胴の上下動・顔/衣装の画素移動・二値alpha・32色以内・実頭頂高さ・GIF復号が合格。全106クリップ584F、**388ファイル再生成SHA-256一致**。
+- **Unity実行：BuildAll成功、EditMode323/323、PlayMode29/29、失敗・スキップ0、Windowsビルド成功**。TestResults/art3b_*。既存テストを維持し、3人のサイズ/体呼吸/足固定/顔の画素保持を検査する3ケースを追加。API参照コンパイルも警告・エラー0。
+- 起動：**Build/art3b/AniBato.exe**。最新2つはart3b・phase6b。外部承認で全4工程を実行し、Title/Battle両シーンと実行ファイルの実在を確認。
+- 実画面：[art3b撮影一覧](docs/screenshots/art3b_previews.md)。事前に「PCに触らないで」と案内し、2人対戦で全3人の新idleと頭上カウンター・接地を目視確認。撮影スクリプトはゲームのクライアント領域のみ保存する。
+- 交代：Codex/Claudeとも[RESUME](docs/RESUME.md)冒頭と[最終報告](docs/codex_logs/art3b_final.md)から再開。完了一式のコミット名は`Add fixed-size breathing idle sprites for three fighters`、反映先origin main。交代時git log/statusで確認する。
+- 残課題：移動・攻撃などは既存の絵柄。新待機と同じ絵柄へ描き直す場合は次の指示書を先に作り、同じセル/倍率で進める。物理パッド・144Hzなど6Bの手動確認項目も履歴通り残る。
+
+## 前回の区切り：6B完了記録
 
 [PHASE6B](docs/codex_tasks/PHASE6B.md)は完了済み。**BuildAll成功・EditMode320/320・PlayMode29/29・Windowsビルド成功**を保存済み証跡で確認。実装コミット **9560ed4**（6A・6B）はGitHub origin mainに反映済み。ユーザー指定によりCodexが実装・レビュー・Unity検証・取りまとめを担当し、Claudeへも随時交代できる。
 
-今回の作業は[PHASE6B_CLOSEOUT](docs/codex_tasks/PHASE6B_CLOSEOUT.md)に沿った完了記録・担当分担の更新。コード・アセット・テストは変更せず、Unityを再実行していない。6Aの305/305・24/26は過去履歴であり、現在の6B合格結果は上記。
+前回は[PHASE6B_CLOSEOUT](docs/codex_tasks/PHASE6B_CLOSEOUT.md)に沿って完了記録・担当分担を更新し、67a8d9cをorigin mainへpush済み。コード・ゲーム用アセット・テストは変更せず、Unityを再実行していない。6Aの305/305・24/26は過去履歴であり、6B合格結果は上記。
 
 ## 6Bの変更
 

@@ -1,0 +1,39 @@
+{
+  "task": "ART3_BREATHING",
+  "date": "2026-10-12",
+  "tool": "built-in image_gen",
+  "production": {
+    "cellWidth": 224,
+    "cellHeight": 160,
+    "baseline": 159,
+    "pixelsPerUnit": 50,
+    "frames": 8,
+    "fps": 6
+  },
+  "images": [
+    {
+      "character": "toma",
+      "file": "generated/toma_breathing_atlas.png",
+      "reference": "art_source/art3_idle/toma_idle_v1.png",
+      "prompt": "Use case: identity-preserve. Asset type: breathing idle key-pose atlas for an original 2D platform-fighter character.\nImage 1 is the EXACT approved idle sprite to preserve. Create a transparent atlas containing EXACTLY FOUR copies of this SAME character in a 2-column by 2-row layout, with generous identical transparent margins per cell. Full body visible, all facing RIGHT, no text or numbering, no background.\nThe four poses form ONE VERY SUBTLE BREATHING cycle: top-left neutral breath, top-right inhaling with chest and head raised slightly, bottom-left fully inhaled shoulders about TWO LOGICAL PIXELS above neutral, bottom-right exhaling toward neutral. Grounded feet and shoe position identical in ALL four cells, same head size, same body width, same camera, same orientation, same outfit shapes and same pixel palette. The torso shifts gently vertically, knees give slightly, feet never leave the ground. This is breathing while standing still, not walking, jumping or bobbing the entire character upward.\nPreserve pixel-for-pixel likeness of face, eye color, hairstyle, clothing, accessories and resting arm pose from image 1. Do not invent a new design. Crisp deliberate square pixel clusters and dark outlines, no gradients or soft antialiasing, no blurry blend, no ghost limbs, no motion lines, no glows, no shadow on floor. Each figure has exactly two legs and two arms. Maintain exact same proportions and colors across all four figures; only breathing changes.\nProduction specification to accommodate: each eventual animation frame is 224x160 pixels at PPU50, feet baseline y159, neutral standing height 124 logical pixels. Draw the atlas like a nearest-neighbor enlarged low-resolution game sprite, leaving enough margin for all limbs. Transparent background.",
+      "transparent_background": true,
+      "role": "Breathing key-pose/motion guide. Per-pose anatomy and footwear vary slightly; final game frames preserve the approved single idle drawing with exact integer-pixel body breathing."
+    },
+    {
+      "character": "ren",
+      "file": "generated/ren_breathing_atlas.png",
+      "reference": "art_source/art3_idle/ren_idle_v1.png",
+      "prompt": "Use case: identity-preserve. Asset type: breathing idle key-pose atlas for an original 2D platform-fighter character.\nImage 1 is the EXACT approved idle sprite to preserve. Create a transparent atlas containing EXACTLY FOUR copies of this SAME character in a 2-column by 2-row layout, with generous identical transparent margins per cell. Full body visible, all facing RIGHT, no text or numbering, no background.\nThe four poses form ONE VERY SUBTLE BREATHING cycle: top-left neutral breath, top-right inhaling with chest and head raised slightly, bottom-left fully inhaled shoulders about TWO LOGICAL PIXELS above neutral, bottom-right exhaling toward neutral. Grounded feet and shoe position identical in ALL four cells, same head size, same body width, same camera, same orientation, same outfit shapes and same pixel palette. The torso shifts gently vertically, knees give slightly, feet never leave the ground. This is breathing while standing still, not walking, jumping or bobbing the entire character upward.\nPreserve pixel-for-pixel likeness of face, eye color, hairstyle, clothing, accessories and resting arm pose from image 1. Do not invent a new design. Crisp deliberate square pixel clusters and dark outlines, no gradients or soft antialiasing, no blurry blend, no ghost limbs, no motion lines, no glows, no shadow on floor. Each figure has exactly two legs and two arms. Maintain exact same proportions and colors across all four figures; only breathing changes.\nProduction specification to accommodate: each eventual animation frame is 224x160 pixels at PPU50, feet baseline y159, neutral standing height 100 logical pixels. Draw the atlas like a nearest-neighbor enlarged low-resolution game sprite, leaving enough margin for all limbs. Transparent background.",
+      "transparent_background": true,
+      "role": "Breathing key-pose/motion guide. Per-pose anatomy and footwear vary slightly; final game frames preserve the approved single idle drawing with exact integer-pixel body breathing."
+    },
+    {
+      "character": "chizuru",
+      "file": "generated/chizuru_breathing_atlas.png",
+      "reference": "art_source/art3_idle/chizuru_idle_v1.png",
+      "prompt": "Use case: identity-preserve. Asset type: breathing idle key-pose atlas for an original 2D platform-fighter character.\nImage 1 is the EXACT approved idle sprite to preserve. Create a transparent atlas containing EXACTLY FOUR copies of this SAME character in a 2-column by 2-row layout, with generous identical transparent margins per cell. Full body visible, all facing RIGHT, no text or numbering, no background.\nThe four poses form ONE VERY SUBTLE BREATHING cycle: top-left neutral breath, top-right inhaling with chest and head raised slightly, bottom-left fully inhaled shoulders about TWO LOGICAL PIXELS above neutral, bottom-right exhaling toward neutral. Grounded feet and shoe position identical in ALL four cells, same head size, same body width, same camera, same orientation, same outfit shapes and same pixel palette. The torso shifts gently vertically, knees give slightly, feet never leave the ground. This is breathing while standing still, not walking, jumping or bobbing the entire character upward.\nPreserve pixel-for-pixel likeness of face, eye color, hairstyle, clothing, accessories and resting arm pose from image 1. Do not invent a new design. Crisp deliberate square pixel clusters and dark outlines, no gradients or soft antialiasing, no blurry blend, no ghost limbs, no motion lines, no glows, no shadow on floor. Each figure has exactly two legs and two arms. Maintain exact same proportions and colors across all four figures; only breathing changes.\nProduction specification to accommodate: each eventual animation frame is 224x160 pixels at PPU50, feet baseline y159, neutral standing height 112 logical pixels. Draw the atlas like a nearest-neighbor enlarged low-resolution game sprite, leaving enough margin for all limbs. Transparent background.",
+      "transparent_background": true,
+      "role": "Breathing key-pose/motion guide. Per-pose anatomy and footwear vary slightly; final game frames preserve the approved single idle drawing with exact integer-pixel body breathing."
+    }
+  ]
+}

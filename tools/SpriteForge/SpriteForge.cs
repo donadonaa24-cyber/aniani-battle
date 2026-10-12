@@ -69,6 +69,17 @@
                 if (clip.Definition.inbetweenFrames > 0)
                     sheet = AnimationSmoothing.Generate(sheet, clip.Definition, manifest, out headHeights);
                 int outputCount = AnimationSmoothing.Count(clip.Definition);
+                if (!String.IsNullOrEmpty(clip.Definition.prebuiltSheet))
+                {
+                    // Keep the original raw idle as the common scale/palette reference for other motions.
+                    // A prepared replacement changes this clip alone, with the same cell/PPU contract.
+                    sheet = Raster.Load(Within(root, clip.Definition.prebuiltSheet));
+                    if (sheet.Width != manifest.cellWidth * outputCount || sheet.Height != manifest.cellHeight)
+                        throw new InvalidOperationException("Prepared sheet dimensions mismatch: " + clip.Definition.name);
+                    Pixels.Quantize(sheet, palette);
+                    headHeights = Enumerable.Range(0, outputCount).Select(frame => manifest.baseline -
+                        Pixels.Bounds(sheet, frame * manifest.cellWidth, (frame + 1) * manifest.cellWidth).Top + 1).ToArray();
+                }
                 var outputBindings = (clip.Definition.bindings ?? new Binding[0]).Select(binding => new Binding { State = binding.State, Clip = binding.Clip,
                     ActiveFrame = clip.Definition.inbetweenFrames > 0 ? (int)Math.Round((double)binding.ActiveFrame * (outputCount - 1) / Math.Max(1, clip.Frames.Length - 1)) : binding.ActiveFrame }).ToArray();
                 sheet.Save(Path.Combine(output, clip.Definition.name + ".png"));
@@ -79,7 +90,7 @@
                     pixelsPerUnit = manifest.pixelsPerUnit, targetHeight = manifest.targetHeight, baseline = manifest.baseline, bindings = outputBindings, headHeights = headHeights };
                 WriteJson(Path.Combine(output, clip.Definition.name + ".json"), metadata);
                 reports.Add(new { name = clip.Definition.name, frames = details, outputFrames = outputCount,
-                    synthesis = clip.Definition.stableIdle ? "single-reference-breathing" : (clip.Definition.sourceClip ?? "").EndsWith("_phase6b") ? "drawn-key-inbetweens" : "clean-key-hold", headHeights = headHeights });
+                    synthesis = !String.IsNullOrEmpty(clip.Definition.prebuiltSheet) ? "single-reference-body-breathing" : clip.Definition.stableIdle ? "single-reference-breathing" : (clip.Definition.sourceClip ?? "").EndsWith("_phase6b") ? "drawn-key-inbetweens" : "clean-key-hold", headHeights = headHeights });
             }
             WriteJson(Path.Combine(output, "forge-report.json"), new { schemaVersion = 1, sourceReferenceHeight = referenceHeight, commonScale = scale,
                 keyTolerance = manifest.keyTolerance, palette = palette.Select(c => "#" + (c & 0xffffff).ToString("X6")).ToArray(), clips = reports });
@@ -94,7 +105,7 @@
         }
         private static void ValidateManifest(Manifest m)
         {
-            if (m.animations == null || m.animations.Length == 0 || m.paletteSize < 1 || m.paletteSize > 32 || m.targetHeight < 1 || m.pixelsPerUnit <= 0 || m.baseline >= m.cellHeight || m.baseline < 0)
+            if (m.animations == null || m.animations.Length == 0 || m.paletteSize < 1 || m.paletteSize > 32 || m.targetHeight < 1 || m.pixelsPerUnit != 50 || m.cellWidth != 224 || m.cellHeight != 160 || m.baseline != 159)
                 throw new InvalidOperationException("Invalid manifest settings.");
             if (m.anchorRgbMin == null || m.anchorRgbMax == null || m.anchorRgbMin.Length != 3 || m.anchorRgbMax.Length != 3) throw new InvalidOperationException("Invalid anchor color range.");
             var names = new HashSet<string>();

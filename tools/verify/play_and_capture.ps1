@@ -28,12 +28,15 @@ Add-Type @"
 using System; using System.Runtime.InteropServices;
 public class AniBatoInput {
   [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out R r);
+  [DllImport("user32.dll")] public static extern bool GetClientRect(IntPtr h, out R r);
+  [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr h, ref P p);
   [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
   [DllImport("user32.dll")] public static extern void keybd_event(byte vk, byte scan, uint flags, UIntPtr extra);
   [DllImport("user32.dll")] public static extern uint MapVirtualKey(uint code, uint type);
   [DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow();
   [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr h, int cmd);
   public struct R { public int L, T, Ri, B; }
+  public struct P { public int X, Y; }
   public static void Down(byte vk, bool ext) { keybd_event(vk, (byte)MapVirtualKey(vk, 0), ext ? 1u : 0u, UIntPtr.Zero); }
   public static void Up(byte vk, bool ext) { keybd_event(vk, (byte)MapVirtualKey(vk, 0), (ext ? 1u : 0u) | 2u, UIntPtr.Zero); }
 }
@@ -62,9 +65,12 @@ if (-not (Test-GameInFront)) {
     exit 4
 }
 function Save-Shot([string]$name) {
-    $r = New-Object AniBatoInput+R; [AniBatoInput]::GetWindowRect($proc.MainWindowHandle, [ref]$r) | Out-Null
+    if (-not (Test-GameInFront)) { throw 'Refusing to capture another foreground app.' }
+    $r = New-Object AniBatoInput+R; $origin = New-Object AniBatoInput+P
+    if (-not [AniBatoInput]::GetClientRect($proc.MainWindowHandle, [ref]$r) -or
+        -not [AniBatoInput]::ClientToScreen($proc.MainWindowHandle, [ref]$origin)) { throw 'Cannot resolve game client bounds.' }
     $bmp = New-Object Drawing.Bitmap ($r.Ri - $r.L), ($r.B - $r.T)
-    $g = [Drawing.Graphics]::FromImage($bmp); $g.CopyFromScreen($r.L, $r.T, 0, 0, $bmp.Size)
+    $g = [Drawing.Graphics]::FromImage($bmp); $g.CopyFromScreen($origin.X, $origin.Y, 0, 0, $bmp.Size)
     $path = Join-Path $Out "${Tag}_$name.png"; $bmp.Save($path); $g.Dispose(); $bmp.Dispose(); Write-Host "saved $path"
 }
 try {

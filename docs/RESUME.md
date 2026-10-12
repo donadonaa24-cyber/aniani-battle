@@ -1,4 +1,20 @@
-# 再開メモ：6B完了・Codex/Claude交代手順（2026-10-12）
+# 再開メモ：ART3B呼吸待機・Codex/Claude交代（2026-10-12）
+
+## 現在の区切り：3人の新しい呼吸待機、Unity全合格
+
+- 指示書：[ART3_IDLE](codex_tasks/ART3_IDLE.md) → [ART3_BREATHING](codex_tasks/ART3_BREATHING.md)。ユーザーの追加依頼で3枚とも採用し、体が上下して呼吸する待機をゲームへ接続した。
+- 固定規格：[SPRITE_SPEC](SPRITE_SPEC.md)。全員・今後の全モーションは**224×160px/コマ、足元y159、PPU50**。身長は透真124/蓮100/千鶴112。8F/6fps、体±2px、靴の下12行は完全固定。
+- 出力：[breathing/ready](../art_source/art3_idle/breathing/README.md)の8枚/人・1792×160横シート・JSON・GIF。原画/最終プロンプトはart_source/art3_idle/とbreathing/generation-log.json。生成した4キーは動きの参考で、最終8Fは採用済み静止絵の整数行移動。旧rawは他モーションの共通縮尺/パレット基準として保持。
+- 実装：SpriteForgeのprebuiltSheet、ArtThreeIdle/BuildArt3Idle、全3人idle/AnimationSet、固定セルのインポート検証、Unityアセットテスト3ケース。既存Timing・スプライトIDと待機以外のPNGを維持。シーンはEditor BuildAllで生成。
+- 検証：**BuildAll成功、Unity EditMode323/323・PlayMode29/29、失敗/スキップ0、Windowsビルド成功**。TestResults/art3b_*、編集テスト終了23:19:22 JST・プレイテスト終了23:20:43 JST。API参照コンパイルも警告/エラー0。24Fの靴固定・胴/顔の画素移動など合格、388ファイル再生成SHA-256一致。
+- 起動：**Build/art3b/AniBato.exe**。最新2ビルドart3b/phase6bのみ保持。[実ゲーム撮影](screenshots/art3b_previews.md)で3人の待機・接地・頭上数値を目視確認。撮影前のPC操作禁止案内と最前面チェックを守る。
+- 完了記録：[art3b_final](codex_logs/art3b_final.md)。完了一式のコミット名は`Add fixed-size breathing idle sprites for three fighters`、反映先origin main。交代時git log/statusで確認する。更新記録の67a8d9cは前回の区切り。
+- 次の候補：walk/dash/攻撃を新待機の絵柄へ揃える。今回の対象はidleで、他の動作は既存絵柄。新しい指示書を先に書き、同セル/同倍率・元原画保持で実装する。6Bの物理パッド/144Hzなどの残確認は下の履歴を参照。
+- **Claudeへ交代時**：tasklistとgit statusで同時編集がないことを確認し、この冒頭から再開。再現はtools/SpriteForge/BuildArt3Idle.ps1（-RebuildCheckまたは-VerifyOnly）。新たなUnity変更はrun_unity.ps1 -Tag <作業名>を外部承認で全4工程。撮影前には必ず「PCに触らないで」と声をかける。
+
+---
+
+## 6B完了時の状態と共通交代手順
 
 **6Bは完了済み。Codexがメイン実装・レビュー・Unity検証・取りまとめを担当し、Claudeにも随時交代できる。** ユーザーの最新指定を優先する。以下の過去履歴にある「検証待ち／Codexはcommitしない」は現在の指示ではない。
 

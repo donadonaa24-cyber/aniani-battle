@@ -1,4 +1,15 @@
-# フェーズ6Bの生成経路
+# ART3B：共通サイズの呼吸待機
+
+`BuildArt3Idle.ps1` は採用済みART3静止絵から体と頭が上下±2px動く8F/6fpsの待機を作り、全3キャラのidleへ接続する。靴の下12行を固定し、顔・衣装は整数行移動で保持する。生成した呼吸4キーは動きの参考として保存する。前後画像の混合はしない。
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildArt3Idle.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/BuildArt3Idle.ps1 -RebuildCheck
+```
+
+全キャラ・全モーションのセルは224×160px、足元159、PPU50に固定。[制作規格](../../docs/SPRITE_SPEC.md)と[実装用出力](../../art_source/art3_idle/breathing/README.md)を参照。`prebuiltSheet` は規格済みシートを1クリップだけ差し替える。旧raw idleの縮尺・共通パレット基準は残すため、他のモーションの出力は変わらない。再生成後はUnity BuildAllが必要。BuildPhase6A/5Bは過去フェーズ再現用であり、現行待機を戻したい場合はBuildArt3Idleを最後に実行する。
+
+# フェーズ6Bの生成経路（履歴）
 
 `BuildPhase6B.ps1` は生成済み `art_source/phase6b` の背景3枚・中割り3アトラスを読み、背景1280×720・サムネ480×270とwalk/dashの追加原画を生成する。旧rawは保持し、各人walk2/dash4の独立した新姿勢を旧キーと順次配置する。混合・クロスフェードなし。manifestのsourceClipで新素材へ接続し、全106シート584F/106GIFを出力する。
 
@@ -65,4 +76,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/SpriteForge/VerifyPhas
 
 持続姿勢の添字・headHeightsを出力コマ数に合わせて再計算し、TimingはUnity側の既存データを維持する。32色、二値アルファ、地上の足元、原画分割数、状態対応の既存検査を保持。`VerifyPhase5B`はさらにidleの胴・足完全一致／頭頂±1pxと、42GIFの全フレームの実デコードを検査する。`-Rebuild`は全PNG/JSON/contact/GIFを再生成しSHA-256一致を確認し、`TestResults/phase5b-spriteforge-reproducibility.json`へ記録する。
 
-確認用GIFは`docs/art_wip/<キャラ>_<アニメ>_preview.gif`、contactは`<キャラ>_contact.png`と分割ページ。ゲームはPNGのみをインポートする。Unity BuildAll／実アニメの確認はClaudeが実施する。
+確認用GIFは`docs/art_wip/<キャラ>_<アニメ>_preview.gif`、contactは`<キャラ>_contact.png`と分割ページ。ゲームはPNGのみをインポートする。現在はCodexがUnity BuildAll／実アニメを検証し、Claudeへも交代できる。
