@@ -1,0 +1,10 @@
+{
+  "character": "chizuru",
+  "group": "bag_throw",
+  "version": 1,
+  "file": "art_source/art3_walk_attacks/generated/chizuru_bag_throw_keys_v1.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/chizuru_attack2_keys_v3.png"
+  ],
+  "prompt": "Generate ONLY the small brown handbag shown in Chizuru's right hand in the reference, as a FOUR-pose spinning projectile sprite atlas for original game あにあにバトル！！. Reference is bag identity/shape/colors/pixel-art style only, not a character to draw. SAME squat rectangular brown satchel, dark brown flap/edges, ONE small gold square buckle in center and ONE short stiff dark loop handle, no long strap, no redesign. Output EXACTLY FOUR separate complete bags, no hands or characters anywhere.\nWide horizontal transparent RGBA canvas, four full bags with generous transparent gutters. They have IDENTICAL original physical dimensions and ONE common magnification. Pose0 upright front view handle on top, pose1 the same bag rotated clockwise90degrees in plane (handle on right), pose2 rotated180 upside-down(handle bottom), pose3 rotated270(handle left). Show the same front buckle/flap throughout, rotation rather than independent scale or perspective shrink. Same body width/height/detail size in every rotation, not squeezed into equal boxes.\nTarget body approximately20x18 logical pixels plus short handle, same size as attached character attack bag. Draw clean pixel clusters, limited brown shades/gold buckle matching reference, strong readable silhouette and transparent inside loop. No labels/numbers/effects/ground/shadows/motion trails, exactly four disconnected prop components; handle joins its bag. This will be packed into fixed224x160cells/PPU50 at full logical scale and placed as separate moving game projectiles. Preserve genuine transparent alpha."
+}

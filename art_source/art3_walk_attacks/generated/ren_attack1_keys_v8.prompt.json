@@ -1,0 +1,10 @@
+{
+  "character": "ren",
+  "group": "attack1",
+  "version": 8,
+  "file": "art_source/art3_walk_attacks/generated/ren_attack1_keys_v8.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_attack1_keys_v7.png"
+  ],
+  "prompt": "Edit the attached four figures, preserving ALL body/hood/shoe scales, the same four poses, transparent margins. Four precise fixes:\nFIRST: extend the LEFT dog ear's outer left contour outwards by ONLY FIVE source pixels. Head is currently width55 when normalized to 100high; target56 to58. Do not widen whole head or other ear.\nSECOND crouch: LOWER the cape's upper edge behind the shoulder about 25 source pixels, so the highest cape is strictly BELOW the top31-normalized-pixel hood band. Hood and arms unchanged.\nTHIRD airborne forward headbutt: cape must droop DOWN BEHIND and BELOW the torso, not extend up into hood-height. Lower its upper edge about 150source pixels. Its highest point must be below the lowest point of the dog's hood/hair. The lead head stays raised to right, both trailing legs remain bent and airborne. Draw one natural low trailing cape, no duplicated cape.\nFOURTH upside-down headstand: put BOTH supporting paw HANDS BEHIND the upside-down hood (their ground-contact palms are hidden behind the head). Arms run from shoulders down behind the head, upper arms visible either side at shoulder level but don't extend sideways in the bottom hood-height band. The cream crown and dog hood alone define the wide ground-level silhouette, same full 58pixel width as upright hood. Fold ears upwards along hood cheeks. Both legs unchanged folded above body. Two arms and two legs, no extra mitts. Keep same overall character magnification. No labels/effects/ground line, no cutting corners or extra figures."
+}

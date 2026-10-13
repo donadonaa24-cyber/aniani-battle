@@ -7,7 +7,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="../../AniBato/Assets/_Project/Scripts/Battle/**/*.cs" />
-    <Compile Include="../../AniBato/Assets/_Project/Tests/EditMode/*.cs" Exclude="../../AniBato/Assets/_Project/Tests/EditMode/ProjectAssetTests.cs;../../AniBato/Assets/_Project/Tests/EditMode/AnimationAssetTests.cs" />
+    <Compile Include="../../AniBato/Assets/_Project/Tests/EditMode/*.cs" Exclude="../../AniBato/Assets/_Project/Tests/EditMode/ProjectAssetTests.cs;../../AniBato/Assets/_Project/Tests/EditMode/AnimationAssetTests.cs;../../AniBato/Assets/_Project/Tests/EditMode/WalkNormalAnimationTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="CpuReport.cs" />
     <Compile Include="PhaseSixReport.cs" />

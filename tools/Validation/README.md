@@ -1,5 +1,7 @@
 ﻿# Unityが起動できない場合の代替検証
 
+ART3E追加のWalkNormalAnimationTestsはUnityの生成SO/Sprite/TextureとAssetDatabaseに依存するため、既存のアセットテストと同様に純C#代替プロジェクトの対象外。UnityCompileValidationでコンパイルし、実際のUnity EditModeで全6ケースを実行する。純C#317ケースは継続実行し、Unity検査は省略しない。
+
 Unityに同梱済みのNUnitと参照DLLを利用し、追加パッケージや外部通信なしで検証します。**UnityのEditMode/PlayMode実行や画面検証の代わりにはなりません。** .NET 10 SDKと、このプロジェクトの既存Libraryキャッシュが必要です。
 
 リポジトリルートのPowerShellから実行します。

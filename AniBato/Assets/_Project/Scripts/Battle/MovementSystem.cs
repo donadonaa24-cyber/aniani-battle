@@ -41,7 +41,9 @@ namespace AniBato.Battle
                 if (fighter.FastFalling) vertical = -fighter.Definition.FastFallSpeed;
             }
             fighter.Velocity = new BattleVector(fighter.Velocity.X, vertical);
-            fighter.Position += fighter.Velocity * BattleRuleDefinition.TickSeconds;
+            float recoil = fighter.DamageRecoilRemaining > 0 ? fighter.DamageRecoilSpeed : 0;
+            if (fighter.DamageRecoilRemaining > 0) fighter.DamageRecoilRemaining--;
+            fighter.Position += new BattleVector(fighter.Velocity.X + recoil, fighter.Velocity.Y) * BattleRuleDefinition.TickSeconds;
             fighter.Grounded = false; fighter.GroundPlatform = -1;
 
             // Swept AABB against solid platforms; one-way platforms only catch descending feet.
@@ -80,7 +82,10 @@ namespace AniBato.Battle
                 fighter.Grounded = true; fighter.GroundPlatform = landing;
                 fighter.JumpsUsed = 0; fighter.AirDashesUsed = 0; fighter.FastFalling = false;
                 if (justLanded && fighter.Attack != null && fighter.Attack.AirborneAttack && fighter.Attack.Definition.LandingRecoveryFrames > 0)
-                { fighter.ActionFrames = fighter.Attack.Definition.LandingRecoveryFrames; fighter.Attack = null; fighter.Mode = FighterMode.Recovery; }
+                {
+                    if (fighter.Attack.Definition.IsNormal) fighter.Velocity = new BattleVector(0, 0);
+                    fighter.ActionFrames = fighter.Attack.Definition.LandingRecoveryFrames; fighter.Attack = null; fighter.Mode = FighterMode.Recovery;
+                }
                 // An up-special starting from the ground must launch before landing can restore it.
                 if (fighter.Attack == null || !fighter.Attack.Definition.IsSpecial || fighter.CurrentSpecial != SpecialSlot.Up)
                     fighter.UpSpecialUsed = false;

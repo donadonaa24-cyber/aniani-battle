@@ -14,7 +14,8 @@ namespace AniBato.Battle
         public static AttackDefinition Normal(string name = "通常攻撃") => new AttackDefinition
         {
             Name = name, Kind = AttackKind.Normal, IsCloseRange = true,
-            StartupFrames = 4, ActiveFrames = 3, RecoveryFrames = 8,
+            StartupFrames = 4, ActiveFrames = 3, RecoveryFrames = 8, NormalForwardDistance = 0.18f,
+            DamageRecoilDistance = .18f, DamageRecoilFrames = 6,
             Hitbox = new BattleRect(new BattleVector(1.4f, 0.1f), new BattleVector(2.2f, 1.8f)),
             HitstopFrames = 4, HitstunFrames = 8, Knockback = new BattleVector(2f, 0)
         };

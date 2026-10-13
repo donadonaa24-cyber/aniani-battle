@@ -1,0 +1,10 @@
+{
+  "character": "ren",
+  "group": "attack1",
+  "version": 10,
+  "file": "art_source/art3_walk_attacks/generated/ren_attack1_keys_v10.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_attack1_keys_v9.png"
+  ],
+  "prompt": "Edit attached four-pose Ren atlas. FIRST standing and SECOND windup are locked, copy them unchanged.\nTHIRD flying headbutt: lower ONLY the cape behind torso by about40 SOURCEpixels. Highest cape edge must be BELOW the hood/hair bottom; cape should droop below torso. Do not change hood/head, face, limbs, scale or flying direction.\nFOURTH headstand: tuck the TWO red-brown floppy DOG EARS UPWARD along the sides of his upside-down cheeks, not spread horizontally on the floor. The total hood/head/ear width must be SAME as first standing hood at SAME scale. Cream crown still touches ground, head/face/hair no scaling, two legs folded overhead, palms hidden behind head and two upper arms support behind. Cape stays above upside-down hood area. Do not shrink or widen the head itself. Four figures total, transparency, full silhouettes with broad gutters. Same pixels and proportions outside cape and ear corrections. No labels/effects."
+}

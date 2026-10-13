@@ -1,0 +1,10 @@
+{
+  "character": "ren",
+  "group": "attack3",
+  "version": 3,
+  "file": "art_source/art3_walk_attacks/generated/ren_attack3_keys_v3.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_attack3_keys_v2.png"
+  ],
+  "prompt": "Make ONE tiny localized correction to this four-figure Ren atlas. Keep figures FIRST, THIRD (the supported two-foot kick) and FOURTH completely unchanged; preserve their exact head/ears/shoes, canvas positions, common scale and all colors. Keep the second figure's inverted head face, cream crown touching ground, legs, cape and costume unchanged.\nONLY in SECOND inverted windup figure: tuck the outer curve of its screen-RIGHT floppy red hood ear slightly toward its face, about5 SOURCE PIXELS (one logical game pixel). Keep ear length and crown height unchanged, make only that very outer right bulge one game pixel less wide. If the adjacent right paw/forearm protrudes past that revised red ear outline in the lower151 source pixels, tuck that paw edge slightly inside the ear silhouette as well. Do NOT scale the head or entire figure, do not change left ear/crown, do not add limbs, do not change pose. Target inverted lower31-logical-pixel silhouette maximum60pixels (current61). First head56, third58, fourth56 are already approved and must be unchanged.\nFour complete fully separated figures, transparent RGBA, exact existing pixel art. No text/effects."
+}

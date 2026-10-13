@@ -17,6 +17,9 @@
         public int HeartRecoveryRemaining { get; internal set; }
         public int HitstopRemaining { get; internal set; }
         public int HitstunRemaining { get; internal set; }
+        public int DamageRecoilRemaining { get; internal set; }
+        internal float DamageRecoilSpeed;
+        public bool LastDamageLostHeart { get; internal set; }
         public int JumpsUsed { get; internal set; }
         public int JumpStartupRemaining { get; internal set; }
         internal float JumpStartupDirection;

@@ -41,6 +41,19 @@ namespace AniBato.Battle
                 a.Knockback = new BattleVector(index == 1 ? 3 : 2, 2);
                 c.DirectionalNormals[slot] = a;
             }
+            if (index == 2)
+            {
+                var third = c.GroundNormals[2];
+                ConfigureBagThrow(ref third);
+                c.GroundNormals[2] = third;
+            }
+        }
+        public static void ConfigureBagThrow(ref AttackDefinition attack)
+        {
+            attack.SpawnProjectile = true; attack.IsCloseRange = false;
+            attack.Hitbox = new BattleRect(new BattleVector(1.8f, .1f), new BattleVector(.4f, .36f));
+            attack.ProjectileSpeed = 12; attack.ProjectileLifetimeFrames = 24;
+            attack.ProjectileGravity = 0; attack.ProjectileLaunchVelocity = default;
         }
         public static readonly string[] Names = { "弱", "足払い", "背面打ち", "空中ニュートラル", "空中前", "空中後ろ", "空中上", "空中下", "空中斜め前上", "空中斜め前下" };
     }

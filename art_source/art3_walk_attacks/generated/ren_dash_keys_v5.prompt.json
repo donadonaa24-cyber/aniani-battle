@@ -1,0 +1,11 @@
+{
+  "character": "ren",
+  "group": "dash",
+  "version": 5,
+  "file": "art_source/art3_walk_attacks/generated/ren_dash_keys_v5.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_dash_keys_v4.png",
+    "art_source/art3_walk_attacks/pose-guides/dash.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Image1 is EDIT TARGET original five-figure REN run atlas. Image2 is anatomy diagram ONLY, red nearLEFT limbs in front, blue farRIGHT behind. Preserve original pixelart identity, doghood/head/ears/hair/face proportions, costume/body lengths/paw/shoes and running limb SCALE. SAME drawing scale for ALL five figures.\nFix TWO observed defects: put the ENTIRE five-figure row inside very generous transparent exterior padding so cape of firstfigure and every extremity is intact; render the complete row uniformly about75% of inputRAWsize (allfive together, not individual pose fitting). Preserve original standing head-to-body ratios. Do NOT make heads larger or standing body shorter.\nThen fix ONLY the two arms of LAST/FIFTH figure: its nearLEFT knee drives forward, so nearLEFT arm must swing BACK behindhip screen-left from near screen-left shoulder (bent elbow90 with smallpaw atrearLEFT). The far RIGHT arm swings FORWARD screen-right from farshoulder with bent elbow90. This is the OPPOSITE arm phase of THIRDfigure, where nearLEFT arm crossed FRONT ofshirt. Exactlytwo arms, each continuous shoulder-elbow-wrist; no swapped hands or duplicatepaws.\nKeep allother4 figures' limb poses and ALL five head contours/angles unchanged. Preserve clearly opposite near/far leg layering between second/fourth contact and third/fifth flight. Bothfeetairborne inthird/fifth; onefootcontactsecond/fourth. Standingfirst a SCALEruler sameoriginalheight ratio, unchangedbody anatomy. Target productionheight100px/headband58px; no independent figure/part resizing. Generous50pxouterpadding afteruniformRAWreduction, fullcapes/shoes/ears. SAME originalsuit/hood/colors; sharp square pixelclusters, transparent background. No text/labels/stickfigures/floor/shadow/blur/trails."
+}

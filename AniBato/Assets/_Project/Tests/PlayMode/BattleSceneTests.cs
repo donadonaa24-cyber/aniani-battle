@@ -167,6 +167,108 @@ namespace AniBato.Tests
             yield return null;
         }
         [UnityTest]
+        public IEnumerator WalkAndThreeGroundNormalsRenderForEveryFighterAtActualInputPhases()
+        {
+            var runner = Object.FindAnyObjectByType<BattleRunner>(); var controller = Object.FindAnyObjectByType<InputController>();
+            var view = Object.FindObjectsByType<FighterView>().Single(v => v.PlayerIndex == 0);
+            var body = view.transform.Find("Body").GetComponent<SpriteRenderer>();
+            runner.enabled = false; runner.SetPaused(false);
+            for (int c = 0; c < 3; c++)
+            {
+                var data = runner.Setup.Character(c);
+                runner.BeginMatch(data, runner.Setup.Character((c + 1) % 3), runner.CurrentStage, false);
+                yield return PressKeys(keyboard.dKey); controller.Capture();
+                float start = runner.Simulation.P1.Position.X;
+                for (int tick = 0; tick < 32; tick++)
+                {
+                    runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
+                    Assert.That(view.RenderedSample.State, Is.EqualTo(AniBato.Presentation.AnimationState.Move));
+                    Assert.That(body.sprite, Is.SameAs(data.Animations.Find("walk").Frames[tick / 4]));
+                    Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one)); Assert.That(view.UsesAnimationSprites, Is.True);
+                }
+                Assert.That(runner.Simulation.P1.Position.X, Is.GreaterThan(start));
+                yield return ReleaseKeys(keyboard.dKey); controller.Capture(); runner.RestartMatch();
+                  yield return PressKeys(keyboard.dKey, keyboard[controller.Bindings.P1.Dash]); controller.Capture();
+                  for (int tick = 0; tick < 33; tick++)
+                  {
+                      runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
+                      Assert.That(view.RenderedSample.State, Is.EqualTo(AniBato.Presentation.AnimationState.Dash));
+                      Assert.That(body.sprite, Is.SameAs(data.Animations.Find("dash").Frames[(tick / 4) % 8]));
+                      Assert.That(runner.Simulation.P1.Grounded, Is.True, "Drawn flight must not change ground dash physics.");
+                      Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one));
+                  }
+                  yield return ReleaseKeys(keyboard.dKey, keyboard[controller.Bindings.P1.Dash]); controller.Capture(); runner.RestartMatch();
+                yield return PressKeys(keyboard[controller.Bindings.P1.Attack]); controller.Capture();
+                runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
+                yield return ReleaseKeys(keyboard[controller.Bindings.P1.Attack]); controller.Capture();
+                int[] activeTicks = new int[3]; bool[] queued = new bool[3]; int ticks = 0;
+                while (runner.Simulation.P1.Attack != null && ticks++ < 200)
+                {
+                    var attack = runner.Simulation.P1.Attack; int chain = attack.ChainIndex;
+                    Assert.That(view.RenderedSample.State, Is.EqualTo((AniBato.Presentation.AnimationState)((int)AniBato.Presentation.AnimationState.Attack1 + chain)));
+                    var clip = data.Animations.Find("attack" + (chain + 1));
+                    if (attack.IsActive) { activeTicks[chain]++; Assert.That(body.sprite, Is.SameAs(clip.Frames[2])); }
+                    else if (attack.Frame < attack.Definition.StartupFrames) Assert.That(body.sprite, Is.SameAs(clip.Frames[0]).Or.SameAs(clip.Frames[1]));
+                    else Assert.That(System.Array.IndexOf(clip.Frames, body.sprite), Is.InRange(3, 5));
+                    Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one));
+                    bool press = chain < 2 && !queued[chain];
+                    if (press) { queued[chain] = true; yield return PressKeys(keyboard[controller.Bindings.P1.Attack]); controller.Capture(); }
+                    runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
+                    if (press) { yield return ReleaseKeys(keyboard[controller.Bindings.P1.Attack]); controller.Capture(); }
+                }
+                Assert.That(ticks, Is.LessThan(200));
+                for (int chain = 0; chain < 3; chain++) Assert.That(activeTicks[chain], Is.EqualTo(data.GroundNormals[chain].ToDefinition().ActiveFrames));
+                Assert.That(body.sprite.name, Does.StartWith("idle_"), "Attack-only items must disappear on return to idle.");
+            }
+            runner.enabled = true;
+            yield return null;
+        }
+        [UnityTest]
+        public IEnumerator ChizuruThrowsOneActualBagSpriteInBothDirectionsAndSpecialEffectsStaySeparate()
+        {
+            var runner=Object.FindAnyObjectByType<BattleRunner>();var controller=Object.FindAnyObjectByType<InputController>();
+            runner.enabled=false;runner.SetPaused(false);
+            var view=Object.FindObjectsByType<FighterView>().Single(v=>v.PlayerIndex==0);
+            var body=view.transform.Find("Body").GetComponent<SpriteRenderer>();var chizuru=runner.Setup.Character(2);
+            foreach(int facing in new[]{1,-1})
+            {
+                runner.BeginMatch(chizuru,runner.Setup.Character(0),runner.CurrentStage,false);
+                var directionKey=facing<0?keyboard.aKey:keyboard.dKey;
+                yield return PressKeys(directionKey);controller.Capture();
+                runner.AdvanceRenderFrame(1d/60);view.RenderFrame();
+                yield return ReleaseKeys(directionKey);controller.Capture();
+                Assert.That(runner.Simulation.P1.Facing,Is.EqualTo(facing));
+                bool[] queued=new bool[2];bool observed=false;long projectileId=0;
+                yield return PressKeys(keyboard[controller.Bindings.P1.Attack]);controller.Capture();
+                runner.AdvanceRenderFrame(1d/60);view.RenderFrame();
+                yield return ReleaseKeys(keyboard[controller.Bindings.P1.Attack]);controller.Capture();
+                for(int tick=0;tick<100 && (runner.Simulation.P1.Attack!=null || runner.Simulation.Projectiles.Count>0);tick++)
+                {
+                    var attack=runner.Simulation.P1.Attack;
+                    bool press=attack!=null && attack.ChainIndex<2 && !queued[attack.ChainIndex];
+                    if(press){queued[attack.ChainIndex]=true;yield return PressKeys(keyboard[controller.Bindings.P1.Attack]);controller.Capture();}
+                    runner.AdvanceRenderFrame(1d/60);view.RenderFrame();
+                    if(press){yield return ReleaseKeys(keyboard[controller.Bindings.P1.Attack]);controller.Capture();}
+                    yield return null;
+                    if(runner.Simulation.Projectiles.Count==0)continue;
+                    Assert.That(runner.Simulation.Projectiles.Count,Is.EqualTo(1));var shot=runner.Simulation.Projectiles[0];
+                    Assert.That(shot.Attack.Definition.IsNormal,Is.True);Assert.That(shot.Facing,Is.EqualTo(facing));
+                    if(!observed){projectileId=shot.Attack.Id;observed=true;}
+                    Assert.That(shot.Attack.Id,Is.EqualTo(projectileId));
+                    var sprite=Object.FindObjectsByType<SpriteRenderer>().Single(s=>s.name=="Projectile" && s.enabled);
+                    int age=shot.Attack.Definition.ProjectileLifetimeFrames-shot.RemainingFrames;
+                    Assert.That(sprite.sprite,Is.SameAs(chizuru.Animations.Effect("bag_throw",age)));
+                    Assert.That(sprite.flipX,Is.EqualTo(facing<0));Assert.That(sprite.transform.localScale,Is.EqualTo(Vector3.one));
+                    if(runner.Simulation.P1.Attack!=null && runner.Simulation.P1.Attack.IsActive)
+                        Assert.That(body.sprite,Is.SameAs(chizuru.Animations.Find("attack3").Frames[2]));
+                }
+                Assert.That(observed,Is.True);Assert.That(runner.Simulation.Projectiles.Count,Is.Zero);
+                Assert.That(chizuru.Animations.Effect("rice_ball",0),Is.Not.SameAs(chizuru.Animations.Effect("bag_throw",0)));
+                Assert.That(chizuru.Animations.Find("idle").Frames.Contains(body.sprite),Is.True);
+            }
+            runner.enabled=true;yield return null;
+        }
+        [UnityTest]
         public IEnumerator TwoKeyboardPlayersMoveIndependentlyAndRRestartsFinishedMatch()
         {
             var runner = Object.FindAnyObjectByType<BattleRunner>();

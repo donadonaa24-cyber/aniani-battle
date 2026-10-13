@@ -1,0 +1,10 @@
+{
+  "character": "chizuru",
+  "group": "attack3",
+  "version": 2,
+  "file": "art_source/art3_walk_attacks/generated/chizuru_attack3_keys_v2.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/chizuru_attack3_keys_v1.png"
+  ],
+  "prompt": "Tiny ONE-figure head correction to this Chizuru four-figure throw atlas. Keep FIRST, THIRD and FOURTH figure heads/bodies exactly unchanged. Preserve all clothing, bag, right arm poses, throw open empty hand, empty recovery hands, shoes, feet baseline and canvas2172x724.\nONLY SECOND windup figure: its brown bob head is ONE logical game pixel wider than the first head. COPY the exact existing FIRST figure's brown head silhouette/face onto this SECOND head at IDENTICAL source size and height (not a resized head). Their head/face viewing angle is already the same. Specifically tuck the outermost brown hair bulge on screenLEFT inward about5 SOURCE PIXELS, so its upper187 source-pixel head band has the exact same width as the first (45 logical pixels, currently46). Keep hair/crown height, eyes, ear, chin, neck and body unchanged, no smaller entire figure.\nHead lock for ALL four: same width45logical within approved43±2 and headband34logical, standing112 common source scale. All bag/arm pixels below headband. No new accessories/extra objects, no detached bag. Four full separate figures transparent RGBA, original crisp pixel art."
+}

@@ -42,6 +42,9 @@ MonoBehaviour:
     ActiveVelocity:
       X: 13
       Y: 9
+    NormalForwardDistance: 0.18
+    DamageRecoilDistance: 0.18
+    DamageRecoilFrames: 6
     VerticalMotionOnStartOnly: 1
     ProjectileLaunchVelocity:
       X: 0

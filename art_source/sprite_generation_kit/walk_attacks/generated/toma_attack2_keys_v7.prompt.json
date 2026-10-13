@@ -1,0 +1,11 @@
+{
+  "character": "toma",
+  "group": "attack2",
+  "version": 7,
+  "file": "art_source/art3_walk_attacks/generated/toma_attack2_keys_v7.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/toma_attack2_keys_v6.png",
+    "art_source/art3_walk_attacks/generated/toma_attack1_keys_v9.png"
+  ],
+  "prompt": "Pixel-art consistency correction. Target reference1 dynamic LEFT punch poses and bodies are correct, but ALL FOUR heads are too broad relative to body (game41-42px vs accepted37-38 with height124). Reference2 gives accepted slim head/body proportions. Redraw every head/hair silhouette consistently about10% narrower to accepted proportions, keeping face identity and orientation, face/neck/head vertical position, body and total standing height unchanged. Do not change arms/hips/front weight/shoes or poses. All four heads same matching scale. Preserve THIRD near LEFT sleeve crossing in front of WHITE SHIRT to extended fist, far RIGHT empty fist pulled low/back; do not change into right punch or back torso. First standing has tablet, other attacks no tablet. Full four figures transparent pixel art row, margins, no text/effects."
+}

@@ -1,0 +1,10 @@
+{
+  "character": "ren",
+  "group": "attack1",
+  "version": 11,
+  "file": "art_source/art3_walk_attacks/generated/ren_attack1_keys_v11.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_attack1_keys_v10.png"
+  ],
+  "prompt": "Edit the attached FOUR-pose Ren source atlas. FIRST standing and FOURTH upside-down headstand are LOCKED and must stay exactly unchanged.\nSECOND crouching windup: replace only its hood/head/hair/face outline with the EXACT same hood/head shape, same upright three-quarter angle and dimensions as the FIRST standing. Keep crouching body and limbs, neck may relocate. Head width must be60pixels maximum at characterheight100; currently61. The head is never independently scaled.\nTHIRD airborne headbutt: lower the RED CAPE KNOT/BOW AND the cape behind the head to BELOW the entire upper31-normalized-pixel hood band. In source image, head top~213, upper band ends~355. All red rear bow/knot and cape pixels must start below355, preferably below375 source y. Keep the hood/head and folded legs at their original positions/size. The ribbon behind the hood must no longer protrude leftward into hood-height. Cape droops below torso, one cape only, natural connection to neck below head.\nTwo arms/legs per figure, same common source magnification and original design, transparency and outer gutters. Four complete figures only."
+}

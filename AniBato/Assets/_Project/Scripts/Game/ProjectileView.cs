@@ -24,13 +24,16 @@ namespace AniBato.Game
                 var animations = character.Animations;
                 var effects = character.SpriteEffects != null && character.SpriteEffects.SchemaVersion >= 1 ? character.SpriteEffects : null;
                 string clip = effects == null ? "rice_ball" : effects.ProjectileClip;
+                bool normal = projectile.Attack.Definition.IsNormal;
+                var normalEffects = normal && character.SpriteEffects != null && character.SpriteEffects.NormalProjectileSchemaVersion >= 1 ? character.SpriteEffects : null;
+                if (normalEffects != null) clip = normalEffects.NormalProjectileClip;
                 Sprite sprite = animations ? animations.Effect(clip, projectile.Attack.Definition.ProjectileLifetimeFrames - projectile.RemainingFrames) : null;
                 sprites[i].sprite = sprite ? sprite : ProceduralSprites.Shape(true);
                 sprites[i].color = sprite ? Color.white : runner.Character(projectile.Owner.PlayerIndex).Tint;
                 sprites[i].flipX = sprite && projectile.Facing < 0;
                 var position = runner.RenderPosition(projectile);
                 sprites[i].transform.position = new Vector3(position.X, position.Y, 0);
-                sprites[i].transform.localScale = sprite ? Vector3.one * (effects == null ? presentation.RiceBallScale : effects.ProjectileScale) : new Vector3(projectile.Hitbox.Size.X, projectile.Hitbox.Size.Y, 1);
+                sprites[i].transform.localScale = sprite ? Vector3.one * (normalEffects != null ? normalEffects.NormalProjectileScale : effects == null ? presentation.RiceBallScale : effects.ProjectileScale) : new Vector3(projectile.Hitbox.Size.X, projectile.Hitbox.Size.Y, 1);
             }
         }
     }

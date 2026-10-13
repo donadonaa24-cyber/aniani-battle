@@ -32,7 +32,7 @@ foreach ($key in 'toma','ren','chizuru') {
     $record.source = "generated/$($key)_crouch_pair_v1.png"
     $normalizations += $record
 }
-$spec = [ordered]@{ schemaVersion=2; game='AniBato'; cellWidth=224; cellHeight=160; baseline=159; torsoAnchorX=112
+$spec = [ordered]@{ schemaVersion=3; game='AniBato'; cellWidth=224; cellHeight=160; baseline=159; torsoAnchorX=112
     coordinateOrigin='top-left'; pixelsPerUnit=50; pivot=@(0.5,0); alphaValues=@(0,255); maxColorsPerCharacter=32
     frames=8; fps=6; sheetWidth=1792; sheetHeight=160; fixedFeetRows=@(148,159); fullTranslationEndRow=132
     breathingOffsets=@(0,-1,-2,-1,0,1,2,1); rounding='midpoint-to-even'; previewScale=3; previewGifDelayCentiseconds=17
@@ -45,7 +45,19 @@ $spec = [ordered]@{ schemaVersion=2; game='AniBato'; cellWidth=224; cellHeight=1
       @{name='land';frames=2;fps=15;loop=$false;keys=@(1,-1);state=5;aliasState=34;negativeKey='approved-idle-00'},
       @{name='guard';frames=6;fps=15;loop=$true;keys=@(1,1,1,1,1,1);state=15},
       @{name='dodge';frames=3;fps=12;loop=$false;keys=@(1,2,3);state=16},
-      @{name='dash';frames=8;fps=15;loop=$true;keys=@(1,1,2,2,3,3,4,4);state=2}) }
+      @{name='dash';frames=8;fps=15;loop=$true;keys=@(1,1,2,2,3,3,4,4);state=2})
+    walkAttackNormalization='walk_attacks/normalized/*-scale.json'; walkAttackSelection='walk_attacks/source-selection.json'; walkAttackPrompts='walk_attacks/generation-log.json'
+    walkFrameOrder=@('left-contact','left-down','left-pass','left-up','right-contact','right-down','right-pass','right-up')
+    walkFrames=8; walkFps=15; walkLoop=$true; walkDistinctDrawnFrames=$true; bagOnlyWhileAttacking=$true
+    groundNormalChoreography=@{toma=@('right-punch','left-punch','right-kick');ren=@('diving-headbutt','head-supported-capoeira','arm-push-double-front-kick');chizuru=@('right-hand-bag','right-hand-cross-body-bag','bag-throw')}
+    normalForwardDistance=0.18; damageRecoilDistance=0.18; damageRecoilTicks=6
+    bagProjectile=@{clip='bag_throw';frames=4;fps=12;loop=$true;pivot=@(0.5,0.35);scale=1;speed=12;lifetimeTicks=24;hitbox=@(0.4,0.36);offset=@(1.8,0.1);sourceScale='first-bag-width20';separateFromSpecialProjectile=$true}
+    groundNormalFrames=6; groundNormalFps=15; groundNormalLoop=$false; groundNormalKeys=@(1,1,2,3,3,3); groundNormalPeakFrame=2
+    gaitNearLeg='anatomical-left'; gaitFarLeg='anatomical-right'; gaitSupportAlternates=$true; gaitPoseGuides='walk_attacks/pose-guides'
+    gaitBothArmsSwing=$true; gaitShouldersArePivots=$true; gaitArmsOpposeLegs=$true; gaitHandheldItemFollowsHand=$true
+    walkNearArmPhases=@('back','half-back','down','half-forward','forward','half-forward','down','half-back')
+    runContactFrames=@(0,1,4,5); runFlightFrames=@(2,3,6,7); runFlightFeetGapMin=4; runFlightFeetGapMax=32; runFlightHeadAboveStanding=2
+    supersededMotions=@{dash='ready/walk_attacks'} }
 foreach ($folder in 'generated','normalized') {
     Copy-Item -LiteralPath "art_source/art3_actions/$folder" -Destination (Join-Path $kitPath 'actions') -Recurse -Force
 }
@@ -58,30 +70,21 @@ foreach ($key in 'toma','ren','chizuru') {
 foreach ($name in 'Manifest.cs','ImageProcessing.cs','AnimationSmoothing.cs','SpriteForge.cs','AtlasPoseSplitter.cs','ActionAtlasBuilder.cs','ArtThreeActions.cs','ArtThreeIdle.cs','ArtThreeCrouch.cs','BuildArt3Actions.ps1','NormalizeActionAtlas.ps1','RecordActionSources.ps1') {
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination (Join-Path $kitPath "actions/tools/$name") -Force
 }
+New-Item -ItemType Directory -Force -Path (Join-Path $kitPath 'walk_attacks/tools'),(Join-Path $kitPath 'ready/walk_attacks') | Out-Null
+foreach ($folder in 'generated','normalized','pose-guides') {
+    Copy-Item -LiteralPath "art_source/art3_walk_attacks/$folder" -Destination (Join-Path $kitPath 'walk_attacks') -Recurse -Force
+}
+foreach ($name in 'generation-log.json','source-selection.json','source-inventory.json','verification.json','walk-verification.json','gait-verification.json','gait-review.md','README.md','pending-review.json') {
+    Copy-Item -LiteralPath "art_source/art3_walk_attacks/$name" -Destination (Join-Path $kitPath "walk_attacks/$name") -Force
+}
+foreach ($key in 'toma','ren','chizuru') { Copy-Item -LiteralPath "art_source/art3_walk_attacks/ready/$key" -Destination (Join-Path $kitPath 'ready/walk_attacks') -Recurse -Force }
+foreach ($name in 'Manifest.cs','ImageProcessing.cs','AnimationSmoothing.cs','SpriteForge.cs','AtlasPoseSplitter.cs','ActionAtlasBuilder.cs','ArtThreeActions.cs','ArtThreeWalkAttacks.cs','BagAtlasBuilder.cs','ArtThreeIdle.cs','ArtThreeCrouch.cs','BuildArt3WalkAttacks.ps1','NormalizeWalkAttackAtlas.ps1','RecordWalkAttackSources.ps1','MakeGaitPoseGuides.ps1','RenderGaitReview.ps1','MakeBagAttackGuide.ps1','RenderAttackReview.ps1','InspectWalkAttackAtlas.ps1','AdoptWalkAttackSource.ps1','SaveGeneratedSprite.ps1') {
+    Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination (Join-Path $kitPath "walk_attacks/tools/$name") -Force
+}
 $encoding = New-Object Text.UTF8Encoding($false)
 foreach ($item in @(@{name='spec.json';value=$spec},@{name='palettes.json';value=$palettes},@{name='prompts.json';value=$prompts},@{name='normalization.json';value=$normalizations})) {
     [IO.File]::WriteAllText((Join-Path $kitPath $item.name), (ConvertTo-Json -InputObject $item.value -Depth 14), $encoding)
 }
-$hashes = [ordered]@{}
-Get-ChildItem -LiteralPath $kitPath -File -Recurse | Where-Object Name -ne 'checksums.json' | Sort-Object FullName | ForEach-Object {
-    $relative = $_.FullName.Substring($kitPath.Length+1).Replace('\','/')
-    $hashes[$relative] = (Get-FileHash -LiteralPath $_.FullName).Hash
-}
-[IO.File]::WriteAllText((Join-Path $kitPath 'checksums.json'), (ConvertTo-Json -InputObject $hashes -Depth 4), $encoding)
-$zipPath = Join-Path $taskRootPath 'art_source/sprite_generation_kit.zip'
-Compress-Archive -LiteralPath $kitPath -DestinationPath $zipPath -Force
-Add-Type -AssemblyName System.IO.Compression.FileSystem
-$archive = [IO.Compression.ZipFile]::OpenRead($zipPath)
-try {
-    foreach ($relative in $hashes.Keys) {
-        $entryName = 'sprite_generation_kit/' + $relative
-        $entry = $archive.Entries | Where-Object { $_.FullName.Replace('\','/') -eq $entryName }
-        if (-not $entry) { throw "Missing portable-kit entry: $relative" }
-        $stream = $entry.Open(); $sha = [Security.Cryptography.SHA256]::Create()
-        try { $actual = ([BitConverter]::ToString($sha.ComputeHash($stream))).Replace('-','') }
-        finally { $sha.Dispose(); $stream.Dispose() }
-        if ($actual -ne $hashes[$relative]) { throw "Portable-kit checksum mismatch: $relative" }
-    }
-    Write-Output "Sprite generation kit: $($hashes.Count) files verified inside ZIP; references, palettes, prompts, guide and ready frames included."
-}
-finally { $archive.Dispose() }
+# Package approved walk/attack originals and every prompt; keep rejected originals on disk.
+# The packer verifies ZIP entries before replacement and preserves the previous ZIP.
+& (Join-Path $PSScriptRoot 'PackSpriteGenerationKit.ps1')

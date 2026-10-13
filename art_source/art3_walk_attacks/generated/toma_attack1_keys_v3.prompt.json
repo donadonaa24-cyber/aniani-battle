@@ -1,0 +1,10 @@
+{
+  "character": "toma",
+  "group": "attack1",
+  "version": 3,
+  "file": "art_source/art3_walk_attacks/generated/toma_attack1_keys_v3.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/toma_walk_inbetweens_keys_v6.png"
+  ],
+  "prompt": "Use-case precise sprite sheet edit. Source is the accepted five-figure Toma walking sheet. COPY the FIRST figure EXACTLY as upright standing ruler, especially its head/shoes/body ratios. Remove the fifth figure. Replace only arms/legs of second/third/fourth with RIGHT free-hand punch windup/peak/recovery respectively, all at source's same magnification. Do NOT redraw or enlarge any heads: use the source FIRST head silhouette identically on all four. Output EXACTLY FOUR whole separated figures one row with margins transparent background. Left arm is near arm with black tablet: in EVERY figure its shoulder at screen-LEFT, sleeve hangs DOWN, LEFT hand with tablet at screen-LEFT hip. Second windup: do not move this left sleeve/hand/tablet at all; RIGHT far hand from screen-RIGHT shoulder winds near screen-right ribs, elbow may be hidden behind torso. Third peak: left tablet stays DOWN same screen-left hip, RIGHT far arm extended straight forward screen-RIGHT at lower chest. Fourth recovery: same left tablet DOWN, right free fist halfway back. All legs grounded normal stance like standing, small weight shift only. Face angle/head size/shoe size copied from first accepted source; cannot widen top hair. Pixel art clean same palette and identity; exactly two arms and legs. NO effects/shadows/letters/grid. Standing height124 and head band38 in game derived at one common scale, maintain accepted proportions."
+}

@@ -18,6 +18,7 @@
         public bool stableIdle;
         public string sourceClip;
         public string prebuiltSheet; // Workspace-relative, already aligned fixed-grid frames. Raw scale reference is unchanged.
+        public bool prebuiltOnly; // New prepared effects have no historical raw clip and do not change the common palette.
         public int[] sourceFrames;
         public double sourceScaleFactor = 1;
         public int headOffset;

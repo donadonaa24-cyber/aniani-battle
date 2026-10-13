@@ -1,5 +1,5 @@
 {
-    "schemaVersion":  2,
+    "schemaVersion":  3,
     "game":  "AniBato",
     "cellWidth":  224,
     "cellHeight":  160,
@@ -197,5 +197,114 @@
                         "state":  2,
                         "frames":  8
                     }
-                ]
+                ],
+    "walkAttackNormalization":  "walk_attacks/normalized/*-scale.json",
+    "walkAttackSelection":  "walk_attacks/source-selection.json",
+    "walkAttackPrompts":  "walk_attacks/generation-log.json",
+    "walkFrameOrder":  [
+                           "left-contact",
+                           "left-down",
+                           "left-pass",
+                           "left-up",
+                           "right-contact",
+                           "right-down",
+                           "right-pass",
+                           "right-up"
+                       ],
+    "walkFrames":  8,
+    "walkFps":  15,
+    "walkLoop":  true,
+    "walkDistinctDrawnFrames":  true,
+    "bagOnlyWhileAttacking":  true,
+    "groundNormalChoreography":  {
+                                     "toma":  [
+                                                  "right-punch",
+                                                  "left-punch",
+                                                  "right-kick"
+                                              ],
+                                     "chizuru":  [
+                                                     "right-hand-bag",
+                                                     "right-hand-cross-body-bag",
+                                                     "bag-throw"
+                                                 ],
+                                     "ren":  [
+                                                 "diving-headbutt",
+                                                 "head-supported-capoeira",
+                                                 "arm-push-double-front-kick"
+                                             ]
+                                 },
+    "normalForwardDistance":  0.18,
+    "damageRecoilDistance":  0.18,
+    "damageRecoilTicks":  6,
+    "bagProjectile":  {
+                          "separateFromSpecialProjectile":  true,
+                          "sourceScale":  "first-bag-width20",
+                          "hitbox":  [
+                                         0.4,
+                                         0.36
+                                     ],
+                          "loop":  true,
+                          "lifetimeTicks":  24,
+                          "fps":  12,
+                          "clip":  "bag_throw",
+                          "scale":  1,
+                          "pivot":  [
+                                        0.5,
+                                        0.35
+                                    ],
+                          "frames":  4,
+                          "speed":  12,
+                          "offset":  [
+                                         1.8,
+                                         0.1
+                                     ]
+                      },
+    "groundNormalFrames":  6,
+    "groundNormalFps":  15,
+    "groundNormalLoop":  false,
+    "groundNormalKeys":  [
+                             1,
+                             1,
+                             2,
+                             3,
+                             3,
+                             3
+                         ],
+    "groundNormalPeakFrame":  2,
+    "gaitNearLeg":  "anatomical-left",
+    "gaitFarLeg":  "anatomical-right",
+    "gaitSupportAlternates":  true,
+    "gaitPoseGuides":  "walk_attacks/pose-guides",
+    "gaitBothArmsSwing":  true,
+    "gaitShouldersArePivots":  true,
+    "gaitArmsOpposeLegs":  true,
+    "gaitHandheldItemFollowsHand":  true,
+    "walkNearArmPhases":  [
+                              "back",
+                              "half-back",
+                              "down",
+                              "half-forward",
+                              "forward",
+                              "half-forward",
+                              "down",
+                              "half-back"
+                          ],
+    "runContactFrames":  [
+                             0,
+                             1,
+                             4,
+                             5
+                         ],
+    "runFlightFrames":  [
+                            2,
+                            3,
+                            6,
+                            7
+                        ],
+    "runFlightFeetGapMin":  4,
+    "runFlightFeetGapMax":  32,
+    "runFlightHeadAboveStanding":  2,
+    "supersededMotions":  {
+                              "dash":  "ready/walk_attacks"
+                          }
 }

@@ -1,0 +1,10 @@
+{
+  "character": "toma",
+  "group": "attack1",
+  "version": 1,
+  "file": "art_source/art3_walk_attacks/generated/toma_attack1_keys_v1.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/toma_walk_inbetweens_keys_v6.png"
+  ],
+  "prompt": "Use-case: production pixel-art ground normal-attack atlas. Character reference FIRST STANDING FIGURE is exact identity/scale/head/shoe ruler; ignore other example poses. EXACTLY FOUR complete separated figures ONE ROW RIGHT-facing with 50px exterior margins and generous gaps, SAME magnification, transparent background. Figure0 COPY unchanged original upright standing ruler. Figure1 attack windup. Figure2 striking peak. Figure3 recovery. Toma: black messy hair/blue eyes, black suit/shoes, white shirt/dark tie. LEFT near hand always holds black tablet at left hip; RIGHT free hand punches; never transfer tablet. ACTION: RIGHT short straight punch. Windup right fist near ribs; peak right arm extends at lower chest height from far shoulder; recovery fist halfway back. LEFT tablet beside hip throughout, both feet planted. CRITICAL all three action heads copy standing head/hair/hood silhouette at SAME WIDTH/HEIGHT/ANGLE. Preserve head/body ratio and original shoe size; never enlarge parts or scale figures independently. Keep hands/elbows/bags strictly BELOW CHIN, punch lower chest. Target game common standing heights124/100/112, head bands37/58/43 at depths25/31/34 tolerance2. All figures derive common scale from ruler. Anatomically continuous shoulder/elbow/wrist/fingers, EXACTLY TWO arms/TWO legs. Compact grounded attacks, preserve outfit/palette/sharp pixel clusters. NO VFX/trails/weapon/shadow/floor/text/labels/guides. Transparent RGBA. Fixed game cell224x160 later; source entire figures can be large but all identical scale. Do not crop shoes/props."
+}

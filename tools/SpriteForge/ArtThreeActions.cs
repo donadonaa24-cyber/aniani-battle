@@ -16,8 +16,14 @@ namespace AniBato.SpriteForge
         private static readonly int[][] Keys = { new[] { 1, 1, 1, 2, 2, 2 }, new[] { 3, 3, 3, 3, 3, 3 },
             new[] { 1, -1 }, new[] { 1, 1, 1, 1, 1, 1 }, new[] { 1, 2, 3 }, new[] { 1, 1, 2, 2, 3, 3, 4, 4 } };
         private static string Group(string clip) { return clip == "fall" ? "jump" : clip == "land" ? "jump_start" : clip; }
-        private static Raster Key(string root, string name, string clip, int index)
+        private static Raster Key(string root, string name, string clip, int index, bool useCurrentAdoption = false)
         {
+            if (useCurrentAdoption && clip == "dash")
+            {
+                var manifest = new JavaScriptSerializer().Deserialize<Manifest>(File.ReadAllText(Path.Combine(root, "art_source/" + name + ".manifest.json")));
+                if ((manifest.animations.Single(a => a.name == clip).prebuiltSheet ?? "").StartsWith("art_source/art3_walk_attacks/", StringComparison.Ordinal))
+                    return Raster.Load(Path.Combine(root, "art_source/art3_walk_attacks/normalized/" + name + "/dash_key_" + index.ToString("D2") + ".png"));
+            }
             return Raster.Load(Path.Combine(root, index < 0 ? "art_source/art3_idle/breathing/ready/" + name + "/idle_00.png" :
                 Folder + "normalized/" + name + "/" + Group(clip) + "_key_" + index.ToString("D2") + ".png"));
         }
@@ -97,11 +103,15 @@ namespace AniBato.SpriteForge
                     data.fps != fps[c] || data.loop != loops[c] || data.baseline != 159 || data.pixelsPerUnit != 50 || data.pivotX != .5f || data.pivotY != 0)
                     throw new InvalidOperationException("Action metadata contract failed: " + name + "/" + clip);
                 var colors = new HashSet<int>();
+                var manifest = json.Deserialize<Manifest>(File.ReadAllText(Path.Combine(root, "art_source/" + name + ".manifest.json")));
+                bool currentRun = clip == "dash" && (manifest.animations.Single(a => a.name == clip).prebuiltSheet ?? "").StartsWith("art_source/art3_walk_attacks/", StringComparison.Ordinal);
                 for (int f = 0; f < Keys[c].Length; f++)
                 {
-                    var cell = Key(root, name, clip, Keys[c][f]); var bounds = Pixels.Bounds(cell, 0, Width);
+                    var cell = Key(root, name, clip, Keys[c][f], true); var bounds = Pixels.Bounds(cell, 0, Width);
+                    bool flight = currentRun && (Keys[c][f] == 2 || Keys[c][f] == 4);
                     if (data.headHeights[f] != Height - bounds.Top || bounds.Left < 2 || bounds.Right > Width - 2 || bounds.Top < 3 ||
-                        (clip != "jump" && clip != "fall" && bounds.Bottom != Height)) throw new InvalidOperationException("Action anchor or margin failed.");
+                        (clip != "jump" && clip != "fall" && !flight && bounds.Bottom != Height)) throw new InvalidOperationException("Action anchor or margin failed.");
+                    if (flight) ActionAtlasBuilder.VerifyRunFlight(bounds, manifest.targetHeight);
                     for (int y = 0; y < Height; y++) for (int x = 0; x < Width; x++)
                     {
                         int color = sheet.Pixels[y * sheet.Width + f * Width + x];

@@ -25,7 +25,12 @@ if (Test-Path (Join-Path $Project 'Temp\UnityLockfile')) {
 }
 
 function Invoke-Unity([string[]]$UnityArgs) {
-    $p = Start-Process -FilePath $Unity -ArgumentList $UnityArgs -Wait -PassThru -NoNewWindow
+    # Start-Process -Wait waits for the whole descendant tree on Windows.
+    # Unity can leave a shared compiler prewarmer alive after the batch exits.
+    # Wait only for the actual Unity batch process and retain its real exit code.
+    $p = Start-Process -FilePath $Unity -ArgumentList $UnityArgs -PassThru -NoNewWindow
+    $null = $p.Handle
+    $p.WaitForExit()
     return $p.ExitCode
 }
 function Q([string]$s) { return '"' + $s + '"' }

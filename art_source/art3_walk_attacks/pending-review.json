@@ -1,0 +1,46 @@
+{
+  "pausedAt": "2026-10-13 03:56 JST",
+  "reason": "ART3E complete: all art connected and Unity all four gates passed. ART3F and ART3G visuals remain.",
+  "gameConnected": [
+    "toma/walk",
+    "ren/walk",
+    "chizuru/walk",
+    "toma/dash",
+    "ren/dash",
+    "chizuru/dash",
+    "toma/attack1",
+    "toma/attack2",
+    "toma/attack3",
+    "ren/attack1",
+    "ren/attack2",
+    "ren/attack3",
+    "chizuru/attack1",
+    "chizuru/attack2",
+    "chizuru/attack3",
+    "chizuru/bag_throw"
+  ],
+  "normalizedButNotConnected": [],
+  "pending": {
+    "ren/dash": {
+      "latestCandidate": "generated/ren_dash_keys_v7.png",
+      "approved": true,
+      "issues": [],
+      "rejected": {
+        "v1": "Raw right edge clipped; opposite last arm also unclear.",
+        "v2": "Head band 61 at key1, exceeds approved58 plus2.",
+        "v3": "Head band 61 at standing0, exceeds approved58 plus2."
+      },
+      "next": "Complete ground normal attacks then full Unity verification."
+    }
+  },
+  "notGenerated": [],
+  "unityArt3e": "BuildAll exit0; EditMode424/424; PlayMode32/32; Windows build exit0/Success; failures/skips0.",
+  "commitPushArt3e": "ready after all four Unity gates; record commit after push",
+  "updatedAt": "2026-10-13 JST",
+  "paused": false,
+  "checkpoint": "docs/codex_logs/art3e_checkpoint_20261013.md",
+  "rawSourceCount": 90,
+  "selectedSourceCount": 19,
+  "rejectedChizuruAttack2": "v1 head widths45/46/46/45 fail43+2; distinct torso twist and continuous right arm needed.",
+  "dotnetBattle": "375/375 Passed"
+}

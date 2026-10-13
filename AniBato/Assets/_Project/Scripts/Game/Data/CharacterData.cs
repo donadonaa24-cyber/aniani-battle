@@ -10,6 +10,9 @@ namespace AniBato.Game
         public CharacterDefinition Movement;
         public int TempoSchemaVersion;
         public int AccessibilitySchemaVersion;
+        public int NormalMotionSchemaVersion;
+        public int DamageReactionSchemaVersion;
+        public int NormalThrowSchemaVersion;
         public AttackData[] DirectionalNormals;
         public AttackData[] GroundNormals;
         public AttackData[] AirNormals;
@@ -53,6 +56,9 @@ namespace AniBato.Game
         // an initialization marker. Version0 keeps the existing presentation fallback.
         public int SchemaVersion;
         public string ProjectileClip, DownSpecialClip, UltimateClip;
+        public string NormalProjectileClip;
+        public int NormalProjectileSchemaVersion;
+        public float NormalProjectileScale = 1f;
         public float ProjectileScale = 0.5f, DownSpecialScale = 1f, UltimateScale = 1f;
         public float DownSpecialOpacity = 0.35f;
         public Vector2 DownSpecialOffset, UltimateOffset;

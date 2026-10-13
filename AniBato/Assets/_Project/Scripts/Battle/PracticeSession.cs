@@ -18,6 +18,7 @@ namespace AniBato.Battle
                 {
                     f.Position = f.PlayerIndex == 0 ? sim.Stage.SpawnP1 : sim.Stage.SpawnP2;
                     f.Velocity = default; f.Attack = null; f.Mode = FighterMode.Idle; f.HitstunRemaining = f.HitstopRemaining = 0;
+                    f.DamageRecoilRemaining = 0; f.DamageRecoilSpeed = 0; f.LastDamageLostHeart = false;
                     f.Grounded = false; f.GroundPlatform = -1; f.UpSpecialUsed = false; f.JumpsUsed = f.AirDashesUsed = 0;
                 }
             }

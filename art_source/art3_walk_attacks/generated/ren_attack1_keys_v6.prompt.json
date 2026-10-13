@@ -1,0 +1,10 @@
+{
+  "character": "ren",
+  "group": "attack1",
+  "version": 6,
+  "file": "art_source/art3_walk_attacks/generated/ren_attack1_keys_v6.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_attack1_keys_v5.png"
+  ],
+  "prompt": "Precise editing of the attached four-pose atlas. The FIRST standing character head got too thin in the last revision. Increase the horizontal width of ONLY that first complete head/hood/ears/hair/face by 18 percent around its center, keep head height unchanged and all body limbs and clothes unchanged. It should be wider, but not as wide as the second windup figure's hood. Target head top31pixels silhouette width58pixels when first standing full figure is 100pixels high; currently49. Do not scale the body and do not resize any other motion figure. Exactly four figures, same headbutt/headstand poses. Preserve transparent background and margins."
+}

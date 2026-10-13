@@ -55,9 +55,29 @@ namespace AniBato.Tests
                 Assert.That(character.DirectionalNormals.Skip(1).All(a => a && a.IsNormal), Is.True);
                 Assert.That(character.Movement.Stamina.Maximum, Is.GreaterThan(0));
                 Assert.That(character.AccessibilitySchemaVersion, Is.EqualTo(6));
+                Assert.That(character.NormalMotionSchemaVersion, Is.EqualTo(1));
+                Assert.That(character.DamageReactionSchemaVersion, Is.EqualTo(1));
+                Assert.That(character.NormalThrowSchemaVersion, Is.EqualTo(1));
+                foreach (var normal in character.GroundNormals.Concat(character.AirNormals).Concat(character.DirectionalNormals.Skip(1)))
+                    Assert.That(normal.Definition.NormalForwardDistance, Is.EqualTo(.18f), character.name + "/" + normal.name);
+                foreach (var attack in character.GroundNormals.Concat(character.AirNormals).Concat(character.DirectionalNormals.Skip(1)).Concat(character.Specials).Concat(new[] { character.Ultimate }))
+                {
+                    Assert.That(attack.Definition.DamageRecoilDistance, Is.EqualTo(.18f));
+                    Assert.That(attack.Definition.DamageRecoilFrames, Is.EqualTo(6));
+                }
                 Assert.That(character.Movement.UltimateCutInFrames, Is.EqualTo(30));
             }
             Assert.That(setup.Character(1).Portrait, Is.Not.Null); Assert.That(setup.Character(2).Portrait, Is.Not.Null);
+            var chizuru = setup.Character(2);
+            Assert.That(chizuru.GroundNormals[2].Definition.SpawnProjectile, Is.True);
+            Assert.That(chizuru.GroundNormals.Take(2).Any(a => a.Definition.SpawnProjectile), Is.False);
+            Assert.That(chizuru.SpriteEffects.NormalProjectileClip, Is.EqualTo("bag_throw"));
+            Assert.That(chizuru.SpriteEffects.NormalProjectileScale, Is.EqualTo(1));
+            Assert.That(chizuru.SpriteEffects.NormalProjectileSchemaVersion, Is.EqualTo(1));
+            var bag = chizuru.Animations.Find("bag_throw");
+            Assert.That(bag, Is.Not.Null); Assert.That(bag.Frames.Length, Is.EqualTo(4)); Assert.That(bag.Fps, Is.EqualTo(12));
+            Assert.That(bag.Loop, Is.True);
+            foreach (var frame in bag.Frames) { Assert.That(frame.rect.width, Is.EqualTo(224)); Assert.That(frame.rect.height, Is.EqualTo(160)); Assert.That(frame.pixelsPerUnit, Is.EqualTo(50)); }
         }
         [Test]
         public void StageThemesShareTheSameGeometryAndHaveThumbnailsAndShrinkRules()

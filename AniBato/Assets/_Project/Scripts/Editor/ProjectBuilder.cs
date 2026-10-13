@@ -226,6 +226,22 @@ namespace AniBato.EditorTools
             if (data.DirectionalNormals == null || data.DirectionalNormals.Length == 0) data.DirectionalNormals = new AttackData[10];
             for (int direction = 1; direction < 10; direction++)
                 if (!data.DirectionalNormals[direction]) data.DirectionalNormals[direction] = PlayableAttack(name + (NormalDirection)direction, defaults.DirectionalNormals[direction]);
+            if (data.NormalMotionSchemaVersion < 1)
+            {
+                MigrateNormalMotion(data.GroundNormals, defaults.GroundNormals);
+                MigrateNormalMotion(data.AirNormals, defaults.AirNormals);
+                MigrateNormalMotion(data.DirectionalNormals, defaults.DirectionalNormals);
+                data.NormalMotionSchemaVersion = 1;
+            }
+            if (data.DamageReactionSchemaVersion < 1)
+            {
+                MigrateDamageReaction(data.GroundNormals);
+                MigrateDamageReaction(data.AirNormals);
+                MigrateDamageReaction(data.DirectionalNormals);
+                MigrateDamageReaction(data.Specials);
+                MigrateDamageReaction(new[] { data.Ultimate });
+                data.DamageReactionSchemaVersion = 1;
+            }
             if (data.TempoSchemaVersion < 5)
             {
                 var old = PhaseThreeDefaults.Character(index);
@@ -237,6 +253,17 @@ namespace AniBato.EditorTools
                 data.TempoSchemaVersion = 5;
             }
             if (!data.Ultimate) data.Ultimate = PlayableAttack(name + "Ultimate", defaults.Ultimate);
+            if (data.NormalThrowSchemaVersion < 1)
+            {
+                if (index == 2)
+                {
+                    var third = data.GroundNormals[2].Definition;
+                    PhaseSixADefaults.ConfigureBagThrow(ref third);
+                    data.GroundNormals[2].Definition = third;
+                    EditorUtility.SetDirty(data.GroundNormals[2]);
+                }
+                data.NormalThrowSchemaVersion = 1;
+            }
             string spriteCharacter = index == 0 ? "toma" : index == 1 ? "ren" : "chizuru";
             data.Animations = AnimationSetBuilder.Build(spriteCharacter);
             if (!data.Animations) throw new InvalidOperationException(defaults.Name + "のSpriteForge出力がありません。");
@@ -257,6 +284,13 @@ namespace AniBato.EditorTools
             if (index == 2)
             {
                 data.Portrait = ImportPortrait("chizuru-casual-cutin.png");
+                if (data.SpriteEffects == null) data.SpriteEffects = new CharacterSpriteEffects();
+                if (data.SpriteEffects.NormalProjectileSchemaVersion < 1)
+                {
+                    data.SpriteEffects.NormalProjectileClip = "bag_throw";
+                    data.SpriteEffects.NormalProjectileScale = 1;
+                    data.SpriteEffects.NormalProjectileSchemaVersion = 1;
+                }
             }
             if (!data.Portrait && index == 1)
                 data.Portrait = ImportPortrait("ren-dog-rook.png");
@@ -268,6 +302,28 @@ namespace AniBato.EditorTools
             for (int i = 0; i < existing.Length && i < defaults.Length; i++)
                 if (!existing[i]) existing[i] = PlayableAttack(prefix + (i + 1), defaults[i]);
             return existing;
+        }
+        private static void MigrateNormalMotion(AttackData[] assets, AttackDefinition[] defaults)
+        {
+            for (int i = 0; i < assets.Length && i < defaults.Length; i++)
+            {
+                if (!assets[i] || !assets[i].IsNormal) continue;
+                var definition = assets[i].Definition;
+                if (definition.NormalForwardDistance != 0) continue;
+                definition.NormalForwardDistance = defaults[i].NormalForwardDistance;
+                assets[i].Definition = definition;
+                EditorUtility.SetDirty(assets[i]);
+            }
+        }
+        private static void MigrateDamageReaction(AttackData[] assets)
+        {
+            foreach (var asset in assets)
+            {
+                if (!asset || asset.Definition.DamageRecoilDistance != 0 || asset.Definition.DamageRecoilFrames != 0) continue;
+                var definition = asset.Definition;
+                definition.DamageRecoilDistance = .18f; definition.DamageRecoilFrames = 6;
+                asset.Definition = definition; EditorUtility.SetDirty(asset);
+            }
         }
         private static AttackData PlayableAttack(string name, in AttackDefinition definition)
         {

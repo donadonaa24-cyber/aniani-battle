@@ -66,7 +66,8 @@ namespace AniBato.Battle
                 recoveryQueued = true;
                 float range = Math.Abs(seen.Position.X - self.Position.X), height = seen.Position.Y - self.Position.Y;
                 int facing = Math.Sign(seen.Position.X - self.Position.X);
-                if (InRange(self.Definition.GroundNormals[0], range, height, opponent.Definition.HurtboxSize)) return Action(facing, InputButtons.Attack);
+                if (InRange(self.Definition.GroundNormals[0], range, height, opponent.Definition.HurtboxSize) &&
+                    SafeAttack(self, safe, self.Definition.GroundNormals[0], facing)) return Action(facing, InputButtons.Attack);
                 if (seen.Mode != FighterMode.Guard && self.SpecialCooldown(SpecialSlot.Neutral) == 0 && InRange(self.Definition.Special(SpecialSlot.Neutral), range, height, opponent.Definition.HurtboxSize))
                     return new FrameInput(facing, held: InputButtons.Special, pressed: InputButtons.Special, actionX: 0, actionY: 0);
             }
@@ -95,7 +96,11 @@ namespace AniBato.Battle
                     return Action(toward, InputButtons.Attack);
                 if (self.Attack.Definition.IsNormal && !self.Attack.NextQueued && queuedChain != self.Attack.Id &&
                     self.Attack.Frame >= self.Attack.Definition.StartupFrames)
-                { queuedChain = self.Attack.Id; if (distance <= Definition.CloseDistance + 1 && Chance(Definition.ComboChance)) return Action(toward, InputButtons.Attack); }
+                {
+                    queuedChain = self.Attack.Id;
+                    if (distance <= Definition.CloseDistance + 1 && SafeNormalChain(self, safe, sim.Rules.MaxComboHits) && Chance(Definition.ComboChance))
+                        return Action(toward, InputButtons.Attack);
+                }
                 return default;
             }
             if (!self.CanControlMovement) return default;
@@ -149,7 +154,9 @@ namespace AniBato.Battle
                 movement = new FrameInput(self.Hearts <= opponent.Hearts && distance < Definition.CloseDistance ? -toward : 0);
                 return movement;
             }
-            if (seen.Mode == FighterMode.Guard && close && Chance(Definition.AttackChance)) return Action(toward, InputButtons.Attack, self.Grounded ? -1 : 0);
+            if (seen.Mode == FighterMode.Guard && close &&
+                SafeAttack(self, safe, DirectionalAttackSelector.Attack(self.Definition, self.Grounded ? NormalDirection.Crouch : NormalDirection.Weak, 0, !self.Grounded), toward) &&
+                Chance(Definition.AttackChance)) return Action(toward, InputButtons.Attack, self.Grounded ? -1 : 0);
             if (seen.Mode != FighterMode.Guard && Chance(Definition.SpecialChance))
             {
                 SpecialSlot slot = ChooseSpecial(self, seen, distance, dy);
@@ -159,7 +166,7 @@ namespace AniBato.Battle
                     return new FrameInput(toward, held: InputButtons.Special, pressed: InputButtons.Special,
                         actionX: slot == SpecialSlot.Neutral ? 0 : toward, actionY: slot == SpecialSlot.Up ? 1 : slot == SpecialSlot.Down ? -1 : 0);
             }
-            if (close && Chance(Definition.AttackChance)) return Action(toward, InputButtons.Attack);
+            if (close && SafeAttack(self, safe, normals[0], toward) && Chance(Definition.AttackChance)) return Action(toward, InputButtons.Attack);
             // A safe dash must also be short enough not to overshoot the opponent.
             float dashTravel = self.Definition.DashSpeed * self.DashMultiplier * self.Definition.GroundDashFrames / 60f;
             if (self.Mode != FighterMode.Dash && self.Grounded && StaminaSystem.CanSpend(self, self.Definition.Stamina.GroundDashCost + self.Definition.Stamina.AirJumpCost) &&
@@ -183,8 +190,26 @@ namespace AniBato.Battle
             if (distance < Definition.CloseDistance) return SpecialSlot.Side;
             return SpecialSlot.Neutral;
         }
-        private bool SafeAttack(FighterState self, BattleRect floor, AttackDefinition attack, int facing) =>
-            SafeMotion(self, floor, attack.ActiveVelocity.X * (self.Grounded ? facing : self.Facing), attack.ActiveFrames);
+        private bool SafeAttack(FighterState self, BattleRect floor, AttackDefinition attack, int facing)
+        {
+            int direction = self.Grounded ? facing : self.Facing;
+            float windup = attack.NormalForwardSpeed * attack.StartupFrames / BattleRuleDefinition.TickRate;
+            float total = (attack.IsNormal ? attack.NormalForwardDistance : 0) + attack.ActiveVelocity.X * attack.ActiveFrames / BattleRuleDefinition.TickRate;
+            return SafeMotion(self, floor, windup * direction * BattleRuleDefinition.TickRate, 1) &&
+                SafeMotion(self, floor, total * direction * BattleRuleDefinition.TickRate, 1);
+        }
+        private bool SafeNormalChain(FighterState self, BattleRect floor, int maxComboHits)
+        {
+            var current = self.Attack;
+            var normals = current.AirborneAttack ? self.Definition.AirNormals : self.Definition.GroundNormals;
+            int next = current.ChainIndex + 1;
+            if (next >= Math.Min(maxComboHits, normals.Length)) return false;
+            var attack = DirectionalAttackSelector.Attack(self.Definition, current.Definition.NormalDirection, next, current.AirborneAttack);
+            int remaining = Math.Max(0, current.Definition.StartupFrames + current.Definition.ActiveFrames - current.Frame - 1);
+            float travel = remaining * (current.Definition.NormalForwardSpeed + current.Definition.ActiveVelocity.X) / BattleRuleDefinition.TickRate;
+            travel += attack.NormalForwardDistance + attack.ActiveVelocity.X * attack.ActiveFrames / BattleRuleDefinition.TickRate;
+            return SafeMotion(self, floor, travel * self.Facing * BattleRuleDefinition.TickRate, 1);
+        }
         private bool SafeMotion(FighterState self, BattleRect floor, float speed, int frames)
         {
             float end = self.Position.X + speed * frames / 60f;
@@ -194,6 +219,7 @@ namespace AniBato.Battle
         {
             float reach = Math.Abs(attack.Hitbox.Center.X) + attack.Hitbox.Size.X * .5f + target.X * .5f;
             reach += Math.Abs(attack.ActiveVelocity.X) * attack.ActiveFrames / 60f;
+            if (attack.IsNormal) reach += attack.NormalForwardDistance;
             if (attack.SpawnProjectile) reach += attack.ProjectileSpeed * attack.ProjectileLifetimeFrames / 60f;
             return dx < reach - .15f && Math.Abs(dy - attack.Hitbox.Center.Y) < (attack.Hitbox.Size.Y + target.Y) * .5f;
         }

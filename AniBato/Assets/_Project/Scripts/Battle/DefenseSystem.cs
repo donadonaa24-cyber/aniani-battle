@@ -61,6 +61,8 @@ namespace AniBato.Battle
                     int previousHearts = source.Hearts;
                     counterCombo.RegisterHit(tick, rules, false);
                     damage.AccumulateNormal(source, counterCombo, target.PlayerIndex, contact.Attack.Id, tick, rules, events);
+                    DamageSystem.BeginRecoil(source, contact.Attack.Definition, -contact.Facing);
+                    source.LastDamageLostHeart = source.Hearts < previousHearts;
                     source.Attack = null; source.DashRemaining = 0;
                     source.FastFalling = false; source.GuardStunRemaining = 0; source.ActionFrames = 0;
                     source.Velocity = new BattleVector(definition.CounterKnockback.X * -contact.Facing, definition.CounterKnockback.Y);

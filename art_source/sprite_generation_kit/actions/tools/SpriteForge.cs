@@ -1,4 +1,4 @@
-﻿namespace AniBato.SpriteForge
+namespace AniBato.SpriteForge
 {
     using System;
     using System.Collections.Generic;
@@ -21,6 +21,15 @@
             var sources = new List<Tuple<Animation, Raster, List<Rectangle>>>();
             foreach (var animation in manifest.animations)
             {
+                if (animation.prebuiltOnly)
+                {
+                    var prepared = Raster.Load(Within(root, animation.prebuiltSheet));
+                    if (prepared.Width != manifest.cellWidth * animation.frames || prepared.Height != manifest.cellHeight)
+                        throw new InvalidOperationException("Prepared-only source dimensions mismatch: " + animation.name);
+                    sources.Add(Tuple.Create(animation, prepared, Enumerable.Range(0, animation.frames).Select(i =>
+                        new Rectangle(i * manifest.cellWidth, 0, manifest.cellWidth, manifest.cellHeight)).ToList()));
+                    continue;
+                }
                 var source = Raster.Load(Path.Combine(input, (animation.sourceClip ?? animation.name) + ".png"));
                 Pixels.Key(source, manifest.keyTolerance); Pixels.RemoveSpecks(source, animation.anchor == "effect" ? 12 : 70);
                 var bounds = Pixels.Split(source, 12);
@@ -42,7 +51,7 @@
                 }
                 clips.Add(clip);
             }
-            int[] palette = Pixels.Palette(clips.SelectMany(c => c.Frames), manifest.paletteSize);
+            int[] palette = Pixels.Palette(clips.Where(c => !c.Definition.prebuiltOnly).SelectMany(c => c.Frames), manifest.paletteSize);
             Directory.CreateDirectory(output); var reports = new List<object>();
             foreach (var clip in clips)
             {
@@ -90,7 +99,7 @@
                     pixelsPerUnit = manifest.pixelsPerUnit, targetHeight = manifest.targetHeight, baseline = manifest.baseline, bindings = outputBindings, headHeights = headHeights };
                 WriteJson(Path.Combine(output, clip.Definition.name + ".json"), metadata);
                 reports.Add(new { name = clip.Definition.name, frames = details, outputFrames = outputCount,
-                    synthesis = !String.IsNullOrEmpty(clip.Definition.prebuiltSheet) ? clip.Definition.prebuiltSheet.StartsWith("art_source/art3_actions/") ? "drawn-action-key-hold" : "single-reference-body-breathing" : clip.Definition.stableIdle ? "single-reference-breathing" : (clip.Definition.sourceClip ?? "").EndsWith("_phase6b") ? "drawn-key-inbetweens" : "clean-key-hold", headHeights = headHeights });
+                    synthesis = !String.IsNullOrEmpty(clip.Definition.prebuiltSheet) ? clip.Definition.prebuiltSheet.StartsWith("art_source/art3_walk_attacks/") ? "drawn-ground-key-hold" : clip.Definition.prebuiltSheet.StartsWith("art_source/art3_actions/") ? "drawn-action-key-hold" : "single-reference-body-breathing" : clip.Definition.stableIdle ? "single-reference-breathing" : (clip.Definition.sourceClip ?? "").EndsWith("_phase6b") ? "drawn-key-inbetweens" : "clean-key-hold", headHeights = headHeights });
             }
             WriteJson(Path.Combine(output, "forge-report.json"), new { schemaVersion = 1, sourceReferenceHeight = referenceHeight, commonScale = scale,
                 keyTolerance = manifest.keyTolerance, palette = palette.Select(c => "#" + (c & 0xffffff).ToString("X6")).ToArray(), clips = reports });
@@ -110,10 +119,10 @@
             if (m.anchorRgbMin == null || m.anchorRgbMax == null || m.anchorRgbMin.Length != 3 || m.anchorRgbMax.Length != 3) throw new InvalidOperationException("Invalid anchor color range.");
             var names = new HashSet<string>();
             foreach (var a in m.animations)
-                if (String.IsNullOrWhiteSpace(a.name) || a.name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 || a.name.Contains("..") || !names.Add(a.name) || (a.sourceAnchors != null && a.sourceAnchors.Length != a.frames) || a.frames < 1 || a.frames > 8 || a.inbetweenFrames < 0 || a.inbetweenFrames > 8 || a.fps < 1 || (a.anchor != "feet" && a.anchor != "center" && a.anchor != "effect"))
+                if (String.IsNullOrWhiteSpace(a.name) || a.name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 || a.name.Contains("..") || !names.Add(a.name) || (a.sourceAnchors != null && a.sourceAnchors.Length != a.frames) || a.frames < 1 || a.frames > 8 || a.inbetweenFrames < 0 || a.inbetweenFrames > 8 || a.fps < 1 || (a.anchor != "feet" && a.anchor != "center" && a.anchor != "effect") || (a.prebuiltOnly && (String.IsNullOrEmpty(a.prebuiltSheet) || a.anchor != "effect")))
                     throw new InvalidOperationException("Invalid animation in manifest: " + a.name);
         }
-        private static void WriteJson(string path, object value) { File.WriteAllText(path, Json.Serialize(value), new System.Text.UTF8Encoding(false)); }
+        private static void WriteJson(string path, object value) { FileOutputs.WriteAllText(path, Json.Serialize(value), new System.Text.UTF8Encoding(false)); }
         public static void Verify(Manifest m, string output)
         {
             var palette = new HashSet<int>(); int frames = 0;
@@ -136,7 +145,22 @@
                 {
                     Rectangle bounds = Pixels.Bounds(sheet, i * m.cellWidth, (i + 1) * m.cellWidth);
                     if (bounds.IsEmpty) throw new InvalidOperationException(animation.name + ": empty frame.");
-                    if (animation.anchor == "feet" && bounds.Bottom - 1 != m.baseline) throw new InvalidOperationException(animation.name + ": foot baseline mismatch.");
+                    bool runFlight = animation.name == "dash" && (animation.prebuiltSheet ?? "").StartsWith("art_source/art3_walk_attacks/", StringComparison.Ordinal) &&
+                        (i == 2 || i == 3 || i == 6 || i == 7);
+                    if (runFlight)
+                    {
+                        int gap = m.cellHeight - bounds.Bottom;
+                        if (gap < 4 || gap > 32 || bounds.Top != m.cellHeight - m.targetHeight - 2)
+                            throw new InvalidOperationException("Running flight must keep head two pixels above standing and feet 4..32 pixels above baseline.");
+                    }
+                    else if (m.character == "ren" && animation.name == "attack1" && i == 2 &&
+                        (animation.prebuiltSheet ?? "").StartsWith("art_source/art3_walk_attacks/", StringComparison.Ordinal))
+                    {
+                        int gap = m.cellHeight - bounds.Bottom;
+                        if (gap < 4 || gap > 64 || bounds.Top != 58)
+                            throw new InvalidOperationException("Diving headbutt requires unchanged head height102 and whole pose4..64 pixels above baseline.");
+                    }
+                    else if (animation.anchor == "feet" && bounds.Bottom - 1 != m.baseline) throw new InvalidOperationException(animation.name + ": foot baseline mismatch.");
                     if (animation.validateHeight && Math.Abs(bounds.Height - m.targetHeight) > 2) throw new InvalidOperationException(animation.name + ": standing height outside tolerance: " + bounds.Height);
                     frames++;
                 }

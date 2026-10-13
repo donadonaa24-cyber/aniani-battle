@@ -31,8 +31,41 @@
             {
                 var data = bitmap.LockBits(new Rectangle(0, 0, Width, Height), ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
                 for (int y = 0; y < Height; y++) Marshal.Copy(Pixels, y * Width, IntPtr.Add(data.Scan0, y * data.Stride), Width);
-                bitmap.UnlockBits(data); bitmap.Save(path, ImageFormat.Png);
+                bitmap.UnlockBits(data);
+                using (var encoded = new System.IO.MemoryStream())
+                { bitmap.Save(encoded, ImageFormat.Png); FileOutputs.WriteAllBytes(path, encoded.ToArray()); }
             }
+        }
+    }
+    public static class FileOutputs
+    {
+        // Readers may map previews while a build is running. Replace a complete new
+        // file instead of truncating the mapped file; unchanged outputs need no write.
+        public static void WriteAllText(string path, string content, System.Text.Encoding encoding)
+        { WriteAllBytes(path, encoding.GetBytes(content)); }
+        public static void WriteAllBytes(string path, byte[] bytes)
+        {
+            if (System.IO.File.Exists(path) && System.IO.File.ReadAllBytes(path).SequenceEqual(bytes)) return;
+            string temporary = path + ".spriteforge-" + Guid.NewGuid().ToString("N") + ".tmp";
+            try
+            {
+                System.IO.File.WriteAllBytes(temporary, bytes);
+                for (int attempt = 0; ; attempt++)
+                {
+                    try
+                    {
+                        if (System.IO.File.Exists(path)) System.IO.File.Replace(temporary, path, null);
+                        else System.IO.File.Move(temporary, path);
+                        return;
+                    }
+                    catch (System.IO.IOException error)
+                    {
+                        if (attempt == 4) throw new System.IO.IOException("Output locked: " + System.IO.Path.GetFileName(path), error);
+                        System.Threading.Thread.Sleep(100 * (attempt + 1));
+                    }
+                }
+            }
+            finally { if (System.IO.File.Exists(temporary)) System.IO.File.Delete(temporary); }
         }
     }
     public static class Pixels

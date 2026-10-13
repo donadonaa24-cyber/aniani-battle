@@ -33,6 +33,8 @@ namespace AniBato.Battle
             bool finish = attack.Definition.IsNormal && combo.Finished;
             BattleVector knockback = (finish ? rules.ComboFinishKnockback : attack.Definition.Knockback) * SkillSystem.Multiplier(attack.Definition.KnockbackMultiplier);
             target.Velocity = new BattleVector(knockback.X * contact.Facing, knockback.Y);
+            BeginRecoil(target, attack.Definition, contact.Facing);
+            target.LastDamageLostHeart = target.Hearts < beforeHearts;
             if (target.Hearts < beforeHearts && target.Hearts > 0 && rules.HeartRecoveryFrames > 0)
                 BeginHeartRecovery(target, contact.Facing, rules);
             target.FastFalling = false;
@@ -68,6 +70,12 @@ namespace AniBato.Battle
             float x = System.Math.Max(System.Math.Abs(target.Velocity.X), rules.HeartRecoveryKnockback.X);
             target.Velocity = new BattleVector(direction * x, System.Math.Max(target.Velocity.Y, rules.HeartRecoveryKnockback.Y));
             target.Grounded = false; target.GroundPlatform = -1;
+        }
+        internal static void BeginRecoil(FighterState target, in AttackDefinition attack, int direction)
+        {
+            target.DamageRecoilRemaining = target.Hearts > 0 ? attack.DamageRecoilFrames : 0;
+            target.DamageRecoilSpeed = target.DamageRecoilRemaining > 0 ?
+                attack.DamageRecoilDistance * BattleRuleDefinition.TickRate / attack.DamageRecoilFrames * direction : 0;
         }
 
         private static void LoseHearts(FighterState target, int amount, int source, long attack, int tick, List<BattleEvent> events)

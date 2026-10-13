@@ -20,6 +20,7 @@ namespace AniBato.Battle
             {
                 Name = "仮特殊 " + slot, Kind = AttackKind.Special, IsCloseRange = slot != SpecialSlot.Neutral,
                 StartupFrames = 6, ActiveFrames = 8, RecoveryFrames = 18,
+                DamageRecoilDistance = .18f, DamageRecoilFrames = 6,
                 Hitbox = new BattleRect(new BattleVector(1.3f, 0), new BattleVector(2.4f, 2.2f)),
                 HitstopFrames = 3, HitstunFrames = 12, Knockback = new BattleVector(5, 4)
             };
@@ -41,6 +42,7 @@ namespace AniBato.Battle
         {
             Name = "仮超必殺", Kind = AttackKind.Ultimate, IsCloseRange = true, PiercesNormalDodge = true,
             StartupFrames = 14, ActiveFrames = 4, RecoveryFrames = 60,
+            DamageRecoilDistance = .18f, DamageRecoilFrames = 6,
             Hitbox = new BattleRect(new BattleVector(2.2f, 0), new BattleVector(5, 3.5f)),
             HitstopFrames = 8, HitstunFrames = 24, Knockback = new BattleVector(12, 8)
         };

@@ -16,6 +16,9 @@ MonoBehaviour:
     Name: "\u900F\u771F \u7A7A\u4E2D1"
     Kind: 0
     IsCloseRange: 1
+    NormalDirection: 0
+    BreaksGuard: 0
+    LandingRecoveryFrames: 0
     StartupFrames: 4
     ActiveFrames: 3
     DamageDelayFrames: 0
@@ -39,6 +42,10 @@ MonoBehaviour:
     ActiveVelocity:
       X: 0
       Y: 0
+    NormalForwardDistance: 0.18
+    DamageRecoilDistance: 0.18
+    DamageRecoilFrames: 6
+    VerticalMotionOnStartOnly: 0
     ProjectileLaunchVelocity:
       X: 0
       Y: 0

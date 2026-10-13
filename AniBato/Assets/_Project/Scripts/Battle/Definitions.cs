@@ -27,6 +27,10 @@ namespace AniBato.Battle
         public float ProjectileSpeed;
         public int ProjectileLifetimeFrames;
         public BattleVector ActiveVelocity;
+        public float NormalForwardDistance;
+        public float DamageRecoilDistance;
+        public int DamageRecoilFrames;
+        public float NormalForwardSpeed => IsNormal ? NormalForwardDistance * BattleRuleDefinition.TickRate / (StartupFrames + ActiveFrames) : 0;
         public bool VerticalMotionOnStartOnly;
         public BattleVector ProjectileLaunchVelocity;
         public float ProjectileGravity;
@@ -53,6 +57,9 @@ namespace AniBato.Battle
             if (LandingRecoveryFrames < 0 || StartupFrames < 0 || ActiveFrames < 1 || DamageDelayFrames < 0 || DamageDelayFrames >= ActiveFrames || RecoveryFrames < 0 || HitstopFrames < 0 ||
                 HitstunFrames < 0 || Hitbox.Size.X <= 0 || Hitbox.Size.Y <= 0 ||
                 (SpawnProjectile && (ProjectileSpeed <= 0 || ProjectileLifetimeFrames < 1)) ||
+                NormalForwardDistance < 0 || float.IsNaN(NormalForwardDistance) || float.IsInfinity(NormalForwardDistance) ||
+                DamageRecoilDistance < 0 || float.IsNaN(DamageRecoilDistance) || float.IsInfinity(DamageRecoilDistance) ||
+                DamageRecoilFrames < 0 || DamageRecoilDistance > 0 && DamageRecoilFrames < 1 ||
                 ProjectileGravity < 0 || ParalysisFrames < 0 || MarkFrames < 0 || SelfHealNormalHits < 0 ||
                 CooldownFrames < 0 || KnockbackMultiplier < 0 || ProjectileEraseCount < -1 || GuardedRecoveryFrames < 0 ||
                 (RequiresFollowup && (StartupFrames < 1 || StanceFrames < 1)) ||

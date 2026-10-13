@@ -203,6 +203,8 @@ namespace AniBato.Battle
                 if (fighter.Velocity.Y > 0) { fighter.Grounded = false; fighter.GroundPlatform = -1; fighter.FastFalling = false; }
             }
             else fighter.Velocity = new BattleVector(0, fighter.Velocity.Y);
+            if (attack.Definition.IsNormal && attack.Frame < attack.Definition.StartupFrames + attack.Definition.ActiveFrames)
+                fighter.Velocity = new BattleVector(fighter.Velocity.X + attack.Definition.NormalForwardSpeed * fighter.Facing, fighter.Velocity.Y);
         }
         private static void BeginDefense(FighterState fighter, FighterMode mode)
         {

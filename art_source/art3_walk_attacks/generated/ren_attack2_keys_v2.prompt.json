@@ -1,0 +1,10 @@
+{
+  "character": "ren",
+  "group": "attack2",
+  "version": 2,
+  "file": "art_source/art3_walk_attacks/generated/ren_attack2_keys_v2.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_attack2_keys_v1.png"
+  ],
+  "prompt": "Precise sprite-atlas correction. Edit the provided Ren capoeira atlas, KEEP all four figures and all their head/hood shapes, legs, shoes, mittens and relative scale unchanged. Transparent background, four separate figures, same canvas and overall layout, no text/effects.\nONLY correction is the THIRD figure's cape: its blue cape tip currently hangs down at screen right beside the upside-down hood. Fold that ENTIRE low blue/red/cream cape tail UP behind the HIP/BELT, above the dark shorts' waist. It must stay up around the waist and disappear behind the raised legs. The lowest 151 source-pixel rows of this third figure must contain ONLY the existing unchanged upside-down dog hood/crown/ears. No cape strip or forearm sticking out beyond the hood in that low region.\nThe attack remains head-crown supported, right leg sweeping high toward screen RIGHT, left leg bent. Preserve the EXACT cream crown and red ear silhouette of the second/fourth figures; all three inverted heads have same width and scale. Do not shrink the head, do not change ears, do not change first standing ruler, do not change other figures. Keep shoe and body proportions pixel-consistent. Existing sprite style and colors, fully transparent RGBA."
+}

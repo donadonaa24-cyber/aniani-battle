@@ -22,6 +22,7 @@ AniBato/*.log
 # Build output (repo root)
 Build/
 TestResults/
+art_source/sprite_generation_kit-*.zip
 tools/Validation/obj/
 tools/Validation/bin/
 
@@ -35,6 +36,7 @@ Desktop.ini
 *.pem
 *.key
 docs/art_reference/_style_local/
+docs/art_reference/_motion_local/
 
 # Rejected image-generation revisions (kept locally for audit)
 art_source/rejected/

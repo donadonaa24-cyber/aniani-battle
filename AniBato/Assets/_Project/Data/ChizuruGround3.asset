@@ -15,7 +15,10 @@ MonoBehaviour:
   Definition:
     Name: "\u5343\u9DB4 \u5730\u4E0A3"
     Kind: 0
-    IsCloseRange: 1
+    IsCloseRange: 0
+    NormalDirection: 0
+    BreaksGuard: 0
+    LandingRecoveryFrames: 0
     StartupFrames: 7
     ActiveFrames: 3
     DamageDelayFrames: 0
@@ -25,20 +28,24 @@ MonoBehaviour:
         X: 1.8
         Y: 0.1
       Size:
-        X: 3
-        Y: 1.8
+        X: 0.4
+        Y: 0.36
     HitstopFrames: 4
     HitstunFrames: 8
     Knockback:
       X: 2
       Y: 0
     PiercesNormalDodge: 0
-    SpawnProjectile: 0
-    ProjectileSpeed: 0
-    ProjectileLifetimeFrames: 0
+    SpawnProjectile: 1
+    ProjectileSpeed: 12
+    ProjectileLifetimeFrames: 24
     ActiveVelocity:
       X: 0
       Y: 0
+    NormalForwardDistance: 0.18
+    DamageRecoilDistance: 0.18
+    DamageRecoilFrames: 6
+    VerticalMotionOnStartOnly: 0
     ProjectileLaunchVelocity:
       X: 0
       Y: 0

@@ -1,0 +1,10 @@
+{
+  "character": "ren",
+  "group": "attack1",
+  "version": 7,
+  "file": "art_source/art3_walk_attacks/generated/ren_attack1_keys_v7.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_attack1_keys_v4.png"
+  ],
+  "prompt": "Make a VERY TINY LOCAL adjustment to the first standing figure ONLY in this four-pose atlas. On the FIRST dog's hood, move the OUTERMOST LEFT contour of its LEFT red-brown floppy ear about 15 SOURCE pixels inward to the right; the image is 2172px wide and that standing character is 510px tall. Keep the inner ear contour, cream hood, face, hair, right ear, body, legs and all other features exactly unchanged. This only makes the first hood silhouette slightly narrower, from width61 to width58 after normalization to 100pixel character height. Do NOT shrink the whole head or body. Other three motion figures completely unchanged: crouch windup, airborne forward diving headbutt, and upside-down headstand. Same transparent canvas, four full separated figures, unchanged margins."
+}

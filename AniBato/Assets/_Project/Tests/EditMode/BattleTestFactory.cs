@@ -21,6 +21,8 @@ namespace AniBato.Tests
             var character = PhaseOneDefaults.Character();
             var attack = PhaseOneDefaults.Normal(); attack.Knockback = default; attack.HitstopFrames = 0;
             attack.HitstunFrames = 0; attack.ActiveFrames = activeFrames; attack.StartupFrames = startup;
+            // This fixture isolates damage/KO ordering at fixed positions, rather than locomotion.
+            attack.NormalForwardDistance = 0; attack.DamageRecoilDistance = 0; attack.DamageRecoilFrames = 0;
             character.GroundNormals = new[] { attack, attack, attack }; character.AirNormals = new[] { attack, attack, attack };
             return character;
         }

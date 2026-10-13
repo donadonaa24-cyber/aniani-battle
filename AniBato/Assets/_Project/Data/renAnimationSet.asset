@@ -113,7 +113,7 @@ MonoBehaviour:
     - {fileID: -1700103991, guid: 4573aa8029770b143aba913cb9d25cfd, type: 3}
     - {fileID: -152113160, guid: 4573aa8029770b143aba913cb9d25cfd, type: 3}
     - {fileID: -1450391069, guid: 4573aa8029770b143aba913cb9d25cfd, type: 3}
-    HeadHeights: 5e0000005e0000005c0000005c0000005f0000005f000000i
+    HeadHeights: 5a0000005a00000066000000640000006400000064000000i
     Fps: 15
     Loop: 0
   - Name: attack2
@@ -124,7 +124,7 @@ MonoBehaviour:
     - {fileID: -2110654503, guid: 13abaa4d93591ee49bfb0df2142d8737, type: 3}
     - {fileID: -392526181, guid: 13abaa4d93591ee49bfb0df2142d8737, type: 3}
     - {fileID: -80793281, guid: 13abaa4d93591ee49bfb0df2142d8737, type: 3}
-    HeadHeights: 640000006400000061000000610000006400000064000000i
+    HeadHeights: 5a0000005a0000005a000000540000005400000054000000i
     Fps: 15
     Loop: 0
   - Name: attack3
@@ -135,7 +135,7 @@ MonoBehaviour:
     - {fileID: -458787682, guid: cd9acba8fca26a94fb630601c08373a0, type: 3}
     - {fileID: 2079125216, guid: cd9acba8fca26a94fb630601c08373a0, type: 3}
     - {fileID: 1580745828, guid: cd9acba8fca26a94fb630601c08373a0, type: 3}
-    HeadHeights: 5d0000005d0000004e0000004e0000005d0000005d000000i
+    HeadHeights: 5a0000005a000000570000005e0000005e0000005e000000i
     Fps: 15
     Loop: 0
   - Name: back_attack
@@ -199,7 +199,7 @@ MonoBehaviour:
     - {fileID: 1997971655, guid: c6fce51ea626a1741894b08fd98d7110, type: 3}
     - {fileID: 1475889981, guid: c6fce51ea626a1741894b08fd98d7110, type: 3}
     - {fileID: 242169939, guid: c6fce51ea626a1741894b08fd98d7110, type: 3}
-    HeadHeights: 6200000062000000630000006300000060000000600000006400000064000000i
+    HeadHeights: 6300000063000000660000006600000063000000630000006600000066000000i
     Fps: 15
     Loop: 1
   - Name: dodge
@@ -361,7 +361,7 @@ MonoBehaviour:
     - {fileID: -506545544, guid: 457a9be4ecb22394ca64a70412b76b05, type: 3}
     - {fileID: -1016551693, guid: 457a9be4ecb22394ca64a70412b76b05, type: 3}
     - {fileID: -291244468, guid: 457a9be4ecb22394ca64a70412b76b05, type: 3}
-    HeadHeights: 6300000063000000630000006300000062000000630000006300000063000000i
+    HeadHeights: 6400000064000000660000006400000065000000640000006400000064000000i
     Fps: 15
     Loop: 1
   - Name: win

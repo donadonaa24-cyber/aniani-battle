@@ -80,6 +80,9 @@ MonoBehaviour:
       ActiveVelocity:
         X: 0
         Y: 0
+      NormalForwardDistance: 0
+      DamageRecoilDistance: 0
+      DamageRecoilFrames: 0
       VerticalMotionOnStartOnly: 0
       ProjectileLaunchVelocity:
         X: 0
@@ -119,6 +122,9 @@ MonoBehaviour:
     UltimateCutInFrames: 0
   TempoSchemaVersion: 0
   AccessibilitySchemaVersion: 0
+  NormalMotionSchemaVersion: 0
+  DamageReactionSchemaVersion: 0
+  NormalThrowSchemaVersion: 0
   DirectionalNormals: []
   GroundNormals:
   - {fileID: 11400000, guid: 0ae52300387372b4294bd00d0ff2d968, type: 2}
@@ -144,6 +150,9 @@ MonoBehaviour:
     ProjectileClip: 
     DownSpecialClip: 
     UltimateClip: 
+    NormalProjectileClip: 
+    NormalProjectileSchemaVersion: 0
+    NormalProjectileScale: 1
     ProjectileScale: 0.5
     DownSpecialScale: 1
     UltimateScale: 1

@@ -1,0 +1,10 @@
+{
+  "character": "ren",
+  "group": "attack1",
+  "version": 12,
+  "file": "art_source/art3_walk_attacks/generated/ren_attack1_keys_v12.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_attack1_keys_v11.png"
+  ],
+  "prompt": "Tiny precise correction to attached four-pose atlas. FIRST standing and FOURTH headstand stay unchanged. ONLY on SECOND crouch and THIRD flying headbutt, tuck the outer LEFT red-brown floppy dog's ear slightly toward the cream hood: move its leftmost curve inward about12 SOURCE pixels, without moving the inner ear/face/head or changing head height. This trims two or three pixels of silhouette at final game scale, currently hood61 and62 versus target58-60. All other head pixels, body, limbs, cape and positions remain the same. Never shrink the entire figure or head. Four complete separated original pixelart figures, transparency and same canvas margins."
+}

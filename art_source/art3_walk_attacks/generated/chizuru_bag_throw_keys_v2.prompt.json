@@ -1,0 +1,11 @@
+{
+  "character": "chizuru",
+  "group": "bag_throw",
+  "version": 2,
+  "file": "art_source/art3_walk_attacks/generated/chizuru_bag_throw_keys_v2.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/chizuru_bag_throw_keys_v1.png",
+    "art_source/art3_walk_attacks/generated/chizuru_attack2_keys_v3.png"
+  ],
+  "prompt": "Correct this four-bag projectile atlas to match the second reference character's compact almost-square brown bag. First image is edit target, second is style/prop proportions reference ONLY.\nKeep exactly FOUR isolated bags at rotations0/90/180/270, transparent RGBA, SAME front flap/gold square buckle/short loop handle and crisp pixel sprite colors. The first target is too FLAT/WIDE: make its rectangular BAG BODY TALLER at unchanged WIDTH so BODY width:height is20:18 (height90%of width). Currently the body height is about70%of width; extend the lower brown body panel downward by roughly25%of current body height, keep width/loop width/buckle size unchanged. Preserve single short loop handle, buckle positioned on upper central flap. For rotated90/270 poses apply the EXACT SAME physical taller body rotated, don't independently scale each image. 180 has same taller20x18body upside-down. All four identical physical prop dimensions/one source magnification, original Chizuru bag with squat boxy shape, not an attache case.\nNo characters or hands, no ground/effects/text/labels. Wide horizontal atlas with generous transparent spacing/gutters and all four full objects. The common first-bag width defines logical20pixels, body height18±2, handle adds about4logicalpixels. Original matching brown/dark/gold limited-color sprite art."
+}

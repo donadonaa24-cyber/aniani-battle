@@ -101,10 +101,10 @@ namespace AniBato.Tests
         private static System.Collections.Generic.IEnumerable<object[]> ActionCases()
         {
             string[] keys = { "toma", "ren", "chizuru" }, assets = { "Touma", "Ren", "Chizuru" };
-            string[] clips = { "jump", "fall", "land", "guard", "dodge", "dash" };
-            AnimationState[] states = { AnimationState.Jump, AnimationState.Fall, AnimationState.Land, AnimationState.Guard, AnimationState.Dodge, AnimationState.Dash };
-            int[] counts = { 6, 6, 2, 6, 3, 8 };
-            bool[] loops = { false, true, false, true, false, true };
+            string[] clips = { "jump", "fall", "land", "guard", "dodge", "dash", "walk" };
+            AnimationState[] states = { AnimationState.Jump, AnimationState.Fall, AnimationState.Land, AnimationState.Guard, AnimationState.Dodge, AnimationState.Dash, AnimationState.Move };
+            int[] counts = { 6, 6, 2, 6, 3, 8, 8 };
+            bool[] loops = { false, true, false, true, false, true, true };
             for (int character = 0; character < 3; character++) for (int c = 0; c < clips.Length; c++)
                 yield return new object[] { keys[character], assets[character], clips[c], states[c], counts[c], c == 4 ? 12 : 15, loops[c] };
         }
@@ -139,7 +139,14 @@ namespace AniBato.Tests
                         Assert.That(x, Is.InRange(2, 221)); Assert.That(y, Is.LessThanOrEqualTo(156));
                     }
                     Assert.That(clip.HeadHeights[f], Is.EqualTo(top + 1));
-                    if (name != "jump" && name != "fall") Assert.That(bottom, Is.Zero, "Grounded actions must keep the foot baseline.");
+                    bool flight = name == "dash" && (f == 2 || f == 3 || f == 6 || f == 7);
+                    if (flight)
+                    {
+                        Assert.That(bottom, Is.InRange(4, 32), "Both running feet must be above the shared ground plane.");
+                        int standing = key == "toma" ? 124 : key == "ren" ? 100 : 112;
+                        Assert.That(top + 1, Is.EqualTo(standing + 2), "Flight uses the standing head anchor without resizing the pose.");
+                    }
+                    else if (name != "jump" && name != "fall") Assert.That(bottom, Is.Zero, "Contact and grounded actions must keep the foot baseline.");
                 }
                 Assert.That(colors.Count, Is.LessThanOrEqualTo(32));
             }
@@ -241,7 +248,7 @@ namespace AniBato.Tests
             Assert.That(before.Length, Is.EqualTo(8));
             var ids = before.Select(sprite => { AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sprite, out string guid, out long id); return guid + "/" + id; }).ToArray();
             var actionIds = new System.Collections.Generic.Dictionary<string, string[]>();
-            foreach (string name in new[] { "jump", "fall", "land", "guard", "dodge", "dash" })
+            foreach (string name in new[] { "jump", "fall", "land", "guard", "dodge", "dash", "walk", "attack1", "attack2", "attack3" })
             {
                 string actionPath = "Assets/_Project/Art/Sprites/" + key + "/" + name + ".png";
                 actionIds[actionPath] = AssetDatabase.LoadAllAssetsAtPath(actionPath).OfType<Sprite>().OrderBy(sprite => sprite.name)

@@ -1,0 +1,10 @@
+{
+  "character": "ren",
+  "group": "dash",
+  "version": 6,
+  "file": "art_source/art3_walk_attacks/generated/ren_dash_keys_v6.png",
+  "references": [
+    "art_source/art3_walk_attacks/generated/ren_dash_keys_v5.png"
+  ],
+  "prompt": "Use-case: precise pixel-art sprite correction. Edit supplied Ren five-figure run atlas only. Preserve the first four figures EXACTLY unchanged. Preserve the final figure's body, cape, alternating legs and corrected opposite arm swing EXACTLY unchanged. Correct ONLY the final figure dog hood: redraw its left and right ear silhouettes to match the WIDTH and SCALE of the FIRST standing figure's original hood relative to face and torso. Currently final hood is too broad by about 5% especially projecting right floppy ear; make its contour match first figure. Do not scale any figure, do not increase head, do not alter face/body proportions. First standing ruler and all figures remain at identical magnification. All five full silhouettes visible with ample margin and separation. Near left arm remains BACK, far right arm FORE in final flight; neither hand overlaps head band. Sharp limited-palette pixel art, transparent background, no text, no floor or shadows. Output entire same five-figure row."
+}
