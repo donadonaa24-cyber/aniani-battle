@@ -1,0 +1,33 @@
+{
+  "character": "chizuru",
+  "style": "paper-cutout-anime",
+  "purpose": "unity-idle-and-walk-prototype",
+  "file": "art_source/paper_cutout/generated/chizuru_paper_idle_v1.png",
+  "width": 1246,
+  "height": 1263,
+  "pixelFormat": "Format32bppArgb",
+  "cornerAlpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "sha256": "9C8195540E5E94189D5E35CF84E6ECAF844F9517979A7A3ED2B7D3ED067B0070",
+  "gameConnected": true,
+  "unityExecuted": true,
+  "unityImage": "AniBato/Assets/_Project/Art/Paper/idle_paper_chizuru.png",
+  "motionAsset": "AniBato/Assets/_Project/Data/ChizuruPaperMotion.asset",
+  "standingHeight": 2.24,
+  "pixelsPerUnit": 532.5893,
+  "pivot": [0.5, 0.022169437],
+  "unityVerification": {
+    "tag": "paper_chizuru_1",
+    "buildAll": "passed",
+    "editModePassed": 441,
+    "playModePassed": 36,
+    "windowsBuild": "passed",
+    "captures": "docs/screenshots/paper_chizuru_unity"
+  },
+  "originalsRetained": true,
+  "promptFile": "generated/chizuru_paper_idle_v1.prompt.json"
+}

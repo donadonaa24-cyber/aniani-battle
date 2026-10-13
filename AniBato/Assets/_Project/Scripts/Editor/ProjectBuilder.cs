@@ -266,6 +266,7 @@ namespace AniBato.EditorTools
             }
             string spriteCharacter = index == 0 ? "toma" : index == 1 ? "ren" : "chizuru";
             data.Animations = AnimationSetBuilder.Build(spriteCharacter);
+            if (index == 2) data.PaperMotion = PaperCharacterBuilder.Build();
             if (!data.Animations) throw new InvalidOperationException(defaults.Name + "のSpriteForge出力がありません。");
             if (index == 0)
             {

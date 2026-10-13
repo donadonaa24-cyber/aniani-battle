@@ -119,7 +119,7 @@ namespace AniBato.SpriteForge
             if (m.anchorRgbMin == null || m.anchorRgbMax == null || m.anchorRgbMin.Length != 3 || m.anchorRgbMax.Length != 3) throw new InvalidOperationException("Invalid anchor color range.");
             var names = new HashSet<string>();
             foreach (var a in m.animations)
-                if (String.IsNullOrWhiteSpace(a.name) || a.name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 || a.name.Contains("..") || !names.Add(a.name) || (a.sourceAnchors != null && a.sourceAnchors.Length != a.frames) || a.frames < 1 || a.frames > 8 || a.inbetweenFrames < 0 || a.inbetweenFrames > 8 || a.fps < 1 || (a.anchor != "feet" && a.anchor != "center" && a.anchor != "effect") || (a.prebuiltOnly && (String.IsNullOrEmpty(a.prebuiltSheet) || a.anchor != "effect")))
+                if (String.IsNullOrWhiteSpace(a.name) || a.name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 || a.name.Contains("..") || !names.Add(a.name) || (a.sourceAnchors != null && a.sourceAnchors.Length != a.frames) || a.frames < 1 || a.frames > 8 || a.inbetweenFrames < 0 || a.inbetweenFrames > 8 || a.fps < 1 || (a.anchor != "feet" && a.anchor != "center" && a.anchor != "effect") || (a.prebuiltOnly && String.IsNullOrEmpty(a.prebuiltSheet)))
                     throw new InvalidOperationException("Invalid animation in manifest: " + a.name);
         }
         private static void WriteJson(string path, object value) { FileOutputs.WriteAllText(path, Json.Serialize(value), new System.Text.UTF8Encoding(false)); }

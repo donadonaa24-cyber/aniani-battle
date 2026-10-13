@@ -26,7 +26,19 @@ namespace AniBato.SpriteForge
             if (character != null && !Characters.Contains(character)) throw new ArgumentException("Unknown character.");
             NormalizeAtlas(root, "art_source/art3_walk_attacks/", group, group.StartsWith("walk") || group == "dash" ? 5 : 4, character == null ? Characters : new[] { character });
         }
-        private static void NormalizeAtlas(string root, string folder, string group, int expected, string[] characters)
+        public static void NormalizeTomaMotion(string root, string group, string sourcePath, bool airborne = false)
+        {
+            if (String.IsNullOrEmpty(group) || group.Any(c => !(Char.IsLetterOrDigit(c) || c == '_')))
+                throw new ArgumentException("Invalid Toma motion group.");
+            const string folder = "art_source/toma_actions/";
+            NormalizeAtlas(root, folder, group, 4, new[] { "toma" }, sourcePath, airborne);
+            var json = new JavaScriptSerializer();
+            string selectionPath = Path.Combine(root, folder + "source-selection.json");
+            var selection = json.Deserialize<Dictionary<string, string>>(File.ReadAllText(selectionPath));
+            selection["toma/" + group] = sourcePath;
+            FileOutputs.WriteAllText(selectionPath, json.Serialize(selection), new System.Text.UTF8Encoding(false));
+        }
+        private static void NormalizeAtlas(string root, string folder, string group, int expected, string[] characters, string sourceOverride = null, bool airborneOverride = false)
         {
             var json = new JavaScriptSerializer(); var reports = new List<object>();
             string selectionPath = Path.Combine(root, folder + "source-selection.json");
@@ -37,6 +49,7 @@ namespace AniBato.SpriteForge
                 string sourcePath = folder + "generated/" + key + "_" + group + "_keys_v1.png";
                 string selected;
                 if (selection.TryGetValue(key + "/" + group, out selected)) sourcePath = selected;
+                if (sourceOverride != null) sourcePath = sourceOverride;
                 if (sourcePath == null)
                     throw new InvalidOperationException(key + "/" + group + ": source pending review. See art_source/art3_walk_attacks/pending-review.json and docs/RESUME.md; do not adopt a rejected candidate.");
                 if (!sourcePath.StartsWith(folder + "generated/", StringComparison.Ordinal) || sourcePath.Contains("..") || sourcePath.Contains(":"))
@@ -62,7 +75,7 @@ namespace AniBato.SpriteForge
                     bool runFlight = folder == "art_source/art3_walk_attacks/" && group == "dash" && (i == 2 || i == 4);
                     bool strikeFlight = folder == "art_source/art3_walk_attacks/" && key == "ren" && group == "attack1" && i == 2;
                     int dy = runFlight || strikeFlight ? Height - manifest.targetHeight - 2 - bounds.Top :
-                        group == "jump" && i > 0 ? (int)Math.Round(airCenter - (bounds.Top + bounds.Bottom - 1) * .5) : Baseline - bounds.Bottom + 1;
+                        (group == "jump" || airborneOverride) && i > 0 ? (int)Math.Round(airCenter - (bounds.Top + bounds.Bottom - 1) * .5) : Baseline - bounds.Bottom + 1;
                     var cell = new Raster(Width, Height);
                     for (int y = 0; y < frame.Height; y++) for (int x = 0; x < frame.Width; x++)
                     {

@@ -23,6 +23,7 @@ namespace AniBato.Game
         public int Silhouette; // 0: equipment, 1: dog ears, 2: chef hat (crossover placeholders).
         public Sprite Portrait;
         public CharacterAnimationSet Animations;
+        public PaperCharacterMotion PaperMotion;
         public CharacterSpriteEffects SpriteEffects;
         public CharacterDefinition ToDefinition()
         {

@@ -14,6 +14,7 @@ namespace AniBato.Game
         private float flashUntil, headY;
         public int PlayerIndex => playerIndex;
         public bool UsesAnimationSprites { get; private set; }
+        public bool UsesPaperSprite { get; private set; }
         public float HeadY => headY;
         public AniBato.Presentation.AnimationSample RenderedSample { get; private set; }
         public void Configure(BattleRunner battleRunner, CharacterData data, PresentationSettings settings, int player)
@@ -45,6 +46,7 @@ namespace AniBato.Game
             character = runner.Character(playerIndex);
             body.sprite = ProceduralSprites.Shape(character.RoundShape); body.flipX = false;
             body.transform.localPosition = Vector3.zero;
+            body.transform.localRotation = Quaternion.identity;
             body.transform.localScale = new Vector3(character.Movement.HurtboxSize.X, character.Movement.HurtboxSize.Y, 1);
             foreach (var ear in ears) { ear.enabled = character.Silhouette == 1; ear.color = character.Tint; }
             hat.enabled = false;
@@ -61,6 +63,8 @@ namespace AniBato.Game
             var sample = runner.Animation(playerIndex); Sprite sprite = null;
             RenderedSample = sample;
             UsesAnimationSprites = character.Animations && character.Animations.TrySprite(sample, out sprite);
+            UsesPaperSprite = character.PaperMotion && character.PaperMotion.Supports(sample.State);
+            if (UsesPaperSprite) { sprite = character.PaperMotion.Sprite; UsesAnimationSprites = true; }
             transform.localScale = UsesAnimationSprites ? Vector3.one : new Vector3(fighter.Facing, 1, 1);
             eye.enabled = !UsesAnimationSprites;
             foreach (var ear in ears) ear.enabled = !UsesAnimationSprites && character.Silhouette == 1;
@@ -68,13 +72,19 @@ namespace AniBato.Game
             {
                 body.sprite = sprite; body.flipX = sample.FlipX;
                 body.transform.localScale = Vector3.one;
-                body.transform.localPosition = new Vector3(0, -fighter.Definition.HurtboxSize.Y * 0.5f, 0);
-                headY = position.Y - fighter.Definition.HurtboxSize.Y * 0.5f + character.Animations.HeadHeight(sample) / character.Animations.PixelsPerUnit;
+                var rock = UsesPaperSprite ? AniBato.Presentation.PaperRockingMotion.Evaluate(character.PaperMotion.Motion, sample.Age,
+                    sample.State == AniBato.Presentation.AnimationState.Move, sample.FlipX) : default;
+                body.transform.localRotation = Quaternion.Euler(0, 0, rock.Degrees);
+                body.transform.localPosition = new Vector3(0, -fighter.Definition.HurtboxSize.Y * 0.5f + rock.Lift, 0);
+                float spriteHeight = UsesPaperSprite ? character.PaperMotion.StandingHeight * Mathf.Cos(rock.Degrees * Mathf.Deg2Rad) + rock.Lift :
+                    character.Animations.HeadHeight(sample) / character.Animations.PixelsPerUnit;
+                headY = position.Y - fighter.Definition.HurtboxSize.Y * 0.5f + spriteHeight;
             }
             else
             {
                 body.sprite = ProceduralSprites.Shape(character.RoundShape); body.flipX = false;
                 body.transform.localPosition = Vector3.zero;
+                body.transform.localRotation = Quaternion.identity;
                 body.transform.localScale = new Vector3(fighter.Definition.HurtboxSize.X, fighter.Definition.HurtboxSize.Y, 1);
                 headY = position.Y + fighter.Definition.HurtboxSize.Y * 0.5f;
             }

@@ -70,7 +70,9 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 - テストを弱めていないか、失敗を隠していないか
 - 見た目：キャラが別人に見えない、足元が揃う、頭上カウンターが頭上にある、判定（F9表示）と絵が大きくずれない
 
-## 4. 現在の状態：ART3Eの残り攻撃・前進/被弾後退（2026-10-13）
+## 4. 現在の状態：千鶴の紙人形待機・歩行（2026-10-14）
+
+**現在（2026-10-14）：千鶴の紙人形Idle/Moveを実装、実Unity BuildAll成功/Edit441/441/Play36/36/Windowsビルド成功。** 最新はRESUME冒頭/PAPER_CHIZURU_UNITY/paper_chizuru_1_final。左右±5度/8fps、待機±0.75度/4fps、身長2.24u。原画/旧素材/停止中透真差分を保持。Unity実カメラ18PNG/左右GIFはdocs/screenshots/paper_chizuru_unity/、実モニター撮影/OSキー送信なし。千鶴のその他動作と透真/蓮は旧表示。次は新しい揺れの所見を確認し、停止中の透真制作を無断で再開しない。この区切りを通常commit/pushしてSHAを記録する。以下のART3E情報は前回の完了履歴。
 
 **最新（2026-10-14）：ART3E完了、保存処理復旧・GitHub反映も完了。** [再起動後の詳細](codex_logs/RESTART_CHECKPOINT.md)/RESUME冒頭を先に読む。保存ロック解消、欠落キット作成スクリプトを復元して採用原画のみのZIP処理に接続。721ファイル/38.75MiBの正式ZIPを照合、全90原画と旧ZIPを保持。ユーザー明示承認で未公開2097c99だけを77c526dへ作り直し、origin mainへ通常push成功、GitHubの同一SHAを確認。元コミットはローカル保全し、作業ファイル3169件を保持。公開済み182e970以前の履歴変更/全体リセット/force pushなし。反映記録は通常の追加コミットに保存する。
 

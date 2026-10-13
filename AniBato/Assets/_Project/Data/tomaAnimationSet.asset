@@ -211,6 +211,15 @@ MonoBehaviour:
     HeadHeights: 71000000630000007c000000i
     Fps: 12
     Loop: 0
+  - Name: drone_hover
+    Frames:
+    - {fileID: 222770256, guid: d1ac936910f3f254b8ff2857fc1c4329, type: 3}
+    - {fileID: 876267617, guid: d1ac936910f3f254b8ff2857fc1c4329, type: 3}
+    - {fileID: -764865377, guid: d1ac936910f3f254b8ff2857fc1c4329, type: 3}
+    - {fileID: 1251008081, guid: d1ac936910f3f254b8ff2857fc1c4329, type: 3}
+    HeadHeights: 44000000440000004400000044000000i
+    Fps: 15
+    Loop: 1
   - Name: fall
     Frames:
     - {fileID: 1818695174, guid: cd344225082b7d24087b05c6fae3cf91, type: 3}
@@ -334,7 +343,7 @@ MonoBehaviour:
     - {fileID: -1891979625, guid: 14eabc3479d635e41853277e3af9fb65, type: 3}
     - {fileID: -2094326406, guid: 14eabc3479d635e41853277e3af9fb65, type: 3}
     - {fileID: -1676250344, guid: 14eabc3479d635e41853277e3af9fb65, type: 3}
-    HeadHeights: 7b0000007b0000007b0000007b0000007b0000007b000000i
+    HeadHeights: 7a0000007a0000007a000000790000007a0000007a000000i
     Fps: 15
     Loop: 0
   - Name: special_side

@@ -93,6 +93,19 @@ namespace AniBato.Tests
         }
         private IEnumerator PressKeys(params ButtonControl[] buttons) => ChangeKeys(true, buttons);
         private IEnumerator ReleaseKeys(params ButtonControl[] buttons) => ChangeKeys(false, buttons);
+        private static bool IsIdleSprite(BattleRunner runner, FighterView view, SpriteRenderer body)
+        {
+            var data = runner.Character(view.PlayerIndex);
+            if (data.PaperMotion) return view.UsesAnimationSprites && view.UsesPaperSprite &&
+                view.RenderedSample.State == AniBato.Presentation.AnimationState.Idle && body.sprite == data.PaperMotion.Sprite;
+            return view.UsesAnimationSprites && data.Animations.Find("idle").Frames.Contains(body.sprite);
+        }
+        private static bool IsWalkSprite(BattleRunner runner, FighterView view, SpriteRenderer body)
+        {
+            var data = runner.Character(view.PlayerIndex);
+            if (data.PaperMotion) return view.UsesPaperSprite && view.RenderedSample.State == AniBato.Presentation.AnimationState.Move && body.sprite == data.PaperMotion.Sprite;
+            return body.sprite.name.StartsWith("walk_");
+        }
         [UnityTest]
         public IEnumerator ActualFighterViewMovesUniformlyWith144HzFrameTimeSequence()
         {
@@ -183,7 +196,8 @@ namespace AniBato.Tests
                 {
                     runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
                     Assert.That(view.RenderedSample.State, Is.EqualTo(AniBato.Presentation.AnimationState.Move));
-                    Assert.That(body.sprite, Is.SameAs(data.Animations.Find("walk").Frames[tick / 4]));
+                    Assert.That(body.sprite, Is.SameAs(data.PaperMotion ? data.PaperMotion.Sprite : data.Animations.Find("walk").Frames[tick / 4]));
+                    Assert.That(view.UsesPaperSprite, Is.EqualTo(c == 2));
                     Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one)); Assert.That(view.UsesAnimationSprites, Is.True);
                 }
                 Assert.That(runner.Simulation.P1.Position.X, Is.GreaterThan(start));
@@ -264,7 +278,7 @@ namespace AniBato.Tests
                 }
                 Assert.That(observed,Is.True);Assert.That(runner.Simulation.Projectiles.Count,Is.Zero);
                 Assert.That(chizuru.Animations.Effect("rice_ball",0),Is.Not.SameAs(chizuru.Animations.Effect("bag_throw",0)));
-                Assert.That(chizuru.Animations.Find("idle").Frames.Contains(body.sprite),Is.True);
+                Assert.That(IsIdleSprite(runner,view,body),Is.True);
             }
             runner.enabled=true;yield return null;
         }
@@ -356,17 +370,17 @@ namespace AniBato.Tests
                 runner.SelectCharacter(0, index); runner.SelectCharacter(1, index); runner.RestartMatch(); yield return null;
                 Assert.That(runner.Simulation.P1.Definition.Name, Is.EqualTo(names[index]));
                 Assert.That(runner.Simulation.P2.Definition.Name, Is.EqualTo(names[index]));
-                yield return WaitFor(() => views.All(view => view.UsesAnimationSprites && runner.Character(view.PlayerIndex).Animations.Find("idle").Frames.Contains(bodies[view.PlayerIndex].sprite)), names[index] + " の実スプライトが両スロットに反映されませんでした。");
+                yield return WaitFor(() => views.All(view => IsIdleSprite(runner,view,bodies[view.PlayerIndex])), names[index] + " の実スプライトが両スロットに反映されませんでした。");
                 float first = runner.Simulation.P1.Position.X, second = runner.Simulation.P2.Position.X;
                 yield return PressKeys(keyboard.dKey, keyboard.leftArrowKey);
                 yield return WaitFor(() => runner.Simulation.P1.Position.X > first && runner.Simulation.P2.Position.X < second, names[index] + " が両スロットで移動しませんでした。");
                 Assert.That(runner.Simulation.P1.Position.X, Is.GreaterThan(first));
                 Assert.That(runner.Simulation.P2.Position.X, Is.LessThan(second));
-                yield return WaitFor(() => bodies.All(body => body.sprite.name.StartsWith("walk_")), "歩行のSpriteが反映されませんでした。");
+                yield return WaitFor(() => views.All(view => IsWalkSprite(runner,view,bodies[view.PlayerIndex])), "歩行のSpriteが反映されませんでした。");
                 Assert.That(bodies[0].flipX, Is.False); Assert.That(bodies[1].flipX, Is.True);
                 yield return ReleaseKeys(keyboard.dKey, keyboard.leftArrowKey);
                 yield return PressKeys(keyboard.aKey, keyboard.rightArrowKey);
-                yield return WaitFor(() => bodies[0].flipX && !bodies[1].flipX && bodies.All(body => body.sprite.name.StartsWith("walk_")), names[index] + " の向き反転が両スロットで描画されませんでした。");
+                yield return WaitFor(() => bodies[0].flipX && !bodies[1].flipX && views.All(view => IsWalkSprite(runner,view,bodies[view.PlayerIndex])), names[index] + " の向き反転が両スロットで描画されませんでした。");
                 Assert.That(bodies[0].flipX, Is.True); Assert.That(bodies[1].flipX, Is.False);
                 yield return ReleaseKeys(keyboard.aKey, keyboard.rightArrowKey);
                 yield return PressKeys(keyboard.jKey, keyboard.deleteKey);
@@ -392,11 +406,11 @@ namespace AniBato.Tests
             runner.SelectCharacter(0, 2); runner.SelectCharacter(1, 0); runner.RestartMatch(); yield return null; yield return null;
             var view = Object.FindObjectsByType<FighterView>().Single(item => item.PlayerIndex == 0);
             var body = view.transform.Find("Body").GetComponent<SpriteRenderer>();
-            yield return WaitFor(() => view.UsesAnimationSprites && runner.Character(0).Animations.Find("idle").Frames.Contains(body.sprite), "再戦後の千鶴の待機Spriteが反映されませんでした。");
+            yield return WaitFor(() => IsIdleSprite(runner,view,body), "再戦後の千鶴の待機Spriteが反映されませんでした。");
             Assert.That(view.UsesAnimationSprites, Is.True); Assert.That(body.sprite.name, Does.StartWith("idle_"));
             yield return PressKeys(keyboard.aKey);
-            yield return WaitFor(() => body.sprite.name.StartsWith("walk_") && body.flipX, "千鶴の歩行と左向きが描画されませんでした。");
-            Assert.That(body.sprite.name, Does.StartWith("walk_")); Assert.That(body.flipX, Is.True);
+            yield return WaitFor(() => IsWalkSprite(runner,view,body) && body.flipX, "千鶴の歩行と左向きが描画されませんでした。");
+            Assert.That(body.sprite, Is.SameAs(runner.Character(0).PaperMotion.Sprite)); Assert.That(body.flipX, Is.True);
             yield return ReleaseKeys(keyboard.aKey);
             yield return PressKeys(keyboard.jKey);
             // Coroutine assertions can run before LateUpdate. Inspect the fixed-tick sample that
@@ -443,7 +457,7 @@ namespace AniBato.Tests
             yield return ReleaseKeys(keyboard.f2Key, keyboard.f4Key);
             var finished = runner.Simulation;
             yield return PressKeys(keyboard.rKey);
-            yield return WaitFor(() => runner.Simulation != finished && Object.FindObjectsByType<FighterView>().All(p => p.UsesAnimationSprites && runner.Character(p.PlayerIndex).Animations.Find("idle").Frames.Contains(p.transform.Find("Body").GetComponent<SpriteRenderer>().sprite)) && Object.FindObjectsByType<Text>().Any(t => t.name == "Player 2 HUD" && t.text.Contains("千鶴")), "Rキーで再戦した実スプライトとHUDが反映されませんでした。");
+            yield return WaitFor(() => runner.Simulation != finished && Object.FindObjectsByType<FighterView>().All(p => IsIdleSprite(runner,p,p.transform.Find("Body").GetComponent<SpriteRenderer>())) && Object.FindObjectsByType<Text>().Any(t => t.name == "Player 2 HUD" && t.text.Contains("千鶴")), "Rキーで再戦した実スプライトとHUDが反映されませんでした。");
             Assert.That(runner.Simulation.P1.Definition.Name, Is.EqualTo("蓮"));
             Assert.That(runner.Simulation.P2.Definition.Name, Is.EqualTo("千鶴"));
             var players = Object.FindObjectsByType<FighterView>();

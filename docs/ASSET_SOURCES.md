@@ -136,3 +136,9 @@ AtlasPoseSplitter/ActionAtlasBuilder/ArtThreeActionsで実マスク分離、立�
 ## ART3E：歩き・走り・通常3段・投げカバン（2026-10-13）
 
 採用済み本作キャラを参照して内蔵image_genで90原画を生成し、採用19件を記録。歩き/走り/通常15クリップ102Fとカバン4回転4Fへ接続、全107クリップ588F。容姿/衣装は既存本作資料、攻撃/足運び/反動は本作独自表現。透真右/左パンチ/右キック、蓮跳び込み頭突き/頭支持蹴り/腕押し両足蹴り、千鶴同じ右手二撃/投げ。原画/全文条件/参照の役割/採否/寸法/SHAはart_source/art3_walk_attacks/、SpriteForgeの立ち由来共通倍率/224×160/PPU50/32色と頭/靴検査を維持。ユーザー動作参考はローカル閲覧だけで公開Assets/持ち出しZIPに含めない。ポーズ指示に使う骨格ガイドは自作の図。
+# 2026-10-14 紙人形風2D・千鶴の待機試作
+
+art_source/paper_cutout/generated/chizuru_paper_idle_v1.pngは内蔵image_genによる本作の自作試作。本人の採用済み茶色ボブ/オレンジセーター/紺スカート/白スニーカーを、紙の切り抜きの輪郭とアニメ塗りへ描き直した。全文プロンプト/参照の役割/出力寸法/SHAを同フォルダに保存。ユーザー添付の第三者ゲーム画面は見せ方/角度の理解にのみ利用し、人物/衣装/UI/背景はコピーせず、画像そのものをリポジトリ/ゲーム/キットへ収録しない。
+
+同一バイトの原画をAniBato/Assets/_Project/Art/Paper/idle_paper_chizuru.pngへ保存し、千鶴の待機/歩行だけ接続。足元を支点にUnityで段階的な傾き/上下を付け、原画/旧ピクセル素材を保持。docs/screenshots/paper_chizuru_unity/の18PNGはUnity実カメラの描画、左右GIFはそのPNGの形式変換で第三者素材なし。実モニター撮影ではない。BuildAll/EditMode441/441/PlayMode36/36/Windowsビルド成功。
+
