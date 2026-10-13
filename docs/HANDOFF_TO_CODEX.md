@@ -72,7 +72,7 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 
 ## 4. 現在の状態：ART3Eの残り攻撃・前進/被弾後退（2026-10-13）
 
-**最新（2026-10-14）：ART3E完了、再起動後に保存処理も復旧。** [再起動後の詳細](codex_logs/RESTART_CHECKPOINT.md)/RESUME冒頭を先に読む。保存ロック解消、欠落キット作成スクリプトを復元して採用原画のみのZIP処理に接続。721ファイル/38.75MiBの正式ZIPを照合して置換、全90原画と旧ZIPを保持。未公開commit2097c99の作り直し/通常pushはユーザー「お願い」で承認済み。元コミットと全ファイルを保全して小型ZIPに差し替える。origin main182e970の公開済み履歴変更/全体リセット/force pushは行わない。正常push後のSHAをRESUMEへ記録する。
+**最新（2026-10-14）：ART3E完了、保存処理復旧・GitHub反映も完了。** [再起動後の詳細](codex_logs/RESTART_CHECKPOINT.md)/RESUME冒頭を先に読む。保存ロック解消、欠落キット作成スクリプトを復元して採用原画のみのZIP処理に接続。721ファイル/38.75MiBの正式ZIPを照合、全90原画と旧ZIPを保持。ユーザー明示承認で未公開2097c99だけを77c526dへ作り直し、origin mainへ通常push成功、GitHubの同一SHAを確認。元コミットはローカル保全し、作業ファイル3169件を保持。公開済み182e970以前の履歴変更/全体リセット/force pushなし。反映記録は通常の追加コミットに保存する。
 
 全通常/歩き/走り/投げは接続済み、BuildAll成功・Edit424/424・Play32/32・Windowsビルド成功、純C#375/375、素材895ファイル再生成一致・91PNG保持。今回は保存済み結果の確認だけで再実行していない。最新exe Build/art3e、原画90/採用19。実機撮影はキー送信前に中止しPNGなし、素材画像docs/art_wip/art3e_*。次は公開整理→ART3F急停止→ART3G強弱被弾画像/表示（純C#反動と実ハート消失フラグは完了）。以降の「未接続/未検証」は制作中の履歴。
 

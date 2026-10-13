@@ -1,8 +1,8 @@
 # PC再起動後の引き継ぎ（2026-10-14）
 
-## 最新：保存エラーは復旧、未公開1件の整理/通常pushは承認済み
+## 最新：保存エラー復旧・未公開1件の整理・通常pushまで完了
 
-2026-10-14 ユーザー「お願い」により、全ファイルを保持して未公開2097c99だけ作り直し、GitHubへ通常pushすることを明示承認。元コミットをローカルで保全、作業ファイルのSHAを保存して内容保持を確認する。公開済み履歴とorigin mainは書き換えない、force push/全体リセットなし。以下の「承認待ち」は承認前の記録。
+2026-10-14 ユーザー「お願い」により、全ファイルを保持して未公開2097c99だけ作り直し、GitHubへ通常pushすることを明示承認。**77c526d417f03a978e533d72aa94b1860c75638eへ作り直し、origin mainに通常push成功。GitHubの実際のmainも同じSHAを確認。** 元2097c99はrefs/codex-backups/art3e-before-kit-repairにローカル保全し、作業ファイル3169件のSHAを修正前/登録後/コミット後で完全一致確認。記録はTestResults/art3e_git_repair_worktree_hashes.json。旧111MB blobは送信対象の履歴から除外、公開対象の最大ファイル38.75MiB、個人パス/検査対象の秘密情報なし。公開済み182e970以前の履歴を保持、force push/全体リセットなし。以下の「承認待ち」は承認前の記録。
 
 - tasklistと実行プロセスを確認。別担当がこのフォルダで作業している証拠なし。他プロジェクトのUnity連携プロセスには触れていない。
 - 欠落していたtools/SpriteForge/BuildSpriteGenerationKit.ps1を2097c99保存内容から復元、Git blobの完全一致を確認。復元時のアクセス拒否は再発していない。その後、末尾をPackSpriteGenerationKit.ps1への呼び出しへ変更し、今後のZIPも採用原画だけを収録する。両スクリプトのWindows PowerShell5.1構文確認/ASCII確認に成功。
@@ -10,8 +10,8 @@
 - 正式art_source/sprite_generation_kit.zipへのバックアップ付き置換が成功。40,632,879byte（38.75MiB）、SHA256 73C53DA3BDE2D91EAAD32B186A1FA561C20F774974B99106AB062C911C66F4D5。ZIP保存時の「他のプロセスが使用中」は再発していない。
 - 旧111MB ZIPはTestResults/sprite_generation_kit-before-recovery-ebc54c6c3f144030a5e6ac249bca3b49.zipへ保存し、元のSHAと一致確認。別名の小ZIP2個と全原画/差分も保持。ファイルの破棄/全体リセット/ゲーム素材の再生成はしていない。
 - 保存済み実UnityのEditMode424/424・PlayMode32/32（失敗/スキップ0）、BuildAll/Windowsビルド終了0とBuild/art3e/AniBato.exeの実在を確認。今回はUnityを再実行していない。実機スクショは未保存、素材比較はdocs/art_wip/art3e_*。
-- mainの2097c99は旧111MB ZIPを含む未公開commitのまま、origin main182e970、push未実行。後続commitでZIPを小さくしても過去の大きいblobが送信される。AGENTS/ユーザーの履歴変更・リセット禁止に従い、未公開1件の作り直しは明示承認前に行わない。公開済み履歴の変更・force pushは禁止。今回の復旧記録/スクリプト/正式ZIP/STATUSは未コミット。
-- 次は承認後に未公開1件を作り直して通常push、それからART3F急停止/切り返し→ART3G強弱被弾画像。戦闘の前進/被弾後退は既に実装済み。ClaudeはRESUME→本書→RECOVERY_AFTER_STREAMからそのまま交代できる。
+- ART3E実装/復旧スクリプト/正式ZIP/STATUSは77c526dで公開済み。今回の公開確認記録は通常の追加コミットへ保存する。改行以外にゲーム/素材/テストは合格時から変更なし、Unity再実行なし。
+- 次はART3F急停止/切り返しの具体仕様を指示書へ追記して制作、続いてART3G強弱被弾画像。戦闘の前進/被弾後退は既に実装済み。ClaudeはRESUME→本書→RECOVERY_AFTER_STREAMからそのまま交代できる。新動作は各区切りでUnity全4工程を検証して通常commit/pushする。
 
 ## 以下は再起動前の記録（2026-10-13、最新は上記）
 
