@@ -17,6 +17,8 @@ MonoBehaviour:
   UpperPlatform: {r: 0.3, g: 0.46, b: 0.58, a: 1}
   Warning: {r: 1, g: 0.65, b: 0.12, a: 1}
   CameraSchemaVersion: 1
+  TheatreSchemaVersion: 1
+  FinishHoldTicks: 6
   CameraMinSize: 5.2
   CameraMaxSize: 19
   CameraPadding: 1.2
@@ -50,4 +52,4 @@ MonoBehaviour:
   ShakeStrength: 0.12
   SparkSeconds: 0.22
   JustFlashSeconds: 0.25
-  FinishSeconds: 0.85
+  FinishSeconds: 1.1

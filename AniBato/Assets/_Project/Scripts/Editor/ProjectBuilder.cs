@@ -42,6 +42,12 @@ namespace AniBato.EditorTools
                 if (presentation.CameraPadding == 3) presentation.CameraPadding = 1.2f;
                 presentation.CameraSchemaVersion = 1;
             }
+            if (presentation.TheatreSchemaVersion < 1)
+            {
+                presentation.FinishHoldTicks = 6;
+                if (presentation.FinishSeconds == .85f) presentation.FinishSeconds = 1.1f;
+                presentation.TheatreSchemaVersion = 1;
+            }
             EditorUtility.SetDirty(presentation);
             var audioSettings = LoadOrCreate<AudioSettings>("AudioSettings"); EditorUtility.SetDirty(audioSettings);
             var cpuDifficulties = new CpuDifficultyData[3];
@@ -67,6 +73,12 @@ namespace AniBato.EditorTools
             foreach (var difficulty in setup.CpuDifficulties)
             { if (!difficulty) throw new InvalidOperationException("A CPU difficulty asset is missing."); difficulty.ToDefinition(); }
             var flowSettings = LoadOrCreate<GameFlowSettings>("GameFlowSettings");
+            if (flowSettings.TheatreSchemaVersion < 1)
+            {
+                if (flowSettings.ResultDelaySeconds == .8f) flowSettings.ResultDelaySeconds = 2.5f;
+                flowSettings.TheatreSchemaVersion = 1;
+                EditorUtility.SetDirty(flowSettings);
+            }
             CharacterData p1 = setup.Character(setup.Player1Index), p2 = setup.Character(setup.Player2Index);
             foreach (var character in setup.Characters) character.ToDefinition();
             EditorUtility.SetDirty(setup);

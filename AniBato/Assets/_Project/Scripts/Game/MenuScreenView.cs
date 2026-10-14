@@ -2,6 +2,7 @@ using AniBato.Battle;
 using UnityEngine;
 using UnityEngine.UI;
 using AniBato.Presentation;
+using AnimationState = AniBato.Presentation.AnimationState;
 
 namespace AniBato.Game
 {
@@ -37,6 +38,8 @@ namespace AniBato.Game
                 float x = screen == GameScreen.StageSelect ? (i - 1) * 580 : i == 0 ? -450 : 450;
                 cards[i].rectTransform.anchoredPosition = new Vector2(x, 120);
                 cards[i].rectTransform.sizeDelta = new Vector2(500, screen == GameScreen.StageSelect ? 282 : 360);
+                cards[i].rectTransform.localRotation = Quaternion.identity;
+                cards[i].rectTransform.localScale = Vector3.one;
                 cardLabels[i].rectTransform.anchoredPosition = new Vector2(x, -100);
             }
             bool battle = screen == GameScreen.Battle || screen == GameScreen.Countdown;
@@ -45,7 +48,7 @@ namespace AniBato.Game
             heading.enabled = subtitle.enabled = options.enabled = footer.enabled = !battle;
             banner.enabled = battle;
             banner.text = screen == GameScreen.Countdown ? flow.CountdownText : "";
-            if (screen == GameScreen.Battle && flow.Runner.Simulation.Shrink.WarningIssued)
+            if (screen == GameScreen.Battle && !flow.Runner.Simulation.Match.IsFinished && flow.Runner.Simulation.Shrink.WarningIssued)
             {
                 var shrink = flow.Runner.Simulation.Shrink;
                 banner.text = flow.Runner.CurrentStage.ShrinkMessage + (shrink.Started ? "  中央へ！" : "  残り10秒で床が縮小");
@@ -143,17 +146,30 @@ namespace AniBato.Game
             var sim = flow.Runner.Simulation;
             heading.text = sim.Match.Result == MatchResult.Draw ? "DRAW" :
                 (sim.Match.Result == MatchResult.Player1Wins ? sim.P1.Definition.Name : sim.P2.Definition.Name) + " WIN!";
-            subtitle.text = sim.Match.Result == MatchResult.Draw ? "引き分け  /  " + Reason(sim.Match.EndReason) : Reason(sim.Match.EndReason);
+            bool draw = sim.Match.Result == MatchResult.Draw;
+            subtitle.text = (draw ? "引き分け  /  " : "") + Reason(sim.Match.EndReason) + "  /  " + flow.Runner.CurrentStage.DisplayName;
             for (int i = 0; i < 2; i++)
             {
-                var character = flow.Runner.Character(i); var fighter = i == 0 ? sim.P1 : sim.P2;
+                int player = !draw && sim.Match.Result == MatchResult.Player2Wins ? 1 - i : i;
+                var character = flow.Runner.Character(player); var fighter = player == 0 ? sim.P1 : sim.P2;
                 cards[i].enabled = cardLabels[i].enabled = true;
-                var animation = flow.Runner.Animation(i);
+                var animation = flow.Runner.Animation(player);
+                animation.State = !draw && i == 0 ? AnimationState.Win : AnimationState.Lose;
+                animation.IsAttack = false;
                 character.Animations.TrySprite(animation, out Sprite sprite);
                 if (character.PaperMotion && character.PaperMotion.TrySprite(animation, fighter.LastDamageLostHeart, out Sprite paper, out PaperPose pose)) sprite = paper;
                 cards[i].sprite = sprite; cards[i].color = Color.white;
-                cardLabels[i].text = "P" + (i + 1) + "  " + fighter.Definition.Name + "\nハート " + fighter.Hearts + "  /  被弾 " + fighter.NormalHitCount;
-                cardLabels[i].color = Color.white;
+                cards[i].rectTransform.anchoredPosition = new Vector2(i == 0 ? -450 : 450, 80);
+                cards[i].rectTransform.sizeDelta = new Vector2(560, !draw && i == 0 ? 450 : 390);
+                if (!draw && i == 0)
+                {
+                    var motion = PaperPerformance.Evaluate(character.PaperMotion ? character.PaperMotion.Performance : PaperPerformanceSettings.Default, animation);
+                    cards[i].rectTransform.localRotation = Quaternion.Euler(0, 0, motion.Degrees);
+                    cards[i].rectTransform.anchoredPosition += new Vector2(0, motion.Y * 150);
+                }
+                cardLabels[i].rectTransform.anchoredPosition = new Vector2(i == 0 ? -450 : 450, -190);
+                cardLabels[i].text = (draw ? "DRAW" : i == 0 ? "WINNER!" : "LOSE...") + "  P" + (player + 1) + "  " + fighter.Definition.Name + "\nハート " + fighter.Hearts + "  /  被弾 " + fighter.NormalHitCount;
+                cardLabels[i].color = !draw && i == 0 ? accent : Color.white;
             }
             options.text = Choices(flow.MenuIndex, "再戦", "キャラ選択へ", "タイトルへ");
         }

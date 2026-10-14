@@ -10,6 +10,8 @@ namespace AniBato.Game
         public Color UpperPlatform = new Color(0.3f, 0.46f, 0.58f);
         public Color Warning = new Color(1, 0.65f, 0.12f);
         public int CameraSchemaVersion;
+        public int TheatreSchemaVersion;
+        [Min(0)] public int FinishHoldTicks = 6;
         public float CameraMinSize = 5.2f;
         public float CameraMaxSize = 19;
         public float CameraPadding = 1.2f;
@@ -43,7 +45,7 @@ namespace AniBato.Game
         public float ShakeStrength = .12f;
         public float SparkSeconds = .22f;
         public float JustFlashSeconds = .25f;
-        public float FinishSeconds = .85f;
+        public float FinishSeconds = 1.1f;
     }
 }
 

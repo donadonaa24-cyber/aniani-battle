@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
 using AniBato.Presentation;
+using AnimationState = AniBato.Presentation.AnimationState;
 using UnityEngine.InputSystem.DualShock;
 
 namespace AniBato.Tests
@@ -461,6 +462,93 @@ namespace AniBato.Tests
             yield return Tap(keyboard.escapeKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Title));
         }
         [UnityTest]
+        public IEnumerator FightBannerBlocksAllBattleActionsUntilItDisappears()
+        {
+            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
+            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
+            Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Countdown));
+            yield return WaitFor(() => Flow.CountdownText == "FIGHT!", "FIGHT!が表示されません。");
+            var sim = Flow.Runner.Simulation; var spawn = sim.P1.Position;
+            yield return PressKeys(keyboard.jKey, keyboard.dKey, keyboard.spaceKey);
+            yield return new WaitForSecondsRealtime(.1f);
+            Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Countdown)); Assert.That(Flow.Runner.Paused, Is.True);
+            Assert.That(sim.Match.TickCount, Is.Zero); Assert.That(sim.P1.Position, Is.EqualTo(spawn)); Assert.That(sim.P1.Attack, Is.Null);
+            var banner = Object.FindObjectsByType<Text>().Single(t => t.name == "Battle Banner");
+            Assert.That(banner.enabled, Is.True); Assert.That(banner.text, Is.EqualTo("FIGHT!"));
+            CaptureScreen("01_FIGHT_操作停止");
+            yield return ReleaseKeys(keyboard.jKey, keyboard.dKey, keyboard.spaceKey);
+            yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "FIGHT!後に開始しません。");
+            Assert.That(Flow.Runner.Paused, Is.False); Assert.That(banner.text, Is.Empty); Assert.That(sim.P1.Attack, Is.Null);
+            yield return PressKeys(keyboard.jKey);
+            yield return WaitFor(() => sim.P1.Attack != null, "操作開始後の攻撃が反映されません。");
+            yield return ReleaseKeys(keyboard.jKey);
+        }
+        [UnityTest]
+        public IEnumerator FinishBannerFreezeVictoryThenWinnerLeftResultUseTheActualRunner()
+        {
+            yield return SelectLocalBattle(); var runner = Flow.Runner; runner.enabled = false;
+            yield return PressKeys(keyboard.dKey);
+            int ticks = 0;
+            while (!runner.Simulation.Match.IsFinished && ticks++ < 4500) { Flow.Input.Capture(); runner.AdvanceRenderFrame(1d / 60); }
+            Assert.That(runner.Simulation.Match.EndReason, Is.EqualTo(MatchEndReason.RingOut));
+            var frozen = runner.Animation(0); int finalTick = runner.Simulation.Match.TickCount;
+            for (int i = 0; i < 6; i++)
+            {
+                runner.AdvanceRenderFrame(1d / 60);
+                Assert.That(runner.Animation(0).Age, Is.EqualTo(frozen.Age)); Assert.That(runner.Animation(0).State, Is.EqualTo(frozen.State));
+            }
+            runner.AdvanceRenderFrame(1d / 60);
+            Assert.That(runner.Animation(0).State, Is.EqualTo(AnimationState.Lose)); Assert.That(runner.Animation(1).State, Is.EqualTo(AnimationState.Win));
+            Assert.That(runner.Simulation.Match.TickCount, Is.EqualTo(finalTick));
+            yield return null;
+            var finish = Object.FindObjectsByType<Text>().Single(t => t.name == "Finish Banner");
+            Assert.That(finish.enabled, Is.True); Assert.That(finish.text, Is.EqualTo("KO!")); CaptureScreen("02_KO_場外");
+            yield return ReleaseKeys(keyboard.dKey);
+            yield return new WaitForSecondsRealtime(1.2f); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Battle));
+            yield return WaitFor(() => Flow.Screen == GameScreen.Result, "勝敗演出後に結果へ進みません。");
+            var texts = Object.FindObjectsByType<Text>();
+            Assert.That(texts.Single(t => t.name == "Selection Label 0").text, Does.StartWith("WINNER!  P2"));
+            Assert.That(texts.Single(t => t.name == "Selection Label 1").text, Does.StartWith("LOSE...  P1")); CaptureScreen("03_リザルト_P2勝者左");
+            runner.enabled = true;
+        }
+        [UnityTest]
+        public IEnumerator TimeUpBannerAndDrawResultNeverDeclareAWinner()
+        {
+            yield return SelectLocalBattle(); var runner = Flow.Runner; runner.enabled = false;
+            int ticks = 0;
+            while (!runner.Simulation.Match.IsFinished && ticks++ < 4500) { Flow.Input.Capture(); runner.AdvanceRenderFrame(1d / 60); }
+            Assert.That(runner.Simulation.Match.EndReason, Is.EqualTo(MatchEndReason.TimeUp));
+            yield return null;
+            var finish = Object.FindObjectsByType<Text>().Single(t => t.name == "Finish Banner");
+            Assert.That(finish.enabled, Is.True); Assert.That(finish.text, Is.EqualTo("TIME UP!")); CaptureScreen("04_TIME_UP");
+            yield return WaitFor(() => Flow.Screen == GameScreen.Result, "引き分け結果へ進みません。");
+            Assert.That(runner.Simulation.Match.Result, Is.EqualTo(MatchResult.Draw));
+            var labels = Object.FindObjectsByType<Text>().Where(t => t.name.StartsWith("Selection Label") && t.enabled).ToArray();
+            Assert.That(labels.Length, Is.EqualTo(2)); Assert.That(labels.All(t => t.text.StartsWith("DRAW")), Is.True); CaptureScreen("05_リザルト_引き分け");
+            runner.enabled = true;
+        }
+        private static void CaptureScreen(string name)
+        {
+            var camera = Camera.main; var target = camera.targetTexture; var active = RenderTexture.active;
+            var canvases = Object.FindObjectsByType<Canvas>().Where(c => c.renderMode == RenderMode.ScreenSpaceOverlay).ToArray();
+            var texture = RenderTexture.GetTemporary(1280, 720, 24); var image = new Texture2D(1280, 720, TextureFormat.RGBA32, false);
+            try
+            {
+                camera.targetTexture = texture;
+                foreach (var canvas in canvases) { canvas.renderMode = RenderMode.ScreenSpaceCamera; canvas.worldCamera = camera; canvas.planeDistance = 1; }
+                Canvas.ForceUpdateCanvases(); camera.Render(); RenderTexture.active = texture;
+                image.ReadPixels(new Rect(0, 0, 1280, 720), 0, 0); image.Apply();
+                string folder = System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath, "../../docs/screenshots/paper_theatre_unity"));
+                System.IO.Directory.CreateDirectory(folder); System.IO.File.WriteAllBytes(System.IO.Path.Combine(folder, name + ".png"), image.EncodeToPNG());
+            }
+            finally
+            {
+                foreach (var canvas in canvases) { canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.worldCamera = null; }
+                camera.targetTexture = target; RenderTexture.active = active; RenderTexture.ReleaseTemporary(texture); Object.Destroy(image);
+                Canvas.ForceUpdateCanvases();
+            }
+        }
+        [UnityTest]
         public IEnumerator RingOutResultShowsWinLoseAndReturnsDirectlyToTitle()
         {
             yield return SelectLocalBattle();
@@ -468,8 +556,12 @@ namespace AniBato.Tests
             Assert.That(Flow.Runner.Simulation.Match.EndReason, Is.EqualTo(MatchEndReason.RingOut));
             yield return WaitFor(() => Flow.Screen == GameScreen.Result, "場外のリザルトが表示されませんでした。");
             var pictures = Object.FindObjectsByType<Image>();
-            Assert.That(pictures.Single(i => i.name == "Selection Picture 0").sprite.name, Does.StartWith("lose_"));
-            Assert.That(pictures.Single(i => i.name == "Selection Picture 1").sprite.name, Does.StartWith("win_"));
+            Assert.That(pictures.Single(i => i.name == "Selection Picture 0").sprite.name, Does.StartWith("win_"));
+            Assert.That(pictures.Single(i => i.name == "Selection Picture 1").sprite.name, Does.StartWith("lose_"));
+            var texts = Object.FindObjectsByType<Text>();
+            Assert.That(texts.Single(i => i.name == "Selection Label 0").text, Does.StartWith("WINNER!  P2  透真"));
+            Assert.That(texts.Single(i => i.name == "Selection Label 1").text, Does.StartWith("LOSE...  P1  蓮"));
+            Assert.That(texts.Single(i => i.name == "Screen Subtitle").text, Does.Contain(Flow.Runner.CurrentStage.DisplayName));
             yield return Tap(keyboard.sKey); yield return Tap(keyboard.sKey); yield return Tap(keyboard.enterKey);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Title)); Assert.That(Flow.Runner.Paused, Is.True);
         }

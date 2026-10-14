@@ -8,6 +8,11 @@ function inside(base,target){const full=path.resolve(target),rel=path.relative(b
 const sourceBase=inside(root,path.join(root,'art_source/paper_cutout/generated'));
 const reviewBase=inside(root,path.join(root,catalog.outputFolder));
 const selected=new Set(catalog.entries.map(r=>r.source));
+const bagBackupPath=path.join(root,'art_source/paper_cutout/variants/bag-backup.json');
+if(fs.existsSync(bagBackupPath)){
+ const backup=read('art_source/paper_cutout/variants/bag-backup.json');
+ if(backup.protected)for(const row of backup.entries)selected.add(row.source);
+}
 const folders={adopted:'01_ゲームで採用済み',candidate:'02_確認用候補_未採用',repair:'03_修正が必要_未採用'};
 const plannedReview=new Set(catalog.entries.map(r=>{
  if(!folders[r.category])throw Error('Unknown current category');

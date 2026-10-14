@@ -21,6 +21,7 @@ namespace AniBato.Game
         public BattleVector RenderPosition(int player) => RenderState.FighterPosition(player, clock.Fraction, Paused);
         public BattleVector RenderPosition(Projectile shot) => RenderState.ProjectilePosition(shot, clock.Fraction, Paused);
         private int suppressInputFrame = -1;
+        private int finishHoldRemaining = -1;
         private ICpuBrain cpuBrain;
         public CpuDifficulty Difficulty { get; private set; }
         public ICpuBrain CpuBrain => cpuBrain;
@@ -84,6 +85,7 @@ namespace AniBato.Game
             else cpuBrain = null;
             animations[0].Configure(p1.Animations ? p1.Animations.Timing : AnimationTiming.Default);
             animations[1].Configure(p2.Animations ? p2.Animations.Timing : AnimationTiming.Default);
+            finishHoldRemaining = -1;
             clock.Reset(); RenderState.Reset(Simulation); input.Clear(); animations[0].Reset(Simulation.P1, Simulation.Match); animations[1].Reset(Simulation.P2, Simulation.Match); MatchRestarted?.Invoke();
         }
         private void Update()
@@ -113,6 +115,8 @@ namespace AniBato.Game
             if (Simulation.Match.IsFinished)
             {
                 RenderState.Reset(Simulation);
+                if (finishHoldRemaining < 0) finishHoldRemaining = presentation ? presentation.FinishHoldTicks : 0;
+                if (finishHoldRemaining > 0) { finishHoldRemaining--; return; }
                 animations[0].Advance(Simulation.P1, Simulation.Match, false, false, false);
                 animations[1].Advance(Simulation.P2, Simulation.Match, false, false, false); return;
             }
@@ -134,6 +138,8 @@ namespace AniBato.Game
                 EventProduced?.Invoke(battleEvent);
             }
             cinematic |= Simulation.CutInRemainingFrames > 0;
+            // Preserve the final action briefly before changing to the winner/loser poses.
+            if (Simulation.Match.IsFinished) { finishHoldRemaining = presentation ? presentation.FinishHoldTicks : 0; return; }
             animations[0].Advance(Simulation.P1, Simulation.Match, Simulation.P1.IsFrozenThisTick, cinematic, success[0]);
             animations[1].Advance(Simulation.P2, Simulation.Match, Simulation.P2.IsFrozenThisTick, cinematic, success[1]);
         }

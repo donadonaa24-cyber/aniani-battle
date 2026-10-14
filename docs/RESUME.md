@@ -1,4 +1,20 @@
-# 再開メモ：千鶴の紙動作を全接続（2026-10-14）
+# 再開メモ（2026-10-15）
+
+## 最新完了：実装順1〜4、フライパン比較12枚、音の試作
+
+ゴールと順序はIMPLEMENTATION_ORDER.md、確定ゲーム設定はPAPER_THEATRE_DIRECTION.md。指示書はcodex_tasks/PAPER_THEATRE_BASIC_MOTION.mdとPAPER_CHIZURU_FRYINGPAN_COMPARE.md。既存差分をリセットしない。別担当なしを確認して開始した。
+
+実装済み：FIGHT操作停止、BattleRunnerの決着停止6tick、KO!／TIME UP!統一、2.5秒の勝敗演出、勝者左／敗者右・ステージ名と固有ポーズ。千鶴の全身Spriteに引き／打撃／戻り／被弾／中心回転、勝利微動。歩き15度／走り45度固定。BGM180BPM×4、19SE、打撃時等の短いBGM減衰、音量別設定。
+
+今回実行paper_theatre_2：BuildAll成功／Edit459/459／Play42/42／Windowsビルド成功、失敗・スキップ0。初回paper_theatre_1の型名衝突は修正して全工程再検証。新ビルドBuild/paper_theatre_2/AniBato.exe、docs/screenshots/paper_theatre_unity/に実Camera.Render30PNG（目視済み／OSキー送信なし）。TestResults/arcade_audio/にBGM4＋SEデモ1のWAV。前回50cc90aの447/38と区別。
+
+次は順7、codex_tasks/PAPER_STAGE_EFFECTS.mdの紙ヒット演出から。既存BattleEffectsViewを読み、紙片プール／切り絵衝撃→実Unity4工程→区切り保存。その後工作舞台／縮小装置→集合タイトル。比較原画の採用指示が来たらその指摘を優先して2コマ接続。透真の旧生成を自動再開しない。今回の区切りは通常commit／origin mainへpushしてから終了する。
+
+フライパン：art_source/paper_cutout/variants/fryingpan/に15生成原画／全文条件、comparison-manifest.jsonで選択した横6＋上下6。prepared/と比較フォルダは全1304×1450／靴底1328／原画画素一致。部位と左右は最終審査待ち、未採用。tools/verify/prepare_fryingpan_compare.cjsで比較フォルダを再作成可能。カバン版を勝手に差し替えない。variants/bag-backup.jsonで13原画を保護、bag-runtime-manifest.jsonに実装参照保存、予備_カバン版_削除禁止/へコピー済み。削除指示まで維持。
+
+Claudeへの確認点：新しい原画の肩／胴の表裏／左右の手・頭／靴寸法、開始入力漏れ、P2勝利でも勝者左、停止中の描画Age、現在のUnity実件数。PC撮影スクリプト実行前は必ず「PCに触らないで」。
+
+## 以下は前回完了の記録
 
 ## 最新：千鶴の新動作をゲームへ接続完了（2026-10-14）
 

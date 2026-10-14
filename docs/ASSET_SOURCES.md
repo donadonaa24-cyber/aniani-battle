@@ -170,6 +170,12 @@ AtlasPoseSplitter/ActionAtlasBuilder/ArtThreeActionsで実マスク分離、立�
 採用済み本作キャラを参照して内蔵image_genで90原画を生成し、採用19件を記録。歩き/走り/通常15クリップ102Fとカバン4回転4Fへ接続、全107クリップ588F。容姿/衣装は既存本作資料、攻撃/足運び/反動は本作独自表現。透真右/左パンチ/右キック、蓮跳び込み頭突き/頭支持蹴り/腕押し両足蹴り、千鶴同じ右手二撃/投げ。原画/全文条件/参照の役割/採否/寸法/SHAはart_source/art3_walk_attacks/、SpriteForgeの立ち由来共通倍率/224×160/PPU50/32色と頭/靴検査を維持。ユーザー動作参考はローカル閲覧だけで公開Assets/持ち出しZIPに含めない。ポーズ指示に使う骨格ガイドは自作の図。
 # 2026-10-14 紙人形風2D・千鶴の待機試作
 
+## 2026-10-15 フライパン比較とオリジナル音
+
+フライパンは内蔵image_genで本作の千鶴の採用済み絵を参照し制作。art_source/paper_cutout/variants/fryingpan/に15生成原画と全文条件、うち横6／上下6の12候補をcomparison-manifestで指定。未採用。技術的な透明余白追加だけで1304×1450／足元1328へ揃え、原画の全画素一致を検査。画像全体や手を反転加工していない。頭／靴等の部位寸法と左右の最終審査は別途必要。カバン版はvariants/bag-backup.jsonの13原画を明示削除まで保護。
+
+ArcadeAudio.csはオリジナルの手続き合成。180BPMのメニュー＋3ステージBGM、打撃／防御／開始／結果など19SE。録音、既存曲の旋律、第三者のミーム音声は不使用。用語の解釈の調査先はPAPER_THEATRE_DIRECTIONにリンクし、音素材として取り込んでいない。TestResults/arcade_audio/のWAVは同じC#生成結果の形式保存。第三者音源・新しい外部サービス契約はない。
+
 art_source/paper_cutout/generated/chizuru_paper_idle_v1.pngは内蔵image_genによる本作の自作試作。本人の採用済み茶色ボブ/オレンジセーター/紺スカート/白スニーカーを、紙の切り抜きの輪郭とアニメ塗りへ描き直した。全文プロンプト/参照の役割/出力寸法/SHAを同フォルダに保存。ユーザー添付の第三者ゲーム画面は見せ方/角度の理解にのみ利用し、人物/衣装/UI/背景はコピーせず、画像そのものをリポジトリ/ゲーム/キットへ収録しない。
 
 同一バイトの原画をAniBato/Assets/_Project/Art/Paper/idle_paper_chizuru.pngへ保存し、千鶴の待機/歩行だけ接続。足元を支点にUnityで段階的な傾き/上下を付け、原画/旧ピクセル素材を保持。docs/screenshots/paper_chizuru_unity/の18PNGはUnity実カメラの描画、左右GIFはそのPNGの形式変換で第三者素材なし。実モニター撮影ではない。BuildAll/EditMode441/441/PlayMode36/36/Windowsビルド成功。

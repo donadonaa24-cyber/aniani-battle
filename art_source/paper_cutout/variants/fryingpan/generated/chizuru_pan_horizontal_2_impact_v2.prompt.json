@@ -1,0 +1,14 @@
+{
+  "tool": "image_gen",
+  "key": "horizontal_2_impact",
+  "title": "横振り_2段目_2当てる",
+  "version": 2,
+  "prompt": "添付1の千鶴のイラストの胴体と肩の向きを修正。出力は添付1と同じキャンバス・倍率・配置・透明背景を維持。添付2は胸側と左肩の構造参考。顔、髪、足、靴、スカート、フライパン、両腕の位置は維持する。現在の背中側に見える胴体を、明確に胸元が見える正面寄り3/4へ描き直す。前のU字襟の開き、首の前側、左右鎖骨の位置を描く。襟が背中の後ろへ回る形は禁止。画面右へ伸びるフライパンの腕は、本人の左肩・左肘・左手として自然につなぎ直す。空いた画面左の腕は本人の右腕。両肩は胸の左右へ自然に接続し、肩のねじれを矛盾させない。右向きへの2段目の横振りの当てる瞬間。手を画像の反転加工で済ませず、左右に合う握りとして描く。普通のアニメ塗り、薄いクリームの白縁、1人の全身1枚、背景なし。背中を描かない。",
+  "referenceRoles": [
+    "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_impact_v1.png",
+    "art_source/paper_cutout/generated/chizuru_paper_special_side_v4.png"
+  ],
+  "transparent_background": true,
+  "approved": false,
+  "gameConnected": false
+}

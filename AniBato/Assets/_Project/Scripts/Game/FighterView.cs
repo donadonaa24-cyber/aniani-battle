@@ -74,14 +74,30 @@ namespace AniBato.Game
                 body.sprite = sprite; body.flipX = sample.FlipX;
                 body.transform.localScale = Vector3.one;
                 var rock = UsesPaperSprite ? character.PaperMotion.Transform(sample, paperPose) : default;
-                body.transform.localRotation = Quaternion.Euler(0, 0, rock.Degrees);
+                var performance = UsesPaperSprite ? AniBato.Presentation.PaperPerformance.Evaluate(character.PaperMotion.Performance, sample, fighter.LastDamageLostHeart) : default;
+                float angle = rock.Degrees + performance.Degrees;
+                body.transform.localRotation = Quaternion.Euler(0, 0, angle);
                 float baseY = paperPose != null && paperPose.Airborne ? 0 : -fighter.Definition.HurtboxSize.Y * .5f;
                 if (paperPose != null && paperPose.Airborne && fighter.Grounded)
                     baseY = -fighter.Definition.HurtboxSize.Y * .5f - paperPose.FootBaseY;
-                body.transform.localPosition = new Vector3(0, baseY + rock.Lift, 0);
                 float paperHeight = paperPose == null ? character.PaperMotion ? character.PaperMotion.StandingHeight : 0 : paperPose.HeadHeight;
-                float spriteHeight = UsesPaperSprite ? paperHeight * Mathf.Cos(rock.Degrees * Mathf.Deg2Rad) + rock.Lift :
+                Vector3 offset = new Vector3(performance.X, performance.Y, 0);
+                if (performance.RotateAboutCenter)
+                {
+                    Vector3 center = new Vector3(0, paperHeight * .5f, 0);
+                    offset += center - body.transform.localRotation * center;
+                }
+                else if (UsesPaperSprite && paperPose != null && !paperPose.Airborne && performance.Degrees != 0)
+                {
+                    float sin = Mathf.Sin(angle * Mathf.Deg2Rad);
+                    float left = sample.FlipX ? -paperPose.FootMaxX : paperPose.FootMinX;
+                    float right = sample.FlipX ? -paperPose.FootMinX : paperPose.FootMaxX;
+                    offset.y += Mathf.Max(0, -Mathf.Min(left * sin, right * sin));
+                }
+                body.transform.localPosition = new Vector3(0, baseY + rock.Lift, 0) + offset;
+                float spriteHeight = UsesPaperSprite ? paperHeight * Mathf.Cos(angle * Mathf.Deg2Rad) + rock.Lift + offset.y :
                     character.Animations.HeadHeight(sample) / character.Animations.PixelsPerUnit;
+                if (performance.RotateAboutCenter) spriteHeight = paperHeight + rock.Lift;
                 headY = position.Y + baseY + spriteHeight;
             }
             else

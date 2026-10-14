@@ -92,7 +92,7 @@ namespace AniBato.Game
             {
                 if (first.Start || second.Start) { Show(GameScreen.Pause, true, MenuAction.Start); return; }
                 countdownElapsed += Time.unscaledDeltaTime;
-                if (CountdownText != previousCountdown) { previousCountdown = CountdownText; if (audioManager) audioManager.Play(SoundCue.Countdown); }
+                if (CountdownText != previousCountdown) { previousCountdown = CountdownText; if (audioManager) audioManager.Play(CountdownText == "FIGHT!" ? SoundCue.Fight : SoundCue.Countdown); }
                 if (countdownElapsed >= settings.CountdownNumberSeconds * 3 + settings.FightBannerSeconds)
                 { Show(GameScreen.Battle, false); runner.SetPaused(false); }
             }
@@ -246,6 +246,7 @@ namespace AniBato.Game
         }
         private void Show(GameScreen screen, bool guardInput = true, MenuAction action = MenuAction.Confirm)
         {
+            if (screen == GameScreen.Result && Screen != GameScreen.Result && audioManager) audioManager.Play(SoundCue.Result);
             if (Screen == GameScreen.MainMenu) mainMenuIndex = MenuIndex;
             Screen = screen; MenuIndex = screen == GameScreen.MainMenu ? mainMenuIndex : 0; if (guardInput) input.GuardScreenTransition(action); else input.Clear();
             if (screen == GameScreen.CharacterSelect) { ready[0] = ready[1] = false; cpuRow = 0; }

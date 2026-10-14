@@ -8,8 +8,8 @@ namespace AniBato.Tests
 {
     public sealed class ProceduralAudioTests
     {
-        [TestCase(MatchEndReason.RingOut, "RING OUT!")]
-        [TestCase(MatchEndReason.Hearts, "K.O.!")]
+        [TestCase(MatchEndReason.RingOut, "KO!")]
+        [TestCase(MatchEndReason.Hearts, "KO!")]
         [TestCase(MatchEndReason.TimeUp, "TIME UP!")]
         public void FinishUsesEndReasonRatherThanWinner(MatchEndReason reason, string text)
         {
@@ -25,7 +25,7 @@ namespace AniBato.Tests
                 Assert.That(wave, Is.EqualTo(ProceduralAudio.Effect(cue))); Assert.That(wave.Any(x => x != 0), Is.True);
             }
             for (int i = 0; i < 4; i++)
-            { var music = ProceduralAudio.Music(i); Assert.That(music.Length, Is.EqualTo(128000)); Assert.That(music.All(x => Math.Abs(x) < 1), Is.True); }
+            { var music = ProceduralAudio.Music(i); Assert.That(music.Length, Is.EqualTo((int)(16000 * 32 * 60d / 180))); Assert.That(music.All(x => Math.Abs(x) < 1), Is.True); }
         }
         [Test]
         public void AudioEventConsumptionLeavesSimulationUnchanged()

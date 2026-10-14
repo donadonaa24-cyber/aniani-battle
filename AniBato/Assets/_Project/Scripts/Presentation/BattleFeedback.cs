@@ -18,7 +18,7 @@ namespace AniBato.Presentation
                 FlashRemaining = SlowRemaining = flash;
             if (value.Kind == BattleEventKind.UltimateStarted) FlashRemaining = flash;
             if (value.Kind == BattleEventKind.MatchEnded)
-            { FinishRemaining = finish; FinishText = value.EndReason == MatchEndReason.RingOut ? "RING OUT!" : value.EndReason == MatchEndReason.TimeUp ? "TIME UP!" : "K.O.!"; }
+            { FinishRemaining = finish; FinishText = value.EndReason == MatchEndReason.TimeUp ? "TIME UP!" : "KO!"; }
         }
         public void Advance(float seconds)
         {

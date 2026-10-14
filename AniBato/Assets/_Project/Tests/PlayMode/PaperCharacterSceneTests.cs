@@ -115,8 +115,11 @@ namespace AniBato.Tests
             runner.SetPaused(false); yield return Key(controller.Bindings.P1.Right, false);
             yield return Key(controller.Bindings.P1.Attack, true); Tick();
             Assert.That(view.UsesPaperSprite, Is.True); Assert.That(body.sprite, Is.SameAs(runner.Character(0).PaperMotion.Find(AnimationState.Attack1).Frames[0]));
-            Assert.That(body.transform.localRotation, Is.EqualTo(Quaternion.identity));
-            Assert.That(body.transform.localPosition.y, Is.EqualTo(-runner.Simulation.P1.Definition.HurtboxSize.Y * .5f));
+            Assert.That(Angle(body), Is.EqualTo(8).Within(.001));
+            Assert.That(body.transform.localPosition.x, Is.EqualTo(-.06f).Within(.0001));
+            var attackPose = runner.Character(0).PaperMotion.Find(AnimationState.Attack1);
+            float attackLift = Mathf.Max(0, -Mathf.Min(attackPose.FootMinX, attackPose.FootMaxX) * Mathf.Sin(8 * Mathf.Deg2Rad));
+            Assert.That(body.transform.localPosition.y, Is.EqualTo(-runner.Simulation.P1.Definition.HurtboxSize.Y * .5f + attackLift).Within(.0001));
             yield return Key(controller.Bindings.P1.Attack, false);
             for (int i = 0; i < 30; i++) Tick(); AssertPaper();
             runner.RestartMatch(); view.RenderFrame(); AssertPaper();
@@ -176,9 +179,42 @@ namespace AniBato.Tests
                 runner.RestartMatch(); yield return Key(actions[i], true); Tick();
                 Assert.That(view.RenderedSample.State, Is.EqualTo(expected[i])); Assert.That(view.UsesPaperSprite, Is.True);
                 Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(expected[i]).Frames[0]));
-                Assert.That(Angle(body), Is.EqualTo(0).Within(.001)); Capture(expected[i].ToString(), true);
+                Assert.That(Angle(body), Is.EqualTo(i >= 4 ? 8 : 0).Within(.001)); Capture(expected[i].ToString(), true);
                 yield return Key(actions[i], false);
             }
+        }
+        [UnityTest]
+        public IEnumerator WholeSpriteAttackAndTumbleRenderHeldKeyPosesWithoutChangingPhysics()
+        {
+            var player = ((FighterAnimationPlayer[])typeof(BattleRunner).GetField("animations", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).GetValue(runner))[0];
+            var sampleProperty = typeof(FighterAnimationPlayer).GetProperty("Sample");
+            var original = player.Sample; var sim = runner.Simulation; var position = sim.P1.Position; int ticks = sim.Match.TickCount;
+            try
+            {
+                foreach (int frame in new[] { 0, 8, 9, 13, 14, 17 })
+                {
+                    var sample = new AnimationSample { State = AnimationState.Attack1, IsAttack = true, AttackFrame = frame, Startup = 9, Active = 5, Recovery = 10 };
+                    sampleProperty.SetValue(player, sample); view.RenderFrame();
+                    float angle = frame < 9 ? 8 : frame < 14 ? -15 : frame < 17 ? 3.2f : 0;
+                    Assert.That(Angle(body), Is.EqualTo(angle).Within(.001));
+                    Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one));
+                    if (frame == 0 || frame == 9) Capture("attack_key_" + frame, true);
+                }
+                var pose = runner.Character(0).PaperMotion.Find(AnimationState.Knockback);
+                for (int age = 0; age < 12; age++)
+                {
+                    sampleProperty.SetValue(player, new AnimationSample { State = AnimationState.Knockback, Age = age }); view.RenderFrame();
+                    float angle = age / 3 * 45;
+                    Assert.That(Angle(body), Is.EqualTo(angle).Within(.001));
+                    Vector3 center = body.transform.TransformPoint(new Vector3(0, pose.HeadHeight * .5f, 0));
+                    Assert.That(center.x, Is.EqualTo(view.transform.position.x).Within(.0001));
+                    Assert.That(center.y, Is.EqualTo(view.transform.position.y - sim.P1.Definition.HurtboxSize.Y * .5f + pose.HeadHeight * .5f).Within(.0001));
+                    if (age % 3 == 0) Capture("tumble_" + age, true);
+                }
+                Assert.That(sim.Match.TickCount, Is.EqualTo(ticks)); Assert.That(sim.P1.Position, Is.EqualTo(position));
+            }
+            finally { sampleProperty.SetValue(player, original); view.RenderFrame(); }
+            yield return null;
         }
         [UnityTest]
         public IEnumerator EveryDirectionalAirAttackKeepsItsPaperPoseFromStartupThroughRecovery()
@@ -229,7 +265,7 @@ namespace AniBato.Tests
                 }
                 camera.targetTexture = texture; camera.Render(); RenderTexture.active = texture;
                 image.ReadPixels(new Rect(0, 0, width, height), 0, 0); image.Apply();
-                string directory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../docs/screenshots/paper_chizuru_all_unity")); Directory.CreateDirectory(directory);
+                string directory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../docs/screenshots/paper_theatre_unity")); Directory.CreateDirectory(directory);
                 File.WriteAllBytes(Path.Combine(directory, name + ".png"), image.EncodeToPNG());
             }
             finally

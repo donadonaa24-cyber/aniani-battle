@@ -1,4 +1,16 @@
-# 実装状況：千鶴の紙動作を全接続（2026-10-14）
+# 実装状況（2026-10-15）
+
+## 最新：開始・決着・結果・全身動作・音を検証（2026-10-15）
+
+実装順をdocs/IMPLEMENTATION_ORDER.mdへ固定、今回の設定はdocs/PAPER_THEATRE_DIRECTION.mdに集約。順1〜4の基本実装を完了。FIGHT!操作停止、KO!／TIME UP!、決着後6tick静止→2.5秒後に結果、勝者を左・敗者を右へ、名前／ステージ／固有勝敗絵。千鶴の引く→出す→戻る・被弾・中心での段階回転を全身Spriteだけで実装。歩き15度／走り45度固定を維持。新規の紙勝敗絵の他キャラ展開は未完。
+
+今回実Unitypaper_theatre_2：BuildAll成功・Edit459/459・Play42/42・Windowsビルド成功、失敗0／スキップ0。初回の型名衝突を明示aliasで修正して全4工程を再実行した。アサーションを弱めていない。最新起動Build/paper_theatre_2/AniBato.exe。実Camera.Renderの30PNGをdocs/screenshots/paper_theatre_unity/へ保存し目視。OSキー送信なし。下の447／38は前回保存済み。
+
+千鶴フライパンは横6＋上下6の比較保存完了。イラスト確認/千鶴/比較_フライパン版_未採用/に日本語名／一覧。1304×1450、靴底1328、透明余白のみで原画画素一致。頭／靴／手の絵の最終審査は未完、ゲームはカバン版のまま。variants/bag-backup.jsonで13原画を削除指示まで保護。180BPMのBGM4種／19SEも試作導入し、TestResults/arcade_audio/へ試聴WAV5件。聴感の好みは未確認。
+
+この検証区切りを通常commit／origin mainへpushする。次はPAPER_STAGE_EFFECTSの紙ヒット演出→工作舞台／縮小演出→9人集合タイトル。透真の旧制作は自動再開しない。詳細はcodex_logs/paper_theatre_2_final.mdとRESUME。
+
+## 以下は前回完了の記録
 
 ## 最新：千鶴の新動作をゲームへ接続完了（2026-10-14）
 

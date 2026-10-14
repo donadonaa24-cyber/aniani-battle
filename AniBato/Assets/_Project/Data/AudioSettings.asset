@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc165ec2cfc19242ba5f8b1e4c57bf5, type: 3}
   m_Name: AudioSettings
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AudioSettings
+  Style:
+    Bpm: 180
+    LoopBeats: 32
+    MelodyGain: 0.16
+    RhythmGain: 0.21
+    EffectGain: 0.6
+  DuckRatio: 0.45
+  DuckSeconds: 0.16
   BgmVolume: 0.35
   SeVolume: 0.65

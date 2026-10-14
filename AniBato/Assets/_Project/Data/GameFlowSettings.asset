@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d40170eb9c17941ae2d96a6133e913, type: 3}
   m_Name: GameFlowSettings
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.GameFlowSettings
+  TheatreSchemaVersion: 1
   CountdownNumberSeconds: 1
   FightBannerSeconds: 0.5
-  ResultDelaySeconds: 0.8
+  ResultDelaySeconds: 2.5

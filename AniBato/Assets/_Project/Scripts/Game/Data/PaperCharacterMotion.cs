@@ -15,11 +15,15 @@ namespace AniBato.Game
         public float HeadHeight, FootBaseY, FootMinX, FootMaxX;
         public bool Valid => HoldTicks > 0 && Frames != null && Frames.Length > 0 && System.Array.TrueForAll(Frames, frame => frame);
         public Sprite Frame(int age) => Frames[System.Math.Min(Frames.Length - 1, System.Math.Max(0, age) / HoldTicks)];
+        public Sprite Frame(in AnimationSample sample) => sample.IsAttack && Frames.Length == 2 ?
+            Frames[sample.AttackFrame < sample.Startup ? 0 : 1] : Frame(sample.Age);
     }
     [CreateAssetMenu(menuName = "あにバト/紙人形の待機・歩行")]
     public sealed class PaperCharacterMotion : ScriptableObject
     {
         public int SchemaVersion;
+        public int PerformanceSchemaVersion;
+        public PaperPerformanceSettings Performance = PaperPerformanceSettings.Default;
         public bool Enabled = true;
         public Sprite Sprite;
         public float StandingHeight = 2.24f;
@@ -39,7 +43,7 @@ namespace AniBato.Game
         {
             pose = Find(sample.State, lostHeart); sprite = null;
             if (!Supports(sample.State)) return false;
-            sprite = pose != null ? pose.Frame(sample.Age) : Sprite;
+            sprite = pose != null ? pose.Frame(sample) : Sprite;
             return sprite;
         }
         public PaperRockingSample Transform(in AnimationSample sample, PaperPose pose)

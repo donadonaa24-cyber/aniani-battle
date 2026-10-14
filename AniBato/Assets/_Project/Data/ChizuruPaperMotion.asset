@@ -13,6 +13,19 @@ MonoBehaviour:
   m_Name: ChizuruPaperMotion
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
   SchemaVersion: 2
+  PerformanceSchemaVersion: 1
+  Performance:
+    StepTicks: 3
+    WinStepTicks: 12
+    AnticipationDegrees: 8
+    StrikeDegrees: 15
+    RecoilDegrees: 14
+    SpinDegrees: 45
+    WinDegrees: 3
+    PullDistance: 0.06
+    StrikeDistance: 0.1
+    RecoilDistance: 0.08
+    WinLift: 0.025
   Enabled: 1
   Sprite: {fileID: 21300000, guid: 941fd22c1baa7a54d92621d85f1e4af8, type: 3}
   StandingHeight: 2.24
