@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "canvasWidth": 1304,
+  "canvasHeight": 1450,
+  "note": "ユーザー指定で現参照を先行接続。絵の未修正点は残す。共通PPU、透明余白の梱包のみ、人物の拡縮なし。足元は靴の明色から計測し道具と区別。",
+  "poses": [
+    {
+      "key": "idle",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_idle_v1.png",
+      "sha256": "9c8195540e5e94189d5e35cf84e6ecaf844f9517979a7a3ed2b7d3ed067b0070",
+      "states": [
+        0,
+        1
+      ],
+      "airborne": false,
+      "headTopY": 42,
+      "footY": 1235,
+      "footMinX": 390,
+      "footMaxX": 942,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "previously_adopted",
+      "artNote": "ゲームで採用済みの紙イラスト。待機では少し揺らします。"
+    },
+    {
+      "key": "run",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_run_v3.png",
+      "sha256": "79f5b321eb7df005e13a1b2ca169a83d68c66a1a9e05366481bb7f58c24d9c52",
+      "states": [
+        2
+      ],
+      "airborne": false,
+      "headTopY": 59,
+      "footY": 1182,
+      "footMinX": 855,
+      "footMaxX": 1035,
+      "width": 1244,
+      "height": 1265,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "走りのポーズ候補。頭と靴の寸法、手の左右を確認待ち。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "crouch",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+      "sha256": "b2557d6567ddb57f842ae8e419a4057f11069e43e46ffd81e893024f1be1f32f",
+      "states": [
+        5,
+        24,
+        34
+      ],
+      "airborne": false,
+      "headTopY": 221,
+      "footY": 1205,
+      "footMinX": 417,
+      "footMaxX": 560,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "しゃがみの候補。着地・ジャンプ前のかがみでも共通利用する予定です。"
+    },
+    {
+      "key": "guard",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+      "sha256": "e8f96b8f48d460b606847e143fbcb6ef8e70b3607a52bb4ca62803a8deb515ed",
+      "states": [
+        15
+      ],
+      "airborne": false,
+      "headTopY": 59,
+      "footY": 1227,
+      "footMinX": 348,
+      "footMaxX": 492,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "jump",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_jump_v2.png",
+      "sha256": "2e4c93a8702dbab38ee75e0b01fcb16a3e0fc3ca625fede3fa32d52a2d07ebf8",
+      "states": [
+        3
+      ],
+      "airborne": true,
+      "headTopY": 43,
+      "footY": 1187,
+      "footMinX": 566,
+      "footMaxX": 660,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "fall",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_fall_v1.png",
+      "sha256": "10fba48821346c29217559b69513031c6ee561f1049cef73ecdeedb8b9c336d5",
+      "states": [
+        4
+      ],
+      "airborne": true,
+      "headTopY": 41,
+      "footY": 1187,
+      "footMinX": 510,
+      "footMaxX": 624,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "dodge",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_dodge_v2.png",
+      "sha256": "571a0634e74681b1f1e4b52d08688884b6c096d497be4292961ac7566d085186",
+      "states": [
+        16
+      ],
+      "airborne": false,
+      "headTopY": 302,
+      "footY": 1152,
+      "footMinX": 388,
+      "footMaxX": 1040,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "counter",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+      "sha256": "48723deabe9f8ae2545f909ceb69d7164dcb7b4c54ea1a1cd825e8538cfb5409",
+      "states": [
+        17
+      ],
+      "airborne": false,
+      "headTopY": 29,
+      "footY": 1226,
+      "footMinX": 315,
+      "footMaxX": 496,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "counter_success",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_counter_success_v1.png",
+      "sha256": "75a12b15bc8b7ea628af6a804eaaabe5640f74ba2c5d2c28e13283517aadc46c",
+      "states": [
+        18
+      ],
+      "airborne": false,
+      "headTopY": 33,
+      "footY": 1219,
+      "footMinX": 326,
+      "footMaxX": 1100,
+      "width": 1245,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "hit_light",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_hit_light_v1.png",
+      "sha256": "4762cf47840c9f29a8ebbac55783d1134f85ae08e438a6716bbcdf9024317110",
+      "states": [
+        19,
+        20
+      ],
+      "airborne": false,
+      "headTopY": 64,
+      "footY": 1213,
+      "footMinX": 432,
+      "footMaxX": 1069,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "hit_heavy",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_hit_heavy_v2.png",
+      "sha256": "63c84130b6825fe5e2d3a92538edde3f2ead9695830fed3000f93e710a4a0eaa",
+      "states": [],
+      "airborne": false,
+      "headTopY": 51,
+      "footY": 1215,
+      "footMinX": 456,
+      "footMaxX": 628,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "痛そうに泣くハート消失時の候補。左右の手と部位寸法を確認待ちです。"
+    },
+    {
+      "key": "ko",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
+      "sha256": "23ed8a174d7212763c58274edf760ca2649ccea415b863dd515a1ba433312267",
+      "states": [
+        21,
+        23
+      ],
+      "airborne": false,
+      "headTopY": 327,
+      "footY": 1156,
+      "footMinX": 290,
+      "footMaxX": 419,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "win",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+      "sha256": "48efb25845b8b822311eb5924e3838170c532763fc94d4d9ec3f49c9039bb5f6",
+      "states": [
+        22
+      ],
+      "airborne": false,
+      "headTopY": 47,
+      "footY": 1230,
+      "footMinX": 397,
+      "footMaxX": 961,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "attack1",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_attack1_v3.png",
+      "sha256": "35edb844d659b5eeb32916813f6cb12b371f4596b46c6bc7e820139558b8d332",
+      "states": [
+        6
+      ],
+      "airborne": false,
+      "headTopY": 28,
+      "footY": 1211,
+      "footMinX": 820,
+      "footMaxX": 967,
+      "width": 1245,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "右手カバンの修正候補。握り方・左右の手・部位サイズの確認待ちです。"
+    },
+    {
+      "key": "attack2",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_attack2_v3.png",
+      "sha256": "f717ac83ef28beaa3c8abbad0bf836ddc7196e8c62c364932070a16ec1d73767",
+      "states": [
+        7
+      ],
+      "airborne": false,
+      "headTopY": 36,
+      "footY": 1207,
+      "footMinX": 809,
+      "footMaxX": 972,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "known_art_issue",
+      "artNote": "右手カバンと、空いた左手の形・腕の所属を修正確認する必要があります。"
+    },
+    {
+      "key": "attack3",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_attack3_v6.png",
+      "sha256": "5263fe5ae299c4c829fde0349f8b4d27da1678350a5196fe44802e38a643d51c",
+      "states": [
+        8
+      ],
+      "airborne": false,
+      "headTopY": 0,
+      "footY": 1243,
+      "footMinX": 886,
+      "footMaxX": 1097,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "known_art_issue",
+      "artNote": "胸側になりましたが、右肩と前へ伸ばす投げ腕のつながりを再修正する必要があります。"
+    },
+    {
+      "key": "crouch_attack",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_crouch_attack_v3.png",
+      "sha256": "7144fc173302867061dcce1d8ecb188f7a82d6e03148fd4e8f6d5f46740c6bbe",
+      "states": [
+        25
+      ],
+      "airborne": false,
+      "headTopY": 200,
+      "footY": 1270,
+      "footMinX": 663,
+      "footMaxX": 907,
+      "width": 1129,
+      "height": 1393,
+      "artReview": "known_art_issue",
+      "artNote": "手の左右と画像サイズに問題があります。人物の端切れもあり、再修正が必要です。"
+    },
+    {
+      "key": "back_attack",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_back_attack_v8.png",
+      "sha256": "b0359f023cedfd0a1fad1205497401383681a85c639f9a696336ae9a10976ebb",
+      "states": [
+        26
+      ],
+      "airborne": false,
+      "headTopY": 71,
+      "footY": 1209,
+      "footMinX": 1009,
+      "footMaxX": 1179,
+      "width": 1245,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "右手カバン・空いた左手の上側の親指を修正し、白い紙縁も戻した候補08です。部位寸法の確認待ちです。"
+    },
+    {
+      "key": "air_neutral",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_air_neutral_v2.png",
+      "sha256": "860d22cc00f02535c9781e287f6d91ad542b5f064fd1b665b0157e0b277baf3e",
+      "states": [
+        9,
+        27
+      ],
+      "airborne": true,
+      "headTopY": 51,
+      "footY": 1149,
+      "footMinX": 341,
+      "footMaxX": 427,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "known_art_issue",
+      "artNote": "カバンの持ち手と両手の左右を修正確認する必要があります。"
+    },
+    {
+      "key": "air_forward",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_air_forward_v8.png",
+      "sha256": "180906ef0cf53db6613fd499c5dabad62f5a34ef9dbb23e6ab554d75fb9c83eb",
+      "states": [
+        28
+      ],
+      "airborne": true,
+      "headTopY": 55,
+      "footY": 1094,
+      "footMinX": 742,
+      "footMaxX": 924,
+      "width": 1243,
+      "height": 1265,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "ユーザー承認済みの手元参考から、内側の4指と下側の親指を全身に反映した候補08。全身のユーザー確認・部位倍率・共通セルは未審査、ゲーム未採用。"
+    },
+    {
+      "key": "air_back",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_air_back_v1.png",
+      "sha256": "e22e2ecb8bac481d8ac352f25cfd4dc9309082753e9e8e6f298a12a9bea3629c",
+      "states": [
+        29
+      ],
+      "airborne": true,
+      "headTopY": 28,
+      "footY": 1150,
+      "footMinX": 608,
+      "footMaxX": 670,
+      "width": 1245,
+      "height": 1263,
+      "artReview": "known_art_issue",
+      "artNote": "カバンを持つ右腕と、空いた左手の向きを修正確認する必要があります。"
+    },
+    {
+      "key": "air_up",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_air_up_v2.png",
+      "sha256": "b902261fb45f42eb23e0f809972321fc757a7e52ae2df05c0b08efb333b1edd3",
+      "states": [
+        30
+      ],
+      "airborne": true,
+      "headTopY": 253,
+      "footY": 1182,
+      "footMinX": 575,
+      "footMaxX": 692,
+      "width": 1245,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "air_down",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_air_down_v1.png",
+      "sha256": "6061e9026970f26d5fff612a7c154fed6493cdf0700bf4c348ebcfdc4fbd5ca2",
+      "states": [
+        31
+      ],
+      "airborne": true,
+      "headTopY": 71,
+      "footY": 1013,
+      "footMinX": 393,
+      "footMaxX": 958,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "air_forward_up",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_air_forward_up_v1.png",
+      "sha256": "8c6f00a32c29f4e957fd1b19b37d06f64b5661c0a4eb259e7d7d4d30a0b85e67",
+      "states": [
+        32
+      ],
+      "airborne": true,
+      "headTopY": 63,
+      "footY": 1194,
+      "footMinX": 198,
+      "footMaxX": 310,
+      "width": 1245,
+      "height": 1263,
+      "artReview": "known_art_issue",
+      "artNote": "カバンを持つ右腕と、両手の左右を修正確認する必要があります。"
+    },
+    {
+      "key": "air_forward_down",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_air_forward_down_v3.png",
+      "sha256": "9a92369d17534d9da387af3b40e3790dd51cef5ec87a4c97aebc701a46244fc0",
+      "states": [
+        33
+      ],
+      "airborne": true,
+      "headTopY": 79,
+      "footY": 1203,
+      "footMinX": 600,
+      "footMaxX": 707,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "known_art_issue",
+      "artNote": "候補03も左拳が右手に見えるとユーザーが指摘。背中構図・右手カバン、左上の左拳は甲側と上側の親指が必要。未修正、ゲーム未採用。前方の掌側の手とは別。"
+    },
+    {
+      "key": "special_neutral",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_special_neutral_v1.png",
+      "sha256": "a0d42eb9855e3335ca464864063242e627de891c908f75f78768cac1648628a9",
+      "states": [
+        10
+      ],
+      "airborne": false,
+      "headTopY": 41,
+      "footY": 1222,
+      "footMinX": 407,
+      "footMaxX": 578,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "special_side",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_special_side_v4.png",
+      "sha256": "7937d62a764809f841ce0c9fd9152479ce8d15981d45600baf0372980cdb4d9c",
+      "states": [
+        11
+      ],
+      "airborne": false,
+      "headTopY": 144,
+      "footY": 1186,
+      "footMinX": 168,
+      "footMaxX": 1074,
+      "width": 1244,
+      "height": 1264,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "フライパンを左手に持つ修正候補。腕・握り・頭と靴の寸法の確認待ちです。"
+    },
+    {
+      "key": "special_up",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_special_up_v3.png",
+      "sha256": "38986817f8a88811b6a45ad6dd3cc0cb2f9227e1ee7052b74818ed8881451d18",
+      "states": [
+        12
+      ],
+      "airborne": true,
+      "headTopY": 169,
+      "footY": 1240,
+      "footMinX": 684,
+      "footMaxX": 773,
+      "width": 1244,
+      "height": 1265,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "おたまを奥側の左肩から伸びる左腕に持つ修正候補。手・部位寸法の確認待ちです。"
+    },
+    {
+      "key": "special_down",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_special_down_v1.png",
+      "sha256": "96c70046b4587cee04248f5c196dcf42fc05836d73dd9a88f043fa04d9b68b3a",
+      "states": [
+        13
+      ],
+      "airborne": false,
+      "headTopY": 29,
+      "footY": 1233,
+      "footMinX": 460,
+      "footMaxX": 842,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    },
+    {
+      "key": "ultimate",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_ultimate_v1.png",
+      "sha256": "26928604a2bf0ac486795a1565db5b5c441e8bca528ac2be3370ef8aa898ef54",
+      "states": [
+        14
+      ],
+      "airborne": false,
+      "headTopY": 30,
+      "footY": 1217,
+      "footMinX": 295,
+      "footMaxX": 461,
+      "width": 1246,
+      "height": 1263,
+      "artReview": "provisional_user_requested_integration",
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+    }
+  ],
+  "effects": [
+    {
+      "key": "bag_throw",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_effect_bag_throw_v1.png",
+      "sha256": "803e63a803bc7d27a3a8d2e8227e24f51a7764f9f3a79375a1901da4d7cac06d",
+      "worldWidth": 0.65
+    },
+    {
+      "key": "rice_ball",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_effect_rice_ball_v1.png",
+      "sha256": "9811aff7e6b03e9c564cb41890280553eb697c79ccd09884cc8de1c366fa83ef",
+      "worldWidth": 0.42
+    },
+    {
+      "key": "mogu",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_effect_mogu_v1.png",
+      "sha256": "b82e69c20a498b831a7d22152ece243b3711d9a74efd67e9027483689cc338f3",
+      "worldWidth": 0.55
+    },
+    {
+      "key": "curry_wave",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_effect_curry_wave_v1.png",
+      "sha256": "cdf23cfd3ef00ee4ae88daf5d7855f8e425c9e25e49297c18606b9dbe7044910",
+      "worldWidth": 2.4
+    }
+  ]
+}

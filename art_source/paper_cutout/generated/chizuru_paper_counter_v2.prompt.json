@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen",
+  "prompt": "参照1は千鶴の手の修正対象、参照2は採用待機の本人と寸法。修正：前へ差し出す奥の左手の掌を正しい左手にする。親指は人体の左手に正しい側につけ、人差し指・中指・薬指・小指の4指と親指の合計5本を読み取れる。手前の右手は右手の自然な構え。 肩→上腕→肘→前腕→手首→指を自然につなぐ。手の甲と掌を区別し、親指の付く側が右と左で正しく逆になる。手首を180度ねじらない。手と必要な前腕以外は顔/髪/表情/道具/私服/胴/スカート/脚/白スニーカー/頭身/全身と全部位の倍率/元ポーズ/アニメ塗り/濃茶輪郭/細いクリーム紙縁を維持。一人全身一姿勢、1246×1263透明RGBA。端切れ/背景/床/影/文字/透かし/ドットなし。",
+  "referenceRoles": [
+    {
+      "path": "art_source/paper_cutout/generated/chizuru_paper_counter_v1.png",
+      "role": "手指の修正対象"
+    },
+    {
+      "path": "art_source/paper_cutout/generated/chizuru_paper_idle_v1.png",
+      "role": "本人・寸法基準"
+    }
+  ],
+  "transparent_background": true,
+  "approved": false
+}

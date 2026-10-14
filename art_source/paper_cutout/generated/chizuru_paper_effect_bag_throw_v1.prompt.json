@@ -1,0 +1,13 @@
+{
+  "key": "bag_throw",
+  "version": 1,
+  "type": "effect",
+  "references": [
+    {
+      "file": "art_source/paper_cutout/generated/chizuru_paper_attack1_v1.png",
+      "role": "本人の紙画風と対象物の形/色だけ"
+    }
+  ],
+  "prompt": "参照の人物が右手に持つ、茶色の四角い手提げカバンだけを、同じ形/色/2本の持ち手/金色の小さい金具で独立した1個の効果素材として描く。人物/手/袖は描かない。紙人形の濃茶輪郭/薄いクリーム紙縁/1段アニメ塗り。少し右向き3/4の茶色カバン、透明RGBA512×512、全体を余白32px以上で中央へ。文字/ロゴ/影/台座/背景なし。",
+  "transparent_background": true
+}

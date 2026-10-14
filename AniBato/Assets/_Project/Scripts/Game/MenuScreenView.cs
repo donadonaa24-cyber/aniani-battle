@@ -112,7 +112,8 @@ namespace AniBato.Game
             for (int i = 0; i < 2; i++)
             {
                 var character = flow.Setup.Character(i == 0 ? flow.Player1Index : flow.Player2Index);
-                cards[i].enabled = cardLabels[i].enabled = true; cards[i].sprite = character.Animations.Find("idle").Frames[0];
+                cards[i].enabled = cardLabels[i].enabled = true;
+                cards[i].sprite = character.PaperMotion && character.PaperMotion.Enabled ? character.PaperMotion.Sprite : character.Animations.Find("idle").Frames[0];
                 cards[i].color = Color.white;
                 cardLabels[i].text = (i == 0 ? "P1" : flow.CpuMode ? "CPU" : "P2") + "  " + character.Movement.Name +
                     (flow.Ready(i) ? "  READY!" : "  ◀  ▶") + "\n" + Work(character) + "\n" + Type(character);
@@ -147,7 +148,10 @@ namespace AniBato.Game
             {
                 var character = flow.Runner.Character(i); var fighter = i == 0 ? sim.P1 : sim.P2;
                 cards[i].enabled = cardLabels[i].enabled = true;
-                character.Animations.TrySprite(flow.Runner.Animation(i), out Sprite sprite); cards[i].sprite = sprite; cards[i].color = Color.white;
+                var animation = flow.Runner.Animation(i);
+                character.Animations.TrySprite(animation, out Sprite sprite);
+                if (character.PaperMotion && character.PaperMotion.TrySprite(animation, fighter.LastDamageLostHeart, out Sprite paper, out PaperPose pose)) sprite = paper;
+                cards[i].sprite = sprite; cards[i].color = Color.white;
                 cardLabels[i].text = "P" + (i + 1) + "  " + fighter.Definition.Name + "\nハート " + fighter.Hearts + "  /  被弾 " + fighter.NormalHitCount;
                 cardLabels[i].color = Color.white;
             }

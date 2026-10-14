@@ -28,9 +28,13 @@ namespace AniBato.Game
                 var normalEffects = normal && character.SpriteEffects != null && character.SpriteEffects.NormalProjectileSchemaVersion >= 1 ? character.SpriteEffects : null;
                 if (normalEffects != null) clip = normalEffects.NormalProjectileClip;
                 Sprite sprite = animations ? animations.Effect(clip, projectile.Attack.Definition.ProjectileLifetimeFrames - projectile.RemainingFrames) : null;
+                var paper = character.PaperMotion;
+                if (paper && paper.Enabled && (normal ? paper.Bag : paper.RiceBall)) sprite = normal ? paper.Bag : paper.RiceBall;
                 sprites[i].sprite = sprite ? sprite : ProceduralSprites.Shape(true);
                 sprites[i].color = sprite ? Color.white : runner.Character(projectile.Owner.PlayerIndex).Tint;
                 sprites[i].flipX = sprite && projectile.Facing < 0;
+                int age = projectile.Attack.Definition.ProjectileLifetimeFrames - projectile.RemainingFrames;
+                sprites[i].transform.localRotation = Quaternion.Euler(0, 0, normal && paper && paper.Enabled && paper.Bag ? age / 8 * 45 * projectile.Facing : 0);
                 var position = runner.RenderPosition(projectile);
                 sprites[i].transform.position = new Vector3(position.X, position.Y, 0);
                 sprites[i].transform.localScale = sprite ? Vector3.one * (normalEffects != null ? normalEffects.NormalProjectileScale : effects == null ? presentation.RiceBallScale : effects.ProjectileScale) : new Vector3(projectile.Hitbox.Size.X, projectile.Hitbox.Size.Y, 1);

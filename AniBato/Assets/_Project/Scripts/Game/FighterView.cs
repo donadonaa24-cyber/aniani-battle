@@ -63,8 +63,9 @@ namespace AniBato.Game
             var sample = runner.Animation(playerIndex); Sprite sprite = null;
             RenderedSample = sample;
             UsesAnimationSprites = character.Animations && character.Animations.TrySprite(sample, out sprite);
-            UsesPaperSprite = character.PaperMotion && character.PaperMotion.Supports(sample.State);
-            if (UsesPaperSprite) { sprite = character.PaperMotion.Sprite; UsesAnimationSprites = true; }
+            PaperPose paperPose = null; Sprite paperSprite = null;
+            UsesPaperSprite = character.PaperMotion && character.PaperMotion.TrySprite(sample, fighter.LastDamageLostHeart, out paperSprite, out paperPose);
+            if (UsesPaperSprite) { sprite = paperSprite; UsesAnimationSprites = true; }
             transform.localScale = UsesAnimationSprites ? Vector3.one : new Vector3(fighter.Facing, 1, 1);
             eye.enabled = !UsesAnimationSprites;
             foreach (var ear in ears) ear.enabled = !UsesAnimationSprites && character.Silhouette == 1;
@@ -72,13 +73,16 @@ namespace AniBato.Game
             {
                 body.sprite = sprite; body.flipX = sample.FlipX;
                 body.transform.localScale = Vector3.one;
-                var rock = UsesPaperSprite ? AniBato.Presentation.PaperRockingMotion.Evaluate(character.PaperMotion.Motion, sample.Age,
-                    sample.State == AniBato.Presentation.AnimationState.Move, sample.FlipX) : default;
+                var rock = UsesPaperSprite ? character.PaperMotion.Transform(sample, paperPose) : default;
                 body.transform.localRotation = Quaternion.Euler(0, 0, rock.Degrees);
-                body.transform.localPosition = new Vector3(0, -fighter.Definition.HurtboxSize.Y * 0.5f + rock.Lift, 0);
-                float spriteHeight = UsesPaperSprite ? character.PaperMotion.StandingHeight * Mathf.Cos(rock.Degrees * Mathf.Deg2Rad) + rock.Lift :
+                float baseY = paperPose != null && paperPose.Airborne ? 0 : -fighter.Definition.HurtboxSize.Y * .5f;
+                if (paperPose != null && paperPose.Airborne && fighter.Grounded)
+                    baseY = -fighter.Definition.HurtboxSize.Y * .5f - paperPose.FootBaseY;
+                body.transform.localPosition = new Vector3(0, baseY + rock.Lift, 0);
+                float paperHeight = paperPose == null ? character.PaperMotion ? character.PaperMotion.StandingHeight : 0 : paperPose.HeadHeight;
+                float spriteHeight = UsesPaperSprite ? paperHeight * Mathf.Cos(rock.Degrees * Mathf.Deg2Rad) + rock.Lift :
                     character.Animations.HeadHeight(sample) / character.Animations.PixelsPerUnit;
-                headY = position.Y - fighter.Definition.HurtboxSize.Y * 0.5f + spriteHeight;
+                headY = position.Y + baseY + spriteHeight;
             }
             else
             {
@@ -118,6 +122,7 @@ namespace AniBato.Game
             mogu.transform.position = new Vector3(position.X + presentation.StatusIconOffset.x, headY + presentation.StatusIconOffset.y, 0); mogu.transform.localScale = Vector3.one * presentation.StatusIconScale;
             int effectAge = sample.IsAttack ? Mathf.Max(0, sample.AttackFrame - sample.Startup) : 0;
             wave.sprite = character.Animations ? character.Animations.Effect(effects == null ? "curry_wave" : effects.UltimateClip, effectAge) : null;
+            if (character.PaperMotion && character.PaperMotion.Enabled && character.PaperMotion.CurryWave) wave.sprite = character.PaperMotion.CurryWave;
             wave.enabled = UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.IsUltimate && fighter.Attack.IsActive && wave.sprite;
             float waveScale = effects == null ? presentation.CurryWaveScale : effects.UltimateScale;
             Vector2 waveOffset = effects == null ? presentation.CurryWaveOffset : effects.UltimateOffset;

@@ -1,0 +1,896 @@
+{
+  "method": "RGBA sneaker light paint, components >=100px and fill >=0.2, 2 spatial clusters, PCA major-axis. Manual review required for overlaps/occluded feet.",
+  "baseline": {
+    "file": "chizuru_paper_idle_v1.png",
+    "width": 1246,
+    "height": 1263,
+    "feet": [
+      {
+        "pixels": 5498,
+        "center": [
+          453.3,
+          1175.6
+        ],
+        "lengthPx": 130.99
+      },
+      {
+        "pixels": 6100,
+        "center": [
+          874.7,
+          1167.3
+        ],
+        "lengthPx": 153.59
+      }
+    ],
+    "ratios": [
+      1,
+      1
+    ]
+  },
+  "results": [
+    {
+      "file": "chizuru_paper_air_back_v1.png",
+      "width": 1245,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 4035,
+          "center": [
+            598.8,
+            1028.6
+          ],
+          "lengthPx": 165.58
+        },
+        {
+          "pixels": 5952,
+          "center": [
+            800.7,
+            959.4
+          ],
+          "lengthPx": 193.65
+        }
+      ],
+      "ratios": [
+        1.264,
+        1.261
+      ]
+    },
+    {
+      "file": "chizuru_paper_air_down_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 6847,
+          "center": [
+            855.4,
+            829.5
+          ],
+          "lengthPx": 156.46
+        },
+        {
+          "pixels": 8425,
+          "center": [
+            429.4,
+            923.6
+          ],
+          "lengthPx": 175.96
+        }
+      ],
+      "ratios": [
+        1.194,
+        1.146
+      ]
+    },
+    {
+      "file": "chizuru_paper_air_forward_down_v1.png",
+      "width": 1245,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5342,
+          "center": [
+            632.1,
+            1048.2
+          ],
+          "lengthPx": 135.1
+        },
+        {
+          "pixels": 6007,
+          "center": [
+            321.2,
+            833.5
+          ],
+          "lengthPx": 148.08
+        }
+      ],
+      "ratios": [
+        1.031,
+        0.964
+      ]
+    },
+    {
+      "file": "chizuru_paper_air_forward_up_v1.png",
+      "width": 1245,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 9256,
+          "center": [
+            231.9,
+            1093.6
+          ],
+          "lengthPx": 179.61
+        },
+        {
+          "pixels": 12452,
+          "center": [
+            510,
+            979.7
+          ],
+          "lengthPx": 194.42
+        }
+      ],
+      "ratios": [
+        1.371,
+        1.266
+      ]
+    },
+    {
+      "file": "chizuru_paper_air_forward_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 6583,
+          "center": [
+            240.1,
+            902.3
+          ],
+          "lengthPx": 160.5
+        },
+        {
+          "pixels": 9875,
+          "center": [
+            904,
+            1020.6
+          ],
+          "lengthPx": 191.79
+        }
+      ],
+      "ratios": [
+        1.225,
+        1.249
+      ]
+    },
+    {
+      "file": "chizuru_paper_air_neutral_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5116,
+          "center": [
+            380.6,
+            1068.5
+          ],
+          "lengthPx": 138.69
+        },
+        {
+          "pixels": 8242,
+          "center": [
+            653.6,
+            1009.4
+          ],
+          "lengthPx": 166.19
+        }
+      ],
+      "ratios": [
+        1.059,
+        1.082
+      ]
+    },
+    {
+      "file": "chizuru_paper_air_up_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 7043,
+          "center": [
+            453.9,
+            1013.8
+          ],
+          "lengthPx": 166.16
+        },
+        {
+          "pixels": 10714,
+          "center": [
+            600.9,
+            1088.4
+          ],
+          "lengthPx": 184.34
+        }
+      ],
+      "ratios": [
+        1.268,
+        1.2
+      ]
+    },
+    {
+      "file": "chizuru_paper_attack1_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5679,
+          "center": [
+            315.9,
+            1095.8
+          ],
+          "lengthPx": 144.12
+        },
+        {
+          "pixels": 9917,
+          "center": [
+            895.1,
+            1155.9
+          ],
+          "lengthPx": 189.68
+        }
+      ],
+      "ratios": [
+        1.1,
+        1.235
+      ]
+    },
+    {
+      "file": "chizuru_paper_attack2_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5852,
+          "center": [
+            233.2,
+            1114.2
+          ],
+          "lengthPx": 144.24
+        },
+        {
+          "pixels": 9241,
+          "center": [
+            893.5,
+            1147.1
+          ],
+          "lengthPx": 195.63
+        }
+      ],
+      "ratios": [
+        1.101,
+        1.274
+      ]
+    },
+    {
+      "file": "chizuru_paper_attack3_v1.png",
+      "width": 1245,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5349,
+          "center": [
+            300.4,
+            1060
+          ],
+          "lengthPx": 130.66
+        },
+        {
+          "pixels": 9736,
+          "center": [
+            905.6,
+            1134.3
+          ],
+          "lengthPx": 182.41
+        }
+      ],
+      "ratios": [
+        0.997,
+        1.188
+      ]
+    },
+    {
+      "file": "chizuru_paper_back_attack_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 7178,
+          "center": [
+            418.4,
+            1128.7
+          ],
+          "lengthPx": 149.9
+        },
+        {
+          "pixels": 10591,
+          "center": [
+            1076.2,
+            1153.9
+          ],
+          "lengthPx": 193.78
+        }
+      ],
+      "ratios": [
+        1.144,
+        1.262
+      ]
+    },
+    {
+      "file": "chizuru_paper_counter_success_v1.png",
+      "width": 1245,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 8289,
+          "center": [
+            404.5,
+            1152.7
+          ],
+          "lengthPx": 165.11
+        },
+        {
+          "pixels": 8303,
+          "center": [
+            997.7,
+            1150.2
+          ],
+          "lengthPx": 175
+        }
+      ],
+      "ratios": [
+        1.26,
+        1.139
+      ]
+    },
+    {
+      "file": "chizuru_paper_counter_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 7488,
+          "center": [
+            421.7,
+            1151.6
+          ],
+          "lengthPx": 149
+        },
+        {
+          "pixels": 7157,
+          "center": [
+            964.3,
+            1108.4
+          ],
+          "lengthPx": 170.16
+        }
+      ],
+      "ratios": [
+        1.137,
+        1.108
+      ]
+    },
+    {
+      "file": "chizuru_paper_crouch_attack_v1.png",
+      "width": 1245,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 8464,
+          "center": [
+            273.7,
+            1066.3
+          ],
+          "lengthPx": 174.35
+        },
+        {
+          "pixels": 12750,
+          "center": [
+            858,
+            1117.8
+          ],
+          "lengthPx": 225.06
+        }
+      ],
+      "ratios": [
+        1.331,
+        1.465
+      ]
+    },
+    {
+      "file": "chizuru_paper_crouch_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5513,
+          "center": [
+            485.1,
+            1144.6
+          ],
+          "lengthPx": 146.81
+        },
+        {
+          "pixels": 6006,
+          "center": [
+            860.7,
+            1116.3
+          ],
+          "lengthPx": 150.09
+        }
+      ],
+      "ratios": [
+        1.121,
+        0.977
+      ]
+    },
+    {
+      "file": "chizuru_paper_dodge_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 6276,
+          "center": [
+            383.9,
+            1084.6
+          ],
+          "lengthPx": 171.83
+        },
+        {
+          "pixels": 8986,
+          "center": [
+            997.9,
+            1098.4
+          ],
+          "lengthPx": 212.16
+        }
+      ],
+      "ratios": [
+        1.312,
+        1.381
+      ]
+    },
+    {
+      "file": "chizuru_paper_fall_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 10526,
+          "center": [
+            832.4,
+            1067.8
+          ],
+          "lengthPx": 209.03
+        },
+        {
+          "pixels": 11208,
+          "center": [
+            533.9,
+            1063.2
+          ],
+          "lengthPx": 209.38
+        }
+      ],
+      "ratios": [
+        1.596,
+        1.363
+      ]
+    },
+    {
+      "file": "chizuru_paper_guard_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 7481,
+          "center": [
+            411.8,
+            1161.4
+          ],
+          "lengthPx": 150
+        },
+        {
+          "pixels": 7675,
+          "center": [
+            908.5,
+            1143.5
+          ],
+          "lengthPx": 168.07
+        }
+      ],
+      "ratios": [
+        1.145,
+        1.094
+      ]
+    },
+    {
+      "file": "chizuru_paper_hit_heavy_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 7681,
+          "center": [
+            960,
+            1105.9
+          ],
+          "lengthPx": 174.05
+        },
+        {
+          "pixels": 9554,
+          "center": [
+            528.3,
+            1143.3
+          ],
+          "lengthPx": 186.93
+        }
+      ],
+      "ratios": [
+        1.329,
+        1.217
+      ]
+    },
+    {
+      "file": "chizuru_paper_hit_light_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 7027,
+          "center": [
+            992.5,
+            1144.2
+          ],
+          "lengthPx": 170.51
+        },
+        {
+          "pixels": 6990,
+          "center": [
+            490.5,
+            1149
+          ],
+          "lengthPx": 179.14
+        }
+      ],
+      "ratios": [
+        1.302,
+        1.166
+      ]
+    },
+    {
+      "file": "chizuru_paper_idle_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5498,
+          "center": [
+            453.3,
+            1175.6
+          ],
+          "lengthPx": 130.99
+        },
+        {
+          "pixels": 6100,
+          "center": [
+            874.7,
+            1167.3
+          ],
+          "lengthPx": 153.59
+        }
+      ],
+      "ratios": [
+        1,
+        1
+      ]
+    },
+    {
+      "file": "chizuru_paper_jump_v1.png",
+      "width": 1245,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5395,
+          "center": [
+            450.3,
+            1014.2
+          ],
+          "lengthPx": 130.55
+        },
+        {
+          "pixels": 7249,
+          "center": [
+            585.3,
+            1039.1
+          ],
+          "lengthPx": 160.63
+        }
+      ],
+      "ratios": [
+        0.997,
+        1.046
+      ]
+    },
+    {
+      "file": "chizuru_paper_ko_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 1737,
+          "center": [
+            1014.2,
+            1045.2
+          ],
+          "lengthPx": 112.86
+        },
+        {
+          "pixels": 7888,
+          "center": [
+            257.2,
+            1107.1
+          ],
+          "lengthPx": 196.95
+        }
+      ],
+      "ratios": [
+        0.862,
+        1.282
+      ]
+    },
+    {
+      "file": "chizuru_paper_run_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 7551,
+          "center": [
+            197.3,
+            799.5
+          ],
+          "lengthPx": 188.62
+        },
+        {
+          "pixels": 9451,
+          "center": [
+            1004.5,
+            1081.1
+          ],
+          "lengthPx": 214.28
+        }
+      ],
+      "ratios": [
+        1.44,
+        1.395
+      ]
+    },
+    {
+      "file": "chizuru_paper_run_v2.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 6330,
+          "center": [
+            245,
+            836.9
+          ],
+          "lengthPx": 172.95
+        },
+        {
+          "pixels": 9489,
+          "center": [
+            992.4,
+            1131.8
+          ],
+          "lengthPx": 184.78
+        }
+      ],
+      "ratios": [
+        1.32,
+        1.203
+      ]
+    },
+    {
+      "file": "chizuru_paper_run_v3.png",
+      "width": 1244,
+      "height": 1265,
+      "feet": [
+        {
+          "pixels": 5809,
+          "center": [
+            961.6,
+            1118.5
+          ],
+          "lengthPx": 141.21
+        },
+        {
+          "pixels": 5522,
+          "center": [
+            240.7,
+            826
+          ],
+          "lengthPx": 145.51
+        }
+      ],
+      "ratios": [
+        1.078,
+        0.947
+      ]
+    },
+    {
+      "file": "chizuru_paper_special_down_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5849,
+          "center": [
+            562.9,
+            1173.1
+          ],
+          "lengthPx": 135.97
+        },
+        {
+          "pixels": 6290,
+          "center": [
+            749.5,
+            1164.1
+          ],
+          "lengthPx": 151.82
+        }
+      ],
+      "ratios": [
+        1.038,
+        0.988
+      ]
+    },
+    {
+      "file": "chizuru_paper_special_neutral_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 6081,
+          "center": [
+            1004.4,
+            1105.4
+          ],
+          "lengthPx": 157.03
+        },
+        {
+          "pixels": 7494,
+          "center": [
+            492.9,
+            1157.3
+          ],
+          "lengthPx": 167.18
+        }
+      ],
+      "ratios": [
+        1.199,
+        1.088
+      ]
+    },
+    {
+      "file": "chizuru_paper_special_side_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 8887,
+          "center": [
+            179.8,
+            1047.6
+          ],
+          "lengthPx": 177.24
+        },
+        {
+          "pixels": 16632,
+          "center": [
+            962.3,
+            1146.2
+          ],
+          "lengthPx": 234.75
+        }
+      ],
+      "ratios": [
+        1.353,
+        1.528
+      ]
+    },
+    {
+      "file": "chizuru_paper_special_up_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 4271,
+          "center": [
+            456,
+            956.5
+          ],
+          "lengthPx": 149.89
+        },
+        {
+          "pixels": 7093,
+          "center": [
+            687.8,
+            1126.4
+          ],
+          "lengthPx": 151.12
+        }
+      ],
+      "ratios": [
+        1.144,
+        0.984
+      ]
+    },
+    {
+      "file": "chizuru_paper_ultimate_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 8041,
+          "center": [
+            365.8,
+            1153
+          ],
+          "lengthPx": 164.17
+        },
+        {
+          "pixels": 9285,
+          "center": [
+            985.3,
+            1134.1
+          ],
+          "lengthPx": 192.71
+        }
+      ],
+      "ratios": [
+        1.253,
+        1.255
+      ]
+    },
+    {
+      "file": "chizuru_paper_win_v1.png",
+      "width": 1246,
+      "height": 1263,
+      "feet": [
+        {
+          "pixels": 5759,
+          "center": [
+            462.3,
+            1170.4
+          ],
+          "lengthPx": 137.71
+        },
+        {
+          "pixels": 5681,
+          "center": [
+            907.1,
+            1161.9
+          ],
+          "lengthPx": 160.5
+        }
+      ],
+      "ratios": [
+        1.051,
+        1.045
+      ]
+    }
+  ]
+}

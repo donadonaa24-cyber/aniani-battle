@@ -139,6 +139,9 @@ namespace AniBato.Game
         }
         public Sprite EffectSprite(string name, int age)
         {
+            if (name == "mogu" && setup && setup.Characters != null)
+                foreach (var data in setup.Characters)
+                    if (data && data.PaperMotion && data.PaperMotion.Enabled && data.PaperMotion.Mogu) return data.PaperMotion.Mogu;
             if (setup && setup.Characters != null)
                 foreach (var data in setup.Characters)
                     if (data && data.Animations) { var sprite = data.Animations.Effect(name, age); if (sprite) return sprite; }

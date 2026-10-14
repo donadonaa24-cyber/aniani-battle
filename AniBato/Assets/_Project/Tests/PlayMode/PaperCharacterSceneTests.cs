@@ -76,7 +76,7 @@ namespace AniBato.Tests
             Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one)); Assert.That(view.transform.localRotation, Is.EqualTo(Quaternion.identity));
         }
         [UnityTest]
-        public IEnumerator IdleAndBothWalkDirectionsUseOneImageAllEightPhasesAndCaptureUnityFrames()
+        public IEnumerator IdleAndBothWalkDirectionsUseFixedFifteenDegreeLeanAndCaptureUnityFrames()
         {
             AssertPaper(); Assert.That(view.RenderedSample.State, Is.EqualTo(AnimationState.Idle)); Assert.That(Angle(body), Is.EqualTo(0).Within(.001));
             Capture("idle", true); Capture("scene_idle", false);
@@ -91,14 +91,14 @@ namespace AniBato.Tests
                 {
                     Tick(); AssertPaper(); Assert.That(view.RenderedSample.State, Is.EqualTo(AnimationState.Move));
                     Assert.That(body.flipX, Is.EqualTo(direction < 0));
-                    var sample = PaperRockingMotion.Evaluate(data.PaperMotion.Motion, view.RenderedSample.Age, true, direction < 0);
+                    var sample = PaperTravelLean.Evaluate(15, direction < 0, data.PaperMotion.Motion.FootMinX, data.PaperMotion.Motion.FootMaxX);
                     Assert.That(Angle(body), Is.EqualTo(sample.Degrees).Within(.001));
                     Assert.That(body.transform.localPosition.y, Is.EqualTo(-runner.Simulation.P1.Definition.HurtboxSize.Y * .5f + sample.Lift).Within(.00001));
                     if (phases.Add(sample.Phase)) Capture("walk_" + (direction > 0 ? "right_" : "left_") + sample.Phase.ToString("D2"), true);
                     Vector3 position = body.transform.localPosition; Quaternion rotation = body.transform.localRotation;
                     for (int frame = 0; frame < 3; frame++) { view.RenderFrame(); Assert.That(body.transform.localRotation, Is.EqualTo(rotation)); Assert.That(body.transform.localPosition, Is.EqualTo(position)); }
                 }
-                Assert.That(phases.Count, Is.EqualTo(8));
+                Assert.That(phases.Count, Is.EqualTo(1), "Walking must stay fixed, with no periodic sway.");
                 Assert.That((runner.Simulation.P1.Position.X - start) * direction, Is.EqualTo(data.Movement.MoveSpeed).Within(.0001));
                 yield return Key(key, false); Tick();
                 Assert.That(view.RenderedSample.State, Is.EqualTo(AnimationState.Idle)); Assert.That(Angle(body), Is.EqualTo(0).Within(.001));
@@ -114,7 +114,7 @@ namespace AniBato.Tests
             for (int i = 0; i < 144; i++) { Tick(); Assert.That(body.transform.localRotation, Is.EqualTo(pausedRotation)); Assert.That(body.transform.localPosition, Is.EqualTo(pausedPosition)); }
             runner.SetPaused(false); yield return Key(controller.Bindings.P1.Right, false);
             yield return Key(controller.Bindings.P1.Attack, true); Tick();
-            Assert.That(view.UsesPaperSprite, Is.False); Assert.That(body.sprite, Is.SameAs(runner.Character(0).Animations.Find("attack1").Frames[0]));
+            Assert.That(view.UsesPaperSprite, Is.True); Assert.That(body.sprite, Is.SameAs(runner.Character(0).PaperMotion.Find(AnimationState.Attack1).Frames[0]));
             Assert.That(body.transform.localRotation, Is.EqualTo(Quaternion.identity));
             Assert.That(body.transform.localPosition.y, Is.EqualTo(-runner.Simulation.P1.Definition.HurtboxSize.Y * .5f));
             yield return Key(controller.Bindings.P1.Attack, false);
@@ -152,6 +152,64 @@ namespace AniBato.Tests
             }
             finally { runner.BeginMatch(original, runner.Setup.Character(0), runner.CurrentStage, false); Object.Destroy(character); Object.Destroy(paper); }
         }
+        [UnityTest]
+        public IEnumerator DashAndDefensiveActionsUseTheirPaperPosesWithoutTravelWobble()
+        {
+            var data = runner.Character(0); var keys = controller.Bindings.P1;
+            foreach (int direction in new[] { 1, -1 })
+            {
+                runner.RestartMatch(); Key travel = direction > 0 ? keys.Right : keys.Left;
+                yield return Key(travel, true); yield return Key(keys.Dash, true);
+                for (int tick = 0; tick < 20; tick++)
+                {
+                    Tick(); Assert.That(view.RenderedSample.State, Is.EqualTo(AnimationState.Dash));
+                    Assert.That(view.UsesPaperSprite, Is.True); Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(AnimationState.Dash).Frames[0]));
+                    Assert.That(Angle(body), Is.EqualTo(direction > 0 ? -45 : 45).Within(.001));
+                    if (tick == 0) Capture(direction > 0 ? "dash_right" : "dash_left", true);
+                }
+                yield return Key(keys.Dash, false); yield return Key(travel, false);
+            }
+            Key[] actions = { keys.Down, keys.Guard, keys.Dodge, keys.Counter, keys.Attack, keys.Special };
+            AnimationState[] expected = { AnimationState.Crouch, AnimationState.Guard, AnimationState.Dodge, AnimationState.Counter, AnimationState.Attack1, AnimationState.SpecialNeutral };
+            for (int i = 0; i < actions.Length; i++)
+            {
+                runner.RestartMatch(); yield return Key(actions[i], true); Tick();
+                Assert.That(view.RenderedSample.State, Is.EqualTo(expected[i])); Assert.That(view.UsesPaperSprite, Is.True);
+                Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(expected[i]).Frames[0]));
+                Assert.That(Angle(body), Is.EqualTo(0).Within(.001)); Capture(expected[i].ToString(), true);
+                yield return Key(actions[i], false);
+            }
+        }
+        [UnityTest]
+        public IEnumerator EveryDirectionalAirAttackKeepsItsPaperPoseFromStartupThroughRecovery()
+        {
+            var keys = controller.Bindings.P1; var data = runner.Character(0);
+            Key[][] directions = { new Key[0], new[] { keys.Right }, new[] { keys.Left }, new[] { keys.Up }, new[] { keys.Down }, new[] { keys.Right, keys.Up }, new[] { keys.Right, keys.Down } };
+            AnimationState[] expected = { AnimationState.AirNeutral, AnimationState.AirForward, AnimationState.AirBack, AnimationState.AirUp, AnimationState.AirDown, AnimationState.AirForwardUp, AnimationState.AirForwardDown };
+            for (int action = 0; action < directions.Length; action++)
+            {
+                runner.RestartMatch(); yield return Key(keys.Jump, true); Tick();
+                yield return Key(keys.Jump, false); for (int tick = 0; tick < 10; tick++) Tick();
+                Assert.That(runner.Simulation.P1.Grounded, Is.False);
+                foreach (var key in directions[action]) yield return Key(key, true);
+                yield return Key(keys.Attack, true); Tick();
+                Assert.That(view.RenderedSample.State, Is.EqualTo(expected[action]));
+                yield return Key(keys.Attack, false);
+                foreach (var key in directions[action]) yield return Key(key, false);
+                int visible = 0, active = 0, recovery = 0;
+                while (runner.Simulation.P1.Attack != null && visible < 120)
+                {
+                    var attack = runner.Simulation.P1.Attack;
+                    Assert.That(view.RenderedSample.State, Is.EqualTo(expected[action])); Assert.That(view.UsesPaperSprite, Is.True);
+                    Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(expected[action]).Frames[0]));
+                    if (attack.IsActive) active++; if (attack.Frame >= attack.Definition.StartupFrames + attack.Definition.ActiveFrames) recovery++;
+                    if (visible++ == 0) Capture(expected[action].ToString(), true);
+                    Tick();
+                }
+                Assert.That(visible, Is.GreaterThanOrEqualTo(12)); Assert.That(visible, Is.LessThan(120));
+                Assert.That(active, Is.GreaterThan(0)); Assert.That(recovery, Is.GreaterThan(0));
+            }
+        }
         private void Capture(string name, bool isolateBody)
         {
             var camera = Camera.main; Assert.That(camera, Is.Not.Null);
@@ -165,13 +223,13 @@ namespace AniBato.Tests
             {
                 if (isolateBody)
                 {
-                    body.gameObject.layer = 31; camera.cullingMask = 1 << 31; camera.orthographicSize = 1.4f;
+                    body.gameObject.layer = 31; camera.cullingMask = 1 << 31; camera.orthographicSize = 1.8f;
                     camera.transform.position = new Vector3(view.transform.position.x, view.transform.position.y - runner.Simulation.P1.Definition.HurtboxSize.Y * .5f + 1.12f, position.z);
                     camera.clearFlags = CameraClearFlags.SolidColor; camera.backgroundColor = new Color(.125f, .15f, .19f, 1);
                 }
                 camera.targetTexture = texture; camera.Render(); RenderTexture.active = texture;
                 image.ReadPixels(new Rect(0, 0, width, height), 0, 0); image.Apply();
-                string directory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../docs/screenshots/paper_chizuru_unity")); Directory.CreateDirectory(directory);
+                string directory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../docs/screenshots/paper_chizuru_all_unity")); Directory.CreateDirectory(directory);
                 File.WriteAllBytes(Path.Combine(directory, name + ".png"), image.EncodeToPNG());
             }
             finally

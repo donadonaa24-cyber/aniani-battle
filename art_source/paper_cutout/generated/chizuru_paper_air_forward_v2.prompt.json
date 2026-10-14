@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen",
+  "prompt": "参照1は修正対象の千鶴、参照2は採用済み待機で部位寸法の基準。この画像を局所修正してください。右下にある手前の白スニーカーが待機に比べ大きいので、その靴だけ約17%小さくし、踵からつま先の実長を約204px、厚み約90pxへ揃える。奥の靴は約177px長を維持。足首と靴を自然につなぐ。靴を変更する以外、顔、髪、頭部、表情、胴、手、脚の長さ、衣装、道具、ポーズ、カメラ倍率、輪郭、アニメ塗り、紙の細いクリーム縁を厳密に維持する。頭身や人物全体を拡大しない。透明RGBAの1246×1263pxキャンバスに一人、人物と道具を切らず必要な透明余白だけ増やす。背景・床・台座・影・文字・透かし・残像なし。紙芝居ゲーム素材。",
+  "referenceRoles": [
+    {
+      "path": "art_source/paper_cutout/generated/chizuru_paper_air_forward_v1.png",
+      "role": "局所修正対象"
+    },
+    {
+      "path": "art_source/paper_cutout/generated/chizuru_paper_idle_v1.png",
+      "role": "本人・部位サイズ基準"
+    }
+  ],
+  "transparent_background": true,
+  "approved": false
+}

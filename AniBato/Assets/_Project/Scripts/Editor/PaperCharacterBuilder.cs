@@ -57,7 +57,7 @@ namespace AniBato.EditorTools
                 data.SchemaVersion = 1;
             }
             var motion = data.Motion; motion.FootMinX = (footMin - width * .5f) / ppu; motion.FootMaxX = (footMax + 1 - width * .5f) / ppu;
-            data.Motion = motion; data.Motion.Validate(); EditorUtility.SetDirty(data);
+            data.Motion = motion; data.Motion.Validate(); PaperActionBuilder.Apply(data, ppu); EditorUtility.SetDirty(data);
             return data;
         }
     }

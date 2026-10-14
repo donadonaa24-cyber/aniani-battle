@@ -1,0 +1,13 @@
+{
+  "key": "rice_ball",
+  "version": 1,
+  "type": "effect",
+  "references": [
+    {
+      "file": "art_source/paper_cutout/generated/chizuru_paper_special_neutral_v1.png",
+      "role": "本人の紙画風と対象物の形/色だけ"
+    }
+  ],
+  "prompt": "参照の千鶴が持つ白い三角おにぎりと黒い四角の海苔だけを、同じ色/形の1個の独立効果素材にする。手/人物なし。かわいい平面の紙の切り抜き、濃い茶の輪郭/細いクリームの紙縁、白いご飯の丸い粒は少数、海苔は濃い灰黒の色面、1段アニメ塗り。透明RGBA512×512、余白32px以上。火/導火線/爆弾マーク/顔/文字/ロゴ/影/背景を描かない。",
+  "transparent_background": true
+}

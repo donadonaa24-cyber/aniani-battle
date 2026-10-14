@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "reference": "art_source/paper_cutout/generated/chizuru_paper_idle_v1.png",
+  "canvas": {
+    "width": 1246,
+    "height": 1263
+  },
+  "pixelsPerUnit": 532.5893,
+  "commonPrompt": "オリジナル2D対戦ゲーム『あにあにバトル！！』の千鶴の紙人形素材。参照1は採用済み紙待機の本人で、容姿/画風/全部位のサイズの唯一の基準。茶色の顎あたりのボブ/茶色の目/オレンジの長袖セーター/紺のフレアスカート/白いローカットスニーカー。完全2Dアニメ塗り、濃い茶色の安定した輪郭/細いクリーム色の切り抜き縁、各部1段の影。同じ可愛い頭身、両目が見える斜め右向き3/4、両手両脚が識別できる。\n固定：1246×1263pxの透明RGBAキャンバス。待機と同じカメラ倍率。頭/髪は約450px幅×370px高、顔/目/胴/腕/脚/手の長さも待機と同じ。左右の白スニーカーのかかとからつま先の実長は手前約204px/奥約177px、靴の厚み約90px。手足を前へ出しても遠近で巨大にしない。しゃがみ/空中等の全身高さへ合わせて拡大しない。ポーズが低くなれば透明余白を増やす。頭や靴をポーズに合わせて伸ばさない。頭/両手/両靴/道具が端切れしないよう全周28px以上余白、地上の足の最下端は上から1235px付近。武器などの長さで収まらない場合は関節を曲げて収め、全身を縮小しない。全身一人/一枚/一姿勢だけ。文字/透かし/影/床/台座/背景/速度線/残像/分割コマ/ドットを描かない。本当の透過背景。",
+  "actions": [
+    {
+      "key": "crouch",
+      "states": [
+        "Crouch",
+        "Land",
+        "JumpStartup"
+      ],
+      "pose": "両膝を大きく曲げ、腰を低くした浅いしゃがみ。顔を右前へ、背中を少し前傾、両手は胸の前に小さく構え、両スニーカーの底を同じ地面へ。髪/頭/靴を拡大せず、頭頂は待機より低い。カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "guard",
+      "states": [
+        "Guard"
+      ],
+      "pose": "両膝を軽く曲げて踏ん張り、両前腕を顔と胸の前へ上げて防御。顔の両目/眉が見える、少しぎゅっと集中した表情。手は握り拳、腕は2本、カバン/盾なし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "jump",
+      "states": [
+        "Jump"
+      ],
+      "pose": "両膝を軽く畳み、空中へ飛び上がった姿勢。片脚を前、片脚を後ろへ軽く曲げ、両腕を左右へ開いてバランス。元気な表情、両スニーカーを識別、スカートは自然に下半身を覆う。カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_jump_v2.png",
+      "gameConnected": true
+    },
+    {
+      "key": "fall",
+      "states": [
+        "Fall"
+      ],
+      "pose": "空中から下へ落ちる、両膝を曲げて着地に備える姿勢。両腕を斜め上に広げ、靴は下向き。少し驚いた表情、顔/髪/靴の大きさを待機と固定。カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_fall_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "dodge",
+      "states": [
+        "Dodge"
+      ],
+      "pose": "右前へ素早く身を低くかわす。両膝を深く曲げて前傾、片手を顔の横、もう一手を後ろに引く、横に少し広い低い姿勢。地上両足、頭/足を拡大しない。カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_dodge_v2.png",
+      "gameConnected": true
+    },
+    {
+      "key": "counter",
+      "states": [
+        "Counter"
+      ],
+      "pose": "防御反撃の構え。右向きに両足で踏ん張り、手前の右手を開いて前へ差し出し、左手は胸の近くで構える。いたずらっぽい集中した表情。カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+      "gameConnected": true
+    },
+    {
+      "key": "counter_success",
+      "states": [
+        "CounterSuccess"
+      ],
+      "pose": "防御反撃に成功して、少し元気に前へ右拳を突き出す。もう一手は胸元、身体を少しひねり、にっこり得意げな顔。カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_counter_success_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "hit_light",
+      "states": [
+        "Hitstun",
+        "Knockback"
+      ],
+      "pose": "通常攻撃を受けて上半身が少し後ろへ反りながら何とか耐える。眉をしかめ、目の端に小さい涙、口を痛そうに開く。足は前後に踏ん張り、両手が少し前へ浮く。滑稽で可愛い痛がり方、怪我/血なし、カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_hit_light_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "hit_heavy",
+      "states": [
+        "HeartLostHitstun",
+        "Knockback"
+      ],
+      "pose": "強いダメージに泣く大きなデフォルメ反応。上半身を後ろへ大きく反らし、両目に大粒の涙、口を大きく開けて『痛い』表情。両手が前へ出て指を開き、膝が崩れかけても足で耐える。涙は顔のすぐ横の小さい雫2個程度、頭/靴は大きくしない。怪我/血なし、カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_hit_heavy_v2.png",
+      "gameConnected": true
+    },
+    {
+      "key": "ko",
+      "states": [
+        "KO",
+        "Lose"
+      ],
+      "pose": "地面へへたり込んだ負け/KO姿勢。腰を落として両膝を曲げて座り、上半身を少し前へ、両手は膝付近、涙ぐんだ悔しそうな表情。靴が2つ見える、頭/靴を拡大せず地上の幅広い低いポーズ。血/傷なし、カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
+      "gameConnected": true
+    },
+    {
+      "key": "win",
+      "states": [
+        "Win"
+      ],
+      "pose": "両足で立って右手の拳を高く上げ、左手を腰近くで小さく握り、満面の笑顔で勝利を喜ぶ。髪型/服/頭身/靴を維持、帽子やカバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "attack1",
+      "states": [
+        "Attack1"
+      ],
+      "pose": "右手に小さい茶色の四角い手提げカバンを持ち、右側から前方へ大きく振り抜く一段目。胴と腰を右前へひねり、左手は胸近くでバランス。右足を一歩前へ。カバンは右手だけ、持ち手をしっかり握り、手とカバンは離れない。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_attack1_v3.png",
+      "gameConnected": true
+    },
+    {
+      "key": "attack2",
+      "states": [
+        "Attack2"
+      ],
+      "pose": "同じ右手に持った茶色の四角い手提げカバンで二撃目。肩と腰を強くひねり、右腕を大きく前へ伸ばしてカバンを右前へ叩きつける。片足を軸に回転した胴、左手は後ろに引く。カバンの手が左へ入れ替わらない。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_attack2_v3.png",
+      "gameConnected": true
+    },
+    {
+      "key": "attack3",
+      "states": [
+        "Attack3"
+      ],
+      "pose": "同じ茶色の四角い手提げカバンを右前へ投げた直後の大きな振り抜き。右腕を前へ伸ばし手のひらを開く、左腕は後ろへ、腰を前へひねり一歩踏み込む。投げられたカバンは別の効果で出すのでこの原画にはカバンを描かず、右手が離した姿勢を明確にする。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_attack3_v6.png",
+      "gameConnected": true
+    },
+    {
+      "key": "crouch_attack",
+      "states": [
+        "CrouchAttack"
+      ],
+      "pose": "低く両膝を曲げたしゃがみから、右手の小さい茶色四角い手提げカバンを右前の膝の高さへ振って叩く。顔は右前、左手を胸元へ、右腕とカバンは地面より上。頭/靴が大きくならない。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_crouch_attack_v3.png",
+      "gameConnected": true
+    },
+    {
+      "key": "back_attack",
+      "states": [
+        "BackAttack"
+      ],
+      "pose": "顔と胸の向きは右だが胴を左後方へひねり、右手の茶色四角い手提げカバンを左後ろへ大きく振って背後を叩く。左手は右前へバランス、両足で踏ん張る。頭/靴の倍率固定。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_back_attack_v8.png",
+      "gameConnected": true
+    },
+    {
+      "key": "air_neutral",
+      "states": [
+        "AirAttack",
+        "AirNeutral"
+      ],
+      "pose": "空中で膝を軽く曲げ、右手の茶色四角い手提げカバンを右前の腰から胸の高さへ大きく振り出す中立攻撃。胴をひねり、左腕を逆方向へ、両靴が空中に見える。カバンは右手だけ。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_neutral_v2.png",
+      "gameConnected": true
+    },
+    {
+      "key": "air_forward",
+      "states": [
+        "AirForward"
+      ],
+      "pose": "空中で右前へ身体を前傾して、右手の茶色四角い手提げカバンを胸の高さで真っ直ぐ右前へ突き出す。前脚を伸ばし後脚を曲げ、左手を後ろへ。靴/手を遠近で拡大しない。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_forward_v8.png",
+      "gameConnected": true
+    },
+    {
+      "key": "air_back",
+      "states": [
+        "AirBack"
+      ],
+      "pose": "顔は右前を見ながら空中で胴を左後ろへひねり、右手の茶色四角い手提げカバンを左後方へ振る。左腕は前へ、膝を軽く曲げ、両足を識別。背後への攻撃が見て分かる。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_back_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "air_up",
+      "states": [
+        "AirUp"
+      ],
+      "pose": "空中で両膝を曲げ、右手の茶色四角い手提げカバンを頭上へ高く振り上げる。顔は右斜め上、左手は横へバランス。頭を画面の中段へ下げて頭上のカバンを収め、人物の部位を縮小しない。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_up_v2.png",
+      "gameConnected": true
+    },
+    {
+      "key": "air_down",
+      "states": [
+        "AirDown"
+      ],
+      "pose": "空中で両膝を畳み、右手の茶色四角い手提げカバンを身体の下へ叩きつける。顔は右下を見る、左腕は上へバランス。靴とカバンを重ねず識別、カバンを下へ遠近拡大しない。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_down_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "air_forward_up",
+      "states": [
+        "AirForwardUp"
+      ],
+      "pose": "空中から右斜め上へ、右手の茶色四角い手提げカバンを斜め45度上へ突き出す。両膝を軽く曲げ、顔は右上、左手は後ろ下へ。全身の倍率を維持し、頭上/右前のカバンを余白の中へ。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_forward_up_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "air_forward_down",
+      "states": [
+        "AirForwardDown"
+      ],
+      "pose": "空中から右斜め下へ、右手の茶色四角い手提げカバンを斜め45度下へ大きく振る。上半身は右下へひねり、左腕を逆に上げ、両膝は軽く曲げる。カバン/両靴を重ねず読みやすく。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_forward_down_v3.png",
+      "gameConnected": true
+    },
+    {
+      "key": "special_neutral",
+      "states": [
+        "SpecialNeutral"
+      ],
+      "pose": "右手に小さい白い三角の海苔付きおにぎりを持ち、右前へ投げる構え。右腕を胸の高さへ振り出し、左手は腰近く、両足で踏ん張る。本人の服/頭身を維持、おにぎりは一個だけ、カバンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_special_neutral_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "special_side",
+      "states": [
+        "SpecialSide"
+      ],
+      "pose": "右手に灰色の小さいフライパンを持ち、右前へ突撃する前傾。フライパンの丸い底を敵の方へ向け、左手は後方、片足を前、片足を後ろへ。道具は小さく、元の頭/手/靴の倍率、帽子なし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_special_side_v4.png",
+      "gameConnected": true
+    },
+    {
+      "key": "special_up",
+      "states": [
+        "SpecialUp"
+      ],
+      "pose": "右手の銀色のおたまを頭上の右斜め上へ振り上げて舞い上がる。両膝を曲げ、左腕を横へバランス、楽しそうな集中した顔。おたまの丸い先端と柄を識別、全身一姿勢、旋風の線は描かない。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_special_up_v3.png",
+      "gameConnected": true
+    },
+    {
+      "key": "special_down",
+      "states": [
+        "SpecialDown"
+      ],
+      "pose": "地上で両足を近めに立ち、左手に小さなカレー皿、右手に小さいスプーンを持って一口食べる。幸せそうな表情で頬を少し膨らませる。顔は手で隠さず、同じ服と倍率、帽子/エプロンなし。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_special_down_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "ultimate",
+      "states": [
+        "Ultimate"
+      ],
+      "pose": "満腹カレーの必殺の決めポーズ。右手で小さいカレー皿を前へ大きく差し出し、左手で小さいスプーンを上げ、両足を開いて胸を張り楽しげに大きく笑う。本人の私服を維持、シェフ帽/エプロンなし。カレーの波は別効果なので背景へ波を描かない。",
+      "version": 1,
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_ultimate_v1.png",
+      "gameConnected": true
+    }
+  ],
+  "run": {
+    "selected": "generated/chizuru_paper_run_v3.png",
+    "comparison": "shoe-comparison.json",
+    "normalizedCanvasPending": true
+  },
+  "effects": [
+    {
+      "key": "bag_throw",
+      "description": "攻撃中の同じ茶色四角い手提げカバン、紙縁。人物なし。",
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_effect_bag_throw_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "rice_ball",
+      "description": "小さい三角おにぎり、白いご飯/黒い海苔、紙縁。人物なし。",
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_effect_rice_ball_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "mogu",
+      "description": "おにぎりと小さい頬の印象のもぐもぐ状態アイコン、文字なし/紙縁。",
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_effect_mogu_v1.png",
+      "gameConnected": true
+    },
+    {
+      "key": "curry_wave",
+      "description": "カレーソースと米のくっきりした漫画の波、紙縁、人物なし。",
+      "selected": "art_source/paper_cutout/generated/chizuru_paper_effect_curry_wave_v1.png",
+      "gameConnected": true
+    }
+  ],
+  "runtimeManifest": "runtime-manifest.json",
+  "integration": {
+    "verified": true,
+    "tag": "paper_chizuru_all_2",
+    "editPassed": 447,
+    "playPassed": 38,
+    "buildAll": true,
+    "windowsBuild": true,
+    "artApproval": false
+  }
+}

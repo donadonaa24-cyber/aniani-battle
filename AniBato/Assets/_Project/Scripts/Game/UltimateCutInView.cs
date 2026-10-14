@@ -30,7 +30,13 @@ namespace AniBato.Game
             var character = runner.Character(player);
             labels[player].text = character.Movement.Name + "\n" + character.Ultimate.Definition.Name;
             bands[player].color = character.Tint; bands[player].enabled = true;
-            portraits[player].sprite = character.Portrait; portraits[player].enabled = character.Portrait;
+            Sprite portrait = character.Portrait;
+            if (character.PaperMotion && character.PaperMotion.Enabled)
+            {
+                var pose = character.PaperMotion.Find(AniBato.Presentation.AnimationState.Ultimate);
+                portrait = pose != null ? pose.Frame(0) : character.PaperMotion.Sprite;
+            }
+            portraits[player].sprite = portrait; portraits[player].enabled = portrait;
             panel.SetActive(true);
         }
         private void LateUpdate()

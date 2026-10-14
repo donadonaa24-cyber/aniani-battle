@@ -1,8 +1,14 @@
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
+**最新（2026-10-14）：千鶴の全35描画状態／30姿勢／4効果を紙イラストへ接続済み。** ユーザーが絵の修正待ちよりゲーム実装を優先指定。歩き15度／走り45度固定、空中攻撃を終了まで保持。実UnityのBuildAll成功／Edit447/447／Play38/38／Windowsビルド成功、失敗・スキップ0。最新Build/paper_chizuru_all_2/AniBato.exe、実描画19PNGはdocs/screenshots/paper_chizuru_all_unity/。共通PPU、1304×1450透明梱包、全原画画素一致を検査。手と部位サイズの絵の修正残はruntime-manifestに明記し、ゲーム使用と絵の完成を区別する。確認フォルダの35画像もゲーム採用済みへ更新。RESUME冒頭とpaper_chizuru_all_2_finalを最優先に読む。以下の原画修正／未接続の記述は過去の履歴。
+
 > 2026-10-12 ユーザー指定：**Codexが実装・レビュー・Unity検証・取りまとめを担当し、Claudeにも随時交代できる**ようにする。
 > 読む順序は `AGENTS.md` → 本書 → `docs/RESUME.md` → `IMPLEMENTATION_STATUS.md`。
 > **6Bは完了済み**。保存済みUnity結果とGitHub mainを確認した最新情報は§4。旧資料の「Claude待ち／Codexはcommitしない」は過去の分担であり、現在の指定ではない。
+
+最新の制作途中記録（2026-10-14）：[千鶴の手の修正](codex_logs/paper_chizuru_hand_checkpoint.md)。承認済み手元参考を空中前方v8へ反映、全身は未採用（1243×1265、基準セル／部位寸法未審査）。前方は掌側4指と下の親指、斜め下は背中構図／甲側で別指定。斜め下v3もユーザー指摘で未修正。旧PNG削除を明示依頼され、旧原画41＋管理済みコピー41を累計削除、SHA付き記録を保持。現在原画34＋承認済み手元参考1、確認コピー35（採用2／候補26／要修正7）とPNG一覧。旧版フォルダは再生成しない。今回Unity追加実行0回、実機スクショ0件、未commit／未push。RESUME冒頭とreview-catalogを先に確認し、旧441／36を新差分の検証として扱わない。以下の過去件数・全保存方針は更新前の履歴。
+
+確認フォルダの初回作成時記録：原画69件、[日本語名付き確認フォルダ](codex_tasks/PAPER_CHIZURU_REVIEW_FOLDER.md)を作成。採用済み2／未採用候補27／要修正6／旧版35と一覧を保存した。以後は上記とRESUME冒頭の再修正を反映し、画像名で指摘できる。新原画は候補のままでゲームへ未採用。
 
 ---
 
@@ -70,9 +76,21 @@ powershell -ExecutionPolicy Bypass -File tools\verify\play_and_capture.ps1 -Tag 
 - テストを弱めていないか、失敗を隠していないか
 - 見た目：キャラが別人に見えない、足元が揃う、頭上カウンターが頭上にある、判定（F9表示）と絵が大きくずれない
 
-## 4. 現在の状態：千鶴の紙人形待機・歩行（2026-10-14）
+## 4. 現在の状態：千鶴の手修正と確認フォルダ（2026-10-14）
 
-**現在（2026-10-14）：千鶴の紙人形Idle/Moveを実装、実Unity BuildAll成功/Edit441/441/Play36/36/Windowsビルド成功。** 最新はRESUME冒頭/PAPER_CHIZURU_UNITY/paper_chizuru_1_final。左右±5度/8fps、待機±0.75度/4fps、身長2.24u。原画/旧素材/停止中透真差分を保持。Unity実カメラ18PNG/左右GIFはdocs/screenshots/paper_chizuru_unity/、実モニター撮影/OSキー送信なし。千鶴のその他動作と透真/蓮は旧表示。次は新しい揺れの所見を確認し、停止中の透真制作を無断で再開しない。この区切りを通常commit/pushしてSHAを記録する。以下のART3E情報は前回の完了履歴。
+最新は本書冒頭／RESUME。全動作をゲームへ先行接続し、実Unity447／38とWindowsビルドまで合格済み。手の修正を待つ工程はユーザーの最新指定で変更した。次は実プレイで動きを確認できる。旧PNG削除方針は維持。以下の未接続／未検証はゲーム接続前の履歴。
+
+**制作は再開済み。最新はRESUME冒頭。** 原画34件と承認済み手元参考1件を保持し、空中前方v8を日本語名付き確認フォルダへ反映。旧PNG削除は最新のユーザー明示指示による。ゲーム採用済みの紙表示は待機と同じ絵を使う以前の歩きだけ。残る手の修正／部位審査／新全体の接続／テスト／実Unity4工程が未完了。今回Unity追加実行0回。以下は過去の履歴として読む。
+
+### 以下は停止時の記録
+
+**最新はユーザー指定で停止。次の「再開して」で続行する。** [停止時引き継ぎ](codex_logs/paper_chizuru_all_checkpoint.md)とRESUME／STATUS冒頭を読む。原画43PNG＋全文条件43件、全28姿勢／4効果／走り3版／7修正版を保持。原画の初回生成は完了、正式採否／頭と左右靴の寸法確認は未完。特にcrouch_attack_v2／special_side_v2は1129×1393で共通1246×1263と不一致。サイズ確認から再開し、重複生成／人物の一律拡縮／既存差分の破棄をしない。
+
+未コミットのSO／固定傾き／状態ビルダー／透明梱包／各Rendererの準備あり。runtime-manifest未作成で新素材は未接続。API参照コンパイルは直前に警告0／エラー0、最後のFootBaseY追加は未コンパイル。新全体は**実Unity未検証・未commit／未push**。新しい生成／検証の実行中処理はなく、停止保存では追加実行していない。待機だけ揺れ、移動15度／走り45度を進行方向へ固定、空中攻撃の継続表示、涙の被弾が最新仕様。
+
+指示書はPAPER_CHIZURU_ALL_ACTIONS／PAPER_CHIZURU_RUN／COMIC_STYLE_PRESENTATION／PAPER_TITLE_ENSEMBLE。次はサイズ／採否→manifest／Editor／厳密なテスト→実Unity全4工程→通常commit／push→漫画演出→集合タイトル。主役9人と背景サポートは**同じ3作品の仲間**で確定、透真が中央。集合絵／遷移は未生成・未実装。停止中の透真制作は自動再開しない。Claudeの重点確認は部位寸法／地上・空中支点／道具と足の誤判定／固定傾き／全状態／表示保持／実Unity証跡。
+
+**前の完了版60501c4：千鶴の紙人形Idle/Moveを実装、BuildAll成功／Edit441/441／Play36/36／Windowsビルド成功、通常push済み。** HEAD／origin/main同一。証跡PAPER_CHIZURU_UNITY／paper_chizuru_1_final／TestResults/paper_chizuru_1_*。歩行±5度／8fpsはこの旧完了版の動きで、最新の固定15度とは区別する。身長2.24u、待機±0.75度／4fps。Unity実カメラ18PNG＋2GIFはdocs/screenshots/paper_chizuru_unity/、OSキー送信なし。新しい全アクションのUnity画像はまだない。この停止保存でUnity実行0回、441／36を新差分の合格に流用しない。以下は前回までの履歴。
 
 **最新（2026-10-14）：ART3E完了、保存処理復旧・GitHub反映も完了。** [再起動後の詳細](codex_logs/RESTART_CHECKPOINT.md)/RESUME冒頭を先に読む。保存ロック解消、欠落キット作成スクリプトを復元して採用原画のみのZIP処理に接続。721ファイル/38.75MiBの正式ZIPを照合、全90原画と旧ZIPを保持。ユーザー明示承認で未公開2097c99だけを77c526dへ作り直し、origin mainへ通常push成功、GitHubの同一SHAを確認。元コミットはローカル保全し、作業ファイル3169件を保持。公開済み182e970以前の履歴変更/全体リセット/force pushなし。反映記録は通常の追加コミットに保存する。
 

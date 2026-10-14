@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f04ae4ddab5441aaf7819b587e1ea, type: 3}
   m_Name: ChizuruPaperMotion
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
-  SchemaVersion: 1
+  SchemaVersion: 2
   Enabled: 1
-  Sprite: {fileID: 21300000, guid: b10cf00515a70c743876dd5e46ea1de7, type: 3}
+  Sprite: {fileID: 21300000, guid: 941fd22c1baa7a54d92621d85f1e4af8, type: 3}
   StandingHeight: 2.24
   Motion:
     IdleDegrees: 0.75
@@ -24,3 +24,401 @@ MonoBehaviour:
     FootMaxX: 0.636513
     IdleFps: 4
     WalkFps: 8
+  WalkLeanDegrees: 15
+  DashLeanDegrees: 45
+  Poses:
+  - Key: idle
+    States: 0000000001000000i
+    Frames:
+    - {fileID: 21300000, guid: 941fd22c1baa7a54d92621d85f1e4af8, type: 3}
+    - {fileID: 21300000, guid: 941fd22c1baa7a54d92621d85f1e4af8, type: 3}
+    - {fileID: 21300000, guid: 941fd22c1baa7a54d92621d85f1e4af8, type: 3}
+    - {fileID: 21300000, guid: 941fd22c1baa7a54d92621d85f1e4af8, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.24
+    FootBaseY: -1.6787226e-10
+    FootMinX: -0.43748534
+    FootMaxX: 0.5989606
+  - Key: run
+    States: 02000000i
+    Frames:
+    - {fileID: 21300000, guid: f1bb6790b50249149aeec3bda9cb84d0, type: 3}
+    - {fileID: 21300000, guid: f1bb6790b50249149aeec3bda9cb84d0, type: 3}
+    - {fileID: 21300000, guid: f1bb6790b50249149aeec3bda9cb84d0, type: 3}
+    - {fileID: 21300000, guid: f1bb6790b50249149aeec3bda9cb84d0, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.1085665
+    FootBaseY: 0.0000000062952097
+    FootMinX: 0.43748534
+    FootMaxX: 0.77545685
+  - Key: crouch
+    States: 050000001800000022000000i
+    Frames:
+    - {fileID: 21300000, guid: aae531f7f5b008d408033977223149a8, type: 3}
+    - {fileID: 21300000, guid: aae531f7f5b008d408033977223149a8, type: 3}
+    - {fileID: 21300000, guid: aae531f7f5b008d408033977223149a8, type: 3}
+    - {fileID: 21300000, guid: aae531f7f5b008d408033977223149a8, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 1.8475775
+    FootBaseY: -0.000000010100314
+    FootMinX: -0.3867896
+    FootMaxX: -0.11829002
+  - Key: guard
+    States: 0f000000i
+    Frames:
+    - {fileID: 21300000, guid: 14b7b06fd929dae4eb8dc9961ad9422e, type: 3}
+    - {fileID: 21300000, guid: 14b7b06fd929dae4eb8dc9961ad9422e, type: 3}
+    - {fileID: 21300000, guid: 14b7b06fd929dae4eb8dc9961ad9422e, type: 3}
+    - {fileID: 21300000, guid: 14b7b06fd929dae4eb8dc9961ad9422e, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.1930594
+    FootBaseY: -0.000000008225741
+    FootMinX: -0.5163453
+    FootMaxX: -0.24596815
+  - Key: jump
+    States: 03000000i
+    Frames:
+    - {fileID: 21300000, guid: f8d7100bb3c292940b53276518c80eb6, type: 3}
+    - {fileID: 21300000, guid: f8d7100bb3c292940b53276518c80eb6, type: 3}
+    - {fileID: 21300000, guid: f8d7100bb3c292940b53276518c80eb6, type: 3}
+    - {fileID: 21300000, guid: f8d7100bb3c292940b53276518c80eb6, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 1.1040403
+    FootBaseY: -1.0439564
+    FootMinX: -0.107024305
+    FootMaxX: 0.06947192
+  - Key: fall
+    States: 04000000i
+    Frames:
+    - {fileID: 21300000, guid: f15cb3cf65e44d7428d2e95507a1350b, type: 3}
+    - {fileID: 21300000, guid: f15cb3cf65e44d7428d2e95507a1350b, type: 3}
+    - {fileID: 21300000, guid: f15cb3cf65e44d7428d2e95507a1350b, type: 3}
+    - {fileID: 21300000, guid: f15cb3cf65e44d7428d2e95507a1350b, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 1.1077955
+    FootBaseY: -1.0439564
+    FootMinX: -0.21217099
+    FootMaxX: 0.0018776194
+  - Key: dodge
+    States: 10000000i
+    Frames:
+    - {fileID: 21300000, guid: 65277f2f6b38f4746b02c89a9ca0357b, type: 3}
+    - {fileID: 21300000, guid: 65277f2f6b38f4746b02c89a9ca0357b, type: 3}
+    - {fileID: 21300000, guid: 65277f2f6b38f4746b02c89a9ca0357b, type: 3}
+    - {fileID: 21300000, guid: 65277f2f6b38f4746b02c89a9ca0357b, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 1.5959765
+    FootBaseY: -0.0000000026299987
+    FootMinX: -0.44124055
+    FootMaxX: 0.78296727
+  - Key: counter
+    States: 11000000i
+    Frames:
+    - {fileID: 21300000, guid: 10c83db3ad18b2047a7e2fec608a6eba, type: 3}
+    - {fileID: 21300000, guid: 10c83db3ad18b2047a7e2fec608a6eba, type: 3}
+    - {fileID: 21300000, guid: 10c83db3ad18b2047a7e2fec608a6eba, type: 3}
+    - {fileID: 21300000, guid: 10c83db3ad18b2047a7e2fec608a6eba, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.2475104
+    FootBaseY: -0.000000009232974
+    FootMinX: -0.5783068
+    FootMaxX: -0.23845766
+  - Key: counter_success
+    States: 12000000i
+    Frames:
+    - {fileID: 21300000, guid: be504d0dc3d9a5e40b34fb7be4d0aac8, type: 3}
+    - {fileID: 21300000, guid: be504d0dc3d9a5e40b34fb7be4d0aac8, type: 3}
+    - {fileID: 21300000, guid: be504d0dc3d9a5e40b34fb7be4d0aac8, type: 3}
+    - {fileID: 21300000, guid: be504d0dc3d9a5e40b34fb7be4d0aac8, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.2268567
+    FootBaseY: 0.0000000040009556
+    FootMinX: -0.55765295
+    FootMaxX: 0.89562446
+  - Key: hit_light
+    States: 1300000014000000i
+    Frames:
+    - {fileID: 21300000, guid: 554bf46bd707b8b4f8b0944851fc89bc, type: 3}
+    - {fileID: 21300000, guid: 554bf46bd707b8b4f8b0944851fc89bc, type: 3}
+    - {fileID: 21300000, guid: 554bf46bd707b8b4f8b0944851fc89bc, type: 3}
+    - {fileID: 21300000, guid: 554bf46bd707b8b4f8b0944851fc89bc, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.1573846
+    FootBaseY: -0.0000000020424458
+    FootMinX: -0.35862532
+    FootMaxX: 0.83741826
+  - Key: ko
+    States: 1500000017000000i
+    Frames:
+    - {fileID: 21300000, guid: b3ab93f2bbb7a644ab87d601734100e8, type: 3}
+    - {fileID: 21300000, guid: b3ab93f2bbb7a644ab87d601734100e8, type: 3}
+    - {fileID: 21300000, guid: b3ab93f2bbb7a644ab87d601734100e8, type: 3}
+    - {fileID: 21300000, guid: b3ab93f2bbb7a644ab87d601734100e8, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 1.5565464
+    FootBaseY: 0.0000000013989355
+    FootMinX: -0.62524724
+    FootMaxX: -0.38303435
+  - Key: win
+    States: 16000000i
+    Frames:
+    - {fileID: 21300000, guid: 7e7e066354293f444a3f772932ce114d, type: 3}
+    - {fileID: 21300000, guid: 7e7e066354293f444a3f772932ce114d, type: 3}
+    - {fileID: 21300000, guid: 7e7e066354293f444a3f772932ce114d, type: 3}
+    - {fileID: 21300000, guid: 7e7e066354293f444a3f772932ce114d, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.2212238
+    FootBaseY: -0.00000000520404
+    FootMinX: -0.42434198
+    FootMaxX: 0.6346354
+  - Key: attack1
+    States: 06000000i
+    Frames:
+    - {fileID: 21300000, guid: 57c299999c233b846926ad98cf01cc14, type: 3}
+    - {fileID: 21300000, guid: 57c299999c233b846926ad98cf01cc14, type: 3}
+    - {fileID: 21300000, guid: 57c299999c233b846926ad98cf01cc14, type: 3}
+    - {fileID: 21300000, guid: 57c299999c233b846926ad98cf01cc14, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.2212238
+    FootBaseY: -0.000000004056913
+    FootMinX: 0.36989102
+    FootMaxX: 0.6459011
+  - Key: attack2
+    States: 07000000i
+    Frames:
+    - {fileID: 21300000, guid: bce71e8476b331349bdd3cee9c2562ab, type: 3}
+    - {fileID: 21300000, guid: bce71e8476b331349bdd3cee9c2562ab, type: 3}
+    - {fileID: 21300000, guid: bce71e8476b331349bdd3cee9c2562ab, type: 3}
+    - {fileID: 21300000, guid: bce71e8476b331349bdd3cee9c2562ab, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.1986923
+    FootBaseY: -0.000000008085847
+    FootMinX: 0.3492372
+    FootMaxX: 0.6552892
+  - Key: attack3
+    States: 08000000i
+    Frames:
+    - {fileID: 21300000, guid: fa592b97362898d4fa485c6c42121a95, type: 3}
+    - {fileID: 21300000, guid: fa592b97362898d4fa485c6c42121a95, type: 3}
+    - {fileID: 21300000, guid: fa592b97362898d4fa485c6c42121a95, type: 3}
+    - {fileID: 21300000, guid: fa592b97362898d4fa485c6c42121a95, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.333881
+    FootBaseY: 0.000000007889996
+    FootMinX: 0.4938139
+    FootMaxX: 0.8899916
+  - Key: crouch_attack
+    States: 19000000i
+    Frames:
+    - {fileID: 21300000, guid: 3729ad86f61f85a488e3175ddd6d8ab2, type: 3}
+    - {fileID: 21300000, guid: 3729ad86f61f85a488e3175ddd6d8ab2, type: 3}
+    - {fileID: 21300000, guid: 3729ad86f61f85a488e3175ddd6d8ab2, type: 3}
+    - {fileID: 21300000, guid: 3729ad86f61f85a488e3175ddd6d8ab2, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.0090528
+    FootBaseY: -0.000000010100314
+    FootMinX: 0.1840067
+    FootMaxX: 0.6421458
+  - Key: back_attack
+    States: 1a000000i
+    Frames:
+    - {fileID: 21300000, guid: 6f0bdcbb61b2dd445a995275aa1e07cc, type: 3}
+    - {fileID: 21300000, guid: 6f0bdcbb61b2dd445a995275aa1e07cc, type: 3}
+    - {fileID: 21300000, guid: 6f0bdcbb61b2dd445a995275aa1e07cc, type: 3}
+    - {fileID: 21300000, guid: 6f0bdcbb61b2dd445a995275aa1e07cc, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.136731
+    FootBaseY: -0.00000000607138
+    FootMinX: 0.72476107
+    FootMaxX: 1.0439564
+  - Key: air_neutral
+    States: 090000001b000000i
+    Frames:
+    - {fileID: 21300000, guid: f64c0d23f6b9f6a4d936f36bb96ffdad, type: 3}
+    - {fileID: 21300000, guid: f64c0d23f6b9f6a4d936f36bb96ffdad, type: 3}
+    - {fileID: 21300000, guid: f64c0d23f6b9f6a4d936f36bb96ffdad, type: 3}
+    - {fileID: 21300000, guid: f64c0d23f6b9f6a4d936f36bb96ffdad, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 1.0890193
+    FootBaseY: -0.97260684
+    FootMinX: -0.5294887
+    FootMaxX: -0.3680134
+  - Key: air_forward
+    States: 1c000000i
+    Frames:
+    - {fileID: 21300000, guid: 7c5910479f058b74e9713fb46ecad74f, type: 3}
+    - {fileID: 21300000, guid: 7c5910479f058b74e9713fb46ecad74f, type: 3}
+    - {fileID: 21300000, guid: 7c5910479f058b74e9713fb46ecad74f, type: 3}
+    - {fileID: 21300000, guid: 7c5910479f058b74e9713fb46ecad74f, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 1.0833864
+    FootBaseY: -0.8674602
+    FootMinX: 0.22531433
+    FootMaxX: 0.56704104
+  - Key: air_back
+    States: 1d000000i
+    Frames:
+    - {fileID: 21300000, guid: 4951cd844bd889f4ca8f2f2795bf4d85, type: 3}
+    - {fileID: 21300000, guid: 4951cd844bd889f4ca8f2f2795bf4d85, type: 3}
+    - {fileID: 21300000, guid: 4951cd844bd889f4ca8f2f2795bf4d85, type: 3}
+    - {fileID: 21300000, guid: 4951cd844bd889f4ca8f2f2795bf4d85, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 1.1322045
+    FootBaseY: -0.9744845
+    FootMinX: -0.028164292
+    FootMaxX: 0.08824811
+  - Key: air_up
+    States: 1e000000i
+    Frames:
+    - {fileID: 21300000, guid: feb6882395ccd3642b4ded1a8649c58c, type: 3}
+    - {fileID: 21300000, guid: feb6882395ccd3642b4ded1a8649c58c, type: 3}
+    - {fileID: 21300000, guid: feb6882395ccd3642b4ded1a8649c58c, type: 3}
+    - {fileID: 21300000, guid: feb6882395ccd3642b4ded1a8649c58c, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 0.70974016
+    FootBaseY: -1.0345683
+    FootMinX: -0.09012573
+    FootMaxX: 0.12955575
+  - Key: air_down
+    States: 1f000000i
+    Frames:
+    - {fileID: 21300000, guid: cad917947e40f804fb96e5aa808e745d, type: 3}
+    - {fileID: 21300000, guid: cad917947e40f804fb96e5aa808e745d, type: 3}
+    - {fileID: 21300000, guid: cad917947e40f804fb96e5aa808e745d, type: 3}
+    - {fileID: 21300000, guid: cad917947e40f804fb96e5aa808e745d, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 1.0514668
+    FootBaseY: -0.71725065
+    FootMinX: -0.43185246
+    FootMaxX: 0.6290025
+  - Key: air_forward_up
+    States: 20000000i
+    Frames:
+    - {fileID: 21300000, guid: f94759250c660d646b697b337dd98889, type: 3}
+    - {fileID: 21300000, guid: f94759250c660d646b697b337dd98889, type: 3}
+    - {fileID: 21300000, guid: f94759250c660d646b697b337dd98889, type: 3}
+    - {fileID: 21300000, guid: f94759250c660d646b697b337dd98889, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 1.0664878
+    FootBaseY: -1.0570997
+    FootMinX: -0.79798824
+    FootMaxX: -0.5876949
+  - Key: air_forward_down
+    States: 21000000i
+    Frames:
+    - {fileID: 21300000, guid: b7cf34148b84daa4181d9dc0485bb549, type: 3}
+    - {fileID: 21300000, guid: b7cf34148b84daa4181d9dc0485bb549, type: 3}
+    - {fileID: 21300000, guid: b7cf34148b84daa4181d9dc0485bb549, type: 3}
+    - {fileID: 21300000, guid: b7cf34148b84daa4181d9dc0485bb549, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 1.036446
+    FootBaseY: -1.0739983
+    FootMinX: -0.043185245
+    FootMaxX: 0.15772003
+  - Key: special_neutral
+    States: 0a000000i
+    Frames:
+    - {fileID: 21300000, guid: e675eb7531629a94fa4a72f3dae622b9, type: 3}
+    - {fileID: 21300000, guid: e675eb7531629a94fa4a72f3dae622b9, type: 3}
+    - {fileID: 21300000, guid: e675eb7531629a94fa4a72f3dae622b9, type: 3}
+    - {fileID: 21300000, guid: e675eb7531629a94fa4a72f3dae622b9, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.2174685
+    FootBaseY: 0.0000000070226562
+    FootMinX: -0.4055658
+    FootMaxX: -0.08449288
+  - Key: special_side
+    States: 0b000000i
+    Frames:
+    - {fileID: 21300000, guid: 3843b15943210094f94fa94a525813c6, type: 3}
+    - {fileID: 21300000, guid: 3843b15943210094f94fa94a525813c6, type: 3}
+    - {fileID: 21300000, guid: 3843b15943210094f94fa94a525813c6, type: 3}
+    - {fileID: 21300000, guid: 3843b15943210094f94fa94a525813c6, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 1.9564794
+    FootBaseY: -0.000000009960421
+    FootMinX: -0.8524392
+    FootMaxX: 0.84868395
+  - Key: special_up
+    States: 0c000000i
+    Frames:
+    - {fileID: 21300000, guid: 564c1a47f8d782d408b215e3317afcea, type: 3}
+    - {fileID: 21300000, guid: 564c1a47f8d782d408b215e3317afcea, type: 3}
+    - {fileID: 21300000, guid: 564c1a47f8d782d408b215e3317afcea, type: 3}
+    - {fileID: 21300000, guid: 564c1a47f8d782d408b215e3317afcea, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    HeadHeight: 0.8693378
+    FootBaseY: -1.1415926
+    FootMinX: 0.1164124
+    FootMaxX: 0.28352052
+  - Key: special_down
+    States: 0d000000i
+    Frames:
+    - {fileID: 21300000, guid: 9d6bcb05ab3be4c468b2db3e1d5ec5f9, type: 3}
+    - {fileID: 21300000, guid: 9d6bcb05ab3be4c468b2db3e1d5ec5f9, type: 3}
+    - {fileID: 21300000, guid: 9d6bcb05ab3be4c468b2db3e1d5ec5f9, type: 3}
+    - {fileID: 21300000, guid: 9d6bcb05ab3be4c468b2db3e1d5ec5f9, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.2606537
+    FootBaseY: -0.0000000021823394
+    FootMinX: -0.30605197
+    FootMaxX: 0.41119865
+  - Key: ultimate
+    States: 0e000000i
+    Frames:
+    - {fileID: 21300000, guid: 0a0f58c4eabc8f541a144e87744b02a7, type: 3}
+    - {fileID: 21300000, guid: 0a0f58c4eabc8f541a144e87744b02a7, type: 3}
+    - {fileID: 21300000, guid: 0a0f58c4eabc8f541a144e87744b02a7, type: 3}
+    - {fileID: 21300000, guid: 0a0f58c4eabc8f541a144e87744b02a7, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.2287343
+    FootBaseY: 0.0000000019864883
+    FootMinX: -0.61585915
+    FootMaxX: -0.30417433
+  HeavyDamage:
+    Key: hit_heavy
+    States: 
+    Frames:
+    - {fileID: 21300000, guid: 59e9c032fa2c7874f9ea68f71325eefe, type: 3}
+    - {fileID: 21300000, guid: 59e9c032fa2c7874f9ea68f71325eefe, type: 3}
+    - {fileID: 21300000, guid: 59e9c032fa2c7874f9ea68f71325eefe, type: 3}
+    - {fileID: 21300000, guid: 59e9c032fa2c7874f9ea68f71325eefe, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    HeadHeight: 2.185549
+    FootBaseY: -2.797871e-11
+    FootMinX: -0.31356245
+    FootMaxX: 0.009388097
+  Bag: {fileID: 21300000, guid: 094178c7231f3c542ba99e04af2eb6af, type: 3}
+  RiceBall: {fileID: 21300000, guid: 73d46bbeb0982b0449d12ea2443fd5a5, type: 3}
+  Mogu: {fileID: 21300000, guid: be19666d910b9364cb41cca0bed66963, type: 3}
+  CurryWave: {fileID: 21300000, guid: 7a857afe4dac8b4498b95e348e4a457b, type: 3}

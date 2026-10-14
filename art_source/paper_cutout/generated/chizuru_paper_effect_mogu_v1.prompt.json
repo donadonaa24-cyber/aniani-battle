@@ -1,0 +1,13 @@
+{
+  "key": "mogu",
+  "version": 1,
+  "type": "effect",
+  "references": [
+    {
+      "file": "art_source/paper_cutout/generated/chizuru_paper_special_down_v1.png",
+      "role": "本人の紙画風と対象物の形/色だけ"
+    }
+  ],
+  "prompt": "オリジナルゲーム用の『食べてしまって動けない』を示す小さい紙風の状態アイコン。中央に白い三角おにぎり、黒い海苔、左右へ小さい丸いほっぺのようなオレンジ色の丸を2つ、上に小さい丸い満腹の汗の雫1つ。人物や顔を描かず、親しみやすい単純な漫画マーク。参照の紙縁/濃茶輪郭/1段アニメ塗り/柔らかい色面。透明RGBA512×512、余白32px以上、1個のアイコン、文字/吹き出し文字/ロゴ/背景/影なし。",
+  "transparent_background": true
+}
