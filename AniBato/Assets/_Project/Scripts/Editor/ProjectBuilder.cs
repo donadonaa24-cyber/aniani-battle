@@ -67,6 +67,7 @@ namespace AniBato.EditorTools
                 CreatePlayable("Ren", 1, new Color(1, 0.38f, 0.2f)), CreatePlayable("Chizuru", 2, new Color(0.4f, 0.85f, 0.3f)) };
             var setup = LoadOrCreate<BattleSetup>("BattleSetup");
             if (setup.Characters == null || setup.Characters.Length == 0) setup.Characters = roster;
+            if (setup.Characters.Length == 3) setup.Characters = PaperRosterBuilder.Build(setup.Characters);
             if (setup.Stages == null || setup.Stages.Length == 0) setup.Stages = stages;
             if (setup.CpuDifficulties == null || setup.CpuDifficulties.Length == 0) setup.CpuDifficulties = cpuDifficulties;
             if (setup.CpuDifficulties.Length != 3) throw new InvalidOperationException("CPU difficulty assets must have three entries.");

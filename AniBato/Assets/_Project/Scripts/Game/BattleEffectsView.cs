@@ -38,6 +38,7 @@ namespace AniBato.Game
             finish = label.GetComponent<Text>(); finish.font = RuntimeFonts.Japanese; finish.fontSize = 100; finish.alignment = TextAnchor.MiddleCenter;
             finish.color = settings.Warning; finish.raycastTarget = false; finish.enabled = false;
             var outline = label.AddComponent<Outline>(); outline.effectColor = Color.black; outline.effectDistance = new Vector2(3, -3);
+            PaperSign.Attach(finish,"Paper Finish Banner");
         }
         private void OnEnable() { if (runner) { runner.EventProduced += OnEvent; runner.MatchRestarted += ResetView; } }
         private void OnDisable() { if (runner) { runner.EventProduced -= OnEvent; runner.MatchRestarted -= ResetView; } }

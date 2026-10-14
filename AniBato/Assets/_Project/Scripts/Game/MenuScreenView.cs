@@ -14,6 +14,8 @@ namespace AniBato.Game
         [SerializeField] private Text[] cardLabels;
         [SerializeField] private Text[] controlColumns;
         private readonly Color accent = new Color(0.4f, 0.88f, 1);
+        private PaperScreenDecor paperDecor;
+        private PaperRosterGrid rosterGrid;
         private void LateUpdate()
         {
             var canvas = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
@@ -24,11 +26,15 @@ namespace AniBato.Game
         { shade = backdrop; heading = title; subtitle = detail; options = choices; footer = help; banner = overlay; cards = pictures; cardLabels = labels; controlColumns = columns; }
         private void Start()
         {
+            paperDecor = GetComponentInChildren<PaperScreenDecor>();
+            rosterGrid = GetComponentInChildren<PaperRosterGrid>(true);
             foreach (var text in GetComponentsInChildren<Text>(true)) text.font = RuntimeFonts.Japanese;
         }
         public void Render(GameFlowController flow)
         {
             var screen = flow.Screen;
+            if (paperDecor) paperDecor.Render(flow);
+            if (rosterGrid) rosterGrid.Render(flow);
             foreach (var column in controlColumns) column.enabled = screen == GameScreen.Controls;
             bool selections = screen == GameScreen.CharacterSelect || screen == GameScreen.StageSelect || screen == GameScreen.Result;
             options.rectTransform.anchoredPosition = new Vector2(0, selections ? -275 : 0);
@@ -44,7 +50,7 @@ namespace AniBato.Game
             }
             bool battle = screen == GameScreen.Battle || screen == GameScreen.Countdown;
             shade.enabled = !battle;
-            shade.color = new Color(0.018f, 0.028f, 0.06f, screen == GameScreen.Pause || screen == GameScreen.Controls ? 0.94f : 0.98f);
+            shade.color = new Color(0.09f, 0.12f, 0.18f, screen == GameScreen.Pause || screen == GameScreen.Controls ? 0.94f : 1);
             heading.enabled = subtitle.enabled = options.enabled = footer.enabled = !battle;
             banner.enabled = battle;
             banner.text = screen == GameScreen.Countdown ? flow.CountdownText : "";
@@ -62,7 +68,8 @@ namespace AniBato.Game
             if (screen == GameScreen.Title)
             {
                 heading.text = "あにあにバトル！！"; subtitle.text = "70秒、3つのハート。作品を超えて、勝負！";
-                options.text = "PRESS ANY KEY"; footer.text = "あにバト！！    /    aniani";
+                options.rectTransform.anchoredPosition = new Vector2(0,-355);
+                options.text = "ボタンを押して開演！"; footer.text = "あにバト！！    /    aniani";
             }
             else if (screen == GameScreen.MainMenu)
             { heading.text = "あにあにバトル！！"; subtitle.text = "モードを選択"; options.rectTransform.sizeDelta = new Vector2(1740, 650); options.text = Choices(flow.MenuIndex, "CPU対戦", "2人対戦", "操作説明", "フレームレート  " + FramePacing.Label, "練習モード", "チュートリアル", "キーコンフィグ", LearningText.DashSetting(input), "終了"); }
@@ -110,6 +117,12 @@ namespace AniBato.Game
         private void Characters(GameFlowController flow)
         {
             heading.text = "キャラクター選択";
+            if(rosterGrid)
+            {
+                subtitle.text=flow.CpuMode?"3作品・全9人　P1／CPUを選択　難易度："+Difficulty(flow.Difficulty):"3作品・全9人　それぞれのキャラを選んで決定";
+                options.text="";footer.text="P1 "+flow.Input.ConfirmLabel(0)+" 決定　P2 "+flow.Input.ConfirmLabel(1)+" 決定　／　Esc 戻る　／　"+flow.Input.CommandListLabel+" 技表";
+                return;
+            }
             subtitle.text = flow.CpuMode ? "CPU対戦：相手と難易度を選択" : "それぞれのキャラを選び、両者決定でステージへ";
             var controller = flow.Runner.GetComponent<InputController>();
             for (int i = 0; i < 2; i++)

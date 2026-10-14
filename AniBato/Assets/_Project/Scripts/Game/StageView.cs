@@ -13,6 +13,7 @@ namespace AniBato.Game
         private SpriteRenderer[] boardTiles;
         private BattleRect originalMain;
         private StageBackgroundView backgroundView;
+        private PaperPlatformView[] paperPlatforms;
         public void Configure(StageData data, PresentationSettings settings, BattleRunner battleRunner = null)
         { stage = data; presentation = settings; runner = battleRunner; }
         private void Start() => Rebuild(stage);
@@ -25,6 +26,7 @@ namespace AniBato.Game
             StageGeometry geometry = stage.ToGeometry();
             originalMain = geometry[0].Bounds;
             floors = new SpriteRenderer[geometry.PlatformCount]; edges = new SpriteRenderer[geometry.PlatformCount];
+            paperPlatforms = new PaperPlatformView[geometry.PlatformCount];
             for (int i = 0; i < geometry.PlatformCount; i++)
             {
                 StagePlatform platform = geometry[i];
@@ -35,6 +37,8 @@ namespace AniBato.Game
                 var edge = ProceduralSprites.Create(transform, "Platform Edge " + i, new Vector2(platform.Bounds.Size.X, 0.06f), stage.Accent, sortingOrder: 1);
                 edges[i] = edge;
                 edge.transform.localPosition = new Vector3(platform.Bounds.Center.X, platform.Bounds.Top, 0);
+                paperPlatforms[i] = new PaperPlatformView(transform, stage.Theme, platform.Bounds, i);
+                paperPlatforms[i].Render(platform.Bounds, true, 0);
             }
             AddBlastLine("Left Boundary", new Vector2(geometry.LeftBlastLine, -1), new Vector2(0.08f, 20));
             AddBlastLine("Right Boundary", new Vector2(geometry.RightBlastLine, -1), new Vector2(0.08f, 20));
@@ -56,6 +60,7 @@ namespace AniBato.Game
             for (int i = 0; i < floors.Length; i++)
             {
                 var platform = sim.Stage[i];
+                paperPlatforms[i].Render(platform.Bounds, sim.Stage.IsActive(i), sim.Match.TickCount);
                 floors[i].enabled = edges[i].enabled = sim.Stage.IsActive(i);
                 floors[i].transform.localScale = new Vector3(platform.Bounds.Size.X, platform.Bounds.Size.Y, 1);
                 edges[i].transform.localScale = new Vector3(platform.Bounds.Size.X, 0.06f, 1);

@@ -42,6 +42,14 @@ namespace AniBato.EditorTools
                 }
                 data.FarArtwork = ImportArtwork("Assets/_Project/Art/Stages/phase6b_" + i + "_background.png");
                 data.Thumbnail = ImportArtwork("Assets/_Project/Art/Stages/phase6b_" + i + "_thumbnail.png");
+                if(data.AppearanceSchemaVersion<2)
+                {
+                    data.Background=new[]{new Color(.09f,.14f,.23f),new Color(.29f,.25f,.3f),new Color(.64f,.55f,.4f)}[i];
+                    data.FloorColor=new[]{new Color(.18f,.3f,.43f),new Color(.55f,.42f,.25f),new Color(.46f,.36f,.25f)}[i];
+                    data.Accent=new[]{new Color(.42f,.75f,.84f),new Color(.88f,.71f,.43f),new Color(.88f,.66f,.39f)}[i];
+                    data.FarParallax=.025f;data.MidParallax=.055f;data.AppearanceSchemaVersion=2;
+                }
+                data.Thumbnail=Thumbnail(data,i);
                 EditorUtility.SetDirty(data);
             }
             return stages;
@@ -71,8 +79,8 @@ namespace AniBato.EditorTools
             const string folder = "Assets/_Project/Art/Stages";
             string physicalFolder = Path.Combine(Application.dataPath, "_Project/Art/Stages");
             Directory.CreateDirectory(physicalFolder);
-            string path = folder + "/stage_" + index + ".png";
-            string physicalPath = Path.Combine(physicalFolder, "stage_" + index + ".png");
+            string path = folder + "/paper_stage_" + index + ".png";
+            string physicalPath = Path.Combine(physicalFolder, "paper_stage_" + index + ".png");
             if (!File.Exists(physicalPath))
             {
                 const int w = 480, h = 270;

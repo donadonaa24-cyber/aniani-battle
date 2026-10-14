@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f074248a1e5b290478e1a8e11e84cdba, type: 3}
+  m_Name: Akatsuki
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.CharacterData
+  Movement:
+    Name: "\u6681"
+    HurtboxSize:
+      X: 1.1
+      Y: 2.2
+    MoveSpeed: 9
+    DashSpeed: 16
+    GroundDashFrames: 14
+    AirDashFrames: 10
+    JumpSpeed: 19
+    Gravity: 72
+    MaxFallSpeed: 26
+    FastFallSpeed: 36
+    MaxJumps: 2
+    MaxAirDashes: 1
+    GroundNormals: []
+    AirNormals: []
+    DirectionalNormals: []
+    Stamina:
+      Maximum: 125
+      GroundRecoveryPerSecond: 22
+      ActiveRecoveryPerSecond: 6
+      RecoveryDelayFrames: 30
+      JumpCost: 8
+      AirJumpCost: 12
+      GroundDashCost: 8
+      AirDashCost: 14
+      DodgeCost: 18
+      GuardDrainPerSecond: 6
+      NormalGuardCost: 8
+      SpecialGuardCost: 20
+      UltimateGuardCost: 65
+      GuardBreakFrames: 18
+      GuardLockFrames: 36
+    CrouchHeightRatio: 0.55
+    DiagonalThreshold: 0.45
+    DiagonalFallbackVertical: 1
+    Specials: []
+    Ultimate:
+      Name: 
+      Kind: 0
+      IsCloseRange: 0
+      NormalDirection: 0
+      BreaksGuard: 0
+      LandingRecoveryFrames: 0
+      StartupFrames: 0
+      ActiveFrames: 0
+      DamageDelayFrames: 0
+      RecoveryFrames: 0
+      Hitbox:
+        Center:
+          X: 0
+          Y: 0
+        Size:
+          X: 0
+          Y: 0
+      HitstopFrames: 0
+      HitstunFrames: 0
+      Knockback:
+        X: 0
+        Y: 0
+      PiercesNormalDodge: 0
+      SpawnProjectile: 0
+      ProjectileSpeed: 0
+      ProjectileLifetimeFrames: 0
+      ActiveVelocity:
+        X: 0
+        Y: 0
+      NormalForwardDistance: 0
+      DamageRecoilDistance: 0
+      DamageRecoilFrames: 0
+      VerticalMotionOnStartOnly: 0
+      ProjectileLaunchVelocity:
+        X: 0
+        Y: 0
+      ProjectileGravity: 0
+      HasSecondaryHitbox: 0
+      SecondaryHitbox:
+        Center:
+          X: 0
+          Y: 0
+        Size:
+          X: 0
+          Y: 0
+      NonDamaging: 0
+      ParalysisFrames: 0
+      MarkFrames: 0
+      SelfHealNormalHits: 0
+      SelfBuff:
+        DurationFrames: 0
+        MoveMultiplier: 0
+        DashMultiplier: 0
+        StartupMultiplier: 0
+      KnockbackMultiplier: 0
+      CooldownFrames: 0
+      ProjectileEraseCount: 0
+      GuardedRecoveryFrames: 0
+      RequiresFollowup: 0
+      StanceFrames: 0
+    Counter:
+      Buff:
+        DurationFrames: 0
+        MoveMultiplier: 0
+        DashMultiplier: 0
+        StartupMultiplier: 0
+      SelfHealNormalHits: 1
+      KnockbackMultiplier: 0
+    UltimateCutInFrames: 30
+  TempoSchemaVersion: 5
+  AccessibilitySchemaVersion: 6
+  NormalMotionSchemaVersion: 1
+  DamageReactionSchemaVersion: 1
+  NormalThrowSchemaVersion: 1
+  NormalWeaponSchemaVersion: 1
+  DirectionalNormals:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: c3e992a688c0a4c438e9f715589a284f, type: 2}
+  - {fileID: 11400000, guid: 0db44c95dc998cc4c8ba345856984458, type: 2}
+  - {fileID: 11400000, guid: 4643d40b08860db49b930fc2b6a55233, type: 2}
+  - {fileID: 11400000, guid: e5bb891d9cd19924bba2f63b9c183047, type: 2}
+  - {fileID: 11400000, guid: a99f6de2dfccd1746960584693cf97ba, type: 2}
+  - {fileID: 11400000, guid: 3724628406109414c88e17f85a40cb3a, type: 2}
+  - {fileID: 11400000, guid: db6aeee1a7468354397d011752bc1621, type: 2}
+  - {fileID: 11400000, guid: 42f9e1634c3c50e4798e67f0e6476c43, type: 2}
+  - {fileID: 11400000, guid: 08b2db826147ab140ab2c55e4d118291, type: 2}
+  GroundNormals:
+  - {fileID: 11400000, guid: eaffcec9921aaaa4981ccf2b33e228ef, type: 2}
+  - {fileID: 11400000, guid: 5e53cf18e0c7e4448a7806b56dea945b, type: 2}
+  - {fileID: 11400000, guid: 7c5c54e13b2e3f142a2feeafb511ecbd, type: 2}
+  AirNormals:
+  - {fileID: 11400000, guid: 9a94cbad68c07654699c9563f1e14633, type: 2}
+  - {fileID: 11400000, guid: 1b332a909597980448d508910e1eb611, type: 2}
+  - {fileID: 11400000, guid: ef8aee4e53fb10c4189f854859eeea2e, type: 2}
+  Specials:
+  - {fileID: 11400000, guid: 2a6a947156a49514eb20b6b19c4df1c0, type: 2}
+  - {fileID: 11400000, guid: 8cd0c22516d36224bbffd675e52d13d9, type: 2}
+  - {fileID: 11400000, guid: c9a32135aa1067d4cbd5f64dffe53ad2, type: 2}
+  - {fileID: 11400000, guid: 713e0587357db1c43a59c3c2dc573bb3, type: 2}
+  Ultimate: {fileID: 11400000, guid: cd539d826c0aa2943b31224271996661, type: 2}
+  Tint: {r: 0.4, g: 0.85, b: 0.3, a: 1}
+  RoundShape: 0
+  Silhouette: 2
+  Portrait: {fileID: 21300000, guid: 620481199cb04244d8e47fee2ba8e2f4, type: 3}
+  SelectionSprite: {fileID: 21300000, guid: 620481199cb04244d8e47fee2ba8e2f4, type: 3}
+  PrototypeSharedMoves: 1
+  Animations: {fileID: 11400000, guid: 28a09a4b36173cf4a8316698db2ba90b, type: 2}
+  PaperMotion: {fileID: 11400000, guid: 3d3555524c13e354eb07583c4ad070a2, type: 2}
+  SpriteEffects:
+    SchemaVersion: 0
+    ProjectileClip: 
+    DownSpecialClip: 
+    UltimateClip: 
+    NormalProjectileClip: bag_throw
+    NormalProjectileSchemaVersion: 1
+    NormalProjectileScale: 1
+    ProjectileScale: 0.5
+    DownSpecialScale: 1
+    UltimateScale: 1
+    DownSpecialOpacity: 0.35
+    DownSpecialOffset: {x: 0, y: 0}
+    UltimateOffset: {x: 0, y: 0}
+    SideSpecialTint: {r: 1, g: 1, b: 1, a: 1}

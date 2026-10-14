@@ -1,3 +1,11 @@
+## 最新（2026-10-15 Codex）：紙舞台と9人一覧を検証完了
+
+6fc196aの判定半減45件／ゲージ14・10を保持して未commitの舞台2ファイルから再開。3作品共通地形のまま平面レイヤー・厚紙の縁・テーマ別縮小、紙のタイトル／FIGHT／KO、全9人の作品別一覧と選択・試合開始を実装。追加6人は作品ごとの共通基本技＋待機1枚の試作。固有技／固有動作の完成ではない。透真／蓮の新待機はタイトル・選択に使用し、戦闘素材は旧版。将来効果の拡張位置はFUTURE_SKILL_EFFECTS.md。
+
+今回実Unity paper_stage_roster_4：BuildAll成功／Edit466/466／Play44/44／Windowsビルド成功、失敗0・スキップ0。paper_stage_roster_1／2のコンパイル、3の看板参照／HUD重なりを修正し全工程再検証。docs/screenshots/paper_stage_roster_unity/に今回15PNG（旧3の選択1PNGも残る）。16:9・16:10・4:3の9人カードの全頂点が画面内、盤面36セルと足場／縮小同期、操作ロック／結果経路を確認。OSキー送信なし。
+
+次はPAPER_CHIZURU_SIDESWING_AND_HITBOX_VIEW。最新指定は全通常を横振りへ。加えて飛翔おにぎりは紙版であることを確認、手持ちをその表示寸法へ合わせる。判定表示／残像／練習スロー・コマ送りと全技比較へ。現時点ではこの次工程は未実装。未commit差分は破棄しない。Claudeは本節から交代可能。
+
 # 実装状況（2026-10-15）
 
 ## 最新区切り：全9人待機と千鶴フライパン接続（2026-10-15）
@@ -471,3 +479,4 @@ Battle/Cpuの定義・判断・集計4ファイル、BattleEvent/BattleSimulatio
 Unityを閉じ、サンドボックス外で `powershell -ExecutionPolicy Bypass -File tools/verify/run_unity.ps1 -Tag phase5`。BuildAll→EditMode225想定→PlayMode20想定→Windowsビルド。次にCpuBalanceReportBuilder.Writeで実アセット810試合をTestResults/phase5-cpu-unity.*へ保存。確認順序・操作・注意は `docs/codex_logs/phase5_final.md`。Unity合格と画面／音の所見を本書・RESUMEへ追記してからフェーズ6へ。
 
 現在はworkspace-write／承認不可でUnityライセンスIPCへ接続できないため、HANDOFFのサンドボックス外Unity実行は行えません。権限変更の確認は求めず、AGENTS.mdに従ってUnity実行をClaudeへ引き継ぎました。
+

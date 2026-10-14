@@ -181,13 +181,19 @@ namespace AniBato.Game
                 { if (!ready[0]) { Show(GameScreen.MainMenu, true, MenuAction.Cancel); return; } ready[0] = false; }
                 if (second.Cancel)
                 { if (!ready[1]) { Show(GameScreen.MainMenu, true, MenuAction.Cancel); return; } ready[1] = false; }
-                if (!ready[0]) Player1Index = Wrap(Player1Index + first.Horizontal, setup.Characters.Length);
-                if (!ready[1]) Player2Index = Wrap(Player2Index + second.Horizontal, setup.Characters.Length);
+                if (!ready[0]) Player1Index = PaperRosterGrid.Move(Player1Index, first.Horizontal, first.Vertical);
+                if (!ready[1]) Player2Index = PaperRosterGrid.Move(Player2Index, second.Horizontal, second.Vertical);
                 if (first.Confirm) ready[0] = true;
                 if (second.Confirm) ready[1] = true;
                 if (first.Confirm || second.Confirm) input.GuardScreenTransition();
                 if (ready[0] && ready[1]) Show(GameScreen.StageSelect);
             }
+        }
+        public void SelectRosterCard(int index)
+        {
+            if(Screen!=GameScreen.CharacterSelect||index<0||index>=setup.Characters.Length)return;
+            if(CpuMode){if(cpuRow==1)Player2Index=index;else if(cpuRow==0)Player1Index=index;}
+            else if(!ready[0])Player1Index=index;else if(!ready[1])Player2Index=index;
         }
         private void ActivateMenu()
         {

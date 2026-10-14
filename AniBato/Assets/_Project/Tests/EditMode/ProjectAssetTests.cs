@@ -17,7 +17,8 @@ namespace AniBato.Tests
             const string root = "Assets/_Project/Data/";
             var setup = AssetDatabase.LoadAssetAtPath<BattleSetup>(root + "BattleSetup.asset");
             var rules = AssetDatabase.LoadAssetAtPath<BattleRules>(root + "BattleRules.asset");
-            var rows = CpuBalanceStudy.Run(setup.Characters.Select(c => c.ToDefinition()).ToArray(), rules.ToDefinition(), setup.Stages[0].ToGeometry(),
+            // Six prototype entrants share these three tuned move sets; test the three distinct sets here.
+            var rows = CpuBalanceStudy.Run(setup.Characters.Take(3).Select(c => c.ToDefinition()).ToArray(), rules.ToDefinition(), setup.Stages[0].ToGeometry(),
                 new[] { setup.CpuDifficulties[1].ToDefinition() });
             Assert.That(rows.Count, Is.EqualTo(270));
             Assert.That(rows.All(r => r.Attacks[0] > 0 && r.Attacks[1] > 0 && r.HeartsLost > 0), Is.True);
@@ -40,7 +41,7 @@ namespace AniBato.Tests
             Assert.That(rules.Definition.SchemaVersion, Is.EqualTo(7));
             Assert.That(rules.Definition.GroundJumpStartupFrames, Is.EqualTo(2));
             var setup = AssetDatabase.LoadAssetAtPath<BattleSetup>(root + "BattleSetup.asset");
-            Assert.That(setup, Is.Not.Null); Assert.That(setup.Characters.Length, Is.EqualTo(3));
+            Assert.That(setup, Is.Not.Null); Assert.That(setup.Characters.Length, Is.EqualTo(9));
             Assert.That(setup.CpuDifficulties.Length, Is.EqualTo(3));
             foreach (var difficulty in setup.CpuDifficulties) Assert.DoesNotThrow(() => difficulty.ToDefinition());
             Assert.That(AssetDatabase.LoadAssetAtPath<AudioSettings>(root + "AudioSettings.asset"), Is.Not.Null);
@@ -94,7 +95,7 @@ namespace AniBato.Tests
                 Assert.That(setup.Stages[i].SharedGeometry, Is.SameAs(geometry));
                 Assert.That(setup.Stages[i].Thumbnail, Is.Not.Null);
                 Assert.That(setup.Stages[i].FarArtwork, Is.Not.Null);
-                Assert.That(setup.Stages[i].AppearanceSchemaVersion, Is.EqualTo(1));
+                Assert.That(setup.Stages[i].AppearanceSchemaVersion, Is.EqualTo(2));
                 Assert.That(setup.Stages[i].Thumbnail.texture.width, Is.EqualTo(480));
                 Assert.That(setup.Stages[i].FarArtwork.texture.width, Is.EqualTo(1280));
                 Assert.That(setup.Stages[i].Theme, Is.EqualTo((StageTheme)i));

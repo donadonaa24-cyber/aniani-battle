@@ -1,4 +1,12 @@
-﻿> **最新（2026-10-15 Claude）**：通常攻撃45件の攻撃判定を半分（自分側の端を固定、BALANCE_CONFIG参照）＋ゲージ14/10。実Unity hitbox_half：EditMode 463/463・PlayMode 42/42・ビルド成功、commit済み。**Codexの未完成だった紙舞台の差分（StageBackgroundView.cs／PaperStageScenery.cs）は `git stash` から作業ツリーへ戻した（未コミット）**。この差分ありでは PlayMode `CameraAndBoardBackdropFitThreeAspectRatiosWithoutChangingBattle` が失敗する（推し駒盤面の背景要素が見つからない）ので、紙舞台の作業を続けるときに直す。次の指示書：`codex_tasks/PAPER_STAGES_AND_SCREENS.md` の続き、その後 `codex_tasks/PAPER_CHIZURU_SIDESWING_AND_HITBOX_VIEW.md`。
+## 最新（2026-10-15 Codex）：紙舞台と9人一覧を検証完了
+
+6fc196aの判定半減45件／ゲージ14・10を保持して未commitの舞台2ファイルから再開。3作品共通地形のまま平面レイヤー・厚紙の縁・テーマ別縮小、紙のタイトル／FIGHT／KO、全9人の作品別一覧と選択・試合開始を実装。追加6人は作品ごとの共通基本技＋待機1枚の試作。固有技／固有動作の完成ではない。透真／蓮の新待機はタイトル・選択に使用し、戦闘素材は旧版。将来効果の拡張位置はFUTURE_SKILL_EFFECTS.md。
+
+今回実Unity paper_stage_roster_4：BuildAll成功／Edit466/466／Play44/44／Windowsビルド成功、失敗0・スキップ0。paper_stage_roster_1／2のコンパイル、3の看板参照／HUD重なりを修正し全工程再検証。docs/screenshots/paper_stage_roster_unity/に今回15PNG（旧3の選択1PNGも残る）。16:9・16:10・4:3の9人カードの全頂点が画面内、盤面36セルと足場／縮小同期、操作ロック／結果経路を確認。OSキー送信なし。
+
+次はPAPER_CHIZURU_SIDESWING_AND_HITBOX_VIEW。最新指定は全通常を横振りへ。加えて飛翔おにぎりは紙版であることを確認、手持ちをその表示寸法へ合わせる。判定表示／残像／練習スロー・コマ送りと全技比較へ。現時点ではこの次工程は未実装。未commit差分は破棄しない。Claudeは本節から交代可能。
+
+> **最新（2026-10-15 Claude）**：通常攻撃45件の攻撃判定を半分（自分側の端を固定、BALANCE_CONFIG参照）＋ゲージ14/10。実Unity hitbox_half：EditMode 463/463・PlayMode 42/42・ビルド成功、commit済み。**Codexの未完成だった紙舞台の差分（StageBackgroundView.cs／PaperStageScenery.cs）は `git stash` から作業ツリーへ戻した（未コミット）**。この差分ありでは PlayMode `CameraAndBoardBackdropFitThreeAspectRatiosWithoutChangingBattle` が失敗する（推し駒盤面の背景要素が見つからない）ので、紙舞台の作業を続けるときに直す。次の指示書：`codex_tasks/PAPER_STAGES_AND_SCREENS.md` の続き、その後 `codex_tasks/PAPER_CHIZURU_SIDESWING_AND_HITBOX_VIEW.md`。
 
 # 再開メモ（2026-10-15）
 
@@ -344,3 +352,10 @@ Unityのシーン／.asset／.meta／実行ファイルは5Bで再生成して�
 中割りはローカル処理で、姿勢差が大きい部分は近いキーポーズへ切り替える。原画由来の顔・衣装・ポーズ差、144Hzの快適さ、対人難易度・キャラ相性・音は実機待ち。UnitySetUpの入力分離／UnityTearDown復元を維持。
 
 フェーズ6の残りは背景／カメラ最終調整、操作表示整理、PS表記／キーコンフィグ、必須24項目棚卸し・リリースビルド。サポート／オンライン／正式音源は未実装。詳細は IMPLEMENTATION_STATUS.md、BALANCE_CONFIG.md、docs/CPU_BALANCE_REPORT.md。
+
+## 再開中（2026-10-15 Codex）
+
+6fc196aの通常45件の判定半減とゲージ14／10を確認。未commitのStageBackgroundView／PaperStageSceneryを保持して続行。新指示PAPER_ROSTER_SELECTで9人一覧と追加6人の作品別共通技の試作参戦を追加。固有技の完成とは扱わない。
+
+paper_stage_roster_1／2のコンパイルエラーを修正。現在paper_stage_roster_3を実行中：BuildAll成功、EditMode466/466、PlayMode／ビルドは未確定。全4工程が通るまで合格扱いにしない。次の横振り／おにぎり／判定表示は舞台区切りの後。
+

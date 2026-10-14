@@ -155,6 +155,8 @@ MonoBehaviour:
   RoundShape: 1
   Silhouette: 1
   Portrait: {fileID: 21300000, guid: 2367efd95bf6a884b9c0977754d57d71, type: 3}
+  SelectionSprite: {fileID: 21300000, guid: 1320fb5b5d1e03a40b343e91356870e9, type: 3}
+  PrototypeSharedMoves: 0
   Animations: {fileID: 11400000, guid: 58be3259907ac6c48a033fd7ce9e96fe, type: 2}
   PaperMotion: {fileID: 0}
   SpriteEffects:

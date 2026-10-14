@@ -236,7 +236,15 @@ namespace AniBato.Tests
                 }
             }
             Assert.That(Object.FindObjectsByType<SpriteRenderer>().Count(s => s.name.StartsWith("Board Backdrop Cell ")), Is.EqualTo(36));
-            Assert.That(Object.FindObjectsByType<SpriteRenderer>().Single(s => s.name == "Far Painted Scenery").sprite, Is.Not.Null);
+            Assert.That(Object.FindObjectsByType<SpriteRenderer>().Single(s => s.name == "Paper Cyclorama").sprite, Is.Not.Null);
+            var cells = Object.FindObjectsByType<SpriteRenderer>().Where(s => s.name.StartsWith("Board Backdrop Cell ")).ToArray();
+            Assert.That(cells.All(s => s.enabled && s.sprite != null), Is.True);
+            foreach (var cell in cells)
+            {
+                var point = camera.WorldToViewportPoint(cell.bounds.center);
+                Assert.That(point.x, Is.GreaterThan(0).And.LessThan(1));
+                Assert.That(point.y, Is.GreaterThan(0).And.LessThan(1));
+            }
             Assert.That(sim.Match.TickCount, Is.EqualTo(tick)); Assert.That(sim.P1.Position, Is.EqualTo(position));
         }
         [UnityTest]
@@ -527,18 +535,71 @@ namespace AniBato.Tests
             Assert.That(labels.Length, Is.EqualTo(2)); Assert.That(labels.All(t => t.text.StartsWith("DRAW")), Is.True); CaptureScreen("05_リザルト_引き分け");
             runner.enabled = true;
         }
-        private static void CaptureScreen(string name)
+        [UnityTest]
+        public IEnumerator NineVisiblePaperCardsCanSelectNewEntrantsAndStartTheirMatch()
+        {
+            Assert.That(Object.FindAnyObjectByType<PaperScreenDecor>().Portraits.Length,Is.EqualTo(9));
+            CaptureScreen("06_紙タイトル_全9人");
+            Assert.That(GameObject.Find("Paper Title Sign").GetComponentsInChildren<UnityEngine.UI.Image>().All(i=>i.enabled),Is.True);
+            yield return Tap(keyboard.enterKey);yield return Tap(keyboard.sKey);yield return Tap(keyboard.enterKey);
+            Assert.That(Flow.Screen,Is.EqualTo(GameScreen.CharacterSelect));
+            var images=Object.FindObjectsByType<UnityEngine.UI.Image>().Where(i=>i.name.StartsWith("Roster Illustration ")).ToArray();
+            Assert.That(images.Length,Is.EqualTo(9));Assert.That(images.All(i=>i.enabled&&i.sprite),Is.True);
+            yield return new WaitForSecondsRealtime(.7f);
+            foreach(int height in new[]{720,800,960})CaptureScreen("07_作品別_9人選択_"+height,height);
+            yield return Tap(keyboard.sKey);Assert.That(Flow.Player1Index,Is.EqualTo(3));
+            yield return Tap(keyboard.jKey);Flow.SelectRosterCard(8);yield return Tap(keyboard.deleteKey);
+            Assert.That(Flow.Screen,Is.EqualTo(GameScreen.StageSelect));yield return Tap(keyboard.enterKey);
+            yield return WaitFor(()=>Flow.Screen==GameScreen.Battle,"追加キャラの試合開始失敗");
+            Assert.That(Flow.Runner.Simulation.P1.Definition.Name,Is.EqualTo("湊"));
+            Assert.That(Flow.Runner.Simulation.P2.Definition.Name,Is.EqualTo("龍太"));
+            foreach(var fighter in Object.FindObjectsByType<FighterView>()){fighter.RenderFrame();Assert.That(fighter.UsesPaperSprite,Is.True);}
+        }
+        [UnityTest]
+        public IEnumerator ThreePaperSetsKeepPlatformsAndSimulationInSyncThroughShrink()
+        {
+            yield return SelectLocalBattle();Flow.enabled=false;var runner=Flow.Runner;runner.SetPaused(true);
+            var stageView=Object.FindAnyObjectByType<StageView>();
+            for(int theme=0;theme<3;theme++)
+            {
+                var data=runner.Setup.Stages[theme];runner.BeginMatch(runner.Setup.Character(2),runner.Setup.Character(0),data,false);
+                stageView.Rebuild(data);yield return null;yield return null;
+                var sim=runner.Simulation;int tick=sim.Match.TickCount;var p=sim.P1.Position;
+                foreach(float aspect in new[]{16f/9,16f/10,4f/3})
+                {
+                    Camera.main.aspect=aspect;yield return null;yield return null;
+                    for(int i=1;i<3;i++)foreach(float x in new[]{sim.Stage[i].Bounds.Left,sim.Stage[i].Bounds.Right})
+                    {var v=Camera.main.WorldToViewportPoint(new Vector3(x,sim.Stage[i].Bounds.Top,0));Assert.That(v.x,Is.GreaterThan(0).And.LessThan(1));Assert.That(v.y,Is.GreaterThan(0).And.LessThan(1));}
+                    Assert.That(sim.Match.TickCount,Is.EqualTo(tick));Assert.That(sim.P1.Position,Is.EqualTo(p));
+                }
+                CaptureScreen("08_紙舞台_"+theme);
+                while(sim.Shrink.CompletedSteps<3&&!sim.Match.IsFinished)sim.Tick(default,default);
+                yield return null;yield return null;
+                var floors=Object.FindObjectsByType<SpriteRenderer>().Where(s=>s.name.StartsWith("Platform ")&&!s.name.StartsWith("Platform Edge ")).ToArray();
+                Assert.That(floors.Length,Is.EqualTo(3));Assert.That(floors.Single(s=>s.name=="Platform 0").bounds.size.x,Is.EqualTo(sim.Stage[0].Bounds.Size.X).Within(.0001));
+                Assert.That(floors.Single(s=>s.name=="Platform 1").enabled,Is.False);Assert.That(floors.Single(s=>s.name=="Platform 2").enabled,Is.False);
+                CaptureScreen("09_紙舞台縮小_"+theme);
+            }
+        }
+        private static void CaptureScreen(string name,int height=720)
         {
             var camera = Camera.main; var target = camera.targetTexture; var active = RenderTexture.active;
             var canvases = Object.FindObjectsByType<Canvas>().Where(c => c.renderMode == RenderMode.ScreenSpaceOverlay).ToArray();
-            var texture = RenderTexture.GetTemporary(1280, 720, 24); var image = new Texture2D(1280, 720, TextureFormat.RGBA32, false);
+            var texture = RenderTexture.GetTemporary(1280, height, 24); var image = new Texture2D(1280, height, TextureFormat.RGBA32, false);
             try
             {
                 camera.targetTexture = texture;
                 foreach (var canvas in canvases) { canvas.renderMode = RenderMode.ScreenSpaceCamera; canvas.worldCamera = camera; canvas.planeDistance = 1; }
-                Canvas.ForceUpdateCanvases(); camera.Render(); RenderTexture.active = texture;
-                image.ReadPixels(new Rect(0, 0, 1280, 720), 0, 0); image.Apply();
-                string folder = System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath, "../../docs/screenshots/paper_theatre_unity"));
+                Canvas.ForceUpdateCanvases();Object.FindAnyObjectByType<MenuScreenView>().SendMessage("LateUpdate");Canvas.ForceUpdateCanvases();
+                if(name.StartsWith("07_"))
+                    foreach(var card in Object.FindObjectsByType<UnityEngine.UI.Image>().Where(i=>i.name.StartsWith("Roster Card ")))
+                    {
+                        var corners=new Vector3[4];card.rectTransform.GetWorldCorners(corners);
+                        foreach(var corner in corners){var p=camera.WorldToViewportPoint(corner);Assert.That(p.x,Is.GreaterThan(0).And.LessThan(1));Assert.That(p.y,Is.GreaterThan(0).And.LessThan(1));}
+                    }
+                camera.Render(); RenderTexture.active = texture;
+                image.ReadPixels(new Rect(0, 0, 1280, height), 0, 0); image.Apply();
+                string folder = System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath, "../../docs/screenshots/paper_stage_roster_unity"));
                 System.IO.Directory.CreateDirectory(folder); System.IO.File.WriteAllBytes(System.IO.Path.Combine(folder, name + ".png"), image.EncodeToPNG());
             }
             finally

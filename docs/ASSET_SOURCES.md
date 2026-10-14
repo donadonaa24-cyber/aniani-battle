@@ -186,3 +186,7 @@ art_source/paper_cutout/generated/chizuru_paper_idle_v1.pngは内蔵image_genに
 
 同一バイトの原画をAniBato/Assets/_Project/Art/Paper/idle_paper_chizuru.pngへ保存し、千鶴の待機/歩行だけ接続。足元を支点にUnityで段階的な傾き/上下を付け、原画/旧ピクセル素材を保持。docs/screenshots/paper_chizuru_unity/の18PNGはUnity実カメラの描画、左右GIFはそのPNGの形式変換で第三者素材なし。実モニター撮影ではない。BuildAll/EditMode441/441/PlayMode36/36/Windowsビルド成功。
 
+
+## 2026-10-15 工作舞台と9人画面
+
+PaperStageScenery／PaperPlatformViewで作る自作の平面シェイプ。街／管理AI画面／6×6盤／駒／塔／文化祭屋台／黒板／調理小道具と厚紙の縁は、本作独自の舞台演出で正史の追加ではない。タイトル・選択はart_source/paper_roster_idleの9待機をコピーし、Unityの文字・台紙・棒・テープで構成。第三者の画像やUI素材は転載していない。各キャラの参照出典と仮補完は同フォルダの出典表を参照。
