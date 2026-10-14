@@ -6,6 +6,7 @@
 - Unityプロジェクト本体：`AniBato/`（製品名は「あにあにバトル！！」、companyName は `aniani`）。
 - 原本仕様：`docs/SPEC_ORIGINAL.md`（必ず参照。迷ったらこれに従う）。
 - 最新の共通演出：`docs/PAPER_THEATRE_DIRECTION.md`。通常のアニメ全身イラスト1枚を丸ごと動かすペープサート方式。初期は関節分割／ボーンなし。攻撃は各段「予備→当てる」の2コマ、3段目は最大。戦闘性能は絵の都合で変えない。
+- ゴールと実装順：`docs/IMPLEMENTATION_ORDER.md`。RESUME冒頭に現在工程／直近の検証結果／次の指示書を記録する。完了済みを重複せず、小工程ごとに実装・検証・通常保存する。
 - 役割（2026-10-12 ユーザー指定）：**Codex＝メイン実装・レビュー・Unity検証・取りまとめ**。Claudeも交代して作業できる。指示書は `docs/codex_tasks/`、最新の再開・交代手順は `docs/RESUME.md` と `docs/HANDOFF_TO_CODEX.md` に残す。
 
 ## 作業開始時に読むもの
@@ -36,6 +37,7 @@
 - シーン・アセットは手書きYAMLではなく、Editorスクリプト（`AniBato.EditorTools.ProjectBuilder.BuildAll` 等、`-executeMethod` で実行可能）で生成する。
 - 巨大な1ファイルにしない。システムごとにクラスを分ける。
 - ピクセルアートは `docs/SPRITE_SPEC.md` に従い、今後すべて1コマ224×160px・足元159px・PPU50へ統一。原画を保管し、キャラごとの身長差とクリップ間の倍率を維持する。
+- 上記224×160は旧ピクセル素材の維持規則。新しい紙イラストをそこへ縮小しない。千鶴の紙ゲーム枠は1304×1450／共通PPU532.5893、原画画素を保つ透明梱包と足元支点を使用。フライパン比較は同じ枠で靴底1328へ揃える。頭・靴等の部位寸法は枠一致とは別に審査し、採用待機を基準に確認する。
 - 他の担当/生成サービスへの詳細な指示は[docs/SPRITE_GENERATION_GUIDE.md](docs/SPRITE_GENERATION_GUIDE.md)。参照PNG・全文プロンプト・共通32色・採用済み出力は[art_source/sprite_generation_kit.zip](art_source/sprite_generation_kit.zip)に同梱。しゃがみ等の別姿勢も立ち基準から倍率を固定し、ポーズごとに独立拡縮しない。
 - 新ポーズはセル寸法だけで合格にせず、採用済み待機の頭/髪・靴と部分の大きさを比較し、等倍/整数拡大で目視する。詳細指示書§3の部位基準を参照。しゃがみの高さに合わせて頭や足を拡大しない。
 - テスト：`Assets/_Project/Tests/EditMode`、`Assets/_Project/Tests/PlayMode`。

@@ -2,6 +2,8 @@
 
 **2026-10-15の最新状態はRESUME冒頭を優先。** 実装順はIMPLEMENTATION_ORDER.md、共通設定はPAPER_THEATRE_DIRECTION.md。開始／決着／結果／千鶴全身動作と音の試作を実装。paper_theatre_2でBuildAll成功／Edit459/459／Play42/42／Windowsビルド成功。実描画30PNGと試聴WAV5件、フライパン比較12枚を保存。カバン版13原画を削除指示まで保護。次はPAPER_STAGE_EFFECTSの紙効果→工作舞台／縮小→集合タイトル。停止中の透真制作は自動再開しない。原画比較とゲーム採用を混同しない。
 
+この実装は1587fd0でorigin mainへ通常push済み。以後の資料更新のみではUnityを重複実行しない。次のコード変更で新タグの全4工程を行う。
+
 反映済み実装コミット：7cc23f0（origin mainへ通常push成功）。最新の実Unity検証はpaper_chizuru_all_2、以下のRESUME／結果記録から再開する。
 
 **最新（2026-10-14）：千鶴の全35描画状態／30姿勢／4効果を紙イラストへ接続済み。** ユーザーが絵の修正待ちよりゲーム実装を優先指定。歩き15度／走り45度固定、空中攻撃を終了まで保持。実UnityのBuildAll成功／Edit447/447／Play38/38／Windowsビルド成功、失敗・スキップ0。最新Build/paper_chizuru_all_2/AniBato.exe、実描画19PNGはdocs/screenshots/paper_chizuru_all_unity/。共通PPU、1304×1450透明梱包、全原画画素一致を検査。手と部位サイズの絵の修正残はruntime-manifestに明記し、ゲーム使用と絵の完成を区別する。確認フォルダの35画像もゲーム採用済みへ更新。RESUME冒頭とpaper_chizuru_all_2_finalを最優先に読む。以下の原画修正／未接続の記述は過去の履歴。

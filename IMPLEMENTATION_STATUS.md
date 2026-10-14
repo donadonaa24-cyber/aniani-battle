@@ -8,7 +8,7 @@
 
 千鶴フライパンは横6＋上下6の比較保存完了。イラスト確認/千鶴/比較_フライパン版_未採用/に日本語名／一覧。1304×1450、靴底1328、透明余白のみで原画画素一致。頭／靴／手の絵の最終審査は未完、ゲームはカバン版のまま。variants/bag-backup.jsonで13原画を削除指示まで保護。180BPMのBGM4種／19SEも試作導入し、TestResults/arcade_audio/へ試聴WAV5件。聴感の好みは未確認。
 
-この検証区切りを通常commit／origin mainへpushする。次はPAPER_STAGE_EFFECTSの紙ヒット演出→工作舞台／縮小演出→9人集合タイトル。透真の旧制作は自動再開しない。詳細はcodex_logs/paper_theatre_2_final.mdとRESUME。
+実装コミット1587fd0をorigin mainへ通常push済み。次はPAPER_STAGE_EFFECTSの紙ヒット演出→工作舞台／縮小演出→9人集合タイトル。透真の旧制作は自動再開しない。詳細はcodex_logs/paper_theatre_2_final.mdとRESUME。
 
 ## 以下は前回完了の記録
 
