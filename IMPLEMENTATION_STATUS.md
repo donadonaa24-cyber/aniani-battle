@@ -12,7 +12,7 @@ Unity実描画19PNGはdocs/screenshots/paper_chizuru_all_unity/。歩き左右�
 
 確認フォルダはイラスト確認/千鶴/01_ゲームで採用済み/に35画像、名前付き一覧／HTML／CSVも更新。すべて原画同一コピー。候補と採用の二重表示なし。修正前の旧PNGはユーザー指定で削除済み、現在原画34＋承認済み手元参考1を保持。ゲームで使用中と絵の最終審査を分けて説明する。
 
-詳細はdocs/codex_logs/paper_chizuru_all_2_final.md、指示書PAPER_CHIZURU_INTEGRATE_NOW、対応表art_source/paper_cutout/runtime-manifest.json。現在は通常commit／origin mainへのpushの最終整理中。次はユーザーが千鶴をプレイして動きを確認できる。残る手／部位の絵の修正、漫画演出、9人の集合タイトルは後続。透真の制作は自動再開しない。Claudeも本書と上記資料から交代可能、同時編集禁止。
+詳細はdocs/codex_logs/paper_chizuru_all_2_final.md、指示書PAPER_CHIZURU_INTEGRATE_NOW、対応表art_source/paper_cutout/runtime-manifest.json。実装コミット7cc23f0をorigin mainへ通常push済み。force pushなし。次はユーザーが千鶴をプレイして動きを確認できる。残る手／部位の絵の修正、漫画演出、9人の集合タイトルは後続。透真の制作は自動再開しない。Claudeも本書と上記資料から交代可能、同時編集禁止。
 
 ## 以下はゲーム接続前の履歴
 

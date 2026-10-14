@@ -36,7 +36,7 @@
         "Jump"
       ],
       "pose": "両膝を軽く畳み、空中へ飛び上がった姿勢。片脚を前、片脚を後ろへ軽く曲げ、両腕を左右へ開いてバランス。元気な表情、両スニーカーを識別、スカートは自然に下半身を覆う。カバンなし。",
-      "version": 1,
+      "version": 2,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_jump_v2.png",
       "gameConnected": true
     },
@@ -56,7 +56,7 @@
         "Dodge"
       ],
       "pose": "右前へ素早く身を低くかわす。両膝を深く曲げて前傾、片手を顔の横、もう一手を後ろに引く、横に少し広い低い姿勢。地上両足、頭/足を拡大しない。カバンなし。",
-      "version": 1,
+      "version": 2,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_dodge_v2.png",
       "gameConnected": true
     },
@@ -66,7 +66,7 @@
         "Counter"
       ],
       "pose": "防御反撃の構え。右向きに両足で踏ん張り、手前の右手を開いて前へ差し出し、左手は胸の近くで構える。いたずらっぽい集中した表情。カバンなし。",
-      "version": 1,
+      "version": 2,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
       "gameConnected": true
     },
@@ -98,7 +98,7 @@
         "Knockback"
       ],
       "pose": "強いダメージに泣く大きなデフォルメ反応。上半身を後ろへ大きく反らし、両目に大粒の涙、口を大きく開けて『痛い』表情。両手が前へ出て指を開き、膝が崩れかけても足で耐える。涙は顔のすぐ横の小さい雫2個程度、頭/靴は大きくしない。怪我/血なし、カバンなし。",
-      "version": 1,
+      "version": 2,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_hit_heavy_v2.png",
       "gameConnected": true
     },
@@ -109,7 +109,7 @@
         "Lose"
       ],
       "pose": "地面へへたり込んだ負け/KO姿勢。腰を落として両膝を曲げて座り、上半身を少し前へ、両手は膝付近、涙ぐんだ悔しそうな表情。靴が2つ見える、頭/靴を拡大せず地上の幅広い低いポーズ。血/傷なし、カバンなし。",
-      "version": 1,
+      "version": 2,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
       "gameConnected": true
     },
@@ -129,7 +129,7 @@
         "Attack1"
       ],
       "pose": "右手に小さい茶色の四角い手提げカバンを持ち、右側から前方へ大きく振り抜く一段目。胴と腰を右前へひねり、左手は胸近くでバランス。右足を一歩前へ。カバンは右手だけ、持ち手をしっかり握り、手とカバンは離れない。",
-      "version": 1,
+      "version": 3,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_attack1_v3.png",
       "gameConnected": true
     },
@@ -139,7 +139,7 @@
         "Attack2"
       ],
       "pose": "同じ右手に持った茶色の四角い手提げカバンで二撃目。肩と腰を強くひねり、右腕を大きく前へ伸ばしてカバンを右前へ叩きつける。片足を軸に回転した胴、左手は後ろに引く。カバンの手が左へ入れ替わらない。",
-      "version": 1,
+      "version": 3,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_attack2_v3.png",
       "gameConnected": true
     },
@@ -149,7 +149,7 @@
         "Attack3"
       ],
       "pose": "同じ茶色の四角い手提げカバンを右前へ投げた直後の大きな振り抜き。右腕を前へ伸ばし手のひらを開く、左腕は後ろへ、腰を前へひねり一歩踏み込む。投げられたカバンは別の効果で出すのでこの原画にはカバンを描かず、右手が離した姿勢を明確にする。",
-      "version": 1,
+      "version": 6,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_attack3_v6.png",
       "gameConnected": true
     },
@@ -159,7 +159,7 @@
         "CrouchAttack"
       ],
       "pose": "低く両膝を曲げたしゃがみから、右手の小さい茶色四角い手提げカバンを右前の膝の高さへ振って叩く。顔は右前、左手を胸元へ、右腕とカバンは地面より上。頭/靴が大きくならない。",
-      "version": 1,
+      "version": 3,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_crouch_attack_v3.png",
       "gameConnected": true
     },
@@ -169,7 +169,7 @@
         "BackAttack"
       ],
       "pose": "顔と胸の向きは右だが胴を左後方へひねり、右手の茶色四角い手提げカバンを左後ろへ大きく振って背後を叩く。左手は右前へバランス、両足で踏ん張る。頭/靴の倍率固定。",
-      "version": 1,
+      "version": 8,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_back_attack_v8.png",
       "gameConnected": true
     },
@@ -180,7 +180,7 @@
         "AirNeutral"
       ],
       "pose": "空中で膝を軽く曲げ、右手の茶色四角い手提げカバンを右前の腰から胸の高さへ大きく振り出す中立攻撃。胴をひねり、左腕を逆方向へ、両靴が空中に見える。カバンは右手だけ。",
-      "version": 1,
+      "version": 2,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_air_neutral_v2.png",
       "gameConnected": true
     },
@@ -190,7 +190,7 @@
         "AirForward"
       ],
       "pose": "空中で右前へ身体を前傾して、右手の茶色四角い手提げカバンを胸の高さで真っ直ぐ右前へ突き出す。前脚を伸ばし後脚を曲げ、左手を後ろへ。靴/手を遠近で拡大しない。",
-      "version": 1,
+      "version": 8,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_air_forward_v8.png",
       "gameConnected": true
     },
@@ -210,7 +210,7 @@
         "AirUp"
       ],
       "pose": "空中で両膝を曲げ、右手の茶色四角い手提げカバンを頭上へ高く振り上げる。顔は右斜め上、左手は横へバランス。頭を画面の中段へ下げて頭上のカバンを収め、人物の部位を縮小しない。",
-      "version": 1,
+      "version": 2,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_air_up_v2.png",
       "gameConnected": true
     },
@@ -240,7 +240,7 @@
         "AirForwardDown"
       ],
       "pose": "空中から右斜め下へ、右手の茶色四角い手提げカバンを斜め45度下へ大きく振る。上半身は右下へひねり、左腕を逆に上げ、両膝は軽く曲げる。カバン/両靴を重ねず読みやすく。",
-      "version": 1,
+      "version": 3,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_air_forward_down_v3.png",
       "gameConnected": true
     },
@@ -260,7 +260,7 @@
         "SpecialSide"
       ],
       "pose": "右手に灰色の小さいフライパンを持ち、右前へ突撃する前傾。フライパンの丸い底を敵の方へ向け、左手は後方、片足を前、片足を後ろへ。道具は小さく、元の頭/手/靴の倍率、帽子なし。",
-      "version": 1,
+      "version": 4,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_special_side_v4.png",
       "gameConnected": true
     },
@@ -270,7 +270,7 @@
         "SpecialUp"
       ],
       "pose": "右手の銀色のおたまを頭上の右斜め上へ振り上げて舞い上がる。両膝を曲げ、左腕を横へバランス、楽しそうな集中した顔。おたまの丸い先端と柄を識別、全身一姿勢、旋風の線は描かない。",
-      "version": 1,
+      "version": 3,
       "selected": "art_source/paper_cutout/generated/chizuru_paper_special_up_v3.png",
       "gameConnected": true
     },
@@ -296,9 +296,10 @@
     }
   ],
   "run": {
-    "selected": "generated/chizuru_paper_run_v3.png",
+    "selected": "art_source/paper_cutout/generated/chizuru_paper_run_v3.png",
     "comparison": "shoe-comparison.json",
-    "normalizedCanvasPending": true
+    "normalizedCanvasPending": false,
+    "gameConnected": true
   },
   "effects": [
     {

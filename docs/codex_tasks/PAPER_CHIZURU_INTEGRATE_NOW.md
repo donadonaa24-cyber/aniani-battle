@@ -8,3 +8,5 @@
 - 戦闘の発生／硬直／威力／勝敗／既存ピクセル素材のテストは維持。新素材参照、両向き、状態中の保持、切り替えを厳密に検証する。
 - tools/verify/run_unity.ps1を承認付きサンドボックス外で実行し、BuildAll／EditMode／PlayMode／Windowsビルドを全部確認。実Unityの画像も保存・目視する。OSキー撮影時は先に「PCに触らないで」と声かけ。
 - 全工程合格後に資料／確認フォルダを更新して通常commit・origin mainへpush。力ずくの履歴変更なし。手の修正残を完成と偽らず、実際の採用と絵の審査状態を分ける。
+
+結果：30姿勢／全35状態／4効果を接続。BuildAll成功、Edit447/447・Play38/38、Windowsビルド成功。最新Build/paper_chizuru_all_2/AniBato.exe、実Unity19PNGはdocs/screenshots/paper_chizuru_all_unity/。7cc23f0をorigin mainへ通常push済み。手と部位の絵は修正残がある。詳しい検証／交代手順はRESUME冒頭とpaper_chizuru_all_2_final。

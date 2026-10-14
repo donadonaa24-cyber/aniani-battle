@@ -29,8 +29,9 @@ hand.note='全ポーズをユーザー指定でゲームへ先行接続済み。
 for(const row of hand.entries){row.gameAdopted=true;row.status='integrated_art_review_pending';row.note=cat.entries.find(r=>r.key===row.key).note;}
 fs.writeFileSync(handPath,JSON.stringify(hand,null,2)+'\n');
 const planPath='art_source/paper_cutout/all-actions-plan.json',plan=read(planPath);
-for(const action of plan.actions){const row=cat.entries.find(r=>r.key===action.key);action.selected=row.source;action.gameConnected=true;}
+for(const action of plan.actions){const row=cat.entries.find(r=>r.key===action.key);action.selected=row.source;action.version=Number(row.source.match(/_v(\d+)\.png$/)[1]);action.gameConnected=true;}
 for(const effect of plan.effects){effect.selected=cat.entries.find(r=>r.key==='effect_'+effect.key).source;effect.gameConnected=true;}
+plan.run.selected=cat.entries.find(r=>r.key==='run').source;plan.run.normalizedCanvasPending=false;plan.run.gameConnected=true;
 plan.runtimeManifest='runtime-manifest.json';plan.integration=cat.runtimeIntegration;
 fs.writeFileSync(planPath,JSON.stringify(plan,null,2)+'\n');
 process.stdout.write(JSON.stringify({adoptedImages:cat.entries.length,editPassed,playPassed,previousCategories:Object.fromEntries(previous)})+'\n');

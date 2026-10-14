@@ -25,4 +25,4 @@ Unity実Camera.Renderの19PNGはdocs/screenshots/paper_chizuru_all_unity/。idle
 
 次：ユーザーが実際の千鶴を触って動きを確認できる状態。残る手／部位の絵、漫画風演出、主役9人＋同じ3作品の仲間の集合タイトルは別の後続作業。停止中の透真の技制作は自動再開しない。ClaudeはRESUME冒頭、本書、PAPER_CHIZURU_INTEGRATE_NOW、runtime-manifestから交代可能。
 
-反映：全4工程合格の区切りとして通常commit・origin mainへpushする。実際の反映SHAはRESUMEへ追記。
+反映：実装コミット7cc23f0をorigin mainへ通常push済み（60501c4→7cc23f0）。force push／公開履歴の書き換えなし。この反映記録は追加の通常コミットに保存する。

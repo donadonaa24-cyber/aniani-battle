@@ -1,5 +1,7 @@
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
+反映済み実装コミット：7cc23f0（origin mainへ通常push成功）。最新の実Unity検証はpaper_chizuru_all_2、以下のRESUME／結果記録から再開する。
+
 **最新（2026-10-14）：千鶴の全35描画状態／30姿勢／4効果を紙イラストへ接続済み。** ユーザーが絵の修正待ちよりゲーム実装を優先指定。歩き15度／走り45度固定、空中攻撃を終了まで保持。実UnityのBuildAll成功／Edit447/447／Play38/38／Windowsビルド成功、失敗・スキップ0。最新Build/paper_chizuru_all_2/AniBato.exe、実描画19PNGはdocs/screenshots/paper_chizuru_all_unity/。共通PPU、1304×1450透明梱包、全原画画素一致を検査。手と部位サイズの絵の修正残はruntime-manifestに明記し、ゲーム使用と絵の完成を区別する。確認フォルダの35画像もゲーム採用済みへ更新。RESUME冒頭とpaper_chizuru_all_2_finalを最優先に読む。以下の原画修正／未接続の記述は過去の履歴。
 
 > 2026-10-12 ユーザー指定：**Codexが実装・レビュー・Unity検証・取りまとめを担当し、Claudeにも随時交代できる**ようにする。
