@@ -69,8 +69,10 @@ namespace AniBato.Tests
             }
             Assert.That(setup.Character(1).Portrait, Is.Not.Null); Assert.That(setup.Character(2).Portrait, Is.Not.Null);
             var chizuru = setup.Character(2);
-            Assert.That(chizuru.GroundNormals[2].Definition.SpawnProjectile, Is.True);
-            Assert.That(chizuru.GroundNormals.Take(2).Any(a => a.Definition.SpawnProjectile), Is.False);
+            Assert.That(chizuru.NormalWeaponSchemaVersion, Is.EqualTo(1));
+            Assert.That(chizuru.GroundNormals.Any(a => a.Definition.SpawnProjectile), Is.False);
+            Assert.That(chizuru.GroundNormals[2].Definition.IsCloseRange, Is.True);
+            Assert.That(chizuru.GroundNormals[2].Definition.Hitbox, Is.EqualTo(PhaseFiveBDefaults.Character(2).GroundNormals[2].Hitbox));
             Assert.That(chizuru.SpriteEffects.NormalProjectileClip, Is.EqualTo("bag_throw"));
             Assert.That(chizuru.SpriteEffects.NormalProjectileScale, Is.EqualTo(1));
             Assert.That(chizuru.SpriteEffects.NormalProjectileSchemaVersion, Is.EqualTo(1));

@@ -57,13 +57,19 @@ namespace AniBato.Tests
             {
                 var pose = row.key == "hit_heavy" ? motion.HeavyDamage : System.Array.Find(motion.Poses, p => p.Key == row.key);
                 Assert.That(pose, Is.Not.Null, row.key); Assert.That(pose.Valid, Is.True); Assert.That(pose.HoldTicks, Is.EqualTo(8));
-                Assert.That(pose.Frames.Length, Is.EqualTo(4));
-                foreach (var frame in pose.Frames) { Assert.That(frame, Is.SameAs(pose.Frames[0])); Assert.That(frame.pixelsPerUnit, Is.EqualTo(motion.Sprite.pixelsPerUnit)); }
+                bool twoFrames = row.frames != null && row.frames.Length > 0;
+                Assert.That(pose.Frames.Length, Is.EqualTo(twoFrames ? 2 : 4));
+                foreach (var frame in pose.Frames) { if (!twoFrames) Assert.That(frame, Is.SameAs(pose.Frames[0])); Assert.That(frame.pixelsPerUnit, Is.EqualTo(motion.Sprite.pixelsPerUnit)); }
+                for (int frameIndex = 0; frameIndex < (twoFrames ? 2 : 1); frameIndex++)
+                {
+                string sourcePath = twoFrames ? row.frames[frameIndex].source : row.source;
+                int headTop = twoFrames ? row.frames[frameIndex].headTopY : row.headTopY;
+                var sample = new AnimationSample { IsAttack = true, Startup = 1, AttackFrame = frameIndex };
                 var source = new Texture2D(2, 2, TextureFormat.RGBA32, false); var packed = new Texture2D(2, 2, TextureFormat.RGBA32, false);
                 try
                 {
-                    Assert.That(ImageConversion.LoadImage(source, File.ReadAllBytes("../" + row.source)), Is.True);
-                    Assert.That(ImageConversion.LoadImage(packed, File.ReadAllBytes(AssetDatabase.GetAssetPath(pose.Frames[0]))), Is.True);
+                    Assert.That(ImageConversion.LoadImage(source, File.ReadAllBytes("../" + sourcePath)), Is.True);
+                    Assert.That(ImageConversion.LoadImage(packed, File.ReadAllBytes(AssetDatabase.GetAssetPath(pose.Frames[frameIndex]))), Is.True);
                     Assert.That(packed.width, Is.EqualTo(1304)); Assert.That(packed.height, Is.EqualTo(1450));
                     var input = source.GetPixels32(); var output = packed.GetPixels32();
                     int dx = (packed.width - source.width) / 2, dy = (packed.height - source.height) / 2, mismatch = 0, outside = 0;
@@ -74,10 +80,11 @@ namespace AniBato.Tests
                         else if (actual.a != 0) outside++;
                     }
                     Assert.That(mismatch, Is.Zero, row.key + " source pixels changed"); Assert.That(outside, Is.Zero, row.key + " padding");
-                    Assert.That(pose.HeadHeight, Is.EqualTo((source.height - row.headTopY + dy - pose.Frames[0].pivot.y) / motion.Sprite.pixelsPerUnit).Within(.00001));
-                    if (!row.airborne) Assert.That(pose.FootBaseY, Is.EqualTo(0).Within(.00001));
+                    Assert.That(pose.Head(sample), Is.EqualTo((source.height - headTop + dy - pose.Frames[frameIndex].pivot.y) / motion.Sprite.pixelsPerUnit).Within(.00001));
+                    if (!row.airborne) Assert.That(pose.Foot(sample), Is.EqualTo(0).Within(.00001));
                 }
                 finally { Object.DestroyImmediate(source); Object.DestroyImmediate(packed); }
+                }
             }
             Assert.That(motion.Bag, Is.Not.Null); Assert.That(motion.RiceBall, Is.Not.Null); Assert.That(motion.Mogu, Is.Not.Null); Assert.That(motion.CurryWave, Is.Not.Null);
             foreach (AnimationState state in System.Enum.GetValues(typeof(AnimationState)))
@@ -87,7 +94,7 @@ namespace AniBato.Tests
                 {
                     var sample = new AnimationSample { State = state, Age = age, IsAttack = true, AttackFrame = age, Startup = 5, Active = 5, Recovery = 25 };
                     Assert.That(motion.TrySprite(sample, false, out var sprite, out var selected), Is.True);
-                    Assert.That(sprite, Is.SameAs(pose.Frames[0])); Assert.That(selected, Is.SameAs(pose));
+                    Assert.That(sprite, Is.SameAs(pose.Frames[pose.Frames.Length == 2 && age >= 5 ? 1 : 0])); Assert.That(selected, Is.SameAs(pose));
                 }
             }
             Assert.That(motion.Find(AnimationState.Hitstun, true), Is.SameAs(motion.HeavyDamage));

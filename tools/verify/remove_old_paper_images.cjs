@@ -16,11 +16,15 @@ if(fs.existsSync(bagBackupPath)){
 const folders={adopted:'01_ゲームで採用済み',candidate:'02_確認用候補_未採用',repair:'03_修正が必要_未採用'};
 const plannedReview=new Set(catalog.entries.map(r=>{
  if(!folders[r.category])throw Error('Unknown current category');
- const match=r.source.match(/_v(\d+)\.png$/);if(!match)throw Error('Unexpected current source');
- return folders[r.category]+'/'+r.title+(r.category==='adopted'?'_採用済み':'_候補'+String(Number(match[1])).padStart(2,'0'))+'.png';
+ const match=r.source.match(/_v(\d+)\.png$/);
+ return folders[r.category]+'/'+r.title+(r.category==='adopted'?'_採用済み':'_候補'+String(Number(match?match[1]:r.version||1)).padStart(2,'0'))+'.png';
 }));
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-for(const file of selected){if(!fs.existsSync(inside(sourceBase,path.join(root,file))))throw Error('Missing current source: '+file);}
+for(const file of selected){
+ const full=inside(root,path.join(root,file));
+ if(!file.startsWith('art_source/paper_cutout/generated/')&&!file.startsWith('art_source/paper_cutout/variants/fryingpan/prepared/'))throw Error('Unexpected current source folder');
+ if(!fs.existsSync(full))throw Error('Missing current source: '+file);
+}
 const auditPath=inside(root,path.join(root,'art_source/paper_cutout/deleted-old-images.json'));
 const audit=fs.existsSync(auditPath)?read('art_source/paper_cutout/deleted-old-images.json'):{reason:'user_requested_old_image_removal',entries:[]};
 const before=audit.entries.length,deleted={source:0,review:0},skipped=[];
@@ -34,6 +38,7 @@ function removeChecked(file,expected,scope){
 }
 for(const fact of facts.images){
  if(selected.has(fact.file))continue;
+ if(!fact.file.startsWith('art_source/paper_cutout/generated/')){skipped.push(fact.file);continue;}
  const file=inside(sourceBase,path.join(root,fact.file));
  if(!/^chizuru_paper_.+_v\d+\.png$/.test(path.basename(file)))throw Error('Unexpected source name');
  removeChecked(file,fact.sha256,'source');

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ChizuruGround3
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
-    Name: "\u5343\u9DB4 \u5730\u4E0A3"
+    Name: "\u30D5\u30E9\u30A4\u30D1\u30F3\u5927\u632F\u308A"
     Kind: 0
-    IsCloseRange: 0
+    IsCloseRange: 1
     NormalDirection: 0
     BreaksGuard: 0
     LandingRecoveryFrames: 0
@@ -28,17 +28,17 @@ MonoBehaviour:
         X: 1.8
         Y: 0.1
       Size:
-        X: 0.4
-        Y: 0.36
+        X: 3
+        Y: 1.8
     HitstopFrames: 4
     HitstunFrames: 8
     Knockback:
       X: 2
       Y: 0
     PiercesNormalDodge: 0
-    SpawnProjectile: 1
-    ProjectileSpeed: 12
-    ProjectileLifetimeFrames: 24
+    SpawnProjectile: 0
+    ProjectileSpeed: 0
+    ProjectileLifetimeFrames: 0
     ActiveVelocity:
       X: 0
       Y: 0

@@ -1,5 +1,7 @@
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
+最新追加：paper_fryingpan_1で実Unity全4工程合格（Edit463／Play42）。千鶴の全通常をフライパン2原画へ接続、カバン予備は保護。全9人待機を保存、透真は湊と頭身を合わせv2へ。新8人は戦闘未接続。次はPAPER_STAGES_AND_SCREENSの工作舞台とタイトル／合図。詳細はRESUME冒頭を優先。
+
 **2026-10-15の最新状態はRESUME冒頭を優先。** 実装順はIMPLEMENTATION_ORDER.md、共通設定はPAPER_THEATRE_DIRECTION.md。開始／決着／結果／千鶴全身動作と音の試作を実装。paper_theatre_2でBuildAll成功／Edit459/459／Play42/42／Windowsビルド成功。実描画30PNGと試聴WAV5件、フライパン比較12枚を保存。カバン版13原画を削除指示まで保護。次はPAPER_STAGE_EFFECTSの紙効果→工作舞台／縮小→集合タイトル。停止中の透真制作は自動再開しない。原画比較とゲーム採用を混同しない。
 
 この実装は1587fd0でorigin mainへ通常push済み。以後の資料更新のみではUnityを重複実行しない。次のコード変更で新タグの全4工程を行う。

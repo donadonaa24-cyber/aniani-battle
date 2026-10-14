@@ -237,7 +237,9 @@ namespace AniBato.Tests
                 {
                     var attack = runner.Simulation.P1.Attack;
                     Assert.That(view.RenderedSample.State, Is.EqualTo(expected[action])); Assert.That(view.UsesPaperSprite, Is.True);
-                    Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(expected[action]).Frames[0]));
+                    var pose = data.PaperMotion.Find(expected[action]);
+                    Assert.That(body.sprite, Is.SameAs(pose.Frame(view.RenderedSample)));
+                    Assert.That(body.flipX, Is.EqualTo(view.RenderedSample.FlipX ^ pose.ReverseFacing));
                     if (attack.IsActive) active++; if (attack.Frame >= attack.Definition.StartupFrames + attack.Definition.ActiveFrames) recovery++;
                     if (visible++ == 0) Capture(expected[action].ToString(), true);
                     Tick();
@@ -265,7 +267,7 @@ namespace AniBato.Tests
                 }
                 camera.targetTexture = texture; camera.Render(); RenderTexture.active = texture;
                 image.ReadPixels(new Rect(0, 0, width, height), 0, 0); image.Apply();
-                string directory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../docs/screenshots/paper_theatre_unity")); Directory.CreateDirectory(directory);
+                string directory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../docs/screenshots/paper_fryingpan_unity")); Directory.CreateDirectory(directory);
                 File.WriteAllBytes(Path.Combine(directory, name + ".png"), image.EncodeToPNG());
             }
             finally

@@ -129,9 +129,33 @@
         "Attack1"
       ],
       "pose": "右手に小さい茶色の四角い手提げカバンを持ち、右側から前方へ大きく振り抜く一段目。胴と腰を右前へひねり、左手は胸近くでバランス。右足を一歩前へ。カバンは右手だけ、持ち手をしっかり握り、手とカバンは離れない。",
-      "version": 3,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_attack1_v3.png",
-      "gameConnected": true
+      "version": 1,
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "horizontal_1_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+          "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+          "headTopY": 159,
+          "footY": 1329,
+          "footMinX": 254,
+          "footMaxX": 1202,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_1_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_impact.png",
+          "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+          "headTopY": 237,
+          "footY": 1329,
+          "footMinX": 798,
+          "footMaxX": 1031,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "attack2",
@@ -139,9 +163,33 @@
         "Attack2"
       ],
       "pose": "同じ右手に持った茶色の四角い手提げカバンで二撃目。肩と腰を強くひねり、右腕を大きく前へ伸ばしてカバンを右前へ叩きつける。片足を軸に回転した胴、左手は後ろに引く。カバンの手が左へ入れ替わらない。",
-      "version": 3,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_attack2_v3.png",
-      "gameConnected": true
+      "version": 1,
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "horizontal_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+          "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+          "headTopY": 171,
+          "footY": 1329,
+          "footMinX": 222,
+          "footMaxX": 1192,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_impact.png",
+          "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
+          "headTopY": 213,
+          "footY": 1329,
+          "footMinX": 192,
+          "footMaxX": 1180,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "attack3",
@@ -149,9 +197,33 @@
         "Attack3"
       ],
       "pose": "同じ茶色の四角い手提げカバンを右前へ投げた直後の大きな振り抜き。右腕を前へ伸ばし手のひらを開く、左腕は後ろへ、腰を前へひねり一歩踏み込む。投げられたカバンは別の効果で出すのでこの原画にはカバンを描かず、右手が離した姿勢を明確にする。",
-      "version": 6,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_attack3_v6.png",
-      "gameConnected": true
+      "version": 1,
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "vertical_3_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+          "sha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
+          "headTopY": 51,
+          "footY": 1329,
+          "footMinX": 441,
+          "footMaxX": 601,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_3_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+          "sha256": "e97b647e329acfaa6f3715a561596c7d9a6f15e94eedbb93b727025ae063f3ac",
+          "headTopY": 289,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1084,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "crouch_attack",
@@ -159,9 +231,33 @@
         "CrouchAttack"
       ],
       "pose": "低く両膝を曲げたしゃがみから、右手の小さい茶色四角い手提げカバンを右前の膝の高さへ振って叩く。顔は右前、左手を胸元へ、右腕とカバンは地面より上。頭/靴が大きくならない。",
-      "version": 3,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_crouch_attack_v3.png",
-      "gameConnected": true
+      "version": 1,
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "vertical_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+          "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
+          "headTopY": 325,
+          "footY": 1329,
+          "footMinX": 322,
+          "footMaxX": 1083,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_3_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+          "sha256": "e97b647e329acfaa6f3715a561596c7d9a6f15e94eedbb93b727025ae063f3ac",
+          "headTopY": 289,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1084,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "back_attack",
@@ -169,9 +265,33 @@
         "BackAttack"
       ],
       "pose": "顔と胸の向きは右だが胴を左後方へひねり、右手の茶色四角い手提げカバンを左後ろへ大きく振って背後を叩く。左手は右前へバランス、両足で踏ん張る。頭/靴の倍率固定。",
-      "version": 8,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_back_attack_v8.png",
-      "gameConnected": true
+      "version": 1,
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "horizontal_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+          "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+          "headTopY": 171,
+          "footY": 1329,
+          "footMinX": 222,
+          "footMaxX": 1192,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_impact.png",
+          "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
+          "headTopY": 213,
+          "footY": 1329,
+          "footMinX": 192,
+          "footMaxX": 1180,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "air_neutral",
@@ -180,9 +300,33 @@
         "AirNeutral"
       ],
       "pose": "空中で膝を軽く曲げ、右手の茶色四角い手提げカバンを右前の腰から胸の高さへ大きく振り出す中立攻撃。胴をひねり、左腕を逆方向へ、両靴が空中に見える。カバンは右手だけ。",
-      "version": 2,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_neutral_v2.png",
-      "gameConnected": true
+      "version": 1,
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "horizontal_1_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+          "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+          "headTopY": 159,
+          "footY": 1329,
+          "footMinX": 254,
+          "footMaxX": 1202,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_1_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_impact.png",
+          "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+          "headTopY": 237,
+          "footY": 1329,
+          "footMinX": 798,
+          "footMaxX": 1031,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "air_forward",
@@ -190,9 +334,33 @@
         "AirForward"
       ],
       "pose": "空中で右前へ身体を前傾して、右手の茶色四角い手提げカバンを胸の高さで真っ直ぐ右前へ突き出す。前脚を伸ばし後脚を曲げ、左手を後ろへ。靴/手を遠近で拡大しない。",
-      "version": 8,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_forward_v8.png",
-      "gameConnected": true
+      "version": 1,
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "horizontal_1_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+          "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+          "headTopY": 159,
+          "footY": 1329,
+          "footMinX": 254,
+          "footMaxX": 1202,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_1_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_impact.png",
+          "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+          "headTopY": 237,
+          "footY": 1329,
+          "footMinX": 798,
+          "footMaxX": 1031,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "air_back",
@@ -201,8 +369,32 @@
       ],
       "pose": "顔は右前を見ながら空中で胴を左後ろへひねり、右手の茶色四角い手提げカバンを左後方へ振る。左腕は前へ、膝を軽く曲げ、両足を識別。背後への攻撃が見て分かる。",
       "version": 1,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_back_v1.png",
-      "gameConnected": true
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "horizontal_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+          "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+          "headTopY": 171,
+          "footY": 1329,
+          "footMinX": 222,
+          "footMaxX": 1192,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_impact.png",
+          "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
+          "headTopY": 213,
+          "footY": 1329,
+          "footMinX": 192,
+          "footMaxX": 1180,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "air_up",
@@ -210,9 +402,33 @@
         "AirUp"
       ],
       "pose": "空中で両膝を曲げ、右手の茶色四角い手提げカバンを頭上へ高く振り上げる。顔は右斜め上、左手は横へバランス。頭を画面の中段へ下げて頭上のカバンを収め、人物の部位を縮小しない。",
-      "version": 2,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_up_v2.png",
-      "gameConnected": true
+      "version": 1,
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "vertical_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+          "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
+          "headTopY": 325,
+          "footY": 1329,
+          "footMinX": 322,
+          "footMaxX": 1083,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_impact.png",
+          "sha256": "92c9a4b94ebd01e7e44ef246f1937c7c44c899386ac619dcf02ae17e3bc7ed6f",
+          "headTopY": 194,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1078,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "air_down",
@@ -221,8 +437,32 @@
       ],
       "pose": "空中で両膝を畳み、右手の茶色四角い手提げカバンを身体の下へ叩きつける。顔は右下を見る、左腕は上へバランス。靴とカバンを重ねず識別、カバンを下へ遠近拡大しない。",
       "version": 1,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_down_v1.png",
-      "gameConnected": true
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "vertical_3_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+          "sha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
+          "headTopY": 51,
+          "footY": 1329,
+          "footMinX": 441,
+          "footMaxX": 601,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_3_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+          "sha256": "e97b647e329acfaa6f3715a561596c7d9a6f15e94eedbb93b727025ae063f3ac",
+          "headTopY": 289,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1084,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "air_forward_up",
@@ -231,8 +471,32 @@
       ],
       "pose": "空中から右斜め上へ、右手の茶色四角い手提げカバンを斜め45度上へ突き出す。両膝を軽く曲げ、顔は右上、左手は後ろ下へ。全身の倍率を維持し、頭上/右前のカバンを余白の中へ。",
       "version": 1,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_forward_up_v1.png",
-      "gameConnected": true
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "vertical_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+          "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
+          "headTopY": 325,
+          "footY": 1329,
+          "footMinX": 322,
+          "footMaxX": 1083,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_impact.png",
+          "sha256": "92c9a4b94ebd01e7e44ef246f1937c7c44c899386ac619dcf02ae17e3bc7ed6f",
+          "headTopY": 194,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1078,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "air_forward_down",
@@ -240,9 +504,33 @@
         "AirForwardDown"
       ],
       "pose": "空中から右斜め下へ、右手の茶色四角い手提げカバンを斜め45度下へ大きく振る。上半身は右下へひねり、左腕を逆に上げ、両膝は軽く曲げる。カバン/両靴を重ねず読みやすく。",
-      "version": 3,
-      "selected": "art_source/paper_cutout/generated/chizuru_paper_air_forward_down_v3.png",
-      "gameConnected": true
+      "version": 1,
+      "selected": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+      "gameConnected": true,
+      "frames": [
+        {
+          "key": "vertical_3_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+          "sha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
+          "headTopY": 51,
+          "footY": 1329,
+          "footMinX": 441,
+          "footMaxX": 601,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_3_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+          "sha256": "e97b647e329acfaa6f3715a561596c7d9a6f15e94eedbb93b727025ae063f3ac",
+          "headTopY": 289,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1084,
+          "width": 1304,
+          "height": 1450
+        }
+      ]
     },
     {
       "key": "special_neutral",
@@ -306,7 +594,7 @@
       "key": "bag_throw",
       "description": "攻撃中の同じ茶色四角い手提げカバン、紙縁。人物なし。",
       "selected": "art_source/paper_cutout/generated/chizuru_paper_effect_bag_throw_v1.png",
-      "gameConnected": true
+      "gameConnected": false
     },
     {
       "key": "rice_ball",
@@ -330,9 +618,9 @@
   "runtimeManifest": "runtime-manifest.json",
   "integration": {
     "verified": true,
-    "tag": "paper_chizuru_all_2",
-    "editPassed": 447,
-    "playPassed": 38,
+    "tag": "paper_fryingpan_1",
+    "editPassed": 463,
+    "playPassed": 42,
     "buildAll": true,
     "windowsBuild": true,
     "artApproval": false

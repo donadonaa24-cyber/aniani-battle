@@ -278,7 +278,21 @@ namespace AniBato.EditorTools
             }
             string spriteCharacter = index == 0 ? "toma" : index == 1 ? "ren" : "chizuru";
             data.Animations = AnimationSetBuilder.Build(spriteCharacter);
-            if (index == 2) data.PaperMotion = PaperCharacterBuilder.Build();
+            if (index == 2)
+            {
+                data.PaperMotion = PaperCharacterBuilder.Build();
+                if (data.NormalWeaponSchemaVersion < 1)
+                {
+                    const string backup = "../art_source/paper_cutout/variants/bag-ground3-definition.json";
+                    if (!System.IO.File.Exists(backup)) System.IO.File.WriteAllText(backup, JsonUtility.ToJson(data.GroundNormals[2].Definition, true));
+                    var third = data.GroundNormals[2].Definition;
+                    third.SpawnProjectile = false; third.IsCloseRange = true;
+                    third.Hitbox = PhaseFiveBDefaults.Character(2).GroundNormals[2].Hitbox;
+                    third.ProjectileSpeed = 0; third.ProjectileLifetimeFrames = 0;
+                    third.Name = "フライパン大振り"; data.GroundNormals[2].Definition = third;
+                    EditorUtility.SetDirty(data.GroundNormals[2]); data.NormalWeaponSchemaVersion = 1;
+                }
+            }
             if (!data.Animations) throw new InvalidOperationException(defaults.Name + "のSpriteForge出力がありません。");
             if (index == 0)
             {

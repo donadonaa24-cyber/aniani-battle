@@ -222,7 +222,7 @@ namespace AniBato.Tests
                     Assert.That(view.RenderedSample.State, Is.EqualTo((AniBato.Presentation.AnimationState)((int)AniBato.Presentation.AnimationState.Attack1 + chain)));
                     var clip = data.Animations.Find("attack" + (chain + 1));
                     if (attack.IsActive) activeTicks[chain]++;
-                    if (data.PaperMotion) Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(view.RenderedSample.State).Frames[0]));
+                    if (data.PaperMotion) Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(view.RenderedSample.State).Frame(view.RenderedSample)));
                     else if (attack.IsActive) Assert.That(body.sprite, Is.SameAs(clip.Frames[2]));
                     else if (attack.Frame < attack.Definition.StartupFrames) Assert.That(body.sprite, Is.SameAs(clip.Frames[0]).Or.SameAs(clip.Frames[1]));
                     else Assert.That(System.Array.IndexOf(clip.Frames, body.sprite), Is.InRange(3, 5));
@@ -240,7 +240,7 @@ namespace AniBato.Tests
             yield return null;
         }
         [UnityTest]
-        public IEnumerator ChizuruThrowsOneActualBagSpriteInBothDirectionsAndSpecialEffectsStaySeparate()
+        public IEnumerator ChizuruUsesThreeTwoPosePanSwingsInBothDirectionsWithoutThrowingABag()
         {
             var runner=Object.FindAnyObjectByType<BattleRunner>();var controller=Object.FindAnyObjectByType<InputController>();
             runner.enabled=false;runner.SetPaused(false);
@@ -254,7 +254,7 @@ namespace AniBato.Tests
                 runner.AdvanceRenderFrame(1d/60);view.RenderFrame();
                 yield return ReleaseKeys(directionKey);controller.Capture();
                 Assert.That(runner.Simulation.P1.Facing,Is.EqualTo(facing));
-                bool[] queued=new bool[2];bool observed=false;long projectileId=0;
+                bool[] queued=new bool[2];bool[] startup=new bool[3],active=new bool[3],recovery=new bool[3];
                 yield return PressKeys(keyboard[controller.Bindings.P1.Attack]);controller.Capture();
                 runner.AdvanceRenderFrame(1d/60);view.RenderFrame();
                 yield return ReleaseKeys(keyboard[controller.Bindings.P1.Attack]);controller.Capture();
@@ -266,19 +266,17 @@ namespace AniBato.Tests
                     runner.AdvanceRenderFrame(1d/60);view.RenderFrame();
                     if(press){yield return ReleaseKeys(keyboard[controller.Bindings.P1.Attack]);controller.Capture();}
                     yield return null;
-                    if(runner.Simulation.Projectiles.Count==0)continue;
-                    Assert.That(runner.Simulation.Projectiles.Count,Is.EqualTo(1));var shot=runner.Simulation.Projectiles[0];
-                    Assert.That(shot.Attack.Definition.IsNormal,Is.True);Assert.That(shot.Facing,Is.EqualTo(facing));
-                    if(!observed){projectileId=shot.Attack.Id;observed=true;}
-                    Assert.That(shot.Attack.Id,Is.EqualTo(projectileId));
-                    var sprite=Object.FindObjectsByType<SpriteRenderer>().Single(s=>s.name=="Projectile" && s.enabled);
-                    int age=shot.Attack.Definition.ProjectileLifetimeFrames-shot.RemainingFrames;
-                    Assert.That(sprite.sprite,Is.SameAs(chizuru.PaperMotion.Bag));
-                    Assert.That(sprite.flipX,Is.EqualTo(facing<0));Assert.That(sprite.transform.localScale,Is.EqualTo(Vector3.one));
-                    if(runner.Simulation.P1.Attack!=null && runner.Simulation.P1.Attack.IsActive)
-                        Assert.That(body.sprite,Is.SameAs(chizuru.PaperMotion.Find(AniBato.Presentation.AnimationState.Attack3).Frames[0]));
+                    Assert.That(runner.Simulation.Projectiles.Count,Is.Zero,"フライパンの通常攻撃でカバンを投げています。");
+                    var current=runner.Simulation.P1.Attack;if(current==null)continue;
+                    int chain=current.ChainIndex;var sample=view.RenderedSample;var pose=chizuru.PaperMotion.Find(sample.State);
+                    Assert.That(pose.Frames.Length,Is.EqualTo(2));Assert.That(pose.Frames[0],Is.Not.SameAs(pose.Frames[1]));
+                    int frame=sample.AttackFrame<sample.Startup?0:1;
+                    Assert.That(body.sprite,Is.SameAs(pose.Frames[frame]));Assert.That(body.flipX,Is.EqualTo(facing<0));
+                    if(sample.AttackFrame<sample.Startup)startup[chain]=true;
+                    else if(sample.AttackFrame<sample.Startup+sample.Active)active[chain]=true;else recovery[chain]=true;
                 }
-                Assert.That(observed,Is.True);Assert.That(runner.Simulation.Projectiles.Count,Is.Zero);
+                for(int chain=0;chain<3;chain++){Assert.That(startup[chain],Is.True,"予備 "+chain);Assert.That(active[chain],Is.True,"有効 "+chain);Assert.That(recovery[chain],Is.True,"硬直 "+chain);}
+                Assert.That(runner.Simulation.Projectiles.Count,Is.Zero);
                 Assert.That(chizuru.Animations.Effect("rice_ball",0),Is.Not.SameAs(chizuru.Animations.Effect("bag_throw",0)));
                 Assert.That(IsIdleSprite(runner,view,body),Is.True);
             }
@@ -427,7 +425,7 @@ namespace AniBato.Tests
                 // Source key 1 of 3 is mapped to frame 2 of the new six-frame strip.
                 // Keep an exact active-pose assertion after adding inbetweens.
                 Assert.That(runner.Character(0).Animations.Bindings.Single(binding => binding.State == AniBato.Presentation.AnimationState.Attack1).ActiveFrame, Is.EqualTo(2));
-                Assert.That(body.sprite, Is.SameAs(runner.Character(0).PaperMotion.Find(AniBato.Presentation.AnimationState.Attack1).Frames[0])); Assert.That(body.flipX, Is.True); sawActive = true; break;
+                Assert.That(body.sprite, Is.SameAs(runner.Character(0).PaperMotion.Find(AniBato.Presentation.AnimationState.Attack1).Frames[1])); Assert.That(body.flipX, Is.True); sawActive = true; break;
             }
             Assert.That(sawActive, Is.True, "有効持続の絵を観測できませんでした。");
             yield return ReleaseKeys(keyboard.jKey);

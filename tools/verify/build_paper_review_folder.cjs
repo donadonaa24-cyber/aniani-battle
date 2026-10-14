@@ -19,7 +19,7 @@ const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex
 const factMap=new Map(facts.images.map(f=>[f.file,f]));
 const integration=catalog.runtimeIntegration;
 const manifest=integration?read('art_source/paper_cutout/runtime-manifest.json'):null;
-const integratedSources=new Map(manifest?[...manifest.poses,...manifest.effects].map(p=>[p.source,p.sha256.toLowerCase()]):[]);
+const integratedSources=new Map(manifest?[...manifest.poses.flatMap(p=>p.frames||[p]),...manifest.effects].map(p=>[p.source,p.sha256.toLowerCase()]):[]);
 const selected=new Set(),rows=[];
 const adoptedHash=hash(path.join(root,'AniBato/Assets/_Project/Art/Paper/idle_paper_chizuru.png'));
 for(const entry of catalog.entries){
@@ -30,7 +30,7 @@ for(const entry of catalog.entries){
   const original=['idle','walk'].includes(entry.key)&&fact.sha256.toLowerCase()===adoptedHash;
   if(!verified&&!original)throw Error('Unverified adoption');
  }
- const version=Number(entry.source.match(/_v(\d+)\.png$/)[1]);
+ const version=Number((entry.source.match(/_v(\d+)\.png$/)||[])[1]||entry.version||1);
  const name=entry.title+(entry.category==='adopted'?'_採用済み':'_候補'+String(version).padStart(2,'0'))+'.png';
  rows.push({...entry,version,file:folders[entry.category]+'/'+name,sha256:fact.sha256,width:fact.width,height:fact.height});
  selected.add(entry.source);
@@ -102,12 +102,12 @@ Object.keys(folders).map(c=>'<a href="#'+c+'">'+labels[c]+' '+counts[c]+'枚</a>
 section('adopted')+section('candidate')+section('repair')+'<details id="history"><summary>修正前・旧版 '+counts.history+'枚（現在の採用候補ではありません）</summary>'+section('history').replace('id="history"','id="history-list"')+'</details><footer>2026-10-14整理。画像は原画と同じバイトの確認用コピーです。今回Unity追加実行0回。保存済み待機・歩行のUnity結果はEditMode441/441・PlayMode36/36で、ほかの候補の検証結果ではありません。</footer></main><script>'+
 'const search=document.getElementById("search"),category=document.getElementById("category"),history=document.getElementById("history");function filter(){const q=search.value.trim().toLowerCase(),c=category.value;history.open=c==="history"||location.hash==="#history";document.querySelectorAll("article").forEach(a=>{a.hidden=(c!=="all"&&a.dataset.category!==c)||(q&&!a.dataset.search.toLowerCase().includes(q))});document.querySelectorAll("section").forEach(s=>{s.hidden=!Array.from(s.querySelectorAll("article")).some(a=>!a.hidden)});}search.addEventListener("input",filter);category.addEventListener("change",filter);window.addEventListener("hashchange",filter);filter();</script></html>';
 let deliveryHtml=keepHistory?html:html.replace(/<option value="history">.*?<\/option>/,'').replace(/<details id="history">[\s\S]*?<\/details>/,'').replace('history.open=','if(history)history.open=');
-if(integration&&integration.verified)deliveryHtml=deliveryHtml.replace(/<p class="notice">[\s\S]*?<\/p>/,'<p class="notice"><strong>現在の35画像をゲームへ接続済みです。</strong> 手や部位の絵としての修正点は各画像の説明に残しています。歩き15度・走り45度は固定傾き、待機だけ揺れます。</p>').replace(/<footer>[\s\S]*?<\/footer>/,'<footer>実Unity検証 '+esc(integration.tag)+'：BuildAll成功／EditMode '+integration.editPassed+'件／PlayMode '+integration.playPassed+'件／Windowsビルド成功。画像は原画と同じバイトの確認用コピーです。</footer>');
+if(integration&&integration.verified)deliveryHtml=deliveryHtml.replace(/<p class="notice">[\s\S]*?<\/p>/,'<p class="notice"><strong>現在の'+rows.length+'画像をゲームへ接続済みです。</strong> 手や部位の絵としての修正点は各画像の説明に残しています。歩き15度・走り45度は固定傾き、待機だけ揺れます。</p>').replace(/<footer>[\s\S]*?<\/footer>/,'<footer>実Unity検証 '+esc(integration.tag)+'：BuildAll成功／EditMode '+integration.editPassed+'件／PlayMode '+integration.playPassed+'件／Windowsビルド成功。画像は原画と同じバイトの確認用コピーです。</footer>');
 fs.writeFileSync(path.join(base,'画像一覧.html'),deliveryHtml,'utf8');
 const current=rows.filter(r=>r.category!=='history');
 const md='# 千鶴のイラスト確認\n\n採用済みは待機と同じ画像を使う以前の歩きだけです。ほかは未採用。画像一覧.htmlで画像と名前を並べて確認できます。気になる画像の日本語名と部分を伝えてください。\n\n| 画像名 | 状態 | 現在の確認点 |\n|---|---|---|\n'+current.map(r=>'| ['+path.basename(r.file)+']('+url(r.file)+') | '+labels[r.category]+' | '+r.note+' |').join('\n')+'\n\n04_修正前と旧版には以前の版を保管しています。原画は移動・加工していません。今回Unity追加実行0回、新しい実機スクショ0件。\n';
 let deliveryMd=keepHistory?md:md.replace('04_修正前と旧版には以前の版を保管しています。原画は移動・加工していません。','修正前の旧画像はユーザー指定で削除しました。現在の画像だけを掲載しています。');
-if(integration&&integration.verified)deliveryMd=deliveryMd.replace('採用済みは待機と同じ画像を使う以前の歩きだけです。ほかは未採用。','現在の35画像をゲームへ接続済みです。手や部位の修正点は個別の説明に残します。').replace('今回Unity追加実行0回、新しい実機スクショ0件。','実Unity検証：BuildAll成功／EditMode '+integration.editPassed+'件／PlayMode '+integration.playPassed+'件／Windowsビルド成功。Unity画像はdocs/screenshots/paper_chizuru_all_unity/。');
+if(integration&&integration.verified)deliveryMd=deliveryMd.replace('採用済みは待機と同じ画像を使う以前の歩きだけです。ほかは未採用。','現在の'+rows.length+'画像をゲームへ接続済みです。手や部位の修正点は個別の説明に残します。').replace('今回Unity追加実行0回、新しい実機スクショ0件。','実Unity検証：BuildAll成功／EditMode '+integration.editPassed+'件／PlayMode '+integration.playPassed+'件／Windowsビルド成功。Unity画像はdocs/screenshots/paper_fryingpan_unity/。');
 fs.writeFileSync(path.join(base,'確認のしかた.md'),deliveryMd,'utf8');
 const csvCell=s=>'"'+String(s).replace(/"/g,'""')+'"';
 fs.writeFileSync(path.join(base,'画像一覧.csv'),'\uFEFF'+['画像名,採用状態,確認点,原画,幅,高さ',...rows.map(r=>[path.basename(r.file),labels[r.category],r.note,r.source,r.width,r.height].map(csvCell).join(','))].join('\r\n')+'\r\n','utf8');

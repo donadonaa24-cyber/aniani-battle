@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "ユーザーの既存作品の容姿資料。元フォルダは読み取りのみ。",
+  "references": [
+    {
+      "key": "toma",
+      "copy": "docs/art_reference/characters/toma_sheet.webp",
+      "origin": "ユーザー提供の透真設定画。既存docs/ASSET_SOURCES.md参照。"
+    },
+    {
+      "key": "ren",
+      "copy": "docs/art_reference/characters/ren_dog_rook.png",
+      "origin": "ユーザー作品・既存の蓮資料。既存docs/ASSET_SOURCES.md参照。"
+    },
+    {
+      "key": "minato",
+      "copy": "docs/art_reference/roster_idle/minato.png",
+      "origin": "%USERPROFILE%/OneDrive/デスクトップ/あにあにの遊び場/images/gacha/bunko/minato.png",
+      "note": "trial-gacha-data.js:109の本人紹介と画像を確認。見えない下半身は本作用の仮補完。"
+    },
+    {
+      "key": "shiro",
+      "copy": "docs/art_reference/roster_idle/shiro.png",
+      "origin": "%USERPROFILE%/OneDrive/デスクトップ/あにあにの遊び場/images/gacha/bunko/shiro.png",
+      "note": "同trial-gacha-data.js:111の白い犬型AIと青い目を確認。"
+    },
+    {
+      "key": "yui",
+      "copy": "docs/art_reference/roster_idle/yui.png",
+      "origin": "%USERPROFILE%/OneDrive/デスクトップ/あにあにの遊び場/images/yui-cat-bishop.png",
+      "note": "同trial-gacha-dataの結衣＝猫の女の子／角型と本人画像を確認。別作品の朝霧ユイとは混同しない。"
+    },
+    {
+      "key": "king",
+      "copy": "docs/art_reference/roster_idle/king.webp",
+      "origin": "%USERPROFILE%/OneDrive/デスクトップ/あにあにの遊び場/images/gacha/oshikoma/king.webp",
+      "note": "同trial-gacha-dataの黒獅子王＝ライオンの男性首領と本人画像を確認。"
+    },
+    {
+      "key": "akatsuki",
+      "copy": "docs/art_reference/roster_idle/akatsuki.png",
+      "origin": "%USERPROFILE%/OneDrive/デスクトップ/battle-a-la-carte - ギットハブ版 -ユニティ改/generated-art/character-set-20261012/akatsuki-fullbody.png"
+    },
+    {
+      "key": "ryuta",
+      "copy": "docs/art_reference/roster_idle/ryuta.png",
+      "origin": "%USERPROFILE%/OneDrive/デスクトップ/battle-a-la-carte - ギットハブ版 -ユニティ改/generated-art/character-set-20261012/ryuta-fullbody.png"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+    "Name": "千鶴 地上3",
+    "Kind": 0,
+    "IsCloseRange": false,
+    "NormalDirection": 0,
+    "BreaksGuard": false,
+    "LandingRecoveryFrames": 0,
+    "StartupFrames": 7,
+    "ActiveFrames": 3,
+    "DamageDelayFrames": 0,
+    "RecoveryFrames": 12,
+    "Hitbox": {
+        "Center": {
+            "X": 1.7999999523162842,
+            "Y": 0.10000000149011612
+        },
+        "Size": {
+            "X": 0.4000000059604645,
+            "Y": 0.36000001430511475
+        }
+    },
+    "HitstopFrames": 4,
+    "HitstunFrames": 8,
+    "Knockback": {
+        "X": 2.0,
+        "Y": 0.0
+    },
+    "PiercesNormalDodge": false,
+    "SpawnProjectile": true,
+    "ProjectileSpeed": 12.0,
+    "ProjectileLifetimeFrames": 24,
+    "ActiveVelocity": {
+        "X": 0.0,
+        "Y": 0.0
+    },
+    "NormalForwardDistance": 0.18000000715255737,
+    "DamageRecoilDistance": 0.18000000715255737,
+    "DamageRecoilFrames": 6,
+    "VerticalMotionOnStartOnly": false,
+    "ProjectileLaunchVelocity": {
+        "X": 0.0,
+        "Y": 0.0
+    },
+    "ProjectileGravity": 0.0,
+    "HasSecondaryHitbox": false,
+    "SecondaryHitbox": {
+        "Center": {
+            "X": 0.0,
+            "Y": 0.0
+        },
+        "Size": {
+            "X": 0.0,
+            "Y": 0.0
+        }
+    },
+    "NonDamaging": false,
+    "ParalysisFrames": 0,
+    "MarkFrames": 0,
+    "SelfHealNormalHits": 0,
+    "SelfBuff": {
+        "DurationFrames": 0,
+        "MoveMultiplier": 0.0,
+        "DashMultiplier": 0.0,
+        "StartupMultiplier": 0.0
+    },
+    "KnockbackMultiplier": 0.0,
+    "CooldownFrames": 0,
+    "ProjectileEraseCount": 0,
+    "GuardedRecoveryFrames": 0,
+    "RequiresFollowup": false,
+    "StanceFrames": 0
+}

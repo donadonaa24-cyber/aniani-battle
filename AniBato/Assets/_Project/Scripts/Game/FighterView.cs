@@ -71,16 +71,18 @@ namespace AniBato.Game
             foreach (var ear in ears) ear.enabled = !UsesAnimationSprites && character.Silhouette == 1;
             if (UsesAnimationSprites)
             {
-                body.sprite = sprite; body.flipX = sample.FlipX;
+                var visualSample = sample;
+                if (paperPose != null && paperPose.ReverseFacing) visualSample.FlipX = !visualSample.FlipX;
+                body.sprite = sprite; body.flipX = visualSample.FlipX;
                 body.transform.localScale = Vector3.one;
-                var rock = UsesPaperSprite ? character.PaperMotion.Transform(sample, paperPose) : default;
-                var performance = UsesPaperSprite ? AniBato.Presentation.PaperPerformance.Evaluate(character.PaperMotion.Performance, sample, fighter.LastDamageLostHeart) : default;
+                var rock = UsesPaperSprite ? character.PaperMotion.Transform(visualSample, paperPose) : default;
+                var performance = UsesPaperSprite ? AniBato.Presentation.PaperPerformance.Evaluate(character.PaperMotion.Performance, visualSample, fighter.LastDamageLostHeart) : default;
                 float angle = rock.Degrees + performance.Degrees;
                 body.transform.localRotation = Quaternion.Euler(0, 0, angle);
                 float baseY = paperPose != null && paperPose.Airborne ? 0 : -fighter.Definition.HurtboxSize.Y * .5f;
                 if (paperPose != null && paperPose.Airborne && fighter.Grounded)
-                    baseY = -fighter.Definition.HurtboxSize.Y * .5f - paperPose.FootBaseY;
-                float paperHeight = paperPose == null ? character.PaperMotion ? character.PaperMotion.StandingHeight : 0 : paperPose.HeadHeight;
+                    baseY = -fighter.Definition.HurtboxSize.Y * .5f - paperPose.Foot(sample);
+                float paperHeight = paperPose == null ? character.PaperMotion ? character.PaperMotion.StandingHeight : 0 : paperPose.Head(sample);
                 Vector3 offset = new Vector3(performance.X, performance.Y, 0);
                 if (performance.RotateAboutCenter)
                 {
@@ -90,8 +92,8 @@ namespace AniBato.Game
                 else if (UsesPaperSprite && paperPose != null && !paperPose.Airborne && performance.Degrees != 0)
                 {
                     float sin = Mathf.Sin(angle * Mathf.Deg2Rad);
-                    float left = sample.FlipX ? -paperPose.FootMaxX : paperPose.FootMinX;
-                    float right = sample.FlipX ? -paperPose.FootMinX : paperPose.FootMaxX;
+                    float left = visualSample.FlipX ? -paperPose.FootMax(sample) : paperPose.FootMin(sample);
+                    float right = visualSample.FlipX ? -paperPose.FootMin(sample) : paperPose.FootMax(sample);
                     offset.y += Mathf.Max(0, -Mathf.Min(left * sin, right * sin));
                 }
                 body.transform.localPosition = new Vector3(0, baseY + rock.Lift, 0) + offset;

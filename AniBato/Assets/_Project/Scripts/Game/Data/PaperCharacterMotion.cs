@@ -12,11 +12,19 @@ namespace AniBato.Game
         public Sprite[] Frames;
         public int HoldTicks = 8;
         public bool Airborne;
+        public bool ReverseFacing;
+        public float[] FrameHeadHeights, FrameFootBaseYs, FrameFootMinXs, FrameFootMaxXs;
         public float HeadHeight, FootBaseY, FootMinX, FootMaxX;
         public bool Valid => HoldTicks > 0 && Frames != null && Frames.Length > 0 && System.Array.TrueForAll(Frames, frame => frame);
         public Sprite Frame(int age) => Frames[System.Math.Min(Frames.Length - 1, System.Math.Max(0, age) / HoldTicks)];
-        public Sprite Frame(in AnimationSample sample) => sample.IsAttack && Frames.Length == 2 ?
-            Frames[sample.AttackFrame < sample.Startup ? 0 : 1] : Frame(sample.Age);
+        public int FrameIndex(in AnimationSample sample) => sample.IsAttack && Frames.Length == 2 ?
+            sample.AttackFrame < sample.Startup ? 0 : 1 : System.Math.Min(Frames.Length - 1, System.Math.Max(0, sample.Age) / HoldTicks);
+        public Sprite Frame(in AnimationSample sample) => Frames[FrameIndex(sample)];
+        private float Layout(float[] values, float fallback, in AnimationSample sample) => values != null && values.Length == Frames.Length ? values[FrameIndex(sample)] : fallback;
+        public float Head(in AnimationSample sample) => Layout(FrameHeadHeights, HeadHeight, sample);
+        public float Foot(in AnimationSample sample) => Layout(FrameFootBaseYs, FootBaseY, sample);
+        public float FootMin(in AnimationSample sample) => Layout(FrameFootMinXs, FootMinX, sample);
+        public float FootMax(in AnimationSample sample) => Layout(FrameFootMaxXs, FootMaxX, sample);
     }
     [CreateAssetMenu(menuName = "あにバト/紙人形の待機・歩行")]
     public sealed class PaperCharacterMotion : ScriptableObject

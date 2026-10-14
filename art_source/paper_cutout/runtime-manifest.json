@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "canvasWidth": 1304,
   "canvasHeight": 1450,
-  "note": "ユーザー指定で現参照を先行接続。絵の未修正点は残す。共通PPU、透明余白の梱包のみ、人物の拡縮なし。足元は靴の明色から計測し道具と区別。",
+  "note": "ユーザー指定で全通常攻撃を左手フライパンへ。2原画を発生前／有効以後へ固定。カバン原画と旧manifestはvariants/で保護。",
   "poses": [
     {
       "key": "idle",
@@ -230,208 +230,508 @@
     },
     {
       "key": "attack1",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_attack1_v3.png",
-      "sha256": "35edb844d659b5eeb32916813f6cb12b371f4596b46c6bc7e820139558b8d332",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+      "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
       "states": [
         6
       ],
       "airborne": false,
-      "headTopY": 28,
-      "footY": 1211,
-      "footMinX": 820,
-      "footMaxX": 967,
-      "width": 1245,
-      "height": 1263,
-      "artReview": "provisional_user_requested_integration",
-      "artNote": "右手カバンの修正候補。握り方・左右の手・部位サイズの確認待ちです。"
+      "headTopY": 159,
+      "footY": 1329,
+      "footMinX": 254,
+      "footMaxX": 1202,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "horizontal_1_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+          "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+          "headTopY": 159,
+          "footY": 1329,
+          "footMinX": 254,
+          "footMaxX": 1202,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_1_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_impact.png",
+          "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+          "headTopY": 237,
+          "footY": 1329,
+          "footMinX": 798,
+          "footMaxX": 1031,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "attack2",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_attack2_v3.png",
-      "sha256": "f717ac83ef28beaa3c8abbad0bf836ddc7196e8c62c364932070a16ec1d73767",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+      "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
       "states": [
         7
       ],
       "airborne": false,
-      "headTopY": 36,
-      "footY": 1207,
-      "footMinX": 809,
-      "footMaxX": 972,
-      "width": 1246,
-      "height": 1263,
-      "artReview": "known_art_issue",
-      "artNote": "右手カバンと、空いた左手の形・腕の所属を修正確認する必要があります。"
+      "headTopY": 171,
+      "footY": 1329,
+      "footMinX": 222,
+      "footMaxX": 1192,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "horizontal_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+          "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+          "headTopY": 171,
+          "footY": 1329,
+          "footMinX": 222,
+          "footMaxX": 1192,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_impact.png",
+          "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
+          "headTopY": 213,
+          "footY": 1329,
+          "footMinX": 192,
+          "footMaxX": 1180,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "attack3",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_attack3_v6.png",
-      "sha256": "5263fe5ae299c4c829fde0349f8b4d27da1678350a5196fe44802e38a643d51c",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+      "sha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
       "states": [
         8
       ],
       "airborne": false,
-      "headTopY": 0,
-      "footY": 1243,
-      "footMinX": 886,
-      "footMaxX": 1097,
-      "width": 1246,
-      "height": 1263,
-      "artReview": "known_art_issue",
-      "artNote": "胸側になりましたが、右肩と前へ伸ばす投げ腕のつながりを再修正する必要があります。"
+      "headTopY": 51,
+      "footY": 1329,
+      "footMinX": 441,
+      "footMaxX": 601,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "vertical_3_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+          "sha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
+          "headTopY": 51,
+          "footY": 1329,
+          "footMinX": 441,
+          "footMaxX": 601,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_3_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+          "sha256": "e97b647e329acfaa6f3715a561596c7d9a6f15e94eedbb93b727025ae063f3ac",
+          "headTopY": 289,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1084,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "crouch_attack",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_crouch_attack_v3.png",
-      "sha256": "7144fc173302867061dcce1d8ecb188f7a82d6e03148fd4e8f6d5f46740c6bbe",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
       "states": [
         25
       ],
       "airborne": false,
-      "headTopY": 200,
-      "footY": 1270,
-      "footMinX": 663,
-      "footMaxX": 907,
-      "width": 1129,
-      "height": 1393,
-      "artReview": "known_art_issue",
-      "artNote": "手の左右と画像サイズに問題があります。人物の端切れもあり、再修正が必要です。"
+      "headTopY": 325,
+      "footY": 1329,
+      "footMinX": 322,
+      "footMaxX": 1083,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "vertical_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+          "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
+          "headTopY": 325,
+          "footY": 1329,
+          "footMinX": 322,
+          "footMaxX": 1083,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_3_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+          "sha256": "e97b647e329acfaa6f3715a561596c7d9a6f15e94eedbb93b727025ae063f3ac",
+          "headTopY": 289,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1084,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "back_attack",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_back_attack_v8.png",
-      "sha256": "b0359f023cedfd0a1fad1205497401383681a85c639f9a696336ae9a10976ebb",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+      "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
       "states": [
         26
       ],
       "airborne": false,
-      "headTopY": 71,
-      "footY": 1209,
-      "footMinX": 1009,
-      "footMaxX": 1179,
-      "width": 1245,
-      "height": 1263,
-      "artReview": "provisional_user_requested_integration",
-      "artNote": "右手カバン・空いた左手の上側の親指を修正し、白い紙縁も戻した候補08です。部位寸法の確認待ちです。"
+      "headTopY": 171,
+      "footY": 1329,
+      "footMinX": 222,
+      "footMaxX": 1192,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "horizontal_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+          "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+          "headTopY": 171,
+          "footY": 1329,
+          "footMinX": 222,
+          "footMaxX": 1192,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_impact.png",
+          "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
+          "headTopY": 213,
+          "footY": 1329,
+          "footMinX": 192,
+          "footMaxX": 1180,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": true
     },
     {
       "key": "air_neutral",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_air_neutral_v2.png",
-      "sha256": "860d22cc00f02535c9781e287f6d91ad542b5f064fd1b665b0157e0b277baf3e",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+      "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
       "states": [
         9,
         27
       ],
       "airborne": true,
-      "headTopY": 51,
-      "footY": 1149,
-      "footMinX": 341,
-      "footMaxX": 427,
-      "width": 1246,
-      "height": 1263,
-      "artReview": "known_art_issue",
-      "artNote": "カバンの持ち手と両手の左右を修正確認する必要があります。"
+      "headTopY": 159,
+      "footY": 1329,
+      "footMinX": 254,
+      "footMaxX": 1202,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "horizontal_1_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+          "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+          "headTopY": 159,
+          "footY": 1329,
+          "footMinX": 254,
+          "footMaxX": 1202,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_1_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_impact.png",
+          "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+          "headTopY": 237,
+          "footY": 1329,
+          "footMinX": 798,
+          "footMaxX": 1031,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "air_forward",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_air_forward_v8.png",
-      "sha256": "180906ef0cf53db6613fd499c5dabad62f5a34ef9dbb23e6ab554d75fb9c83eb",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+      "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
       "states": [
         28
       ],
       "airborne": true,
-      "headTopY": 55,
-      "footY": 1094,
-      "footMinX": 742,
-      "footMaxX": 924,
-      "width": 1243,
-      "height": 1265,
-      "artReview": "provisional_user_requested_integration",
-      "artNote": "ユーザー承認済みの手元参考から、内側の4指と下側の親指を全身に反映した候補08。全身のユーザー確認・部位倍率・共通セルは未審査、ゲーム未採用。"
+      "headTopY": 159,
+      "footY": 1329,
+      "footMinX": 254,
+      "footMaxX": 1202,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "horizontal_1_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
+          "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+          "headTopY": 159,
+          "footY": 1329,
+          "footMinX": 254,
+          "footMaxX": 1202,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_1_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_impact.png",
+          "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+          "headTopY": 237,
+          "footY": 1329,
+          "footMinX": 798,
+          "footMaxX": 1031,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "air_back",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_air_back_v1.png",
-      "sha256": "e22e2ecb8bac481d8ac352f25cfd4dc9309082753e9e8e6f298a12a9bea3629c",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+      "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
       "states": [
         29
       ],
       "airborne": true,
-      "headTopY": 28,
-      "footY": 1150,
-      "footMinX": 608,
-      "footMaxX": 670,
-      "width": 1245,
-      "height": 1263,
-      "artReview": "known_art_issue",
-      "artNote": "カバンを持つ右腕と、空いた左手の向きを修正確認する必要があります。"
+      "headTopY": 171,
+      "footY": 1329,
+      "footMinX": 222,
+      "footMaxX": 1192,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "horizontal_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
+          "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+          "headTopY": 171,
+          "footY": 1329,
+          "footMinX": 222,
+          "footMaxX": 1192,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "horizontal_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_impact.png",
+          "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
+          "headTopY": 213,
+          "footY": 1329,
+          "footMinX": 192,
+          "footMaxX": 1180,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": true
     },
     {
       "key": "air_up",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_air_up_v2.png",
-      "sha256": "b902261fb45f42eb23e0f809972321fc757a7e52ae2df05c0b08efb333b1edd3",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
       "states": [
         30
       ],
       "airborne": true,
-      "headTopY": 253,
-      "footY": 1182,
-      "footMinX": 575,
-      "footMaxX": 692,
-      "width": 1245,
-      "height": 1263,
-      "artReview": "provisional_user_requested_integration",
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "headTopY": 325,
+      "footY": 1329,
+      "footMinX": 322,
+      "footMaxX": 1083,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "vertical_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+          "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
+          "headTopY": 325,
+          "footY": 1329,
+          "footMinX": 322,
+          "footMaxX": 1083,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_impact.png",
+          "sha256": "92c9a4b94ebd01e7e44ef246f1937c7c44c899386ac619dcf02ae17e3bc7ed6f",
+          "headTopY": 194,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1078,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "air_down",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_air_down_v1.png",
-      "sha256": "6061e9026970f26d5fff612a7c154fed6493cdf0700bf4c348ebcfdc4fbd5ca2",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+      "sha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
       "states": [
         31
       ],
       "airborne": true,
-      "headTopY": 71,
-      "footY": 1013,
-      "footMinX": 393,
-      "footMaxX": 958,
-      "width": 1246,
-      "height": 1263,
-      "artReview": "provisional_user_requested_integration",
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "headTopY": 51,
+      "footY": 1329,
+      "footMinX": 441,
+      "footMaxX": 601,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "vertical_3_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+          "sha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
+          "headTopY": 51,
+          "footY": 1329,
+          "footMinX": 441,
+          "footMaxX": 601,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_3_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+          "sha256": "e97b647e329acfaa6f3715a561596c7d9a6f15e94eedbb93b727025ae063f3ac",
+          "headTopY": 289,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1084,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "air_forward_up",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_air_forward_up_v1.png",
-      "sha256": "8c6f00a32c29f4e957fd1b19b37d06f64b5661c0a4eb259e7d7d4d30a0b85e67",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
       "states": [
         32
       ],
       "airborne": true,
-      "headTopY": 63,
-      "footY": 1194,
-      "footMinX": 198,
-      "footMaxX": 310,
-      "width": 1245,
-      "height": 1263,
-      "artReview": "known_art_issue",
-      "artNote": "カバンを持つ右腕と、両手の左右を修正確認する必要があります。"
+      "headTopY": 325,
+      "footY": 1329,
+      "footMinX": 322,
+      "footMaxX": 1083,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "vertical_2_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+          "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
+          "headTopY": 325,
+          "footY": 1329,
+          "footMinX": 322,
+          "footMaxX": 1083,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_2_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_impact.png",
+          "sha256": "92c9a4b94ebd01e7e44ef246f1937c7c44c899386ac619dcf02ae17e3bc7ed6f",
+          "headTopY": 194,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1078,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "air_forward_down",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_air_forward_down_v3.png",
-      "sha256": "9a92369d17534d9da387af3b40e3790dd51cef5ec87a4c97aebc701a46244fc0",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+      "sha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
       "states": [
         33
       ],
       "airborne": true,
-      "headTopY": 79,
-      "footY": 1203,
-      "footMinX": 600,
-      "footMaxX": 707,
-      "width": 1246,
-      "height": 1263,
-      "artReview": "known_art_issue",
-      "artNote": "候補03も左拳が右手に見えるとユーザーが指摘。背中構図・右手カバン、左上の左拳は甲側と上側の親指が必要。未修正、ゲーム未採用。前方の掌側の手とは別。"
+      "headTopY": 51,
+      "footY": 1329,
+      "footMinX": 441,
+      "footMaxX": 601,
+      "width": 1304,
+      "height": 1450,
+      "artReview": "integrated_art_review_pending",
+      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "frames": [
+        {
+          "key": "vertical_3_anticipation",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+          "sha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
+          "headTopY": 51,
+          "footY": 1329,
+          "footMinX": 441,
+          "footMaxX": 601,
+          "width": 1304,
+          "height": 1450
+        },
+        {
+          "key": "vertical_3_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+          "sha256": "e97b647e329acfaa6f3715a561596c7d9a6f15e94eedbb93b727025ae063f3ac",
+          "headTopY": 289,
+          "footY": 1329,
+          "footMinX": 817,
+          "footMaxX": 1084,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "reverseFacing": false
     },
     {
       "key": "special_neutral",
@@ -544,5 +844,6 @@
       "sha256": "cdf23cfd3ef00ee4ae88daf5d7855f8e425c9e25e49297c18606b9dbe7044910",
       "worldWidth": 2.4
     }
-  ]
+  ],
+  "normalWeapon": "frying_pan"
 }
