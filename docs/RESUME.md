@@ -1,3 +1,5 @@
+﻿> **最新（2026-10-15 Claude）**：通常攻撃45件の攻撃判定を半分（自分側の端を固定、BALANCE_CONFIG参照）＋ゲージ14/10。実Unity hitbox_half：EditMode 463/463・PlayMode 42/42・ビルド成功、commit済み。**Codexの未完成だった紙舞台の差分（StageBackgroundView.cs／PaperStageScenery.cs）は `git stash` から作業ツリーへ戻した（未コミット）**。この差分ありでは PlayMode `CameraAndBoardBackdropFitThreeAspectRatiosWithoutChangingBattle` が失敗する（推し駒盤面の背景要素が見つからない）ので、紙舞台の作業を続けるときに直す。次の指示書：`codex_tasks/PAPER_STAGES_AND_SCREENS.md` の続き、その後 `codex_tasks/PAPER_CHIZURU_SIDESWING_AND_HITBOX_VIEW.md`。
+
 # 再開メモ（2026-10-15）
 
 ## 最新区切り：全9人待機と千鶴フライパン接続（2026-10-15）

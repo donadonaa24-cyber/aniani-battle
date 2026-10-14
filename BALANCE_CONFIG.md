@@ -380,3 +380,12 @@ beforeは保存済みフェーズ5最終CSV、afterは現行純C#作成既定値
 アニメは3キャラ各idle/walk/dash8F（12/15/15fps）、jump/fall/attack1〜3/air_attack/特殊4種/guard6F・15fps。合計245→368F。224×160、PPU50、身長124/100/112、32色を維持。idleは同じ1枚から±1px呼吸、胴/足固定。現tickの発生・持続・硬直へ持続姿勢添字を再マップ。42GIFはdocs/art_wip/、旧加工結果はart_source/phase5b_keys/。局所中割りの大きな姿勢切替にはキーポーズ由来の差が残る。
 
 BuildAllの移行はSchema5初回だけ。既存の発生／硬直／CD／ガード時硬直／CPU確率／ゲージが旧既定値と一致するときだけ変更する。独自調整は保持し、同じ移行を繰り返しても数値を増やさない。アニメTimingも保持。
+
+## 2026-10-15 通常攻撃の攻撃判定を半分（ユーザー指定、Claude実施）
+- 理由：攻撃判定が大きすぎて近づいて戦えない。
+- 対象：透真・蓮・千鶴の**通常攻撃すべて（45件：地上3段・しゃがみ・後ろ・空中各方向）**。特殊・超必殺・判定の高さ・発生/持続/硬直/威力は変更なし。
+- 規則（`AniBato.Battle.HitboxReach.HalveTowardOpponent`）：横幅を半分。**自分側の端を固定し、相手側を縮める**（後ろ攻撃は体に近い右端を固定）。体の後ろへ0.3超はみ出す空中上/下/ニュートラルは中心固定で半分。
+- 変更前後の全値：[docs/HITBOX_REACH_20261015.csv](docs/HITBOX_REACH_20261015.csv)（左端・右端、キャラの向き基準）。例：千鶴地上1段 0.3〜3.3 → 0.3〜1.8。
+- 値は Data の AttackData アセットに入っている（コードの既定値 PhaseXDefaults は旧値のまま。アセットを再生成する場合は `HitboxTuning.HalveNormalReach` を再実行）。
+- 当たる回数が減り超必殺の発動率が下がったため、ゲージを **OnHit 12→14、OnDamaged 8→10** に戻した（`HitboxTuning.RaiseGaugeAfterReachHalving`）。
+- 実Unity hitbox_half：BuildAll成功／EditMode 463/463／PlayMode 42/42／Windowsビルド成功。

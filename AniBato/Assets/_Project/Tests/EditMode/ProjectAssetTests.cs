@@ -72,7 +72,8 @@ namespace AniBato.Tests
             Assert.That(chizuru.NormalWeaponSchemaVersion, Is.EqualTo(1));
             Assert.That(chizuru.GroundNormals.Any(a => a.Definition.SpawnProjectile), Is.False);
             Assert.That(chizuru.GroundNormals[2].Definition.IsCloseRange, Is.True);
-            Assert.That(chizuru.GroundNormals[2].Definition.Hitbox, Is.EqualTo(PhaseFiveBDefaults.Character(2).GroundNormals[2].Hitbox));
+            // 2026-10-15: normal-attack reach halved toward the opponent (user request), see HitboxReach.
+            Assert.That(chizuru.GroundNormals[2].Definition.Hitbox, Is.EqualTo(HitboxReach.HalveTowardOpponent(PhaseFiveBDefaults.Character(2).GroundNormals[2].Hitbox)));
             Assert.That(chizuru.SpriteEffects.NormalProjectileClip, Is.EqualTo("bag_throw"));
             Assert.That(chizuru.SpriteEffects.NormalProjectileScale, Is.EqualTo(1));
             Assert.That(chizuru.SpriteEffects.NormalProjectileSchemaVersion, Is.EqualTo(1));
