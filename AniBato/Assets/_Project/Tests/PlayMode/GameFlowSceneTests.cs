@@ -24,6 +24,7 @@ namespace AniBato.Tests
         private InputSettings.UpdateMode previousUpdateMode;
         private bool previousRunInBackground;
         private int? doubleTapPref;
+        private int? debugPref;
         // The Unity Test Framework runs [UnitySetUp] BEFORE [SetUp] (and [UnityTearDown] after [TearDown]),
         // so the fixture's automatic Setup/TearDown would isolate input too late. Suppress them and run the
         // isolation explicitly at the start of UnitySetUp / end of UnityTearDown instead.
@@ -61,6 +62,7 @@ namespace AniBato.Tests
             var oldInput = Object.FindAnyObjectByType<InputController>(); if (oldInput) oldInput.enabled = false;
             IsolateInput();
             doubleTapPref = PlayerPrefs.HasKey(ControlConfiguration.DoubleTapStorage) ? PlayerPrefs.GetInt(ControlConfiguration.DoubleTapStorage) : (int?)null;
+            debugPref=PlayerPrefs.HasKey("AniBato.DebugBoxes")?PlayerPrefs.GetInt("AniBato.DebugBoxes"):(int?)null;PlayerPrefs.DeleteKey("AniBato.DebugBoxes");
             PlayerPrefs.DeleteKey(ControlConfiguration.DoubleTapStorage);
             for (int p = 0; p < 2; p++) foreach (string device in new[] { "pad", "keyboard" })
             { string key = "AniBato.Controls.v1." + p + "." + device; controlPrefs[key] = PlayerPrefs.HasKey(key) ? PlayerPrefs.GetString(key) : null; PlayerPrefs.DeleteKey(key); }
@@ -89,6 +91,7 @@ namespace AniBato.Tests
             yield return null;
             foreach (var entry in controlPrefs) { if (entry.Value == null) PlayerPrefs.DeleteKey(entry.Key); else PlayerPrefs.SetString(entry.Key, entry.Value); }
             controlPrefs.Clear(); PlayerPrefs.Save();
+            if(debugPref.HasValue)PlayerPrefs.SetInt("AniBato.DebugBoxes",debugPref.Value);else PlayerPrefs.DeleteKey("AniBato.DebugBoxes");
             }
             finally
             {
@@ -580,6 +583,24 @@ namespace AniBato.Tests
                 Assert.That(floors.Single(s=>s.name=="Platform 1").enabled,Is.False);Assert.That(floors.Single(s=>s.name=="Platform 2").enabled,Is.False);
                 CaptureScreen("09_紙舞台縮小_"+theme);
             }
+        }
+        [UnityTest]
+        public IEnumerator PracticeHotkeysAndPauseMenuInspectWithoutInjectingAttacks()
+        {
+            yield return Tap(keyboard.enterKey);for(int i=0;i<4;i++)yield return Tap(keyboard.sKey);yield return Tap(keyboard.enterKey);
+            yield return Tap(keyboard.enterKey);yield return Tap(keyboard.enterKey);yield return WaitFor(()=>Flow.Screen==GameScreen.Battle,"練習開始失敗");
+            Assert.That(Flow.Runner.DebugBoxes,Is.True);yield return Tap(keyboard.f6Key);Assert.That(Flow.Runner.PracticePlaybackPaused,Is.True);
+            int tick=Flow.Runner.Simulation.Match.TickCount;yield return new WaitForSecondsRealtime(.1f);Assert.That(Flow.Runner.Simulation.Match.TickCount,Is.EqualTo(tick));
+            float x=Flow.Runner.Simulation.P1.Position.X;
+            yield return PressKeys(keyboard.dKey);yield return Tap(keyboard.f7Key);yield return ReleaseKeys(keyboard.dKey);
+            Assert.That(Flow.Runner.Simulation.Match.TickCount,Is.EqualTo(tick+1));
+            Assert.That(Flow.Runner.Simulation.P1.Position.X,Is.GreaterThan(x));
+            Assert.That(Flow.Runner.RenderPosition(0).X,Is.EqualTo(Flow.Runner.Simulation.P1.Position.X));
+            yield return Tap(keyboard.f5Key);Assert.That(Flow.Runner.PracticeRateIndex,Is.EqualTo(1));
+            yield return Tap(keyboard.f9Key);Assert.That(Flow.Runner.DebugBoxes,Is.False);
+            yield return Tap(keyboard.escapeKey);for(int i=0;i<13;i++)yield return Tap(keyboard.sKey);yield return Tap(keyboard.enterKey);
+            Assert.That(Flow.Runner.DebugBoxes,Is.True);Assert.That(Flow.Runner.Simulation.Match.TickCount,Is.EqualTo(tick+1));
+            Assert.That(Flow.Runner.Simulation.P1.Attack,Is.Null);
         }
         private static void CaptureScreen(string name,int height=720)
         {

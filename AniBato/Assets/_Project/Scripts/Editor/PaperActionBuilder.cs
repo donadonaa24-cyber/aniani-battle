@@ -15,7 +15,7 @@ namespace AniBato.EditorTools
         [Serializable] public sealed class FrameSource
         { public string key, source, sha256; public int headTopY, footY, footMinX, footMaxX; }
         [Serializable] public sealed class PoseSource
-        { public string key, source, sha256; public int[] states; public bool airborne, reverseFacing; public int headTopY = -1, footY, footMinX, footMaxX; public FrameSource[] frames; }
+        { public string key, source, sha256; public int[] states; public bool airborne, reverseFacing; public float tiltDegrees; public int headTopY = -1, footY, footMinX, footMaxX; public FrameSource[] frames; }
         [Serializable] public sealed class EffectSource
         { public string key, source, sha256; public float worldWidth; }
         public const string ManifestPath = "../art_source/paper_cutout/runtime-manifest.json";
@@ -32,6 +32,7 @@ namespace AniBato.EditorTools
                 var pose = source.frames != null && source.frames.Length > 0 ? BuildTwoFrames(source, ppu) :
                     PaperSourcePacking.Body(source.key, "../" + source.source, ppu, source.airborne, source.headTopY, source.footY, source.footMinX, source.footMaxX);
                 pose.ReverseFacing = source.reverseFacing;
+                pose.TiltDegrees = source.tiltDegrees;
                 if (source.key == "idle") data.Sprite = pose.Frame(0);
                 if (source.key == "hit_heavy") { data.HeavyDamage = pose; continue; }
                 if (source.states == null || source.states.Length == 0) throw new InvalidOperationException("紙ポーズの状態指定がありません: " + source.key);

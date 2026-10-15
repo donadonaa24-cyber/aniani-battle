@@ -50,6 +50,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -68,6 +69,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -86,6 +88,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -104,6 +107,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -122,6 +126,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -140,6 +145,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -158,6 +164,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -176,6 +183,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -194,6 +202,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -212,6 +221,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -230,6 +240,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -248,6 +259,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -264,6 +276,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights:
     - 2.1968148
     - 2.0503604
@@ -288,6 +301,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights:
     - 2.1742833
     - 2.0954232
@@ -312,22 +326,23 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights:
-    - 2.3995976
-    - 1.9527242
+    - 2.2531433
+    - 1.9226823
     FrameFootBaseYs:
     - -1.6787226e-10
     - -1.6787226e-10
     FrameFootMinXs:
-    - -0.3961777
-    - 0.3098072
+    - -0.54826486
+    - 0.56516343
     FrameFootMaxXs:
-    - -0.09575859
-    - 0.8111316
-    HeadHeight: 2.3995976
+    - -0.12955575
+    - 1.0195473
+    HeadHeight: 2.2531433
     FootBaseY: -1.6787226e-10
-    FootMinX: -0.3961777
-    FootMaxX: -0.09575859
+    FootMinX: -0.54826486
+    FootMaxX: -0.12955575
   - Key: crouch_attack
     States: 19000000i
     Frames:
@@ -336,22 +351,23 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights:
-    - 1.8851299
-    - 1.9527242
+    - 2.1742833
+    - 1.9226823
     FrameFootBaseYs:
     - -1.6787226e-10
     - -1.6787226e-10
     FrameFootMinXs:
-    - -0.6196144
-    - 0.3098072
+    - -0.8073763
+    - 0.56516343
     FrameFootMaxXs:
-    - 0.809254
-    - 0.8111316
-    HeadHeight: 1.8851299
+    - 1.0139145
+    - 1.0195473
+    HeadHeight: 2.1742833
     FootBaseY: -1.6787226e-10
-    FootMinX: -0.6196144
-    FootMaxX: 0.809254
+    FootMinX: -0.8073763
+    FootMaxX: 1.0139145
   - Key: back_attack
     States: 1a000000i
     Frames:
@@ -360,6 +376,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 1
+    TiltDegrees: 0
     FrameHeadHeights:
     - 2.1742833
     - 2.0954232
@@ -384,6 +401,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights:
     - 1.0627326
     - 0.9162783
@@ -408,6 +426,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights:
     - 1.0627326
     - 0.9162783
@@ -432,6 +451,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 1
+    TiltDegrees: 0
     FrameHeadHeights:
     - 1.0402012
     - 0.96134114
@@ -456,22 +476,23 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    TiltDegrees: 60
     FrameHeadHeights:
-    - 0.7510478
-    - 0.9970159
+    - 1.0402012
+    - 0.96134114
     FrameFootBaseYs:
     - -1.1340821
     - -1.1340821
     FrameFootMinXs:
-    - -0.6196144
-    - 0.3098072
+    - -0.8073763
+    - -0.8637049
     FrameFootMaxXs:
-    - 0.809254
-    - 0.79986584
-    HeadHeight: 0.7510478
+    - 1.0139145
+    - 0.9913831
+    HeadHeight: 1.0402012
     FootBaseY: -1.1340821
-    FootMinX: -0.6196144
-    FootMaxX: 0.809254
+    FootMinX: -0.8073763
+    FootMaxX: 1.0139145
   - Key: air_down
     States: 1f000000i
     Frames:
@@ -480,22 +501,23 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    TiltDegrees: -60
     FrameHeadHeights:
-    - 1.2655154
-    - 0.8186421
+    - 1.1190611
+    - 0.78860015
     FrameFootBaseYs:
     - -1.1340821
     - -1.1340821
     FrameFootMinXs:
-    - -0.3961777
-    - 0.3098072
+    - -0.54826486
+    - 0.56516343
     FrameFootMaxXs:
-    - -0.09575859
-    - 0.8111316
-    HeadHeight: 1.2655154
+    - -0.12955575
+    - 1.0195473
+    HeadHeight: 1.1190611
     FootBaseY: -1.1340821
-    FootMinX: -0.3961777
-    FootMaxX: -0.09575859
+    FootMinX: -0.54826486
+    FootMaxX: -0.12955575
   - Key: air_forward_up
     States: 20000000i
     Frames:
@@ -504,22 +526,23 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    TiltDegrees: 30
     FrameHeadHeights:
-    - 0.7510478
-    - 0.9970159
+    - 1.0402012
+    - 0.96134114
     FrameFootBaseYs:
     - -1.1340821
     - -1.1340821
     FrameFootMinXs:
-    - -0.6196144
-    - 0.3098072
+    - -0.8073763
+    - -0.8637049
     FrameFootMaxXs:
-    - 0.809254
-    - 0.79986584
-    HeadHeight: 0.7510478
+    - 1.0139145
+    - 0.9913831
+    HeadHeight: 1.0402012
     FootBaseY: -1.1340821
-    FootMinX: -0.6196144
-    FootMaxX: 0.809254
+    FootMinX: -0.8073763
+    FootMaxX: 1.0139145
   - Key: air_forward_down
     States: 21000000i
     Frames:
@@ -528,22 +551,23 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    TiltDegrees: -30
     FrameHeadHeights:
-    - 1.2655154
-    - 0.8186421
+    - 1.1190611
+    - 0.78860015
     FrameFootBaseYs:
     - -1.1340821
     - -1.1340821
     FrameFootMinXs:
-    - -0.3961777
-    - 0.3098072
+    - -0.54826486
+    - 0.56516343
     FrameFootMaxXs:
-    - -0.09575859
-    - 0.8111316
-    HeadHeight: 1.2655154
+    - -0.12955575
+    - 1.0195473
+    HeadHeight: 1.1190611
     FootBaseY: -1.1340821
-    FootMinX: -0.3961777
-    FootMaxX: -0.09575859
+    FootMinX: -0.54826486
+    FootMaxX: -0.12955575
   - Key: special_neutral
     States: 0a000000i
     Frames:
@@ -554,14 +578,15 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
-    HeadHeight: 2.2174685
-    FootBaseY: 0.0000000070226562
-    FootMinX: -0.4055658
-    FootMaxX: -0.08449288
+    HeadHeight: 2.1836715
+    FootBaseY: 0.0000000091770165
+    FootMinX: -0.4731601
+    FootMaxX: -0.09575859
   - Key: special_side
     States: 0b000000i
     Frames:
@@ -572,6 +597,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -590,6 +616,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -608,6 +635,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -626,6 +654,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []
@@ -645,6 +674,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
     FrameFootMinXs: []

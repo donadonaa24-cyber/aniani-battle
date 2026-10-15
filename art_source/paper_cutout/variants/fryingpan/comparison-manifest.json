@@ -1,6 +1,15 @@
 {
   "schemaVersion": 1,
-  "status": "eight_sources_integrated_four_comparison_only",
+  "status": "six_horizontal_sources_integrated_vertical_sources_backup",
+  "verification": {
+    "verified": true,
+    "tag": "paper_sideswing_3",
+    "editPassed": 470,
+    "playPassed": 47,
+    "buildAll": true,
+    "windowsBuild": true,
+    "artApproval": false
+  },
   "canvas": {
     "width": 1304,
     "height": 1450,
@@ -105,7 +114,7 @@
       "offsetY": 51,
       "sourcePixelsPreserved": true,
       "preparedSha256": "17012b9f6f405939a34026b8412eb0e4990f60682833f95f197c8fda1f24a584",
-      "gameConnected": false,
+      "gameConnected": true,
       "approved": false,
       "artReview": "頭・靴・腕と握りの部位審査待ち。キャンバス一致だけで絵の完成とは扱わない。"
     },
@@ -125,7 +134,7 @@
       "offsetY": 108,
       "sourcePixelsPreserved": true,
       "preparedSha256": "c5548d63a36a0d635ccd1b18de7ce5077c8f585f32dc4a8daa9da5a8a6062bad",
-      "gameConnected": false,
+      "gameConnected": true,
       "approved": false,
       "artReview": "頭・靴・腕と握りの部位審査待ち。キャンバス一致だけで絵の完成とは扱わない。"
     },
@@ -185,7 +194,7 @@
       "offsetY": 96,
       "sourcePixelsPreserved": true,
       "preparedSha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
-      "gameConnected": true,
+      "gameConnected": false,
       "approved": false,
       "artReview": "頭・靴・腕と握りの部位審査待ち。キャンバス一致だけで絵の完成とは扱わない。"
     },
@@ -205,7 +214,7 @@
       "offsetY": 54,
       "sourcePixelsPreserved": true,
       "preparedSha256": "92c9a4b94ebd01e7e44ef246f1937c7c44c899386ac619dcf02ae17e3bc7ed6f",
-      "gameConnected": true,
+      "gameConnected": false,
       "approved": false,
       "artReview": "頭・靴・腕と握りの部位審査待ち。キャンバス一致だけで絵の完成とは扱わない。"
     },
@@ -225,7 +234,7 @@
       "offsetY": 41,
       "sourcePixelsPreserved": true,
       "preparedSha256": "04de55c09c3ad174a34cd7862e29aa0d4d38cbabae4869ae448a8dfd890e8f8a",
-      "gameConnected": true,
+      "gameConnected": false,
       "approved": false,
       "artReview": "頭・靴・腕と握りの部位審査待ち。キャンバス一致だけで絵の完成とは扱わない。"
     },
@@ -245,18 +254,9 @@
       "offsetY": 114,
       "sourcePixelsPreserved": true,
       "preparedSha256": "e97b647e329acfaa6f3715a561596c7d9a6f15e94eedbb93b727025ae063f3ac",
-      "gameConnected": true,
+      "gameConnected": false,
       "approved": false,
       "artReview": "頭・靴・腕と握りの部位審査待ち。キャンバス一致だけで絵の完成とは扱わない。"
     }
-  ],
-  "verification": {
-    "verified": true,
-    "tag": "paper_fryingpan_1",
-    "editPassed": 463,
-    "playPassed": 42,
-    "buildAll": true,
-    "windowsBuild": true,
-    "artApproval": false
-  }
+  ]
 }

@@ -1,3 +1,19 @@
+## 最新（2026-10-15 Codex）：9人選択・紙舞台・横振り・判定表示を完了
+
+今回の続行順：Claudeの6fc196aと未commit舞台2ファイルを確認→紙舞台／9人選択を0bbc2b6で保存→千鶴の横振り統一と判定点検。通常45アセットの半減値とゲージ14／10は変更していない（CSV全件の回帰検査合格）。
+
+実装済み：3作品の工作舞台とテーマ別縮小見た目、9人の切り抜きタイトル、厚紙FIGHT／KO、作品別の9人一覧から選択・対戦。追加6人は既存3作品の基本技を共有する1枚絵の試作で、固有技・固有ポーズは未完成。透真は湊に頭身を合わせたv2をタイトル／選択で使用。透真／蓮の戦闘動作素材は旧版のまま。
+
+千鶴：通常はすべて横振り6原画（各段予備→有効の2コマ）。空中上下60度・斜め30度の固定傾き。手持ちおにぎりをv3へ拡大、飛翔は紙版を継続し両方約0.42world幅へ（手持ち約2倍／飛翔約6.5%微調整）。共通ゲーム枠1304×1450・PPU532.5893、人物原画を再サンプルしない。カバン13原画／上下振り6原画と旧採用コピーを保護。現在の採用46画像はイラスト確認/千鶴/01_ゲームで採用済み/、比較は比較_フライパン原画12枚/へ改名し採用／予備を明記。
+
+判定：F9／メイン設定末尾／ポーズ末尾でON/OFF（初期OFF、練習初期ON）。緑やられ／赤有効／黄飛翔／薄赤予備、命中枠を0.5秒保持（静止中は保持）。練習F5で通常→1/2→1/4、F6静止、F7で1tick。ポーズの練習設定からも操作可。コマ送り後は描画位置を現在tickへ同期。通常速度／スロー／コマ送りの同入力列で決定性を確認。
+
+今回実Unity paper_sideswing_3：BuildAll成功／EditMode470/470／PlayMode47/47／Windowsビルド成功、失敗・スキップ0。1も470/47合格したが比較撮影と描画同期を改善、2の同一PNG書込みロックをWriteIfChangedで修正して3で全工程再検証。今回の起動ファイルBuild/paper_sideswing_3/AniBato.exe。最新2ビルドだけ保持。実Camera.Renderの攻撃17＋やられ3＝20PNGはdocs/screenshots/hitbox_review_chizuru/。紙舞台／9人画面はdocs/screenshots/paper_stage_roster_unity/、各動作はpaper_fryingpan_unity/も更新。OSキー送信なし。
+
+残課題：docs/HITBOX_REVIEW_CHIZURU.mdの絵と判定の差。地上3段の先端が現判定より約13〜18%短く、上下空中技・広い必殺の範囲も要検討。性能が変わるため、今回は判定変更0件として画像と修正案を残した。灰色抽出は衣装も含み得るので自動適用しない。絵の手／部位の最終審査、追加6人の固有技と各人のポーズ、紙ヒット演出も後続。
+
+次：ユーザーの判定画像への指摘を優先。新規制作を進める場合はcodex_tasks/PAPER_TOMA_CORE_POSES.mdに従い、透真から1人ずつガード／しゃがみ等へ。現条件と将来効果はPAPER_THEATRE_DIRECTION.md／FUTURE_SKILL_EFFECTS.md。再開時はtasklist→git status／log、本節と最新指示書を読む。採用再生成はbuild_fryingpan_runtime→update_rice_pose、実Unity合格後archive_changed_review→adopt_paper_review→確認フォルダ／一覧、finalize_hitbox_review、check_paper_sources。旧build_paper_runtime_manifestで上書きしない。Claudeへの確認点：17技の先端と緑枠、手・靴、追加6人の試作表示、コマ送りの描画同期。既存差分を破棄しない。
+
 ## 最新（2026-10-15 Codex）：紙舞台と9人一覧を検証完了
 
 6fc196aの判定半減45件／ゲージ14・10を保持して未commitの舞台2ファイルから再開。3作品共通地形のまま平面レイヤー・厚紙の縁・テーマ別縮小、紙のタイトル／FIGHT／KO、全9人の作品別一覧と選択・試合開始を実装。追加6人は作品ごとの共通基本技＋待機1枚の試作。固有技／固有動作の完成ではない。透真／蓮の新待機はタイトル・選択に使用し、戦闘素材は旧版。将来効果の拡張位置はFUTURE_SKILL_EFFECTS.md。
@@ -479,4 +495,5 @@ Battle/Cpuの定義・判断・集計4ファイル、BattleEvent/BattleSimulatio
 Unityを閉じ、サンドボックス外で `powershell -ExecutionPolicy Bypass -File tools/verify/run_unity.ps1 -Tag phase5`。BuildAll→EditMode225想定→PlayMode20想定→Windowsビルド。次にCpuBalanceReportBuilder.Writeで実アセット810試合をTestResults/phase5-cpu-unity.*へ保存。確認順序・操作・注意は `docs/codex_logs/phase5_final.md`。Unity合格と画面／音の所見を本書・RESUMEへ追記してからフェーズ6へ。
 
 現在はworkspace-write／承認不可でUnityライセンスIPCへ接続できないため、HANDOFFのサンドボックス外Unity実行は行えません。権限変更の確認は求めず、AGENTS.mdに従ってUnity実行をClaudeへ引き継ぎました。
+
 

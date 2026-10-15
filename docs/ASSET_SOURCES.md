@@ -190,3 +190,7 @@ art_source/paper_cutout/generated/chizuru_paper_idle_v1.pngは内蔵image_genに
 ## 2026-10-15 工作舞台と9人画面
 
 PaperStageScenery／PaperPlatformViewで作る自作の平面シェイプ。街／管理AI画面／6×6盤／駒／塔／文化祭屋台／黒板／調理小道具と厚紙の縁は、本作独自の舞台演出で正史の追加ではない。タイトル・選択はart_source/paper_roster_idleの9待機をコピーし、Unityの文字・台紙・棒・テープで構成。第三者の画像やUI素材は転載していない。各キャラの参照出典と仮補完は同フォルダの出典表を参照。
+
+## 2026-10-15 横振り／おにぎりの修正
+
+千鶴の全通常はfryingpan/prepared/horizontal_1〜3の予備／有効6原画を再利用する。空中上下・斜めは全身の固定傾きで表示し、中割り／関節分割は追加しない。縦振り6原画とカバン13原画は予備として保持。通常特殊の手持ちおにぎりは内蔵image_genでv3を生成し、人物全体の再サンプルをせず透明枠へ。v2は人物寸法が変わったため不採用だがv3の参照資料として制作元だけに保管。全文条件は同名.prompt.json。飛翔は既存の紙版effect_rice_ball_v1を継続し、rice-size.jsonで手持ちと表示幅を揃える。絵の最終審査とゲーム接続を分ける。

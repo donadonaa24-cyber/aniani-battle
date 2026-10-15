@@ -90,7 +90,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const url=p=>p.split('/').map(encodeURIComponent).join('/');
 const counts=Object.fromEntries(Object.keys(folders).map(c=>[c,rows.filter(r=>r.category===c).length]));
 function card(r){
- return '<article data-category="'+r.category+'" data-search="'+esc(r.title+' '+r.note)+'"><a href="'+url(r.file)+'" target="_blank"><img loading="lazy" src="'+url(r.file)+'" alt="'+esc(r.title)+'"></a><div class="body"><span class="badge '+r.category+'">'+labels[r.category]+'</span><h3>'+esc(r.title)+'</h3><p class="filename">'+esc(path.basename(r.file))+'</p><p>'+esc(r.note)+'</p><a href="'+url(r.file)+'" target="_blank">原寸で開く</a> · <a href="'+url('../../'+r.source.replace('.png','.prompt.json'))+'" target="_blank">生成条件</a></div></article>';
+ return '<article data-category="'+r.category+'" data-search="'+esc(r.title+' '+r.note)+'"><a href="'+url(r.file)+'" target="_blank"><img loading="lazy" src="'+url(r.file)+'" alt="'+esc(r.title)+'"></a><div class="body"><span class="badge '+r.category+'">'+labels[r.category]+'</span><h3>'+esc(r.title)+'</h3><p class="filename">'+esc(path.basename(r.file))+'</p><p>'+esc(r.note)+'</p><a href="'+url(r.file)+'" target="_blank">原寸で開く</a> · <a href="'+url('../../'+(r.prompt||r.source.replace('.png','.prompt.json')))+'" target="_blank">生成条件</a></div></article>';
 }
 function section(category){
  return '<section id="'+category+'"><h2>'+labels[category]+' <small>'+counts[category]+'枚</small></h2><div class="grid">'+rows.filter(r=>r.category===category).map(card).join('\n')+'</div></section>';

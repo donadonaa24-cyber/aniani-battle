@@ -29,3 +29,15 @@
 - EditMode：判定表示が判定を変えない、スロー/コマ送りでも同入力列の結果が同じ（決定性）、横振り統一後の全攻撃が有効な Sprite を持つ。
 - 実Unity全4工程（BuildAll／EditMode／PlayMode／Windowsビルド）合格後に commit・push。
 - 報告：横振り統一の対応表、比較画像の場所、ずれ一覧の要点、判定を直した技と直していない技（理由）。
+
+## 制作後の保管と再生成
+
+横振りの対応と傾きはart_source/paper_cutout/runtime-manifest.json、全文条件は各原画の.prompt.json。build_fryingpan_runtime.cjs→update_rice_pose.cjsで今回の採用条件を再現できる。旧build_paper_runtime_manifest.cjsで上書きしない。上下振り／カバンの原画と予備コピーは保持。
+
+実Unityの合格後にadopt_paper_review.cjs <合格タグ>→archive_changed_review.cjs（既存管理コピーの状態によって順序確認）→build_paper_review_folder.cjs→build_paper_review_contact.cjs。archive_changed_reviewは古いコピーを予備へ移すだけで原画を削除しない。同じアーカイブ先が存在する場合は上書きせず停止する。
+
+判定比較の全20PNGと生成表を確認し、finalize_hitbox_review.cjsで目視後の注記を追加する。灰色抽出には服の影も含まれ得るため、これを根拠に判定を自動変更しない。CSV45件とゲージ14/10の維持は専用EditModeテストで検査する。
+
+## 追加：おにぎりの絵と寸法（ユーザー指定）
+
+ProjectileViewは現在PaperMotion.RiceBall（紙版のeffect_rice_ball）を使っており、旧ピクセル版ではない。飛翔表示は原画の有色幅0.9world×ProjectileScale0.5=0.45world。手持ちの約0.2worldとの差を直す。手持ち絵を再生成し約0.45world（共通PPUで幅約240px）へ。キャラ全体の倍率を変えず、手元の握りとおにぎりだけを調整。原画／全文条件／出典と実測の持ち物範囲を保存し、実Unityで同倍率の比較を行う。飛翔を旧絵に戻したり、当たり判定を拡大して見た目の差を隠さない。

@@ -2,7 +2,7 @@
 const fs=require('node:fs'),crypto=require('node:crypto'),sharp=require('sharp');
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,''));
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-const combinations={attack1:['horizontal_1'],attack2:['horizontal_2'],attack3:['vertical_3'],crouch_attack:['vertical_2','vertical_3'],back_attack:['horizontal_2'],air_neutral:['horizontal_1'],air_forward:['horizontal_1'],air_back:['horizontal_2'],air_up:['vertical_2'],air_down:['vertical_3'],air_forward_up:['vertical_2'],air_forward_down:['vertical_3']};
+const combinations={attack1:['horizontal_1'],attack2:['horizontal_2'],attack3:['horizontal_3'],crouch_attack:['horizontal_2','horizontal_3'],back_attack:['horizontal_2'],air_neutral:['horizontal_1'],air_forward:['horizontal_1'],air_back:['horizontal_2'],air_up:['horizontal_2'],air_down:['horizontal_3'],air_forward_up:['horizontal_2'],air_forward_down:['horizontal_3']};
 async function markers(source){
  const {data,info}=await sharp(source).ensureAlpha().raw().toBuffer({resolveWithObject:true}),w=info.width,h=info.height,shoes=[];let head=h;
  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
@@ -30,6 +30,7 @@ async function main(){
   }
   Object.assign(pose,pose.frames[0]);pose.key=Object.keys(combinations).find(k=>combinations[k]===pair);
   pose.reverseFacing=pose.key==='back_attack'||pose.key==='air_back';
+  pose.tiltDegrees=({air_up:60,air_down:-60,air_forward_up:30,air_forward_down:-30})[pose.key]||0;
   pose.artReview='integrated_art_review_pending';pose.artNote='左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。';
  }
  manifest.schemaVersion=2;manifest.normalWeapon='frying_pan';manifest.note='ユーザー指定で全通常攻撃を左手フライパンへ。2原画を発生前／有効以後へ固定。カバン原画と旧manifestはvariants/で保護。';
@@ -39,7 +40,7 @@ async function main(){
   if(row.key==='effect_bag_throw'||row.phase==='impact')continue;
   const pose=manifest.poses.find(p=>p.key===row.key);
   if(!pose||!pose.frames){rows.push(row);continue;}
-  const title=row.title.replace('・カバン投げ','');
+  const title=row.title.replace('・カバン投げ','').replace(/_フライパン_.*$/,'');
   pose.frames.forEach((frame,i)=>rows.push({...row,key:row.key+(i?'_impact':''),source:frame.source,title:title+'_フライパン_'+(i?'当てる':'予備'),phase:i?'impact':'anticipation',version:1,category:'candidate',gameConnected:false,artReview:pose.artReview,artNote:pose.artNote,note:'フライパンへ切替中。実Unity検証前。'}));
  }
  catalog.entries=rows;catalog.runtimeIntegration={verified:false,previousTag:'paper_theatre_2'};catalog.updated='2026-10-15';
@@ -49,4 +50,6 @@ async function main(){
  fs.writeFileSync(factsPath,JSON.stringify(facts,null,2)+'\n');
  const bag=read('art_source/paper_cutout/variants/bag-backup.json');for(const e of bag.entries)if(hash(e.source)!==e.sha256||hash(e.copy)!==e.sha256)throw Error('Protected bag changed');
  process.stdout.write(JSON.stringify({twoFrameActions:manifest.poses.filter(p=>p.frames).length,selectedOriginals:cache.size,catalogImages:rows.length,protectedBag:bag.entries.length})+'\n');
-}main().catch(e=>{process.stderr.write(e.stack+'\n');process.exitCode=1});
+}
+module.exports={markers};
+if(require.main===module)main().catch(e=>{process.stderr.write(e.stack+'\n');process.exitCode=1});

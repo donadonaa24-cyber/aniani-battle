@@ -7,6 +7,7 @@ namespace AniBato.Battle
     {
         public bool FreezeHearts = true, FreezeTimer = true;
         public PracticeOpponent Opponent;
+        public bool DebugDefault = true;
         internal void FinishTick(BattleSimulation sim)
         {
             if (!FreezeHearts) return;

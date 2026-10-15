@@ -389,3 +389,9 @@ BuildAllの移行はSchema5初回だけ。既存の発生／硬直／CD／ガー
 - 値は Data の AttackData アセットに入っている（コードの既定値 PhaseXDefaults は旧値のまま。アセットを再生成する場合は `HitboxTuning.HalveNormalReach` を再実行）。
 - 当たる回数が減り超必殺の発動率が下がったため、ゲージを **OnHit 12→14、OnDamaged 8→10** に戻した（`HitboxTuning.RaiseGaugeAfterReachHalving`）。
 - 実Unity hitbox_half：BuildAll成功／EditMode 463/463／PlayMode 42/42／Windowsビルド成功。
+
+## 2026-10-15 紙の横振り・判定確認
+
+通常45件の半減値（HITBOX_REACH_20261015.csv）とゲージOnHit14／OnDamaged10を維持。今回、攻撃判定・発生・威力・前進量の変更は0件。横振りの絵の先端と判定に差があるため、HITBOX_REVIEW_CHIZURU.mdへ全17技＋やられ3状態の比較を記録した。地上3段の追加短縮案は性能が変わるので確認後に別工程で調整する。
+
+おにぎりは描画だけ調整。手持ち原画を約224px幅へ拡大し、飛翔の有色幅を0.45→約0.4205867worldへ微調整（手持ちと同程度）。飛翔の判定・速度・麻痺30tickは維持。スロー／コマ送りは練習のtickを進める速度だけで、同じ入力列の結果は同じ。1tick進めた後の描画位置も同期する。

@@ -45,6 +45,11 @@ MonoBehaviour:
   CurryWaveScale: 2.5
   CurryWaveOffset: {x: 1.7, y: -0.2}
   DebugLineWidth: 0.035
+  DebugTraceSeconds: 0.5
+  PracticeRates:
+  - 1
+  - 0.5
+  - 0.25
   ScreenShake: 1
   MaximumCatchupTicks: 5
   InterpolationDiscontinuityDistance: 5

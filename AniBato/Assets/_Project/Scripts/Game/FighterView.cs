@@ -77,7 +77,7 @@ namespace AniBato.Game
                 body.transform.localScale = Vector3.one;
                 var rock = UsesPaperSprite ? character.PaperMotion.Transform(visualSample, paperPose) : default;
                 var performance = UsesPaperSprite ? AniBato.Presentation.PaperPerformance.Evaluate(character.PaperMotion.Performance, visualSample, fighter.LastDamageLostHeart) : default;
-                float angle = rock.Degrees + performance.Degrees;
+                float angle = rock.Degrees + performance.Degrees + (paperPose==null?0:paperPose.TiltDegrees*(visualSample.FlipX?-1:1));
                 body.transform.localRotation = Quaternion.Euler(0, 0, angle);
                 float baseY = paperPose != null && paperPose.Airborne ? 0 : -fighter.Definition.HurtboxSize.Y * .5f;
                 if (paperPose != null && paperPose.Airborne && fighter.Grounded)

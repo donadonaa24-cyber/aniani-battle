@@ -26,12 +26,12 @@ namespace AniBato.EditorTools
                     { if (color.a != 0) throw new InvalidOperationException("共通キャンバスで人物が切れます: " + key); continue; }
                     pixels[yy * CanvasWidth + xx] = color;
                 }
-                if (source.width == CanvasWidth && source.height == CanvasHeight) File.Copy(sourcePath, destination, true);
+                if (source.width == CanvasWidth && source.height == CanvasHeight) WriteIfChanged(destination,File.ReadAllBytes(sourcePath));
                 else
                 {
                     // Packing only: add/crop transparent margin. Never resample or reshape the artwork.
                     packed = new Texture2D(CanvasWidth, CanvasHeight, TextureFormat.RGBA32, false);
-                    packed.SetPixels32(pixels); packed.Apply(); File.WriteAllBytes(destination, packed.EncodeToPNG());
+                    packed.SetPixels32(pixels); packed.Apply(); WriteIfChanged(destination, packed.EncodeToPNG());
                 }
                 int minY = CanvasHeight, maxY = -1, minX = CanvasWidth, maxX = -1;
                 for (int y = 0; y < CanvasHeight; y++) for (int x = 0; x < CanvasWidth; x++)
@@ -54,7 +54,7 @@ namespace AniBato.EditorTools
         public static Sprite Effect(string key, string sourcePath, float worldWidth)
         {
             string destination = "Assets/_Project/Art/Paper/effect_" + key + "_chizuru.png";
-            File.Copy(sourcePath, destination, true);
+            WriteIfChanged(destination,File.ReadAllBytes(sourcePath));
             var source = new Texture2D(2, 2, TextureFormat.RGBA32, false);
             try
             {
@@ -67,6 +67,13 @@ namespace AniBato.EditorTools
                     new Vector2((minX + maxX + 1) / (2f * source.width), (minY + maxY + 1) / (2f * source.height)));
             }
             finally { UnityEngine.Object.DestroyImmediate(source); }
+        }
+        private static void WriteIfChanged(string path,byte[] bytes)
+        {
+            // Repeated BuildAll/tests can still have the imported file memory-mapped.
+            // Reading it is safe; truncating identical content is both unnecessary and unreliable on Windows.
+            if(File.Exists(path)&&bytes.AsSpan().SequenceEqual(File.ReadAllBytes(path)))return;
+            File.WriteAllBytes(path,bytes);
         }
         private static Sprite Import(string path, float ppu, Vector2 pivot)
         {

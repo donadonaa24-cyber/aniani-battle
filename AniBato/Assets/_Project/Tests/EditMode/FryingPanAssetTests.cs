@@ -26,6 +26,10 @@ namespace AniBato.Tests
                 Assert.That(pose.Frames.Length, Is.EqualTo(2)); Assert.That(pose.Frames[0], Is.Not.SameAs(pose.Frames[1]));
                 Assert.That(pose.ReverseFacing, Is.EqualTo(state == AnimationState.BackAttack || state == AnimationState.AirBack));
                 foreach (var sprite in pose.Frames) Assert.That(AssetDatabase.GetAssetPath(sprite), Does.Contain("_anticipation_").Or.Contain("_impact_"));
+                // Every chosen source is now one of the six horizontal originals, not the vertical set.
+                var manifest=JsonUtility.FromJson<AniBato.EditorTools.PaperActionBuilder.Manifest>(File.ReadAllText("../art_source/paper_cutout/runtime-manifest.json"));
+                var row=manifest.poses.First(p=>p.states.Contains((int)state));
+                Assert.That(row.frames.All(f=>f.source.Contains("/horizontal_")),Is.True);
                 for (int frame = 0; frame < 38; frame++)
                 {
                     var sample = new AnimationSample { State = state, IsAttack = true, Age = frame, AttackFrame = frame, Startup = 11, Active = 6, Recovery = 21 };

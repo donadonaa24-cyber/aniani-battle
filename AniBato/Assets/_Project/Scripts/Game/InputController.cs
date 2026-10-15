@@ -154,6 +154,9 @@ namespace AniBato.Game
         public void Clear() { foreach (var latch in latches) latch.Clear(); }
         private void OnApplicationFocus(bool focus) { if (!focus) Clear(); }
         public bool DebugBoxesPressed => KeyPressed(Key.F9);
+        public bool PracticeRatePressed => KeyPressed(Key.F5);
+        public bool PracticePausePressed => KeyPressed(Key.F6);
+        public bool PracticeStepPressed => KeyPressed(Key.F7);
         public bool RematchPressed => bindings && KeyPressed(bindings.Rematch);
         public bool FullscreenPressed => bindings && KeyPressed(bindings.Fullscreen);
         public int CharacterSelectionDelta(int player) =>

@@ -13,6 +13,7 @@ namespace AniBato.Game
         public int HoldTicks = 8;
         public bool Airborne;
         public bool ReverseFacing;
+        public float TiltDegrees;
         public float[] FrameHeadHeights, FrameFootBaseYs, FrameFootMinXs, FrameFootMaxXs;
         public float HeadHeight, FootBaseY, FootMinX, FootMaxX;
         public bool Valid => HoldTicks > 0 && Frames != null && Frames.Length > 0 && System.Array.TrueForAll(Frames, frame => frame);

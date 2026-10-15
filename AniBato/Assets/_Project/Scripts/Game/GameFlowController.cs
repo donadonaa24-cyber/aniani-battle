@@ -130,18 +130,22 @@ namespace AniBato.Game
             }
             else if (Screen == GameScreen.PracticeSettings)
             {
-                MenuIndex = Wrap(MenuIndex + vertical, 3);
+                MenuIndex = Wrap(MenuIndex + vertical, 7);
                 if (horizontal != 0 || confirm)
                 {
                     if (MenuIndex == 0) Practice.Opponent = (PracticeOpponent)Wrap((int)Practice.Opponent + (horizontal == 0 ? 1 : horizontal), 4);
                     else if (MenuIndex == 1) Practice.FreezeHearts = !Practice.FreezeHearts;
-                    else Practice.FreezeTimer = !Practice.FreezeTimer;
+                    else if(MenuIndex==2)Practice.FreezeTimer = !Practice.FreezeTimer;
+                    else if(MenuIndex==3){Practice.DebugDefault=!Practice.DebugDefault;runner.SetDebugBoxes(Practice.DebugDefault,false);}
+                    else if(MenuIndex==4)runner.CyclePracticeRate();
+                    else if(MenuIndex==5)runner.TogglePracticePause();
+                    else if(MenuIndex==6){input.Clear();runner.StepPracticeTick();}
                 }
                 if (cancel) Show(panelReturn, true, MenuAction.Cancel);
             }
             else
             {
-                int count = Screen == GameScreen.Pause ? 13 : Screen == GameScreen.MainMenu ? 9 : 3;
+                int count = Screen == GameScreen.Pause ? 14 : Screen == GameScreen.MainMenu ? 10 : 3;
                 MenuIndex = Wrap(MenuIndex + vertical, count);
                 if (Screen == GameScreen.Pause)
                 {
@@ -149,9 +153,11 @@ namespace AniBato.Game
                     if (effects && MenuIndex == 6 && horizontal != 0) effects.ToggleShake();
                     if (MenuIndex == 7 && horizontal != 0) FramePacing.Cycle(horizontal);
                     if (MenuIndex == 12 && horizontal != 0) input.Configuration.ToggleDoubleTapDash();
+                    if (MenuIndex == 13 && horizontal != 0) runner.SetDebugBoxes(!runner.DebugBoxes);
                 }
                 if (Screen == GameScreen.MainMenu && MenuIndex == 3 && horizontal != 0) FramePacing.Cycle(horizontal);
                 if (Screen == GameScreen.MainMenu && MenuIndex == 7 && horizontal != 0) input.Configuration.ToggleDoubleTapDash();
+                if (Screen == GameScreen.MainMenu && MenuIndex == 9 && horizontal != 0) runner.SetDebugBoxes(!runner.DebugBoxes);
                 if (cancel)
                 {
                     if (Screen == GameScreen.MainMenu) Show(GameScreen.Title, true, MenuAction.Cancel);
@@ -205,6 +211,7 @@ namespace AniBato.Game
                 else if (MenuIndex == 4 || MenuIndex == 5) { CpuMode = PracticeMode = true; TutorialMode = MenuIndex == 5; Show(GameScreen.CharacterSelect); }
                 else if (MenuIndex == 6) { panelReturn = Screen; Show(GameScreen.KeyConfig); }
                 else if (MenuIndex == 7) input.Configuration.ToggleDoubleTapDash();
+                else if (MenuIndex == 9) runner.SetDebugBoxes(!runner.DebugBoxes);
                 else
                 {
 #if UNITY_EDITOR
@@ -226,6 +233,7 @@ namespace AniBato.Game
                 else if (MenuIndex == 10) { panelReturn = Screen; Show(GameScreen.KeyConfig); }
                 else if (MenuIndex == 11) { BasicHintsEnabled = !BasicHintsEnabled; PlayerPrefs.SetInt("AniBato.BasicHints", BasicHintsEnabled ? 1 : 0); PlayerPrefs.Save(); }
                 else if (MenuIndex == 12) input.Configuration.ToggleDoubleTapDash();
+                else if (MenuIndex == 13) runner.SetDebugBoxes(!runner.DebugBoxes);
             }
             else if (Screen == GameScreen.Result)
             {
@@ -247,6 +255,7 @@ namespace AniBato.Game
             world.SetActive(true); hud.SetActive(true);
             runner.Practice = PracticeMode ? Practice : null; runner.Tutorial = TutorialMode ? new TutorialSession() : null;
             runner.BeginMatch(setup.Character(Player1Index), setup.Character(Player2Index), setup.Stages[StageIndex], CpuMode, Difficulty);
+            runner.SetDebugBoxes(PracticeMode&&Practice.DebugDefault||PlayerPrefs.GetInt("AniBato.DebugBoxes",0)!=0,false);
             stageView.Rebuild(setup.Stages[StageIndex]); countdownElapsed = resultElapsed = 0; previousCountdown = null;
             Show(GameScreen.Countdown);
         }

@@ -13,7 +13,7 @@ using AnimationState = AniBato.Presentation.AnimationState;
 
 namespace AniBato.Tests
 {
-    public sealed class PaperCharacterSceneTests : InputTestFixture
+    public sealed partial class PaperCharacterSceneTests : InputTestFixture
     {
         private Keyboard keyboard;
         private BattleRunner runner;

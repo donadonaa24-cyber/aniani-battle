@@ -1,5 +1,9 @@
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
+**最新完了：paper_sideswing_3、実Unity全4工程合格（Edit470／Play47、失敗・スキップ0）。** 9人一覧・工作舞台／看板、千鶴横振り統一とおにぎり幅、F9判定・残像・練習F5/F6/F7を実装。17技＋3やられの20PNGとHITBOX_REVIEW_CHIZURU.md。45件半減／ゲージ14・10を維持。性能変更となる範囲修正は提案のみ。現在の起動ファイル・未完・再生成手順はRESUME冒頭が正。次の制作指示はPAPER_TOMA_CORE_POSES。PNGの同一再書込みはメモリマップで失敗するためPaperSourcePacking.WriteIfChangedを維持する。
+
+2026-10-15再開後：0bbc2b6で紙舞台・タイトル／合図・9人一覧と6人の共通技試作を保存／push済み（paper_stage_roster_4、実Edit466／Play44／全4工程合格）。最新状況はRESUME冒頭を優先。次工程はPAPER_CHIZURU_SIDESWING_AND_HITBOX_VIEW＋おにぎり寸法。旧指示の上下振り採用ではなく、現在は全通常の横振り統一へ進める。
+
 最新追加：paper_fryingpan_1で実Unity全4工程合格（Edit463／Play42）。千鶴の全通常をフライパン2原画へ接続、カバン予備は保護。全9人待機を保存、透真は湊と頭身を合わせv2へ。新8人は戦闘未接続。次はPAPER_STAGES_AND_SCREENSの工作舞台とタイトル／合図。詳細はRESUME冒頭を優先。
 
 **2026-10-15の最新状態はRESUME冒頭を優先。** 実装順はIMPLEMENTATION_ORDER.md、共通設定はPAPER_THEATRE_DIRECTION.md。開始／決着／結果／千鶴全身動作と音の試作を実装。paper_theatre_2でBuildAll成功／Edit459/459／Play42/42／Windowsビルド成功。実描画30PNGと試聴WAV5件、フライパン比較12枚を保存。カバン版13原画を削除指示まで保護。次はPAPER_STAGE_EFFECTSの紙効果→工作舞台／縮小→集合タイトル。停止中の透真制作は自動再開しない。原画比較とゲーム採用を混同しない。

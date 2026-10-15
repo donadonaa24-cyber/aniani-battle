@@ -38,6 +38,8 @@ namespace AniBato.Game
         public float CurryWaveScale = 2.5f;
         public Vector2 CurryWaveOffset = new Vector2(1.7f, -0.2f);
         public float DebugLineWidth = 0.035f;
+        public float DebugTraceSeconds = .5f;
+        public float[] PracticeRates = {1,.5f,.25f};
         public bool ScreenShake = true;
         public int MaximumCatchupTicks = 5;
         public float InterpolationDiscontinuityDistance = 5;

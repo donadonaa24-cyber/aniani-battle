@@ -72,7 +72,7 @@ namespace AniBato.Game
                 options.text = "ボタンを押して開演！"; footer.text = "あにバト！！    /    aniani";
             }
             else if (screen == GameScreen.MainMenu)
-            { heading.text = "あにあにバトル！！"; subtitle.text = "モードを選択"; options.rectTransform.sizeDelta = new Vector2(1740, 650); options.text = Choices(flow.MenuIndex, "CPU対戦", "2人対戦", "操作説明", "フレームレート  " + FramePacing.Label, "練習モード", "チュートリアル", "キーコンフィグ", LearningText.DashSetting(input), "終了"); }
+            { heading.text = "あにあにバトル！！"; subtitle.text = "モードを選択"; options.rectTransform.sizeDelta = new Vector2(1740, 730); options.text = Choices(flow.MenuIndex, "CPU対戦", "2人対戦", "操作説明", "フレームレート  " + FramePacing.Label, "練習モード", "チュートリアル", "キーコンフィグ", LearningText.DashSetting(input), "終了", "攻撃判定表示  "+(flow.Runner.DebugBoxes?"ON":"OFF")); }
             else if (screen == GameScreen.CharacterSelect) Characters(flow);
             else if (screen == GameScreen.StageSelect) Stages(flow);
             else if (screen == GameScreen.Pause)
@@ -83,7 +83,7 @@ namespace AniBato.Game
                     "BGM音量  " + Mathf.RoundToInt((flow.Audio ? flow.Audio.BgmVolume : 0) * 100) + "%",
                     "SE音量  " + Mathf.RoundToInt((flow.Audio ? flow.Audio.SeVolume : 0) * 100) + "%",
                     "画面揺れ  " + (flow.ScreenShakeEnabled ? "ON" : "OFF"), "フレームレート  " + FramePacing.Label,
-                    "技表", "練習設定", "キーコンフィグ", "開始ヒント  " + (flow.BasicHintsEnabled ? "ON" : "OFF"), LearningText.DashSetting(input));
+                    "技表", "練習設定", "キーコンフィグ", "開始ヒント  " + (flow.BasicHintsEnabled ? "ON" : "OFF"), LearningText.DashSetting(input),"攻撃判定表示  "+(flow.Runner.DebugBoxes?"ON":"OFF"));
             }
             else if (screen == GameScreen.Result) Result(flow);
             else if (screen == GameScreen.Controls)
@@ -111,7 +111,7 @@ namespace AniBato.Game
                 labels[15] = "この割り当てを初期化"; labels[16] = LearningText.DashSetting(input) + "（両者共通）"; options.rectTransform.sizeDelta = new Vector2(1740, 760); options.text = Choices(flow.MenuIndex, labels);
             }
             else if (screen == GameScreen.PracticeSettings)
-            { heading.text = "練習設定"; subtitle.text = "練習・チュートリアルのみに適用"; options.text = Choices(flow.MenuIndex, "相手  " + new[] { "棒立ち", "ガード", "ジャンプ", "ふつうCPU" }[(int)flow.Practice.Opponent], "ハート固定  " + (flow.Practice.FreezeHearts ? "ON" : "OFF"), "時間固定  " + (flow.Practice.FreezeTimer ? "ON" : "OFF")); }
+            { heading.text = "練習設定"; subtitle.text = "練習中：F5 速度／F6 静止／F7 1コマ進める／F9 判定表示"; options.text = Choices(flow.MenuIndex, "相手  " + new[] { "棒立ち", "ガード", "ジャンプ", "ふつうCPU" }[(int)flow.Practice.Opponent], "ハート固定  " + (flow.Practice.FreezeHearts ? "ON" : "OFF"), "時間固定  " + (flow.Practice.FreezeTimer ? "ON" : "OFF"),"練習で判定表示  "+(flow.Practice.DebugDefault?"ON":"OFF"),"速度  "+flow.Runner.PracticeRateLabel,"静止  "+(flow.Runner.PracticePlaybackPaused?"ON":"OFF"),"1コマ進める（静止中）"); }
             if (screen != GameScreen.Controls) options.fontSize = screen == GameScreen.KeyConfig ? 26 : screen == GameScreen.CommandList || screen == GameScreen.Pause ? 30 : 38;
         }
         private void Characters(GameFlowController flow)

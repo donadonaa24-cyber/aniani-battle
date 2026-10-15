@@ -32,6 +32,17 @@ namespace AniBato.Game
         private readonly FighterAnimationPlayer[] animations = { new FighterAnimationPlayer(), new FighterAnimationPlayer() };
         public AnimationSample Animation(int player) => animations[player].Sample;
         public bool DebugBoxes { get; private set; }
+        public int PracticeRateIndex { get; private set; }
+        public bool PracticePlaybackPaused { get; private set; }
+        public string PracticeRateLabel => PracticeRateIndex==0?"通常":PracticeRateIndex==1?"1/2":"1/4";
+        public void SetDebugBoxes(bool value,bool save=true){DebugBoxes=value;if(save)PlayerPrefs.SetInt("AniBato.DebugBoxes",value?1:0);}
+        public void CyclePracticeRate(){PracticeRateIndex=(PracticeRateIndex+1)%presentation.PracticeRates.Length;clock.Reset();}
+        public void TogglePracticePause(){PracticePlaybackPaused=!PracticePlaybackPaused;clock.Reset();if(Simulation!=null)RenderState.Reset(Simulation);}
+        public bool StepPracticeTick()
+        {
+            if(Practice==null||!PracticePlaybackPaused||Simulation==null||Simulation.Match.IsFinished)return false;
+            AdvanceTick();clock.Reset();RenderState.Reset(Simulation);return true;
+        }
         public bool ManagedByFlow { get; private set; }
         public bool Paused { get; private set; }
         public bool CpuOpponent { get; private set; }
@@ -48,7 +59,7 @@ namespace AniBato.Game
         { presentation = value; RenderState.DiscontinuityDistance = value.InterpolationDiscontinuityDistance; }
         private int MaximumCatchupTicks => presentation ? System.Math.Max(1, presentation.MaximumCatchupTicks) : 5;
         public void SetManagedByFlow() { ManagedByFlow = true; SetPaused(true); }
-        private void Awake() { if (presentation) RenderState.DiscontinuityDistance = presentation.InterpolationDiscontinuityDistance; }
+        private void Awake() { DebugBoxes=PlayerPrefs.GetInt("AniBato.DebugBoxes",0)!=0;if (presentation) RenderState.DiscontinuityDistance = presentation.InterpolationDiscontinuityDistance; }
         public void SetPaused(bool value)
         { Paused = value; suppressInputFrame = Time.frameCount; clock.Reset(); if (Simulation != null) RenderState.Reset(Simulation); if (input) input.Clear(); }
         public void BeginMatch(CharacterData first, CharacterData second, StageData selectedStage, bool cpu, CpuDifficulty difficulty = CpuDifficulty.Normal)
@@ -86,13 +97,20 @@ namespace AniBato.Game
             animations[0].Configure(p1.Animations ? p1.Animations.Timing : AnimationTiming.Default);
             animations[1].Configure(p2.Animations ? p2.Animations.Timing : AnimationTiming.Default);
             finishHoldRemaining = -1;
+            PracticeRateIndex=0;PracticePlaybackPaused=false;
             clock.Reset(); RenderState.Reset(Simulation); input.Clear(); animations[0].Reset(Simulation.P1, Simulation.Match); animations[1].Reset(Simulation.P2, Simulation.Match); MatchRestarted?.Invoke();
         }
         private void Update()
         {
             if (Time.frameCount == suppressInputFrame) { input.Clear(); return; }
             input.Capture();
-            if (input.DebugBoxesPressed) DebugBoxes = !DebugBoxes;
+            if (input.DebugBoxesPressed) SetDebugBoxes(!DebugBoxes);
+            if(Practice!=null)
+            {
+                if(input.PracticeRatePressed)CyclePracticeRate();
+                if(input.PracticePausePressed)TogglePracticePause();
+                if(input.PracticeStepPressed&&PracticePlaybackPaused&&!Paused)StepPracticeTick();
+            }
             if (input.FullscreenPressed) Screen.fullScreen = !Screen.fullScreen;
             if (Paused) { input.Clear(); return; }
             if (Simulation == null) return;
@@ -109,7 +127,7 @@ namespace AniBato.Game
             AdvanceRenderFrame(Time.unscaledDeltaTime);
         }
         public void AdvanceRenderFrame(double elapsedSeconds)
-        { if (!Paused && Simulation != null) clock.Advance(elapsedSeconds, AdvanceTick, MaximumCatchupTicks); }
+        { if (!Paused && Simulation != null) clock.Advance(Practice==null?elapsedSeconds:PracticePlayback.Scale(elapsedSeconds,PracticeRateIndex,PracticePlaybackPaused,presentation.PracticeRates), AdvanceTick, MaximumCatchupTicks); }
         private void AdvanceTick()
         {
             if (Simulation.Match.IsFinished)

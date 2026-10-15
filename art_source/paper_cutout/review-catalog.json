@@ -50,7 +50,8 @@
       "note": "ゲーム接続済み。待機は小さく揺れ、歩きは進行方向へ15度固定。",
       "artReview": "previously_adopted",
       "gameConnected": true,
-      "artNote": "ゲームで採用済みの紙イラスト。待機では少し揺らします。"
+      "artNote": "ゲームで採用済みの紙イラスト。待機では少し揺らします。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_idle_v1.prompt.json"
     },
     {
       "key": "walk",
@@ -60,7 +61,8 @@
       "note": "ゲーム接続済み。待機は小さく揺れ、歩きは進行方向へ15度固定。",
       "artReview": "previously_adopted",
       "gameConnected": true,
-      "artNote": "ゲームで採用済みの紙イラスト。待機では少し揺らします。"
+      "artNote": "ゲームで採用済みの紙イラスト。待機では少し揺らします。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_idle_v1.prompt.json"
     },
     {
       "key": "run",
@@ -70,7 +72,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "走りのポーズ候補。頭と靴の寸法、手の左右を確認待ち。ゲームへの差し替えは未完了です。"
+      "artNote": "走りのポーズ候補。頭と靴の寸法、手の左右を確認待ち。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_run_v3.prompt.json"
     },
     {
       "key": "crouch",
@@ -80,7 +83,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "しゃがみの候補。着地・ジャンプ前のかがみでも共通利用する予定です。"
+      "artNote": "しゃがみの候補。着地・ジャンプ前のかがみでも共通利用する予定です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.prompt.json"
     },
     {
       "key": "guard",
@@ -90,7 +94,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_guard_v1.prompt.json"
     },
     {
       "key": "jump",
@@ -100,7 +105,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_jump_v2.prompt.json"
     },
     {
       "key": "fall",
@@ -110,7 +116,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_fall_v1.prompt.json"
     },
     {
       "key": "dodge",
@@ -120,7 +127,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_dodge_v2.prompt.json"
     },
     {
       "key": "counter",
@@ -130,7 +138,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_counter_v2.prompt.json"
     },
     {
       "key": "counter_success",
@@ -140,7 +149,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_counter_success_v1.prompt.json"
     },
     {
       "key": "hit_light",
@@ -150,7 +160,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_hit_light_v1.prompt.json"
     },
     {
       "key": "hit_heavy",
@@ -160,7 +171,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "痛そうに泣くハート消失時の候補。左右の手と部位寸法を確認待ちです。"
+      "artNote": "痛そうに泣くハート消失時の候補。左右の手と部位寸法を確認待ちです。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_hit_heavy_v2.prompt.json"
     },
     {
       "key": "ko",
@@ -170,7 +182,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_ko_v2.prompt.json"
     },
     {
       "key": "win",
@@ -180,7 +193,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_win_v1.prompt.json"
     },
     {
       "key": "attack1",
@@ -192,7 +206,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_1_anticipation_v2.prompt.json"
     },
     {
       "key": "attack1_impact",
@@ -204,7 +219,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_1_impact_v1.prompt.json"
     },
     {
       "key": "attack2",
@@ -216,7 +232,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_anticipation_v1.prompt.json"
     },
     {
       "key": "attack2_impact",
@@ -228,55 +245,60 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_impact_v2.prompt.json"
     },
     {
       "key": "attack3",
       "title": "通常攻撃3段目_フライパン_予備",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_3_anticipation.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_3_anticipation_v1.prompt.json"
     },
     {
       "key": "attack3_impact",
       "title": "通常攻撃3段目_フライパン_当てる",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_3_impact.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_3_impact_v2.prompt.json"
     },
     {
       "key": "crouch_attack",
       "title": "しゃがみ攻撃_フライパン_予備",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_anticipation_v1.prompt.json"
     },
     {
       "key": "crouch_attack_impact",
       "title": "しゃがみ攻撃_フライパン_当てる",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_3_impact.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_3_impact_v2.prompt.json"
     },
     {
       "key": "back_attack",
@@ -288,7 +310,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_anticipation_v1.prompt.json"
     },
     {
       "key": "back_attack_impact",
@@ -300,7 +323,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_impact_v2.prompt.json"
     },
     {
       "key": "air_neutral",
@@ -312,7 +336,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_1_anticipation_v2.prompt.json"
     },
     {
       "key": "air_neutral_impact",
@@ -324,7 +349,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_1_impact_v1.prompt.json"
     },
     {
       "key": "air_forward",
@@ -336,7 +362,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_1_anticipation_v2.prompt.json"
     },
     {
       "key": "air_forward_impact",
@@ -348,7 +375,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_1_impact_v1.prompt.json"
     },
     {
       "key": "air_back",
@@ -360,7 +388,8 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_anticipation_v1.prompt.json"
     },
     {
       "key": "air_back_impact",
@@ -372,113 +401,124 @@
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_impact_v2.prompt.json"
     },
     {
       "key": "air_up",
       "title": "空中上攻撃_フライパン_予備",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_anticipation_v1.prompt.json"
     },
     {
       "key": "air_up_impact",
       "title": "空中上攻撃_フライパン_当てる",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_impact.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_impact.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_impact_v2.prompt.json"
     },
     {
       "key": "air_down",
       "title": "空中下攻撃_フライパン_予備",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_3_anticipation.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_3_anticipation_v1.prompt.json"
     },
     {
       "key": "air_down_impact",
       "title": "空中下攻撃_フライパン_当てる",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_3_impact.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_3_impact_v2.prompt.json"
     },
     {
       "key": "air_forward_up",
       "title": "空中斜め上攻撃_フライパン_予備",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_anticipation_v1.prompt.json"
     },
     {
       "key": "air_forward_up_impact",
       "title": "空中斜め上攻撃_フライパン_当てる",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_impact.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_impact.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_2_impact_v2.prompt.json"
     },
     {
       "key": "air_forward_down",
       "title": "空中斜め下攻撃_フライパン_予備",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_anticipation.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_3_anticipation.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "anticipation",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_3_anticipation_v1.prompt.json"
     },
     {
       "key": "air_forward_down_impact",
       "title": "空中斜め下攻撃_フライパン_当てる",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_3_impact.png",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_3_impact.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "integrated_art_review_pending",
       "gameConnected": true,
       "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
       "phase": "impact",
-      "version": 1
+      "version": 1,
+      "prompt": "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_3_impact_v2.prompt.json"
     },
     {
       "key": "special_neutral",
       "title": "特殊技・おにぎり",
-      "source": "art_source/paper_cutout/generated/chizuru_paper_special_neutral_v1.png",
+      "source": "art_source/paper_cutout/generated/chizuru_paper_special_neutral_v3.png",
       "category": "adopted",
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "手持ちおにぎりを拡大し、飛翔の紙版と同じ表示幅へ。人物画素は拡縮せず共通枠へ梱包。部位最終審査は残る。",
+      "version": 3,
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_special_neutral_v3.prompt.json"
     },
     {
       "key": "special_side",
@@ -488,7 +528,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "フライパンを左手に持つ修正候補。腕・握り・頭と靴の寸法の確認待ちです。"
+      "artNote": "フライパンを左手に持つ修正候補。腕・握り・頭と靴の寸法の確認待ちです。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_special_side_v4.prompt.json"
     },
     {
       "key": "special_up",
@@ -498,7 +539,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "おたまを奥側の左肩から伸びる左腕に持つ修正候補。手・部位寸法の確認待ちです。"
+      "artNote": "おたまを奥側の左肩から伸びる左腕に持つ修正候補。手・部位寸法の確認待ちです。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_special_up_v3.prompt.json"
     },
     {
       "key": "special_down",
@@ -508,7 +550,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_special_down_v1.prompt.json"
     },
     {
       "key": "ultimate",
@@ -518,7 +561,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "provisional_user_requested_integration",
       "gameConnected": true,
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_ultimate_v1.prompt.json"
     },
     {
       "key": "effect_rice_ball",
@@ -528,7 +572,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "not_applicable",
       "gameConnected": true,
-      "artNote": ""
+      "artNote": "",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_effect_rice_ball_v1.prompt.json"
     },
     {
       "key": "effect_mogu",
@@ -538,7 +583,8 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "not_applicable",
       "gameConnected": true,
-      "artNote": ""
+      "artNote": "",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_effect_mogu_v1.prompt.json"
     },
     {
       "key": "effect_curry_wave",
@@ -548,15 +594,16 @@
       "note": "ユーザー指定でゲームへ先行接続済み。部位サイズと手の最終確認は残ります。 原画の拡縮はしていません。",
       "artReview": "not_applicable",
       "gameConnected": true,
-      "artNote": ""
+      "artNote": "",
+      "prompt": "art_source/paper_cutout/generated/chizuru_paper_effect_curry_wave_v1.prompt.json"
     }
   ],
   "keepPreviousImages": false,
   "runtimeIntegration": {
     "verified": true,
-    "tag": "paper_fryingpan_1",
-    "editPassed": 463,
-    "playPassed": 42,
+    "tag": "paper_sideswing_3",
+    "editPassed": 470,
+    "playPassed": 47,
     "buildAll": true,
     "windowsBuild": true,
     "artApproval": false
