@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "name": "暁",
+  "baseIdle": "art_source/paper_roster_idle/prepared/akatsuki_idle.png",
+  "baseline": 1328,
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "pixelsPerUnit": 532.5893,
+  "referenceBounds": {
+    "width": 1304,
+    "height": 1450,
+    "left": 389,
+    "top": 55,
+    "right": 996,
+    "bottom": 1328,
+    "opaqueHeight": 1274
+  },
+  "integrated": false,
+  "verifiedTag": null,
+  "jobs": [
+    {
+      "pose": "guard",
+      "version": 1,
+      "file": "art_source/paper_roster_core/akatsuki/prompts/guard_v1.json"
+    },
+    {
+      "pose": "crouch",
+      "version": 1,
+      "file": "art_source/paper_roster_core/akatsuki/prompts/crouch_v1.json"
+    },
+    {
+      "pose": "counter",
+      "version": 1,
+      "file": "art_source/paper_roster_core/akatsuki/prompts/counter_v1.json"
+    },
+    {
+      "pose": "win",
+      "version": 1,
+      "file": "art_source/paper_roster_core/akatsuki/prompts/win_v1.json"
+    },
+    {
+      "pose": "lose",
+      "version": 1,
+      "file": "art_source/paper_roster_core/akatsuki/prompts/lose_v1.json"
+    }
+  ],
+  "entries": []
+}

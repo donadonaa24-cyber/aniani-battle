@@ -159,19 +159,19 @@ namespace AniBato.Tests
                     runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
                     Assert.That(runner.Simulation.P1.Grounded, Is.True); Assert.That(runner.Simulation.P1.JumpsUsed, Is.Zero);
                     Assert.That(view.RenderedSample.State, Is.EqualTo(AniBato.Presentation.AnimationState.JumpStartup));
-                    Assert.That(body.sprite, Is.SameAs(data.PaperMotion ? data.PaperMotion.Find(AniBato.Presentation.AnimationState.JumpStartup).Frames[0] : data.Animations.Find("land").Frames[0])); Assert.That(view.UsesAnimationSprites, Is.True);
+                    Assert.That(body.sprite, Is.SameAs(data.PaperMotion && data.PaperMotion.Supports(AniBato.Presentation.AnimationState.JumpStartup) ? data.PaperMotion.Find(AniBato.Presentation.AnimationState.JumpStartup).Frames[0] : data.Animations.Find("land").Frames[0])); Assert.That(view.UsesAnimationSprites, Is.True);
                     if (tick == 0) { yield return ReleaseKeys(keyboard[controller.Bindings.P1.Jump]); controller.Capture(); }
                 }
                 runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
                 Assert.That(runner.Simulation.P1.Grounded, Is.False); Assert.That(runner.Simulation.P1.JumpsUsed, Is.EqualTo(1));
-                Assert.That(body.sprite, Is.SameAs(data.PaperMotion ? data.PaperMotion.Find(AniBato.Presentation.AnimationState.Jump).Frames[0] : data.Animations.Find("jump").Frames[0]));
+                Assert.That(body.sprite, Is.SameAs(data.PaperMotion && data.PaperMotion.Supports(AniBato.Presentation.AnimationState.Jump) ? data.PaperMotion.Find(AniBato.Presentation.AnimationState.Jump).Frames[0] : data.Animations.Find("jump").Frames[0]));
                 Key[] keys = { controller.Bindings.P1.Guard, controller.Bindings.P1.Dodge, controller.Bindings.P1.Dash };
                 string[] clips = { "guard", "dodge", "dash" };
                 for (int action = 0; action < keys.Length; action++)
                 {
                     runner.RestartMatch(); yield return PressKeys(keyboard[keys[action]]); controller.Capture();
                     runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
-                    Assert.That(body.sprite, Is.SameAs(data.PaperMotion ? data.PaperMotion.Find(view.RenderedSample.State).Frames[0] : data.Animations.Find(clips[action]).Frames[0]), data.name + "/" + clips[action]);
+                    Assert.That(body.sprite, Is.SameAs(data.PaperMotion && data.PaperMotion.Supports(view.RenderedSample.State) ? data.PaperMotion.Find(view.RenderedSample.State).Frames[0] : data.Animations.Find(clips[action]).Frames[0]), data.name + "/" + clips[action]);
                     Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one)); Assert.That(view.UsesAnimationSprites, Is.True);
                     yield return ReleaseKeys(keyboard[keys[action]]); controller.Capture();
                 }
@@ -197,7 +197,7 @@ namespace AniBato.Tests
                     runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
                     Assert.That(view.RenderedSample.State, Is.EqualTo(AniBato.Presentation.AnimationState.Move));
                     Assert.That(body.sprite, Is.SameAs(data.PaperMotion ? data.PaperMotion.Sprite : data.Animations.Find("walk").Frames[tick / 4]));
-                    Assert.That(view.UsesPaperSprite, Is.EqualTo(c == 2));
+                    Assert.That(view.UsesPaperSprite, Is.EqualTo(data.PaperMotion && data.PaperMotion.Supports(AniBato.Presentation.AnimationState.Move)));
                     Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one)); Assert.That(view.UsesAnimationSprites, Is.True);
                 }
                 Assert.That(runner.Simulation.P1.Position.X, Is.GreaterThan(start));
@@ -207,7 +207,7 @@ namespace AniBato.Tests
                   {
                       runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
                       Assert.That(view.RenderedSample.State, Is.EqualTo(AniBato.Presentation.AnimationState.Dash));
-                      Assert.That(body.sprite, Is.SameAs(data.PaperMotion ? data.PaperMotion.Find(AniBato.Presentation.AnimationState.Dash).Frames[0] : data.Animations.Find("dash").Frames[(tick / 4) % 8]));
+                      Assert.That(body.sprite, Is.SameAs(data.PaperMotion && data.PaperMotion.Supports(AniBato.Presentation.AnimationState.Dash) ? data.PaperMotion.Find(AniBato.Presentation.AnimationState.Dash).Frames[0] : data.Animations.Find("dash").Frames[(tick / 4) % 8]));
                       Assert.That(runner.Simulation.P1.Grounded, Is.True, "Drawn flight must not change ground dash physics.");
                       Assert.That(body.transform.localScale, Is.EqualTo(Vector3.one));
                   }
@@ -222,7 +222,7 @@ namespace AniBato.Tests
                     Assert.That(view.RenderedSample.State, Is.EqualTo((AniBato.Presentation.AnimationState)((int)AniBato.Presentation.AnimationState.Attack1 + chain)));
                     var clip = data.Animations.Find("attack" + (chain + 1));
                     if (attack.IsActive) activeTicks[chain]++;
-                    if (data.PaperMotion) Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(view.RenderedSample.State).Frame(view.RenderedSample)));
+                    if (data.PaperMotion && data.PaperMotion.Supports(view.RenderedSample.State)) Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(view.RenderedSample.State).Frame(view.RenderedSample)));
                     else if (attack.IsActive) Assert.That(body.sprite, Is.SameAs(clip.Frames[2]));
                     else if (attack.Frame < attack.Definition.StartupFrames) Assert.That(body.sprite, Is.SameAs(clip.Frames[0]).Or.SameAs(clip.Frames[1]));
                     else Assert.That(System.Array.IndexOf(clip.Frames, body.sprite), Is.InRange(3, 5));
@@ -463,7 +463,9 @@ namespace AniBato.Tests
             var players = Object.FindObjectsByType<FighterView>();
             var ren = players.Single(p => p.PlayerIndex == 0);
             Assert.That(ren.UsesAnimationSprites, Is.True);
-            Assert.That(ren.transform.Find("Body").GetComponent<SpriteRenderer>().sprite.name, Does.StartWith("idle_"));
+            var renSprite = ren.transform.Find("Body").GetComponent<SpriteRenderer>().sprite;
+            if (runner.Character(0).PaperMotion) Assert.That(renSprite, Is.SameAs(runner.Character(0).PaperMotion.Sprite));
+            else Assert.That(renSprite.name, Does.StartWith("idle_"));
             Assert.That(ren.transform.Find("Left Ear").GetComponent<SpriteRenderer>().enabled, Is.False, "実スプライトに仮図形の耳が重なっています。");
             var chizuru = players.Single(p => p.PlayerIndex == 1);
             Assert.That(chizuru.transform.Find("Chef Hat").GetComponent<SpriteRenderer>().enabled, Is.False);

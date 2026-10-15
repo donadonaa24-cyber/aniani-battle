@@ -122,7 +122,7 @@ namespace AniBato.Tests
                 foreach(var r in renderers)r.gameObject.layer=31;camera.cullingMask=1<<31;camera.orthographicSize=size;
                 camera.transform.position=new Vector3(origin.X+1,origin.Y+.3f,-10);camera.backgroundColor=new Color(.09f,.12f,.17f);camera.clearFlags=CameraClearFlags.SolidColor;
                 camera.targetTexture=texture;camera.Render();RenderTexture.active=texture;image.ReadPixels(new Rect(0,0,1024,768),0,0);image.Apply();
-                string folder=Path.Combine(Application.dataPath,"../../docs/screenshots/hitbox_review_chizuru");Directory.CreateDirectory(folder);File.WriteAllBytes(Path.Combine(folder,name+".png"),image.EncodeToPNG());
+                string folder=Path.Combine(Application.dataPath,"../../docs/screenshots/hitbox_review_chizuru");Directory.CreateDirectory(folder);CaptureFile.Write(Path.Combine(folder,name+".png"),image.EncodeToPNG());
             }
             finally
             {

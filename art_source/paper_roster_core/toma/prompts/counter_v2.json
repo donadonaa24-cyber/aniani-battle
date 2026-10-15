@@ -1,0 +1,19 @@
+{
+  "key": "toma",
+  "character": "透真",
+  "pose": "counter",
+  "label": "カウンター",
+  "version": 2,
+  "source": "art_source/paper_roster_core/toma/generated/toma_counter_v2.png",
+  "references": [
+    "art_source/paper_roster_core/toma/generated/toma_counter_v1.png",
+    "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象：奥側の左手の親指位置",
+    "待機：容姿と部位実寸"
+  ],
+  "prompt": "入力1の透真カウンター原画を編集。修正対象は画面右端へ伸ばしている本人の左手だけ。今の開いた手は親指の配置が右手になっているので、解剖学的に正しい左手として描き直す。胸が見える3/4で本人の左肩は奥側、その腕が画面右へ伸びている。左手の掌をこちらへ見せ、指先は斜め右上。掌がこちらを向いた左手なので親指の付け根と親指は掌の画面右下側にあり、画面左側には親指を置かない。4本の指と1本の親指、指の付け根と手首のつながりを自然に。胸元の手は右手としてそのまま。入力2は本人の採用待機で顔・衣装・部位寸法の確認用。顔・髪・スーツ・両靴・姿勢・画素寸法・輪郭・全身位置は変えない。全身を反転しない。1189×1323、髪の上y49、靴底1291。透明背景、クリーム白の細く硬い切り抜き縁を左手の外周にも一周。グロー・ぼやけ・紙質・文字・床・影はなし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

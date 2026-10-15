@@ -1,0 +1,413 @@
+{
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "entries": [
+    {
+      "key": "toma",
+      "name": "透真",
+      "pose": "guard",
+      "label": "ガード",
+      "image": "art_source/paper_roster_core/toma/prepared/toma_guard.png",
+      "status": "ゲーム採用",
+      "verifiedTag": "paper_core_toma_4"
+    },
+    {
+      "key": "ren",
+      "name": "蓮",
+      "pose": "guard",
+      "label": "ガード",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "chizuru",
+      "name": "千鶴",
+      "pose": "guard",
+      "label": "ガード",
+      "image": "AniBato/Assets/_Project/Art/Paper/pose_guard_paper_chizuru.png",
+      "status": "既存採用",
+      "verifiedTag": "paper_sideswing_3"
+    },
+    {
+      "key": "minato",
+      "name": "湊",
+      "pose": "guard",
+      "label": "ガード",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "yui",
+      "name": "結衣",
+      "pose": "guard",
+      "label": "ガード",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "akatsuki",
+      "name": "暁",
+      "pose": "guard",
+      "label": "ガード",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "shiro",
+      "name": "シロ",
+      "pose": "guard",
+      "label": "ガード",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "king",
+      "name": "黒獅子王",
+      "pose": "guard",
+      "label": "ガード",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "ryuta",
+      "name": "龍太",
+      "pose": "guard",
+      "label": "ガード",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "toma",
+      "name": "透真",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "image": "art_source/paper_roster_core/toma/prepared/toma_crouch.png",
+      "status": "ゲーム採用",
+      "verifiedTag": "paper_core_toma_4"
+    },
+    {
+      "key": "ren",
+      "name": "蓮",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "chizuru",
+      "name": "千鶴",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "image": "AniBato/Assets/_Project/Art/Paper/pose_crouch_paper_chizuru.png",
+      "status": "既存採用",
+      "verifiedTag": "paper_sideswing_3"
+    },
+    {
+      "key": "minato",
+      "name": "湊",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "yui",
+      "name": "結衣",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "akatsuki",
+      "name": "暁",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "shiro",
+      "name": "シロ",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "king",
+      "name": "黒獅子王",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "ryuta",
+      "name": "龍太",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "toma",
+      "name": "透真",
+      "pose": "counter",
+      "label": "カウンター",
+      "image": "art_source/paper_roster_core/toma/prepared/toma_counter.png",
+      "status": "ゲーム採用",
+      "verifiedTag": "paper_core_toma_4"
+    },
+    {
+      "key": "ren",
+      "name": "蓮",
+      "pose": "counter",
+      "label": "カウンター",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "chizuru",
+      "name": "千鶴",
+      "pose": "counter",
+      "label": "カウンター",
+      "image": "AniBato/Assets/_Project/Art/Paper/pose_counter_paper_chizuru.png",
+      "status": "既存採用",
+      "verifiedTag": "paper_sideswing_3"
+    },
+    {
+      "key": "minato",
+      "name": "湊",
+      "pose": "counter",
+      "label": "カウンター",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "yui",
+      "name": "結衣",
+      "pose": "counter",
+      "label": "カウンター",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "akatsuki",
+      "name": "暁",
+      "pose": "counter",
+      "label": "カウンター",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "shiro",
+      "name": "シロ",
+      "pose": "counter",
+      "label": "カウンター",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "king",
+      "name": "黒獅子王",
+      "pose": "counter",
+      "label": "カウンター",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "ryuta",
+      "name": "龍太",
+      "pose": "counter",
+      "label": "カウンター",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "toma",
+      "name": "透真",
+      "pose": "win",
+      "label": "勝利",
+      "image": "art_source/paper_roster_core/toma/prepared/toma_win.png",
+      "status": "ゲーム採用",
+      "verifiedTag": "paper_core_toma_4"
+    },
+    {
+      "key": "ren",
+      "name": "蓮",
+      "pose": "win",
+      "label": "勝利",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "chizuru",
+      "name": "千鶴",
+      "pose": "win",
+      "label": "勝利",
+      "image": "AniBato/Assets/_Project/Art/Paper/pose_win_paper_chizuru.png",
+      "status": "既存採用",
+      "verifiedTag": "paper_sideswing_3"
+    },
+    {
+      "key": "minato",
+      "name": "湊",
+      "pose": "win",
+      "label": "勝利",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "yui",
+      "name": "結衣",
+      "pose": "win",
+      "label": "勝利",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "akatsuki",
+      "name": "暁",
+      "pose": "win",
+      "label": "勝利",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "shiro",
+      "name": "シロ",
+      "pose": "win",
+      "label": "勝利",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "king",
+      "name": "黒獅子王",
+      "pose": "win",
+      "label": "勝利",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "ryuta",
+      "name": "龍太",
+      "pose": "win",
+      "label": "勝利",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "toma",
+      "name": "透真",
+      "pose": "lose",
+      "label": "敗北",
+      "image": "art_source/paper_roster_core/toma/prepared/toma_lose.png",
+      "status": "ゲーム採用",
+      "verifiedTag": "paper_core_toma_4"
+    },
+    {
+      "key": "ren",
+      "name": "蓮",
+      "pose": "lose",
+      "label": "敗北",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "chizuru",
+      "name": "千鶴",
+      "pose": "lose",
+      "label": "敗北",
+      "image": "AniBato/Assets/_Project/Art/Paper/pose_ko_paper_chizuru.png",
+      "status": "既存採用",
+      "verifiedTag": "paper_sideswing_3"
+    },
+    {
+      "key": "minato",
+      "name": "湊",
+      "pose": "lose",
+      "label": "敗北",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "yui",
+      "name": "結衣",
+      "pose": "lose",
+      "label": "敗北",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "akatsuki",
+      "name": "暁",
+      "pose": "lose",
+      "label": "敗北",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "shiro",
+      "name": "シロ",
+      "pose": "lose",
+      "label": "敗北",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "king",
+      "name": "黒獅子王",
+      "pose": "lose",
+      "label": "敗北",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    },
+    {
+      "key": "ryuta",
+      "name": "龍太",
+      "pose": "lose",
+      "label": "敗北",
+      "image": null,
+      "status": "未生成",
+      "verifiedTag": null
+    }
+  ]
+}

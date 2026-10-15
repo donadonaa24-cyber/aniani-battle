@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-15",
+  "scope": "全9人のガード・しゃがみ・カウンター・勝利・敗北",
+  "order": [
+    "toma",
+    "ren",
+    "minato",
+    "shiro",
+    "yui",
+    "king",
+    "akatsuki",
+    "ryuta"
+  ],
+  "reuse": "chizuru: existing five poses",
+  "current": "ren",
+  "activeVerification": null,
+  "lastCompletedVerification": {
+    "tag": "paper_core_toma_4",
+    "buildAll": "success",
+    "edit": {
+      "passed": 472,
+      "total": 472
+    },
+    "play": {
+      "passed": 48,
+      "total": 48
+    },
+    "windowsBuild": "success",
+    "accepted": true
+  },
+  "verifiedCharacters": [
+    "chizuru",
+    "toma"
+  ],
+  "generatedCandidates": [
+    "ren"
+  ],
+  "remainingNewImages": 30,
+  "revisionPending": [
+    "ren_guard_v2"
+  ],
+  "next": "蓮ガードの靴を待機に合わせて再生成し、5種類を梱包・審査。残り6人30姿勢を順番に制作。最後に7人を接続し実Unity全4工程。"
+}

@@ -1,0 +1,26 @@
+{
+  "key": "ren",
+  "character": "蓮",
+  "pose": "guard",
+  "label": "ガード",
+  "version": 2,
+  "source": "art_source/paper_roster_core/ren/generated/ren_guard_v2.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+  ],
+  "prompt": "入力1は蓮の採用待機1189×1323。編集するのは両腕のガードと少し真剣な表情だけ。頭と犬フードと髪の画素寸法・位置、胴体、腰、両脚、靴の全輪郭と接地位置は入力1から変更しない。特に靴の幅や向きは完全に待機のまま。両肘を曲げ、肉球ミトンを頬の下から胸の前に上げて構えるガード。肉球の手袋を人間の指へ変えない。目と口は隠さない。左右の肩→肘→ミトンが独立した1本の腕としてつながる。クリームの犬フード、茶髪、青緑の目、白クリームの上着と青緑の縁、赤いスカーフとマント、濃いショートパンツ、赤系のスニーカー、肉球と骨の留め飾り、房、尻尾をそのまま維持。右向き3/4、全身一人。脚を踏み広げず、両スニーカーを横から見た長い靴へ変えない。アニメ塗りと細くくっきりしたクリーム白の切り抜き縁。透明背景、ぼかし・グロー・床・影・文字・効果線・別の道具なし。人物の拡大縮小をしない。",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "consultedReferences": [
+    "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+    "docs/art_reference/characters/ren_dog_rook.png"
+  ],
+  "consultedReferenceRoles": [
+    "千鶴：画風と動作の意味のみ",
+    "元作品：容姿のみ。頭身は入力1"
+  ],
+  "reason": "guard v1の近い靴が横に長くなったため、下半身を待機に固定する"
+}

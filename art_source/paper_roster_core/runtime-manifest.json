@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "canvasWidth": 1304,
+  "canvasHeight": 1450,
+  "pixelsPerUnit": 532.5893,
+  "characters": [
+    {
+      "key": "toma",
+      "characterIndex": 0,
+      "name": "透真",
+      "idle": {
+        "prepared": "art_source/paper_roster_idle/prepared/toma_idle.png",
+        "sha256": "bba2647bbe44fb6ab05b5a57f2ca9f6bf74ce05ec3490403ce6bb6f33f8e79ed",
+        "headTopY": 86,
+        "footMinX": 379,
+        "footMaxX": 1050
+      },
+      "poses": [
+        {
+          "key": "guard",
+          "prepared": "art_source/paper_roster_core/toma/prepared/toma_guard.png",
+          "sha256": "026e1b189d4b7656924321629c098a5fa4b0c83c367d4bed5a994f65fd3970a6",
+          "source": "art_source/paper_roster_core/toma/generated/toma_guard_v3.png",
+          "sourceSha256": "4659e02bce59bc3ec4d317a9c256f236d61235b4f2e9feb57c0e46f8b40451c6",
+          "edgeCleaned": "art_source/paper_roster_core/toma/edge_clean/toma_guard.png",
+          "headTopY": 87,
+          "footMinX": 330,
+          "footMaxX": 1091
+        },
+        {
+          "key": "crouch",
+          "prepared": "art_source/paper_roster_core/toma/prepared/toma_crouch.png",
+          "sha256": "02fd2fb250ba8cb21e65e483ce800ddb8d17f3376dbeb1581a768cba5d4483b6",
+          "source": "art_source/paper_roster_core/toma/generated/toma_crouch_v2.png",
+          "sourceSha256": "ee5b464eb556684eae1670ab1b8fd71d26706cecd1589b3afc2446af7f500100",
+          "edgeCleaned": "art_source/paper_roster_core/toma/edge_clean/toma_crouch.png",
+          "headTopY": 351,
+          "footMinX": 359,
+          "footMaxX": 1039
+        },
+        {
+          "key": "counter",
+          "prepared": "art_source/paper_roster_core/toma/prepared/toma_counter.png",
+          "sha256": "2882310b12c191f5835e081070906824de42e2eeab7931fc252b581e7a23c027",
+          "source": "art_source/paper_roster_core/toma/generated/toma_counter_v4.png",
+          "sourceSha256": "7f0c63ff9231f2cb98e46a65e49334b0960880927466a68b006fd2ce83de283a",
+          "edgeCleaned": "art_source/paper_roster_core/toma/edge_clean/toma_counter.png",
+          "headTopY": 60,
+          "footMinX": 287,
+          "footMaxX": 1100
+        },
+        {
+          "key": "win",
+          "prepared": "art_source/paper_roster_core/toma/prepared/toma_win.png",
+          "sha256": "5aad06f801933e575ab08ed03a66763e93ee6d0d739d38838407f2e9ba0083aa",
+          "source": "art_source/paper_roster_core/toma/generated/toma_win_v1.png",
+          "sourceSha256": "5c3fecde3102e5be9dcd76b7ddbf0899613d2199f37a3973b9c0cc9f3b1b1504",
+          "edgeCleaned": "art_source/paper_roster_core/toma/edge_clean/toma_win.png",
+          "headTopY": 86,
+          "footMinX": 379,
+          "footMaxX": 1052
+        },
+        {
+          "key": "lose",
+          "prepared": "art_source/paper_roster_core/toma/prepared/toma_lose.png",
+          "sha256": "5e41438a2885161ae60003006d94739f2566e883abe405bbfc6a7551f85aea2d",
+          "source": "art_source/paper_roster_core/toma/generated/toma_lose_v1.png",
+          "sourceSha256": "90f17ea4fdeba133d23a1dd0f8f05c2c079b7ab4b6f5bddb1f31e8a866a8c630",
+          "edgeCleaned": "art_source/paper_roster_core/toma/edge_clean/toma_lose.png",
+          "headTopY": 83,
+          "footMinX": 377,
+          "footMaxX": 1014
+        }
+      ]
+    }
+  ]
+}

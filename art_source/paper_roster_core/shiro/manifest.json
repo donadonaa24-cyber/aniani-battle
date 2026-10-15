@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "key": "shiro",
+  "name": "シロ",
+  "baseIdle": "art_source/paper_roster_idle/prepared/shiro_idle.png",
+  "baseline": 1328,
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "pixelsPerUnit": 532.5893,
+  "referenceBounds": {
+    "width": 1304,
+    "height": 1450,
+    "left": 155,
+    "top": 214,
+    "right": 1142,
+    "bottom": 1328,
+    "opaqueHeight": 1115
+  },
+  "integrated": false,
+  "verifiedTag": null,
+  "jobs": [
+    {
+      "pose": "guard",
+      "version": 1,
+      "file": "art_source/paper_roster_core/shiro/prompts/guard_v1.json"
+    },
+    {
+      "pose": "crouch",
+      "version": 1,
+      "file": "art_source/paper_roster_core/shiro/prompts/crouch_v1.json"
+    },
+    {
+      "pose": "counter",
+      "version": 1,
+      "file": "art_source/paper_roster_core/shiro/prompts/counter_v1.json"
+    },
+    {
+      "pose": "win",
+      "version": 1,
+      "file": "art_source/paper_roster_core/shiro/prompts/win_v1.json"
+    },
+    {
+      "pose": "lose",
+      "version": 1,
+      "file": "art_source/paper_roster_core/shiro/prompts/lose_v1.json"
+    }
+  ],
+  "entries": []
+}

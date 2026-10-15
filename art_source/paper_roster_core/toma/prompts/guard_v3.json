@@ -1,0 +1,19 @@
+{
+  "key": "toma",
+  "character": "透真",
+  "pose": "guard",
+  "label": "ガード",
+  "version": 3,
+  "source": "art_source/paper_roster_core/toma/generated/toma_guard_v3.png",
+  "references": [
+    "art_source/paper_toma_core/generated/toma_guard_v1.png",
+    "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象：ガードv1の外縁だけ",
+    "待機：硬いクリーム縁と部位実寸の基準"
+  ],
+  "prompt": "Edit image1 (Toma guard v1) ONLY to clean its outer edge. Preserve every body part at the SAME exact pixel position, size and shape. DO NOT redraw face, hair, hands, suit, feet or pose. Image2 is the same character's idle reference, use only to match its crisp cream-white border. Output canvas must stay 1189x1323, with unchanged magnification, head top y53, soles y1292. REMOVE soft halo, feathering, glow and translucent fuzzy fringe OUTSIDE the cream-white cutout line. Make the exterior edge sharp, cream-white line 3-6px, then fully transparent background; at most 1 pixel of clean edge antialiasing. No background. This is edge cleanup of an existing game sprite, NOT new composition, NOT scaling, NOT shrinking. Keep the cream-white outline complete around hair, both hands, sleeves and shoes. Preserve the anatomical guard and all interior artwork.",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

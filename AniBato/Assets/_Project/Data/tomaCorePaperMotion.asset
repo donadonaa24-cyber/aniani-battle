@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3f04ae4ddab5441aaf7819b587e1ea, type: 3}
+  m_Name: tomaCorePaperMotion
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
+  SchemaVersion: 3
+  PerformanceSchemaVersion: 1
+  Performance:
+    StepTicks: 3
+    WinStepTicks: 12
+    AnticipationDegrees: 8
+    StrikeDegrees: 15
+    RecoilDegrees: 14
+    SpinDegrees: 45
+    WinDegrees: 3
+    PullDistance: 0.06
+    StrikeDistance: 0.1
+    RecoilDistance: 0.08
+    WinLift: 0.025
+  Enabled: 1
+  Sprite: {fileID: 21300000, guid: 50c2dc8e9dbfea644860283c951eebee, type: 3}
+  StandingHeight: 2.3320034
+  Motion:
+    IdleDegrees: 0.75
+    WalkDegrees: 5
+    WalkBob: 0.025
+    FootMinX: -0.5125901
+    FootMaxX: 0.7472925
+    IdleFps: 4
+    WalkFps: 8
+  WalkLeanDegrees: 15
+  DashLeanDegrees: 45
+  Poses:
+  - Key: idle
+    States: 0000000001000000i
+    Frames:
+    - {fileID: 21300000, guid: 50c2dc8e9dbfea644860283c951eebee, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    HeadHeight: 2.3320034
+    FootBaseY: 0
+    FootMinX: -0.5125901
+    FootMaxX: 0.7472925
+  - Key: guard
+    States: 0f000000i
+    Frames:
+    - {fileID: 21300000, guid: 7db58939ca450f8449ebdd9a168c02c6, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    HeadHeight: 2.3301258
+    FootBaseY: 0
+    FootMinX: -0.60459346
+    FootMaxX: 0.8242749
+  - Key: crouch
+    States: 180000000500000022000000i
+    Frames:
+    - {fileID: 21300000, guid: c1c027a86e9f0a345804192af6a736f3, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    HeadHeight: 1.8344342
+    FootBaseY: 0
+    FootMinX: -0.55014247
+    FootMaxX: 0.72663873
+  - Key: counter
+    States: 1100000012000000i
+    Frames:
+    - {fileID: 21300000, guid: 6d49dcff9c4eaff4c9ea6d6eed1bf90d, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    HeadHeight: 2.3808215
+    FootBaseY: 0
+    FootMinX: -0.6853311
+    FootMaxX: 0.84117347
+  - Key: win
+    States: 16000000i
+    Frames:
+    - {fileID: 21300000, guid: 95d85284fc60a5f4e8ec6b09f2d43c6e, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    HeadHeight: 2.3320034
+    FootBaseY: 0
+    FootMinX: -0.5125901
+    FootMaxX: 0.7510478
+  - Key: lose
+    States: 1700000015000000i
+    Frames:
+    - {fileID: 21300000, guid: 8e8e9c75fa99431439804afd2f8f6770, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    HeadHeight: 2.3376362
+    FootBaseY: 0
+    FootMinX: -0.5163453
+    FootMaxX: 0.6796982
+  HeavyDamage:
+    Key: 
+    States: 
+    Frames: []
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    HeadHeight: 0
+    FootBaseY: 0
+    FootMinX: 0
+    FootMaxX: 0
+  Bag: {fileID: 0}
+  RiceBall: {fileID: 0}
+  Mogu: {fileID: 0}
+  CurryWave: {fileID: 0}

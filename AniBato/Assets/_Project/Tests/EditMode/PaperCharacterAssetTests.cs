@@ -12,7 +12,7 @@ namespace AniBato.Tests
     public sealed class PaperCharacterAssetTests
     {
         [Test]
-        public void OnlyChizuruUsesPaperAndOriginalBytesAndWorldHeightArePreserved()
+        public void ChizuruOriginalBytesAndWorldHeightArePreservedAlongsideCoreProfiles()
         {
             var chizuru = AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/_Project/Data/Chizuru.asset");
             var motion = chizuru.PaperMotion;
@@ -23,8 +23,14 @@ namespace AniBato.Tests
             Assert.That(motion.Supports(AnimationState.Idle), Is.True); Assert.That(motion.Supports(AnimationState.Move), Is.True);
             foreach (AnimationState state in System.Enum.GetValues(typeof(AnimationState)))
                 Assert.That(motion.Supports(state), Is.True, state.ToString());
-            Assert.That(AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/_Project/Data/Touma.asset").PaperMotion, Is.Null);
-            Assert.That(AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/_Project/Data/Ren.asset").PaperMotion, Is.Null);
+            var core = JsonUtility.FromJson<AniBato.EditorTools.PaperRosterCoreBuilder.Manifest>(File.ReadAllText(AniBato.EditorTools.PaperRosterCoreBuilder.ManifestPath));
+            foreach (var entry in new[] { ("Touma", "toma"), ("Ren", "ren") })
+            {
+                var paper = AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/_Project/Data/" + entry.Item1 + ".asset").PaperMotion;
+                bool connected = System.Array.Exists(core.characters, c => c.key == entry.Item2);
+                if (!connected) Assert.That(paper, Is.Null);
+                else { Assert.That(paper, Is.Not.Null); Assert.That(paper.SchemaVersion, Is.EqualTo(3)); Assert.That(paper.Supports(AnimationState.Guard), Is.True); }
+            }
             const string image = "Assets/_Project/Art/Paper/idle_paper_chizuru.png";
             var importer = (TextureImporter)AssetImporter.GetAtPath(image);
             importer.GetSourceTextureWidthAndHeight(out int width, out int height);

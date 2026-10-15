@@ -317,7 +317,12 @@ namespace AniBato.Tests
             while (!previous.Match.IsFinished) previous.Tick(default, default);
             yield return WaitFor(() => Flow.Screen == GameScreen.Result, "試合終了後にリザルトへ移りませんでした。");
             var pictures = Object.FindObjectsByType<Image>().Where(i => i.name.StartsWith("Selection Picture") && i.enabled).ToArray();
-            Assert.That(pictures.Length, Is.EqualTo(2)); Assert.That(pictures.All(i => i.sprite.name.StartsWith("lose_")), Is.True);
+            Assert.That(pictures.Length, Is.EqualTo(2));
+            for (int player = 0; player < 2; player++)
+            {
+                var character = Flow.Runner.Character(player);
+                AssertResultPose(pictures.Single(i => i.name == "Selection Picture " + player), character, AnimationState.Lose);
+            }
             yield return Tap(keyboard.enterKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Countdown));
             var fresh = Flow.Runner.Simulation;
             Assert.That(fresh, Is.Not.SameAs(previous)); Assert.That(fresh.P1.Hearts, Is.EqualTo(3));
@@ -621,7 +626,7 @@ namespace AniBato.Tests
                 camera.Render(); RenderTexture.active = texture;
                 image.ReadPixels(new Rect(0, 0, 1280, height), 0, 0); image.Apply();
                 string folder = System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath, "../../docs/screenshots/paper_stage_roster_unity"));
-                System.IO.Directory.CreateDirectory(folder); System.IO.File.WriteAllBytes(System.IO.Path.Combine(folder, name + ".png"), image.EncodeToPNG());
+                System.IO.Directory.CreateDirectory(folder); CaptureFile.Write(System.IO.Path.Combine(folder, name + ".png"), image.EncodeToPNG());
             }
             finally
             {
@@ -638,14 +643,22 @@ namespace AniBato.Tests
             Assert.That(Flow.Runner.Simulation.Match.EndReason, Is.EqualTo(MatchEndReason.RingOut));
             yield return WaitFor(() => Flow.Screen == GameScreen.Result, "場外のリザルトが表示されませんでした。");
             var pictures = Object.FindObjectsByType<Image>();
-            Assert.That(pictures.Single(i => i.name == "Selection Picture 0").sprite.name, Does.StartWith("win_"));
-            Assert.That(pictures.Single(i => i.name == "Selection Picture 1").sprite.name, Does.StartWith("lose_"));
+            var winner = Flow.Runner.Character(1); var loser = Flow.Runner.Character(0);
+            AssertResultPose(pictures.Single(i => i.name == "Selection Picture 0"), winner, AnimationState.Win);
+            AssertResultPose(pictures.Single(i => i.name == "Selection Picture 1"), loser, AnimationState.Lose);
             var texts = Object.FindObjectsByType<Text>();
             Assert.That(texts.Single(i => i.name == "Selection Label 0").text, Does.StartWith("WINNER!  P2  透真"));
             Assert.That(texts.Single(i => i.name == "Selection Label 1").text, Does.StartWith("LOSE...  P1  蓮"));
             Assert.That(texts.Single(i => i.name == "Screen Subtitle").text, Does.Contain(Flow.Runner.CurrentStage.DisplayName));
             yield return Tap(keyboard.sKey); yield return Tap(keyboard.sKey); yield return Tap(keyboard.enterKey);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Title)); Assert.That(Flow.Runner.Paused, Is.True);
+        }
+        private static void AssertResultPose(Image picture, CharacterData character, AnimationState state)
+        {
+            if (character.PaperMotion && character.PaperMotion.Supports(state))
+                Assert.That(picture.sprite, Is.SameAs(character.PaperMotion.Find(state).Frame(0)));
+            else
+                Assert.That(character.Animations.Find(state == AnimationState.Win ? "win" : "lose").Frames, Does.Contain(picture.sprite), "旧素材も正しい勝敗クリップのコマを表示する");
         }
     }
 }

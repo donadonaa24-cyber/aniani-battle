@@ -1,5 +1,7 @@
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
+**最新：透真の基本5ポーズ接続、paper_core_toma_4で実Unity全4工程合格（Edit472／Play48、失敗・スキップ0）。** 原画と外縁アルファ整理を区別し、左右14描画を保存。未制作動作は旧素材、全員完成ではない。蓮は5候補を生成したがガードの靴を待機へ合わせて再制作する。以後は残り6人30姿勢を本人単位で生成し、7人の接続をまとめて実Unity確認する。RESUME冒頭とPAPER_ROSTER_CORE_POSES／PAPER_CORE_GENERATION_GUIDEが現在手順。画像保存のWin32 1224対策はCaptureFile、同一内容は再書込みせず、短い再試行後も失敗なら例外にする。千鶴カバン13原画とClaudeの後続2指示書を保持。
+
 **最新完了：paper_sideswing_3、実Unity全4工程合格（Edit470／Play47、失敗・スキップ0）。** 9人一覧・工作舞台／看板、千鶴横振り統一とおにぎり幅、F9判定・残像・練習F5/F6/F7を実装。17技＋3やられの20PNGとHITBOX_REVIEW_CHIZURU.md。45件半減／ゲージ14・10を維持。性能変更となる範囲修正は提案のみ。現在の起動ファイル・未完・再生成手順はRESUME冒頭が正。次の制作指示はPAPER_TOMA_CORE_POSES。PNGの同一再書込みはメモリマップで失敗するためPaperSourcePacking.WriteIfChangedを維持する。
 
 2026-10-15再開後：0bbc2b6で紙舞台・タイトル／合図・9人一覧と6人の共通技試作を保存／push済み（paper_stage_roster_4、実Edit466／Play44／全4工程合格）。最新状況はRESUME冒頭を優先。次工程はPAPER_CHIZURU_SIDESWING_AND_HITBOX_VIEW＋おにぎり寸法。旧指示の上下振り採用ではなく、現在は全通常の横振り統一へ進める。

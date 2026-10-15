@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "key": "yui",
+  "name": "結衣",
+  "baseIdle": "art_source/paper_roster_idle/prepared/yui_idle.png",
+  "baseline": 1328,
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "pixelsPerUnit": 532.5893,
+  "referenceBounds": {
+    "width": 1304,
+    "height": 1450,
+    "left": 135,
+    "top": 102,
+    "right": 1191,
+    "bottom": 1328,
+    "opaqueHeight": 1227
+  },
+  "integrated": false,
+  "verifiedTag": null,
+  "jobs": [
+    {
+      "pose": "guard",
+      "version": 1,
+      "file": "art_source/paper_roster_core/yui/prompts/guard_v1.json"
+    },
+    {
+      "pose": "crouch",
+      "version": 1,
+      "file": "art_source/paper_roster_core/yui/prompts/crouch_v1.json"
+    },
+    {
+      "pose": "counter",
+      "version": 1,
+      "file": "art_source/paper_roster_core/yui/prompts/counter_v1.json"
+    },
+    {
+      "pose": "win",
+      "version": 1,
+      "file": "art_source/paper_roster_core/yui/prompts/win_v1.json"
+    },
+    {
+      "pose": "lose",
+      "version": 1,
+      "file": "art_source/paper_roster_core/yui/prompts/lose_v1.json"
+    }
+  ],
+  "entries": []
+}

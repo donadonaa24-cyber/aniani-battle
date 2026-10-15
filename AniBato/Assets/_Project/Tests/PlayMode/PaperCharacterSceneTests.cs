@@ -126,7 +126,7 @@ namespace AniBato.Tests
             Assert.That(view.RenderedSample.Age, Is.Zero); Assert.That(Angle(body), Is.EqualTo(0).Within(.001));
         }
         [UnityTest]
-        public IEnumerator BothPlayerSlotsUsePaperAndOtherCharactersKeepTheirExistingSprites()
+        public IEnumerator BothPlayerSlotsUsePaperAndUnconvertedActionsKeepTheirExistingSprites()
         {
             var chizuru = runner.Setup.Character(2);
             runner.BeginMatch(chizuru, chizuru, runner.CurrentStage, false);
@@ -135,8 +135,15 @@ namespace AniBato.Tests
             for (int c = 0; c < 2; c++)
             {
                 var other = runner.Setup.Character(c); runner.BeginMatch(other, chizuru, runner.CurrentStage, false); view.RenderFrame();
-                Assert.That(view.UsesPaperSprite, Is.False); Assert.That(body.sprite, Is.SameAs(other.Animations.Find("idle").Frames[0]));
+                bool core = other.PaperMotion && other.PaperMotion.Supports(AnimationState.Idle);
+                Assert.That(view.UsesPaperSprite, Is.EqualTo(core));
+                Assert.That(body.sprite, Is.SameAs(core ? other.PaperMotion.Sprite : other.Animations.Find("idle").Frames[0]));
                 Assert.That(body.transform.localRotation, Is.EqualTo(Quaternion.identity));
+                yield return Key(controller.Bindings.P1.Attack, true); Tick();
+                Assert.That(view.UsesPaperSprite, Is.False, "透真／蓮の通常攻撃はこの段階では旧素材を維持");
+                Assert.That(other.Animations.TrySprite(view.RenderedSample, out Sprite pixel), Is.True);
+                Assert.That(body.sprite, Is.SameAs(pixel));
+                yield return Key(controller.Bindings.P1.Attack, false);
             }
             yield return null;
         }
@@ -248,7 +255,7 @@ namespace AniBato.Tests
                 Assert.That(active, Is.GreaterThan(0)); Assert.That(recovery, Is.GreaterThan(0));
             }
         }
-        private void Capture(string name, bool isolateBody)
+        private void Capture(string name, bool isolateBody, string directoryName = "paper_fryingpan_unity")
         {
             var camera = Camera.main; Assert.That(camera, Is.Not.Null);
             Vector3 position = camera.transform.position; float size = camera.orthographicSize;
@@ -267,8 +274,8 @@ namespace AniBato.Tests
                 }
                 camera.targetTexture = texture; camera.Render(); RenderTexture.active = texture;
                 image.ReadPixels(new Rect(0, 0, width, height), 0, 0); image.Apply();
-                string directory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../docs/screenshots/paper_fryingpan_unity")); Directory.CreateDirectory(directory);
-                File.WriteAllBytes(Path.Combine(directory, name + ".png"), image.EncodeToPNG());
+                string directory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../docs/screenshots/", directoryName)); Directory.CreateDirectory(directory);
+                CaptureFile.Write(Path.Combine(directory, name + ".png"), image.EncodeToPNG());
             }
             finally
             {
