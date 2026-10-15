@@ -1,0 +1,28 @@
+{
+  "key": "akatsuki",
+  "character": "暁",
+  "pose": "crouch",
+  "label": "しゃがみ",
+  "version": 3,
+  "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v3.png",
+  "references": [
+    "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v2.png",
+    "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：しゃがみv2",
+    "部位寸法：採用待機"
+  ],
+  "prompt": "入力1のしゃがみの3箇所だけを修正。入力2は同じキャラの待機で、頭と両靴の大きさの基準。1189×1323の透明画面を維持し、しゃがみの姿勢・胴体・腕・手・両膝・足首・足元の位置は入力1のまま動かさない。①髪と頭を入力2と同じ横幅約338pxへ少し小さく描き直す。現在の頭中心と首の位置を維持。②画面左の手前の黒い革靴だけを横幅約147pxへ細く描き直し、待機の靴と同じ厚みと形にする。③画面右の奥の革靴だけを横幅約236pxへ少し細く描き直す。靴は両方接地、足首につなぐ。人物全体や脚や服を縮小しない、局所的な頭と靴の修正のみ。顔・丸眼鏡・髪型・制服と緑ネクタイのデザイン、しゃがみの意味は維持。薄いクリーム白の細い硬い縁を修正箇所にも同じようにつける。背景・床・影・光彩・にじみ・効果なし。全身一人、余白そのまま。",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "consultedReferences": [
+    "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+    "docs/art_reference/roster_idle/akatsuki.png"
+  ],
+  "consultedReferenceRoles": [
+    "千鶴：画風と動作の意味のみ",
+    "元作品：容姿のみ。頭身は入力1"
+  ],
+  "reason": "v2の頭と靴の幅を待機へ更に寄せる局所編集"
+}

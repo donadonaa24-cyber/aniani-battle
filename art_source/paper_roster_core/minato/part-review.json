@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "basis": "art_source/paper_roster_idle/generated/minato_idle_v1.png",
+  "method": "等倍の頭・髪・義腕・ブーツと共通枠の一覧を目視。下記は外周を読んだ概算で厳密な骨格測定ではない。",
+  "approximateWidths": [
+    {
+      "pose": "idle",
+      "hair": 460,
+      "farBoot": 260,
+      "nearBoot": 200
+    },
+    {
+      "pose": "guard_v1",
+      "hair": 460,
+      "farBoot": 268,
+      "nearBoot": 212
+    },
+    {
+      "pose": "crouch_v1",
+      "hair": 475,
+      "farBoot": 270,
+      "nearBoot": 206
+    },
+    {
+      "pose": "counter_v1",
+      "hair": 465,
+      "farBoot": 265,
+      "nearBoot": 205
+    },
+    {
+      "pose": "win_v1",
+      "hair": 460,
+      "farBoot": 260,
+      "nearBoot": 200
+    },
+    {
+      "pose": "lose_v1",
+      "hair": 450,
+      "farBoot": 260,
+      "nearBoot": 215
+    }
+  ],
+  "anatomy": "全5種で胸側の3/4を維持。画面右の本人左目と左腕だけが機械、画面左の右目と右腕は生身。guardは両腕、counterは左義腕の前腕で払う構えとして区別。指と機械関節の最終審査は確認待ち。",
+  "decision": "概算の頭・靴の幅差は約8%以内。原画を拡縮しない。しゃがみ全高は待機の約80%で、頭と靴を縮めず膝を曲げることを優先。",
+  "canon": "元資料に見えなかった下半身の作業パンツ／ブーツは本作用の仮補完を継承。原作正史の確定ではない。",
+  "selected": [
+    "guard_v1",
+    "crouch_v1",
+    "counter_v1",
+    "win_v1",
+    "lose_v1"
+  ],
+  "unityVerified": true,
+  "verifiedTag": "paper_core_roster_1"
+}

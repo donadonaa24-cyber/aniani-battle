@@ -1,9 +1,10 @@
 // Persist reproducible per-character jobs and copy built-in outputs, never redraw or resize artwork.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),sharp=require('sharp');
 const ROOT='art_source/paper_roster_core',GEN=process.env.PAPER_CORE_IMAGE_DIR||path.join(process.env.USERPROFILE,'.codex/generated_images/01a13044-db10-7cf1-a55e-fb93e3cf7e4d');
-const read=p=>JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,''));
+function fileRetry(action){for(let i=0;;i++){try{return action()}catch(e){if(i===8||!['UNKNOWN','EBUSY','EPERM','EACCES'].includes(e.code))throw e;Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,100)}}}
+const read=p=>JSON.parse(fileRetry(()=>fs.readFileSync(p,'utf8')).replace(/^\uFEFF/,''));
 const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-const write=(p,v)=>{fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n')};
+const write=(p,v)=>{fs.mkdirSync(path.dirname(p),{recursive:true});fileRetry(()=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n'))};
 const labels={guard:'ガード',crouch:'しゃがみ',counter:'カウンター',win:'勝利',lose:'敗北'};
 const poseText={guard:'両肘を曲げ、体と顔の前に左右の拳またはミトンを別々に構え、膝を少し曲げて守る。顔と両目を隠さない。閉じた防御のシルエット。盾・バリアを追加しない。',crouch:'両膝と股関節を深く曲げて腰を低くする。両足は地面に着け、頭・髪・靴・手は待機と同じ画素寸法のまま。全高は待機の約60〜65%。余った上半分は透明な空間として残し、しゃがんだ人物を画面いっぱいに拡大しない。両手は膝と胸の間に自然に構える。',counter:'ガードとは違う受け流しの構え。片方の手を開いて相手方向へ出し、もう片方は胸元へ引く。攻撃を払う直前の鋭い静かな構え。開いた手は親指1本と4本の指、肩・肘・掌のつながりが自然。',win:'待機から大きく姿勢を変えない控えめな勝利の立ち姿。両足を接地したまま、ささやかな笑顔と胸元の小さなガッツポーズ。飛び跳ねない、座らない、大きく腕を頭上に上げない。本人らしい自信を表情で示す。',lose:'立ったままの控えめな敗北の姿。両足を接地したまま肩を落とし、少しうつむき、腕を自然に下げる。悔しそう／無念そうな表情。頭を少し下げるが頭や靴は同じ大きさ。座り込まない、膝を地面につけない、倒れない。'};
 async function bounds(p){const {data,info}=await sharp(p).ensureAlpha().raw().toBuffer({resolveWithObject:true});let l=info.width,t=info.height,r=-1,b=-1;for(let y=0;y<info.height;y++)for(let x=0;x<info.width;x++)if(data[(y*info.width+x)*4+3]>=32){l=Math.min(l,x);t=Math.min(t,y);r=Math.max(r,x);b=Math.max(b,y)}return{width:info.width,height:info.height,left:l,top:t,right:r,bottom:b,opaqueHeight:b-t+1};}
@@ -26,7 +27,11 @@ async function begin(key,pose){const m=read(`${ROOT}/${key}/manifest.json`),j=re
 async function saveRaw(key,pose,source){const file=`${ROOT}/${key}/manifest.json`,m=read(file),job=read(m.jobs.find(j=>j.pose===pose).file);
  const allowed=path.resolve(process.env.USERPROFILE,'.codex/generated_images')+path.sep;
  if(!path.resolve(source).toLowerCase().startsWith(allowed.toLowerCase())||path.extname(source)!=='.png')throw Error('内蔵ツール出力以外の取り込みを拒否');
- fs.mkdirSync(path.dirname(job.source),{recursive:true});if(fs.existsSync(job.source))throw Error('上書き禁止');fs.copyFileSync(source,job.source);const size=await bounds(job.source);m.entries.push({...job,sha256:sha(job.source),native:size,status:'candidate',artApproved:false,gameConnected:false});write(file,m);console.log(JSON.stringify({saved:job.source,native:size,count:m.entries.length}));
+ fs.mkdirSync(path.dirname(job.source),{recursive:true});
+ if(fs.existsSync(job.source)){if(sha(source)!==sha(job.source))throw Error('異なる原画の上書き禁止')}else fileRetry(()=>fs.copyFileSync(source,job.source));
+ const digest=sha(job.source),size=await bounds(job.source),existing=m.entries.find(e=>e.pose===pose&&e.version===job.version);
+ if(existing){if(existing.sha256!==digest)throw Error('保存済み記録と原画SHAが不一致')}else m.entries.push({...job,sha256:digest,native:size,status:'candidate',artApproved:false,gameConnected:false});
+ write(file,m);console.log(JSON.stringify({saved:job.source,native:size,count:m.entries.length}));
 }
 async function capture(){const p=read(`${ROOT}/pending-job.json`),files=fs.readdirSync(GEN).filter(n=>n.endsWith('.png')&&!p.before.includes(n));if(files.length!==1)throw Error('生成元を一意に特定できない: '+files.length);return saveRaw(p.key,p.pose,path.join(GEN,files[0]));}
 async function job(key,pose){const m=read(`${ROOT}/${key}/manifest.json`),j=read(m.jobs.find(x=>x.pose===pose).file);if(fs.existsSync(j.source))throw Error('原画は保存済み: '+j.source);console.log(JSON.stringify(j));}
@@ -46,7 +51,9 @@ async function prepare(key,tag){
   // The task explicitly requests binary alpha at the cutout contour. Keep all RGB and every opaque interior pixel unchanged.
   let alphaChanged=0;for(let i=3;i<data.length;i+=4){const a=data[i],next=a>=128?255:0;if(a!==next){data[i]=next;alphaChanged++;}}
   const clean=`${ROOT}/${key}/edge_clean/${key}_${e.pose}.png`;fs.mkdirSync(path.dirname(clean),{recursive:true});await sharp(data,{raw:{width:info.width,height:info.height,channels:4}}).png().toFile(clean);
-  const b=await bounds(clean),dx=Math.floor((1304-info.width)/2),dy=1328-b.bottom,out=Buffer.alloc(1304*1450*4);let copied=0;
+  const b=await bounds(clean);
+  if(b.left===0||b.top===0||b.right===info.width-1||b.bottom===info.height-1)throw Error('原画端に人物が接しているため切断を要審査: '+e.source);
+  const dx=Math.floor((1304-info.width)/2),dy=1328-b.bottom,out=Buffer.alloc(1304*1450*4);let copied=0;
   for(let y=0;y<info.height;y++)for(let x=0;x<info.width;x++){const i=(y*info.width+x)*4,xx=x+dx,yy=y+dy;if(xx<0||xx>=1304||yy<0||yy>=1450){if(data[i+3]!==0)throw Error('人物を切るため梱包停止: '+e.source);continue;}data.copy(out,(yy*1304+xx)*4,i,i+4);copied++;}
   const p=`${ROOT}/${key}/prepared/${key}_${e.pose}.png`;fs.mkdirSync(path.dirname(p),{recursive:true});await sharp(out,{raw:{width:1304,height:1450,channels:4}}).png().toFile(p);
   const decoded=await sharp(p).ensureAlpha().raw().toBuffer();if(!decoded.equals(out))throw Error('梱包画素不一致');

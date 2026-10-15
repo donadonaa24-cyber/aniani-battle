@@ -1,5 +1,6 @@
 // Review-only layouts: game artwork is never resized in the runtime pipeline.
 const fs=require('node:fs'),sharp=require('sharp');
+function write(file,value){for(let attempt=0;;attempt++){try{fs.writeFileSync(file,value);return}catch(e){if(attempt===8||!['UNKNOWN','EBUSY','EPERM','EACCES'].includes(e.code))throw e;Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,100)}}}
 const root='art_source/paper_roster_core',out='イラスト確認/全9人_基本5ポーズ';
 const labels={guard:'ガード',crouch:'しゃがみ',counter:'カウンター',win:'勝利',lose:'敗北'};
 const names={toma:'透真',ren:'蓮',chizuru:'千鶴',minato:'湊',yui:'結衣',akatsuki:'暁',shiro:'シロ',king:'黒獅子王',ryuta:'龍太'};
@@ -19,7 +20,15 @@ async function main(){fs.mkdirSync(out,{recursive:true});const entries=[];
   const header=['星の終わり','推し駒Battle','Battle à la carte'].map((s,i)=>`<text x="${i*440+220}" y="40" text-anchor="middle">${s}</text>`).join('');
   await sharp({create:{width:1320,height:1620,channels:4,background:'#303748'}}).composite([...pictures,{input:Buffer.from(`<svg width="1320" height="1620"><style>text{font-family:'Yu Gothic',sans-serif;font-size:22px;fill:#fff4d9}.pending{fill:#9298a7;font-size:32px}</style>${header+texts.join('')}</svg>`),left:0,top:0}]).png().toFile(`${out}/${String(Object.keys(labels).indexOf(pose)+1).padStart(2,'0')}_${label}_全9人.png`);
  }
- fs.writeFileSync(root+'/review-index.json',JSON.stringify({canvas:{width:1304,height:1450},entries},null,2)+'\n');
+ // These are actual Unity Camera.Render captures; review layout only, never game artwork.
+ const coreOrder=order.filter(k=>k!=='chizuru'),stateNames={guard:'Guard',crouch:'Crouch',counter:'Counter',win:'Win',lose:'Lose'};
+ const captures=coreOrder.flatMap(key=>Object.entries(stateNames).map(([pose,state])=>({key,pose,file:`docs/screenshots/paper_core_${key}/${state}_1.png`})));
+ if(captures.every(c=>fs.existsSync(c.file))){
+  const pictures=[],titles=[];
+  for(let i=0;i<captures.length;i++){const c=captures[i],x=i%5*256,y=Math.floor(i/5)*284;pictures.push({input:await sharp(c.file).resize(256,256).png().toBuffer(),left:x,top:y+28});titles.push(`<text x="${x+128}" y="${y+22}" text-anchor="middle">${names[c.key]} ${labels[c.pose]}</text>`);}
+  await sharp({create:{width:1280,height:2272,channels:4,background:'#303748'}}).composite([...pictures,{input:Buffer.from(`<svg width="1280" height="2272"><style>text{font-family:'Yu Gothic',sans-serif;font-size:18px;fill:#fff4d9}</style>${titles.join('')}</svg>`),left:0,top:0}]).png().toFile(out+'/06_Unity実描画_新8人.png');
+ }
+ write(root+'/review-index.json',JSON.stringify({canvas:{width:1304,height:1450},entries},null,2)+'\n');
  fs.writeFileSync(out+'/最初に読んでください.txt','5種類それぞれを全9人で並べています。各画像の「未生成」「確認中」「ゲーム採用」「既存採用」を見てください。千鶴は既存5原画を再利用し、敗北は従来の座り込みです。新8人は控えめな立ち姿の勝敗です。個別の等倍画像はイラスト確認/<名前>/基本5ポーズ_ゲーム採用済み/、検証前は基本5ポーズ_確認中/。この一覧は縮小表示の確認用で、ゲーム用原画は縮小していません。手・服・部位の最終承認は別です。\n');
  const generated=entries.filter(e=>e.image).length,verified=entries.filter(e=>e.verifiedTag).length;console.log(JSON.stringify({total:45,preparedOrExisting:generated,unityVerifiedOrExisting:verified,folder:out}));
 }main().catch(e=>{console.error(e.stack);process.exitCode=1});

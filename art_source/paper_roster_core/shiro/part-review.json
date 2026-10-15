@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "basis": "art_source/paper_roster_idle/generated/shiro_idle_v1.png",
+  "method": "原画を等倍・共通枠で比較。耳の回転と足先の投影は外接幅だけで倍率と断定せず、顔・毛・装甲・足首も目視する。",
+  "anatomy": "四肢は常に四本。guard／crouch／win／loseは四足接地、counterは近い前足一本を上げて三足接地。人間の指・二足歩行・余分な脚なし。全ポーズで青い目、琥珀ランプと白銀装甲を保持。",
+  "selection": "guard v1は右前足が原画端で切れていたため不採用、v2で胴体と接地を待機に近づける。crouch v2は足先を待機へ寄せ、全身倍率を変えない。counter v2は足先編集時に全体の倍率まで変わったため不採用、顔・脚の尺度が基準に近いv1を選定。",
+  "partNotes": "待機の近い前足幅は概算160px、遠い前足131px、近い後足143px、遠い後足122px。低姿勢や上げた足の露出・角度による外形の差は残り、完全一致／最終承認とは扱わない。頭と機械装甲のスケールを優先し、人物全体の再サンプルは行わない。",
+  "crouchHeight": "待機の約81%。原画端に触れた候補は梱包前に拒否する検査を追加。",
+  "selected": [
+    "guard_v2",
+    "crouch_v2",
+    "counter_v1",
+    "win_v1",
+    "lose_v1"
+  ],
+  "unityVerified": true,
+  "verifiedTag": "paper_core_roster_1"
+}

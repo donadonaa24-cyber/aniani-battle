@@ -18,8 +18,8 @@
     "bottom": 1328,
     "opaqueHeight": 1255
   },
-  "integrated": false,
-  "verifiedTag": null,
+  "integrated": true,
+  "verifiedTag": "paper_core_roster_1",
   "jobs": [
     {
       "pose": "guard",
@@ -28,8 +28,8 @@
     },
     {
       "pose": "crouch",
-      "version": 1,
-      "file": "art_source/paper_roster_core/ryuta/prompts/crouch_v1.json"
+      "version": 2,
+      "file": "art_source/paper_roster_core/ryuta/prompts/crouch_v2.json"
     },
     {
       "pose": "counter",
@@ -47,5 +47,331 @@
       "file": "art_source/paper_roster_core/ryuta/prompts/lose_v1.json"
     }
   ],
-  "entries": []
+  "entries": [
+    {
+      "key": "ryuta",
+      "character": "龍太",
+      "pose": "guard",
+      "label": "ガード",
+      "version": 1,
+      "source": "art_source/paper_roster_core/ryuta/generated/ryuta_guard_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の龍太の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の縦長透明キャンバス。金髪を後ろへ流し首元で短く結び、赤い目と耳ピアス。黒い詰め襟の制服を開け、白シャツ、緩い赤斜め縞ネクタイ、黒スラックスと黒革靴を維持。今回のポーズ：両肘を曲げ、右拳と左拳を別々に胸と顎の前へ上げた守りの構え。真剣な赤い両目と顔を隠さない。両肩から両肘と手首へ自然につなぐ。胴体・腰・両脚と両靴の輪郭・位置・向きは待機のまま。 胸側が見える右向き3/4、全身一人一姿勢。頭・髪・顔・手と両靴の画素寸法は入力から変えず、全体を画面いっぱいに拡大しない。手は左右一つずつ、親指1本と4指の自然な形。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・影・文字・武器・効果線・光彩・グロー・ぼかしなし。靴先と頭と手は切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+        "docs/art_reference/roster_idle/ryuta.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "0ba78201c73ad4119a80d13938a5af469c5a9d6a76719b375678b19c31b7a7e7",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 349,
+        "top": 33,
+        "right": 960,
+        "bottom": 1291,
+        "opaqueHeight": 1259
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_guard.png",
+      "preparedSha256": "2b515e57aebec4f69b5df0a5fce7a6e055b7fce18b638509c40e646ca63280c4",
+      "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_guard.png",
+      "edgeCleanedSha256": "1a65c9fac338bb5aede2847d190f4d2ff9ff21ed57b986de5d2593259fced4ac",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 411850,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 37,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 71,
+      "footMinX": 406,
+      "footMaxX": 1016,
+      "opaqueHeightRatio": 1.002390438247012
+    },
+    {
+      "key": "ryuta",
+      "character": "龍太",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 1,
+      "source": "art_source/paper_roster_core/ryuta/generated/ryuta_crouch_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の龍太の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の縦長透明キャンバス。金髪を後ろへ流し首元で短く結び、赤い目と耳ピアス。黒い詰め襟の制服を開け、白シャツ、緩い赤斜め縞ネクタイ、黒スラックスと黒革靴を維持。今回のポーズ：深いしゃがみ。両膝と股関節を曲げ腰を低くし、髪の上端をy=350付近へ下げる。靴底は元のy=1290付近、全高約940px。上350pxは透明な余白。頭髪の横幅は約340px、画面左の手前の革靴の幅約150px、画面右の奥の革靴の幅約250pxを維持。膝を折ることで低くし、頭も靴も大きくしない。両足接地、両手は胸と膝の間に自然に構える。 胸側が見える右向き3/4、全身一人一姿勢。頭・髪・顔・手と両靴の画素寸法は入力から変えず、全体を画面いっぱいに拡大しない。手は左右一つずつ、親指1本と4指の自然な形。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・影・文字・武器・効果線・光彩・グロー・ぼかしなし。靴先と頭と手は切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "rejected_head_and_far_shoe_width",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/ryuta.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "c37c4fd509f421caedd6906096785feb12252eccfb472e0578e16f9fab798fe9",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 302,
+        "top": 337,
+        "right": 1021,
+        "bottom": 1283,
+        "opaqueHeight": 947
+      },
+      "artApproved": false,
+      "gameConnected": false
+    },
+    {
+      "key": "ryuta",
+      "character": "龍太",
+      "pose": "counter",
+      "label": "カウンター",
+      "version": 1,
+      "source": "art_source/paper_roster_core/ryuta/generated/ryuta_counter_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の龍太の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の縦長透明キャンバス。金髪を後ろへ流し首元で短く結び、赤い目と耳ピアス。黒い詰め襟の制服を開け、白シャツ、緩い赤斜め縞ネクタイ、黒スラックスと黒革靴を維持。今回のポーズ：受け流し直前。本人右肩は画面左の手前側、その右上腕→曲げた右肘→右前腕→閉じた右拳が自然につながり、右前腕を胸の前へ斜めに構える。画面右の奥側の本人左肘を曲げ、閉じた左拳は腰近くへ引く。右手二つにせず左右の親指の対応を正しくする。掌は開かない。待機の腰以下の輪郭と両靴の向きと接地位置を維持。 胸側が見える右向き3/4、全身一人一姿勢。頭・髪・顔・手と両靴の画素寸法は入力から変えず、全体を画面いっぱいに拡大しない。手は左右一つずつ、親指1本と4指の自然な形。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・影・文字・武器・効果線・光彩・グロー・ぼかしなし。靴先と頭と手は切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+        "docs/art_reference/roster_idle/ryuta.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "c038a6e3931d9623e272c857f6e6cf9cfebc5949e3c209202602f1913454620d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 343,
+        "top": 38,
+        "right": 965,
+        "bottom": 1292,
+        "opaqueHeight": 1255
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_counter.png",
+      "preparedSha256": "78f652da1dc17a5d23a628b885b9309916953f1aee94ad39fa74531989f0afb7",
+      "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_counter.png",
+      "edgeCleanedSha256": "855eb55eb2e803c8c9597500a33efa0ddbf0f79ace41c4f5d038dc2957ef8d90",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 396645,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 37,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 75,
+      "footMinX": 401,
+      "footMaxX": 1022,
+      "opaqueHeightRatio": 0.999203187250996
+    },
+    {
+      "key": "ryuta",
+      "character": "龍太",
+      "pose": "win",
+      "label": "勝利",
+      "version": 1,
+      "source": "art_source/paper_roster_core/ryuta/generated/ryuta_win_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の龍太の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の縦長透明キャンバス。金髪を後ろへ流し首元で短く結び、赤い目と耳ピアス。黒い詰め襟の制服を開け、白シャツ、緩い赤斜め縞ネクタイ、黒スラックスと黒革靴を維持。今回のポーズ：控えめな勝利。少し得意げな小さな笑み、本人右拳を胸の横へ少し上げ、左腕は力を抜いて軽く構える。頭・胴体・腰・両脚と両靴の輪郭・位置・向きは待機のまま。両足接地、跳ばない。 胸側が見える右向き3/4、全身一人一姿勢。頭・髪・顔・手と両靴の画素寸法は入力から変えず、全体を画面いっぱいに拡大しない。手は左右一つずつ、親指1本と4指の自然な形。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・影・文字・武器・効果線・光彩・グロー・ぼかしなし。靴先と頭と手は切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+        "docs/art_reference/roster_idle/ryuta.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "a3616d64dd9b1f19b4a2499c2fd815cad8fcae4c8377ba0b754dd3320b466728",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 326,
+        "top": 32,
+        "right": 957,
+        "bottom": 1293,
+        "opaqueHeight": 1262
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_win.png",
+      "preparedSha256": "4152fdcbe4e4abe11e22c1e225f4e37a3931482bca6c189cb548a01050a526a9",
+      "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_win.png",
+      "edgeCleanedSha256": "86cb312c338883c4a077c9f2a682b4cd62bd0203b652bed5d15d9862a9ca2357",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 407892,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 35,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 67,
+      "footMinX": 403,
+      "footMaxX": 1014,
+      "opaqueHeightRatio": 1.005577689243028
+    },
+    {
+      "key": "ryuta",
+      "character": "龍太",
+      "pose": "lose",
+      "label": "敗北",
+      "version": 1,
+      "source": "art_source/paper_roster_core/ryuta/generated/ryuta_lose_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の龍太の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の縦長透明キャンバス。金髪を後ろへ流し首元で短く結び、赤い目と耳ピアス。黒い詰め襟の制服を開け、白シャツ、緩い赤斜め縞ネクタイ、黒スラックスと黒革靴を維持。今回のポーズ：控えめな敗北。立ったまま肩を少し落としてうつむき、悔しそうな表情、両腕は自然に少し下げる。頭の大きさ、腰以下の輪郭と両靴の向き・接地位置は待機のまま。座らない、膝を地面につけない。 胸側が見える右向き3/4、全身一人一姿勢。頭・髪・顔・手と両靴の画素寸法は入力から変えず、全体を画面いっぱいに拡大しない。手は左右一つずつ、親指1本と4指の自然な形。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・影・文字・武器・効果線・光彩・グロー・ぼかしなし。靴先と頭と手は切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
+        "docs/art_reference/roster_idle/ryuta.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "a848eba76caf56fe832634ffe2fdaccd7ed083f590538d268332e779f7d0afdd",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 351,
+        "top": 32,
+        "right": 938,
+        "bottom": 1291,
+        "opaqueHeight": 1260
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_lose.png",
+      "preparedSha256": "53807366f19fde975fdeaede13988f892ec6c577d61cfc546db0e032b611e3f8",
+      "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_lose.png",
+      "edgeCleanedSha256": "1051663a951f6ede123989d9bfeece4b9292d53c47e8d5abb895719c8c9381bf",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 386858,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 37,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 69,
+      "footMinX": 409,
+      "footMaxX": 995,
+      "opaqueHeightRatio": 1.00398406374502
+    },
+    {
+      "key": "ryuta",
+      "character": "龍太",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 2,
+      "source": "art_source/paper_roster_core/ryuta/generated/ryuta_crouch_v2.png",
+      "references": [
+        "art_source/paper_roster_core/ryuta/generated/ryuta_crouch_v1.png",
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：しゃがみv1",
+        "頭と革靴の画素寸法基準：採用待機"
+      ],
+      "prompt": "入力1の龍太のしゃがみについて頭と両靴の3箇所だけを修正する。入力2は同一人物の採用待機で部位寸法の基準。1189×1323の透明キャンバスを維持。①金髪と頭を横幅約340pxへ少し小さく描き直し、元の中心と首へ自然につなぐ。髪型・赤い目・ピアスを保持。②画面左の手前の黒革靴は幅約150px、③画面右の奥の黒革靴は幅約250pxへ細く描き直す。元の足首位置と両足接地は維持、靴は待機と同じ厚さと形。頭や靴を大きく描き直さない。胴体・腕・手・両膝・制服・赤いネクタイ・しゃがみ姿勢・画面位置は入力1から変えない。全身を縮小しない。薄いクリーム白の細い硬い縁を修正箇所にも一周させる。アニメ塗り、全身1人1姿勢、透明余白はそのまま。背景・床・影・グロー・ぼかし・文字なし。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/ryuta.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "reason": "しゃがみv1の頭と奥側の革靴が大きくなったため局所修正",
+      "sha256": "1d039c7a382c6245b7cecde6cd203720933dfe9caa24ce058a27a4ca754069a1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 306,
+        "top": 339,
+        "right": 997,
+        "bottom": 1245,
+        "opaqueHeight": 907
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_crouch.png",
+      "preparedSha256": "600fbc1647b996ce991a079554a648759b377ed95dfa8e1f1fc84e94b8dea2c5",
+      "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_crouch.png",
+      "edgeCleanedSha256": "56745331a6ad71ceba7d7cabb009356397d767cc83d16bd56ee35616b1e0f8ed",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 365666,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 84,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 424,
+      "footMinX": 374,
+      "footMaxX": 1054,
+      "opaqueHeightRatio": 0.7211155378486056
+    }
+  ]
 }

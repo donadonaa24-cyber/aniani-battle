@@ -18,8 +18,8 @@
     "bottom": 1328,
     "opaqueHeight": 1231
   },
-  "integrated": false,
-  "verifiedTag": null,
+  "integrated": true,
+  "verifiedTag": "paper_core_roster_1",
   "jobs": [
     {
       "pose": "guard",
@@ -47,5 +47,291 @@
       "file": "art_source/paper_roster_core/minato/prompts/lose_v1.json"
     }
   ],
-  "entries": []
+  "entries": [
+    {
+      "key": "minato",
+      "character": "湊",
+      "pose": "guard",
+      "label": "ガード",
+      "version": 1,
+      "source": "art_source/paper_roster_core/minato/generated/minato_guard_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "用途：オリジナルゲーム「あにあにバトル！！」の全身1枚絵スプライト。入力1は湊の採用済み待機で、人物・服装・頭身・頭と靴の画素寸法の厳密な基準兼編集対象。千鶴の同動作と元作品資料は制作前に確認済み。直接入力は同一人物の採用待機1枚だけで、倍率と衣装を固定する。入力1と同じ普通のアニメ塗り、くっきりした濃い輪郭、色面で分けた影。1枚の全身イラスト、関節分割なし。人物設定：若い青年。黒い少し茶色がかった乱れ髪、本人の左目は青く光る機械の目で周囲に黒い細い金属の装置、本人の右目は青緑。白い袖まくりのシャツ、黒い作業ベストとハーネス、本人の左腕だけ黒銀の精巧な義腕。胸側が見える右向き3/4で、左肩／左腕は画面右側。両腕を自然に軽く構え、機械の左手も空いている。右腕は人間の肌。見えていない下半身は本作の仮の補完として、シンプルな濃いチャコールの作業パンツと黒茶の実用ブーツ。約4頭身、透真と近い青年体格。机や工具を持ち込まず待機全身一体。 ただし姿勢は待機でなく下記に変える。 今回の動作：ガード。両肘を曲げ、体と顔の前に左右の拳またはミトンを別々に構え、膝を少し曲げて守る。顔と両目を隠さない。閉じた防御のシルエット。盾・バリアを追加しない。 出力は入力1と同じ採用待機原画と同じ画素寸法。頭・髪・手・靴の大きさは入力1から変えない。背丈と体格を入力1と保つ。接地はy=1328px。人物の上下左右に余白を残し、靴・髪・持ち物を切らない。正面でも真横でもない右向き3/4、両肩・両手・両足が読める。胸側か背中側かを一貫させ、右手を2つ作らない。人間の手は親指1本と4指（ミトン衣装はミトン）。全身外周に入力1と同じ細いクリーム白の切り抜き縁を3〜6px程度でくっきり一周。白い縁の外は完全透明。グロー、ぼかし、にじみ、半透明の光彩を禁止、外周アンチエイリアスは最小1px。背景・床・影・文字・名前・効果線・武器追加・小物追加なし。紙の繊維や折れ目の質感、3D、ピクセルアート、複数ポーズのシートは禁止。 両靴（犬は四足）の形・横幅・厚み・向きは入力1から変えない。足を遠近法で大きくせず、靴を横向きに回して長く見せない。ガードとカウンターと勝敗では入力1の足先の向きと接地位置を極力そのまま、姿勢は上半身と腕で変える。しゃがみは靴の実寸と向きを保って膝を折る。 重要：カメラの向きは入力1のまま。本人左の機械の目と左の黒銀の義腕は画面右側、画面左側の右目と右腕は生身。青い機械の目の小さな光は原画どおりに維持し、切り抜き縁の外側には光彩を付けない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+        "docs/art_reference/roster_idle/minato.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "ede225141bda87aa6d40e4eb1101fefd262cfdc2f5f787653a82c3ba299b39d1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 319,
+        "top": 51,
+        "right": 991,
+        "bottom": 1281,
+        "opaqueHeight": 1231
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/minato/prepared/minato_guard.png",
+      "preparedSha256": "6350f48e675f35749f6356846d17ae97280028e834527834b95904d1458db68a",
+      "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_guard.png",
+      "edgeCleanedSha256": "83b9281fbe75cfe77215795fbaf9c83f11de941cbf9aeba745b2a2f1473d8310",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 476448,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 48,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 100,
+      "footMinX": 376,
+      "footMaxX": 1047,
+      "opaqueHeightRatio": 0.9983753046303818
+    },
+    {
+      "key": "minato",
+      "character": "湊",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 1,
+      "source": "art_source/paper_roster_core/minato/generated/minato_crouch_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "用途：オリジナルゲーム「あにあにバトル！！」の全身1枚絵スプライト。入力1は湊の採用済み待機で、人物・服装・頭身・頭と靴の画素寸法の厳密な基準兼編集対象。千鶴の同動作と元作品資料は制作前に確認済み。直接入力は同一人物の採用待機1枚だけで、倍率と衣装を固定する。入力1と同じ普通のアニメ塗り、くっきりした濃い輪郭、色面で分けた影。1枚の全身イラスト、関節分割なし。人物設定：若い青年。黒い少し茶色がかった乱れ髪、本人の左目は青く光る機械の目で周囲に黒い細い金属の装置、本人の右目は青緑。白い袖まくりのシャツ、黒い作業ベストとハーネス、本人の左腕だけ黒銀の精巧な義腕。胸側が見える右向き3/4で、左肩／左腕は画面右側。両腕を自然に軽く構え、機械の左手も空いている。右腕は人間の肌。見えていない下半身は本作の仮の補完として、シンプルな濃いチャコールの作業パンツと黒茶の実用ブーツ。約4頭身、透真と近い青年体格。机や工具を持ち込まず待機全身一体。 ただし姿勢は待機でなく下記に変える。 今回の動作：しゃがみ。両膝と股関節を深く曲げて腰を低くする。両足は地面に着け、頭・髪・靴・手は待機と同じ画素寸法のまま。全高は待機の約60〜65%。余った上半分は透明な空間として残し、しゃがんだ人物を画面いっぱいに拡大しない。両手は膝と胸の間に自然に構える。 出力は入力1と同じ採用待機原画と同じ画素寸法。頭・髪・手・靴の大きさは入力1から変えない。頭の上を大きく空けること。全高目安776pxで人物を小さく描き直すのでなく膝を折る。接地はy=1328px。人物の上下左右に余白を残し、靴・髪・持ち物を切らない。正面でも真横でもない右向き3/4、両肩・両手・両足が読める。胸側か背中側かを一貫させ、右手を2つ作らない。人間の手は親指1本と4指（ミトン衣装はミトン）。全身外周に入力1と同じ細いクリーム白の切り抜き縁を3〜6px程度でくっきり一周。白い縁の外は完全透明。グロー、ぼかし、にじみ、半透明の光彩を禁止、外周アンチエイリアスは最小1px。背景・床・影・文字・名前・効果線・武器追加・小物追加なし。紙の繊維や折れ目の質感、3D、ピクセルアート、複数ポーズのシートは禁止。 両靴（犬は四足）の形・横幅・厚み・向きは入力1から変えない。足を遠近法で大きくせず、靴を横向きに回して長く見せない。ガードとカウンターと勝敗では入力1の足先の向きと接地位置を極力そのまま、姿勢は上半身と腕で変える。しゃがみは靴の実寸と向きを保って膝を折る。 重要：カメラの向きは入力1のまま。本人左の機械の目と左の黒銀の義腕は画面右側、画面左側の右目と右腕は生身。青い機械の目の小さな光は原画どおりに維持し、切り抜き縁の外側には光彩を付けない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/minato.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "a492a2a01f88ab1f73f5459860d8498ee7fe56104f3cfef2e62aa3098f00fb3d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 300,
+        "top": 295,
+        "right": 1027,
+        "bottom": 1277,
+        "opaqueHeight": 983
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/minato/prepared/minato_crouch.png",
+      "preparedSha256": "c617db59bef8f72c9723d208bf9635e6e5d76fa1c6c47f5497496319a330e257",
+      "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_crouch.png",
+      "edgeCleanedSha256": "74bb57eead624af70ed1542fba7618ce496efaba2a4846135c24e05cff928c65",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 439179,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 52,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 347,
+      "footMinX": 384,
+      "footMaxX": 1019,
+      "opaqueHeightRatio": 0.7977254264825345
+    },
+    {
+      "key": "minato",
+      "character": "湊",
+      "pose": "counter",
+      "label": "カウンター",
+      "version": 1,
+      "source": "art_source/paper_roster_core/minato/generated/minato_counter_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "用途：オリジナルゲーム「あにあにバトル！！」の全身1枚絵スプライト。入力1は湊の採用済み待機で、人物・服装・頭身・頭と靴の画素寸法の厳密な基準兼編集対象。千鶴の同動作と元作品資料は制作前に確認済み。直接入力は同一人物の採用待機1枚だけで、倍率と衣装を固定する。入力1と同じ普通のアニメ塗り、くっきりした濃い輪郭、色面で分けた影。1枚の全身イラスト、関節分割なし。人物設定：若い青年。黒い少し茶色がかった乱れ髪、本人の左目は青く光る機械の目で周囲に黒い細い金属の装置、本人の右目は青緑。白い袖まくりのシャツ、黒い作業ベストとハーネス、本人の左腕だけ黒銀の精巧な義腕。胸側が見える右向き3/4で、左肩／左腕は画面右側。両腕を自然に軽く構え、機械の左手も空いている。右腕は人間の肌。見えていない下半身は本作の仮の補完として、シンプルな濃いチャコールの作業パンツと黒茶の実用ブーツ。約4頭身、透真と近い青年体格。机や工具を持ち込まず待機全身一体。 ただし姿勢は待機でなく下記に変える。 今回の動作：カウンター。ガードと違う前腕で受け流す構え。奥側の本人の左義腕を曲げて少し前へ、拳は閉じて機械の甲と側面を見せ、肘と前腕で払う準備。手前側の生身の右腕は胸元へ引く。左右の肩・肘・手首が各一本の腕として連続。開いた掌は使わず機械の指を自然に握る。 出力は入力1と同じ採用待機原画と同じ画素寸法。頭・髪・手・靴の大きさは入力1から変えない。背丈と体格を入力1と保つ。接地はy=1328px。人物の上下左右に余白を残し、靴・髪・持ち物を切らない。正面でも真横でもない右向き3/4、両肩・両手・両足が読める。胸側か背中側かを一貫させ、右手を2つ作らない。人間の手は親指1本と4指（ミトン衣装はミトン）。全身外周に入力1と同じ細いクリーム白の切り抜き縁を3〜6px程度でくっきり一周。白い縁の外は完全透明。グロー、ぼかし、にじみ、半透明の光彩を禁止、外周アンチエイリアスは最小1px。背景・床・影・文字・名前・効果線・武器追加・小物追加なし。紙の繊維や折れ目の質感、3D、ピクセルアート、複数ポーズのシートは禁止。 両靴（犬は四足）の形・横幅・厚み・向きは入力1から変えない。足を遠近法で大きくせず、靴を横向きに回して長く見せない。ガードとカウンターと勝敗では入力1の足先の向きと接地位置を極力そのまま、姿勢は上半身と腕で変える。しゃがみは靴の実寸と向きを保って膝を折る。 重要：カメラの向きは入力1のまま。本人左の機械の目と左の黒銀の義腕は画面右側、画面左側の右目と右腕は生身。青い機械の目の小さな光は原画どおりに維持し、切り抜き縁の外側には光彩を付けない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+        "docs/art_reference/roster_idle/minato.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "1b6c5e9a05fa85fb35294a121bf7d7a1bd173ff2233efec22ff1343dc2c0fc5e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 333,
+        "top": 51,
+        "right": 1012,
+        "bottom": 1281,
+        "opaqueHeight": 1231
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/minato/prepared/minato_counter.png",
+      "preparedSha256": "47d85bab5e31a41a7619b346581488b8871de917bf49441618553e0642d9666c",
+      "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_counter.png",
+      "edgeCleanedSha256": "cdc60b369fc19a4dba36d2341eb15382d7a3da457510cff87c9c3ede71ae1851",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 489737,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 47,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 99,
+      "footMinX": 391,
+      "footMaxX": 1038,
+      "opaqueHeightRatio": 0.9991876523151909
+    },
+    {
+      "key": "minato",
+      "character": "湊",
+      "pose": "win",
+      "label": "勝利",
+      "version": 1,
+      "source": "art_source/paper_roster_core/minato/generated/minato_win_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "用途：オリジナルゲーム「あにあにバトル！！」の全身1枚絵スプライト。入力1は湊の採用済み待機で、人物・服装・頭身・頭と靴の画素寸法の厳密な基準兼編集対象。千鶴の同動作と元作品資料は制作前に確認済み。直接入力は同一人物の採用待機1枚だけで、倍率と衣装を固定する。入力1と同じ普通のアニメ塗り、くっきりした濃い輪郭、色面で分けた影。1枚の全身イラスト、関節分割なし。人物設定：若い青年。黒い少し茶色がかった乱れ髪、本人の左目は青く光る機械の目で周囲に黒い細い金属の装置、本人の右目は青緑。白い袖まくりのシャツ、黒い作業ベストとハーネス、本人の左腕だけ黒銀の精巧な義腕。胸側が見える右向き3/4で、左肩／左腕は画面右側。両腕を自然に軽く構え、機械の左手も空いている。右腕は人間の肌。見えていない下半身は本作の仮の補完として、シンプルな濃いチャコールの作業パンツと黒茶の実用ブーツ。約4頭身、透真と近い青年体格。机や工具を持ち込まず待機全身一体。 ただし姿勢は待機でなく下記に変える。 今回の動作：勝利。待機から大きく姿勢を変えない控えめな勝利の立ち姿。両足を接地したまま、ささやかな笑顔と胸元の小さなガッツポーズ。飛び跳ねない、座らない、大きく腕を頭上に上げない。本人らしい自信を表情で示す。 出力は入力1と同じ採用待機原画と同じ画素寸法。頭・髪・手・靴の大きさは入力1から変えない。背丈と体格を入力1と保つ。接地はy=1328px。人物の上下左右に余白を残し、靴・髪・持ち物を切らない。正面でも真横でもない右向き3/4、両肩・両手・両足が読める。胸側か背中側かを一貫させ、右手を2つ作らない。人間の手は親指1本と4指（ミトン衣装はミトン）。全身外周に入力1と同じ細いクリーム白の切り抜き縁を3〜6px程度でくっきり一周。白い縁の外は完全透明。グロー、ぼかし、にじみ、半透明の光彩を禁止、外周アンチエイリアスは最小1px。背景・床・影・文字・名前・効果線・武器追加・小物追加なし。紙の繊維や折れ目の質感、3D、ピクセルアート、複数ポーズのシートは禁止。 両靴（犬は四足）の形・横幅・厚み・向きは入力1から変えない。足を遠近法で大きくせず、靴を横向きに回して長く見せない。ガードとカウンターと勝敗では入力1の足先の向きと接地位置を極力そのまま、姿勢は上半身と腕で変える。しゃがみは靴の実寸と向きを保って膝を折る。 重要：カメラの向きは入力1のまま。本人左の機械の目と左の黒銀の義腕は画面右側、画面左側の右目と右腕は生身。青い機械の目の小さな光は原画どおりに維持し、切り抜き縁の外側には光彩を付けない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+        "docs/art_reference/roster_idle/minato.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "111c7cbf0802a70fca9d6b7b53edacb3616cdb0ec9163ba93c2ed600d0a35a15",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 336,
+        "top": 48,
+        "right": 961,
+        "bottom": 1283,
+        "opaqueHeight": 1236
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/minato/prepared/minato_win.png",
+      "preparedSha256": "93b27c3786ebaf92a769a0becc0aac55acb6b9ff1aba1a4d4159cd3ea095a153",
+      "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_win.png",
+      "edgeCleanedSha256": "9f5ee69636001c79b1b755bcf2f6b5865b08e40bcd308caa9a21ccc6b62e4c5c",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 477063,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 46,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 95,
+      "footMinX": 393,
+      "footMaxX": 1015,
+      "opaqueHeightRatio": 1.0024370430544274
+    },
+    {
+      "key": "minato",
+      "character": "湊",
+      "pose": "lose",
+      "label": "敗北",
+      "version": 1,
+      "source": "art_source/paper_roster_core/minato/generated/minato_lose_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "用途：オリジナルゲーム「あにあにバトル！！」の全身1枚絵スプライト。入力1は湊の採用済み待機で、人物・服装・頭身・頭と靴の画素寸法の厳密な基準兼編集対象。千鶴の同動作と元作品資料は制作前に確認済み。直接入力は同一人物の採用待機1枚だけで、倍率と衣装を固定する。入力1と同じ普通のアニメ塗り、くっきりした濃い輪郭、色面で分けた影。1枚の全身イラスト、関節分割なし。人物設定：若い青年。黒い少し茶色がかった乱れ髪、本人の左目は青く光る機械の目で周囲に黒い細い金属の装置、本人の右目は青緑。白い袖まくりのシャツ、黒い作業ベストとハーネス、本人の左腕だけ黒銀の精巧な義腕。胸側が見える右向き3/4で、左肩／左腕は画面右側。両腕を自然に軽く構え、機械の左手も空いている。右腕は人間の肌。見えていない下半身は本作の仮の補完として、シンプルな濃いチャコールの作業パンツと黒茶の実用ブーツ。約4頭身、透真と近い青年体格。机や工具を持ち込まず待機全身一体。 ただし姿勢は待機でなく下記に変える。 今回の動作：敗北。立ったままの控えめな敗北の姿。両足を接地したまま肩を落とし、少しうつむき、腕を自然に下げる。悔しそう／無念そうな表情。頭を少し下げるが頭や靴は同じ大きさ。座り込まない、膝を地面につけない、倒れない。 出力は入力1と同じ採用待機原画と同じ画素寸法。頭・髪・手・靴の大きさは入力1から変えない。背丈と体格を入力1と保つ。接地はy=1328px。人物の上下左右に余白を残し、靴・髪・持ち物を切らない。正面でも真横でもない右向き3/4、両肩・両手・両足が読める。胸側か背中側かを一貫させ、右手を2つ作らない。人間の手は親指1本と4指（ミトン衣装はミトン）。全身外周に入力1と同じ細いクリーム白の切り抜き縁を3〜6px程度でくっきり一周。白い縁の外は完全透明。グロー、ぼかし、にじみ、半透明の光彩を禁止、外周アンチエイリアスは最小1px。背景・床・影・文字・名前・効果線・武器追加・小物追加なし。紙の繊維や折れ目の質感、3D、ピクセルアート、複数ポーズのシートは禁止。 両靴（犬は四足）の形・横幅・厚み・向きは入力1から変えない。足を遠近法で大きくせず、靴を横向きに回して長く見せない。ガードとカウンターと勝敗では入力1の足先の向きと接地位置を極力そのまま、姿勢は上半身と腕で変える。しゃがみは靴の実寸と向きを保って膝を折る。 重要：カメラの向きは入力1のまま。本人左の機械の目と左の黒銀の義腕は画面右側、画面左側の右目と右腕は生身。青い機械の目の小さな光は原画どおりに維持し、切り抜き縁の外側には光彩を付けない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
+        "docs/art_reference/roster_idle/minato.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "9d9b8d7e64e033ad8b892585ad0b50469829e642ddcf6df6ce4e5de322acbba9",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 314,
+        "top": 32,
+        "right": 903,
+        "bottom": 1261,
+        "opaqueHeight": 1230
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/minato/prepared/minato_lose.png",
+      "preparedSha256": "2a8583fa14425e1090f92317f5526057a4dd968dba1c701796bc83627339403f",
+      "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_lose.png",
+      "edgeCleanedSha256": "719a275dc5925629727dd5de02c6cf59aaa8ca45aa1ff621f55dd844df9c923e",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 444223,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 68,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 100,
+      "footMinX": 372,
+      "footMaxX": 959,
+      "opaqueHeightRatio": 0.9983753046303818
+    }
+  ]
 }

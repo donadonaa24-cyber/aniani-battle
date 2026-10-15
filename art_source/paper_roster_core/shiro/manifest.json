@@ -18,18 +18,18 @@
     "bottom": 1328,
     "opaqueHeight": 1115
   },
-  "integrated": false,
-  "verifiedTag": null,
+  "integrated": true,
+  "verifiedTag": "paper_core_roster_1",
   "jobs": [
     {
       "pose": "guard",
-      "version": 1,
-      "file": "art_source/paper_roster_core/shiro/prompts/guard_v1.json"
+      "version": 2,
+      "file": "art_source/paper_roster_core/shiro/prompts/guard_v2.json"
     },
     {
       "pose": "crouch",
-      "version": 1,
-      "file": "art_source/paper_roster_core/shiro/prompts/crouch_v1.json"
+      "version": 2,
+      "file": "art_source/paper_roster_core/shiro/prompts/crouch_v2.json"
     },
     {
       "pose": "counter",
@@ -47,5 +47,409 @@
       "file": "art_source/paper_roster_core/shiro/prompts/lose_v1.json"
     }
   ],
-  "entries": []
+  "entries": [
+    {
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "guard",
+      "label": "ガード",
+      "version": 1,
+      "source": "art_source/paper_roster_core/shiro/generated/shiro_guard_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」のシロの全身1枚絵。入力1は採用済みの白い犬型AIの待機原画で、容姿・頭と耳・足先・機械装甲の実寸の基準兼編集対象。白い毛、大きな立ち耳、青い両目、黒い鼻、黒銀の首輪と小さい琥珀ランプ、四本の白銀メカ脚、白い尻尾を完全に維持。普通のアニメ塗りと濃い線、紙の質感を付けない。必ず四足の犬の骨格のまま、二足の獣人や人間へ変えない。今回の動作：四足のまま身を守る構え。四本の足をすべて接地したまま少し踏ん張り、肩と頭を少し低くし、首元を守るように顎を引く。青い目で前を警戒。耳は少し後ろへ向けてよい。前足を両方上げない。 右向き斜め3/4は入力1と同じ。頭・耳・毛のかたまり・四つの足先の画素寸法を変えない。姿勢が低くても人物を画面に合わせて拡大しない。四肢の肩・肘・足首の所属を読み取れるようにし、脚を増やしたり消したりしない。入力1と同じ1189×1323pxの縦キャンバス、足先は下部の同じ接地線付近、完全な透明背景。上の透明余白は必要。尻尾・耳先・四つの足先を切らず全身一頭のみ。外周に細く硬いクリーム白の切り抜き縁を一周。外周のグロー・ぼやけ・落ち影・床・背景・文字・効果線・武器を追加しない。小さい装甲ランプだけは原画どおり。全身1枚で関節分割なし。",
+      "tool": "built-in image_gen",
+      "status": "rejected_native_canvas_clipped_front_paw",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+        "docs/art_reference/roster_idle/shiro.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "523dbfc962c1dd95fae3a234da39582db5be19c444d33f5accaae59d6c83b9a8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 41,
+        "top": 329,
+        "right": 1188,
+        "bottom": 1257,
+        "opaqueHeight": 929
+      },
+      "artApproved": false,
+      "gameConnected": false
+    },
+    {
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "guard",
+      "label": "ガード",
+      "version": 2,
+      "source": "art_source/paper_roster_core/shiro/generated/shiro_guard_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1のシロの採用待機を、目と耳の表情だけを主に変えた控えめなガードへ編集。白い四足の犬型AI、白毛、青い目、黒い鼻、黒銀の首輪と琥珀ランプ、白銀の機械の四脚、尻尾。頭と耳と足先の実寸を固定。胴体・尻尾・四本の脚と四つの足先の輪郭と位置は、入力1から変更しない。足を大きく開かない、全身を横に広げない。頭の位置と大きさも入力1を保ち、顎をほんの少し引き、耳を少し後ろへ向け、青い目を警戒して細める。口は小さく閉じ、首を守る雰囲気。背中と脚を低く折ったり新たな胴体ポーズにしない。四つの足が接地した四足のまま。入力1と同じ1189×1323で、全身の横幅は元の約990px、最も右の足先と右端との透明余白約100pxをそのまま保つ。四つの足先を絶対に切らない。カメラ角度は元の右向き3/4、真横へ変えない。同じアニメ塗り、細くくっきりしたクリーム白縁を全外周へ。透明背景、床・影・文字・人間の手や腕・二足立ち・グロー・ぼかしなし。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+        "docs/art_reference/roster_idle/shiro.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "reason": "v1は右前足が原画端で切れ、胴体の幅も広がったため不採用",
+      "sha256": "a156f1220a0b75b81003dc5cdda52fbcd074613dbe1809bb99693be8f05262d7",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 96,
+        "top": 203,
+        "right": 1086,
+        "bottom": 1262,
+        "opaqueHeight": 1060
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_guard.png",
+      "preparedSha256": "2375962ed519e439ddcc506319a5897d1d2c33b2b6f5d5519383b7dfb60cb76f",
+      "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_guard.png",
+      "edgeCleanedSha256": "71eaa625c1e9a18f2649e63d4f008066cef35cfdf69bb1debfe9204b8edbcf35",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 562976,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 67,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 271,
+      "footMinX": 255,
+      "footMaxX": 1142,
+      "opaqueHeightRatio": 0.9488789237668162
+    },
+    {
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 1,
+      "source": "art_source/paper_roster_core/shiro/generated/shiro_crouch_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」のシロの全身1枚絵。入力1は採用済みの白い犬型AIの待機原画で、容姿・頭と耳・足先・機械装甲の実寸の基準兼編集対象。白い毛、大きな立ち耳、青い両目、黒い鼻、黒銀の首輪と小さい琥珀ランプ、四本の白銀メカ脚、白い尻尾を完全に維持。普通のアニメ塗りと濃い線、紙の質感を付けない。必ず四足の犬の骨格のまま、二足の獣人や人間へ変えない。今回の動作：四本の脚の肘・膝と股関節を曲げ、腹と肩を地面近くまで低くする。前後の両方の脚を折り、犬の低い伏せ構えに近いしゃがみ。ただし胸と腹は少し浮かせ、四つの足先を接地して見せる。頭と耳と足先は待機と同じ大きさで、耳先まで全高は待機の約75%。上に大きく透明余白を残す。頭だけ拡大しない。 右向き斜め3/4は入力1と同じ。頭・耳・毛のかたまり・四つの足先の画素寸法を変えない。姿勢が低くても人物を画面に合わせて拡大しない。四肢の肩・肘・足首の所属を読み取れるようにし、脚を増やしたり消したりしない。入力1と同じ1189×1323pxの縦キャンバス、足先は下部の同じ接地線付近、完全な透明背景。上の透明余白は必要。尻尾・耳先・四つの足先を切らず全身一頭のみ。外周に細く硬いクリーム白の切り抜き縁を一周。外周のグロー・ぼやけ・落ち影・床・背景・文字・効果線・武器を追加しない。小さい装甲ランプだけは原画どおり。全身1枚で関節分割なし。 カメラ角度と全身の横幅約990pxは入力1のまま。四つの足先と右端の間に約90px以上の余白を残し、脚を前後に大きく開かない。頭と耳・足先を拡大して画面いっぱいにしない。",
+      "tool": "built-in image_gen",
+      "status": "superseded_paw_size_review",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/shiro.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "1f04bbf152a4f7fc81ffd1ddc06b16ff37b1e2e45e97b96ec3df30db11065e58",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 60,
+        "top": 370,
+        "right": 1164,
+        "bottom": 1263,
+        "opaqueHeight": 894
+      },
+      "artApproved": false,
+      "gameConnected": false
+    },
+    {
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "counter",
+      "label": "カウンター",
+      "version": 1,
+      "source": "art_source/paper_roster_core/shiro/generated/shiro_counter_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」のシロの全身1枚絵。入力1は採用済みの白い犬型AIの待機原画で、容姿・頭と耳・足先・機械装甲の実寸の基準兼編集対象。白い毛、大きな立ち耳、青い両目、黒い鼻、黒銀の首輪と小さい琥珀ランプ、四本の白銀メカ脚、白い尻尾を完全に維持。普通のアニメ塗りと濃い線、紙の質感を付けない。必ず四足の犬の骨格のまま、二足の獣人や人間へ変えない。今回の動作：カメラに近い前足一本だけを胸の前へ少し上げ、機械の前腕と肉球側で相手の攻撃を払う直前の構え。他の三本の脚は接地する。上げた前足を長いパンチのように伸ばさず、少し曲げたまま構える。四肢は計四本で、腕や人間の手を追加しない。青い目は鋭く前へ向ける。 右向き斜め3/4は入力1と同じ。頭・耳・毛のかたまり・四つの足先の画素寸法を変えない。姿勢が低くても人物を画面に合わせて拡大しない。四肢の肩・肘・足首の所属を読み取れるようにし、脚を増やしたり消したりしない。入力1と同じ1189×1323pxの縦キャンバス、足先は下部の同じ接地線付近、完全な透明背景。上の透明余白は必要。尻尾・耳先・四つの足先を切らず全身一頭のみ。外周に細く硬いクリーム白の切り抜き縁を一周。外周のグロー・ぼやけ・落ち影・床・背景・文字・効果線・武器を追加しない。小さい装甲ランプだけは原画どおり。全身1枚で関節分割なし。 カメラ角度と全身の横幅約990pxは入力1のまま。四つの足先と右端の間に約90px以上の余白を残し、脚を前後に大きく開かない。頭と耳・足先を拡大して画面いっぱいにしない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+        "docs/art_reference/roster_idle/shiro.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "b941f18d23ad3dba58845748357dd6d7e85cf3325ada21912beef051f4d084e0",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 82,
+        "top": 142,
+        "right": 1118,
+        "bottom": 1248,
+        "opaqueHeight": 1107
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_counter.png",
+      "preparedSha256": "e4368c12410a15ea3cfcba10f35b5463f6060f86be7dacc63fe96f112a30e672",
+      "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_counter.png",
+      "edgeCleanedSha256": "da8dd428717fadea5b5e41da63cd7a60b50acf333978db2151a16e2af9728bde",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 577076,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 80,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 223,
+      "footMinX": 252,
+      "footMaxX": 1174,
+      "opaqueHeightRatio": 0.9919282511210762
+    },
+    {
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "win",
+      "label": "勝利",
+      "version": 1,
+      "source": "art_source/paper_roster_core/shiro/generated/shiro_win_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」のシロの全身1枚絵。入力1は採用済みの白い犬型AIの待機原画で、容姿・頭と耳・足先・機械装甲の実寸の基準兼編集対象。白い毛、大きな立ち耳、青い両目、黒い鼻、黒銀の首輪と小さい琥珀ランプ、四本の白銀メカ脚、白い尻尾を完全に維持。普通のアニメ塗りと濃い線、紙の質感を付けない。必ず四足の犬の骨格のまま、二足の獣人や人間へ変えない。今回の動作：四本の足で立ったままの控えめな勝利。待機の胴体・足の位置を保ち、耳を少し立て、口元を小さく笑顔にして、尻尾を少し上げる。飛び跳ねない、後ろ足だけで立たない、座らない。 右向き斜め3/4は入力1と同じ。頭・耳・毛のかたまり・四つの足先の画素寸法を変えない。姿勢が低くても人物を画面に合わせて拡大しない。四肢の肩・肘・足首の所属を読み取れるようにし、脚を増やしたり消したりしない。入力1と同じ1189×1323pxの縦キャンバス、足先は下部の同じ接地線付近、完全な透明背景。上の透明余白は必要。尻尾・耳先・四つの足先を切らず全身一頭のみ。外周に細く硬いクリーム白の切り抜き縁を一周。外周のグロー・ぼやけ・落ち影・床・背景・文字・効果線・武器を追加しない。小さい装甲ランプだけは原画どおり。全身1枚で関節分割なし。 カメラ角度と全身の横幅約990pxは入力1のまま。四つの足先と右端の間に約90px以上の余白を残し、脚を前後に大きく開かない。頭と耳・足先を拡大して画面いっぱいにしない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+        "docs/art_reference/roster_idle/shiro.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "6e924e152f7800a0bf1b195c4920983f213683f7cd098923c8659b40688e55d7",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 96,
+        "top": 136,
+        "right": 1109,
+        "bottom": 1262,
+        "opaqueHeight": 1127
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_win.png",
+      "preparedSha256": "c50f09c2d83d999e1109dc79e7e39a142ea121a090ca75e1369d31be211d97e0",
+      "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_win.png",
+      "edgeCleanedSha256": "163aee5c9e4b49f97b26e4a2c8864d419c6e8a61b5535e68392afb4f82b051bf",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 590918,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 66,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 203,
+      "footMinX": 268,
+      "footMaxX": 1165,
+      "opaqueHeightRatio": 1.0098654708520178
+    },
+    {
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "lose",
+      "label": "敗北",
+      "version": 1,
+      "source": "art_source/paper_roster_core/shiro/generated/shiro_lose_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」のシロの全身1枚絵。入力1は採用済みの白い犬型AIの待機原画で、容姿・頭と耳・足先・機械装甲の実寸の基準兼編集対象。白い毛、大きな立ち耳、青い両目、黒い鼻、黒銀の首輪と小さい琥珀ランプ、四本の白銀メカ脚、白い尻尾を完全に維持。普通のアニメ塗りと濃い線、紙の質感を付けない。必ず四足の犬の骨格のまま、二足の獣人や人間へ変えない。今回の動作：四足で立ったままの控えめな敗北。四本の足を接地したまま、首と頭を下げ、耳と尻尾をしょんぼり下げる。青い目は伏し目で少し悲しそう。倒れない、座り込まない、人間のポーズにしない。 右向き斜め3/4は入力1と同じ。頭・耳・毛のかたまり・四つの足先の画素寸法を変えない。姿勢が低くても人物を画面に合わせて拡大しない。四肢の肩・肘・足首の所属を読み取れるようにし、脚を増やしたり消したりしない。入力1と同じ1189×1323pxの縦キャンバス、足先は下部の同じ接地線付近、完全な透明背景。上の透明余白は必要。尻尾・耳先・四つの足先を切らず全身一頭のみ。外周に細く硬いクリーム白の切り抜き縁を一周。外周のグロー・ぼやけ・落ち影・床・背景・文字・効果線・武器を追加しない。小さい装甲ランプだけは原画どおり。全身1枚で関節分割なし。 カメラ角度と全身の横幅約990pxは入力1のまま。四つの足先と右端の間に約90px以上の余白を残し、脚を前後に大きく開かない。頭と耳・足先を拡大して画面いっぱいにしない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
+        "docs/art_reference/roster_idle/shiro.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "d9562e40d7e840886ded51881530245e909dd4687dd78212faebe7eb5d35428f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 129,
+        "top": 392,
+        "right": 1167,
+        "bottom": 1260,
+        "opaqueHeight": 869
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_lose.png",
+      "preparedSha256": "bf3fe08336f5fea00a4796118f148dcbed2b70a4d69f052dd4b73dec30354b81",
+      "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_lose.png",
+      "edgeCleanedSha256": "d96f863d14373cd68fdf008a5d68ccd640cd002f28c46ef7d9c58d4281e5ca82",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 519710,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 68,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 461,
+      "footMinX": 273,
+      "footMaxX": 1149,
+      "opaqueHeightRatio": 0.7784753363228699
+    },
+    {
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 2,
+      "source": "art_source/paper_roster_core/shiro/generated/shiro_crouch_v2.png",
+      "references": [
+        "art_source/paper_roster_core/shiro/generated/shiro_crouch_v1.png",
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：新しい姿勢の足先だけ",
+        "採用待機：四つの足先の実寸基準"
+      ],
+      "prompt": "入力1のシロのしゃがみ姿勢を維持したまま、足先の大きさだけを入力2の採用待機と一致させる編集。頭・顔・耳・胴体・尻尾・脚のポーズと機械装甲のサイズと画面上の位置は変更しない。1189×1323で拡大縮小・カメラ変更・再構図をしない。修正は四つの柔らかい白い足先と爪だけ。近い前足の幅は約160px、遠い前足は約131px、近い後足は約143px、遠い後足は約122pxを基準に、入力2と同じ大きさの足先に描き直す。低姿勢だから足先を太く大きくしない。足先が横に広がって見える投影を避け、爪と肉球側の形を入力2へ揃える。各足首と足先を自然につなぎ、立っている足の接地線を保つ。四肢を曲げて低く構えた元の姿勢を維持、頭や身体を縮めて高さを合わせない。全身四肢は計四本。人間の指・腕・二足立ちなし。入力と同じアニメ塗り、細い硬いクリーム白の縁、透明背景。床・影・文字・グロー・ぼかしなし。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/shiro.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "reason": "低姿勢／上げた足先の太さを採用待機へ合わせる",
+      "sha256": "7476dc7e0dd148403b3485526929501946b7b622dcd37ee8c36c63eb6f12c5e4",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 59,
+        "top": 370,
+        "right": 1156,
+        "bottom": 1273,
+        "opaqueHeight": 904
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_crouch.png",
+      "preparedSha256": "1ad691966b537594d12870457bd8b4b8b65dfbc404eaf873544cc064794259f4",
+      "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_crouch.png",
+      "edgeCleanedSha256": "f2256f62819d91d01775b8443b8c8caa755db0dd82f8635514378791bdcd1331",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 526457,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 55,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 425,
+      "footMinX": 221,
+      "footMaxX": 1212,
+      "opaqueHeightRatio": 0.810762331838565
+    },
+    {
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "counter",
+      "label": "カウンター",
+      "version": 2,
+      "source": "art_source/paper_roster_core/shiro/generated/shiro_counter_v2.png",
+      "references": [
+        "art_source/paper_roster_core/shiro/generated/shiro_counter_v1.png",
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：新しい姿勢の足先だけ",
+        "採用待機：四つの足先の実寸基準"
+      ],
+      "prompt": "入力1のシロのカウンター姿勢を維持したまま、足先の大きさだけを入力2の採用待機と一致させる編集。頭・顔・耳・胴体・尻尾・脚のポーズと機械装甲のサイズと画面上の位置は変更しない。1189×1323で拡大縮小・カメラ変更・再構図をしない。修正は四つの柔らかい白い足先と爪だけ。近い前足の幅は約160px、遠い前足は約131px、近い後足は約143px、遠い後足は約122pxを基準に、入力2と同じ大きさの足先に描き直す。低姿勢だから足先を太く大きくしない。足先が横に広がって見える投影を避け、爪と肉球側の形を入力2へ揃える。各足首と足先を自然につなぎ、立っている足の接地線を保つ。一本だけ前足を胸前へ上げ、他の三本は接地という元の構えは維持。上げた足先も約160px幅で、巨大な拳にしない。全身四肢は計四本。人間の指・腕・二足立ちなし。入力と同じアニメ塗り、細い硬いクリーム白の縁、透明背景。床・影・文字・グロー・ぼかしなし。",
+      "tool": "built-in image_gen",
+      "status": "rejected_global_scale_changed_during_paw_edit",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+        "docs/art_reference/roster_idle/shiro.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "reason": "低姿勢／上げた足先の太さを採用待機へ合わせる",
+      "sha256": "4b4cc0bdc257d61c2850564c26ddb110ce0e3eb56ef18a3d281df903f1106650",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 45,
+        "top": 82,
+        "right": 1154,
+        "bottom": 1254,
+        "opaqueHeight": 1173
+      },
+      "artApproved": false,
+      "gameConnected": false
+    }
+  ]
 }

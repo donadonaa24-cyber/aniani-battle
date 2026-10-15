@@ -1,0 +1,28 @@
+{
+  "key": "ryuta",
+  "character": "龍太",
+  "pose": "crouch",
+  "label": "しゃがみ",
+  "version": 2,
+  "source": "art_source/paper_roster_core/ryuta/generated/ryuta_crouch_v2.png",
+  "references": [
+    "art_source/paper_roster_core/ryuta/generated/ryuta_crouch_v1.png",
+    "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：しゃがみv1",
+    "頭と革靴の画素寸法基準：採用待機"
+  ],
+  "prompt": "入力1の龍太のしゃがみについて頭と両靴の3箇所だけを修正する。入力2は同一人物の採用待機で部位寸法の基準。1189×1323の透明キャンバスを維持。①金髪と頭を横幅約340pxへ少し小さく描き直し、元の中心と首へ自然につなぐ。髪型・赤い目・ピアスを保持。②画面左の手前の黒革靴は幅約150px、③画面右の奥の黒革靴は幅約250pxへ細く描き直す。元の足首位置と両足接地は維持、靴は待機と同じ厚さと形。頭や靴を大きく描き直さない。胴体・腕・手・両膝・制服・赤いネクタイ・しゃがみ姿勢・画面位置は入力1から変えない。全身を縮小しない。薄いクリーム白の細い硬い縁を修正箇所にも一周させる。アニメ塗り、全身1人1姿勢、透明余白はそのまま。背景・床・影・グロー・ぼかし・文字なし。",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "consultedReferences": [
+    "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+    "docs/art_reference/roster_idle/ryuta.png"
+  ],
+  "consultedReferenceRoles": [
+    "千鶴：画風と動作の意味のみ",
+    "元作品：容姿のみ。頭身は入力1"
+  ],
+  "reason": "しゃがみv1の頭と奥側の革靴が大きくなったため局所修正"
+}

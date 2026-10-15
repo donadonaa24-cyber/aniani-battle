@@ -1,5 +1,9 @@
 # 全員の基本ポーズ（ガード・しゃがみ・カウンター・勝ち・負け）の生成と組み込み（2026-10-15、Claude記入）
 
+## 完了（2026-10-16）
+
+全45種類をゲーム接続。paper_core_roster_1はBuildAll／Edit472／Play48／Windowsの全4工程合格、失敗・スキップ0。新40種の選定版は各manifest、微差はpart-review、45採用の一覧はreview-index.json。実描画112PNG。次はPAPER_TOMA_AIR_AND_MOVEMENT。以下の未完／個人単位の工程は制作中の履歴で、現状はRESUME冒頭を優先。
+
 ## Codex再開記録
 
 ### 今回の工程整理（生成の直接依頼を優先）

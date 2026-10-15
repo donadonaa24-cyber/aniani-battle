@@ -1,0 +1,26 @@
+{
+  "key": "yui",
+  "character": "結衣",
+  "pose": "win",
+  "label": "勝利",
+  "version": 2,
+  "source": "art_source/paper_roster_core/yui/generated/yui_win_v2.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+  ],
+  "prompt": "入力の結衣の顔と右肉球ミトンの位置だけを小さく変えて、控えめな勝利の1枚絵にする。少し嬉しそうに笑い、画面左の右ミトンを胸の近くに少し上げる。画面右の左手は同じ杖を同じ持ち方で保持する。頭・フード・髪・顔の大きさと画面上の位置、胴体、マント、尻尾、両脚と両ブーツは入力の輪郭と画素寸法と位置を維持する。足先を横へ回さない、靴を幅広くしない、全体を拡大しない。元の1189×1323の透明画面のまま、頭上と靴底の余白を維持。アニメ塗り、全身一人一姿勢、全周の細いクリーム白の縁。光彩・ぼかし・背景・床・影・文字なし。本人右手は肉球ミトン、本人左手だけが杖。",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "consultedReferences": [
+    "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+    "docs/art_reference/roster_idle/yui.png"
+  ],
+  "consultedReferenceRoles": [
+    "千鶴：画風と動作の意味のみ",
+    "元作品：容姿のみ。頭身は入力1"
+  ],
+  "reason": "v1縦長出力で全高1366pxへ拡大され共通枠の接地位置を超えたため待機の構図を固定"
+}

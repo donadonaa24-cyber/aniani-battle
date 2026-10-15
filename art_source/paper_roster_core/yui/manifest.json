@@ -18,18 +18,18 @@
     "bottom": 1328,
     "opaqueHeight": 1227
   },
-  "integrated": false,
-  "verifiedTag": null,
+  "integrated": true,
+  "verifiedTag": "paper_core_roster_1",
   "jobs": [
     {
       "pose": "guard",
-      "version": 1,
-      "file": "art_source/paper_roster_core/yui/prompts/guard_v1.json"
+      "version": 2,
+      "file": "art_source/paper_roster_core/yui/prompts/guard_v2.json"
     },
     {
       "pose": "crouch",
-      "version": 1,
-      "file": "art_source/paper_roster_core/yui/prompts/crouch_v1.json"
+      "version": 3,
+      "file": "art_source/paper_roster_core/yui/prompts/crouch_v3.json"
     },
     {
       "pose": "counter",
@@ -38,8 +38,8 @@
     },
     {
       "pose": "win",
-      "version": 1,
-      "file": "art_source/paper_roster_core/yui/prompts/win_v1.json"
+      "version": 2,
+      "file": "art_source/paper_roster_core/yui/prompts/win_v2.json"
     },
     {
       "pose": "lose",
@@ -47,5 +47,451 @@
       "file": "art_source/paper_roster_core/yui/prompts/lose_v1.json"
     }
   ],
-  "entries": []
+  "entries": [
+    {
+      "key": "yui",
+      "character": "結衣",
+      "pose": "guard",
+      "label": "ガード",
+      "version": 1,
+      "source": "art_source/paper_roster_core/yui/generated/yui_guard_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」の結衣の全身1枚絵。入力1は採用待機で、同一人物の顔・衣装・部位実寸の基準兼編集対象。紫の短い髪と紫の目、クリーム色と紫の猫耳フード、金の鈴と紫リボン、クリーム・紫・青緑の魔法使い服、紫の尻尾、左右の紫ブーツをそのまま。本人右手（画面左の手前側）は肉球ミトン、本人左手（画面右の奥側）だけが金枠の紫の宝石付きの杖を握る。杖の手を交換しない、右手を人間の指にしない。本人右脚（画面左）だけ紫の縞靴下、左脚は素肌と小さな太腿リボンを維持。今回の姿勢：守りの構え。右の肉球ミトンを頬の下へ寄せ、左手の杖を体の前に少し斜めに構えて守る。左手の杖の握りと右ミトンを両方見せ、顔を完全に隠さない。下半身と両ブーツの位置・向きは待機のまま。 右向き3/4と胸側の構図は入力1を維持。頭・フード・髪・ミトン・両ブーツと宝石の画素寸法を拡大縮小しない。杖の長さも変えず、体へ寄せて宝石から杖の下端まで完全に画面内に収め、右端から50px以上余白。杖の下端とマント裾は靴底より上。両肩と肘と手首を自然につなぐ。入力1と同じ1189×1323の縦キャンバス、完全な透明背景。全身1人1姿勢。足元は入力1と同じ接地線、上の余白は透明のまま。アニメ塗りと濃い線、全外周に細く硬いクリーム白の縁。光彩・にじみ・ぼかし・床・影・文字・効果線・浮かぶ猫・背景のハートや星を追加しない。衣装に元からある星飾りは残す。関節分割や3Dやピクセルアートにしない。",
+      "tool": "built-in image_gen",
+      "status": "rejected_boot_width_and_angle",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+        "docs/art_reference/roster_idle/yui.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "871d155c753caefdd3628c0b8527271a602973382fd6b19f639d2349ccd023dc",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 67,
+        "top": 6,
+        "right": 1132,
+        "bottom": 1259,
+        "opaqueHeight": 1254
+      },
+      "artApproved": false,
+      "gameConnected": false
+    },
+    {
+      "key": "yui",
+      "character": "結衣",
+      "pose": "guard",
+      "label": "ガード",
+      "version": 2,
+      "source": "art_source/paper_roster_core/yui/generated/yui_guard_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の結衣の採用待機をガードへ編集。変更は右の肉球ミトンと右肘の位置、少し真剣な表情だけ。左手は同じ杖を同じ持ち方で保持する。頭・猫耳フード・紫の髪・衣装・マント・腰・両脚と両ブーツの全輪郭、画素寸法、画面上の位置を入力1のまま維持。靴を横へ回転したり幅広く描き直したりしない。右の肉球ミトンを頬の下へ上げ、右肘を曲げた守りの構えにする。目と口を隠さない。本人の右手は画面左のミトン、左手は画面右で杖を握る裸の手。杖を右手へ持ち替えない。右脚だけの紫縞靴下、左脚の素肌と太腿のリボンもそのまま。1189×1323、完全透明、頭上と両ブーツ周りは入力の余白を維持。全身一人1姿勢、アニメ塗り、細く硬いクリーム白の縁。背景・床・落ち影・文字・グロー・ぼかし・魔法効果なし。人物全体を拡縮しない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+        "docs/art_reference/roster_idle/yui.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "reason": "v1でブーツの幅と向きが変わったため、下半身を待機に固定",
+      "sha256": "e90547f65bbc37995388e757ea74770460650a3e80822eef581f915b2ee285c4",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 78,
+        "top": 51,
+        "right": 1137,
+        "bottom": 1280,
+        "opaqueHeight": 1230
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/yui/prepared/yui_guard.png",
+      "preparedSha256": "5127eea5950fa2642668eaeb66d533f0e7d28098be0cb2905072d01068a79e6f",
+      "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_guard.png",
+      "edgeCleanedSha256": "a4138de98ee3ad2c3df78319893f4e5ef37f1d8ccaafb232c3765ca606c5954f",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 690684,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 49,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 101,
+      "footMinX": 472,
+      "footMaxX": 923,
+      "opaqueHeightRatio": 1.0008149959250203
+    },
+    {
+      "key": "yui",
+      "character": "結衣",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 1,
+      "source": "art_source/paper_roster_core/yui/generated/yui_crouch_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」の結衣の全身1枚絵。入力1は採用待機で、同一人物の顔・衣装・部位実寸の基準兼編集対象。紫の短い髪と紫の目、クリーム色と紫の猫耳フード、金の鈴と紫リボン、クリーム・紫・青緑の魔法使い服、紫の尻尾、左右の紫ブーツをそのまま。本人右手（画面左の手前側）は肉球ミトン、本人左手（画面右の奥側）だけが金枠の紫の宝石付きの杖を握る。杖の手を交換しない、右手を人間の指にしない。本人右脚（画面左）だけ紫の縞靴下、左脚は素肌と小さな太腿リボンを維持。今回の姿勢：両膝と股関節を深く曲げて低く構える。頭・髪・フード・靴・ミトン・杖の画素寸法は待機のまま、全高は低くして上を透明な余白にする。左手に杖を持ったまま体に寄せ、右ミトンは膝と胸の間。マント裾は膝の周りへ収めて両ブーツと両膝を隠さず、靴底より下へ垂らさない。 右向き3/4と胸側の構図は入力1を維持。頭・フード・髪・ミトン・両ブーツと宝石の画素寸法を拡大縮小しない。杖の長さも変えず、体へ寄せて宝石から杖の下端まで完全に画面内に収め、右端から50px以上余白。杖の下端とマント裾は靴底より上。両肩と肘と手首を自然につなぐ。入力1と同じ1189×1323の縦キャンバス、完全な透明背景。全身1人1姿勢。足元は入力1と同じ接地線、上の余白は透明のまま。アニメ塗りと濃い線、全外周に細く硬いクリーム白の縁。光彩・にじみ・ぼかし・床・影・文字・効果線・浮かぶ猫・背景のハートや星を追加しない。衣装に元からある星飾りは残す。関節分割や3Dやピクセルアートにしない。",
+      "tool": "built-in image_gen",
+      "status": "rejected_head_and_boot_scale_too_large",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/yui.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "0f776bd44cecaadf974d114796b21be455260877f6c43eb7edf1bf16a4f89e49",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "left": 42,
+        "top": 255,
+        "right": 1093,
+        "bottom": 1363,
+        "opaqueHeight": 1109
+      },
+      "artApproved": false,
+      "gameConnected": false
+    },
+    {
+      "key": "yui",
+      "character": "結衣",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 2,
+      "source": "art_source/paper_roster_core/yui/generated/yui_crouch_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の結衣の採用待機を、頭と靴と道具の画素寸法を変えない深いしゃがみ姿へ描き直す。出力は正方形1254×1254pxの完全透明キャンバス。正方形の中で余白を残し、姿勢を画面に合わせて拡大しない。頭と猫耳フード全体の横幅は原画と同じ約570px、高さ約520px。顔と髪の大きさもそのまま。手前のブーツは約151px幅、奥のブーツは約131px幅で元の向きと大きさを維持。人物全高は約850〜930px、靴底はy1220px近辺、フードの一番上はy300px近辺。膝と腰を深く折って低くし、元と同じ大きな頭を低い位置に置く。靴も頭も大きくしない。紫の髪と目、クリームと紫の猫耳フード、金の鈴とリボン、クリーム・紫・青緑の魔法使い服と紫の尻尾を入力のまま。右手は肉球ミトン、本人左手（画面右）だけが同じ杖を握る。右脚だけ紫の縞靴下、左脚は素肌と小リボンを維持。両足を接地し、マント裾は膝の周りに収めて靴底より上。杖の大きさも入力のまま、体に近く左手で持ち、宝石から下端まで画面に収めて靴より下へ出さない。右向き3/4で胸側、両肩・両肘・手首の所属を自然に。全身一人1姿勢、アニメ塗り、全外周の細く硬いクリーム白縁。グロー・ぼかし・床・影・文字・追加の星や猫・効果・背景なし。上や左右の余白は透明にする。",
+      "tool": "built-in image_gen",
+      "status": "rejected_scale_or_crouch_height",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/yui.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "generationCanvasHint": {
+        "width": 1254,
+        "height": 1254
+      },
+      "reason": "v1は原画全高1109px／頭・ブーツが拡大。正方形原画の余白を使い人物倍率を固定する",
+      "sha256": "cf32fe30e0683b70c0baebcd16caf5562cb3709c3e586a60b10faa19f5890f98",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "left": 128,
+        "top": 141,
+        "right": 1185,
+        "bottom": 1200,
+        "opaqueHeight": 1060
+      },
+      "artApproved": false,
+      "gameConnected": false
+    },
+    {
+      "key": "yui",
+      "character": "結衣",
+      "pose": "counter",
+      "label": "カウンター",
+      "version": 1,
+      "source": "art_source/paper_roster_core/yui/generated/yui_counter_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」の結衣の全身1枚絵。入力1は採用待機で、同一人物の顔・衣装・部位実寸の基準兼編集対象。紫の短い髪と紫の目、クリーム色と紫の猫耳フード、金の鈴と紫リボン、クリーム・紫・青緑の魔法使い服、紫の尻尾、左右の紫ブーツをそのまま。本人右手（画面左の手前側）は肉球ミトン、本人左手（画面右の奥側）だけが金枠の紫の宝石付きの杖を握る。杖の手を交換しない、右手を人間の指にしない。本人右脚（画面左）だけ紫の縞靴下、左脚は素肌と小さな太腿リボンを維持。今回の姿勢：受け流しの構え。本人の右の肉球ミトンを少し前へ出して払いの準備、左手の杖は左肩と胸に近く寄せて少し斜めに保持。右肩→右肘→右ミトン、左肩→左肘→杖を握る左手を明瞭に。ガードの両腕を固めた姿勢と違い、右ミトンが前へ出ている。下半身と靴の位置は待機に近く保つ。 右向き3/4と胸側の構図は入力1を維持。頭・フード・髪・ミトン・両ブーツと宝石の画素寸法を拡大縮小しない。杖の長さも変えず、体へ寄せて宝石から杖の下端まで完全に画面内に収め、右端から50px以上余白。杖の下端とマント裾は靴底より上。両肩と肘と手首を自然につなぐ。入力1と同じ1189×1323の縦キャンバス、完全な透明背景。全身1人1姿勢。足元は入力1と同じ接地線、上の余白は透明のまま。アニメ塗りと濃い線、全外周に細く硬いクリーム白の縁。光彩・にじみ・ぼかし・床・影・文字・効果線・浮かぶ猫・背景のハートや星を追加しない。衣装に元からある星飾りは残す。関節分割や3Dやピクセルアートにしない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+        "docs/art_reference/roster_idle/yui.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "1c57317f132b834bbd7ded08d6ed5233f02896e0830e4538cc6e1d501f1c8396",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 47,
+        "top": 7,
+        "right": 1138,
+        "bottom": 1273,
+        "opaqueHeight": 1267
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/yui/prepared/yui_counter.png",
+      "preparedSha256": "4e1df353a50b98c5282fa86c164382e1d888fdc15be54300e3b7d3579177f577",
+      "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_counter.png",
+      "edgeCleanedSha256": "97361fccddad548c06c8cf0baaaf2de327299ae006386b12e8af0f463ce6a42f",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 752238,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 56,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 63,
+      "footMinX": 409,
+      "footMaxX": 1005,
+      "opaqueHeightRatio": 1.0317848410757946
+    },
+    {
+      "key": "yui",
+      "character": "結衣",
+      "pose": "win",
+      "label": "勝利",
+      "version": 1,
+      "source": "art_source/paper_roster_core/yui/generated/yui_win_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」の結衣の全身1枚絵。入力1は採用待機で、同一人物の顔・衣装・部位実寸の基準兼編集対象。紫の短い髪と紫の目、クリーム色と紫の猫耳フード、金の鈴と紫リボン、クリーム・紫・青緑の魔法使い服、紫の尻尾、左右の紫ブーツをそのまま。本人右手（画面左の手前側）は肉球ミトン、本人左手（画面右の奥側）だけが金枠の紫の宝石付きの杖を握る。杖の手を交換しない、右手を人間の指にしない。本人右脚（画面左）だけ紫の縞靴下、左脚は素肌と小さな太腿リボンを維持。今回の姿勢：待機に近い立ち姿のまま控えめな勝利。自信ある小さな笑顔で、右の肉球ミトンを胸の近くへ少し上げる。左手は杖を保持。両足接地、足先と靴の向きは待機のまま。大きく跳ばない、座らない、杖を頭上に振り上げない。 右向き3/4と胸側の構図は入力1を維持。頭・フード・髪・ミトン・両ブーツと宝石の画素寸法を拡大縮小しない。杖の長さも変えず、体へ寄せて宝石から杖の下端まで完全に画面内に収め、右端から50px以上余白。杖の下端とマント裾は靴底より上。両肩と肘と手首を自然につなぐ。入力1と同じ1189×1323の縦キャンバス、完全な透明背景。全身1人1姿勢。足元は入力1と同じ接地線、上の余白は透明のまま。アニメ塗りと濃い線、全外周に細く硬いクリーム白の縁。光彩・にじみ・ぼかし・床・影・文字・効果線・浮かぶ猫・背景のハートや星を追加しない。衣装に元からある星飾りは残す。関節分割や3Dやピクセルアートにしない。",
+      "tool": "built-in image_gen",
+      "status": "rejected_scale_or_crouch_height",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+        "docs/art_reference/roster_idle/yui.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "6c0074204f1c51effc22c36ff9ed4477d5d1436f3babe844519ff24606edc04b",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "left": 17,
+        "top": 29,
+        "right": 1094,
+        "bottom": 1394,
+        "opaqueHeight": 1366
+      },
+      "artApproved": false,
+      "gameConnected": false
+    },
+    {
+      "key": "yui",
+      "character": "結衣",
+      "pose": "lose",
+      "label": "敗北",
+      "version": 1,
+      "source": "art_source/paper_roster_core/yui/generated/yui_lose_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "オリジナルゲーム「あにあにバトル！！」の結衣の全身1枚絵。入力1は採用待機で、同一人物の顔・衣装・部位実寸の基準兼編集対象。紫の短い髪と紫の目、クリーム色と紫の猫耳フード、金の鈴と紫リボン、クリーム・紫・青緑の魔法使い服、紫の尻尾、左右の紫ブーツをそのまま。本人右手（画面左の手前側）は肉球ミトン、本人左手（画面右の奥側）だけが金枠の紫の宝石付きの杖を握る。杖の手を交換しない、右手を人間の指にしない。本人右脚（画面左）だけ紫の縞靴下、左脚は素肌と小さな太腿リボンを維持。今回の姿勢：立ったまま肩を落とす控えめな敗北。うつむき気味の少し悔しそうな表情、右ミトンは自然に下げ、左手は杖を持ったまま少し力を抜く。両足接地、待機に近い足の位置とブーツの向き。倒れない、座り込まない、道具を地面へ落とさない。 右向き3/4と胸側の構図は入力1を維持。頭・フード・髪・ミトン・両ブーツと宝石の画素寸法を拡大縮小しない。杖の長さも変えず、体へ寄せて宝石から杖の下端まで完全に画面内に収め、右端から50px以上余白。杖の下端とマント裾は靴底より上。両肩と肘と手首を自然につなぐ。入力1と同じ1189×1323の縦キャンバス、完全な透明背景。全身1人1姿勢。足元は入力1と同じ接地線、上の余白は透明のまま。アニメ塗りと濃い線、全外周に細く硬いクリーム白の縁。光彩・にじみ・ぼかし・床・影・文字・効果線・浮かぶ猫・背景のハートや星を追加しない。衣装に元からある星飾りは残す。関節分割や3Dやピクセルアートにしない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
+        "docs/art_reference/roster_idle/yui.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "3778c221bf2502ce1f98ae2eac86e77f9417b1cde947dfbdb93d04e24b1412df",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 111,
+        "top": 11,
+        "right": 1110,
+        "bottom": 1287,
+        "opaqueHeight": 1277
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/yui/prepared/yui_lose.png",
+      "preparedSha256": "fc632f7cac95860908794d30c99b30a0f4e046d2e8b9f62f6f45ebf67ae8ef38",
+      "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_lose.png",
+      "edgeCleanedSha256": "9054e29880f51e33afb328499b83d6cba9dc6b7e35c3e0e20f57da333f507127",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 679552,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 41,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 52,
+      "footMinX": 534,
+      "footMaxX": 866,
+      "opaqueHeightRatio": 1.0407497962510188
+    },
+    {
+      "key": "yui",
+      "character": "結衣",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 3,
+      "source": "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力の結衣を同じ画面倍率で、膝を深く曲げた低いしゃがみへ編集する。全体を大きくしない。元の1189×1323の縦長透明画面を維持し、足の底は元の高さ、猫耳フード上端をy=340付近へ下げ、全高は約920px。頭・猫耳フードの横幅と高さ、左右ブーツの幅・長さ、ミトン、杖の宝石の寸法は入力と同じ。頭を前へ大きく描かない、頭を拡大しない。腰を下げて両膝を深く曲げることで全高を下げる。画面の上340pxは完全に透明な空間のまま残す。右手は画面左の肉球ミトン、左手は画面右の裸の手で同じ杖を握る。縞靴下は画面左の本人右脚だけ。衣装、猫耳、尻尾、髪色、顔、全身のアニメ塗り、細いクリーム白の外周縁を維持。背景・床・影・魔法光・文字なし。靴底を両方見せ、杖の下端とマント裾は靴底より上。全身1人、切れなし。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/yui.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "generationCanvasHint": {
+        "width": 1254,
+        "height": 1254
+      },
+      "reason": "v2全高1060pxでしゃがみが浅いため膝を更に深く曲げる",
+      "sha256": "6b0c9cfe13630ac9df8b2bd12bf14c4a4d0cc757754b3d77a93c474baeb32add",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 93,
+        "top": 358,
+        "right": 1132,
+        "bottom": 1262,
+        "opaqueHeight": 905
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/yui/prepared/yui_crouch.png",
+      "preparedSha256": "51ec703f5a7ef6e90ed442848522d1e2a4f4f4108ee7593ebcf25a516f4f326a",
+      "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_crouch.png",
+      "edgeCleanedSha256": "1a9e3f4e3c784f95b32cc2c6ece3fd5c809e7d891673ce2f61ad94b6289f8ff1",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 578971,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 67,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 425,
+      "footMinX": 249,
+      "footMaxX": 1069,
+      "opaqueHeightRatio": 0.7367563162184189
+    },
+    {
+      "key": "yui",
+      "character": "結衣",
+      "pose": "win",
+      "label": "勝利",
+      "version": 2,
+      "source": "art_source/paper_roster_core/yui/generated/yui_win_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力の結衣の顔と右肉球ミトンの位置だけを小さく変えて、控えめな勝利の1枚絵にする。少し嬉しそうに笑い、画面左の右ミトンを胸の近くに少し上げる。画面右の左手は同じ杖を同じ持ち方で保持する。頭・フード・髪・顔の大きさと画面上の位置、胴体、マント、尻尾、両脚と両ブーツは入力の輪郭と画素寸法と位置を維持する。足先を横へ回さない、靴を幅広くしない、全体を拡大しない。元の1189×1323の透明画面のまま、頭上と靴底の余白を維持。アニメ塗り、全身一人一姿勢、全周の細いクリーム白の縁。光彩・ぼかし・背景・床・影・文字なし。本人右手は肉球ミトン、本人左手だけが杖。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+        "docs/art_reference/roster_idle/yui.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "reason": "v1縦長出力で全高1366pxへ拡大され共通枠の接地位置を超えたため待機の構図を固定",
+      "sha256": "d6aa9ce012f6b60536763daf451b04f49b24537c8383483f9f8bdce802658e56",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 79,
+        "top": 53,
+        "right": 1134,
+        "bottom": 1279,
+        "opaqueHeight": 1227
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/yui/prepared/yui_win.png",
+      "preparedSha256": "b787575c38db85419e7c27c46b165694e2dda11ac96bdccc19e774cc09cfa1f7",
+      "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_win.png",
+      "edgeCleanedSha256": "b3575fa4455bf93bb6e628a91a7caa98d557baf58d5fd1e49d637b556b03f5be",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 688585,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 50,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 104,
+      "footMinX": 472,
+      "footMaxX": 922,
+      "opaqueHeightRatio": 0.9983700081499592
+    }
+  ]
 }

@@ -18,8 +18,8 @@
     "bottom": 1328,
     "opaqueHeight": 1273
   },
-  "integrated": false,
-  "verifiedTag": null,
+  "integrated": true,
+  "verifiedTag": "paper_core_roster_1",
   "jobs": [
     {
       "pose": "guard",
@@ -47,5 +47,291 @@
       "file": "art_source/paper_roster_core/king/prompts/lose_v1.json"
     }
   ],
-  "entries": []
+  "entries": [
+    {
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "guard",
+      "label": "ガード",
+      "version": 1,
+      "source": "art_source/paper_roster_core/king/generated/king_guard_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の黒獅子王の採用待機イラストを編集する。同じ人物、同じ画面倍率、同じ原画キャンバス1189×1323の透明PNG。獅子フードを着た人間の男性であり、顔は黒髪と赤の差し色、赤い目と額飾りがある人間。黒金の鎧と爪手甲と爪ブーツ、深紅のマント、冠と金鎖と赤い宝石を維持。変更は次の姿勢だけ：両方の肘を曲げ、黒金の爪付き手甲を閉じた拳として胸の前へ上げて守る。人間の顔と目は隠さない。下半身・両ブーツ・尾・マント裾の輪郭と位置は入力そのまま。 全身1人、胸側が見える右向き3/4。頭・髪・フード・顔・冠・靴・手の画素寸法を変えず、余白を埋めようとして全身を拡大しない。左右の手は同じ手甲のデザイン、右手二つにしない。アニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。光彩・にじみ・ぼかし・床・影・背景・文字・攻撃効果なし。全身を切らずキャンバス内へ収める。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+        "docs/art_reference/roster_idle/king.webp"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "0ca03969d33362724205acedd96077f1355a4ddb95f2b8c6f8c384f7725f46f3",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 57,
+        "top": 19,
+        "right": 1131,
+        "bottom": 1294,
+        "opaqueHeight": 1276
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/king/prepared/king_guard.png",
+      "preparedSha256": "72bfc8b69f985142459786c0f347f1859a60804858ab10528b7c27044c18f1a7",
+      "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_guard.png",
+      "edgeCleanedSha256": "0449a546d203d777147c7513514caeb1f3913c74237300f2f40832e8d33051cb",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 792990,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 35,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 54,
+      "footMinX": 282,
+      "footMaxX": 1154,
+      "opaqueHeightRatio": 1.0015710919088767
+    },
+    {
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 1,
+      "source": "art_source/paper_roster_core/king/generated/king_crouch_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の黒獅子王の採用待機イラストを編集する。同じ人物、同じ画面倍率、同じ原画キャンバス1189×1323の透明PNG。獅子フードを着た人間の男性であり、顔は黒髪と赤の差し色、赤い目と額飾りがある人間。黒金の鎧と爪手甲と爪ブーツ、深紅のマント、冠と金鎖と赤い宝石を維持。変更は次の姿勢だけ：深いしゃがみ。両膝を曲げ腰を下げ、頭の上端をy=320付近へ下げる。足の底は元の位置、全高約970px。頭・獅子フード・冠・両手甲・両ブーツの寸法は入力そのまま。上の320pxは透明な余白。両膝を折って全高を下げるので、顔や頭を大きく描かない。両爪ブーツと両膝を見せ、マント裾は靴底より上。 全身1人、胸側が見える右向き3/4。頭・髪・フード・顔・冠・靴・手の画素寸法を変えず、余白を埋めようとして全身を拡大しない。左右の手は同じ手甲のデザイン、右手二つにしない。アニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。光彩・にじみ・ぼかし・床・影・背景・文字・攻撃効果なし。全身を切らずキャンバス内へ収める。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/king.webp"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "a11a5cdcc55576423cbb32d3c0d5c90f78e814ba5839ea392d9cc0763db78e07",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 44,
+        "top": 260,
+        "right": 1166,
+        "bottom": 1271,
+        "opaqueHeight": 1012
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/king/prepared/king_crouch.png",
+      "preparedSha256": "312eaa8e0d6c38f3c99e26d2169a564f961ea3045b172a2775434bafea50399c",
+      "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_crouch.png",
+      "edgeCleanedSha256": "a1e513dab7ada8ade6d21458e10195e51655af5a7d0be2b382e1ee6f0be0dd32",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 665979,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 57,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 317,
+      "footMinX": 270,
+      "footMaxX": 1218,
+      "opaqueHeightRatio": 0.7949725058915946
+    },
+    {
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "win",
+      "label": "勝利",
+      "version": 1,
+      "source": "art_source/paper_roster_core/king/generated/king_win_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の黒獅子王の採用待機イラストを編集する。同じ人物、同じ画面倍率、同じ原画キャンバス1189×1323の透明PNG。獅子フードを着た人間の男性であり、顔は黒髪と赤の差し色、赤い目と額飾りがある人間。黒金の鎧と爪手甲と爪ブーツ、深紅のマント、冠と金鎖と赤い宝石を維持。変更は次の姿勢だけ：控えめな勝利。自信ある小さな笑顔で本人右手の手甲を閉じ胸の横へ少し上げる。左腕は自然に軽く構える。顔・頭・胴体・腰・両脚と両ブーツは入力と同じ位置と大きさ。立ったまま両足接地。 全身1人、胸側が見える右向き3/4。頭・髪・フード・顔・冠・靴・手の画素寸法を変えず、余白を埋めようとして全身を拡大しない。左右の手は同じ手甲のデザイン、右手二つにしない。アニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。光彩・にじみ・ぼかし・床・影・背景・文字・攻撃効果なし。全身を切らずキャンバス内へ収める。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+        "docs/art_reference/roster_idle/king.webp"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "03533829adf5a36a33ffae8ef8c6a0a9f38245929a6ac64aee8edfb4293c573e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 58,
+        "top": 19,
+        "right": 1137,
+        "bottom": 1294,
+        "opaqueHeight": 1276
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/king/prepared/king_win.png",
+      "preparedSha256": "3848a597d6a3acedd319a9c7f3088e301c0de00d64919436d63ce149f34dc76a",
+      "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_win.png",
+      "edgeCleanedSha256": "b7b0493de24b1daa55e1c4ae43fa0d44bc9d5a19995f5d4b12e6bb482361852a",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 786322,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 35,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 55,
+      "footMinX": 282,
+      "footMaxX": 1162,
+      "opaqueHeightRatio": 1.0007855459544384
+    },
+    {
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "lose",
+      "label": "敗北",
+      "version": 1,
+      "source": "art_source/paper_roster_core/king/generated/king_lose_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の黒獅子王の採用待機イラストを編集する。同じ人物、同じ画面倍率、同じ原画キャンバス1189×1323の透明PNG。獅子フードを着た人間の男性であり、顔は黒髪と赤の差し色、赤い目と額飾りがある人間。黒金の鎧と爪手甲と爪ブーツ、深紅のマント、冠と金鎖と赤い宝石を維持。変更は次の姿勢だけ：立ったままの敗北。少しうつむいて悔しそうな表情、肩を落とし両腕を少し下げる。獅子フードと人間の顔を維持。腰・両脚と両ブーツは入力と同じ位置と大きさ。両足接地。座らない、膝をつかない。 全身1人、胸側が見える右向き3/4。頭・髪・フード・顔・冠・靴・手の画素寸法を変えず、余白を埋めようとして全身を拡大しない。左右の手は同じ手甲のデザイン、右手二つにしない。アニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。光彩・にじみ・ぼかし・床・影・背景・文字・攻撃効果なし。全身を切らずキャンバス内へ収める。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
+        "docs/art_reference/roster_idle/king.webp"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "6fc691da68778fc5ae213bdcfb5a2463dd0670fe05ffc9e8d441af48e826c970",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 83,
+        "top": 16,
+        "right": 1139,
+        "bottom": 1293,
+        "opaqueHeight": 1278
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/king/prepared/king_lose.png",
+      "preparedSha256": "65d9f8c0419608583fd303172673b144cd715e1755d12faf616760066b9a1e15",
+      "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_lose.png",
+      "edgeCleanedSha256": "cdeb8d426105c09ff3261e8d069801887c125db2b3f5030e722ab37ad859d8a3",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 779169,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 36,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 53,
+      "footMinX": 309,
+      "footMaxX": 1157,
+      "opaqueHeightRatio": 1.002356637863315
+    },
+    {
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "counter",
+      "label": "カウンター",
+      "version": 1,
+      "source": "art_source/paper_roster_core/king/generated/king_counter_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の黒獅子王の採用待機イラストを編集する。同じ人物、同じ画面倍率、同じ原画キャンバス1189×1323の透明PNG。獅子フードを着た人間の男性であり、顔は黒髪と赤の差し色、赤い目と額飾りがある人間。黒金の鎧と爪手甲と爪ブーツ、深紅のマント、冠と金鎖と赤い宝石を維持。変更は次の姿勢だけ：受け流し直前の構え。本人の右の爪付き手甲を閉じた拳にして右前腕を胸の前へ斜めに出し、本人左拳は腰近くへ引く。右肩から右肘と右拳の接続を明瞭に。左右別々の腕。ガードの両腕を固めた形と違うシルエット。下半身・両ブーツの向きと接地位置は入力そのまま。 全身1人、胸側が見える右向き3/4。頭・髪・フード・顔・冠・靴・手の画素寸法を変えず、余白を埋めようとして全身を拡大しない。左右の手は同じ手甲のデザイン、右手二つにしない。アニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。光彩・にじみ・ぼかし・床・影・背景・文字・攻撃効果なし。全身を切らずキャンバス内へ収める。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+        "docs/art_reference/roster_idle/king.webp"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "aca5189836a46f255318c965a9e589cd60d6864b4bd10a37eee8578808cf38d9",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 59,
+        "top": 22,
+        "right": 1138,
+        "bottom": 1293,
+        "opaqueHeight": 1272
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/king/prepared/king_counter.png",
+      "preparedSha256": "5e06263cce967cf45ca8c053c3692ad83038ac665b93993a13ae07104dc93b62",
+      "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_counter.png",
+      "edgeCleanedSha256": "549eadea0ffa73e745efb2b86a313c98f867e8141f0abaa5f19924e4d55cff80",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 761892,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 36,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 58,
+      "footMinX": 284,
+      "footMaxX": 1161,
+      "opaqueHeightRatio": 0.9984289080911233
+    }
+  ]
 }

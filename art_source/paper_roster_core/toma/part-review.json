@@ -3,14 +3,46 @@
   "basis": "art_source/paper_roster_idle/generated/toma_idle_v2.png",
   "method": "原画を等倍と共通枠の一覧で目視。箱は髪外周と靴外周を読んだ手動の概算。厳密な骨格寸法や自動測定ではない。",
   "measurements": [
-    {"pose":"idle","hairWidth":544,"farShoeLength":218,"nearShoeLength":306},
-    {"pose":"guard_v3","hairWidth":537,"farShoeLength":232,"nearShoeLength":306},
-    {"pose":"crouch_v2","hairWidth":567,"farShoeLength":235,"nearShoeLength":314},
-    {"pose":"counter_v4","hairWidth":516,"farShoeLength":235,"nearShoeLength":301},
-    {"pose":"win_v1","hairWidth":544,"farShoeLength":222,"nearShoeLength":306},
-    {"pose":"lose_v1","hairWidth":540,"farShoeLength":222,"nearShoeLength":306}
+    {
+      "pose": "idle",
+      "hairWidth": 544,
+      "farShoeLength": 218,
+      "nearShoeLength": 306
+    },
+    {
+      "pose": "guard_v3",
+      "hairWidth": 537,
+      "farShoeLength": 232,
+      "nearShoeLength": 306
+    },
+    {
+      "pose": "crouch_v2",
+      "hairWidth": 567,
+      "farShoeLength": 235,
+      "nearShoeLength": 314
+    },
+    {
+      "pose": "counter_v4",
+      "hairWidth": 516,
+      "farShoeLength": 235,
+      "nearShoeLength": 301
+    },
+    {
+      "pose": "win_v1",
+      "hairWidth": 544,
+      "farShoeLength": 222,
+      "nearShoeLength": 306
+    },
+    {
+      "pose": "lose_v1",
+      "hairWidth": 540,
+      "farShoeLength": 222,
+      "nearShoeLength": 306
+    }
   ],
   "decision": "部位幅の差は概算で約8%以内。人物を再サンプルせず使用。完全一致やユーザーの最終承認を意味しない。しゃがみは全高が待機の約79%で当初目安60〜65%より高いが、頭と靴の実寸・人体のつながりを優先した。次回の絵の指摘で深さを再調整できる。",
   "hands": "guard v3は右肩から手前の拳／左肩から奥の拳。counter v1〜v3は左右・親指のつながり不良で不採用、v4は手前の右前腕で払う閉じた拳へ変更。win／loseも両肩から手首を確認。最終の絵の審査はユーザー確認待ち。",
-  "edge": "指示書の外周アルファ2値化を適用。原画と処理前後を保持、RGBと完全不透明の内部は変更せず拡縮なし。"
+  "edge": "指示書の外周アルファ2値化を適用。原画と処理前後を保持、RGBと完全不透明の内部は変更せず拡縮なし。",
+  "unityVerified": true,
+  "verifiedTag": "paper_core_roster_1"
 }

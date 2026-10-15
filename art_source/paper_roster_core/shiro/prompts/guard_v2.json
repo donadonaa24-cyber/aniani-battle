@@ -1,0 +1,26 @@
+{
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "guard",
+  "label": "ガード",
+  "version": 2,
+  "source": "art_source/paper_roster_core/shiro/generated/shiro_guard_v2.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+  ],
+  "prompt": "入力1のシロの採用待機を、目と耳の表情だけを主に変えた控えめなガードへ編集。白い四足の犬型AI、白毛、青い目、黒い鼻、黒銀の首輪と琥珀ランプ、白銀の機械の四脚、尻尾。頭と耳と足先の実寸を固定。胴体・尻尾・四本の脚と四つの足先の輪郭と位置は、入力1から変更しない。足を大きく開かない、全身を横に広げない。頭の位置と大きさも入力1を保ち、顎をほんの少し引き、耳を少し後ろへ向け、青い目を警戒して細める。口は小さく閉じ、首を守る雰囲気。背中と脚を低く折ったり新たな胴体ポーズにしない。四つの足が接地した四足のまま。入力1と同じ1189×1323で、全身の横幅は元の約990px、最も右の足先と右端との透明余白約100pxをそのまま保つ。四つの足先を絶対に切らない。カメラ角度は元の右向き3/4、真横へ変えない。同じアニメ塗り、細くくっきりしたクリーム白縁を全外周へ。透明背景、床・影・文字・人間の手や腕・二足立ち・グロー・ぼかしなし。",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "consultedReferences": [
+    "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+    "docs/art_reference/roster_idle/shiro.png"
+  ],
+  "consultedReferenceRoles": [
+    "千鶴：画風と動作の意味のみ",
+    "元作品：容姿のみ。頭身は入力1"
+  ],
+  "reason": "v1は右前足が原画端で切れ、胴体の幅も広がったため不採用"
+}

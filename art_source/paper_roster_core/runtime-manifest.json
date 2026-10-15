@@ -72,6 +72,489 @@
           "footMaxX": 1014
         }
       ]
+    },
+    {
+      "key": "ren",
+      "characterIndex": 1,
+      "name": "蓮",
+      "idle": {
+        "prepared": "art_source/paper_roster_idle/prepared/ren_idle.png",
+        "sha256": "be94ef030e8a53ce9ab00e345136ce953fa40e6e003346040bf10cd08a188c8c",
+        "headTopY": 111,
+        "footMinX": 231,
+        "footMaxX": 1069
+      },
+      "poses": [
+        {
+          "key": "guard",
+          "prepared": "art_source/paper_roster_core/ren/prepared/ren_guard.png",
+          "sha256": "eb163926b15333b1d4670e90c5857e23f00fa2392b4d3207691fb7353d4ad65e",
+          "source": "art_source/paper_roster_core/ren/generated/ren_guard_v2.png",
+          "sourceSha256": "6a0c21c901655393b333d31feaccf0994d2c881124b11d1eff0f2842800db3c5",
+          "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_guard.png",
+          "headTopY": 103,
+          "footMinX": 399,
+          "footMaxX": 995
+        },
+        {
+          "key": "crouch",
+          "prepared": "art_source/paper_roster_core/ren/prepared/ren_crouch.png",
+          "sha256": "8d545749149187e20710c9b0525c31eb60805f749c944c11c01444ee195b23f9",
+          "source": "art_source/paper_roster_core/ren/generated/ren_crouch_v1.png",
+          "sourceSha256": "aa04ac8ed8ddd393d420baa110b3c075a62d476f5472c191167df0672240222f",
+          "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_crouch.png",
+          "headTopY": 349,
+          "footMinX": 296,
+          "footMaxX": 1054
+        },
+        {
+          "key": "counter",
+          "prepared": "art_source/paper_roster_core/ren/prepared/ren_counter.png",
+          "sha256": "27b59f8e14634b860ccf33105dd14dc6faa6c74936378cb99a6e4590b717ebaa",
+          "source": "art_source/paper_roster_core/ren/generated/ren_counter_v1.png",
+          "sourceSha256": "b714b36f6260b863bec201bdd4ffaed153619f9c6a3595141ce8a9884ce4e6ca",
+          "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_counter.png",
+          "headTopY": 118,
+          "footMinX": 362,
+          "footMaxX": 1028
+        },
+        {
+          "key": "win",
+          "prepared": "art_source/paper_roster_core/ren/prepared/ren_win.png",
+          "sha256": "a30576efbcb7abe66dd3bc13cee5eb6543f55866c4a19832499f58a97cfbe7f1",
+          "source": "art_source/paper_roster_core/ren/generated/ren_win_v1.png",
+          "sourceSha256": "56f1dbf6e96a81c8bf95fd2f75407b3c0425cdfe42fe1d88e31aa215eff8bad9",
+          "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_win.png",
+          "headTopY": 112,
+          "footMinX": 398,
+          "footMaxX": 993
+        },
+        {
+          "key": "lose",
+          "prepared": "art_source/paper_roster_core/ren/prepared/ren_lose.png",
+          "sha256": "7aa8310f6bf891f7b2c1e10ba888aac9591857d9d2049abcc6032530b319aedc",
+          "source": "art_source/paper_roster_core/ren/generated/ren_lose_v1.png",
+          "sourceSha256": "1abe828a8839f4998236854b494071fbd70e7d800f97bec29fcae58c7ad5b339",
+          "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_lose.png",
+          "headTopY": 121,
+          "footMinX": 422,
+          "footMaxX": 956
+        }
+      ]
+    },
+    {
+      "key": "minato",
+      "characterIndex": 3,
+      "name": "湊",
+      "idle": {
+        "prepared": "art_source/paper_roster_idle/prepared/minato_idle.png",
+        "sha256": "e4d286fbe83182881d79b23fa723f44ff0a42ef03f7ac231bbc3d9174e4e3f0a",
+        "headTopY": 98,
+        "footMinX": 393,
+        "footMaxX": 1029
+      },
+      "poses": [
+        {
+          "key": "guard",
+          "prepared": "art_source/paper_roster_core/minato/prepared/minato_guard.png",
+          "sha256": "6350f48e675f35749f6356846d17ae97280028e834527834b95904d1458db68a",
+          "source": "art_source/paper_roster_core/minato/generated/minato_guard_v1.png",
+          "sourceSha256": "ede225141bda87aa6d40e4eb1101fefd262cfdc2f5f787653a82c3ba299b39d1",
+          "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_guard.png",
+          "headTopY": 100,
+          "footMinX": 376,
+          "footMaxX": 1047
+        },
+        {
+          "key": "crouch",
+          "prepared": "art_source/paper_roster_core/minato/prepared/minato_crouch.png",
+          "sha256": "c617db59bef8f72c9723d208bf9635e6e5d76fa1c6c47f5497496319a330e257",
+          "source": "art_source/paper_roster_core/minato/generated/minato_crouch_v1.png",
+          "sourceSha256": "a492a2a01f88ab1f73f5459860d8498ee7fe56104f3cfef2e62aa3098f00fb3d",
+          "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_crouch.png",
+          "headTopY": 347,
+          "footMinX": 384,
+          "footMaxX": 1019
+        },
+        {
+          "key": "counter",
+          "prepared": "art_source/paper_roster_core/minato/prepared/minato_counter.png",
+          "sha256": "47d85bab5e31a41a7619b346581488b8871de917bf49441618553e0642d9666c",
+          "source": "art_source/paper_roster_core/minato/generated/minato_counter_v1.png",
+          "sourceSha256": "1b6c5e9a05fa85fb35294a121bf7d7a1bd173ff2233efec22ff1343dc2c0fc5e",
+          "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_counter.png",
+          "headTopY": 99,
+          "footMinX": 391,
+          "footMaxX": 1038
+        },
+        {
+          "key": "win",
+          "prepared": "art_source/paper_roster_core/minato/prepared/minato_win.png",
+          "sha256": "93b27c3786ebaf92a769a0becc0aac55acb6b9ff1aba1a4d4159cd3ea095a153",
+          "source": "art_source/paper_roster_core/minato/generated/minato_win_v1.png",
+          "sourceSha256": "111c7cbf0802a70fca9d6b7b53edacb3616cdb0ec9163ba93c2ed600d0a35a15",
+          "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_win.png",
+          "headTopY": 95,
+          "footMinX": 393,
+          "footMaxX": 1015
+        },
+        {
+          "key": "lose",
+          "prepared": "art_source/paper_roster_core/minato/prepared/minato_lose.png",
+          "sha256": "2a8583fa14425e1090f92317f5526057a4dd968dba1c701796bc83627339403f",
+          "source": "art_source/paper_roster_core/minato/generated/minato_lose_v1.png",
+          "sourceSha256": "9d9b8d7e64e033ad8b892585ad0b50469829e642ddcf6df6ce4e5de322acbba9",
+          "edgeCleaned": "art_source/paper_roster_core/minato/edge_clean/minato_lose.png",
+          "headTopY": 100,
+          "footMinX": 372,
+          "footMaxX": 959
+        }
+      ]
+    },
+    {
+      "key": "shiro",
+      "characterIndex": 4,
+      "name": "シロ",
+      "idle": {
+        "prepared": "art_source/paper_roster_idle/prepared/shiro_idle.png",
+        "sha256": "dee47999eda41dd5971c9b45ff8bcb57624443dcbd5381d6b200b391ac6ef404",
+        "headTopY": 214,
+        "footMinX": 155,
+        "footMaxX": 1142
+      },
+      "poses": [
+        {
+          "key": "guard",
+          "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_guard.png",
+          "sha256": "2375962ed519e439ddcc506319a5897d1d2c33b2b6f5d5519383b7dfb60cb76f",
+          "source": "art_source/paper_roster_core/shiro/generated/shiro_guard_v2.png",
+          "sourceSha256": "a156f1220a0b75b81003dc5cdda52fbcd074613dbe1809bb99693be8f05262d7",
+          "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_guard.png",
+          "headTopY": 271,
+          "footMinX": 255,
+          "footMaxX": 1142
+        },
+        {
+          "key": "crouch",
+          "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_crouch.png",
+          "sha256": "1ad691966b537594d12870457bd8b4b8b65dfbc404eaf873544cc064794259f4",
+          "source": "art_source/paper_roster_core/shiro/generated/shiro_crouch_v2.png",
+          "sourceSha256": "7476dc7e0dd148403b3485526929501946b7b622dcd37ee8c36c63eb6f12c5e4",
+          "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_crouch.png",
+          "headTopY": 425,
+          "footMinX": 221,
+          "footMaxX": 1212
+        },
+        {
+          "key": "counter",
+          "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_counter.png",
+          "sha256": "e4368c12410a15ea3cfcba10f35b5463f6060f86be7dacc63fe96f112a30e672",
+          "source": "art_source/paper_roster_core/shiro/generated/shiro_counter_v1.png",
+          "sourceSha256": "b941f18d23ad3dba58845748357dd6d7e85cf3325ada21912beef051f4d084e0",
+          "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_counter.png",
+          "headTopY": 223,
+          "footMinX": 252,
+          "footMaxX": 1174
+        },
+        {
+          "key": "win",
+          "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_win.png",
+          "sha256": "c50f09c2d83d999e1109dc79e7e39a142ea121a090ca75e1369d31be211d97e0",
+          "source": "art_source/paper_roster_core/shiro/generated/shiro_win_v1.png",
+          "sourceSha256": "6e924e152f7800a0bf1b195c4920983f213683f7cd098923c8659b40688e55d7",
+          "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_win.png",
+          "headTopY": 203,
+          "footMinX": 268,
+          "footMaxX": 1165
+        },
+        {
+          "key": "lose",
+          "prepared": "art_source/paper_roster_core/shiro/prepared/shiro_lose.png",
+          "sha256": "bf3fe08336f5fea00a4796118f148dcbed2b70a4d69f052dd4b73dec30354b81",
+          "source": "art_source/paper_roster_core/shiro/generated/shiro_lose_v1.png",
+          "sourceSha256": "d9562e40d7e840886ded51881530245e909dd4687dd78212faebe7eb5d35428f",
+          "edgeCleaned": "art_source/paper_roster_core/shiro/edge_clean/shiro_lose.png",
+          "headTopY": 461,
+          "footMinX": 273,
+          "footMaxX": 1149
+        }
+      ]
+    },
+    {
+      "key": "yui",
+      "characterIndex": 5,
+      "name": "結衣",
+      "idle": {
+        "prepared": "art_source/paper_roster_idle/prepared/yui_idle.png",
+        "sha256": "fd701d3d2864351d48e61d2793d5dc2e90ef829414cdc5b104a0a54b4301edbf",
+        "headTopY": 102,
+        "footMinX": 135,
+        "footMaxX": 1191
+      },
+      "poses": [
+        {
+          "key": "guard",
+          "prepared": "art_source/paper_roster_core/yui/prepared/yui_guard.png",
+          "sha256": "5127eea5950fa2642668eaeb66d533f0e7d28098be0cb2905072d01068a79e6f",
+          "source": "art_source/paper_roster_core/yui/generated/yui_guard_v2.png",
+          "sourceSha256": "e90547f65bbc37995388e757ea74770460650a3e80822eef581f915b2ee285c4",
+          "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_guard.png",
+          "headTopY": 101,
+          "footMinX": 472,
+          "footMaxX": 923
+        },
+        {
+          "key": "crouch",
+          "prepared": "art_source/paper_roster_core/yui/prepared/yui_crouch.png",
+          "sha256": "51ec703f5a7ef6e90ed442848522d1e2a4f4f4108ee7593ebcf25a516f4f326a",
+          "source": "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png",
+          "sourceSha256": "6b0c9cfe13630ac9df8b2bd12bf14c4a4d0cc757754b3d77a93c474baeb32add",
+          "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_crouch.png",
+          "headTopY": 425,
+          "footMinX": 249,
+          "footMaxX": 1069
+        },
+        {
+          "key": "counter",
+          "prepared": "art_source/paper_roster_core/yui/prepared/yui_counter.png",
+          "sha256": "4e1df353a50b98c5282fa86c164382e1d888fdc15be54300e3b7d3579177f577",
+          "source": "art_source/paper_roster_core/yui/generated/yui_counter_v1.png",
+          "sourceSha256": "1c57317f132b834bbd7ded08d6ed5233f02896e0830e4538cc6e1d501f1c8396",
+          "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_counter.png",
+          "headTopY": 63,
+          "footMinX": 409,
+          "footMaxX": 1005
+        },
+        {
+          "key": "win",
+          "prepared": "art_source/paper_roster_core/yui/prepared/yui_win.png",
+          "sha256": "b787575c38db85419e7c27c46b165694e2dda11ac96bdccc19e774cc09cfa1f7",
+          "source": "art_source/paper_roster_core/yui/generated/yui_win_v2.png",
+          "sourceSha256": "d6aa9ce012f6b60536763daf451b04f49b24537c8383483f9f8bdce802658e56",
+          "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_win.png",
+          "headTopY": 104,
+          "footMinX": 472,
+          "footMaxX": 922
+        },
+        {
+          "key": "lose",
+          "prepared": "art_source/paper_roster_core/yui/prepared/yui_lose.png",
+          "sha256": "fc632f7cac95860908794d30c99b30a0f4e046d2e8b9f62f6f45ebf67ae8ef38",
+          "source": "art_source/paper_roster_core/yui/generated/yui_lose_v1.png",
+          "sourceSha256": "3778c221bf2502ce1f98ae2eac86e77f9417b1cde947dfbdb93d04e24b1412df",
+          "edgeCleaned": "art_source/paper_roster_core/yui/edge_clean/yui_lose.png",
+          "headTopY": 52,
+          "footMinX": 534,
+          "footMaxX": 866
+        }
+      ]
+    },
+    {
+      "key": "king",
+      "characterIndex": 6,
+      "name": "黒獅子王",
+      "idle": {
+        "prepared": "art_source/paper_roster_idle/prepared/king_idle.png",
+        "sha256": "2094de5b1c27614ef9877807b64927996ba3a27b3acc00a29a95af721f90400f",
+        "headTopY": 56,
+        "footMinX": 116,
+        "footMaxX": 1196
+      },
+      "poses": [
+        {
+          "key": "guard",
+          "prepared": "art_source/paper_roster_core/king/prepared/king_guard.png",
+          "sha256": "72bfc8b69f985142459786c0f347f1859a60804858ab10528b7c27044c18f1a7",
+          "source": "art_source/paper_roster_core/king/generated/king_guard_v1.png",
+          "sourceSha256": "0ca03969d33362724205acedd96077f1355a4ddb95f2b8c6f8c384f7725f46f3",
+          "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_guard.png",
+          "headTopY": 54,
+          "footMinX": 282,
+          "footMaxX": 1154
+        },
+        {
+          "key": "crouch",
+          "prepared": "art_source/paper_roster_core/king/prepared/king_crouch.png",
+          "sha256": "312eaa8e0d6c38f3c99e26d2169a564f961ea3045b172a2775434bafea50399c",
+          "source": "art_source/paper_roster_core/king/generated/king_crouch_v1.png",
+          "sourceSha256": "a11a5cdcc55576423cbb32d3c0d5c90f78e814ba5839ea392d9cc0763db78e07",
+          "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_crouch.png",
+          "headTopY": 317,
+          "footMinX": 270,
+          "footMaxX": 1218
+        },
+        {
+          "key": "counter",
+          "prepared": "art_source/paper_roster_core/king/prepared/king_counter.png",
+          "sha256": "5e06263cce967cf45ca8c053c3692ad83038ac665b93993a13ae07104dc93b62",
+          "source": "art_source/paper_roster_core/king/generated/king_counter_v1.png",
+          "sourceSha256": "aca5189836a46f255318c965a9e589cd60d6864b4bd10a37eee8578808cf38d9",
+          "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_counter.png",
+          "headTopY": 58,
+          "footMinX": 284,
+          "footMaxX": 1161
+        },
+        {
+          "key": "win",
+          "prepared": "art_source/paper_roster_core/king/prepared/king_win.png",
+          "sha256": "3848a597d6a3acedd319a9c7f3088e301c0de00d64919436d63ce149f34dc76a",
+          "source": "art_source/paper_roster_core/king/generated/king_win_v1.png",
+          "sourceSha256": "03533829adf5a36a33ffae8ef8c6a0a9f38245929a6ac64aee8edfb4293c573e",
+          "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_win.png",
+          "headTopY": 55,
+          "footMinX": 282,
+          "footMaxX": 1162
+        },
+        {
+          "key": "lose",
+          "prepared": "art_source/paper_roster_core/king/prepared/king_lose.png",
+          "sha256": "65d9f8c0419608583fd303172673b144cd715e1755d12faf616760066b9a1e15",
+          "source": "art_source/paper_roster_core/king/generated/king_lose_v1.png",
+          "sourceSha256": "6fc691da68778fc5ae213bdcfb5a2463dd0670fe05ffc9e8d441af48e826c970",
+          "edgeCleaned": "art_source/paper_roster_core/king/edge_clean/king_lose.png",
+          "headTopY": 53,
+          "footMinX": 309,
+          "footMaxX": 1157
+        }
+      ]
+    },
+    {
+      "key": "akatsuki",
+      "characterIndex": 7,
+      "name": "暁",
+      "idle": {
+        "prepared": "art_source/paper_roster_idle/prepared/akatsuki_idle.png",
+        "sha256": "eae40aa2874589169045a2223c02b49f16ba01ad75290131cf237135f00efc4e",
+        "headTopY": 55,
+        "footMinX": 389,
+        "footMaxX": 996
+      },
+      "poses": [
+        {
+          "key": "guard",
+          "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_guard.png",
+          "sha256": "737537b07ddfc7f6a38c18040f2eafabefc722613cbf963ade4c40c63db3d997",
+          "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_guard_v1.png",
+          "sourceSha256": "3af96cfad5cca188558dd9c557ff6e0ca6151fe83ba8c1f575e35dbefebf5ca4",
+          "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_guard.png",
+          "headTopY": 55,
+          "footMinX": 397,
+          "footMaxX": 999
+        },
+        {
+          "key": "crouch",
+          "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_crouch.png",
+          "sha256": "5a57b8239a1d9be43697891da56bd9b0b0b5c6faf3bd41afc8bfa52c659495ba",
+          "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v3.png",
+          "sourceSha256": "bf825e7a18f880fae21133891946786330bad58b5cec0e243bbaf727a9601626",
+          "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_crouch.png",
+          "headTopY": 419,
+          "footMinX": 374,
+          "footMaxX": 938
+        },
+        {
+          "key": "counter",
+          "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_counter.png",
+          "sha256": "24c34aea7af47602f0ddfc5ae9f336ce63c47daf4eb4987c504c5c5f309af18b",
+          "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_counter_v1.png",
+          "sourceSha256": "f1fcaa5dd9076e18b2b6682433cbee0669597aba70302ae61cd9ef58bf6fdf0b",
+          "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_counter.png",
+          "headTopY": 54,
+          "footMinX": 395,
+          "footMaxX": 1006
+        },
+        {
+          "key": "win",
+          "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_win.png",
+          "sha256": "f3d3d7c0e5e0c8c6e9faad945d6fa796359be9f6c09fdfd59ae9a169c1f03fae",
+          "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_win_v1.png",
+          "sourceSha256": "765a13aceed08608055e4d30f621599dbf6a4c87433a31ebcc760295e5e4ee53",
+          "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_win.png",
+          "headTopY": 55,
+          "footMinX": 397,
+          "footMaxX": 997
+        },
+        {
+          "key": "lose",
+          "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_lose.png",
+          "sha256": "2e9c940395eb4e06be221fe8157db7092e65c57d55edd53ee9ba8b233814e9a2",
+          "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_lose_v1.png",
+          "sourceSha256": "194f18139a7073f5727d6516793ecf35da07b6c5faec2095d5e64423c77e0e4d",
+          "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_lose.png",
+          "headTopY": 61,
+          "footMinX": 416,
+          "footMaxX": 976
+        }
+      ]
+    },
+    {
+      "key": "ryuta",
+      "characterIndex": 8,
+      "name": "龍太",
+      "idle": {
+        "prepared": "art_source/paper_roster_idle/prepared/ryuta_idle.png",
+        "sha256": "99c457a9d628f5ed679f2b784fc897f2ec3d68ae8f60bd818f2a1fe4d17f8121",
+        "headTopY": 74,
+        "footMinX": 393,
+        "footMaxX": 1010
+      },
+      "poses": [
+        {
+          "key": "guard",
+          "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_guard.png",
+          "sha256": "2b515e57aebec4f69b5df0a5fce7a6e055b7fce18b638509c40e646ca63280c4",
+          "source": "art_source/paper_roster_core/ryuta/generated/ryuta_guard_v1.png",
+          "sourceSha256": "0ba78201c73ad4119a80d13938a5af469c5a9d6a76719b375678b19c31b7a7e7",
+          "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_guard.png",
+          "headTopY": 71,
+          "footMinX": 406,
+          "footMaxX": 1016
+        },
+        {
+          "key": "crouch",
+          "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_crouch.png",
+          "sha256": "600fbc1647b996ce991a079554a648759b377ed95dfa8e1f1fc84e94b8dea2c5",
+          "source": "art_source/paper_roster_core/ryuta/generated/ryuta_crouch_v2.png",
+          "sourceSha256": "1d039c7a382c6245b7cecde6cd203720933dfe9caa24ce058a27a4ca754069a1",
+          "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_crouch.png",
+          "headTopY": 424,
+          "footMinX": 374,
+          "footMaxX": 1054
+        },
+        {
+          "key": "counter",
+          "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_counter.png",
+          "sha256": "78f652da1dc17a5d23a628b885b9309916953f1aee94ad39fa74531989f0afb7",
+          "source": "art_source/paper_roster_core/ryuta/generated/ryuta_counter_v1.png",
+          "sourceSha256": "c038a6e3931d9623e272c857f6e6cf9cfebc5949e3c209202602f1913454620d",
+          "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_counter.png",
+          "headTopY": 75,
+          "footMinX": 401,
+          "footMaxX": 1022
+        },
+        {
+          "key": "win",
+          "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_win.png",
+          "sha256": "4152fdcbe4e4abe11e22c1e225f4e37a3931482bca6c189cb548a01050a526a9",
+          "source": "art_source/paper_roster_core/ryuta/generated/ryuta_win_v1.png",
+          "sourceSha256": "a3616d64dd9b1f19b4a2499c2fd815cad8fcae4c8377ba0b754dd3320b466728",
+          "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_win.png",
+          "headTopY": 67,
+          "footMinX": 403,
+          "footMaxX": 1014
+        },
+        {
+          "key": "lose",
+          "prepared": "art_source/paper_roster_core/ryuta/prepared/ryuta_lose.png",
+          "sha256": "53807366f19fde975fdeaede13988f892ec6c577d61cfc546db0e032b611e3f8",
+          "source": "art_source/paper_roster_core/ryuta/generated/ryuta_lose_v1.png",
+          "sourceSha256": "a848eba76caf56fe832634ffe2fdaccd7ed083f590538d268332e779f7d0afdd",
+          "edgeCleaned": "art_source/paper_roster_core/ryuta/edge_clean/ryuta_lose.png",
+          "headTopY": 69,
+          "footMinX": 409,
+          "footMaxX": 995
+        }
+      ]
     }
   ]
 }

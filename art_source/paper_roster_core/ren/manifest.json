@@ -18,8 +18,8 @@
     "bottom": 1328,
     "opaqueHeight": 1218
   },
-  "integrated": false,
-  "verifiedTag": null,
+  "integrated": true,
+  "verifiedTag": "paper_core_roster_1",
   "jobs": [
     {
       "pose": "guard",
@@ -100,7 +100,7 @@
       ],
       "prompt": "用途：オリジナルゲーム「あにあにバトル！！」の全身1枚絵スプライト。入力1は蓮の採用済み待機で、人物・服装・頭身・頭と靴の画素寸法の厳密な基準兼編集対象。千鶴の同動作と元作品資料は制作前に確認済み。直接入力は同一人物の採用待機1枚だけで、倍率と衣装を固定する。入力1と同じ普通のアニメ塗り、くっきりした濃い輪郭、色面で分けた影。1枚の全身イラスト、関節分割なし。人物設定：純粋で元気な少年。こげ茶の跳ねた髪、青緑の目、茶色の垂れた犬耳が付くクリーム色の犬フード、白クリームの上着に青緑の縁、赤いスカーフと赤いマント、濃色ショートパンツと赤系の大きいスニーカー。肉球付きのミトンは元絵の通り。右向き3/4、両足を地面に着け、両手を少し前に構える元気な待機。攻撃や走りではない。約3.2頭身で千鶴より少し小柄。フードと靴の外周まで収める。マントは大きく横へ広げず手足を読みやすく。 ただし姿勢は待機でなく下記に変える。 今回の動作：しゃがみ。両膝と股関節を深く曲げて腰を低くする。両足は地面に着け、頭・髪・靴・手は待機と同じ画素寸法のまま。全高は待機の約60〜65%。余った上半分は透明な空間として残し、しゃがんだ人物を画面いっぱいに拡大しない。両手は膝と胸の間に自然に構える。 出力は入力1と同じ採用待機原画と同じ画素寸法。頭・髪・手・靴の大きさは入力1から変えない。頭の上を大きく空けること。全高目安767pxで人物を小さく描き直すのでなく膝を折る。接地はy=1328px。人物の上下左右に余白を残し、靴・髪・持ち物を切らない。正面でも真横でもない右向き3/4、両肩・両手・両足が読める。胸側か背中側かを一貫させ、右手を2つ作らない。人間の手は親指1本と4指（ミトン衣装はミトン）。全身外周に入力1と同じ細いクリーム白の切り抜き縁を3〜6px程度でくっきり一周。白い縁の外は完全透明。グロー、ぼかし、にじみ、半透明の光彩を禁止、外周アンチエイリアスは最小1px。背景・床・影・文字・名前・効果線・武器追加・小物追加なし。紙の繊維や折れ目の質感、3D、ピクセルアート、複数ポーズのシートは禁止。 両靴（犬は四足）の形・横幅・厚み・向きは入力1から変えない。足を遠近法で大きくせず、靴を横向きに回して長く見せない。ガードとカウンターと勝敗では入力1の足先の向きと接地位置を極力そのまま、姿勢は上半身と腕で変える。しゃがみは靴の実寸と向きを保って膝を折る。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "unity_verified",
       "consultedReferences": [
         "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
         "docs/art_reference/characters/ren_dog_rook.png"
@@ -116,11 +116,31 @@
         "opaqueHeight": 982
       },
       "artApproved": false,
-      "gameConnected": false,
+      "gameConnected": true,
       "consultedReferenceRoles": [
         "千鶴：画風と動作の意味のみ",
         "元作品：容姿のみ。頭身は入力1"
-      ]
+      ],
+      "prepared": "art_source/paper_roster_core/ren/prepared/ren_crouch.png",
+      "preparedSha256": "8d545749149187e20710c9b0525c31eb60805f749c944c11c01444ee195b23f9",
+      "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_crouch.png",
+      "edgeCleanedSha256": "af057bfa60683293ea2475c4131d8097596c3a9917d07dff439196f00a3f1760",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 532577,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 59,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 349,
+      "footMinX": 296,
+      "footMaxX": 1054,
+      "opaqueHeightRatio": 0.8045977011494253
     },
     {
       "key": "ren",
@@ -137,7 +157,7 @@
       ],
       "prompt": "用途：オリジナルゲーム「あにあにバトル！！」の全身1枚絵スプライト。入力1は蓮の採用済み待機で、人物・服装・頭身・頭と靴の画素寸法の厳密な基準兼編集対象。千鶴の同動作と元作品資料は制作前に確認済み。直接入力は同一人物の採用待機1枚だけで、倍率と衣装を固定する。入力1と同じ普通のアニメ塗り、くっきりした濃い輪郭、色面で分けた影。1枚の全身イラスト、関節分割なし。人物設定：純粋で元気な少年。こげ茶の跳ねた髪、青緑の目、茶色の垂れた犬耳が付くクリーム色の犬フード、白クリームの上着に青緑の縁、赤いスカーフと赤いマント、濃色ショートパンツと赤系の大きいスニーカー。肉球付きのミトンは元絵の通り。右向き3/4、両足を地面に着け、両手を少し前に構える元気な待機。攻撃や走りではない。約3.2頭身で千鶴より少し小柄。フードと靴の外周まで収める。マントは大きく横へ広げず手足を読みやすく。 ただし姿勢は待機でなく下記に変える。 今回の動作：カウンター。ガードとは違う受け流しの構え。片方の手を開いて相手方向へ出し、もう片方は胸元へ引く。攻撃を払う直前の鋭い静かな構え。開いた手は親指1本と4本の指、肩・肘・掌のつながりが自然。 出力は入力1と同じ採用待機原画と同じ画素寸法。頭・髪・手・靴の大きさは入力1から変えない。背丈と体格を入力1と保つ。接地はy=1328px。人物の上下左右に余白を残し、靴・髪・持ち物を切らない。正面でも真横でもない右向き3/4、両肩・両手・両足が読める。胸側か背中側かを一貫させ、右手を2つ作らない。人間の手は親指1本と4指（ミトン衣装はミトン）。全身外周に入力1と同じ細いクリーム白の切り抜き縁を3〜6px程度でくっきり一周。白い縁の外は完全透明。グロー、ぼかし、にじみ、半透明の光彩を禁止、外周アンチエイリアスは最小1px。背景・床・影・文字・名前・効果線・武器追加・小物追加なし。紙の繊維や折れ目の質感、3D、ピクセルアート、複数ポーズのシートは禁止。 両靴（犬は四足）の形・横幅・厚み・向きは入力1から変えない。足を遠近法で大きくせず、靴を横向きに回して長く見せない。ガードとカウンターと勝敗では入力1の足先の向きと接地位置を極力そのまま、姿勢は上半身と腕で変える。しゃがみは靴の実寸と向きを保って膝を折る。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "unity_verified",
       "consultedReferences": [
         "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
         "docs/art_reference/characters/ren_dog_rook.png"
@@ -153,11 +173,31 @@
         "opaqueHeight": 1213
       },
       "artApproved": false,
-      "gameConnected": false,
+      "gameConnected": true,
       "consultedReferenceRoles": [
         "千鶴：画風と動作の意味のみ",
         "元作品：容姿のみ。頭身は入力1"
-      ]
+      ],
+      "prepared": "art_source/paper_roster_core/ren/prepared/ren_counter.png",
+      "preparedSha256": "27b59f8e14634b860ccf33105dd14dc6faa6c74936378cb99a6e4590b717ebaa",
+      "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_counter.png",
+      "edgeCleanedSha256": "a32f0275e05403fbd19ecea4b440abe88a0b5c0529b7147bd34b806d2bb62719",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 639250,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 72,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 118,
+      "footMinX": 362,
+      "footMaxX": 1028,
+      "opaqueHeightRatio": 0.9942528735632183
     },
     {
       "key": "ren",
@@ -174,7 +214,7 @@
       ],
       "prompt": "用途：オリジナルゲーム「あにあにバトル！！」の全身1枚絵スプライト。入力1は蓮の採用済み待機で、人物・服装・頭身・頭と靴の画素寸法の厳密な基準兼編集対象。千鶴の同動作と元作品資料は制作前に確認済み。直接入力は同一人物の採用待機1枚だけで、倍率と衣装を固定する。入力1と同じ普通のアニメ塗り、くっきりした濃い輪郭、色面で分けた影。1枚の全身イラスト、関節分割なし。人物設定：純粋で元気な少年。こげ茶の跳ねた髪、青緑の目、茶色の垂れた犬耳が付くクリーム色の犬フード、白クリームの上着に青緑の縁、赤いスカーフと赤いマント、濃色ショートパンツと赤系の大きいスニーカー。肉球付きのミトンは元絵の通り。右向き3/4、両足を地面に着け、両手を少し前に構える元気な待機。攻撃や走りではない。約3.2頭身で千鶴より少し小柄。フードと靴の外周まで収める。マントは大きく横へ広げず手足を読みやすく。 ただし姿勢は待機でなく下記に変える。 今回の動作：勝利。待機から大きく姿勢を変えない控えめな勝利の立ち姿。両足を接地したまま、ささやかな笑顔と胸元の小さなガッツポーズ。飛び跳ねない、座らない、大きく腕を頭上に上げない。本人らしい自信を表情で示す。 出力は入力1と同じ採用待機原画と同じ画素寸法。頭・髪・手・靴の大きさは入力1から変えない。背丈と体格を入力1と保つ。接地はy=1328px。人物の上下左右に余白を残し、靴・髪・持ち物を切らない。正面でも真横でもない右向き3/4、両肩・両手・両足が読める。胸側か背中側かを一貫させ、右手を2つ作らない。人間の手は親指1本と4指（ミトン衣装はミトン）。全身外周に入力1と同じ細いクリーム白の切り抜き縁を3〜6px程度でくっきり一周。白い縁の外は完全透明。グロー、ぼかし、にじみ、半透明の光彩を禁止、外周アンチエイリアスは最小1px。背景・床・影・文字・名前・効果線・武器追加・小物追加なし。紙の繊維や折れ目の質感、3D、ピクセルアート、複数ポーズのシートは禁止。 両靴（犬は四足）の形・横幅・厚み・向きは入力1から変えない。足を遠近法で大きくせず、靴を横向きに回して長く見せない。ガードとカウンターと勝敗では入力1の足先の向きと接地位置を極力そのまま、姿勢は上半身と腕で変える。しゃがみは靴の実寸と向きを保って膝を折る。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "unity_verified",
       "consultedReferences": [
         "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
         "docs/art_reference/characters/ren_dog_rook.png"
@@ -190,11 +230,31 @@
         "opaqueHeight": 1219
       },
       "artApproved": false,
-      "gameConnected": false,
+      "gameConnected": true,
       "consultedReferenceRoles": [
         "千鶴：画風と動作の意味のみ",
         "元作品：容姿のみ。頭身は入力1"
-      ]
+      ],
+      "prepared": "art_source/paper_roster_core/ren/prepared/ren_win.png",
+      "preparedSha256": "a30576efbcb7abe66dd3bc13cee5eb6543f55866c4a19832499f58a97cfbe7f1",
+      "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_win.png",
+      "edgeCleanedSha256": "970bc3556757420a974727c00838a945482a90909cd62425259db888d6563fd3",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 606067,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 65,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 112,
+      "footMinX": 398,
+      "footMaxX": 993,
+      "opaqueHeightRatio": 0.9991789819376026
     },
     {
       "key": "ren",
@@ -211,7 +271,7 @@
       ],
       "prompt": "用途：オリジナルゲーム「あにあにバトル！！」の全身1枚絵スプライト。入力1は蓮の採用済み待機で、人物・服装・頭身・頭と靴の画素寸法の厳密な基準兼編集対象。千鶴の同動作と元作品資料は制作前に確認済み。直接入力は同一人物の採用待機1枚だけで、倍率と衣装を固定する。入力1と同じ普通のアニメ塗り、くっきりした濃い輪郭、色面で分けた影。1枚の全身イラスト、関節分割なし。人物設定：純粋で元気な少年。こげ茶の跳ねた髪、青緑の目、茶色の垂れた犬耳が付くクリーム色の犬フード、白クリームの上着に青緑の縁、赤いスカーフと赤いマント、濃色ショートパンツと赤系の大きいスニーカー。肉球付きのミトンは元絵の通り。右向き3/4、両足を地面に着け、両手を少し前に構える元気な待機。攻撃や走りではない。約3.2頭身で千鶴より少し小柄。フードと靴の外周まで収める。マントは大きく横へ広げず手足を読みやすく。 ただし姿勢は待機でなく下記に変える。 今回の動作：敗北。立ったままの控えめな敗北の姿。両足を接地したまま肩を落とし、少しうつむき、腕を自然に下げる。悔しそう／無念そうな表情。頭を少し下げるが頭や靴は同じ大きさ。座り込まない、膝を地面につけない、倒れない。 出力は入力1と同じ採用待機原画と同じ画素寸法。頭・髪・手・靴の大きさは入力1から変えない。背丈と体格を入力1と保つ。接地はy=1328px。人物の上下左右に余白を残し、靴・髪・持ち物を切らない。正面でも真横でもない右向き3/4、両肩・両手・両足が読める。胸側か背中側かを一貫させ、右手を2つ作らない。人間の手は親指1本と4指（ミトン衣装はミトン）。全身外周に入力1と同じ細いクリーム白の切り抜き縁を3〜6px程度でくっきり一周。白い縁の外は完全透明。グロー、ぼかし、にじみ、半透明の光彩を禁止、外周アンチエイリアスは最小1px。背景・床・影・文字・名前・効果線・武器追加・小物追加なし。紙の繊維や折れ目の質感、3D、ピクセルアート、複数ポーズのシートは禁止。 両靴（犬は四足）の形・横幅・厚み・向きは入力1から変えない。足を遠近法で大きくせず、靴を横向きに回して長く見せない。ガードとカウンターと勝敗では入力1の足先の向きと接地位置を極力そのまま、姿勢は上半身と腕で変える。しゃがみは靴の実寸と向きを保って膝を折る。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "unity_verified",
       "consultedReferences": [
         "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
         "docs/art_reference/characters/ren_dog_rook.png"
@@ -227,11 +287,89 @@
         "opaqueHeight": 1210
       },
       "artApproved": false,
-      "gameConnected": false,
+      "gameConnected": true,
       "consultedReferenceRoles": [
         "千鶴：画風と動作の意味のみ",
         "元作品：容姿のみ。頭身は入力1"
-      ]
+      ],
+      "prepared": "art_source/paper_roster_core/ren/prepared/ren_lose.png",
+      "preparedSha256": "7aa8310f6bf891f7b2c1e10ba888aac9591857d9d2049abcc6032530b319aedc",
+      "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_lose.png",
+      "edgeCleanedSha256": "d365faa3a86ddc01486f364ad605ec41b09eed3806a974a77bbbac82336333fd",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 552055,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 66,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 121,
+      "footMinX": 422,
+      "footMaxX": 956,
+      "opaqueHeightRatio": 0.9917898193760263
+    },
+    {
+      "key": "ren",
+      "character": "蓮",
+      "pose": "guard",
+      "label": "ガード",
+      "version": 2,
+      "source": "art_source/paper_roster_core/ren/generated/ren_guard_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1は蓮の採用待機1189×1323。編集するのは両腕のガードと少し真剣な表情だけ。頭と犬フードと髪の画素寸法・位置、胴体、腰、両脚、靴の全輪郭と接地位置は入力1から変更しない。特に靴の幅や向きは完全に待機のまま。両肘を曲げ、肉球ミトンを頬の下から胸の前に上げて構えるガード。肉球の手袋を人間の指へ変えない。目と口は隠さない。左右の肩→肘→ミトンが独立した1本の腕としてつながる。クリームの犬フード、茶髪、青緑の目、白クリームの上着と青緑の縁、赤いスカーフとマント、濃いショートパンツ、赤系のスニーカー、肉球と骨の留め飾り、房、尻尾をそのまま維持。右向き3/4、全身一人。脚を踏み広げず、両スニーカーを横から見た長い靴へ変えない。アニメ塗りと細くくっきりしたクリーム白の切り抜き縁。透明背景、ぼかし・グロー・床・影・文字・効果線・別の道具なし。人物の拡大縮小をしない。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+        "docs/art_reference/characters/ren_dog_rook.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "reason": "guard v1の近い靴が横に長くなったため、下半身を待機に固定する",
+      "sha256": "6a0c21c901655393b333d31feaccf0994d2c881124b11d1eff0f2842800db3c5",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 174,
+        "top": 39,
+        "right": 1013,
+        "bottom": 1264,
+        "opaqueHeight": 1226
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/ren/prepared/ren_guard.png",
+      "preparedSha256": "eb163926b15333b1d4670e90c5857e23f00fa2392b4d3207691fb7353d4ad65e",
+      "edgeCleaned": "art_source/paper_roster_core/ren/edge_clean/ren_guard.png",
+      "edgeCleanedSha256": "31729c8c61d2f934ece71a5acd27d3fdd48bacfdc267c041250f5c4b45c6d2f4",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 604379,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 64,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 103,
+      "footMinX": 399,
+      "footMaxX": 995,
+      "opaqueHeightRatio": 1.006568144499179
     }
   ]
 }

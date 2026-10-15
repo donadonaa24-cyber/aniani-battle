@@ -18,8 +18,8 @@
     "bottom": 1328,
     "opaqueHeight": 1274
   },
-  "integrated": false,
-  "verifiedTag": null,
+  "integrated": true,
+  "verifiedTag": "paper_core_roster_1",
   "jobs": [
     {
       "pose": "guard",
@@ -28,8 +28,8 @@
     },
     {
       "pose": "crouch",
-      "version": 1,
-      "file": "art_source/paper_roster_core/akatsuki/prompts/crouch_v1.json"
+      "version": 3,
+      "file": "art_source/paper_roster_core/akatsuki/prompts/crouch_v3.json"
     },
     {
       "pose": "counter",
@@ -47,5 +47,369 @@
       "file": "art_source/paper_roster_core/akatsuki/prompts/lose_v1.json"
     }
   ],
-  "entries": []
+  "entries": [
+    {
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "guard",
+      "label": "ガード",
+      "version": 1,
+      "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_guard_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の暁の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の透明キャンバス。黒い跳ねた短髪、丸眼鏡、茶色の目、紺ブレザーと金ボタン、ベージュVネックニット、白シャツ、緑の斜め縞ネクタイ、紺スラックスと黒い革靴を維持。今回のポーズ：両肘を曲げ、左右の拳を別々に胸と顎の前へ上げた守りの構え。目と丸眼鏡を隠さない。肩から肘と手首へ自然につなぐ。胴体・腰・両脚と両靴の輪郭・位置・向きは待機のまま。 胸側が見える右向き3/4、全身一人。頭・髪・顔・手・両靴の画素寸法は入力から変えず、全身を拡大しない。左右の手は親指1本と4指、肩肘手首の接続は自然に。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・落ち影・文字・武器・料理道具・光彩・グロー・ぼかし・攻撃効果なし。全身を切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_guard_v1.png",
+        "docs/art_reference/roster_idle/akatsuki.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "3af96cfad5cca188558dd9c557ff6e0ca6151fe83ba8c1f575e35dbefebf5ca4",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 340,
+        "top": 9,
+        "right": 943,
+        "bottom": 1283,
+        "opaqueHeight": 1275
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_guard.png",
+      "preparedSha256": "737537b07ddfc7f6a38c18040f2eafabefc722613cbf963ade4c40c63db3d997",
+      "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_guard.png",
+      "edgeCleanedSha256": "e6319169f6951f903e704bef195a8f3286c84e741e9f4f75cf80e93b9f38a811",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 371438,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 45,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 55,
+      "footMinX": 397,
+      "footMaxX": 999,
+      "opaqueHeightRatio": 1
+    },
+    {
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 1,
+      "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の暁の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の透明キャンバス。黒い跳ねた短髪、丸眼鏡、茶色の目、紺ブレザーと金ボタン、ベージュVネックニット、白シャツ、緑の斜め縞ネクタイ、紺スラックスと黒い革靴を維持。今回のポーズ：両膝と股関節を深く曲げるしゃがみ。腰を下げ、髪の一番上をy=330付近へ下げる。足の底は元の位置、全高約950px。頭・髪・眼鏡・手・靴の大きさは待機と同じ画素寸法、人物を画面いっぱいに拡大しない。上330pxは透明。両膝を折って低くし、両足は接地、両手は胸と膝の間に軽く構える。 胸側が見える右向き3/4、全身一人。頭・髪・顔・手・両靴の画素寸法は入力から変えず、全身を拡大しない。左右の手は親指1本と4指、肩肘手首の接続は自然に。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・落ち影・文字・武器・料理道具・光彩・グロー・ぼかし・攻撃効果なし。全身を切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "rejected_head_and_shoe_scale",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/akatsuki.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "dd9740730fd24111c9b45435e03d4ce8be55d1d8eb471afcad47e88b1beb52c1",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "left": 249,
+        "top": 384,
+        "right": 941,
+        "bottom": 1363,
+        "opaqueHeight": 980
+      },
+      "artApproved": false,
+      "gameConnected": false
+    },
+    {
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "counter",
+      "label": "カウンター",
+      "version": 1,
+      "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_counter_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の暁の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の透明キャンバス。黒い跳ねた短髪、丸眼鏡、茶色の目、紺ブレザーと金ボタン、ベージュVネックニット、白シャツ、緑の斜め縞ネクタイ、紺スラックスと黒い革靴を維持。今回のポーズ：受け流し直前。画面左から出る本人右肩→右上腕→曲げた右肘→右前腕→閉じた右拳が自然につながり、その右前腕を胸の前へ斜めに構える。画面右の本人左肘は曲げ、閉じた左拳は腰近くへ引く。右拳二つにならず、両拳の親指が正しく対応。掌を開かない。待機の下半身と両靴の輪郭・位置・向きを維持。 胸側が見える右向き3/4、全身一人。頭・髪・顔・手・両靴の画素寸法は入力から変えず、全身を拡大しない。左右の手は親指1本と4指、肩肘手首の接続は自然に。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・落ち影・文字・武器・料理道具・光彩・グロー・ぼかし・攻撃効果なし。全身を切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+        "docs/art_reference/roster_idle/akatsuki.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "f1fcaa5dd9076e18b2b6682433cbee0669597aba70302ae61cd9ef58bf6fdf0b",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 337,
+        "top": 10,
+        "right": 949,
+        "bottom": 1285,
+        "opaqueHeight": 1276
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_counter.png",
+      "preparedSha256": "24c34aea7af47602f0ddfc5ae9f336ce63c47daf4eb4987c504c5c5f309af18b",
+      "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_counter.png",
+      "edgeCleanedSha256": "a0cd5796aa37c73b859d0344d8dd91be0ad8fa770a0aa501f845f9af18b139e9",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 357930,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 44,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 54,
+      "footMinX": 395,
+      "footMaxX": 1006,
+      "opaqueHeightRatio": 1.000784929356358
+    },
+    {
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "win",
+      "label": "勝利",
+      "version": 1,
+      "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_win_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の暁の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の透明キャンバス。黒い跳ねた短髪、丸眼鏡、茶色の目、紺ブレザーと金ボタン、ベージュVネックニット、白シャツ、緑の斜め縞ネクタイ、紺スラックスと黒い革靴を維持。今回のポーズ：控えめな勝利。知的で嬉しそうな小さな笑顔。本人右手を胸元に小さいガッツポーズ、左手は力を抜いて自然に下げる。立ったまま両足接地。頭・胴体・腰・両脚と両靴の輪郭・位置・向きは待機のまま。 胸側が見える右向き3/4、全身一人。頭・髪・顔・手・両靴の画素寸法は入力から変えず、全身を拡大しない。左右の手は親指1本と4指、肩肘手首の接続は自然に。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・落ち影・文字・武器・料理道具・光彩・グロー・ぼかし・攻撃効果なし。全身を切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_win_v1.png",
+        "docs/art_reference/roster_idle/akatsuki.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "765a13aceed08608055e4d30f621599dbf6a4c87433a31ebcc760295e5e4ee53",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 339,
+        "top": 9,
+        "right": 940,
+        "bottom": 1284,
+        "opaqueHeight": 1276
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_win.png",
+      "preparedSha256": "f3d3d7c0e5e0c8c6e9faad945d6fa796359be9f6c09fdfd59ae9a169c1f03fae",
+      "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_win.png",
+      "edgeCleanedSha256": "110091ecf6503eb1c0771b52c532a82decfa7c24ae305b0f9db49ce710b74ed6",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 372697,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 45,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 55,
+      "footMinX": 397,
+      "footMaxX": 997,
+      "opaqueHeightRatio": 1
+    },
+    {
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "lose",
+      "label": "敗北",
+      "version": 1,
+      "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_lose_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の暁の採用待機を編集。同じ人物・同じ画面倍率と同じ1189×1323の透明キャンバス。黒い跳ねた短髪、丸眼鏡、茶色の目、紺ブレザーと金ボタン、ベージュVネックニット、白シャツ、緑の斜め縞ネクタイ、紺スラックスと黒い革靴を維持。今回のポーズ：控えめな敗北。立ったまま肩を少し落としてうつむき、悔しそうな表情。両腕を自然に下げる。丸眼鏡を維持。座らない、膝を地面につけない。頭の大きさと腰以下の輪郭・足先の向きと接地位置は待機のまま。 胸側が見える右向き3/4、全身一人。頭・髪・顔・手・両靴の画素寸法は入力から変えず、全身を拡大しない。左右の手は親指1本と4指、肩肘手首の接続は自然に。普通のアニメ塗り、濃い輪郭と細い硬いクリーム白の外周縁。背景・床・落ち影・文字・武器・料理道具・光彩・グロー・ぼかし・攻撃効果なし。全身を切らず余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_ko_v2.png",
+        "docs/art_reference/roster_idle/akatsuki.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "sha256": "194f18139a7073f5727d6516793ecf35da07b6c5faec2095d5e64423c77e0e4d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 359,
+        "top": 16,
+        "right": 920,
+        "bottom": 1284,
+        "opaqueHeight": 1269
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_lose.png",
+      "preparedSha256": "2e9c940395eb4e06be221fe8157db7092e65c57d55edd53ee9ba8b233814e9a2",
+      "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_lose.png",
+      "edgeCleanedSha256": "f3fd4d200456f065cf6bfb0b268eb7e30587b80960f31d3c4c7659e38bd52277",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 344073,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 45,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 61,
+      "footMinX": 416,
+      "footMaxX": 976,
+      "opaqueHeightRatio": 0.9952904238618524
+    },
+    {
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 2,
+      "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+      ],
+      "prompt": "入力1の暁を同じ画面倍率で低いしゃがみへ編集。1189×1323の縦長透明画面をそのまま維持。人物全体を拡大しない。頭と髪の横幅は入力と同じ約338px、画面左の手前の革靴幅約145px、画面右の奥の革靴幅約240pxを維持し、頭や靴を大きく描かない。髪の上端をy=360付近へ下げ、靴底はy=1280付近、全高約920px。画面上の360pxは完全な透明な余白を残す。膝と股関節を深く曲げ腰を低くし、両足の裏を接地。両手は胸と膝の間に自然に軽く構える。黒髪・丸眼鏡・茶色の目・紺ブレザー金ボタン・ベージュVネック・白シャツ・緑の斜め縞ネクタイ・紺スラックス・黒い革靴を維持。左右の肩肘手首と指を自然につなぐ。胸側の右向き3/4、全身一人一姿勢、細い硬いクリーム白の外周縁とアニメ塗り。頭や足を切らない、ぼかし・グロー・影・床・背景・文字なし。",
+      "tool": "built-in image_gen",
+      "status": "rejected_shoe_width",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/akatsuki.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "reason": "v1で頭と革靴の部位寸法が大きくなったため、待機の原画倍率を数値で指定",
+      "sha256": "04b32411f04e1db2f4add1b6a269f2c09676f6f8b631407fb3115de2812c9969",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 277,
+        "top": 360,
+        "right": 968,
+        "bottom": 1299,
+        "opaqueHeight": 940
+      },
+      "artApproved": false,
+      "gameConnected": false
+    },
+    {
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "crouch",
+      "label": "しゃがみ",
+      "version": 3,
+      "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v3.png",
+      "references": [
+        "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v2.png",
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：しゃがみv2",
+        "部位寸法：採用待機"
+      ],
+      "prompt": "入力1のしゃがみの3箇所だけを修正。入力2は同じキャラの待機で、頭と両靴の大きさの基準。1189×1323の透明画面を維持し、しゃがみの姿勢・胴体・腕・手・両膝・足首・足元の位置は入力1のまま動かさない。①髪と頭を入力2と同じ横幅約338pxへ少し小さく描き直す。現在の頭中心と首の位置を維持。②画面左の手前の黒い革靴だけを横幅約147pxへ細く描き直し、待機の靴と同じ厚みと形にする。③画面右の奥の革靴だけを横幅約236pxへ少し細く描き直す。靴は両方接地、足首につなぐ。人物全体や脚や服を縮小しない、局所的な頭と靴の修正のみ。顔・丸眼鏡・髪型・制服と緑ネクタイのデザイン、しゃがみの意味は維持。薄いクリーム白の細い硬い縁を修正箇所にも同じようにつける。背景・床・影・光彩・にじみ・効果なし。全身一人、余白そのまま。",
+      "tool": "built-in image_gen",
+      "status": "unity_verified",
+      "consultedReferences": [
+        "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+        "docs/art_reference/roster_idle/akatsuki.png"
+      ],
+      "consultedReferenceRoles": [
+        "千鶴：画風と動作の意味のみ",
+        "元作品：容姿のみ。頭身は入力1"
+      ],
+      "reason": "v2の頭と靴の幅を待機へ更に寄せる局所編集",
+      "sha256": "bf825e7a18f880fae21133891946786330bad58b5cec0e243bbaf727a9601626",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "left": 279,
+        "top": 356,
+        "right": 970,
+        "bottom": 1267,
+        "opaqueHeight": 912
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_core/akatsuki/prepared/akatsuki_crouch.png",
+      "preparedSha256": "5a57b8239a1d9be43697891da56bd9b0b0b5c6faf3bd41afc8bfa52c659495ba",
+      "edgeCleaned": "art_source/paper_roster_core/akatsuki/edge_clean/akatsuki_crouch.png",
+      "edgeCleanedSha256": "e4b6c8e7ed4e21e45acfa9c613746e950a60e127b88f7030492e588fa73aaaf7",
+      "edgeCleanup": {
+        "method": "alpha threshold only; RGB and opaque interior unchanged",
+        "threshold": 128,
+        "changedAlphaPixels": 352494,
+        "referenceInstruction": "docs/codex_tasks/PAPER_ROSTER_CORE_POSES.md#白い切り抜き縁の品質"
+      },
+      "offsetX": 57,
+      "offsetY": 62,
+      "sourcePixelsPreserved": false,
+      "edgeCleanedPixelsPreserved": true,
+      "opaqueInteriorPixelsPreserved": true,
+      "noSourceResampling": true,
+      "headTopY": 419,
+      "footMinX": 374,
+      "footMaxX": 938,
+      "opaqueHeightRatio": 0.7142857142857143
+    }
+  ]
 }

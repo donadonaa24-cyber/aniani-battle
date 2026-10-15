@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "scope": "全9人のガード・しゃがみ・カウンター・勝利・敗北",
   "order": [
     "toma",
@@ -12,32 +12,40 @@
     "ryuta"
   ],
   "reuse": "chizuru: existing five poses",
-  "current": "ren",
+  "current": "complete",
   "activeVerification": null,
   "lastCompletedVerification": {
-    "tag": "paper_core_toma_4",
+    "tag": "paper_core_roster_1",
     "buildAll": "success",
     "edit": {
       "passed": 472,
-      "total": 472
+      "total": 472,
+      "failed": 0,
+      "skipped": 0
     },
     "play": {
       "passed": 48,
-      "total": 48
+      "total": 48,
+      "failed": 0,
+      "skipped": 0
     },
     "windowsBuild": "success",
     "accepted": true
   },
   "verifiedCharacters": [
     "chizuru",
-    "toma"
+    "toma",
+    "ren",
+    "minato",
+    "shiro",
+    "yui",
+    "king",
+    "akatsuki",
+    "ryuta"
   ],
-  "generatedCandidates": [
-    "ren"
-  ],
-  "remainingNewImages": 30,
-  "revisionPending": [
-    "ren_guard_v2"
-  ],
-  "next": "蓮ガードの靴を待機に合わせて再生成し、5種類を梱包・審査。残り6人30姿勢を順番に制作。最後に7人を接続し実Unity全4工程。"
+  "generatedCandidates": [],
+  "remainingNewImages": 0,
+  "revisionPending": [],
+  "next": "今回の全9人基本5種類は完了。次はPAPER_TOMA_AIR_AND_MOVEMENT.mdの透真の未移行動作。ステージ原画／WebGLは後続の明示依頼時。",
+  "artReviewPending": true
 }

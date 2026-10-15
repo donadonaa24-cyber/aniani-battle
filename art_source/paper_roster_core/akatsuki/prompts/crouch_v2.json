@@ -1,0 +1,26 @@
+{
+  "key": "akatsuki",
+  "character": "暁",
+  "pose": "crouch",
+  "label": "しゃがみ",
+  "version": 2,
+  "source": "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v2.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "採用待機：容姿・衣装・部位実寸の基準兼編集対象"
+  ],
+  "prompt": "入力1の暁を同じ画面倍率で低いしゃがみへ編集。1189×1323の縦長透明画面をそのまま維持。人物全体を拡大しない。頭と髪の横幅は入力と同じ約338px、画面左の手前の革靴幅約145px、画面右の奥の革靴幅約240pxを維持し、頭や靴を大きく描かない。髪の上端をy=360付近へ下げ、靴底はy=1280付近、全高約920px。画面上の360pxは完全な透明な余白を残す。膝と股関節を深く曲げ腰を低くし、両足の裏を接地。両手は胸と膝の間に自然に軽く構える。黒髪・丸眼鏡・茶色の目・紺ブレザー金ボタン・ベージュVネック・白シャツ・緑の斜め縞ネクタイ・紺スラックス・黒い革靴を維持。左右の肩肘手首と指を自然につなぐ。胸側の右向き3/4、全身一人一姿勢、細い硬いクリーム白の外周縁とアニメ塗り。頭や足を切らない、ぼかし・グロー・影・床・背景・文字なし。",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "consultedReferences": [
+    "art_source/paper_cutout/generated/chizuru_paper_crouch_v1.png",
+    "docs/art_reference/roster_idle/akatsuki.png"
+  ],
+  "consultedReferenceRoles": [
+    "千鶴：画風と動作の意味のみ",
+    "元作品：容姿のみ。頭身は入力1"
+  ],
+  "reason": "v1で頭と革靴の部位寸法が大きくなったため、待機の原画倍率を数値で指定"
+}

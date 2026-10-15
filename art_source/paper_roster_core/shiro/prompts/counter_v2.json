@@ -1,0 +1,28 @@
+{
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "counter",
+  "label": "カウンター",
+  "version": 2,
+  "source": "art_source/paper_roster_core/shiro/generated/shiro_counter_v2.png",
+  "references": [
+    "art_source/paper_roster_core/shiro/generated/shiro_counter_v1.png",
+    "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：新しい姿勢の足先だけ",
+    "採用待機：四つの足先の実寸基準"
+  ],
+  "prompt": "入力1のシロのカウンター姿勢を維持したまま、足先の大きさだけを入力2の採用待機と一致させる編集。頭・顔・耳・胴体・尻尾・脚のポーズと機械装甲のサイズと画面上の位置は変更しない。1189×1323で拡大縮小・カメラ変更・再構図をしない。修正は四つの柔らかい白い足先と爪だけ。近い前足の幅は約160px、遠い前足は約131px、近い後足は約143px、遠い後足は約122pxを基準に、入力2と同じ大きさの足先に描き直す。低姿勢だから足先を太く大きくしない。足先が横に広がって見える投影を避け、爪と肉球側の形を入力2へ揃える。各足首と足先を自然につなぎ、立っている足の接地線を保つ。一本だけ前足を胸前へ上げ、他の三本は接地という元の構えは維持。上げた足先も約160px幅で、巨大な拳にしない。全身四肢は計四本。人間の指・腕・二足立ちなし。入力と同じアニメ塗り、細い硬いクリーム白の縁、透明背景。床・影・文字・グロー・ぼかしなし。",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "consultedReferences": [
+    "art_source/paper_cutout/generated/chizuru_paper_counter_v2.png",
+    "docs/art_reference/roster_idle/shiro.png"
+  ],
+  "consultedReferenceRoles": [
+    "千鶴：画風と動作の意味のみ",
+    "元作品：容姿のみ。頭身は入力1"
+  ],
+  "reason": "低姿勢／上げた足先の太さを採用待機へ合わせる"
+}

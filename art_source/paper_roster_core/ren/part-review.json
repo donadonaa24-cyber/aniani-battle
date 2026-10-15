@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "basis": "art_source/paper_roster_idle/generated/ren_idle_v1.png",
+  "method": "等倍原画と共通枠の一覧を目視。靴底付近131pxの不透明連結領域を補助測定。衣装とつながる領域は靴そのものと扱わない。",
+  "soleBandWidths": {
+    "idle": [
+      196,
+      250
+    ],
+    "guard_v2": [
+      197,
+      252
+    ],
+    "counter_v1": [
+      214,
+      263
+    ],
+    "win_v1": [
+      198,
+      251
+    ],
+    "lose_v1": [
+      199,
+      252
+    ]
+  },
+  "crouch": "下端帯ではマントと近い靴の領域がつながるため自動幅を採用せず目視。髪・顔・ミトン・靴の実寸を確認。フード耳の広がりは姿勢により変化。全高は待機の約80%で、頭と靴を縮めない方針を優先。",
+  "decision": "guard v1は靴の横幅と向きの差で不採用、v2で待機の下半身を固定。guard v2の靴下端幅差は約1%以内。他の姿勢は靴の角度を含む帯幅差が概ね10%以内。衣装の微差と最終の絵の承認は確認待ち。",
+  "hands": "左右の肩から肘と肉球ミトンを確認。人間の5指へ変更せず、counterは片ミトンを前に、guardは両ミトンを顔の下へ。",
+  "selected": [
+    "guard_v2",
+    "crouch_v1",
+    "counter_v1",
+    "win_v1",
+    "lose_v1"
+  ],
+  "unityVerified": true,
+  "verifiedTag": "paper_core_roster_1"
+}
