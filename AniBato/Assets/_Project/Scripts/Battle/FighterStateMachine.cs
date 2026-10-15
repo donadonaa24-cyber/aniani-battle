@@ -8,6 +8,7 @@ namespace AniBato.Battle
         public void Step(FighterState fighter, in FrameInput input, int tick, in BattleRuleDefinition rules)
         {
             if (fighter.Mode != FighterMode.JumpStartup) fighter.JumpStartupRemaining = 0;
+            if (fighter.Mode != FighterMode.Charging) fighter.ChargeFrames = 0;
             fighter.InputBuffer.Push(input, tick, rules);
             StaminaSystem.Step(fighter);
             fighter.DownHeldFrames = fighter.Grounded && input.Y < -rules.DirectionThreshold ? fighter.DownHeldFrames + 1 : 0;
@@ -39,6 +40,16 @@ namespace AniBato.Battle
                 }
                 if (--fighter.JumpStartupRemaining <= 0) LaunchJump(fighter, fighter.JumpStartupDirection);
                 return;
+            }
+            if (fighter.Mode == FighterMode.Charging)
+            {
+                fighter.Velocity = new BattleVector(0, fighter.Velocity.Y);
+                if (!fighter.Grounded) { fighter.ChargeFrames = 0; fighter.Mode = FighterMode.Fall; return; }
+                if (input.IsHeld(InputButtons.Attack)) { fighter.ChargeFrames = Math.Min(rules.Charge.MaximumFrames, fighter.ChargeFrames + 1); return; }
+                int frames = fighter.ChargeFrames; fighter.ChargeFrames = 0;
+                StartNormal(fighter, 0, false, fighter.ChargeDirection);
+                if (frames >= rules.Charge.MinimumFrames) fighter.Attack.ChargeFrames = frames;
+                fighter.InputBuffer.ClearActions(); return;
             }
             if (StepDefense(fighter, input, rules)) return;
             if (fighter.Attack != null)
@@ -116,6 +127,11 @@ namespace AniBato.Battle
             if (fighter.InputBuffer.Consume(InputButtons.Attack, tick))
             {
                 var direction = DirectionalAttackSelector.Select(fighter, fighter.InputBuffer.DirectionFor(InputButtons.Attack), rules.DirectionThreshold);
+                if (rules.Charge.Enabled && fighter.Grounded && input.IsHeld(InputButtons.Attack))
+                {
+                    fighter.ChargeFrames = 1; fighter.ChargeDirection = direction; fighter.Mode = FighterMode.Charging;
+                    fighter.Velocity = default; fighter.DashRemaining = 0; fighter.InputBuffer.ClearActions(); return;
+                }
                 StartNormal(fighter, 0, !fighter.Grounded, direction); fighter.InputBuffer.ClearActions(); return;
             }
             if (fighter.GuardLockRemaining == 0 && (input.IsHeld(InputButtons.Guard) || fighter.InputBuffer.Consume(InputButtons.Guard, tick)))

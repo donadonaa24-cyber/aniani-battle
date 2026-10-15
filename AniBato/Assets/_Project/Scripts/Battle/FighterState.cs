@@ -1,6 +1,6 @@
 ﻿namespace AniBato.Battle
 {
-    public enum FighterMode { Idle, Move, Dash, Jump, Fall, Attack, Special, Guard, Dodge, Counter, Hitstun, Knockback, Recovery, KO, Crouch, JumpStartup }
+    public enum FighterMode { Idle, Move, Dash, Jump, Fall, Attack, Special, Guard, Dodge, Counter, Hitstun, Knockback, Recovery, KO, Crouch, JumpStartup, Charging }
 
     public sealed class FighterState
     {
@@ -38,6 +38,8 @@
         public AttackInstance Attack { get; internal set; }
         public int Gauge { get; internal set; }
         public int UltimateUses { get; internal set; }
+        public int ChargeFrames { get; internal set; }
+        internal NormalDirection ChargeDirection;
         public bool UpSpecialUsed { get; internal set; }
         public int ActionFrames { get; internal set; }
         public int DefenseAge { get; internal set; }
@@ -59,7 +61,7 @@
         internal readonly System.Collections.Generic.HashSet<long> JustExcludedAttacks = new System.Collections.Generic.HashSet<long>();
         public int ImmunityFrom(int attacker) => FollowupImmunity[attacker];
         public bool CanControlMovement => Attack == null && HitstunRemaining == 0 && ParalysisRemaining == 0 && !ParalyzedThisTick &&
-            Mode != FighterMode.Guard && Mode != FighterMode.Dodge && Mode != FighterMode.Counter && Mode != FighterMode.Recovery && Mode != FighterMode.JumpStartup;
+            Mode != FighterMode.Guard && Mode != FighterMode.Dodge && Mode != FighterMode.Counter && Mode != FighterMode.Recovery && Mode != FighterMode.JumpStartup && Mode != FighterMode.Charging;
         internal bool FrozenThisTick;
         public bool IsFrozenThisTick => FrozenThisTick;
         internal bool ParalyzedThisTick;

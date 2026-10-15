@@ -1,5 +1,7 @@
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
+**最新（2026-10-16）：R0溜め攻撃を実装、rework_r0_3で実Unity全4工程合格（Edit484／Play49、失敗・スキップ0）。** 専用絵生成なし、全9人の既存絵を傾けて沈め、色と紙片で表示。実描画18PNGはdocs/screenshots/rework_charge/。R1〜R6は未完。最新指定はSPEC_REVISION_20261016／PAPER_REWORK_20261016／rework_progress.json。チームは選択順に各ラウンド・先に2勝で確定。次はREWORK_R1_COMBAT_INPUT。既存差分を破棄せず、最初にtasklistとgit status／logを確認する。
+
 **最新（2026-10-16）：全9人の基本5ポーズ接続完了。** paper_core_roster_1は実Unity全4工程合格、Edit472/472・Play48/48、失敗とスキップ0。千鶴既存5＋新8人40、確認先イラスト確認/全9人_基本5ポーズ/、実Camera.Render112PNGはdocs/screenshots/paper_core_<key>/。新8人の未制作動作と固有技は残る。RESUME冒頭／progress.json／PAPER_TOMA_AIR_AND_MOVEMENT.mdから次へ。今回の原画を重複生成しない。旧記録は以下。
 
 **最新：透真の基本5ポーズ接続、paper_core_toma_4で実Unity全4工程合格（Edit472／Play48、失敗・スキップ0）。** 原画と外縁アルファ整理を区別し、左右14描画を保存。未制作動作は旧素材、全員完成ではない。蓮は5候補を生成したがガードの靴を待機へ合わせて再制作する。以後は残り6人30姿勢を本人単位で生成し、7人の接続をまとめて実Unity確認する。RESUME冒頭とPAPER_ROSTER_CORE_POSES／PAPER_CORE_GENERATION_GUIDEが現在手順。画像保存のWin32 1224対策はCaptureFile、同一内容は再書込みせず、短い再試行後も失敗なら例外にする。千鶴カバン13原画とClaudeの後続2指示書を保持。

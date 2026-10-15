@@ -35,6 +35,7 @@ namespace AniBato.Game
         {
             string a = input.Label(0, ControlAction.Attack), s = input.Label(0, ControlAction.Special);
             if (page == 0) return "地上弱3段    " + a + " ×3（押下）    最大3ヒット\n" +
+                "溜め通常    地上で" + a + "を1〜3秒保持して離す    蓄積1・強い吹っ飛び\n" +
                 "足払い    ↓＋" + a + "    ガード崩し・被弾＋1\n背面打ち    背後＋" + a + "    向き基準の後ろへ\n" +
                 "空中ニュートラル    方向なし＋" + a + "    周囲を打つ\n空中前 / 後ろ    前 / 背後＋" + a + "    前進 / 向き固定\n" +
                 "空中上 / 下    ↑ / ↓＋" + a + "    下は着地隙18F\n空中斜め前上 / 前下    前＋↑ / ↓＋" + a + "    前進攻撃\n" +

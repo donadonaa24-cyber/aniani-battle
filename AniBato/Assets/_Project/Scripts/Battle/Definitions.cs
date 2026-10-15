@@ -154,6 +154,7 @@ namespace AniBato.Battle
         public int DropThroughFrames;
         public int DropThroughHoldFrames;
         public int GroundJumpStartupFrames;
+        public ChargeAttackDefinition Charge;
         public float DropThroughSpeed;
         public float DirectionThreshold;
         public bool EnableRingOut;
@@ -175,7 +176,7 @@ namespace AniBato.Battle
                 DropThroughFrames < 1 || GroundJumpStartupFrames < 0 || DropThroughSpeed <= 0 || DirectionThreshold <= 0 || DirectionThreshold > 1)
                 throw new ArgumentException("対戦ルールの定義が不正です。");
             _ = DurationTicks;
-            Defense.Validate(); Gauge.Validate();
+            Defense.Validate(); Gauge.Validate(); Charge.Validate();
             Shrink.Validate();
             if (ComboFinishHitstunFrames < 1 || FollowupImmunityFrames < 1 || HeartRecoveryFrames < 0 || ProjectileLimitPerOwner < 0 || HeartRecoveryKnockback.X < 0 || HeartRecoveryKnockback.Y < 0)
                 throw new ArgumentException("フィニッシュの定義が不正です。");

@@ -5,7 +5,7 @@ namespace AniBato.Battle
 {
     public sealed class DamageSystem
     {
-        public void Apply(in HitContact contact, ComboTracker combo, int tick, in BattleRuleDefinition rules, List<BattleEvent> events)
+        public void Apply(in HitContact contact, ComboTracker combo, int tick, in BattleRuleDefinition rules, List<BattleEvent> events, StageGeometry stage = null)
         {
             var source = contact.Attacker;
             var target = contact.Target;
@@ -29,6 +29,7 @@ namespace AniBato.Battle
             target.HitstopRemaining = Math.Max(target.HitstopRemaining, attack.Definition.HitstopFrames);
             target.HitstunRemaining = attack.Definition.HitstunFrames;
             target.Attack = null; target.DashRemaining = 0;
+            target.ChargeFrames = 0;
             target.ActionFrames = 0; target.GuardStunRemaining = 0;
             bool finish = attack.Definition.IsNormal && combo.Finished;
             BattleVector knockback = (finish ? rules.ComboFinishKnockback : attack.Definition.Knockback) * SkillSystem.Multiplier(attack.Definition.KnockbackMultiplier);
@@ -44,8 +45,16 @@ namespace AniBato.Battle
                 target.FollowupImmunity[source.PlayerIndex] = rules.FollowupImmunityFrames;
                 events.Add(new BattleEvent(BattleEventKind.ComboFinish, tick, source.PlayerIndex, target.PlayerIndex, attack.Id));
             }
+            bool charged = rules.Charge.Enabled && attack.ChargeFrames >= rules.Charge.MinimumFrames && stage != null;
+            if (charged)
+            {
+                knockback = ChargedAttack.Knockback(target, contact.Facing, attack.ChargeFrames, stage, rules.Charge);
+                target.Velocity = new BattleVector(knockback.X * contact.Facing, knockback.Y);
+                target.HitstunRemaining = rules.Charge.HitstunFrames;
+                target.DamageRecoilRemaining = 0; target.DamageRecoilSpeed = 0;
+            }
             if (target.Velocity.Y > 0) { target.Grounded = false; target.GroundPlatform = -1; }
-            target.Mode = target.Hearts > 0 ? (finish ? FighterMode.Knockback : FighterMode.Hitstun) : FighterMode.KO;
+            target.Mode = target.Hearts > 0 ? (finish || charged ? FighterMode.Knockback : FighterMode.Hitstun) : FighterMode.KO;
             SkillSystem.OnHit(target, attack.Definition);
         }
 

@@ -215,6 +215,8 @@ namespace AniBato.Tests
                 yield return PressKeys(keyboard[controller.Bindings.P1.Attack]); controller.Capture();
                 runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
                 yield return ReleaseKeys(keyboard[controller.Bindings.P1.Attack]); controller.Capture();
+                Assert.That(runner.Simulation.P1.Mode, Is.EqualTo(AniBato.Battle.FighterMode.Charging));
+                runner.AdvanceRenderFrame(1d / 60); view.RenderFrame();
                 int[] activeTicks = new int[3]; bool[] queued = new bool[3]; int ticks = 0;
                 while (runner.Simulation.P1.Attack != null && ticks++ < 200)
                 {
@@ -258,6 +260,8 @@ namespace AniBato.Tests
                 yield return PressKeys(keyboard[controller.Bindings.P1.Attack]);controller.Capture();
                 runner.AdvanceRenderFrame(1d/60);view.RenderFrame();
                 yield return ReleaseKeys(keyboard[controller.Bindings.P1.Attack]);controller.Capture();
+                Assert.That(runner.Simulation.P1.Mode,Is.EqualTo(AniBato.Battle.FighterMode.Charging));
+                runner.AdvanceRenderFrame(1d/60);view.RenderFrame();
                 for(int tick=0;tick<100 && (runner.Simulation.P1.Attack!=null || runner.Simulation.Projectiles.Count>0);tick++)
                 {
                     var attack=runner.Simulation.P1.Attack;
@@ -384,6 +388,8 @@ namespace AniBato.Tests
                 Assert.That(bodies[0].flipX, Is.True); Assert.That(bodies[1].flipX, Is.False);
                 yield return ReleaseKeys(keyboard.aKey, keyboard.rightArrowKey);
                 yield return PressKeys(keyboard.jKey, keyboard.deleteKey);
+                yield return WaitFor(() => runner.Simulation.P1.Mode == AniBato.Battle.FighterMode.Charging && runner.Simulation.P2.Mode == AniBato.Battle.FighterMode.Charging, "両スロットの溜めが開始しませんでした。");
+                yield return ReleaseKeys(keyboard.jKey, keyboard.deleteKey);
                 yield return WaitFor(() => runner.Simulation.P1.Attack != null && runner.Simulation.P2.Attack != null, names[index] + " の通常攻撃が両スロットで開始しませんでした。");
                 Assert.That(runner.Simulation.P1.Attack, Is.Not.Null); Assert.That(runner.Simulation.P1.Attack.Definition.IsNormal, Is.True);
                 Assert.That(runner.Simulation.P2.Attack, Is.Not.Null); Assert.That(runner.Simulation.P2.Attack.Definition.IsNormal, Is.True);
@@ -413,6 +419,8 @@ namespace AniBato.Tests
             Assert.That(body.sprite, Is.SameAs(runner.Character(0).PaperMotion.Sprite)); Assert.That(body.flipX, Is.True);
             yield return ReleaseKeys(keyboard.aKey);
             yield return PressKeys(keyboard.jKey);
+            yield return WaitFor(() => runner.Simulation.P1.Mode == AniBato.Battle.FighterMode.Charging, "千鶴の溜めが開始しませんでした。");
+            yield return ReleaseKeys(keyboard.jKey);
             // Coroutine assertions can run before LateUpdate. Inspect the fixed-tick sample that
             // FighterView actually rendered, rather than comparing last render to a newer tick.
             bool sawActive = false;

@@ -9,6 +9,7 @@ namespace AniBato.Battle
         public AttackDefinition Definition { get; }
         public int ChainIndex { get; }
         public bool AirborneAttack { get; }
+        public int ChargeFrames { get; internal set; }
         public int Frame { get; internal set; }
         public bool NextQueued { get; internal set; }
         internal bool ProjectileSpawned;

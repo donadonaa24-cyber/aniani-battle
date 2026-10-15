@@ -35,6 +35,11 @@ MonoBehaviour:
   GuardTint: {r: 0.25, g: 0.65, b: 1, a: 1}
   DodgeTint: {r: 0.65, g: 1, b: 0.8, a: 0.45}
   CounterTint: {r: 1, g: 0.85, b: 0.15, a: 1}
+  ChargeTint: {r: 1, g: 0.5, b: 0.12, a: 1}
+  ChargeTiltDegrees: 10
+  ChargeSink: 0.09
+  ChargeSparkSize: 0.11
+  ChargePulseTicks: 6
   ProjectileTint: {r: 1, g: 0.65, b: 0.2, a: 1}
   PopupSeconds: 0.7
   PopupHeight: 2.6

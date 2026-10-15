@@ -28,6 +28,9 @@ namespace AniBato.Game
         public Color GuardTint = new Color(0.25f, 0.65f, 1);
         public Color DodgeTint = new Color(0.65f, 1, 0.8f, 0.45f);
         public Color CounterTint = new Color(1, 0.85f, 0.15f);
+        public Color ChargeTint = new Color(1, .5f, .12f);
+        public float ChargeTiltDegrees = 10, ChargeSink = .09f, ChargeSparkSize = .11f;
+        public int ChargePulseTicks = 6;
         public Color ProjectileTint = new Color(1, 0.65f, 0.2f);
         public float PopupSeconds = 0.7f;
         public float PopupHeight = 2.6f;

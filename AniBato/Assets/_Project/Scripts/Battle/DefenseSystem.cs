@@ -43,14 +43,14 @@ namespace AniBato.Battle
             return DefenseOutcome.Hit;
         }
         public void Apply(in HitContact contact, DefenseOutcome outcome, ComboTracker counterCombo, DamageSystem damage,
-            int tick, in BattleRuleDefinition rules, List<BattleEvent> events)
+            int tick, in BattleRuleDefinition rules, List<BattleEvent> events, StageGeometry stage = null)
         {
             var source = contact.Attacker; var target = contact.Target; var definition = rules.Defense;
             BattleEventKind kind;
             switch (outcome)
             {
                 case DefenseOutcome.CrouchBreak:
-                    damage.Apply(contact, counterCombo, tick, rules, events);
+                    damage.Apply(contact, counterCombo, tick, rules, events, stage);
                     target.GuardLockRemaining = target.Definition.Stamina.GuardLockFrames;
                     target.HitstunRemaining = Math.Max(target.HitstunRemaining, target.Definition.Stamina.GuardBreakFrames);
                     kind = BattleEventKind.GuardBroken; break;
@@ -82,7 +82,7 @@ namespace AniBato.Battle
                     // Recheck after earlier contacts in the same tick consumed stamina.
                     if (outcome == DefenseOutcome.Guard && !StaminaSystem.Spend(target, StaminaSystem.GuardCost(target, contact.Attack.Definition.Kind)))
                     {
-                        if (contact.Attack.Definition.IsUltimate) damage.Apply(contact, counterCombo, tick, rules, events);
+                        if (contact.Attack.Definition.IsUltimate) damage.Apply(contact, counterCombo, tick, rules, events, stage);
                         else { target.StaminaUnits = 0; StaminaSystem.BreakGuard(target); events.Add(new BattleEvent(BattleEventKind.GuardBroken, tick, target.PlayerIndex, source.PlayerIndex, contact.Attack.Id)); }
                         return;
                     }

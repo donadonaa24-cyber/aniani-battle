@@ -11,6 +11,7 @@ namespace AniBato.Game
         [SerializeField] private int playerIndex;
         private SpriteRenderer body, eye, arm, secondArm, hat, food, mogu, wave, field;
         private SpriteRenderer[] ears;
+        private ChargePoseView chargePose;
         private float flashUntil, headY;
         public int PlayerIndex => playerIndex;
         public bool UsesAnimationSprites { get; private set; }
@@ -35,6 +36,7 @@ namespace AniBato.Game
             mogu = ProceduralSprites.Create(transform, "Mogu Status", Vector2.one, Color.white, sortingOrder: 8);
             wave = ProceduralSprites.Create(transform, "Curry Wave", Vector2.one, Color.white, sortingOrder: 7);
             field = ProceduralSprites.Create(transform, "Blocking Field", Vector2.one, Color.white, sortingOrder: 7);
+            chargePose = new ChargePoseView(transform, presentation);
             arm.enabled = secondArm.enabled = food.enabled = mogu.enabled = wave.enabled = field.enabled = false;
             ApplyCharacter();
         }
@@ -125,6 +127,7 @@ namespace AniBato.Game
             { var color = body.color; color.a = .35f; body.color = color; }
             if (Time.unscaledTime < flashUntil && Mathf.FloorToInt(Time.unscaledTime * 40) % 2 == 0)
                 body.color = UsesAnimationSprites ? new Color(1, 1, 1, presentation.SpriteHitFlashOpacity) : Color.white;
+            headY += chargePose.Apply(body, fighter, runner.Simulation.Rules.Charge);
             food.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0;
             if (food.enabled) food.transform.localPosition = new Vector3(0.45f, 0.35f + Mathf.Sin(fighter.Attack.Frame * 0.5f) * 0.08f, 0);
             arm.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.IsActive && !fighter.Attack.Definition.SpawnProjectile;

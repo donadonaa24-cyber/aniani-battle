@@ -114,6 +114,9 @@ namespace AniBato.Tests
             for (int i = 0; i < 144; i++) { Tick(); Assert.That(body.transform.localRotation, Is.EqualTo(pausedRotation)); Assert.That(body.transform.localPosition, Is.EqualTo(pausedPosition)); }
             runner.SetPaused(false); yield return Key(controller.Bindings.P1.Right, false);
             yield return Key(controller.Bindings.P1.Attack, true); Tick();
+            Assert.That(runner.Simulation.P1.Mode, Is.EqualTo(AniBato.Battle.FighterMode.Charging));
+            Assert.That(runner.Simulation.P1.Attack, Is.Null);
+            yield return Key(controller.Bindings.P1.Attack, false); Tick();
             Assert.That(view.UsesPaperSprite, Is.True); Assert.That(body.sprite, Is.SameAs(runner.Character(0).PaperMotion.Find(AnimationState.Attack1).Frames[0]));
             Assert.That(Angle(body), Is.EqualTo(8).Within(.001));
             Assert.That(body.transform.localPosition.x, Is.EqualTo(-.06f).Within(.0001));
@@ -140,6 +143,8 @@ namespace AniBato.Tests
                 Assert.That(body.sprite, Is.SameAs(core ? other.PaperMotion.Sprite : other.Animations.Find("idle").Frames[0]));
                 Assert.That(body.transform.localRotation, Is.EqualTo(Quaternion.identity));
                 yield return Key(controller.Bindings.P1.Attack, true); Tick();
+                Assert.That(runner.Simulation.P1.Mode, Is.EqualTo(AniBato.Battle.FighterMode.Charging));
+                yield return Key(controller.Bindings.P1.Attack, false); Tick();
                 Assert.That(view.UsesPaperSprite, Is.False, "透真／蓮の通常攻撃はこの段階では旧素材を維持");
                 Assert.That(other.Animations.TrySprite(view.RenderedSample, out Sprite pixel), Is.True);
                 Assert.That(body.sprite, Is.SameAs(pixel));
@@ -184,6 +189,11 @@ namespace AniBato.Tests
             for (int i = 0; i < actions.Length; i++)
             {
                 runner.RestartMatch(); yield return Key(actions[i], true); Tick();
+                if (actions[i] == keys.Attack)
+                {
+                    Assert.That(runner.Simulation.P1.Mode, Is.EqualTo(AniBato.Battle.FighterMode.Charging));
+                    yield return Key(actions[i], false); Tick();
+                }
                 Assert.That(view.RenderedSample.State, Is.EqualTo(expected[i])); Assert.That(view.UsesPaperSprite, Is.True);
                 Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(expected[i]).Frames[0]));
                 Assert.That(Angle(body), Is.EqualTo(i >= 4 ? 8 : 0).Within(.001)); Capture(expected[i].ToString(), true);

@@ -77,9 +77,9 @@ namespace AniBato.Battle
                 // A finish/counter earlier in this tick also blocks already gathered follow-ups.
                 if (contact.Target.ImmunityFrom(contact.Attacker.PlayerIndex) > 0 || contact.Target.HeartRecoveryRemaining > 0) continue;
                 if (outcomes[i] == DefenseOutcome.Hit)
-                    damage.Apply(contact, contact.Attacker.PlayerIndex == 0 ? comboP1 : comboP2, Match.TickCount, Rules, events);
+                    damage.Apply(contact, contact.Attacker.PlayerIndex == 0 ? comboP1 : comboP2, Match.TickCount, Rules, events, Stage);
                 else defense.Apply(contact, outcomes[i], outcomes[i] == DefenseOutcome.CrouchBreak || outcomes[i] == DefenseOutcome.Guard || outcomes[i] == DefenseOutcome.JustGuard ?
-                    (contact.Attacker.PlayerIndex == 0 ? comboP1 : comboP2) : (contact.Target.PlayerIndex == 0 ? comboP1 : comboP2), damage, Match.TickCount, Rules, events);
+                    (contact.Attacker.PlayerIndex == 0 ? comboP1 : comboP2) : (contact.Target.PlayerIndex == 0 ? comboP1 : comboP2), damage, Match.TickCount, Rules, events, Stage);
             }
             Practice?.FinishTick(this);
             matchResolver.Resolve(Match, P1, P2, Stage, Rules, events);

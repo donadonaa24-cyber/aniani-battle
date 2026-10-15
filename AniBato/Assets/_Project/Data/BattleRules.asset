@@ -24,10 +24,18 @@ MonoBehaviour:
     DropThroughFrames: 12
     DropThroughHoldFrames: 18
     GroundJumpStartupFrames: 2
+    Charge:
+      Enabled: 1
+      MinimumFrames: 60
+      MaximumFrames: 180
+      HitstunFrames: 30
+      MinimumTravelFraction: 0.3
+      VerticalSpeed: 4
+      EdgeInset: 0.05
     DropThroughSpeed: 8
     DirectionThreshold: 0.5
     EnableRingOut: 1
-    SchemaVersion: 7
+    SchemaVersion: 8
     Defense:
       GuardReleaseFrames: 6
       GuardStunFrames: 10

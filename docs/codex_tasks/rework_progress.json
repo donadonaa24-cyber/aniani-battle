@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-16",
+  "spec": "docs/SPEC_REVISION_20261016.md",
+  "current": "R1",
+  "baseCommit": "a169ee3",
+  "stages": {
+    "R0": "complete",
+    "R1": "pending",
+    "R2": "pending",
+    "R3": "pending",
+    "R4": "pending",
+    "R5": "pending",
+    "R6": "pending"
+  },
+  "teamRule": "selection-order, first-to-two-wins",
+  "latestVerification": {
+    "tag": "rework_r0_3",
+    "buildAll": "success",
+    "edit": {
+      "total": 484,
+      "passed": 484,
+      "failed": 0,
+      "skipped": 0
+    },
+    "play": {
+      "total": 49,
+      "passed": 49,
+      "failed": 0,
+      "skipped": 0
+    },
+    "windowsBuild": "success",
+    "screenshots": "docs/screenshots/rework_charge/",
+    "screenshotCount": 18
+  },
+  "activeVerification": null,
+  "attempts": [
+    {
+      "tag": "rework_r0_1",
+      "buildAll": "success",
+      "edit": {
+        "total": 483,
+        "passed": 482,
+        "failed": 1
+      },
+      "play": {
+        "total": 49,
+        "passed": 40,
+        "failed": 9
+      },
+      "windowsBuild": "success",
+      "reason": "新規溜め検証は合格。旧schema7固定1件と地上押下即攻撃前提9件を、schema8と短押し解放の実入力へ更新。元の絵・有効時間・3段検査は保持。"
+    },
+    {
+      "tag": "rework_r0_2",
+      "buildAll": "success",
+      "edit": {
+        "total": 483,
+        "passed": 483,
+        "failed": 0
+      },
+      "play": {
+        "total": 49,
+        "passed": 49,
+        "failed": 0
+      },
+      "windowsBuild": "success",
+      "reason": "全工程合格後、ガード崩し経路にもStageを渡す補足と境界検査を追加、3で再検証"
+    },
+    {
+      "tag": "rework_r0_3",
+      "buildAll": "success",
+      "edit": {
+        "total": 484,
+        "passed": 484,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 49,
+        "passed": 49,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "screenshots": "docs/screenshots/rework_charge/",
+      "screenshotCount": 18,
+      "reason": "ガード崩しのStage転送を含め再検証し全工程合格。"
+    }
+  ]
+}

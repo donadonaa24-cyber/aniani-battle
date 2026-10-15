@@ -87,6 +87,7 @@ namespace AniBato.Tests
             var keys=controller.Bindings.P1;yield return Key(keys.Right,true);
             while(runner.Simulation.P2.Position.X-runner.Simulation.P1.Position.X>1.5f)Tick();
             yield return Key(keys.Right,false);yield return Key(keys.Attack,true);Tick();yield return Key(keys.Attack,false);
+            Tick(); debug.RenderFrame();
             Assert.That(Object.FindObjectsByType<LineRenderer>().Any(l=>l.enabled&&l.startColor.a<.5f),Is.True,"溜め範囲の半透明表示");
             for(int i=0;i<35;i++)Tick();
             Assert.That(debug.TraceCount,Is.GreaterThan(0));runner.SetPaused(true);

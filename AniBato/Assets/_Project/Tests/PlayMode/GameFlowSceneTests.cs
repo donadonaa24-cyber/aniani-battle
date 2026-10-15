@@ -496,6 +496,9 @@ namespace AniBato.Tests
             yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "FIGHT!後に開始しません。");
             Assert.That(Flow.Runner.Paused, Is.False); Assert.That(banner.text, Is.Empty); Assert.That(sim.P1.Attack, Is.Null);
             yield return PressKeys(keyboard.jKey);
+            yield return WaitFor(() => sim.P1.Mode == AniBato.Battle.FighterMode.Charging, "操作開始後の溜めが開始しません。");
+            Assert.That(sim.P1.Attack, Is.Null);
+            yield return ReleaseKeys(keyboard.jKey);
             yield return WaitFor(() => sim.P1.Attack != null, "操作開始後の攻撃が反映されません。");
             yield return ReleaseKeys(keyboard.jKey);
         }
