@@ -14,6 +14,7 @@ namespace AniBato.Game
         public int DamageReactionSchemaVersion;
         public int NormalThrowSchemaVersion;
         public int NormalWeaponSchemaVersion;
+        public int MoveSetSchemaVersion;
         public AttackData[] DirectionalNormals;
         public AttackData UpNormal;
         public AttackData[] GroundNormals;
@@ -26,6 +27,7 @@ namespace AniBato.Game
         public Sprite Portrait;
         public Sprite SelectionSprite;
         public bool PrototypeSharedMoves;
+        public bool ActionArtworkPending;
         public CharacterAnimationSet Animations;
         public PaperCharacterMotion PaperMotion;
         public CharacterSpriteEffects SpriteEffects;

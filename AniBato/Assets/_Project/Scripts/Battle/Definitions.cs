@@ -9,6 +9,7 @@ namespace AniBato.Battle
     public struct AttackDefinition
     {
         public string Name;
+        public AttackAbility Ability;
         public AttackKind Kind;
         public bool IsCloseRange;
         public NormalDirection NormalDirection;
@@ -56,7 +57,8 @@ namespace AniBato.Battle
         {
             if (LandingRecoveryFrames < 0 || StartupFrames < 0 || ActiveFrames < 1 || DamageDelayFrames < 0 || DamageDelayFrames >= ActiveFrames || RecoveryFrames < 0 || HitstopFrames < 0 ||
                 HitstunFrames < 0 || Hitbox.Size.X <= 0 || Hitbox.Size.Y <= 0 ||
-                (SpawnProjectile && (ProjectileSpeed <= 0 || ProjectileLifetimeFrames < 1)) ||
+                (SpawnProjectile && (ProjectileSpeed < 0 || ProjectileSpeed == 0 && !Ability.AllowZeroProjectileSpeed || ProjectileLifetimeFrames < 1)) ||
+                (Ability.IndependentNormalProjectile && (!SpawnProjectile || !IsNormal)) ||
                 NormalForwardDistance < 0 || float.IsNaN(NormalForwardDistance) || float.IsInfinity(NormalForwardDistance) ||
                 DamageRecoilDistance < 0 || float.IsNaN(DamageRecoilDistance) || float.IsInfinity(DamageRecoilDistance) ||
                 DamageRecoilFrames < 0 || DamageRecoilDistance > 0 && DamageRecoilFrames < 1 ||
@@ -66,6 +68,7 @@ namespace AniBato.Battle
                 (HasSecondaryHitbox && (SecondaryHitbox.Size.X <= 0 || SecondaryHitbox.Size.Y <= 0)))
                 throw new ArgumentException("攻撃のフレーム数・判定サイズが不正です。");
             SelfBuff.Validate();
+            Ability.Validate();
         }
     }
 

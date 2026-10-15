@@ -32,6 +32,26 @@ MonoBehaviour:
     DirectionalNormals: []
     UpNormal:
       Name: 
+      Ability:
+        Motion: 0
+        ChangeFrame: 0
+        FirstVelocity:
+          X: 0
+          Y: 0
+        SecondVelocity:
+          X: 0
+          Y: 0
+        TeleportRange: 0
+        TargetGap: 0
+        TargetRange: 0
+        ShotOrigin: 0
+        ProjectileCount: 0
+        ProjectileSpacing: 0
+        AllowZeroProjectileSpeed: 0
+        ReplaceOwnProjectiles: 0
+        ProjectileAtDamageFrame: 0
+        IndependentNormalProjectile: 0
+        Look: 0
       Kind: 0
       IsCloseRange: 0
       NormalDirection: 0
@@ -113,6 +133,26 @@ MonoBehaviour:
     Specials: []
     Ultimate:
       Name: 
+      Ability:
+        Motion: 0
+        ChangeFrame: 0
+        FirstVelocity:
+          X: 0
+          Y: 0
+        SecondVelocity:
+          X: 0
+          Y: 0
+        TeleportRange: 0
+        TargetGap: 0
+        TargetRange: 0
+        ShotOrigin: 0
+        ProjectileCount: 0
+        ProjectileSpacing: 0
+        AllowZeroProjectileSpeed: 0
+        ReplaceOwnProjectiles: 0
+        ProjectileAtDamageFrame: 0
+        IndependentNormalProjectile: 0
+        Look: 0
       Kind: 0
       IsCloseRange: 0
       NormalDirection: 0
@@ -187,6 +227,7 @@ MonoBehaviour:
   DamageReactionSchemaVersion: 0
   NormalThrowSchemaVersion: 0
   NormalWeaponSchemaVersion: 0
+  MoveSetSchemaVersion: 0
   DirectionalNormals: []
   UpNormal: {fileID: 0}
   GroundNormals:
@@ -209,6 +250,7 @@ MonoBehaviour:
   Portrait: {fileID: 0}
   SelectionSprite: {fileID: 0}
   PrototypeSharedMoves: 0
+  ActionArtworkPending: 0
   Animations: {fileID: 0}
   PaperMotion: {fileID: 0}
   SpriteEffects:

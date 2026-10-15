@@ -1,36 +1,44 @@
 {
   "date": "2026-10-16",
   "spec": "docs/SPEC_REVISION_20261016.md",
-  "current": "R3",
+  "current": "R4",
   "baseCommit": "a169ee3",
   "stages": {
     "R0": "complete",
     "R1": "complete",
     "R2": "complete",
-    "R3": "pending",
+    "R3": "complete",
     "R4": "pending",
     "R5": "pending",
     "R6": "pending"
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "rework_r2_2",
+    "tag": "rework_r3_3",
     "buildAll": "success",
     "edit": {
-      "total": 505,
-      "passed": 505,
-      "failed": 0,
-      "skipped": 0
+      "passed": 521,
+      "total": 521,
+      "skipped": 0,
+      "failed": 0
     },
     "play": {
-      "total": 55,
-      "passed": 55,
-      "failed": 0,
-      "skipped": 0
+      "passed": 57,
+      "total": 57,
+      "skipped": 0,
+      "failed": 0
     },
     "windowsBuild": "success",
-    "screenshots": "docs/screenshots/rework_r2/",
-    "screenshotCount": 6
+    "screenshots": "docs/screenshots/rework_r3/",
+    "screenshotCount": 37,
+    "cpu": {
+      "rosterWithUltimate": 155,
+      "originalMatches": 270,
+      "originalWithUltimate": 188,
+      "rosterMatches": 243,
+      "unforcedRingOuts": 0,
+      "bothAttackAndHeartLoss": 513
+    }
   },
   "activeVerification": null,
   "attempts": [
@@ -184,6 +192,65 @@
       "screenshots": "docs/screenshots/rework_r2/",
       "screenshotCount": 6,
       "reason": "文字配置と撮影時の看板更新、CPU選択と溜め漏れ検査も含め全合格。"
+    },
+    {
+      "tag": "rework_r3_1",
+      "buildAll": "success",
+      "edit": {
+        "passed": 513,
+        "total": 518,
+        "failed": 5
+      },
+      "play": {
+        "passed": 57,
+        "total": 57,
+        "failed": 0
+      },
+      "windowsBuild": "success",
+      "reason": "飛車突進の端の浮動小数誤差、召喚編隊と同時投射制限、銃が遠くへ届く旧アニメfixtureを修正。CPU全9人243戦と編隊制限の回帰検査を追加。"
+    },
+    {
+      "tag": "rework_r3_2",
+      "buildAll": "success",
+      "edit": {
+        "failed": 0,
+        "total": 520,
+        "passed": 520
+      },
+      "play": {
+        "failed": 0,
+        "total": 57,
+        "passed": 57
+      },
+      "windowsBuild": "success",
+      "reason": "全工程合格。追加レビューで拳銃の連射が従来の同時1投射制限に止められる点を補正し、ドローンを消さず3段とも発射する検査を追加して3で再確認。"
+    },
+    {
+      "tag": "rework_r3_3",
+      "buildAll": "success",
+      "edit": {
+        "passed": 521,
+        "total": 521,
+        "skipped": 0,
+        "failed": 0
+      },
+      "play": {
+        "passed": 57,
+        "total": 57,
+        "skipped": 0,
+        "failed": 0
+      },
+      "windowsBuild": "success",
+      "screenshots": "docs/screenshots/rework_r3/",
+      "screenshotCount": 37,
+      "cpu": {
+        "rosterWithUltimate": 155,
+        "originalMatches": 270,
+        "originalWithUltimate": 188,
+        "rosterMatches": 243,
+        "unforcedRingOuts": 0,
+        "bothAttackAndHeartLoss": 513
+      }
     }
   ]
 }

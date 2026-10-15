@@ -10,7 +10,7 @@ namespace AniBato.Tests
     {
         private static BattleSetup Setup => AssetDatabase.LoadAssetAtPath<BattleSetup>("Assets/_Project/Data/BattleSetup.asset");
         [Test]
-        public void NineEntrantsHaveOwnNamesPortraitsAndExplicitPrototypeMoveSharing()
+        public void NineEntrantsHaveOwnNamesPortraitsAndIndependentActiveMovesWithOldBackups()
         {
             string[] names={"透真","蓮","千鶴","湊","シロ","結衣","黒獅子王","暁","龍太"};
             Assert.That(Setup.Characters.Length,Is.EqualTo(9));
@@ -19,12 +19,16 @@ namespace AniBato.Tests
             {
                 var data=Setup.Character(i);Assert.That(data.ToDefinition().Name,Is.EqualTo(names[i]));
                 Assert.That(data.SelectionSprite,Is.Not.Null);Assert.That(data.SelectionSprite.texture.width,Is.EqualTo(1304));
-                Assert.That(data.SelectionSprite.texture.height,Is.EqualTo(1450));Assert.That(data.PrototypeSharedMoves,Is.EqualTo(i>=3));
+                Assert.That(data.SelectionSprite.texture.height,Is.EqualTo(1450));Assert.That(data.PrototypeSharedMoves,Is.False);
+                Assert.That(data.MoveSetSchemaVersion,Is.GreaterThanOrEqualTo(1));
                 if(i<3)continue;
                 var original=Setup.Character(bases[i-3]);
-                Assert.That(data.GroundNormals,Is.EqualTo(original.GroundNormals));Assert.That(data.AirNormals,Is.EqualTo(original.AirNormals));
-                Assert.That(data.DirectionalNormals,Is.EqualTo(original.DirectionalNormals));Assert.That(data.Specials,Is.EqualTo(original.Specials));
-                Assert.That(data.Ultimate,Is.SameAs(original.Ultimate));Assert.That(data.PaperMotion.Sprite,Is.SameAs(data.SelectionSprite));
+                Assert.That(data.GroundNormals.Intersect(original.GroundNormals),Is.Empty);Assert.That(data.AirNormals.Intersect(original.AirNormals),Is.Empty);
+                foreach(int slot in new[]{1,2,3})Assert.That(data.DirectionalNormals[slot],Is.Not.SameAs(original.DirectionalNormals[slot]));
+                foreach(int slot in new[]{4,5,6,7,8,9})Assert.That(data.DirectionalNormals[slot],Is.SameAs(original.DirectionalNormals[slot]));
+                Assert.That(data.Specials[0],Is.Not.SameAs(original.Specials[0]));
+                foreach(int slot in new[]{1,2,3})Assert.That(data.Specials[slot],Is.SameAs(original.Specials[slot]));
+                Assert.That(data.Ultimate,Is.Not.SameAs(original.Ultimate));Assert.That(data.PaperMotion.Sprite,Is.SameAs(data.SelectionSprite));
                 Assert.DoesNotThrow(()=>new BattleSimulation(data.ToDefinition(),original.ToDefinition(),PhaseOneDefaults.Rules(),Setup.Stages[0].ToGeometry()));
             }
             Assert.That(Setup.Characters.Select(c=>c.SelectionSprite).Distinct().Count(),Is.EqualTo(9));

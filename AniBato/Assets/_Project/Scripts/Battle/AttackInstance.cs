@@ -15,6 +15,7 @@ namespace AniBato.Battle
         public bool NextQueued { get; internal set; }
         internal bool ProjectileSpawned;
         internal bool SelfEffectApplied;
+        internal bool AbilityApplied;
         internal int ErasuresRemaining;
         internal int StanceRemaining;
         public bool IsActive => !Clashed && Frame >= Definition.StartupFrames && Frame < Definition.StartupFrames + Definition.ActiveFrames;

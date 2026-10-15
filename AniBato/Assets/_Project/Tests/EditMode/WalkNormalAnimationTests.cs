@@ -19,6 +19,12 @@ namespace AniBato.Tests
             var set = data.Animations;
             var rules = AssetDatabase.LoadAssetAtPath<BattleRules>("Assets/_Project/Data/BattleRules.asset").ToDefinition();
             var sim = new BattleSimulation(data.ToDefinition(), data.ToDefinition(), rules, PhaseOneDefaults.Stage());
+            // Keep this animation-phase test outside the new gun's full travel range.
+            sim.P2.Position = new BattleVector(sim.Stage[0].Bounds.Right - 1, sim.P2.Position.Y);
+            var opener = data.GroundNormals[0].ToDefinition();
+            if (opener.SpawnProjectile)
+                Assert.That(sim.P2.Hurtbox.Left - sim.P1.Position.X, Is.GreaterThan(opener.Hitbox.Right +
+                    opener.ProjectileSpeed * opener.ProjectileLifetimeFrames / 60f + opener.NormalForwardDistance * 3));
             var player = new FighterAnimationPlayer(); player.Configure(set.Timing); player.Reset(sim.P1, sim.Match);
             int[] startups = new int[3], active = new int[3], recoveries = new int[3];
             int[] expectedStartup = data.GroundNormals.Select(n => n.ToDefinition().StartupFrames).ToArray();

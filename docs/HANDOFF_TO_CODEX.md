@@ -1,5 +1,7 @@
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
+**最新：R3の9人固有技、rework_r3_3で実Edit521／Play57と全4工程合格、失敗・スキップ0。** 独立データと移動・落下・召喚・残留判定、透真の銃3段とドローン併用。仮表示はROSTER_MOVES_CURRENT、37実描画とCPU513戦のCSVを保存。次はREWORK_R4_ACTION_ART／REWORK_R4_TOMA_ACTIONS。R4〜R6と未移行の移動原画は残る。RESUME冒頭とGit差分から再開。
+
 **最新：R2チーム戦と設定、rework_r2_2で実Edit505／Play55と全4工程合格（失敗・スキップ0）。** 3人ずつ順番選択・重複禁止・取消、選択順のラウンドと2勝先取、再戦と各ラウンド初期化。トップ5項目と設定整理、6描画はdocs/screenshots/rework_r2/。TEAM_FLOW_CURRENTとRESUMEを参照。次はREWORK_R3_CHARACTER_MOVES、最新指定はSPEC_REVISION_20261016。R3〜R6未完。再開時にtasklistとGit差分を確認する。
 
 **最新（2026-10-16）：R1全4工程合格、Edit499／Play52（失敗・スキップ0）。** 地上上判定／空中Nと移動継続／通常相殺／特殊1種／練習超必殺無制限を実装。rework_r1_3の44描画、CPU270戦は全て双方攻撃・ハート減少、超必殺246/270。原画生成なし、仮表示はCOMBAT_INPUT_CURRENT。次はREWORK_R2_TEAM_AND_MENU。最新技指定はSPEC_REVISION_20261016、R2〜R6未完。再開時にtasklistとGit差分を確認し重複作業しない。

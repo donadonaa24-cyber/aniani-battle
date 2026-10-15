@@ -212,6 +212,7 @@ namespace AniBato.Battle
         {
             var attack = fighter.Attack;
             if (attack.AirborneAttack && attack.Definition.IsNormal && rules.CombatInput.FlowingAerialNormal) return;
+            if (attack.IsActive && attack.Definition.Ability.Motion != AbilityMotion.None) return;
             if (attack.IsActive && (attack.Definition.ActiveVelocity.X != 0 || attack.Definition.ActiveVelocity.Y != 0))
             {
                 float vertical = attack.Definition.VerticalMotionOnStartOnly &&

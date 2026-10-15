@@ -216,11 +216,11 @@ namespace AniBato.Game
             if (MenuIndex < 2 && audioManager) audioManager.AdjustVolume(MenuIndex == 0, direction * .1f);
             else if (MenuIndex == 2) FramePacing.Cycle(direction);
             else if (MenuIndex == 3 && effects) effects.ToggleShake();
-            else if (MenuIndex == 4) { BasicHintsEnabled = !BasicHintsEnabled; PlayerPrefs.SetInt("AniBato.BasicHints", BasicHintsEnabled ? 1 : 0); }
+            else if (MenuIndex == 4) { BasicHintsEnabled = !BasicHintsEnabled; PlayerPrefs.SetInt("AniBato.BasicHints", BasicHintsEnabled ? 1 : 0); PlayerPrefs.Save(); }
             else if (MenuIndex == 5) input.Configuration.ToggleDoubleTapDash();
             else if (MenuIndex == 6) runner.SetDebugBoxes(!runner.DebugBoxes);
             else if (MenuIndex == 7)
-            { Difficulty = (CpuDifficulty)Wrap((int)Difficulty + direction, 3); PlayerPrefs.SetInt("AniBato.CpuDifficulty", (int)Difficulty); }
+            { Difficulty = (CpuDifficulty)Wrap((int)Difficulty + direction, 3); PlayerPrefs.SetInt("AniBato.CpuDifficulty", (int)Difficulty); PlayerPrefs.Save(); }
             else if (confirm && MenuIndex == 8) { panelReturn = GameScreen.Settings; Show(GameScreen.KeyConfig); }
             else if (confirm && MenuIndex == 9) Controls();
             else if (confirm && MenuIndex == 10) { CpuMode = PracticeMode = TutorialMode = true; BeginSelection(); }

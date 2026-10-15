@@ -12,6 +12,7 @@ namespace AniBato.Game
         private SpriteRenderer body, eye, arm, secondArm, hat, food, mogu, wave, field;
         private SpriteRenderer[] ears;
         private ChargePoseView chargePose;
+        private AbilityCueView abilityCue;
         private float flashUntil, headY;
         public int PlayerIndex => playerIndex;
         public bool UsesAnimationSprites { get; private set; }
@@ -37,6 +38,7 @@ namespace AniBato.Game
             wave = ProceduralSprites.Create(transform, "Curry Wave", Vector2.one, Color.white, sortingOrder: 7);
             field = ProceduralSprites.Create(transform, "Blocking Field", Vector2.one, Color.white, sortingOrder: 7);
             chargePose = new ChargePoseView(transform, presentation);
+            abilityCue = new AbilityCueView(transform);
             arm.enabled = secondArm.enabled = food.enabled = mogu.enabled = wave.enabled = field.enabled = false;
             ApplyCharacter();
         }
@@ -128,6 +130,7 @@ namespace AniBato.Game
             if (Time.unscaledTime < flashUntil && Mathf.FloorToInt(Time.unscaledTime * 40) % 2 == 0)
                 body.color = UsesAnimationSprites ? new Color(1, 1, 1, presentation.SpriteHitFlashOpacity) : Color.white;
             headY += chargePose.Apply(body, fighter, runner.Simulation.Rules.Charge);
+            abilityCue.Apply(fighter, body, runner.Simulation.Match.IsFinished);
             food.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0;
             if (food.enabled) food.transform.localPosition = new Vector3(0.45f, 0.35f + Mathf.Sin(fighter.Attack.Frame * 0.5f) * 0.08f, 0);
             arm.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.IsActive && !fighter.Attack.Definition.SpawnProjectile;
@@ -144,7 +147,8 @@ namespace AniBato.Game
             int effectAge = sample.IsAttack ? Mathf.Max(0, sample.AttackFrame - sample.Startup) : 0;
             wave.sprite = character.Animations ? character.Animations.Effect(effects == null ? "curry_wave" : effects.UltimateClip, effectAge) : null;
             if (character.PaperMotion && character.PaperMotion.Enabled && character.PaperMotion.CurryWave) wave.sprite = character.PaperMotion.CurryWave;
-            wave.enabled = UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.IsUltimate && fighter.Attack.IsActive && wave.sprite;
+            wave.enabled = UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.IsUltimate && fighter.Attack.IsActive && wave.sprite &&
+                (fighter.Attack.Definition.Ability.Look == AbilityLook.Default || fighter.Attack.Definition.Ability.Look == AbilityLook.Curry);
             float waveScale = effects == null ? presentation.CurryWaveScale : effects.UltimateScale;
             Vector2 waveOffset = effects == null ? presentation.CurryWaveOffset : effects.UltimateOffset;
             wave.flipX = sample.FlipX; wave.transform.localScale = new Vector3(waveScale, waveScale, 1);

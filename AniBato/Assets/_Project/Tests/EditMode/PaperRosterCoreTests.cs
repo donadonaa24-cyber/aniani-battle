@@ -36,7 +36,8 @@ namespace AniBato.Tests
                 Assert.That(paper.Find(AnimationState.Guard).Frame(10000), Is.SameAs(paper.Find(AnimationState.Guard).Frame(0)));
                 Assert.That(paper.Find(AnimationState.CounterSuccess), Is.SameAs(paper.Find(AnimationState.Counter)));
                 Assert.That(paper.WalkLeanDegrees, Is.EqualTo(15)); Assert.That(paper.DashLeanDegrees, Is.EqualTo(45));
-                if (!data.PrototypeSharedMoves) Assert.That(paper.Supports(AnimationState.Attack1), Is.False);
+                if (entry.characterIndex < 3) Assert.That(paper.Supports(AnimationState.Attack1), Is.False);
+                else if (data.ActionArtworkPending) Assert.That(paper.Find(AnimationState.Attack1).Frames[0], Is.SameAs(paper.Sprite));
             }
         }
         [Test]

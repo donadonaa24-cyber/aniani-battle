@@ -14,6 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
     Name: "\u5730\u4E0A2\u6BB5"
+    Ability:
+      Motion: 0
+      ChangeFrame: 0
+      FirstVelocity:
+        X: 0
+        Y: 0
+      SecondVelocity:
+        X: 0
+        Y: 0
+      TeleportRange: 0
+      TargetGap: 0
+      TargetRange: 0
+      ShotOrigin: 0
+      ProjectileCount: 0
+      ProjectileSpacing: 0
+      AllowZeroProjectileSpeed: 0
+      ReplaceOwnProjectiles: 0
+      ProjectileAtDamageFrame: 0
+      IndependentNormalProjectile: 0
+      Look: 0
     Kind: 0
     IsCloseRange: 1
     NormalDirection: 0

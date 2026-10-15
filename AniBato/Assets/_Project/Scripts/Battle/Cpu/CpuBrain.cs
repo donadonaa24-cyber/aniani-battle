@@ -128,7 +128,7 @@ namespace AniBato.Battle
                 else if (!seen.Attack.BreaksGuard && self.GuardLockRemaining == 0 && StaminaSystem.CanSpend(self, StaminaSystem.GuardCost(self, seen.Attack.Kind)) &&
                     Chance(justTiming ? Definition.GuardChance + (1 - Definition.GuardChance) * Definition.JustChance : Definition.GuardChance))
                 {
-                    int flight = seen.Attack.SpawnProjectile ? (int)Math.Ceiling(distance / seen.Attack.ProjectileSpeed * 60) : 0;
+                    int flight = ProjectileArrivalFrames(seen.Attack, distance);
                     guardRemaining = Math.Max(Definition.DecisionFrames, impact + seen.Attack.ActiveFrames + flight);
                     return Action(toward, InputButtons.Guard);
                 }
@@ -147,7 +147,12 @@ namespace AniBato.Battle
             float whiffDistance = sim.Rules.CombatInput.SingleSpecial ? Definition.RetreatDistance : Definition.CloseDistance;
             if (Definition.WhiffApproachAttempts > 0 && consecutiveWhiffs >= Definition.WhiffApproachAttempts && distance > whiffDistance && self.Grounded && System.Math.Abs(dy) < 2)
                 return new FrameInput(toward);
-            if (GaugeSystem.CanUseUltimate(self, sim.Rules) && InRange(self.Definition.Ultimate, distance, dy, opponent.Definition.HurtboxSize) &&
+            var ultimate = self.Definition.Ultimate;
+            bool ultimateRange = ultimate.Ability.ShotOrigin == ShotOrigin.StageCenter ?
+                Math.Abs(seen.Position.X - (floor.Center.X + ultimate.Hitbox.Center.X)) < (ultimate.Hitbox.Size.X + opponent.Definition.HurtboxSize.X) * .5f &&
+                Math.Abs(seen.Position.Y - (floor.Top + ultimate.Hitbox.Center.Y)) < (ultimate.Hitbox.Size.Y + opponent.Definition.HurtboxSize.Y) * .5f :
+                InRange(ultimate, distance, dy, opponent.Definition.HurtboxSize);
+            if (GaugeSystem.CanUseUltimate(self, sim.Rules) && ultimateRange &&
                 SafeAttack(self, safe, self.Definition.Ultimate, toward)) return Action(toward, InputButtons.Ultimate);
             if (self.Grounded && self.GroundPlatform > 0 && dy < -2) return new FrameInput(toward, -1);
             if (dy > 2 && self.JumpsUsed < self.Definition.MaxJumps && (self.Grounded || self.Velocity.Y <= 0) &&
@@ -201,6 +206,8 @@ namespace AniBato.Battle
         }
         private bool SafeAttack(FighterState self, BattleRect floor, AttackDefinition attack, int facing)
         {
+            // These motions validate their destination or clamp travel at the current floor edge.
+            if (attack.Ability.Motion != AbilityMotion.None) return true;
             int direction = self.Grounded ? facing : self.Facing;
             float windup = attack.NormalForwardSpeed * attack.StartupFrames / BattleRuleDefinition.TickRate;
             float total = (attack.IsNormal ? attack.NormalForwardDistance : 0) + attack.ActiveVelocity.X * attack.ActiveFrames / BattleRuleDefinition.TickRate;
@@ -230,7 +237,30 @@ namespace AniBato.Battle
             reach += Math.Abs(attack.ActiveVelocity.X) * attack.ActiveFrames / 60f;
             if (attack.IsNormal) reach += attack.NormalForwardDistance;
             if (attack.SpawnProjectile) reach += attack.ProjectileSpeed * attack.ProjectileLifetimeFrames / 60f;
+            if (attack.Ability.Motion == AbilityMotion.Teleport) reach += attack.Ability.TeleportRange;
+            if (attack.Ability.Motion == AbilityMotion.TwoPhaseRush)
+            {
+                float first = attack.Ability.FirstVelocity.X * Math.Min(attack.Ability.ChangeFrame, attack.ActiveFrames) / 60f;
+                float second = attack.Ability.SecondVelocity.X * Math.Max(0, attack.ActiveFrames - attack.Ability.ChangeFrame) / 60f;
+                reach += Math.Max(Math.Abs(first), Math.Abs(first + second));
+            }
+            if (attack.Ability.ShotOrigin == ShotOrigin.OpponentAbove)
+                return dx < attack.Ability.TargetRange && Math.Abs(dy) < target.Y + attack.Hitbox.Size.Y;
             return dx < reach - .15f && Math.Abs(dy - attack.Hitbox.Center.Y) < (attack.Hitbox.Size.Y + target.Y) * .5f;
+        }
+        private static int ProjectileArrivalFrames(AttackDefinition attack, float distance)
+        {
+            if (!attack.SpawnProjectile) return 0;
+            float seconds;
+            if (attack.Ability.ShotOrigin == ShotOrigin.OpponentAbove)
+            {
+                float height = Math.Max(0, attack.Hitbox.Center.Y), speed = Math.Max(0, -attack.ProjectileLaunchVelocity.Y);
+                seconds = attack.ProjectileGravity > 0 ?
+                    ((float)Math.Sqrt(speed * speed + 2 * attack.ProjectileGravity * height) - speed) / attack.ProjectileGravity :
+                    speed > 0 ? height / speed : 0;
+            }
+            else seconds = attack.ProjectileSpeed > 0 ? distance / attack.ProjectileSpeed : 0;
+            return Math.Min(attack.ProjectileLifetimeFrames, (int)Math.Ceiling(seconds * BattleRuleDefinition.TickRate));
         }
         private static FrameInput Action(int x, InputButtons button, float y = 0) => new FrameInput(x, y, button, button);
     }

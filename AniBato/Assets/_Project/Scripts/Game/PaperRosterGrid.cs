@@ -62,7 +62,7 @@ namespace AniBato.Game
                 labels[i].text = data.Movement.Name + (focus ? " ◀" : "") + "\n" +
                     (first >= 0 ? "P1 " + (first + 1) + "番目 " : "") +
                     (second >= 0 ? (flow.CpuMode ? "CPU " : "P2 ") + (second + 1) + "番目" : "") +
-                    (data.PrototypeSharedMoves ? "\n基本技を共有・試作" : "");
+                    (data.PrototypeSharedMoves ? "\n基本技を共有・試作" : data.ActionArtworkPending ? "\n専用原画は制作中" : "");
             }
             status.fontSize = 23;
             status.text = Summary(flow, 0) + "　／　" + Summary(flow, 1) + "\n" + flow.SelectionStatus;

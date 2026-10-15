@@ -52,7 +52,7 @@ namespace AniBato.EditorTools
                     foreach (var state in pose.States) if (!covered.Add(state)) throw new InvalidOperationException("基本ポーズの状態重複");
                     poses.Add(pose);
                 }
-                if (character.PrototypeSharedMoves)
+                if (entry.characterIndex >= 3)
                 {
                     var fallback = Import(entry.key, "idle", entry.idle, manifest.pixelsPerUnit);
                     fallback.Key = "prototype_whole_illustration";

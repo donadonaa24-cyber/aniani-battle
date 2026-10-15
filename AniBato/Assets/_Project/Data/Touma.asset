@@ -32,6 +32,26 @@ MonoBehaviour:
     DirectionalNormals: []
     UpNormal:
       Name: 
+      Ability:
+        Motion: 0
+        ChangeFrame: 0
+        FirstVelocity:
+          X: 0
+          Y: 0
+        SecondVelocity:
+          X: 0
+          Y: 0
+        TeleportRange: 0
+        TargetGap: 0
+        TargetRange: 0
+        ShotOrigin: 0
+        ProjectileCount: 0
+        ProjectileSpacing: 0
+        AllowZeroProjectileSpeed: 0
+        ReplaceOwnProjectiles: 0
+        ProjectileAtDamageFrame: 0
+        IndependentNormalProjectile: 0
+        Look: 0
       Kind: 0
       IsCloseRange: 0
       NormalDirection: 0
@@ -113,6 +133,26 @@ MonoBehaviour:
     Specials: []
     Ultimate:
       Name: 
+      Ability:
+        Motion: 0
+        ChangeFrame: 0
+        FirstVelocity:
+          X: 0
+          Y: 0
+        SecondVelocity:
+          X: 0
+          Y: 0
+        TeleportRange: 0
+        TargetGap: 0
+        TargetRange: 0
+        ShotOrigin: 0
+        ProjectileCount: 0
+        ProjectileSpacing: 0
+        AllowZeroProjectileSpeed: 0
+        ReplaceOwnProjectiles: 0
+        ProjectileAtDamageFrame: 0
+        IndependentNormalProjectile: 0
+        Look: 0
       Kind: 0
       IsCloseRange: 0
       NormalDirection: 0
@@ -187,38 +227,40 @@ MonoBehaviour:
   DamageReactionSchemaVersion: 1
   NormalThrowSchemaVersion: 1
   NormalWeaponSchemaVersion: 0
+  MoveSetSchemaVersion: 2
   DirectionalNormals:
   - {fileID: 0}
-  - {fileID: 11400000, guid: 836faa48a0f8be544be3002cce1d23bf, type: 2}
-  - {fileID: 11400000, guid: ca995cc32a5eb1441bd9067cf166b85b, type: 2}
-  - {fileID: 11400000, guid: 379af02b44b8c6b4a93d397f2c5b4b1a, type: 2}
+  - {fileID: 11400000, guid: ffeb9c773f126e94fa9bf8fc71d08d9e, type: 2}
+  - {fileID: 11400000, guid: 88b0de0cdb5a4a94e91206c9d33e7984, type: 2}
+  - {fileID: 11400000, guid: afeb8adb8875ee744961a9f366b10230, type: 2}
   - {fileID: 11400000, guid: c16a7be0c3f37584cab007ad17f33952, type: 2}
   - {fileID: 11400000, guid: 2011708c6d682c241a191e22b6ee4127, type: 2}
   - {fileID: 11400000, guid: 63ebc6856fa0a5f4d82622f2910e1ba7, type: 2}
   - {fileID: 11400000, guid: 183a0578a12ebc442982454b96e2c589, type: 2}
   - {fileID: 11400000, guid: 597a43bbaa02c8647b94ace718900174, type: 2}
   - {fileID: 11400000, guid: f9794a06304cddc4dad61c36744d66ea, type: 2}
-  UpNormal: {fileID: 11400000, guid: a7b8e41f9065f1545a7acc7ed7341031, type: 2}
+  UpNormal: {fileID: 11400000, guid: 92eaaba3defe7fb41828b0341d4e37d1, type: 2}
   GroundNormals:
-  - {fileID: 11400000, guid: 265eb73c95633814280ea1c5b66d1d35, type: 2}
-  - {fileID: 11400000, guid: 7a377d14467610a4e9d601cad1e855b9, type: 2}
-  - {fileID: 11400000, guid: ba52838bae456f041a1307abe8ddf93a, type: 2}
+  - {fileID: 11400000, guid: 65e7176eb22d9bb4cbb656c3b87fb585, type: 2}
+  - {fileID: 11400000, guid: 225adcd3b40fe0b46bbccc774352a3ed, type: 2}
+  - {fileID: 11400000, guid: 75b8db68422709542b1bea47299ae319, type: 2}
   AirNormals:
-  - {fileID: 11400000, guid: d4c8876c485a9bc44aad92ceae9dc23d, type: 2}
-  - {fileID: 11400000, guid: 373c6424a98952c42ab8f382419b2e08, type: 2}
-  - {fileID: 11400000, guid: e2850abc0d69e804a816acf09e608162, type: 2}
+  - {fileID: 11400000, guid: f41c46e88ca0e4f40aee5d0789cc1a9e, type: 2}
+  - {fileID: 11400000, guid: 77a9bfddd23f9e542a831aea56b0e9f7, type: 2}
+  - {fileID: 11400000, guid: 3a124c0efaad2b4408b141b8e570de4d, type: 2}
   Specials:
-  - {fileID: 11400000, guid: c11ce82bc92b7234599e4435b7d38d52, type: 2}
+  - {fileID: 11400000, guid: 4c91a5885b17ca047a7a4725546f8ed5, type: 2}
   - {fileID: 11400000, guid: bca544369cf8c5740910600531a4dce2, type: 2}
   - {fileID: 11400000, guid: 65f0a1eccd200b0499dc037ca8284ead, type: 2}
   - {fileID: 11400000, guid: a7db2a97120870a4d93f992c535ccef2, type: 2}
-  Ultimate: {fileID: 11400000, guid: 46c756bd4dfc8044d82205b8b644a9f5, type: 2}
+  Ultimate: {fileID: 11400000, guid: 391fb2b4b61760e46b4cb6959cdce87e, type: 2}
   Tint: {r: 0.1, g: 0.8, b: 1, a: 1}
   RoundShape: 0
   Silhouette: 0
   Portrait: {fileID: 21300000, guid: ad9a4a8a935cfa24c8380fd0b07b17bd, type: 3}
   SelectionSprite: {fileID: 21300000, guid: 50c2dc8e9dbfea644860283c951eebee, type: 3}
   PrototypeSharedMoves: 0
+  ActionArtworkPending: 1
   Animations: {fileID: 11400000, guid: 186f32daae7136f489084393ef0417c5, type: 2}
   PaperMotion: {fileID: 11400000, guid: edf50e499ba7472438d53049ea63299c, type: 2}
   SpriteEffects:

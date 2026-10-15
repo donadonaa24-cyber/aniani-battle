@@ -76,8 +76,9 @@ namespace AniBato.Battle
                 if (Match.IsFinished) CutInRemainingFrames = 0;
                 return;
             }
+            AbilityMotionSystem.Step(P1, P2, Stage); AbilityMotionSystem.Step(P2, P1, Stage);
             movement.Step(P1, p1, Stage, Rules); movement.Step(P2, p2, Stage, Rules);
-            projectileSystem.Step(P1, P2, Rules.ProjectileLimitPerOwner);
+            projectileSystem.Step(P1, P2, Rules.ProjectileLimitPerOwner, Stage);
             if (Rules.CombatInput.NormalClashes)
             { clash.Resolve(P1, P2, Projectiles, Match.TickCount, Rules.CombatInput, events); projectileSystem.RemoveClashed(); }
             contacts.Clear();
