@@ -56,6 +56,7 @@ namespace AniBato.EditorTools
                 cpuDifficulties[i] = LoadOrCreate<CpuDifficultyData>("Cpu" + (CpuDifficulty)i);
                 if (cpuDifficulties[i].Definition.DecisionFrames == 0) cpuDifficulties[i].Definition = CpuDefinition.ForDifficulty(i);
                 cpuDifficulties[i].Definition = BalanceMigration.Cpu(cpuDifficulties[i].Definition, i);
+                cpuDifficulties[i].Definition = CombatInputBuilder.Cpu(cpuDifficulties[i].Definition, i);
                 cpuDifficulties[i].ToDefinition(); EditorUtility.SetDirty(cpuDifficulties[i]);
             }
             var ground = CreateAttacks("Ground", false);
@@ -69,6 +70,7 @@ namespace AniBato.EditorTools
             if (setup.Characters == null || setup.Characters.Length == 0) setup.Characters = roster;
             if (setup.Characters.Length == 3) setup.Characters = PaperRosterBuilder.Build(setup.Characters);
             PaperRosterCoreBuilder.Apply(setup.Characters);
+            CombatInputBuilder.Apply(setup.Characters);
             if (setup.Stages == null || setup.Stages.Length == 0) setup.Stages = stages;
             if (setup.CpuDifficulties == null || setup.CpuDifficulties.Length == 0) setup.CpuDifficulties = cpuDifficulties;
             if (setup.CpuDifficulties.Length != 3) throw new InvalidOperationException("CPU difficulty assets must have three entries.");
@@ -119,6 +121,7 @@ namespace AniBato.EditorTools
             if (definition.SchemaVersion < 6) { definition.DropThroughHoldFrames = 18; definition.SchemaVersion = 6; }
             if (definition.SchemaVersion < 7) { definition.GroundJumpStartupFrames = defaults.GroundJumpStartupFrames; definition.SchemaVersion = 7; }
             if (definition.SchemaVersion < 8) { definition.Charge = ChargeAttackDefinition.Default; definition.SchemaVersion = 8; }
+            if (definition.SchemaVersion < 9) { definition.CombatInput = CombatInputDefinition.Default; definition.SchemaVersion = 9; }
             asset.Definition = definition;
         }
         private static void UpgradeBindings(InputBindings asset)

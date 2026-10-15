@@ -94,7 +94,7 @@ namespace AniBato.Game
         {
             hud.text = fighter.Definition.Name + "\n" + new string('♥', fighter.Hearts) + new string('♡', runner.Simulation.Rules.InitialHearts - fighter.Hearts) +
                 "   " + fighter.NormalHitCount + "/" + threshold + "\nSTAMINA " + Mathf.FloorToInt(fighter.Stamina) + "/" + fighter.Definition.Stamina.Maximum + "\nLINK " + fighter.Gauge + "/" + runner.Simulation.Rules.Gauge.Maximum +
-                (GaugeSystem.CanUseUltimate(fighter, runner.Simulation.Rules) ? "  超必殺 READY" : fighter.UltimateUses > 0 ? "  超必殺 使用済" : "");
+                (fighter.UnlimitedUltimates ? "  超必殺 無制限" : GaugeSystem.CanUseUltimate(fighter, runner.Simulation.Rules) ? "  超必殺 READY" : fighter.UltimateUses > 0 ? "  超必殺 使用済" : "");
             if (fighter.BuffRemaining > 0) hud.text += "  機動強化";
             if (staminaBars != null)
             {

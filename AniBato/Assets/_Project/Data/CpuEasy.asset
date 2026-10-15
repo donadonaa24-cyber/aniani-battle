@@ -15,9 +15,9 @@ MonoBehaviour:
   Definition:
     ReactionFrames: 18
     DecisionFrames: 10
-    SchemaVersion: 5
+    SchemaVersion: 6
     AttackRestFrames: 105
-    WhiffApproachAttempts: 12
+    WhiffApproachAttempts: 6
     AttackChance: 0.65
     SpecialChance: 0.1
     ComboChance: 0.3

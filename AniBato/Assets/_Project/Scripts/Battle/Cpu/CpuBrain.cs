@@ -34,9 +34,13 @@ namespace AniBato.Battle
             if (player < 0 || player > 1) throw new ArgumentOutOfRangeException(nameof(player));
             if (sim.Match.IsFinished || sim.CutInRemainingFrames > 0) return default;
             var self = player == 0 ? sim.P1 : sim.P2; var opponent = player == 0 ? sim.P2 : sim.P1;
+            bool clashed = false;
             foreach (var feedback in sim.Events)
+            {
                 if (feedback.Kind == BattleEventKind.Hit && feedback.SourcePlayer == player)
                 { lastLandedAttack = feedback.AttackId; consecutiveWhiffs = 0; }
+                if (feedback.Kind == BattleEventKind.Clash && (feedback.SourcePlayer == player || feedback.TargetPlayer == player)) clashed = true;
+            }
             if (wasAttacking && self.Attack == null)
             {
                 attackRest = Definition.AttackRestFrames;
@@ -44,6 +48,8 @@ namespace AniBato.Battle
                     consecutiveWhiffs = committedAttack.Id == lastLandedAttack ? 0 : consecutiveWhiffs + 1;
             }
             wasAttacking = self.Attack != null;
+            // Break a synchronized clash cycle with each brain's own seeded response delay.
+            if (clashed) attackRest += Chance(.5f) ? Definition.DecisionFrames : Definition.ReactionFrames + Definition.DecisionFrames;
             if (self.Attack != null) committedAttack = self.Attack;
             if (attackRest > 0) attackRest--;
             history[historyIndex] = new Observation { Position = opponent.Position, Mode = opponent.Mode, Facing = opponent.Facing,
@@ -78,7 +84,7 @@ namespace AniBato.Battle
                 if (!self.CanControlMovement) return movement;
                 bool falling = self.Velocity.Y <= 0;
                 if (!self.Grounded && falling && self.JumpsUsed < self.Definition.MaxJumps && StaminaSystem.CanSpend(self, self.Definition.Stamina.AirJumpCost)) return Action(inward, InputButtons.Jump);
-                if (!self.Grounded && !self.UpSpecialUsed && self.SpecialCooldown(SpecialSlot.Up) == 0 && falling)
+                if (!sim.Rules.CombatInput.SingleSpecial && !self.Grounded && !self.UpSpecialUsed && self.SpecialCooldown(SpecialSlot.Up) == 0 && falling)
                     return Action(inward, InputButtons.Special, 1);
                 if (!self.Grounded && self.AirDashesUsed < self.Definition.MaxAirDashes && self.Position.Y > floor.Top + 1 &&
                     StaminaSystem.CanSpend(self, self.Definition.Stamina.AirDashCost) &&
@@ -94,14 +100,14 @@ namespace AniBato.Battle
             {
                 if (self.Attack.Definition.RequiresFollowup && self.Attack.Frame >= self.Attack.Definition.StartupFrames - 2)
                     return Action(toward, InputButtons.Attack);
-                if (self.Attack.Definition.IsNormal && !self.Attack.NextQueued && queuedChain != self.Attack.Id &&
+                if (self.Attack.Definition.IsNormal && !(sim.Rules.CombatInput.SingleAerialNormal && self.Attack.AirborneAttack) && !self.Attack.NextQueued && queuedChain != self.Attack.Id &&
                     self.Attack.Frame >= self.Attack.Definition.StartupFrames)
                 {
                     queuedChain = self.Attack.Id;
                     if (distance <= Definition.CloseDistance + 1 && SafeNormalChain(self, safe, sim.Rules.MaxComboHits) && Chance(Definition.ComboChance))
                         return Action(toward, InputButtons.Attack);
                 }
-                return default;
+                return sim.Rules.CombatInput.FlowingAerialNormal && self.Attack.AirborneAttack && self.Attack.Definition.IsNormal ? new FrameInput(toward) : default;
             }
             if (!self.CanControlMovement) return default;
             if (--cooldown > 0) return movement;
@@ -133,19 +139,22 @@ namespace AniBato.Battle
             // recovery blink. Defense above remains available throughout this spacing phase.
             if (attackRest > 0 || opponent.HeartRecoveryRemaining > 0)
             {
-                int direction = distance < Definition.MediumDistance - 1 ? -toward : distance > Definition.MediumDistance + 1 ? toward : 0;
+                float spacing = sim.Rules.CombatInput.SingleSpecial && !self.Definition.GroundNormals[0].SpawnProjectile ? Definition.CloseDistance : Definition.MediumDistance;
+                int direction = distance < spacing - 1 ? -toward : distance > spacing + 1 ? toward : 0;
                 movement = SafeMotion(self, safe, direction * self.Definition.MoveSpeed, Definition.DecisionFrames) ? new FrameInput(direction) : default;
                 return movement;
             }
-            if (Definition.WhiffApproachAttempts > 0 && consecutiveWhiffs >= Definition.WhiffApproachAttempts && distance > Definition.CloseDistance && self.Grounded && System.Math.Abs(dy) < 2)
+            float whiffDistance = sim.Rules.CombatInput.SingleSpecial ? Definition.RetreatDistance : Definition.CloseDistance;
+            if (Definition.WhiffApproachAttempts > 0 && consecutiveWhiffs >= Definition.WhiffApproachAttempts && distance > whiffDistance && self.Grounded && System.Math.Abs(dy) < 2)
                 return new FrameInput(toward);
             if (GaugeSystem.CanUseUltimate(self, sim.Rules) && InRange(self.Definition.Ultimate, distance, dy, opponent.Definition.HurtboxSize) &&
                 SafeAttack(self, safe, self.Definition.Ultimate, toward)) return Action(toward, InputButtons.Ultimate);
             if (self.Grounded && self.GroundPlatform > 0 && dy < -2) return new FrameInput(toward, -1);
             if (dy > 2 && self.JumpsUsed < self.Definition.MaxJumps && (self.Grounded || self.Velocity.Y <= 0) &&
                 StaminaSystem.CanSpend(self, self.Definition.Stamina.AirJumpCost + self.Definition.Stamina.AirDashCost)) return Action(toward, InputButtons.Jump);
-            var normals = self.Grounded ? self.Definition.GroundNormals : self.Definition.AirNormals;
-            bool close = InRange(normals[0], distance, dy, opponent.Definition.HurtboxSize);
+            var opener = self.Grounded ? self.Definition.GroundNormals[0] :
+                sim.Rules.CombatInput.SingleAerialNormal ? DirectionalAttackSelector.Attack(self.Definition, NormalDirection.AirNeutral, 0, true) : self.Definition.AirNormals[0];
+            bool close = InRange(opener, distance, dy, opponent.Definition.HurtboxSize);
             if (seen.Mode == FighterMode.Counter && Chance(Definition.CounterChance))
             {
                 var neutral = self.Definition.Special(SpecialSlot.Neutral);
@@ -155,18 +164,18 @@ namespace AniBato.Battle
                 return movement;
             }
             if (seen.Mode == FighterMode.Guard && close &&
-                SafeAttack(self, safe, DirectionalAttackSelector.Attack(self.Definition, self.Grounded ? NormalDirection.Crouch : NormalDirection.Weak, 0, !self.Grounded), toward) &&
+                SafeAttack(self, safe, self.Grounded ? DirectionalAttackSelector.Attack(self.Definition, NormalDirection.Crouch, 0, false) : opener, toward) &&
                 Chance(Definition.AttackChance)) return Action(toward, InputButtons.Attack, self.Grounded ? -1 : 0);
             if (seen.Mode != FighterMode.Guard && Chance(Definition.SpecialChance))
             {
-                SpecialSlot slot = ChooseSpecial(self, seen, distance, dy);
+                SpecialSlot slot = sim.Rules.CombatInput.SingleSpecial ? SpecialSlot.Neutral : ChooseSpecial(self, seen, distance, dy);
                 var special = self.Definition.Special(slot);
                 if (self.SpecialCooldown(slot) == 0 && (slot != SpecialSlot.Up || !self.UpSpecialUsed && self.Grounded) &&
                     (special.NonDamaging || InRange(special, distance, dy, opponent.Definition.HurtboxSize)) && SafeAttack(self, safe, special, toward))
                     return new FrameInput(toward, held: InputButtons.Special, pressed: InputButtons.Special,
                         actionX: slot == SpecialSlot.Neutral ? 0 : toward, actionY: slot == SpecialSlot.Up ? 1 : slot == SpecialSlot.Down ? -1 : 0);
             }
-            if (close && SafeAttack(self, safe, normals[0], toward) && Chance(Definition.AttackChance)) return Action(toward, InputButtons.Attack);
+            if (close && SafeAttack(self, safe, opener, toward) && Chance(Definition.AttackChance)) return Action(toward, InputButtons.Attack);
             // A safe dash must also be short enough not to overshoot the opponent.
             float dashTravel = self.Definition.DashSpeed * self.DashMultiplier * self.Definition.GroundDashFrames / 60f;
             if (self.Mode != FighterMode.Dash && self.Grounded && StaminaSystem.CanSpend(self, self.Definition.Stamina.GroundDashCost + self.Definition.Stamina.AirJumpCost) &&

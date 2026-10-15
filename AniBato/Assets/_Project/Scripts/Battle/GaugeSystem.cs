@@ -26,6 +26,6 @@ namespace AniBato.Battle
                 events.Add(new BattleEvent(BattleEventKind.GaugeChanged, tick, fighter.PlayerIndex, fighter.PlayerIndex, value: fighter.Gauge));
         }
         public static bool CanUseUltimate(FighterState fighter, in BattleRuleDefinition rules) =>
-            fighter.Gauge >= rules.Gauge.UltimateCost && fighter.UltimateUses < rules.Gauge.UltimateMaxUses;
+            fighter.UnlimitedUltimates || fighter.Gauge >= rules.Gauge.UltimateCost && fighter.UltimateUses < rules.Gauge.UltimateMaxUses;
     }
 }

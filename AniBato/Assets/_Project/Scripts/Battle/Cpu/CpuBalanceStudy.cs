@@ -21,9 +21,9 @@ namespace AniBato.Battle
         }
         public static string Csv(IEnumerable<CpuMatchMetrics> rows)
         {
-            var csv = new StringBuilder("difficulty,p1,p2,seed,ticks,result,reason,p1Attacks,p2Attacks,heartsLost,ultimateStarts,ultimateHits,unforcedRingOuts,shrinkReached\n");
+            var csv = new StringBuilder("difficulty,p1,p2,seed,ticks,result,reason,p1Attacks,p2Attacks,heartsLost,ultimateStarts,ultimateHits,unforcedRingOuts,shrinkReached,normalHits,specialHits,clashes,guarded,counters\n");
             foreach (var r in rows) csv.AppendLine(string.Join(",", r.Difficulty, r.Player1, r.Player2, r.Seed, r.Ticks, r.Result, r.Reason,
-                r.Attacks[0], r.Attacks[1], r.HeartsLost, r.UltimateStarts, r.UltimateHits, r.UnforcedRingOuts, r.ShrinkReached));
+                r.Attacks[0], r.Attacks[1], r.HeartsLost, r.UltimateStarts, r.UltimateHits, r.UnforcedRingOuts, r.ShrinkReached, r.NormalHits, r.SpecialHits, r.Clashes, r.Guarded, r.Counters));
             return csv.ToString();
         }
     }

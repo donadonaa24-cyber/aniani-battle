@@ -30,6 +30,67 @@ MonoBehaviour:
     GroundNormals: []
     AirNormals: []
     DirectionalNormals: []
+    UpNormal:
+      Name: 
+      Kind: 0
+      IsCloseRange: 0
+      NormalDirection: 0
+      BreaksGuard: 0
+      LandingRecoveryFrames: 0
+      StartupFrames: 0
+      ActiveFrames: 0
+      DamageDelayFrames: 0
+      RecoveryFrames: 0
+      Hitbox:
+        Center:
+          X: 0
+          Y: 0
+        Size:
+          X: 0
+          Y: 0
+      HitstopFrames: 0
+      HitstunFrames: 0
+      Knockback:
+        X: 0
+        Y: 0
+      PiercesNormalDodge: 0
+      SpawnProjectile: 0
+      ProjectileSpeed: 0
+      ProjectileLifetimeFrames: 0
+      ActiveVelocity:
+        X: 0
+        Y: 0
+      NormalForwardDistance: 0
+      DamageRecoilDistance: 0
+      DamageRecoilFrames: 0
+      VerticalMotionOnStartOnly: 0
+      ProjectileLaunchVelocity:
+        X: 0
+        Y: 0
+      ProjectileGravity: 0
+      HasSecondaryHitbox: 0
+      SecondaryHitbox:
+        Center:
+          X: 0
+          Y: 0
+        Size:
+          X: 0
+          Y: 0
+      NonDamaging: 0
+      ParalysisFrames: 0
+      MarkFrames: 0
+      SelfHealNormalHits: 0
+      SelfBuff:
+        DurationFrames: 0
+        MoveMultiplier: 0
+        DashMultiplier: 0
+        StartupMultiplier: 0
+      KnockbackMultiplier: 0
+      CooldownFrames: 0
+      ProjectileEraseCount: 0
+      GuardedRecoveryFrames: 0
+      RequiresFollowup: 0
+      StanceFrames: 0
     Stamina:
       Maximum: 125
       GroundRecoveryPerSecond: 22
@@ -137,6 +198,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db6aeee1a7468354397d011752bc1621, type: 2}
   - {fileID: 11400000, guid: 42f9e1634c3c50e4798e67f0e6476c43, type: 2}
   - {fileID: 11400000, guid: 08b2db826147ab140ab2c55e4d118291, type: 2}
+  UpNormal: {fileID: 11400000, guid: 160de720fa16cd045ad0debc993c41a6, type: 2}
   GroundNormals:
   - {fileID: 11400000, guid: eaffcec9921aaaa4981ccf2b33e228ef, type: 2}
   - {fileID: 11400000, guid: 5e53cf18e0c7e4448a7806b56dea945b, type: 2}

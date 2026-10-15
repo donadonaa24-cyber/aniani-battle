@@ -98,6 +98,8 @@ namespace AniBato.Presentation
             {
                 var attack = fighter.Attack;
                 if (attack.Definition.IsUltimate) return AnimationState.Ultimate;
+                // Reuse the upward key pose until the dedicated ground-up artwork is ready.
+                if (attack.Definition.IsNormal && attack.Definition.NormalDirection == NormalDirection.Up) return AnimationState.AirUp;
                 if (attack.Definition.IsNormal && attack.Definition.NormalDirection != NormalDirection.Weak)
                     return (AnimationState)((int)AnimationState.CrouchAttack + (int)attack.Definition.NormalDirection - 1);
                 if (attack.Definition.IsNormal) return attack.AirborneAttack ? AnimationState.AirAttack :

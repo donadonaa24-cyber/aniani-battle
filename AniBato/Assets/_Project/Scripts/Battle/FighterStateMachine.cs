@@ -47,7 +47,7 @@ namespace AniBato.Battle
                 if (!fighter.Grounded) { fighter.ChargeFrames = 0; fighter.Mode = FighterMode.Fall; return; }
                 if (input.IsHeld(InputButtons.Attack)) { fighter.ChargeFrames = Math.Min(rules.Charge.MaximumFrames, fighter.ChargeFrames + 1); return; }
                 int frames = fighter.ChargeFrames; fighter.ChargeFrames = 0;
-                StartNormal(fighter, 0, false, fighter.ChargeDirection);
+                StartNormal(fighter, 0, false, fighter.ChargeDirection, rules);
                 if (frames >= rules.Charge.MinimumFrames) fighter.Attack.ChargeFrames = frames;
                 fighter.InputBuffer.ClearActions(); return;
             }
@@ -70,7 +70,7 @@ namespace AniBato.Battle
                 {
                     var previous = fighter.Attack;
                     fighter.Attack = null;
-                    if (previous.NextQueued) StartNormal(fighter, previous.ChainIndex + 1, previous.AirborneAttack, previous.Definition.NormalDirection);
+                    if (previous.NextQueued) StartNormal(fighter, previous.ChainIndex + 1, previous.AirborneAttack, previous.Definition.NormalDirection, rules);
                 }
             }
 
@@ -79,21 +79,21 @@ namespace AniBato.Battle
                 if (fighter.Attack.Definition.IsNormal)
                 {
                     var attacks = fighter.Attack.AirborneAttack ? fighter.Definition.AirNormals : fighter.Definition.GroundNormals;
-                    if (fighter.Attack.ChainIndex + 1 < System.Math.Min(rules.MaxComboHits, attacks.Length) && fighter.InputBuffer.Consume(InputButtons.Attack, tick))
+                    if (!(rules.CombatInput.SingleAerialNormal && fighter.Attack.AirborneAttack) && fighter.Attack.ChainIndex + 1 < System.Math.Min(rules.MaxComboHits, attacks.Length) && fighter.InputBuffer.Consume(InputButtons.Attack, tick))
                         fighter.Attack.NextQueued = true;
                 }
                 fighter.Mode = fighter.Attack.Definition.IsNormal ? FighterMode.Attack : FighterMode.Special;
-                ApplyAttackMotion(fighter);
+                ApplyAttackMotion(fighter, rules);
                 SkillSystem.OnActive(fighter);
                 return;
             }
 
             if (GaugeSystem.CanUseUltimate(fighter, rules) && fighter.InputBuffer.Consume(InputButtons.Ultimate, tick))
             {
-                fighter.Gauge -= rules.Gauge.UltimateCost; fighter.UltimateUses++;
+                if (!fighter.UnlimitedUltimates) fighter.Gauge -= rules.Gauge.UltimateCost; fighter.UltimateUses++;
                 float ultimateX = fighter.InputBuffer.DirectionFor(InputButtons.Ultimate).X;
                 if (fighter.Grounded && Math.Abs(ultimateX) > rules.DirectionThreshold) fighter.Facing = ultimateX > 0 ? 1 : -1;
-                StartAttack(fighter, fighter.Definition.Ultimate, 0, !fighter.Grounded); fighter.InputBuffer.ClearActions(); return;
+                StartAttack(fighter, fighter.Definition.Ultimate, 0, !fighter.Grounded, rules); fighter.InputBuffer.ClearActions(); return;
             }
             if (fighter.CounterCooldownRemaining == 0 && fighter.InputBuffer.Consume(InputButtons.Counter, tick))
             {
@@ -113,26 +113,26 @@ namespace AniBato.Battle
                 fighter.InputBuffer.ClearActions(); return;
             }
             BattleVector specialDirection = fighter.InputBuffer.DirectionFor(InputButtons.Special);
-            SpecialSlot slot = specialDirection.Y > rules.DirectionThreshold ? SpecialSlot.Up : specialDirection.Y < -rules.DirectionThreshold ? SpecialSlot.Down :
+            SpecialSlot slot = rules.CombatInput.SingleSpecial ? SpecialSlot.Neutral : specialDirection.Y > rules.DirectionThreshold ? SpecialSlot.Up : specialDirection.Y < -rules.DirectionThreshold ? SpecialSlot.Down :
                 Math.Abs(specialDirection.X) > rules.DirectionThreshold ? SpecialSlot.Side : SpecialSlot.Neutral;
             if (fighter.SpecialCooldown(slot) == 0 && (slot != SpecialSlot.Up || !fighter.UpSpecialUsed) && fighter.InputBuffer.Consume(InputButtons.Special, tick))
             {
                 if (fighter.Grounded && Math.Abs(specialDirection.X) > rules.DirectionThreshold) fighter.Facing = specialDirection.X > 0 ? 1 : -1;
                 fighter.CurrentSpecial = slot;
                 if (slot == SpecialSlot.Up) { fighter.UpSpecialUsed = true; fighter.FastFalling = false; }
-                StartAttack(fighter, fighter.Definition.Special(slot), 0, !fighter.Grounded);
+                StartAttack(fighter, fighter.Definition.Special(slot), 0, !fighter.Grounded, rules);
                 fighter.SpecialCooldowns[(int)slot] = fighter.Definition.Special(slot).CooldownFrames;
                 fighter.InputBuffer.ClearActions(); return;
             }
             if (fighter.InputBuffer.Consume(InputButtons.Attack, tick))
             {
-                var direction = DirectionalAttackSelector.Select(fighter, fighter.InputBuffer.DirectionFor(InputButtons.Attack), rules.DirectionThreshold);
+                var direction = DirectionalAttackSelector.Select(fighter, fighter.InputBuffer.DirectionFor(InputButtons.Attack), rules.DirectionThreshold, rules.CombatInput.SingleAerialNormal);
                 if (rules.Charge.Enabled && fighter.Grounded && input.IsHeld(InputButtons.Attack))
                 {
                     fighter.ChargeFrames = 1; fighter.ChargeDirection = direction; fighter.Mode = FighterMode.Charging;
                     fighter.Velocity = default; fighter.DashRemaining = 0; fighter.InputBuffer.ClearActions(); return;
                 }
-                StartNormal(fighter, 0, !fighter.Grounded, direction); fighter.InputBuffer.ClearActions(); return;
+                StartNormal(fighter, 0, !fighter.Grounded, direction, rules); fighter.InputBuffer.ClearActions(); return;
             }
             if (fighter.GuardLockRemaining == 0 && (input.IsHeld(InputButtons.Guard) || fighter.InputBuffer.Consume(InputButtons.Guard, tick)))
             { BeginDefense(fighter, FighterMode.Guard); fighter.InputBuffer.ClearActions(); return; }
@@ -190,27 +190,28 @@ namespace AniBato.Battle
             fighter.Velocity = new BattleVector(direction * fighter.Definition.MoveSpeed * fighter.MoveMultiplier, fighter.Definition.JumpSpeed);
             fighter.FastFalling = false; fighter.DashRemaining = 0; fighter.Mode = FighterMode.Jump;
         }
-        private void StartNormal(FighterState fighter, int chain, bool air, NormalDirection direction = NormalDirection.Weak)
+        private void StartNormal(FighterState fighter, int chain, bool air, NormalDirection direction, in BattleRuleDefinition rules)
         {
             var attacks = air ? fighter.Definition.AirNormals : fighter.Definition.GroundNormals;
-            StartAttack(fighter, DirectionalAttackSelector.Attack(fighter.Definition, direction, chain, air), chain, air);
+            StartAttack(fighter, DirectionalAttackSelector.Attack(fighter.Definition, direction, chain, air), chain, air, rules);
         }
-        private void StartAttack(FighterState fighter, in AttackDefinition attack, int chain, bool air)
+        private void StartAttack(FighterState fighter, in AttackDefinition attack, int chain, bool air, in BattleRuleDefinition rules)
         {
             var adjusted = attack;
             if (fighter.BuffRemaining > 0)
                 adjusted.StartupFrames = (int)Math.Ceiling(attack.StartupFrames * SkillSystem.Multiplier(fighter.Buff.StartupMultiplier));
             if (adjusted.RequiresFollowup) adjusted.StartupFrames = Math.Max(1, adjusted.StartupFrames);
             fighter.Attack = new AttackInstance(nextAttackId++, adjusted, chain, air);
-            fighter.Velocity = new BattleVector(0, fighter.Velocity.Y);
+            if (!(air && attack.IsNormal && rules.CombatInput.FlowingAerialNormal)) fighter.Velocity = new BattleVector(0, fighter.Velocity.Y);
             fighter.DashRemaining = 0;
             fighter.Mode = attack.IsNormal ? FighterMode.Attack : FighterMode.Special;
-            ApplyAttackMotion(fighter);
+            ApplyAttackMotion(fighter, rules);
             SkillSystem.OnActive(fighter);
         }
-        private static void ApplyAttackMotion(FighterState fighter)
+        private static void ApplyAttackMotion(FighterState fighter, in BattleRuleDefinition rules)
         {
             var attack = fighter.Attack;
+            if (attack.AirborneAttack && attack.Definition.IsNormal && rules.CombatInput.FlowingAerialNormal) return;
             if (attack.IsActive && (attack.Definition.ActiveVelocity.X != 0 || attack.Definition.ActiveVelocity.Y != 0))
             {
                 float vertical = attack.Definition.VerticalMotionOnStartOnly &&

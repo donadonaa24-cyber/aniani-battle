@@ -49,12 +49,12 @@ namespace AniBato.Game
         {
             Feedback.Apply(value, settings.ShakeSeconds, settings.JustFlashSeconds, settings.FinishSeconds);
             if (value.TargetPlayer < 0 || value.Kind != BattleEventKind.Hit && value.Kind != BattleEventKind.Guarded &&
-                value.Kind != BattleEventKind.JustGuard && value.Kind != BattleEventKind.JustDodge && value.Kind != BattleEventKind.CounterSuccess) return;
+                value.Kind != BattleEventKind.JustGuard && value.Kind != BattleEventKind.JustDodge && value.Kind != BattleEventKind.CounterSuccess && value.Kind != BattleEventKind.Clash) return;
             int player = value.Kind == BattleEventKind.Hit ? value.TargetPlayer : value.SourcePlayer;
             var fighter = player == 0 ? runner.Simulation.P1 : runner.Simulation.P2;
             int slot = nextSpark++ % sparks.Length; ages[slot] = 0;
             sparkPlayers[slot] = player; sparkOffsets[slot] = new Vector3(fighter.Facing * .4f, .35f, 0);
-            justSparks[slot] = value.Kind == BattleEventKind.JustGuard || value.Kind == BattleEventKind.JustDodge;
+            justSparks[slot] = value.Kind == BattleEventKind.JustGuard || value.Kind == BattleEventKind.JustDodge || value.Kind == BattleEventKind.Clash;
             var spark = sparks[slot]; spark.enabled = true;
             spark.sprite = ProceduralSprites.Shape(value.Kind != BattleEventKind.Hit);
             spark.transform.position = new Vector3(fighter.Position.X + fighter.Facing * .4f, fighter.Position.Y + .35f, 0);

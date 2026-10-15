@@ -25,7 +25,12 @@ namespace AniBato.Game
         private ICpuBrain cpuBrain;
         public CpuDifficulty Difficulty { get; private set; }
         public ICpuBrain CpuBrain => cpuBrain;
-        public PracticeOptions Practice { get; set; }
+        private PracticeOptions practice;
+        public PracticeOptions Practice
+        {
+            get => practice;
+            set { practice = value; if (Simulation != null) Simulation.Practice = value; }
+        }
         public TutorialSession Tutorial { get; set; }
         public FrameInput LastPlayerInput { get; private set; }
         public string LastMoveName { get; private set; } = "";

@@ -21,6 +21,9 @@ namespace AniBato.Battle
             InvalidateGround(fighter, stage);
             if (fighter.FrozenThisTick || fighter.Mode == FighterMode.KO) return;
             bool canControl = fighter.CanControlMovement;
+            bool flowing = rules.CombatInput.FlowingAerialNormal && fighter.Attack != null && fighter.Attack.AirborneAttack &&
+                fighter.Attack.Definition.IsNormal && fighter.HitstunRemaining == 0 && fighter.ParalysisRemaining == 0;
+            if (flowing) fighter.Velocity = new BattleVector(input.X * fighter.Definition.MoveSpeed * fighter.MoveMultiplier, fighter.Velocity.Y);
             bool droppedThisTick = false;
             if (canControl && fighter.Grounded && fighter.GroundPlatform >= 0 && stage[fighter.GroundPlatform].OneWay && input.Y < -rules.DirectionThreshold &&
                 fighter.DownHeldFrames >= rules.DropThroughHoldFrames)
@@ -30,7 +33,7 @@ namespace AniBato.Battle
                 fighter.Velocity = new BattleVector(fighter.Velocity.X, -rules.DropThroughSpeed);
                 droppedThisTick = true;
             }
-            if (canControl && !droppedThisTick && !fighter.Grounded && input.Y < -rules.DirectionThreshold && fighter.Mode != FighterMode.Dash)
+            if ((canControl || flowing) && !droppedThisTick && !fighter.Grounded && input.Y < -rules.DirectionThreshold && fighter.Mode != FighterMode.Dash)
                 fighter.FastFalling = true;
             BattleVector oldPosition = fighter.Position;
             float vertical = fighter.Velocity.Y;

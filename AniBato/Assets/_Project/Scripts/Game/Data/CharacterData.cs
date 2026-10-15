@@ -15,6 +15,7 @@ namespace AniBato.Game
         public int NormalThrowSchemaVersion;
         public int NormalWeaponSchemaVersion;
         public AttackData[] DirectionalNormals;
+        public AttackData UpNormal;
         public AttackData[] GroundNormals;
         public AttackData[] AirNormals;
         public AttackData[] Specials;
@@ -34,6 +35,7 @@ namespace AniBato.Game
             result.GroundNormals = Convert(GroundNormals);
             result.AirNormals = Convert(AirNormals);
             result.DirectionalNormals = DirectionalNormals == null ? null : ConvertDirections(DirectionalNormals);
+            result.UpNormal = UpNormal ? UpNormal.ToDefinition() : default;
             result.Specials = Convert(Specials);
             result.Ultimate = Ultimate ? Ultimate.ToDefinition() : throw new ArgumentException("超必殺技が未設定です。");
             return result.Snapshot();

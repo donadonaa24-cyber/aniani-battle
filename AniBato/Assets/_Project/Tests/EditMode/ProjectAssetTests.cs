@@ -21,7 +21,11 @@ namespace AniBato.Tests
             var rows = CpuBalanceStudy.Run(setup.Characters.Take(3).Select(c => c.ToDefinition()).ToArray(), rules.ToDefinition(), setup.Stages[0].ToGeometry(),
                 new[] { setup.CpuDifficulties[1].ToDefinition() });
             Assert.That(rows.Count, Is.EqualTo(270));
-            Assert.That(rows.All(r => r.Attacks[0] > 0 && r.Attacks[1] > 0 && r.HeartsLost > 0), Is.True);
+            string csv = System.IO.Path.GetFullPath(System.IO.Path.Combine(UnityEngine.Application.dataPath, "../../TestResults/rework_r1_cpu.csv"));
+            System.IO.File.WriteAllText(csv, CpuBalanceStudy.Csv(rows));
+            Assert.That(rows.All(r => r.Attacks[0] > 0 && r.Attacks[1] > 0 && r.HeartsLost > 0), Is.True,
+                string.Join("; ", rows.Where(r => r.Attacks[0] == 0 || r.Attacks[1] == 0 || r.HeartsLost == 0)
+                    .Select(r => $"P{r.Player1}/P{r.Player2} seed{r.Seed}: attacks={r.Attacks[0]}/{r.Attacks[1]}, hearts={r.HeartsLost}, reason={r.Reason}")));
             Assert.That(rows.Count(r => r.UltimateStarts > 0) / (double)rows.Count, Is.GreaterThanOrEqualTo(.5));
         }
         [Test]
@@ -38,7 +42,7 @@ namespace AniBato.Tests
             Assert.That(simulation.Match.RemainingTicks, Is.EqualTo(4200));
             Assert.That(AssetDatabase.LoadAssetAtPath<SceneAsset>(ProjectBuilder.ScenePath), Is.Not.Null);
             Assert.That(EditorBuildSettings.scenes[0].path, Is.EqualTo(ProjectBuilder.TitleScenePath));
-            Assert.That(rules.Definition.SchemaVersion, Is.EqualTo(8));
+            Assert.That(rules.Definition.SchemaVersion, Is.EqualTo(9));
             Assert.That(rules.Definition.Charge.Enabled, Is.True);
             Assert.That(rules.Definition.Charge.MinimumFrames, Is.EqualTo(60));
             Assert.That(rules.Definition.Charge.MaximumFrames, Is.EqualTo(180));

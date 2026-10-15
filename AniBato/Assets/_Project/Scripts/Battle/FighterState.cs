@@ -38,6 +38,7 @@
         public AttackInstance Attack { get; internal set; }
         public int Gauge { get; internal set; }
         public int UltimateUses { get; internal set; }
+        public bool UnlimitedUltimates { get; internal set; }
         public int ChargeFrames { get; internal set; }
         internal NormalDirection ChargeDirection;
         public bool UpSpecialUsed { get; internal set; }

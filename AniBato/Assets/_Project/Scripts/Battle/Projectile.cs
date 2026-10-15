@@ -32,12 +32,13 @@ namespace AniBato.Battle
         private readonly List<Projectile> projectiles = new List<Projectile>();
         public IReadOnlyList<Projectile> Projectiles { get; }
         public ProjectileSystem() => Projectiles = projectiles.AsReadOnly();
+        public void RemoveClashed() => projectiles.RemoveAll(p => p.Attack.Clashed);
         public void Step(FighterState p1, FighterState p2, int maximumPerOwner = 0)
         {
             for (int i = projectiles.Count - 1; i >= 0; i--)
             {
                 projectiles[i].Step();
-                if (projectiles[i].RemainingFrames <= 0 || projectiles[i].Owner.Mode == FighterMode.KO) projectiles.RemoveAt(i);
+                if (projectiles[i].RemainingFrames <= 0 || projectiles[i].Attack.Clashed || projectiles[i].Owner.Mode == FighterMode.KO) projectiles.RemoveAt(i);
             }
             Spawn(p1, maximumPerOwner); Spawn(p2, maximumPerOwner);
             Erase(p1); Erase(p2);

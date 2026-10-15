@@ -87,6 +87,7 @@ namespace AniBato.Battle
         public AttackDefinition[] GroundNormals;
         public AttackDefinition[] AirNormals;
         public AttackDefinition[] DirectionalNormals;
+        public AttackDefinition UpNormal;
         public StaminaDefinition Stamina;
         public float CrouchHeightRatio, DiagonalThreshold;
         public bool DiagonalFallbackVertical;
@@ -111,6 +112,7 @@ namespace AniBato.Battle
             if (DirectionalNormals != null)
                 foreach (var attack in DirectionalNormals)
                     if (attack.ActiveFrames > 0) { attack.Validate(); if (!attack.IsNormal) throw new ArgumentException("Directional attacks must be normal."); }
+            if (UpNormal.ActiveFrames > 0) { UpNormal.Validate(); if (!UpNormal.IsNormal) throw new ArgumentException("上攻撃は通常攻撃です。"); }
             if (Specials == null || Specials.Length != 4) throw new ArgumentException("特殊攻撃は4枠必要です。");
             foreach (var attack in Specials)
             { attack.Validate(); if (!attack.IsSpecial) throw new ArgumentException("特殊攻撃の分類が不正です。"); }
@@ -155,6 +157,7 @@ namespace AniBato.Battle
         public int DropThroughHoldFrames;
         public int GroundJumpStartupFrames;
         public ChargeAttackDefinition Charge;
+        public CombatInputDefinition CombatInput;
         public float DropThroughSpeed;
         public float DirectionThreshold;
         public bool EnableRingOut;
@@ -176,7 +179,7 @@ namespace AniBato.Battle
                 DropThroughFrames < 1 || GroundJumpStartupFrames < 0 || DropThroughSpeed <= 0 || DirectionThreshold <= 0 || DirectionThreshold > 1)
                 throw new ArgumentException("対戦ルールの定義が不正です。");
             _ = DurationTicks;
-            Defense.Validate(); Gauge.Validate(); Charge.Validate();
+            Defense.Validate(); Gauge.Validate(); Charge.Validate(); CombatInput.Validate();
             Shrink.Validate();
             if (ComboFinishHitstunFrames < 1 || FollowupImmunityFrames < 1 || HeartRecoveryFrames < 0 || ProjectileLimitPerOwner < 0 || HeartRecoveryKnockback.X < 0 || HeartRecoveryKnockback.Y < 0)
                 throw new ArgumentException("フィニッシュの定義が不正です。");

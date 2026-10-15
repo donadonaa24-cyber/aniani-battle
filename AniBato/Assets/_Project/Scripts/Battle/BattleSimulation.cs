@@ -15,6 +15,7 @@ namespace AniBato.Battle
         private readonly ComboTracker comboP2 = new ComboTracker();
         private readonly DefenseSystem defense = new DefenseSystem();
         private readonly ProjectileSystem projectileSystem = new ProjectileSystem();
+        private readonly NormalClashSystem clash = new NormalClashSystem();
         private readonly List<DefenseOutcome> outcomes = new List<DefenseOutcome>();
         public FighterState P1 { get; }
         public FighterState P2 { get; }
@@ -28,7 +29,18 @@ namespace AniBato.Battle
         public IReadOnlyList<Projectile> Projectiles => projectileSystem.Projectiles;
         public ICounterEffect CounterEffect { get => defense.CounterEffect; set { defense.CounterEffect = value; P1.CounterEffect = value; P2.CounterEffect = value; } }
         public int CutInRemainingFrames { get; private set; }
-        public PracticeOptions Practice { get; set; }
+        private PracticeOptions practice;
+        public PracticeOptions Practice
+        {
+            get => practice;
+            set
+            {
+                bool leaving = practice != null && value == null; practice = value;
+                P1.UnlimitedUltimates = P2.UnlimitedUltimates = practice != null;
+                if (practice != null) P1.Gauge = P2.Gauge = Rules.Gauge.Maximum;
+                if (leaving) { P1.Gauge = P2.Gauge = 0; P1.UltimateUses = P2.UltimateUses = 0; }
+            }
+        }
 
         public BattleSimulation(in CharacterDefinition p1, in CharacterDefinition p2, in BattleRuleDefinition rules, StageGeometry stage)
         {
@@ -45,6 +57,7 @@ namespace AniBato.Battle
         {
             events.Clear();
             if (Match.IsFinished) return;
+            if (Practice != null) P1.Gauge = P2.Gauge = Rules.Gauge.Maximum;
             // Cinematic ticks consume no match time, physics, status duration, or buffered actions.
             if (CutInRemainingFrames > 0) { CutInRemainingFrames--; return; }
             Match.TickCount++; if (Practice == null || !Practice.FreezeTimer) Match.RemainingTicks--;
@@ -65,6 +78,8 @@ namespace AniBato.Battle
             }
             movement.Step(P1, p1, Stage, Rules); movement.Step(P2, p2, Stage, Rules);
             projectileSystem.Step(P1, P2, Rules.ProjectileLimitPerOwner);
+            if (Rules.CombatInput.NormalClashes)
+            { clash.Resolve(P1, P2, Projectiles, Match.TickCount, Rules.CombatInput, events); projectileSystem.RemoveClashed(); }
             contacts.Clear();
             hitResolver.Gather(P1, P2, contacts); hitResolver.Gather(P2, P1, contacts);
             foreach (var projectile in Projectiles)

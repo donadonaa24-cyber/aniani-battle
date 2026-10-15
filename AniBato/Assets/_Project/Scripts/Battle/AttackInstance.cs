@@ -10,13 +10,14 @@ namespace AniBato.Battle
         public int ChainIndex { get; }
         public bool AirborneAttack { get; }
         public int ChargeFrames { get; internal set; }
+        public bool Clashed { get; internal set; }
         public int Frame { get; internal set; }
         public bool NextQueued { get; internal set; }
         internal bool ProjectileSpawned;
         internal bool SelfEffectApplied;
         internal int ErasuresRemaining;
         internal int StanceRemaining;
-        public bool IsActive => Frame >= Definition.StartupFrames && Frame < Definition.StartupFrames + Definition.ActiveFrames;
+        public bool IsActive => !Clashed && Frame >= Definition.StartupFrames && Frame < Definition.StartupFrames + Definition.ActiveFrames;
         public bool IsDamageActive => IsActive && Frame >= Definition.StartupFrames + Definition.DamageDelayFrames;
         public bool IsComplete => Frame >= Definition.TotalFrames;
         public bool HasHit(int playerIndex) => hitTargets.Contains(playerIndex);

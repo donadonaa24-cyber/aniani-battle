@@ -75,11 +75,11 @@ namespace AniBato.Battle
                 if (Step == TutorialStep.Directional)
                 {
                     if (a.Definition.NormalDirection == NormalDirection.Crouch) DirectionMask |= 1;
-                    if (a.Definition.NormalDirection == NormalDirection.Back) DirectionMask |= 2;
+                    if (sim.Rules.CombatInput.SingleAerialNormal ? a.Definition.NormalDirection == NormalDirection.Up : a.Definition.NormalDirection == NormalDirection.Back) DirectionMask |= 2;
                     if (a.AirborneAttack) DirectionMask |= 4;
                     advance = DirectionMask == 7;
                 }
-                if (Step == TutorialStep.Specials && a.Definition.IsSpecial) { SpecialMask |= 1 << (int)p.CurrentSpecial; advance = SpecialMask == 15; }
+                if (Step == TutorialStep.Specials && a.Definition.IsSpecial) { SpecialMask |= 1 << (int)p.CurrentSpecial; advance = sim.Rules.CombatInput.SingleSpecial ? SpecialMask == 1 : SpecialMask == 15; }
             }
             foreach (var e in sim.Events)
             {

@@ -234,16 +234,18 @@ namespace AniBato.Tests
             yield return null;
         }
         [UnityTest]
-        public IEnumerator EveryDirectionalAirAttackKeepsItsPaperPoseFromStartupThroughRecovery()
+        public IEnumerator EveryDirectionUsesTheNeutralAirPoseFromStartupThroughRecovery()
         {
             var keys = controller.Bindings.P1; var data = runner.Character(0);
             Key[][] directions = { new Key[0], new[] { keys.Right }, new[] { keys.Left }, new[] { keys.Up }, new[] { keys.Down }, new[] { keys.Right, keys.Up }, new[] { keys.Right, keys.Down } };
-            AnimationState[] expected = { AnimationState.AirNeutral, AnimationState.AirForward, AnimationState.AirBack, AnimationState.AirUp, AnimationState.AirDown, AnimationState.AirForwardUp, AnimationState.AirForwardDown };
+            AnimationState[] expected = { AnimationState.AirNeutral, AnimationState.AirNeutral, AnimationState.AirNeutral, AnimationState.AirNeutral, AnimationState.AirNeutral, AnimationState.AirNeutral, AnimationState.AirNeutral };
             for (int action = 0; action < directions.Length; action++)
             {
                 runner.RestartMatch(); yield return Key(keys.Jump, true); Tick();
                 yield return Key(keys.Jump, false); for (int tick = 0; tick < 10; tick++) Tick();
                 Assert.That(runner.Simulation.P1.Grounded, Is.False);
+                // Keep the entire active/recovery window airborne, including deliberate fast-fall.
+                Set(runner.Simulation.P1, "Position", new AniBato.Battle.BattleVector(0, 30));
                 foreach (var key in directions[action]) yield return Key(key, true);
                 yield return Key(keys.Attack, true); Tick();
                 Assert.That(view.RenderedSample.State, Is.EqualTo(expected[action]));
@@ -258,7 +260,7 @@ namespace AniBato.Tests
                     Assert.That(body.sprite, Is.SameAs(pose.Frame(view.RenderedSample)));
                     Assert.That(body.flipX, Is.EqualTo(view.RenderedSample.FlipX ^ pose.ReverseFacing));
                     if (attack.IsActive) active++; if (attack.Frame >= attack.Definition.StartupFrames + attack.Definition.ActiveFrames) recovery++;
-                    if (visible++ == 0) Capture(expected[action].ToString(), true);
+                    if (visible++ == 0) Capture("air_neutral_input_" + action, true, "rework_r1");
                     Tick();
                 }
                 Assert.That(visible, Is.GreaterThanOrEqualTo(12)); Assert.That(visible, Is.LessThan(120));

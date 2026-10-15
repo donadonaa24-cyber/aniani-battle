@@ -6,6 +6,7 @@ namespace AniBato.Battle
     public sealed class CpuMatchMetrics
     {
         public int Player1, Player2, Difficulty, Seed, Ticks, UltimateStarts, UltimateHits, HeartsLost, UnforcedRingOuts;
+        public int NormalHits, SpecialHits, Clashes, Guarded, Counters;
         public readonly int[] Attacks = new int[2];
         public MatchResult Result;
         public MatchEndReason Reason;
@@ -24,6 +25,11 @@ namespace AniBato.Battle
                 foreach (var e in sim.Events)
                 {
                     if (e.Kind == BattleEventKind.AttackStarted) data.Attacks[e.SourcePlayer]++;
+                    if (e.Kind == BattleEventKind.Clash) data.Clashes++;
+                    if (e.Kind == BattleEventKind.Guarded || e.Kind == BattleEventKind.JustGuard) data.Guarded++;
+                    if (e.Kind == BattleEventKind.CounterSuccess) data.Counters++;
+                    if (e.Kind == BattleEventKind.Hit && e.AttackKind == AttackKind.Normal) data.NormalHits++;
+                    if (e.Kind == BattleEventKind.Hit && e.AttackKind == AttackKind.Special) data.SpecialHits++;
                     if (e.Kind == BattleEventKind.Hit || e.Kind == BattleEventKind.CounterSuccess)
                         if (e.TargetPlayer >= 0) lastHostileHit[e.TargetPlayer] = e.Tick;
                     if (e.Kind == BattleEventKind.UltimateStarted) data.UltimateStarts++;

@@ -32,10 +32,17 @@ MonoBehaviour:
       MinimumTravelFraction: 0.3
       VerticalSpeed: 4
       EdgeInset: 0.05
+    CombatInput:
+      SingleAerialNormal: 1
+      FlowingAerialNormal: 1
+      SingleSpecial: 1
+      NormalClashes: 1
+      ClashStopFrames: 5
+      ClashRecoveryFrames: 10
     DropThroughSpeed: 8
     DirectionThreshold: 0.5
     EnableRingOut: 1
-    SchemaVersion: 8
+    SchemaVersion: 9
     Defense:
       GuardReleaseFrames: 6
       GuardStunFrames: 10
