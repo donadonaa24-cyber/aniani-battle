@@ -33,6 +33,9 @@ namespace AniBato.Game
         public void Render(GameFlowController flow)
         {
             var screen = flow.Screen;
+            subtitle.rectTransform.anchoredPosition = new Vector2(0, screen == GameScreen.CharacterSelect ? 355 : 342);
+            subtitle.rectTransform.sizeDelta = new Vector2(1740, screen == GameScreen.CharacterSelect ? 40 : 70);
+            subtitle.fontSize = screen == GameScreen.CharacterSelect ? 24 : 28;
             if (paperDecor) paperDecor.Render(flow);
             if (rosterGrid) rosterGrid.Render(flow);
             foreach (var column in controlColumns) column.enabled = screen == GameScreen.Controls;
@@ -59,6 +62,8 @@ namespace AniBato.Game
                 var shrink = flow.Runner.Simulation.Shrink;
                 banner.text = flow.Runner.CurrentStage.ShrinkMessage + (shrink.Started ? "  中央へ！" : "  残り10秒で床が縮小");
             }
+            if (screen == GameScreen.Battle && banner.text == "" && flow.Series != null)
+                banner.text = "ROUND " + flow.Series.RoundNumber + "　P1 " + flow.Series.Score(0) + " − " + flow.Series.Score(1) + (flow.CpuMode ? " CPU" : " P2");
             banner.fontSize = screen == GameScreen.Countdown ? 110 : 28;
             banner.rectTransform.anchoredPosition = screen == GameScreen.Countdown ? Vector2.zero : new Vector2(0, 285);
             for (int i = 0; i < cards.Length; i++) { cards[i].enabled = cardLabels[i].enabled = false; }
@@ -72,18 +77,26 @@ namespace AniBato.Game
                 options.text = "ボタンを押して開演！"; footer.text = "あにバト！！    /    aniani";
             }
             else if (screen == GameScreen.MainMenu)
-            { heading.text = "あにあにバトル！！"; subtitle.text = "モードを選択"; options.rectTransform.sizeDelta = new Vector2(1740, 730); options.text = Choices(flow.MenuIndex, "CPU対戦", "2人対戦", "操作説明", "フレームレート  " + FramePacing.Label, "練習モード", "チュートリアル", "キーコンフィグ", LearningText.DashSetting(input), "終了", "攻撃判定表示  "+(flow.Runner.DebugBoxes?"ON":"OFF")); }
+            { heading.text = "あにあにバトル！！"; subtitle.text = "モードを選択"; options.text = Choices(flow.MenuIndex, "CPUチーム対戦", "2人チーム対戦", "練習モード", "設定", "終了"); }
             else if (screen == GameScreen.CharacterSelect) Characters(flow);
             else if (screen == GameScreen.StageSelect) Stages(flow);
             else if (screen == GameScreen.Pause)
             {
-                heading.text = "PAUSE"; subtitle.text = "音量は左右で調整 / 画面揺れは決定または左右で切替";
-                options.rectTransform.sizeDelta = new Vector2(1740, 680);
-                options.text = Choices(flow.MenuIndex, "再開", "操作説明", "キャラ選択へ", "タイトルへ",
+                heading.text = "PAUSE"; subtitle.text = "再開するまで試合は進みません";
+                options.rectTransform.sizeDelta = new Vector2(1740, 620);
+                options.text = Choices(flow.MenuIndex, "再開", "設定", "技表", flow.PracticeMode ? "練習設定" : "練習設定（練習モードで利用）", "チーム編成へ", "タイトルへ");
+            }
+            else if (screen == GameScreen.Settings)
+            {
+                heading.text = "設定"; subtitle.text = "左右または決定で変更。CPU難易度は次の試合から反映";
+                options.rectTransform.sizeDelta = new Vector2(1740, 740);
+                options.text = Choices(flow.MenuIndex,
                     "BGM音量  " + Mathf.RoundToInt((flow.Audio ? flow.Audio.BgmVolume : 0) * 100) + "%",
                     "SE音量  " + Mathf.RoundToInt((flow.Audio ? flow.Audio.SeVolume : 0) * 100) + "%",
-                    "画面揺れ  " + (flow.ScreenShakeEnabled ? "ON" : "OFF"), "フレームレート  " + FramePacing.Label,
-                    "技表", "練習設定", "キーコンフィグ", "開始ヒント  " + (flow.BasicHintsEnabled ? "ON" : "OFF"), LearningText.DashSetting(input),"攻撃判定表示  "+(flow.Runner.DebugBoxes?"ON":"OFF"));
+                    "フレームレート  " + FramePacing.Label, "画面揺れ  " + (flow.ScreenShakeEnabled ? "ON" : "OFF"),
+                    "開始ヒント  " + (flow.BasicHintsEnabled ? "ON" : "OFF"), LearningText.DashSetting(input),
+                    "攻撃判定表示  " + (flow.Runner.DebugBoxes ? "ON" : "OFF"), "CPU難易度  " + Difficulty(flow.Difficulty),
+                    "キーコンフィグ", "操作説明", "チュートリアル", "戻る");
             }
             else if (screen == GameScreen.Result) Result(flow);
             else if (screen == GameScreen.Controls)
@@ -112,15 +125,15 @@ namespace AniBato.Game
             }
             else if (screen == GameScreen.PracticeSettings)
             { heading.text = "練習設定"; subtitle.text = "練習中：F5 速度／F6 静止／F7 1コマ進める／F9 判定表示"; options.text = Choices(flow.MenuIndex, "相手  " + new[] { "棒立ち", "ガード", "ジャンプ", "ふつうCPU" }[(int)flow.Practice.Opponent], "ハート固定  " + (flow.Practice.FreezeHearts ? "ON" : "OFF"), "時間固定  " + (flow.Practice.FreezeTimer ? "ON" : "OFF"),"練習で判定表示  "+(flow.Practice.DebugDefault?"ON":"OFF"),"速度  "+flow.Runner.PracticeRateLabel,"静止  "+(flow.Runner.PracticePlaybackPaused?"ON":"OFF"),"1コマ進める（静止中）"); }
-            if (screen != GameScreen.Controls) options.fontSize = screen == GameScreen.KeyConfig ? 26 : screen == GameScreen.CommandList || screen == GameScreen.Pause ? 30 : 38;
+            if (screen != GameScreen.Controls) options.fontSize = screen == GameScreen.KeyConfig ? 26 : screen == GameScreen.CommandList || screen == GameScreen.Pause || screen == GameScreen.Settings ? 30 : 38;
         }
         private void Characters(GameFlowController flow)
         {
             heading.text = "キャラクター選択";
             if(rosterGrid)
             {
-                subtitle.text=flow.CpuMode?"3作品・全9人　P1／CPUを選択　難易度："+Difficulty(flow.Difficulty):"3作品・全9人　それぞれのキャラを選んで決定";
-                options.text="";footer.text="P1 "+flow.Input.ConfirmLabel(0)+" 決定　P2 "+flow.Input.ConfirmLabel(1)+" 決定　／　Esc 戻る　／　"+flow.Input.CommandListLabel+" 技表";
+                subtitle.text = "3作品・全9人　" + (flow.SelectionPlayer == 0 ? "P1" : flow.CpuMode ? "CPU" : "P2") + "の" + (flow.Selection.Picks(flow.SelectionPlayer).Count + 1) + "/" + flow.Selection.Required + "人目　同チーム内の重複不可";
+                options.text=""; footer.text="上下左右で選択　" + flow.Input.ConfirmLabel(flow.SelectionPlayer == 0 || flow.CpuMode ? 0 : 1) + " 追加　／　取消で1人戻す　／　Esc 戻る　／　" + flow.Input.CommandListLabel + " 技表";
                 return;
             }
             subtitle.text = flow.CpuMode ? "CPU対戦：相手と難易度を選択" : "それぞれのキャラを選び、両者決定でステージへ";
@@ -161,6 +174,11 @@ namespace AniBato.Game
                 (sim.Match.Result == MatchResult.Player1Wins ? sim.P1.Definition.Name : sim.P2.Definition.Name) + " WIN!";
             bool draw = sim.Match.Result == MatchResult.Draw;
             subtitle.text = (draw ? "引き分け  /  " : "") + Reason(sim.Match.EndReason) + "  /  " + flow.Runner.CurrentStage.DisplayName;
+            if (flow.Series != null)
+            {
+                subtitle.text += "\nROUND " + flow.Series.RoundNumber + "　チーム得点 P1 " + flow.Series.Score(0) + " − " + flow.Series.Score(1) + (flow.CpuMode ? " CPU" : " P2") + "　2勝先取";
+                if (flow.Series.Complete) heading.text = (flow.Series.Winner == 0 ? "P1" : flow.CpuMode ? "CPU" : "P2") + " チーム WIN!";
+            }
             for (int i = 0; i < 2; i++)
             {
                 int player = !draw && sim.Match.Result == MatchResult.Player2Wins ? 1 - i : i;
@@ -184,7 +202,7 @@ namespace AniBato.Game
                 cardLabels[i].text = (draw ? "DRAW" : i == 0 ? "WINNER!" : "LOSE...") + "  P" + (player + 1) + "  " + fighter.Definition.Name + "\nハート " + fighter.Hearts + "  /  被弾 " + fighter.NormalHitCount;
                 cardLabels[i].color = !draw && i == 0 ? accent : Color.white;
             }
-            options.text = Choices(flow.MenuIndex, "再戦", "キャラ選択へ", "タイトルへ");
+            options.text = Choices(flow.MenuIndex, flow.HasNextRound ? (draw ? "同じラウンドを再試合" : "次のラウンドへ") : "再戦", "チーム編成へ", "タイトルへ");
         }
         private string Choices(int selected, params string[] labels)
         {

@@ -51,18 +51,27 @@ namespace AniBato.Game
         }
         public void Render(GameFlowController value)
         {
-            flow=value;if(portraits==null)Build();
-            gameObject.SetActive(flow.Screen==GameScreen.CharacterSelect);if(!gameObject.activeSelf)return;
-            for(int i=0;i<portraits.Length;i++)
+            flow = value; if (portraits == null) Build();
+            gameObject.SetActive(flow.Screen == GameScreen.CharacterSelect); if (!gameObject.activeSelf) return;
+            int cursor = flow.SelectionPlayer == 0 ? flow.Player1Index : flow.Player2Index;
+            for (int i = 0; i < portraits.Length; i++)
             {
-                bool p1=flow.Player1Index==i,p2=flow.Player2Index==i;
-                backgrounds[i].color=p1&&p2?new Color(.45f,.3f,.52f):p1?new Color(.62f,.28f,.22f):p2?new Color(.15f,.43f,.58f):new Color(.13f,.17f,.22f);
-                var data=flow.Setup.Character(i);
-                labels[i].text=data.Movement.Name+"\n"+(p1?"P1"+(flow.Ready(0)?" 決定":" 選択"):"")+(p1&&p2?" / ":"")+
-                    (p2?(flow.CpuMode?"CPU":"P2")+(flow.Ready(1)?" 決定":" 選択"):"")+(data.PrototypeSharedMoves?"\n基本技を共有・試作":"");
+                bool focus = cursor == i; int first = flow.Selection.Slot(0, i), second = flow.Selection.Slot(1, i);
+                backgrounds[i].color = focus ? (flow.SelectionPlayer == 0 ? new Color(.62f,.28f,.22f) : new Color(.15f,.43f,.58f)) : new Color(.13f,.17f,.22f);
+                var data = flow.Setup.Character(i);
+                labels[i].text = data.Movement.Name + (focus ? " ◀" : "") + "\n" +
+                    (first >= 0 ? "P1 " + (first + 1) + "番目 " : "") +
+                    (second >= 0 ? (flow.CpuMode ? "CPU " : "P2 ") + (second + 1) + "番目" : "") +
+                    (data.PrototypeSharedMoves ? "\n基本技を共有・試作" : "");
             }
-            status.text=flow.CpuMode?"編集中： "+(flow.CpuRow==0?"P1":flow.CpuRow==1?"CPU":"難易度")+"　／　上下で編集先　左右または絵をクリックで選択　／　決定でステージへ":
-                "赤：P1　青：P2　重なると紫　／　上下左右で選択、各自の決定ボタンで準備完了";
+            status.fontSize = 23;
+            status.text = Summary(flow, 0) + "　／　" + Summary(flow, 1) + "\n" + flow.SelectionStatus;
+        }
+        private static string Summary(GameFlowController flow, int player)
+        {
+            var picks = flow.Selection.Picks(player); string text = player == 0 ? "P1: " : flow.CpuMode ? "CPU: " : "P2: ";
+            for (int i = 0; i < flow.Selection.Required; i++) text += (i + 1) + "." + (i < picks.Count ? flow.Setup.Character(picks[i]).Movement.Name : "―") + " ";
+            return text;
         }
         private void Update()
         {

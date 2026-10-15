@@ -1,12 +1,12 @@
 {
   "date": "2026-10-16",
   "spec": "docs/SPEC_REVISION_20261016.md",
-  "current": "R2",
+  "current": "R3",
   "baseCommit": "a169ee3",
   "stages": {
     "R0": "complete",
     "R1": "complete",
-    "R2": "pending",
+    "R2": "complete",
     "R3": "pending",
     "R4": "pending",
     "R5": "pending",
@@ -14,29 +14,23 @@
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "rework_r1_3",
+    "tag": "rework_r2_2",
     "buildAll": "success",
     "edit": {
-      "total": 499,
-      "passed": 499,
+      "total": 505,
+      "passed": 505,
       "failed": 0,
       "skipped": 0
     },
     "play": {
-      "total": 52,
-      "passed": 52,
+      "total": 55,
+      "passed": 55,
       "failed": 0,
       "skipped": 0
     },
     "windowsBuild": "success",
-    "screenshots": "docs/screenshots/rework_r1/",
-    "screenshotCount": 44,
-    "cpu": {
-      "matches": 270,
-      "bothAttack": 270,
-      "withHeartLoss": 270,
-      "withUltimate": 246
-    }
+    "screenshots": "docs/screenshots/rework_r2/",
+    "screenshotCount": 6
   },
   "activeVerification": null,
   "attempts": [
@@ -154,6 +148,42 @@
         "withUltimate": 246
       },
       "reason": "近接CPUの休止時の間合いと実入力相殺表示を含め全合格。"
+    },
+    {
+      "tag": "rework_r2_1",
+      "buildAll": "success",
+      "edit": {
+        "total": 505,
+        "passed": 505,
+        "failed": 0
+      },
+      "play": {
+        "total": 55,
+        "passed": 55,
+        "failed": 0
+      },
+      "windowsBuild": "success",
+      "reason": "全工程合格後の目視でキャラ選択の説明文をパネル上へ配置。撮影でPaperSignのLateUpdateを反映し、CPU選択と再開時の溜め漏れ検査を補足。2で再検証。"
+    },
+    {
+      "tag": "rework_r2_2",
+      "buildAll": "success",
+      "edit": {
+        "total": 505,
+        "passed": 505,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 55,
+        "passed": 55,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "screenshots": "docs/screenshots/rework_r2/",
+      "screenshotCount": 6,
+      "reason": "文字配置と撮影時の看板更新、CPU選択と溜め漏れ検査も含め全合格。"
     }
   ]
 }

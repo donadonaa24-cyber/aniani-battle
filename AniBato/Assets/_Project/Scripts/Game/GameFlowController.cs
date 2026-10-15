@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AniBato.Game
 {
-    public enum GameScreen { Title, MainMenu, CharacterSelect, StageSelect, Countdown, Battle, Pause, Result, Controls, CommandList, KeyConfig, PracticeSettings }
+    public enum GameScreen { Title, MainMenu, CharacterSelect, StageSelect, Countdown, Battle, Pause, Result, Controls, CommandList, KeyConfig, PracticeSettings, Settings }
     public enum CpuDifficulty { Easy, Normal, Hard }
 
     [DefaultExecutionOrder(-100)]
@@ -30,8 +30,14 @@ namespace AniBato.Game
         public bool CapturingBinding { get; private set; }
         public bool BasicHintsEnabled { get; private set; } = true;
         private float countdownElapsed, resultElapsed;
-        private readonly bool[] ready = new bool[2];
-        private int cpuRow;
+        private GameScreen settingsReturn;
+        private int settingsMenuIndex;
+        private bool resultRecorded;
+        public TeamSelection Selection { get; private set; } = new TeamSelection(9);
+        public TeamSeries Series { get; private set; }
+        public string SelectionStatus { get; private set; } = "";
+        public int SelectionPlayer => Selection.ActivePlayer;
+        public bool HasNextRound => Series != null && !Series.Complete && Series.AwaitingAdvance;
         private AudioManager audioManager;
         private BattleEffectsView effects;
         private string previousCountdown;
@@ -47,8 +53,8 @@ namespace AniBato.Game
         public CpuDifficulty Difficulty { get; private set; } = CpuDifficulty.Normal;
         public BattleSetup Setup => setup;
         public BattleRunner Runner => runner;
-        public int CpuRow => cpuRow;
-        public bool Ready(int player) => ready[player];
+        public int CpuRow => SelectionPlayer;
+        public bool Ready(int player) => Selection.Picks(player).Count == Selection.Required;
         public string CountdownText => countdownElapsed < settings.CountdownNumberSeconds * 3 ?
             (3 - Mathf.FloorToInt(countdownElapsed / settings.CountdownNumberSeconds)).ToString() : "FIGHT!";
         public void Configure(BattleRunner battle, InputController controller, BattleSetup roster, GameFlowSettings timing,
@@ -64,6 +70,8 @@ namespace AniBato.Game
             BasicHintsEnabled = PlayerPrefs.GetInt("AniBato.BasicHints", 1) != 0;
             audioManager = runner.GetComponent<AudioManager>(); effects = runner.GetComponent<BattleEffectsView>();
             Player1Index = setup.Player1Index; Player2Index = setup.Player2Index;
+            Selection = new TeamSelection(setup.Characters.Length);
+            Difficulty = (CpuDifficulty)Mathf.Clamp(PlayerPrefs.GetInt("AniBato.CpuDifficulty", 1), 0, 2);
             Show(GameScreen.Title, false);
         }
         private void Update()
@@ -99,7 +107,10 @@ namespace AniBato.Game
             else if (Screen == GameScreen.Battle)
             {
                 if (runner.Simulation.Match.IsFinished)
-                { resultElapsed += Time.unscaledDeltaTime; if (resultElapsed >= settings.ResultDelaySeconds) Show(GameScreen.Result, false); }
+                {
+                    if (!resultRecorded) { Series?.Record(runner.Simulation.Match.Result); resultRecorded = true; }
+                    resultElapsed += Time.unscaledDeltaTime; if (resultElapsed >= settings.ResultDelaySeconds) Show(GameScreen.Result, false);
+                }
                 else if (first.Start || second.Start) Show(GameScreen.Pause, true, MenuAction.Start);
             }
             else if (Screen == GameScreen.CharacterSelect)
@@ -107,7 +118,7 @@ namespace AniBato.Game
             else if (Screen == GameScreen.StageSelect)
             {
                 StageIndex = Wrap(StageIndex + horizontal + vertical, setup.Stages.Length + 1);
-                if (cancel) Show(GameScreen.CharacterSelect, true, MenuAction.Cancel);
+                if (cancel) { Selection.Undo(); Show(GameScreen.CharacterSelect, true, MenuAction.Cancel); }
                 else if (confirm) StartMatch();
             }
             else if (Screen == GameScreen.Controls)
@@ -143,21 +154,16 @@ namespace AniBato.Game
                 }
                 if (cancel) Show(panelReturn, true, MenuAction.Cancel);
             }
+            else if (Screen == GameScreen.Settings)
+            {
+                MenuIndex = Wrap(MenuIndex + vertical, 12);
+                if (cancel) Show(settingsReturn, true, MenuAction.Cancel);
+                else if (horizontal != 0 || confirm) SettingsAction(horizontal == 0 ? 1 : horizontal, confirm);
+            }
             else
             {
-                int count = Screen == GameScreen.Pause ? 14 : Screen == GameScreen.MainMenu ? 10 : 3;
+                int count = Screen == GameScreen.Pause ? 6 : Screen == GameScreen.MainMenu ? 5 : 3;
                 MenuIndex = Wrap(MenuIndex + vertical, count);
-                if (Screen == GameScreen.Pause)
-                {
-                    if (audioManager && (MenuIndex == 4 || MenuIndex == 5) && horizontal != 0) audioManager.AdjustVolume(MenuIndex == 4, horizontal * .1f);
-                    if (effects && MenuIndex == 6 && horizontal != 0) effects.ToggleShake();
-                    if (MenuIndex == 7 && horizontal != 0) FramePacing.Cycle(horizontal);
-                    if (MenuIndex == 12 && horizontal != 0) input.Configuration.ToggleDoubleTapDash();
-                    if (MenuIndex == 13 && horizontal != 0) runner.SetDebugBoxes(!runner.DebugBoxes);
-                }
-                if (Screen == GameScreen.MainMenu && MenuIndex == 3 && horizontal != 0) FramePacing.Cycle(horizontal);
-                if (Screen == GameScreen.MainMenu && MenuIndex == 7 && horizontal != 0) input.Configuration.ToggleDoubleTapDash();
-                if (Screen == GameScreen.MainMenu && MenuIndex == 9 && horizontal != 0) runner.SetDebugBoxes(!runner.DebugBoxes);
                 if (cancel)
                 {
                     if (Screen == GameScreen.MainMenu) Show(GameScreen.Title, true, MenuAction.Cancel);
@@ -167,51 +173,66 @@ namespace AniBato.Game
             }
             view.Render(this);
         }
+        private void BeginSelection()
+        {
+            Selection = new TeamSelection(setup.Characters.Length, PracticeMode ? 1 : TeamSeries.TeamSize);
+            Series = null; SelectionStatus = ""; Show(GameScreen.CharacterSelect);
+        }
         private void CharacterInput(MenuInput first, MenuInput second)
         {
-            if (input.EscapePressed) { Show(GameScreen.MainMenu, true, MenuAction.Cancel); return; }
-            if (CpuMode)
+            var current = SelectionPlayer == 0 || CpuMode ? first : second;
+            if (input.EscapePressed || first.Cancel || second.Cancel)
             {
-                cpuRow = Wrap(cpuRow + first.Vertical, 3);
-                if (cpuRow == 0) Player1Index = Wrap(Player1Index + first.Horizontal, setup.Characters.Length);
-                if (cpuRow == 1) Player2Index = Wrap(Player2Index + first.Horizontal, setup.Characters.Length);
-                if (cpuRow == 2) Difficulty = (CpuDifficulty)Wrap((int)Difficulty + first.Horizontal, 3);
-                Player2Index = Wrap(Player2Index + second.Horizontal, setup.Characters.Length);
-                Difficulty = (CpuDifficulty)Wrap((int)Difficulty + second.Vertical, 3);
-                if (first.Cancel || second.Cancel) Show(GameScreen.MainMenu, true, MenuAction.Cancel);
-                else if (first.Confirm) Show(GameScreen.StageSelect, true, MenuAction.ConfirmP1);
+                SelectionStatus = "";
+                if (!Selection.Undo()) Show(GameScreen.MainMenu, true, MenuAction.Cancel);
+                else input.GuardScreenTransition(MenuAction.Cancel);
+                return;
             }
-            else
+            if (current.Horizontal != 0 || current.Vertical != 0)
             {
-                if (first.Cancel)
-                { if (!ready[0]) { Show(GameScreen.MainMenu, true, MenuAction.Cancel); return; } ready[0] = false; }
-                if (second.Cancel)
-                { if (!ready[1]) { Show(GameScreen.MainMenu, true, MenuAction.Cancel); return; } ready[1] = false; }
-                if (!ready[0]) Player1Index = PaperRosterGrid.Move(Player1Index, first.Horizontal, first.Vertical);
-                if (!ready[1]) Player2Index = PaperRosterGrid.Move(Player2Index, second.Horizontal, second.Vertical);
-                if (first.Confirm) ready[0] = true;
-                if (second.Confirm) ready[1] = true;
-                if (first.Confirm || second.Confirm) input.GuardScreenTransition();
-                if (ready[0] && ready[1]) Show(GameScreen.StageSelect);
+                int cursor = SelectionPlayer == 0 ? Player1Index : Player2Index;
+                cursor = PaperRosterGrid.Move(cursor, current.Horizontal, current.Vertical);
+                if (SelectionPlayer == 0) Player1Index = cursor; else Player2Index = cursor;
+                SelectionStatus = "";
             }
+            if (current.Confirm) ConfirmCharacter();
+        }
+        private void ConfirmCharacter()
+        {
+            int cursor = SelectionPlayer == 0 ? Player1Index : Player2Index;
+            if (!Selection.Add(cursor)) { SelectionStatus = "同じチームに同じキャラは選べません"; return; }
+            SelectionStatus = ""; input.GuardScreenTransition();
+            if (Selection.Complete) Show(GameScreen.StageSelect);
         }
         public void SelectRosterCard(int index)
         {
-            if(Screen!=GameScreen.CharacterSelect||index<0||index>=setup.Characters.Length)return;
-            if(CpuMode){if(cpuRow==1)Player2Index=index;else if(cpuRow==0)Player1Index=index;}
-            else if(!ready[0])Player1Index=index;else if(!ready[1])Player2Index=index;
+            if (Screen != GameScreen.CharacterSelect || index < 0 || index >= setup.Characters.Length) return;
+            if (SelectionPlayer == 0) Player1Index = index; else Player2Index = index;
+            ConfirmCharacter();
+        }
+        private void OpenSettings() { settingsReturn = Screen; settingsMenuIndex = 0; Show(GameScreen.Settings); }
+        private void SettingsAction(int direction, bool confirm)
+        {
+            if (MenuIndex < 2 && audioManager) audioManager.AdjustVolume(MenuIndex == 0, direction * .1f);
+            else if (MenuIndex == 2) FramePacing.Cycle(direction);
+            else if (MenuIndex == 3 && effects) effects.ToggleShake();
+            else if (MenuIndex == 4) { BasicHintsEnabled = !BasicHintsEnabled; PlayerPrefs.SetInt("AniBato.BasicHints", BasicHintsEnabled ? 1 : 0); }
+            else if (MenuIndex == 5) input.Configuration.ToggleDoubleTapDash();
+            else if (MenuIndex == 6) runner.SetDebugBoxes(!runner.DebugBoxes);
+            else if (MenuIndex == 7)
+            { Difficulty = (CpuDifficulty)Wrap((int)Difficulty + direction, 3); PlayerPrefs.SetInt("AniBato.CpuDifficulty", (int)Difficulty); }
+            else if (confirm && MenuIndex == 8) { panelReturn = GameScreen.Settings; Show(GameScreen.KeyConfig); }
+            else if (confirm && MenuIndex == 9) Controls();
+            else if (confirm && MenuIndex == 10) { CpuMode = PracticeMode = TutorialMode = true; BeginSelection(); }
+            else if (confirm && MenuIndex == 11) Show(settingsReturn);
         }
         private void ActivateMenu()
         {
             if (Screen == GameScreen.MainMenu)
             {
-                if (MenuIndex < 2) { CpuMode = MenuIndex == 0; PracticeMode = TutorialMode = false; Show(GameScreen.CharacterSelect); }
-                else if (MenuIndex == 2) Controls();
-                else if (MenuIndex == 3) FramePacing.Cycle(1);
-                else if (MenuIndex == 4 || MenuIndex == 5) { CpuMode = PracticeMode = true; TutorialMode = MenuIndex == 5; Show(GameScreen.CharacterSelect); }
-                else if (MenuIndex == 6) { panelReturn = Screen; Show(GameScreen.KeyConfig); }
-                else if (MenuIndex == 7) input.Configuration.ToggleDoubleTapDash();
-                else if (MenuIndex == 9) runner.SetDebugBoxes(!runner.DebugBoxes);
+                if (MenuIndex < 3)
+                { CpuMode = MenuIndex != 1; PracticeMode = MenuIndex == 2; TutorialMode = false; BeginSelection(); }
+                else if (MenuIndex == 3) OpenSettings();
                 else
                 {
 #if UNITY_EDITOR
@@ -224,25 +245,25 @@ namespace AniBato.Game
             else if (Screen == GameScreen.Pause)
             {
                 if (MenuIndex == 0) Resume();
-                else if (MenuIndex == 1) Controls();
-                else if (MenuIndex < 4) Show(MenuIndex == 2 ? GameScreen.CharacterSelect : GameScreen.Title);
-                else if (MenuIndex == 6 && effects) effects.ToggleShake();
-                else if (MenuIndex == 7) FramePacing.Cycle(1);
-                else if (MenuIndex == 8) OpenCommands();
-                else if (MenuIndex == 9) { panelReturn = Screen; Show(GameScreen.PracticeSettings); }
-                else if (MenuIndex == 10) { panelReturn = Screen; Show(GameScreen.KeyConfig); }
-                else if (MenuIndex == 11) { BasicHintsEnabled = !BasicHintsEnabled; PlayerPrefs.SetInt("AniBato.BasicHints", BasicHintsEnabled ? 1 : 0); PlayerPrefs.Save(); }
-                else if (MenuIndex == 12) input.Configuration.ToggleDoubleTapDash();
-                else if (MenuIndex == 13) runner.SetDebugBoxes(!runner.DebugBoxes);
+                else if (MenuIndex == 1) OpenSettings();
+                else if (MenuIndex == 2) OpenCommands();
+                else if (MenuIndex == 3 && PracticeMode) { panelReturn = Screen; Show(GameScreen.PracticeSettings); }
+                else if (MenuIndex == 4) BeginSelection();
+                else if (MenuIndex == 5) Show(GameScreen.Title);
             }
             else if (Screen == GameScreen.Result)
             {
-                if (MenuIndex == 0) StartMatch();
-                else Show(MenuIndex == 1 ? GameScreen.CharacterSelect : GameScreen.Title);
+                if (MenuIndex == 0)
+                {
+                    if (HasNextRound) Series.Advance(); else Series?.Reset();
+                    StartRound();
+                }
+                else if (MenuIndex == 1) BeginSelection();
+                else Show(GameScreen.Title);
             }
         }
         private void Controls() { controlsReturn = Screen; Show(GameScreen.Controls); }
-        private void OpenCommands() { panelReturn = Screen; CommandCharacter = Player1Index; CommandPage = 0; Show(GameScreen.CommandList, true, MenuAction.Confirm | MenuAction.Start); }
+        private void OpenCommands() { panelReturn = Screen; CommandCharacter = Screen == GameScreen.CharacterSelect && SelectionPlayer == 1 ? Player2Index : Player1Index; CommandPage = 0; Show(GameScreen.CommandList, true, MenuAction.Confirm | MenuAction.Start); }
         private void Resume(MenuAction action = MenuAction.Confirm)
         {
             bool countdown = countdownElapsed < settings.CountdownNumberSeconds * 3 + settings.FightBannerSeconds;
@@ -252,6 +273,15 @@ namespace AniBato.Game
         private void StartMatch()
         {
             if (StageIndex == setup.Stages.Length) StageIndex = Random.Range(0, setup.Stages.Length);
+            if (!Selection.Complete) throw new System.InvalidOperationException("両チームの選択が未完了です。");
+            Series = PracticeMode ? null : new TeamSeries(Selection.Picks(0), Selection.Picks(1));
+            if (PracticeMode) { Player1Index = Selection.Picks(0)[0]; Player2Index = Selection.Picks(1)[0]; }
+            StartRound();
+        }
+        private void StartRound()
+        {
+            if (Series != null) { Player1Index = Series.Entrant(0); Player2Index = Series.Entrant(1); }
+            resultRecorded = false;
             world.SetActive(true); hud.SetActive(true);
             runner.Practice = PracticeMode ? Practice : null; runner.Tutorial = TutorialMode ? new TutorialSession() : null;
             runner.BeginMatch(setup.Character(Player1Index), setup.Character(Player2Index), setup.Stages[StageIndex], CpuMode, Difficulty);
@@ -263,14 +293,15 @@ namespace AniBato.Game
         {
             if (screen == GameScreen.Result && Screen != GameScreen.Result && audioManager) audioManager.Play(SoundCue.Result);
             if (Screen == GameScreen.MainMenu) mainMenuIndex = MenuIndex;
-            Screen = screen; MenuIndex = screen == GameScreen.MainMenu ? mainMenuIndex : 0; if (guardInput) input.GuardScreenTransition(action); else input.Clear();
-            if (screen == GameScreen.CharacterSelect) { ready[0] = ready[1] = false; cpuRow = 0; }
+            if (Screen == GameScreen.Settings) settingsMenuIndex = MenuIndex;
+            Screen = screen; MenuIndex = screen == GameScreen.MainMenu ? mainMenuIndex : screen == GameScreen.Settings ? settingsMenuIndex : 0; if (guardInput) input.GuardScreenTransition(action); else input.Clear();
             bool visible = screen == GameScreen.Battle || screen == GameScreen.Countdown || screen == GameScreen.Pause || screen == GameScreen.Result ||
-                screen == GameScreen.Controls && controlsReturn == GameScreen.Pause ||
-                (screen == GameScreen.CommandList || screen == GameScreen.KeyConfig || screen == GameScreen.PracticeSettings) && panelReturn == GameScreen.Pause;
+                screen == GameScreen.Settings && settingsReturn == GameScreen.Pause ||
+                screen == GameScreen.Controls && (controlsReturn == GameScreen.Pause || controlsReturn == GameScreen.Settings && settingsReturn == GameScreen.Pause) ||
+                (screen == GameScreen.CommandList || screen == GameScreen.KeyConfig || screen == GameScreen.PracticeSettings) && (panelReturn == GameScreen.Pause || panelReturn == GameScreen.Settings && settingsReturn == GameScreen.Pause);
             world.SetActive(visible); hud.SetActive(visible && screen != GameScreen.Result);
             if (audioManager) audioManager.SetMusic(visible && runner.CurrentStage ? (int)runner.CurrentStage.Theme + 1 : 0);
-            if (!visible && effects) effects.ResetView();
+            if (!visible) { runner.Practice = null; runner.Tutorial = null; if (effects) effects.ResetView(); }
             runner.SetPaused(screen != GameScreen.Battle && screen != GameScreen.Result);
             view.Render(this);
         }

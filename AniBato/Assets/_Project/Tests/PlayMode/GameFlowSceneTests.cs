@@ -16,7 +16,7 @@ using UnityEngine.InputSystem.DualShock;
 
 namespace AniBato.Tests
 {
-    public sealed class GameFlowSceneTests : InputTestFixture
+    public sealed partial class GameFlowSceneTests : InputTestFixture
     {
         private Keyboard keyboard;
         private readonly System.Collections.Generic.Dictionary<string, string> controlPrefs = new System.Collections.Generic.Dictionary<string, string>();
@@ -25,6 +25,7 @@ namespace AniBato.Tests
         private bool previousRunInBackground;
         private int? doubleTapPref;
         private int? debugPref;
+        private int? difficultyPref;
         // The Unity Test Framework runs [UnitySetUp] BEFORE [SetUp] (and [UnityTearDown] after [TearDown]),
         // so the fixture's automatic Setup/TearDown would isolate input too late. Suppress them and run the
         // isolation explicitly at the start of UnitySetUp / end of UnityTearDown instead.
@@ -61,6 +62,7 @@ namespace AniBato.Tests
             var oldRunner = Object.FindAnyObjectByType<BattleRunner>(); if (oldRunner) oldRunner.enabled = false;
             var oldInput = Object.FindAnyObjectByType<InputController>(); if (oldInput) oldInput.enabled = false;
             IsolateInput();
+            difficultyPref = PlayerPrefs.HasKey("AniBato.CpuDifficulty") ? PlayerPrefs.GetInt("AniBato.CpuDifficulty") : (int?)null; PlayerPrefs.DeleteKey("AniBato.CpuDifficulty");
             doubleTapPref = PlayerPrefs.HasKey(ControlConfiguration.DoubleTapStorage) ? PlayerPrefs.GetInt(ControlConfiguration.DoubleTapStorage) : (int?)null;
             debugPref=PlayerPrefs.HasKey("AniBato.DebugBoxes")?PlayerPrefs.GetInt("AniBato.DebugBoxes"):(int?)null;PlayerPrefs.DeleteKey("AniBato.DebugBoxes");
             PlayerPrefs.DeleteKey(ControlConfiguration.DoubleTapStorage);
@@ -95,6 +97,7 @@ namespace AniBato.Tests
             }
             finally
             {
+                if (difficultyPref.HasValue) PlayerPrefs.SetInt("AniBato.CpuDifficulty", difficultyPref.Value); else PlayerPrefs.DeleteKey("AniBato.CpuDifficulty");
                 if (doubleTapPref.HasValue) PlayerPrefs.SetInt(ControlConfiguration.DoubleTapStorage, doubleTapPref.Value);
                 else PlayerPrefs.DeleteKey(ControlConfiguration.DoubleTapStorage);
                 PlayerPrefs.Save(); RestoreInput();
@@ -130,14 +133,41 @@ namespace AniBato.Tests
         private IEnumerator ReleaseKeys(params ButtonControl[] buttons) => ChangeKeys(false, buttons);
         private GameFlowController Flow => Object.FindAnyObjectByType<GameFlowController>();
         private IEnumerator Tap(ButtonControl key) { yield return PressKeys(key); yield return ReleaseKeys(key); }
+        private IEnumerator ChooseMain(int index)
+        {
+            if (Flow.Screen == GameScreen.Title) yield return Tap(keyboard.enterKey);
+            Assert.That(Flow.Screen, Is.EqualTo(GameScreen.MainMenu));
+            for (int i = 0; i < 5 && Flow.MenuIndex != index; i++) yield return Tap(keyboard.sKey);
+            Assert.That(Flow.MenuIndex, Is.EqualTo(index)); yield return Tap(keyboard.enterKey);
+        }
+        private IEnumerator SettingsItem(int index)
+        {
+            Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Settings));
+            for (int i = 0; i < 12 && Flow.MenuIndex != index; i++) yield return Tap(keyboard.sKey);
+            Assert.That(Flow.MenuIndex, Is.EqualTo(index));
+        }
+        private IEnumerator Pick(params int[] characters)
+        { foreach (int character in characters) { Flow.SelectRosterCard(character); yield return null; } }
+        private IEnumerator LocalFinalPick()
+        {
+            yield return ChooseMain(1); yield return Pick(1, 5, 6, 0, 3);
+            yield return Tap(keyboard.downArrowKey); Assert.That(Flow.Player2Index, Is.EqualTo(4));
+        }
+        private IEnumerator CpuToCountdown()
+        {
+            yield return ChooseMain(0); yield return Pick(0, 3, 4, 1, 5, 6);
+            Assert.That(Flow.Screen, Is.EqualTo(GameScreen.StageSelect)); yield return Tap(keyboard.enterKey);
+        }
+        private IEnumerator PracticeToBattle()
+        {
+            yield return ChooseMain(2); yield return Pick(2, 0); yield return Tap(keyboard.enterKey);
+            yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "練習開始失敗");
+        }
         private IEnumerator SelectLocalBattle()
         {
-            yield return Tap(keyboard.enterKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.MainMenu));
-            yield return Tap(keyboard.sKey); yield return Tap(keyboard.enterKey);
-            Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CharacterSelect)); Assert.That(Flow.CpuMode, Is.False);
-            yield return Tap(keyboard.dKey); yield return Tap(keyboard.leftArrowKey);
-            yield return Tap(keyboard.jKey); Assert.That(Flow.Ready(0), Is.True);
-            yield return Tap(keyboard.deleteKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.StageSelect));
+            yield return LocalFinalPick(); Assert.That(Flow.CpuMode, Is.False);
+            Assert.That(Flow.Ready(0), Is.True); yield return Tap(keyboard.deleteKey);
+            Assert.That(Flow.Screen, Is.EqualTo(GameScreen.StageSelect));
             yield return Tap(keyboard.dKey); yield return Tap(keyboard.enterKey);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Countdown));
             Assert.That(Flow.Runner.Simulation.Match.TickCount, Is.Zero);
@@ -199,13 +229,12 @@ namespace AniBato.Tests
         [UnityTest]
         public IEnumerator DoubleTapSettingUiPersistsAndDedicatedDashStillReachesBothPlayers()
         {
-            yield return Tap(keyboard.enterKey);
-            for (int i = 0; i < 7; i++) yield return Tap(keyboard.sKey);
+            yield return ChooseMain(3); yield return SettingsItem(5);
             Assert.That(Flow.Input.Configuration.DoubleTapDashEnabled, Is.True);
             yield return Tap(keyboard.enterKey); Assert.That(Flow.Input.Configuration.DoubleTapDashEnabled, Is.False);
             var reload = new ControlConfiguration(); reload.Initialize(Flow.Input.Bindings); Assert.That(reload.DoubleTapDashEnabled, Is.False);
             Assert.That(LearningText.DashHelp(Flow.Input), Does.Contain("OFF"));
-            yield return Tap(keyboard.wKey); yield return Tap(keyboard.enterKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.KeyConfig));
+            yield return SettingsItem(8); yield return Tap(keyboard.enterKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.KeyConfig));
             for (int i = 0; i < 16; i++) yield return Tap(keyboard.sKey);
             yield return Tap(keyboard.enterKey); Assert.That(Flow.Input.Configuration.DoubleTapDashEnabled, Is.True);
             Assert.That(Flow.CapturingBinding, Is.False);
@@ -253,8 +282,7 @@ namespace AniBato.Tests
         [UnityTest]
         public IEnumerator KeyConfigUiCapturesPersistsResetsAndSwapsPadDuplicates()
         {
-            yield return Tap(keyboard.enterKey);
-            for (int i = 0; i < 6; i++) yield return Tap(keyboard.sKey);
+            yield return ChooseMain(3); yield return SettingsItem(8);
             yield return Tap(keyboard.enterKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.KeyConfig));
             for (int i = 0; i < 6; i++) yield return Tap(keyboard.sKey);
             yield return Tap(keyboard.enterKey); Assert.That(Flow.CapturingBinding, Is.True);
@@ -272,17 +300,15 @@ namespace AniBato.Tests
         [UnityTest]
         public IEnumerator TrainingAndCommandsKeepMatchStoppedInsidePanels()
         {
-            yield return Tap(keyboard.enterKey);
-            for (int i = 0; i < 4; i++) yield return Tap(keyboard.sKey);
-            yield return Tap(keyboard.enterKey); Assert.That(Flow.PracticeMode, Is.True);
+            yield return ChooseMain(2); Assert.That(Flow.PracticeMode, Is.True);
             yield return Tap(keyboard.tabKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CommandList));
             yield return Tap(keyboard.escapeKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CharacterSelect));
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
+            yield return Pick(2, 0); yield return Tap(keyboard.enterKey);
             yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "Training did not start.");
             yield return new WaitForSecondsRealtime(.2f); Assert.That(Flow.Runner.Simulation.Match.RemainingTicks, Is.EqualTo(4200));
             Assert.That(Flow.Runner.Simulation.P2.Hearts, Is.EqualTo(3));
             yield return Tap(keyboard.escapeKey); int tick = Flow.Runner.Simulation.Match.TickCount;
-            for (int i = 0; i < 8; i++) yield return Tap(keyboard.sKey);
+            for (int i = 0; i < 2; i++) yield return Tap(keyboard.sKey);
             yield return Tap(keyboard.enterKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CommandList));
             yield return new WaitForSecondsRealtime(.15f); Assert.That(Flow.Runner.Simulation.Match.TickCount, Is.EqualTo(tick));
         }
@@ -303,11 +329,14 @@ namespace AniBato.Tests
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Pause)); int tick = Flow.Runner.Simulation.Match.TickCount;
             yield return new WaitForSecondsRealtime(0.15f); Assert.That(Flow.Runner.Simulation.Match.TickCount, Is.EqualTo(tick));
             yield return Tap(keyboard.sKey); yield return Tap(keyboard.enterKey);
+            Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Settings)); yield return SettingsItem(9); yield return Tap(keyboard.enterKey);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Controls));
             yield return new WaitForSecondsRealtime(0.15f); Assert.That(Flow.Runner.Simulation.Match.TickCount, Is.EqualTo(tick));
+            yield return Tap(keyboard.escapeKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Settings));
             yield return Tap(keyboard.escapeKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Pause));
             yield return Tap(keyboard.jKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Battle));
             Assert.That(Flow.Runner.Simulation.P1.Attack, Is.Null, "再開ボタンが通常攻撃へ漏れています。");
+            Assert.That(Flow.Runner.Simulation.P1.ChargeFrames, Is.Zero, "再開ボタンが溜めへ漏れています。");
             yield return WaitFor(() => Flow.Runner.Simulation.Match.TickCount > tick, "ポーズから再開できませんでした。");
         }
         [UnityTest]
@@ -334,12 +363,12 @@ namespace AniBato.Tests
         [UnityTest]
         public IEnumerator CpuSelectionKeepsDifficultyAndIgnoresPlayerTwoBattleInput()
         {
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
-            Assert.That(Flow.CpuMode, Is.True); yield return Tap(keyboard.sKey); yield return Tap(keyboard.dKey);
-            yield return Tap(keyboard.sKey); yield return Tap(keyboard.dKey);
-            Assert.That(Flow.Player2Index, Is.EqualTo(2)); Assert.That(Flow.Difficulty, Is.EqualTo(CpuDifficulty.Hard));
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
+            yield return ChooseMain(3); yield return SettingsItem(7); yield return Tap(keyboard.dKey);
+            Assert.That(Flow.Difficulty, Is.EqualTo(CpuDifficulty.Hard)); yield return Tap(keyboard.escapeKey);
+            yield return ChooseMain(0); Assert.That(Flow.CpuMode, Is.True);
+            yield return Pick(0, 3, 4, 2, 7, 8); yield return Tap(keyboard.enterKey);
             yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "CPU対戦が始まりませんでした。");
+            Assert.That(Flow.Player2Index, Is.EqualTo(2));
             Assert.That(Flow.Runner.CpuBrain, Is.TypeOf<CpuBrain>());
             Assert.That(((CpuBrain)Flow.Runner.CpuBrain).Definition.ReactionFrames, Is.EqualTo(Flow.Setup.CpuDifficulties[2].Definition.ReactionFrames));
             var mirror = new BattleSimulation(Flow.Runner.Character(0).ToDefinition(), Flow.Runner.Character(1).ToDefinition(),
@@ -356,9 +385,8 @@ namespace AniBato.Tests
         [UnityTest]
         public IEnumerator HeldConfirmAndCancelRequireAllPlayersToReleaseAcrossScreens()
         {
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.sKey); yield return Tap(keyboard.enterKey);
-            // Both readiness buttons caused this transition. Hold P1's actual readiness
-            // button too; unrelated buttons must now remain available (PHASE5B).
+            yield return LocalFinalPick();
+            // The last P2 pick advances; held P1 input must not become a fresh confirmation.
             yield return PressKeys(keyboard.enterKey);
             yield return PressKeys(keyboard.deleteKey);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.StageSelect));
@@ -399,8 +427,7 @@ namespace AniBato.Tests
         [UnityTest]
         public IEnumerator TransitionBlocksOnlyItsButtonAndDevice()
         {
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.sKey); yield return Tap(keyboard.enterKey);
-            yield return Tap(keyboard.jKey); yield return PressKeys(keyboard.deleteKey);
+            yield return LocalFinalPick(); yield return PressKeys(keyboard.deleteKey);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.StageSelect));
             yield return PressKeys(keyboard.enterKey);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Countdown), "無関係のEnterがP2の保持に塞がれています。");
@@ -425,7 +452,7 @@ namespace AniBato.Tests
         {
             var first = InputSystem.AddDevice<Gamepad>(); var second = InputSystem.AddDevice<Gamepad>();
             var input = Object.FindAnyObjectByType<InputController>(); input.AssignGamepad(0, first); input.AssignGamepad(1, second);
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.sKey); yield return Tap(keyboard.enterKey);
+            yield return LocalFinalPick();
             yield return PressKeys(first.buttonSouth); yield return PressKeys(second.buttonSouth);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.StageSelect));
             yield return ReleaseKeys(second.buttonSouth); yield return Tap(second.buttonSouth);
@@ -436,8 +463,7 @@ namespace AniBato.Tests
         [UnityTest]
         public IEnumerator TitleCpuBattleAdvancesToResultWithAudioAndEffectsEnabled()
         {
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
+            yield return CpuToCountdown();
             yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "CPU対戦を開始できませんでした。");
             Assert.That(Flow.Audio, Is.Not.Null); Assert.That(Object.FindAnyObjectByType<BattleEffectsView>(), Is.Not.Null);
             float deadline = Time.realtimeSinceStartup + 35;
@@ -457,10 +483,12 @@ namespace AniBato.Tests
             yield return Tap(first.buttonSouth); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CharacterSelect));
             yield return Tap(second.buttonEast); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.MainMenu));
             yield return Tap(first.buttonSouth); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CharacterSelect));
+            yield return Pick(0, 3, 4);
             Set(second.dpad, Vector2.right, queueEventOnly: true); yield return null; yield return null;
             Set(second.dpad, Vector2.zero, queueEventOnly: true); yield return null; yield return null;
             Assert.That(Flow.Player2Index, Is.EqualTo(2));
-            yield return Tap(first.buttonSouth); yield return Tap(second.buttonSouth); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.StageSelect));
+            yield return Tap(first.buttonSouth); Assert.That(Flow.Selection.Picks(1).Count, Is.Zero);
+            yield return Tap(second.buttonSouth); yield return Pick(7, 8); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.StageSelect));
             yield return Tap(first.buttonSouth); yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "パッド操作で試合を開始できませんでした。");
             yield return Tap(second.startButton); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Pause));
             int tick = Flow.Runner.Simulation.Match.TickCount; yield return new WaitForSecondsRealtime(0.1f);
@@ -480,8 +508,7 @@ namespace AniBato.Tests
         [UnityTest]
         public IEnumerator FightBannerBlocksAllBattleActionsUntilItDisappears()
         {
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
-            yield return Tap(keyboard.enterKey); yield return Tap(keyboard.enterKey);
+            yield return CpuToCountdown();
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Countdown));
             yield return WaitFor(() => Flow.CountdownText == "FIGHT!", "FIGHT!が表示されません。");
             var sim = Flow.Runner.Simulation; var spawn = sim.P1.Position;
@@ -494,7 +521,7 @@ namespace AniBato.Tests
             CaptureScreen("01_FIGHT_操作停止");
             yield return ReleaseKeys(keyboard.jKey, keyboard.dKey, keyboard.spaceKey);
             yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "FIGHT!後に開始しません。");
-            Assert.That(Flow.Runner.Paused, Is.False); Assert.That(banner.text, Is.Empty); Assert.That(sim.P1.Attack, Is.Null);
+            Assert.That(Flow.Runner.Paused, Is.False); Assert.That(banner.text, Is.EqualTo("ROUND 1　P1 0 − 0 CPU")); Assert.That(sim.P1.Attack, Is.Null);
             yield return PressKeys(keyboard.jKey);
             yield return WaitFor(() => sim.P1.Mode == AniBato.Battle.FighterMode.Charging, "操作開始後の溜めが開始しません。");
             Assert.That(sim.P1.Attack, Is.Null);
@@ -559,7 +586,7 @@ namespace AniBato.Tests
             yield return new WaitForSecondsRealtime(.7f);
             foreach(int height in new[]{720,800,960})CaptureScreen("07_作品別_9人選択_"+height,height);
             yield return Tap(keyboard.sKey);Assert.That(Flow.Player1Index,Is.EqualTo(3));
-            yield return Tap(keyboard.jKey);Flow.SelectRosterCard(8);yield return Tap(keyboard.deleteKey);
+            yield return Tap(keyboard.jKey); yield return Pick(0,4,8,2,7);
             Assert.That(Flow.Screen,Is.EqualTo(GameScreen.StageSelect));yield return Tap(keyboard.enterKey);
             yield return WaitFor(()=>Flow.Screen==GameScreen.Battle,"追加キャラの試合開始失敗");
             Assert.That(Flow.Runner.Simulation.P1.Definition.Name,Is.EqualTo("湊"));
@@ -595,8 +622,7 @@ namespace AniBato.Tests
         [UnityTest]
         public IEnumerator PracticeHotkeysAndPauseMenuInspectWithoutInjectingAttacks()
         {
-            yield return Tap(keyboard.enterKey);for(int i=0;i<4;i++)yield return Tap(keyboard.sKey);yield return Tap(keyboard.enterKey);
-            yield return Tap(keyboard.enterKey);yield return Tap(keyboard.enterKey);yield return WaitFor(()=>Flow.Screen==GameScreen.Battle,"練習開始失敗");
+            yield return PracticeToBattle();
             Assert.That(Flow.Runner.DebugBoxes,Is.True);yield return Tap(keyboard.f6Key);Assert.That(Flow.Runner.PracticePlaybackPaused,Is.True);
             int tick=Flow.Runner.Simulation.Match.TickCount;yield return new WaitForSecondsRealtime(.1f);Assert.That(Flow.Runner.Simulation.Match.TickCount,Is.EqualTo(tick));
             float x=Flow.Runner.Simulation.P1.Position.X;
@@ -606,11 +632,12 @@ namespace AniBato.Tests
             Assert.That(Flow.Runner.RenderPosition(0).X,Is.EqualTo(Flow.Runner.Simulation.P1.Position.X));
             yield return Tap(keyboard.f5Key);Assert.That(Flow.Runner.PracticeRateIndex,Is.EqualTo(1));
             yield return Tap(keyboard.f9Key);Assert.That(Flow.Runner.DebugBoxes,Is.False);
-            yield return Tap(keyboard.escapeKey);for(int i=0;i<13;i++)yield return Tap(keyboard.sKey);yield return Tap(keyboard.enterKey);
+            yield return Tap(keyboard.escapeKey);yield return Tap(keyboard.sKey);yield return Tap(keyboard.enterKey);
+            yield return SettingsItem(6);yield return Tap(keyboard.enterKey);
             Assert.That(Flow.Runner.DebugBoxes,Is.True);Assert.That(Flow.Runner.Simulation.Match.TickCount,Is.EqualTo(tick+1));
             Assert.That(Flow.Runner.Simulation.P1.Attack,Is.Null);
         }
-        private static void CaptureScreen(string name,int height=720)
+        private static void CaptureScreen(string name,int height=720,string directoryName="paper_stage_roster_unity")
         {
             var camera = Camera.main; var target = camera.targetTexture; var active = RenderTexture.active;
             var canvases = Object.FindObjectsByType<Canvas>().Where(c => c.renderMode == RenderMode.ScreenSpaceOverlay).ToArray();
@@ -620,6 +647,8 @@ namespace AniBato.Tests
                 camera.targetTexture = texture;
                 foreach (var canvas in canvases) { canvas.renderMode = RenderMode.ScreenSpaceCamera; canvas.worldCamera = camera; canvas.planeDistance = 1; }
                 Canvas.ForceUpdateCanvases();Object.FindAnyObjectByType<MenuScreenView>().SendMessage("LateUpdate");Canvas.ForceUpdateCanvases();
+                foreach (var sign in Object.FindObjectsByType<PaperSign>()) sign.SendMessage("LateUpdate");
+                Canvas.ForceUpdateCanvases();
                 if(name.StartsWith("07_"))
                     foreach(var card in Object.FindObjectsByType<UnityEngine.UI.Image>().Where(i=>i.name.StartsWith("Roster Card ")))
                     {
@@ -628,7 +657,7 @@ namespace AniBato.Tests
                     }
                 camera.Render(); RenderTexture.active = texture;
                 image.ReadPixels(new Rect(0, 0, 1280, height), 0, 0); image.Apply();
-                string folder = System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath, "../../docs/screenshots/paper_stage_roster_unity"));
+                string folder = System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath, "../../docs/screenshots/", directoryName));
                 System.IO.Directory.CreateDirectory(folder); CaptureFile.Write(System.IO.Path.Combine(folder, name + ".png"), image.EncodeToPNG());
             }
             finally

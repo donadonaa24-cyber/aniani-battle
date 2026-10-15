@@ -1,5 +1,7 @@
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
+**最新：R2チーム戦と設定、rework_r2_2で実Edit505／Play55と全4工程合格（失敗・スキップ0）。** 3人ずつ順番選択・重複禁止・取消、選択順のラウンドと2勝先取、再戦と各ラウンド初期化。トップ5項目と設定整理、6描画はdocs/screenshots/rework_r2/。TEAM_FLOW_CURRENTとRESUMEを参照。次はREWORK_R3_CHARACTER_MOVES、最新指定はSPEC_REVISION_20261016。R3〜R6未完。再開時にtasklistとGit差分を確認する。
+
 **最新（2026-10-16）：R1全4工程合格、Edit499／Play52（失敗・スキップ0）。** 地上上判定／空中Nと移動継続／通常相殺／特殊1種／練習超必殺無制限を実装。rework_r1_3の44描画、CPU270戦は全て双方攻撃・ハート減少、超必殺246/270。原画生成なし、仮表示はCOMBAT_INPUT_CURRENT。次はREWORK_R2_TEAM_AND_MENU。最新技指定はSPEC_REVISION_20261016、R2〜R6未完。再開時にtasklistとGit差分を確認し重複作業しない。
 
 **最新（2026-10-16）：R0溜め攻撃を実装、rework_r0_3で実Unity全4工程合格（Edit484／Play49、失敗・スキップ0）。** 専用絵生成なし、全9人の既存絵を傾けて沈め、色と紙片で表示。実描画18PNGはdocs/screenshots/rework_charge/。R1〜R6は未完。最新指定はSPEC_REVISION_20261016／PAPER_REWORK_20261016／rework_progress.json。チームは選択順に各ラウンド・先に2勝で確定。次はREWORK_R1_COMBAT_INPUT。既存差分を破棄せず、最初にtasklistとgit status／logを確認する。
