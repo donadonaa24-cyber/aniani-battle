@@ -163,7 +163,7 @@ namespace AniBato.Game
             else
             {
                 int count = Screen == GameScreen.Pause ? 6 : Screen == GameScreen.MainMenu ? 5 : 3;
-                MenuIndex = Wrap(MenuIndex + vertical, count);
+                MenuIndex = Wrap(MenuIndex + (Screen == GameScreen.MainMenu ? (horizontal != 0 ? horizontal : vertical) : vertical), count);
                 if (cancel)
                 {
                     if (Screen == GameScreen.MainMenu) Show(GameScreen.Title, true, MenuAction.Cancel);

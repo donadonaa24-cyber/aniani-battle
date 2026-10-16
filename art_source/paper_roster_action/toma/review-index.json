@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "character": "透真",
   "artApproved": false,
-  "unityVerifiedTag": "paper_fourkeys_3",
+  "unityVerifiedTag": "paper_release_5",
   "entries": [
     {
       "id": "normal1_prepare",
@@ -53,20 +53,20 @@
     {
       "id": "normal3_prepare",
       "title": "通常3段_予備",
-      "version": 1,
-      "source": "art_source/paper_roster_action/toma/generated/normal3_prepare_v1.png",
-      "prepared": "art_source/paper_roster_action/toma/prepared/normal3_prepare.png",
+      "version": 2,
+      "source": "art_source/paper_roster_action/toma/dual_gun/generated/normal3_prepare_v1.png",
+      "prepared": "art_source/paper_roster_action/toma/dual_gun/prepared/normal3_prepare.png",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal3_prepare.png",
-      "status": "ゲーム採用／美術の最終承認は別"
+      "status": "ゲーム採用・上側左手は掌側・美術最終承認は別"
     },
     {
       "id": "normal3_impact",
       "title": "通常3段_当てる",
-      "version": 1,
-      "source": "art_source/paper_roster_action/toma/generated/normal3_impact_v1.png",
-      "prepared": "art_source/paper_roster_action/toma/prepared/normal3_impact.png",
+      "version": 4,
+      "source": "art_source/paper_roster_action/toma/dual_gun/generated/normal3_impact_v3.png",
+      "prepared": "art_source/paper_roster_action/toma/dual_gun/prepared/normal3_impact.png",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal3_impact.png",
-      "status": "ゲーム採用／美術の最終承認は別"
+      "status": "ゲーム採用・上側左手は掌側・美術最終承認は別"
     },
     {
       "id": "up_prepare",

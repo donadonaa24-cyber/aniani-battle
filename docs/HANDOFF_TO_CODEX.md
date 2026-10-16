@@ -1,5 +1,7 @@
 ## 現在（2026-10-16）：生成舞台・集合絵・WebGLを完了
 
+2026-10-16最新：paper_release_5全4合格（Edit537／Play66）、投げ終わりと2段選択・掌側の二丁拳銃v3を反映。WebGLもpaper_release_web成功・約47.7MB、ブラウザ確認済み。次は蓮の残10原画の審査／接続。全9人の攻撃・小物・溜め・被弾ゴールは継続。詳細はRESUME冒頭とpaper_release_final。
+
 2026-10-16最新：paper_fourkeys_3全4合格（Edit535／Play63）、通常4原画と透真・蓮の紙表示を完了。全攻撃は未完。次はPAPER_RELEASE_PROPS_AND_ROW_SELECTION、その後PAPER_ACTION_FOUR_KEYS_AND_REMAINING。全員の攻撃後に溜め／被弾を生成する最新指示が、旧「溜め絵生成なし」より優先。本人別の最新通常指定も後者へ記録。詳細はRESUME冒頭。
 
 最新はRESUME冒頭とWEBGL_CURRENT.md。R5は8918206で保存済み、R6はwebgl_native_3のBuildAll／Edit533／Play61／Windows全合格とwebgl_5実ビルド・内蔵Chromium実動まで完了。約47.4MB、起動はtools/verify/start_webgl.ps1。3舞台・縮小・2勝先取・再戦・保存・入力と全画面を確認。通常Chrome／Edgeと物理パッドは未確認。R4の残8人原画は後続、REWORK_R4_REN_ACTIONSから。既存の基本45姿勢、透真攻撃16、カバン予備、判定調整を維持する。旧記録は以下。

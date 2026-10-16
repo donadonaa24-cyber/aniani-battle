@@ -13,11 +13,24 @@ namespace AniBato.Game
         [SerializeField] private PaperEnsembleArt artwork;
         public PaperEnsembleArt Artwork=>artwork;
         public void Configure(PaperEnsembleArt value){artwork=value;}
-        public static readonly int[] Layout={1,0,2,5,3,7,6,4,8};
+        public static readonly int[] Layout={6,3,7,5,1,4,0,2,8};
+        public static bool UpperRow(int index)=>System.Array.IndexOf(Layout,index)<3;
+        public static Vector2 CardPosition(int index)
+        {
+            int cell=System.Array.IndexOf(Layout,index);
+            return cell<3?new Vector2((cell-1)*560,150):new Vector2((cell-3-2.5f)*280,-145);
+        }
+        public static Vector2 CardSize(int index)=>new Vector2(UpperRow(index)?350:260,250);
         public static int Move(int index,int x,int y)
         {
             int p=System.Array.IndexOf(Layout,index);if(p<0)p=0;
-            int col=(p%3+x+3)%3,row=(p/3+y+3)%3;return Layout[row*3+col];
+            bool upper=p<3;int start=upper?0:3,count=upper?3:6,col=p-start;
+            if(y!=0)
+            {
+                // Each upper card spans two lower cards. Prefer the right one on a tie.
+                return Layout[upper?3+col*2+1:col/2];
+            }
+            return Layout[start+(col+x%count+count)%count];
         }
         private static Image Picture(Transform parent,string name,Vector2 p,Vector2 size,Color color)
         {
@@ -34,33 +47,16 @@ namespace AniBato.Game
         private void Build()
         {
             portraits=new Image[9];backgrounds=new Image[9];labels=new Text[9];
-            string[] works={"推し駒Battle","星の終わりに君は生きる","Battle à la carte"};
-            Color[] colors={new Color(.24f,.39f,.5f),new Color(.48f,.32f,.34f),new Color(.45f,.4f,.27f)};
-            for(int c=0;c<3;c++)
-            {
-                var panel=Picture(transform,"Work Paper "+c,new Vector2((c-1)*565,0),new Vector2(535,670),colors[c]);
-                panel.enabled=!artwork;
-                panel.rectTransform.localRotation=Quaternion.Euler(0,0,c==1?-.5f:.5f);
-                var work=Label(transform,"Work Title "+c,new Vector2((c-1)*565,artwork?314:300),new Vector2(530,58),26);work.text=works[c];
-                if(artwork)PaperSign.Attach(work,"Work Paper Sign "+c);
-            }
             for(int cell=0;cell<9;cell++)
             {
-                int index=Layout[cell];var data=flow.Setup.Character(index);float x=(cell%3-1)*565,y=167-cell/3*200;
-                if(artwork)
-                {
-                    var p=artwork.Position(index);var size=artwork.Size(index);
-                    backgrounds[index]=Picture(transform,"Roster Card "+index,p,size+Vector2.one*12,new Color(0,0,0,.6f));
-                    portraits[index]=Picture(transform,"Roster Illustration "+index,p,size,Color.white);
-                    portraits[index].sprite=artwork.Face(index);
-                    Picture(transform,"Roster Name Plate "+index,p+new Vector2(0,-size.y*.5f+8),new Vector2(size.x+8,48),new Color(.08f,.1f,.15f,.92f));
-                    labels[index]=Label(transform,"Roster Name "+index,p+new Vector2(0,-size.y*.5f+8),new Vector2(size.x+6,48),30);
-                    continue;
-                }
-                backgrounds[index]=Picture(transform,"Roster Card "+index,new Vector2(x,y),new Vector2(500,190),new Color(.13f,.17f,.22f));
-                portraits[index]=Picture(transform,"Roster Illustration "+index,new Vector2(x-130,y+5),new Vector2(175,180),Color.white);
-                portraits[index].sprite=data.SelectionSprite;portraits[index].preserveAspect=true;
-                labels[index]=Label(transform,"Roster Name "+index,new Vector2(x+93,y),new Vector2(270,160),26);
+                int index=Layout[cell];var data=flow.Setup.Character(index);var p=CardPosition(index);var size=CardSize(index);
+                backgrounds[index]=Picture(transform,"Roster Card "+index,p,size,new Color(.13f,.17f,.22f));
+                var edge=Picture(transform,"Roster Paper Edge "+index,p,size-Vector2.one*8,new Color(.94f,.9f,.8f));
+                portraits[index]=Picture(transform,"Roster Illustration "+index,p+new Vector2(0,32),new Vector2(size.x-18,160),Color.white);
+                portraits[index].sprite=artwork?artwork.Face(index):data.SelectionSprite;portraits[index].preserveAspect=true;
+                Picture(transform,"Roster Name Plate "+index,p+new Vector2(0,-80),new Vector2(size.x-8,82),new Color(.08f,.1f,.15f,.96f));
+                labels[index]=Label(transform,"Roster Name "+index,p+new Vector2(0,-80),new Vector2(size.x-12,82),26);
+                labels[index].supportRichText=true;
             }
             status=Label(transform,"Roster Selection Status",new Vector2(0,-365),new Vector2(1720,65),25);
             if(artwork)PaperSign.Attach(status,"Team Selection Paper");
@@ -75,10 +71,11 @@ namespace AniBato.Game
                 bool focus = cursor == i; int first = flow.Selection.Slot(0, i), second = flow.Selection.Slot(1, i);
                 backgrounds[i].color = focus ? (flow.SelectionPlayer == 0 ? new Color(.62f,.28f,.22f) : new Color(.15f,.43f,.58f)) : new Color(.13f,.17f,.22f);
                 var data = flow.Setup.Character(i);
-                labels[i].text = data.Movement.Name + (focus ? " ◀" : "") + (artwork?" ":"\n") +
+                string work=i==0||i==3||i==4?"星の終わり":i==1||i==5||i==6?"推し駒Battle":"Battle à la carte";
+                labels[i].text = data.Movement.Name + (focus ? " ◀" : "") + "\n<size=16>"+work+"</size>\n<size=18>" +
                     (first >= 0 ? "P1 " + (first + 1) + "番目 " : "") +
                     (second >= 0 ? (flow.CpuMode ? "CPU " : "P2 ") + (second + 1) + "番目" : "") +
-                    (artwork?"":data.PrototypeSharedMoves ? "\n基本技を共有・試作" : data.ActionArtworkPending ? "\n専用原画は制作中" : "");
+                    "</size>";
                 if(artwork)portraits[i].color=new Color(1,1,1,focus?1:.7f);
             }
             status.fontSize = 23;

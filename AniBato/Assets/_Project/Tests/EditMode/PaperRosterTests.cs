@@ -34,15 +34,20 @@ namespace AniBato.Tests
             Assert.That(Setup.Characters.Select(c=>c.SelectionSprite).Distinct().Count(),Is.EqualTo(9));
         }
         [Test]
-        public void WorkGridContainsAllNineOnceAndBothAxesWrapInsideTheVisibleGrid()
+        public void TwoRowsFollowTheRequestedOrderAndHorizontalWrappingStaysInTheSameRow()
         {
             Assert.That(PaperRosterGrid.Layout.OrderBy(i=>i),Is.EqualTo(Enumerable.Range(0,9)));
+            Assert.That(PaperRosterGrid.Layout,Is.EqualTo(new[]{6,3,7,5,1,4,0,2,8}));
             for(int i=0;i<9;i++)
             {
                 Assert.That(PaperRosterGrid.Move(PaperRosterGrid.Move(i,1,0),-1,0),Is.EqualTo(i));
-                Assert.That(PaperRosterGrid.Move(PaperRosterGrid.Move(i,0,1),0,-1),Is.EqualTo(i));
+                Assert.That(PaperRosterGrid.UpperRow(PaperRosterGrid.Move(i,1,0)),Is.EqualTo(PaperRosterGrid.UpperRow(i)));
+                Assert.That(PaperRosterGrid.UpperRow(PaperRosterGrid.Move(i,0,1)),Is.Not.EqualTo(PaperRosterGrid.UpperRow(i)));
+                Assert.That(PaperRosterGrid.Move(i,0,-1),Is.EqualTo(PaperRosterGrid.Move(i,0,1)));
             }
-            Assert.That(PaperRosterGrid.Move(0,0,1),Is.EqualTo(3));Assert.That(PaperRosterGrid.Move(3,0,1),Is.EqualTo(4));
+            Assert.That(PaperRosterGrid.Move(5,1,0),Is.EqualTo(1));Assert.That(PaperRosterGrid.Move(1,-1,0),Is.EqualTo(5));
+            Assert.That(PaperRosterGrid.Move(0,0,1),Is.EqualTo(3));Assert.That(PaperRosterGrid.Move(3,0,1),Is.EqualTo(0));
+            Assert.That(PaperRosterGrid.Move(6,-1,0),Is.EqualTo(7));Assert.That(PaperRosterGrid.Move(8,1,0),Is.EqualTo(5));
         }
         [Test]
         public void SharedGeometryLeavesRecoverySpaceAndThemesDoNotChangeRingOutOrPlatforms()

@@ -26,7 +26,9 @@ namespace AniBato.Tests
             foreach(var card in cards)
             {
                 int i=int.Parse(card.name.Substring("Roster Card ".Length));
-                Assert.That(card.rectTransform.anchoredPosition,Is.EqualTo(grid.Artwork.Position(i)));
+                Assert.That(card.rectTransform.anchoredPosition,Is.EqualTo(PaperRosterGrid.CardPosition(i)));
+                Assert.That(card.rectTransform.sizeDelta,Is.EqualTo(PaperRosterGrid.CardSize(i)));
+                Assert.That(Object.FindObjectsByType<Image>().Single(p=>p.name=="Roster Illustration "+i).sprite.texture,Is.SameAs(grid.Artwork.Artwork.texture));
             }
             yield return Tap(keyboard.sKey);Assert.That(Flow.Player1Index,Is.EqualTo(3));
             yield return Tap(keyboard.jKey);yield return Pick(0,4,8,2,7);

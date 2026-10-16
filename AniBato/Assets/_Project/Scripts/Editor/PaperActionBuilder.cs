@@ -32,6 +32,7 @@ namespace AniBato.EditorTools
                 var pose = source.frames != null && source.frames.Length > 0 ? BuildTwoFrames(source, ppu) :
                     PaperSourcePacking.Body(source.key, "../" + source.source, ppu, source.airborne, source.headTopY, source.footY, source.footMinX, source.footMaxX);
                 pose.ReverseFacing = source.reverseFacing;
+                pose.SwitchOnProjectileRelease = source.key=="special_neutral";
                 pose.TiltDegrees = source.tiltDegrees;
                 if (source.key == "idle") data.Sprite = pose.Frame(0);
                 if (source.key == "hit_heavy") { data.HeavyDamage = pose; continue; }

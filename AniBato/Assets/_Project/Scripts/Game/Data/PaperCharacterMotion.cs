@@ -13,13 +13,14 @@ namespace AniBato.Game
         public int HoldTicks = 8;
         public bool Airborne;
         public bool ReverseFacing;
+        public bool SwitchOnProjectileRelease;
         public float TiltDegrees;
         public float[] FrameHeadHeights, FrameFootBaseYs, FrameFootMinXs, FrameFootMaxXs, FrameOriginYs;
         public float HeadHeight, FootBaseY, FootMinX, FootMaxX;
         public bool Valid => HoldTicks > 0 && Frames != null && Frames.Length > 0 && System.Array.TrueForAll(Frames, frame => frame);
         public Sprite Frame(int age) => Frames[System.Math.Min(Frames.Length - 1, System.Math.Max(0, age) / HoldTicks)];
         public int FrameIndex(in AnimationSample sample) => sample.IsAttack && Frames.Length == 2 ?
-            sample.AttackFrame < sample.Startup + sample.DamageDelay ? 0 : 1 : System.Math.Min(Frames.Length - 1, System.Math.Max(0, sample.Age) / HoldTicks);
+            sample.AttackFrame < (SwitchOnProjectileRelease ? sample.ProjectileReleaseFrame : sample.Startup + sample.DamageDelay) ? 0 : 1 : System.Math.Min(Frames.Length - 1, System.Math.Max(0, sample.Age) / HoldTicks);
         public Sprite Frame(in AnimationSample sample) => Frames[FrameIndex(sample)];
         private float Layout(float[] values, float fallback, in AnimationSample sample) => values != null && values.Length == Frames.Length ? values[FrameIndex(sample)] : fallback;
         public float Head(in AnimationSample sample) => Layout(FrameHeadHeights, HeadHeight, sample);
@@ -48,6 +49,8 @@ namespace AniBato.Game
         public float StandingHeight = 2.24f;
         public PaperRockingSettings Motion;
         public float WalkLeanDegrees = 15, DashLeanDegrees = 45;
+        public int DisplayTimingSchemaVersion;
+        public int UltimateImpactMinimumTicks=96, CurryAfterglowTicks=24;
         public PaperPose[] Poses;
         public PaperPose HeavyDamage;
         public Sprite Bag, RiceBall, Mogu, CurryWave;

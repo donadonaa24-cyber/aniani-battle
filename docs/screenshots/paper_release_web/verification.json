@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-16",
+  "buildTag": "paper_release_web",
+  "nativeTag": "paper_release_5",
+  "browser": "Codex in-app Chromium",
+  "checks": {
+    "horizontalMainMenu": true,
+    "yuiRightSelectsRen": true,
+    "upperRowKingMinatoAkatsuki": true,
+    "lowerRowYuiRenShiroTomaChizuruRyuta": true,
+    "rowSwitching": true,
+    "practiceChizuruVersusToma": true,
+    "ricePrepareReleaseAndSeparation": true,
+    "practicePauseAndSingleStep": true,
+    "errorConsoleEmpty": true
+  },
+  "screenshots": 5,
+  "notes": "発射tickの厳密一致と原画・判定不変は実Unity検査。実機パッドと通常Chrome/Edgeの今回再検査は実施しない。",
+  "viewportOverrideReset": true,
+  "finalUrl": "http://127.0.0.1:8799/",
+  "finalScreen": "CharacterSelect"
+}

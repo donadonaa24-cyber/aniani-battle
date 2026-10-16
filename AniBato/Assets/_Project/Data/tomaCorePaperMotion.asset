@@ -39,6 +39,9 @@ MonoBehaviour:
     WalkFps: 8
   WalkLeanDegrees: 15
   DashLeanDegrees: 45
+  DisplayTimingSchemaVersion: 1
+  UltimateImpactMinimumTicks: 96
+  CurryAfterglowTicks: 24
   Poses:
   - Key: idle
     States: 0000000001000000i
@@ -47,6 +50,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -64,6 +68,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -81,6 +86,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -98,6 +104,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -115,6 +122,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -132,6 +140,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -149,6 +158,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -167,6 +177,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.3376362
@@ -193,6 +204,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.3376362
@@ -219,24 +231,25 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 1.8419447
-    - 1.840067
+    - 1.8532103
     FrameFootBaseYs: []
     FrameFootMinXs:
     - -0.5276111
-    - -0.5257334
+    - -0.5313663
     FrameFootMaxXs:
-    - 0.7623135
-    - 0.7491701
+    - 0.7604359
+    - 0.7585583
     FrameOriginYs:
     - 0
     - 0
     HeadHeight: 1.8419447
     FootBaseY: 0
     FootMinX: -0.5276111
-    FootMaxX: 0.7623135
+    FootMaxX: 0.7604359
   - Key: up
     States: 1e000000i
     Frames:
@@ -245,6 +258,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.3620453
@@ -271,6 +285,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 1.840067
@@ -297,6 +312,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.1198323
@@ -323,6 +339,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.343269
@@ -349,6 +366,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.3451467
@@ -375,6 +393,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 1
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.3376362
@@ -398,6 +417,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -421,13 +441,13 @@ MonoBehaviour:
     RotationOffsetDegrees: 0
   - Look: 2
     Sprite: {fileID: 21300000, guid: 0df278075475fa84da144b852f1e31db, type: 3}
-    Scale: 0.2896475
+    Scale: 0.5973979
     RotateWithVelocity: 0
     FlipWithFacing: 1
     RotationOffsetDegrees: 0
   - Look: 3
     Sprite: {fileID: 21300000, guid: 75513e7872040ff4aa99f37636361546, type: 3}
-    Scale: 1.1533257
+    Scale: 1.3592767
     RotateWithVelocity: 1
     FlipWithFacing: 0
     RotationOffsetDegrees: 90

@@ -39,6 +39,9 @@ MonoBehaviour:
     WalkFps: 8
   WalkLeanDegrees: 15
   DashLeanDegrees: 45
+  DisplayTimingSchemaVersion: 1
+  UltimateImpactMinimumTicks: 96
+  CurryAfterglowTicks: 24
   Poses:
   - Key: idle
     States: 0000000001000000i
@@ -50,6 +53,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -70,6 +74,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -90,6 +95,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -110,6 +116,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -130,6 +137,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -150,6 +158,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -170,6 +179,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -190,6 +200,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -210,6 +221,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -230,6 +242,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -250,6 +263,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -270,6 +284,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -288,6 +303,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.1968148
@@ -314,6 +330,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.1968148
@@ -340,6 +357,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.2531433
@@ -366,6 +384,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.1742833
@@ -392,6 +411,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 1
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 2.1742833
@@ -418,6 +438,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 1.0627326
@@ -444,6 +465,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 1.0627326
@@ -470,6 +492,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 1
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
     - 1.0402012
@@ -496,6 +519,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 60
     FrameHeadHeights:
     - 1.0402012
@@ -522,6 +546,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: -60
     FrameHeadHeights:
     - 1.1190611
@@ -548,6 +573,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 30
     FrameHeadHeights:
     - 1.0402012
@@ -574,6 +600,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: -30
     FrameHeadHeights:
     - 1.1190611
@@ -595,18 +622,25 @@ MonoBehaviour:
   - Key: special_neutral
     States: 0a000000i
     Frames:
-    - {fileID: 21300000, guid: e675eb7531629a94fa4a72f3dae622b9, type: 3}
-    - {fileID: 21300000, guid: e675eb7531629a94fa4a72f3dae622b9, type: 3}
-    - {fileID: 21300000, guid: e675eb7531629a94fa4a72f3dae622b9, type: 3}
-    - {fileID: 21300000, guid: e675eb7531629a94fa4a72f3dae622b9, type: 3}
+    - {fileID: 21300000, guid: 00103a625828d4f4aad4c755e699430d, type: 3}
+    - {fileID: 21300000, guid: c3e7e5ebd25d0fc41b44d9d2188e1b70, type: 3}
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 1
     TiltDegrees: 0
-    FrameHeadHeights: []
-    FrameFootBaseYs: []
-    FrameFootMinXs: []
-    FrameFootMaxXs: []
+    FrameHeadHeights:
+    - 2.1836715
+    - 2.16114
+    FrameFootBaseYs:
+    - 0.0000000091770165
+    - 0.0000000071625497
+    FrameFootMinXs:
+    - -0.4731601
+    - -0.49569154
+    FrameFootMaxXs:
+    - -0.09575859
+    - -0.08824811
     FrameOriginYs: []
     HeadHeight: 2.1836715
     FootBaseY: 0.0000000091770165
@@ -622,6 +656,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -642,6 +677,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 1
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -662,6 +698,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -682,6 +719,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []
@@ -703,6 +741,7 @@ MonoBehaviour:
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
     FrameFootBaseYs: []

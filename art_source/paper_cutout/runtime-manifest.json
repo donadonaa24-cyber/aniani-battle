@@ -760,7 +760,27 @@
       "width": 1254,
       "height": 1254,
       "artReview": "integrated_art_review_pending",
-      "artNote": "手持ちおにぎりを拡大し、飛翔の紙版と同じ表示幅へ。人物画素は拡縮せず共通枠へ梱包。部位最終審査は残る。"
+      "artNote": "構えのおにぎりは従来の飛翔サイズ。発射tickで食べ物のない投げ終わりへ。顔・靴の実寸を保った2原画。",
+      "frames": [
+        {
+          "key": "special_prepare",
+          "source": "art_source/paper_cutout/generated/chizuru_paper_special_neutral_v3.png",
+          "sha256": "b3c2607b55928491f92a24c3bb9cdcd53dc0593fc47aaccab885bcc5dd8042cf",
+          "headTopY": 37,
+          "footY": 1200,
+          "footMinX": 375,
+          "footMaxX": 576
+        },
+        {
+          "key": "special_release",
+          "source": "art_source/paper_cutout/generated/chizuru_paper_special_release_v1.png",
+          "sha256": "8702e06141f4edec4163ed97612d7256b5fa47e780fcb399d54566a00667afe7",
+          "headTopY": 47,
+          "footY": 1198,
+          "footMinX": 363,
+          "footMaxX": 580
+        }
+      ]
     },
     {
       "key": "special_side",

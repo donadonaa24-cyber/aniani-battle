@@ -8,6 +8,7 @@ namespace AniBato.Tests
     {
         public static void Write(string path, byte[] bytes)
         {
+            path=Path.GetFullPath(path);
             string captureRoot=Environment.GetEnvironmentVariable("ANIBATO_CAPTURE_ROOT");
             if(!string.IsNullOrEmpty(captureRoot))
             {

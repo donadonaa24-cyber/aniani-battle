@@ -81,6 +81,7 @@ namespace AniBato.Game
                 heading.text = "あにあにバトル！！"; subtitle.text = "モードを選択";
                 options.rectTransform.anchoredPosition=new Vector2(0,-392);options.rectTransform.sizeDelta=new Vector2(1740,80);
                 options.text=Choices(flow.MenuIndex,"CPUチーム対戦","2人チーム対戦","練習モード","設定","終了").Replace("\n","    ");
+                footer.text="左右で選択　"+input.ConfirmLabel(0)+" 決定　／　Esc 戻る";
             }
             else if (screen == GameScreen.CharacterSelect) Characters(flow);
             else if (screen == GameScreen.StageSelect) Stages(flow);
@@ -144,7 +145,7 @@ namespace AniBato.Game
             if(rosterGrid)
             {
                 subtitle.text = "3作品・全9人　" + (flow.SelectionPlayer == 0 ? "P1" : flow.CpuMode ? "CPU" : "P2") + "の" + (flow.Selection.Picks(flow.SelectionPlayer).Count + 1) + "/" + flow.Selection.Required + "人目　同チーム内の重複不可";
-                options.text=""; footer.text="上下左右で選択　" + flow.Input.ConfirmLabel(flow.SelectionPlayer == 0 || flow.CpuMode ? 0 : 1) + " 追加　／　取消で1人戻す　／　Esc 戻る　／　" + flow.Input.CommandListLabel + " 技表";
+                options.text=""; footer.text="左右：同じ段　上下：段を切替　" + flow.Input.ConfirmLabel(flow.SelectionPlayer == 0 || flow.CpuMode ? 0 : 1) + " 追加　／　取消で1人戻す　／　Esc 戻る　／　" + flow.Input.CommandListLabel + " 技表";
                 return;
             }
             subtitle.text = flow.CpuMode ? "CPU対戦：相手と難易度を選択" : "それぞれのキャラを選び、両者決定でステージへ";

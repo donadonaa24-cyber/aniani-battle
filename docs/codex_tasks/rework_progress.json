@@ -14,24 +14,30 @@
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "paper_fourkeys_3",
+    "tag": "paper_release_5",
     "buildAll": "success",
     "edit": {
-      "total": 535,
-      "passed": 535,
+      "total": 537,
+      "passed": 537,
       "failed": 0,
       "skipped": 0
     },
     "play": {
-      "total": 63,
-      "passed": 63,
+      "total": 66,
+      "passed": 66,
       "failed": 0,
       "skipped": 0
     },
     "windowsBuild": "success",
-    "screenshots": "docs/screenshots/paper_fourkeys/",
-    "screenshotCount": 48,
-    "cleanup": "古いビルドのD3D12Core.dll使用中により保持・4工程は成功"
+    "screenshots": "docs/screenshots/paper_release/",
+    "screenshotCount": 18,
+    "captureVerification": {
+      "tag": "paper_release_capture",
+      "scope": "enlarged drone and rocket capture bounds, both facings",
+      "playPassed": 1
+    },
+    "webGL": "browser verification recorded separately",
+    "artApproved": false
   },
   "activeVerification": null,
   "attempts": [
@@ -374,6 +380,33 @@
       "screenshots": "docs/screenshots/paper_fourkeys/",
       "screenshotCount": 48,
       "cleanup": "古いビルドのD3D12Core.dll使用中により保持・4工程は成功"
+    },
+    {
+      "tag": "paper_release_5",
+      "buildAll": "success",
+      "edit": {
+        "total": 537,
+        "passed": 537,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 66,
+        "passed": 66,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "screenshots": "docs/screenshots/paper_release/",
+      "screenshotCount": 18,
+      "captureVerification": {
+        "tag": "paper_release_capture",
+        "scope": "enlarged drone and rocket capture bounds, both facings",
+        "playPassed": 1
+      },
+      "webGL": "browser verification recorded separately",
+      "artApproved": false,
+      "reason": "最終掌側v3とPNG置換修正を含む全4合格"
     }
   ],
   "currentArtwork": {
@@ -384,22 +417,23 @@
     "gameConnected": "normal_four_keys_only",
     "verifiedTag": "paper_fourkeys_3",
     "nextCharacter": "chizuru_missing_actions",
-    "generatedSelected": 10
+    "generatedSelected": 14,
+    "generatedStatus": "14 slots saved, pending part review; only four normal keys packed and connected"
   },
-  "nextTask": "docs/codex_tasks/PAPER_RELEASE_PROPS_AND_ROW_SELECTION.md",
+  "nextTask": "docs/codex_tasks/PAPER_ACTION_FOUR_KEYS_AND_REMAINING.md",
   "webGL": {
-    "tag": "webgl_5",
+    "tag": "paper_release_web",
     "result": "success",
-    "bytes": 47385522,
-    "seconds": 36.4886468,
+    "bytes": 47659654,
+    "seconds": 148.6088132,
     "files": 6,
     "output": "Build/WebGL/",
     "browser": "Codex in-app Chromium",
     "runtime": "passed",
-    "physicalGamepad": "not_tested",
-    "nativeChromeEdge": "not_tested",
-    "paddedImages": 274,
-    "sourceRgbaPreserved": true
+    "screenshots": "docs/screenshots/paper_release_web/",
+    "screenshotCount": 5,
+    "physicalGamepad": "not_retested",
+    "nativeChromeEdge": "not_retested"
   },
   "currentObjective": {
     "normalUniqueFrames": 4,
@@ -427,8 +461,37 @@
     "status": "active",
     "instruction": "docs/codex_tasks/PAPER_ACTION_FOUR_KEYS_AND_REMAINING.md",
     "characterNormals": {
-      "akatsuki": "1・2段：原作背面カードで切る、3段：投げる",
-      "ryuta": "1・2段：ジャブ、3段：アッパー"
+      "toma": "1・2段ピストル、3段二丁拳銃（上左手は掌側）",
+      "minato": "素手→義手",
+      "shiro": "噛みつき→頭突き",
+      "yui": "ステッキ打撃→魔法",
+      "king": "邪悪なオーラの爪→吠えて蹴り飛ばす",
+      "akatsuki": "原作背面カード斬り→投げ",
+      "ryuta": "ジャブ→アッパー"
     }
+  },
+  "displayFixes": {
+    "tag": "paper_release_5",
+    "riceRelease": true,
+    "superImpactMinimumTicks": 96,
+    "curryAfterglowTicks": 24,
+    "droneVisibleWidth": 1.65,
+    "rocketVisibleHeight": 3.3,
+    "rosterRows": [
+      [
+        6,
+        3,
+        7
+      ],
+      [
+        5,
+        1,
+        4,
+        0,
+        2,
+        8
+      ]
+    ],
+    "allOtherPropsComplete": false
   }
 }

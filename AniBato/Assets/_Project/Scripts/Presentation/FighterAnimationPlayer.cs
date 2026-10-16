@@ -24,7 +24,7 @@ namespace AniBato.Presentation
         public int Age;
         public bool FlipX;
         public bool IsAttack;
-        public int AttackFrame, Startup, Active, Recovery, DamageDelay;
+        public int AttackFrame, Startup, Active, Recovery, DamageDelay, ProjectileReleaseFrame;
         public int FrameIndex(int count, int fps, bool loop, int activeFrame)
         {
             if (count < 1) return 0;
@@ -85,6 +85,7 @@ namespace AniBato.Presentation
                 sample.IsAttack = true; sample.AttackFrame = attack.Frame;
                 sample.Startup = attack.Definition.StartupFrames; sample.Active = attack.Definition.ActiveFrames; sample.Recovery = attack.Definition.RecoveryFrames;
                 sample.DamageDelay = attack.Definition.DamageDelayFrames;
+                sample.ProjectileReleaseFrame = sample.Startup + (attack.Definition.Ability.ProjectileAtDamageFrame ? sample.DamageDelay : 0);
             }
             Sample = sample; previousAttack = attackId; initialized = true;
             if (landingRemaining > 0) landingRemaining--;

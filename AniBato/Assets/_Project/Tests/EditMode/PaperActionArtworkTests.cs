@@ -77,7 +77,7 @@ namespace AniBato.Tests
             Assert.That(air.FrameHeadHeights.Zip(air.FrameOriginYs,(h,y)=>h+y).All(h=>Mathf.Abs(h-paper.StandingHeight)<.001f),Is.True);
         }
         [Test]
-        public void ProjectileArtFitsItsOwnPhysicsBoxWithUniformScaleAndVisibleCenterPivot()
+        public void ProjectileArtHasRequestedVisibleSizesWithUniformScaleAndVisibleCenterPivot()
         {
             var data=Toma; var effects=JsonUtility.FromJson<PaperActionArtworkBuilder.Effects>(File.ReadAllText(PaperActionArtworkBuilder.Root+"effects-manifest.json"));
             var attacks=new[]{data.GroundNormals[0].Definition,data.Specials[0].Definition,data.Ultimate.Definition};
@@ -87,8 +87,13 @@ namespace AniBato.Tests
                 var art=data.PaperMotion.Projectile(attack.Ability.Look);Assert.That(art,Is.Not.Null);
                 var e=effects.entries.Single(e=>e.look==attack.Ability.Look.ToString());var b=e.native.bounds;
                 float w=b.right-b.left+1,h=b.bottom-b.top+1;
-                Assert.That(w/art.Sprite.pixelsPerUnit*art.Scale,Is.LessThanOrEqualTo(attack.Hitbox.Size.X+.0001f));
-                Assert.That(h/art.Sprite.pixelsPerUnit*art.Scale,Is.LessThanOrEqualTo(attack.Hitbox.Size.Y+.0001f));
+                float fit=Mathf.Min(attack.Hitbox.Size.X/(w/art.Sprite.pixelsPerUnit),attack.Hitbox.Size.Y/(h/art.Sprite.pixelsPerUnit));
+                float expected=attack.Ability.Look==AbilityLook.Drone?Mathf.Max(fit,1.65f/(w/art.Sprite.pixelsPerUnit)):
+                    attack.Ability.Look==AbilityLook.Rocket?Mathf.Max(fit,3.3f/(h/art.Sprite.pixelsPerUnit)):fit;
+                Assert.That(art.Scale,Is.EqualTo(expected).Within(.0001f));
+                if(attack.Ability.Look==AbilityLook.Drone)Assert.That(w/art.Sprite.pixelsPerUnit*art.Scale,Is.EqualTo(1.65f).Within(.0001f));
+                else if(attack.Ability.Look==AbilityLook.Rocket)Assert.That(h/art.Sprite.pixelsPerUnit*art.Scale,Is.EqualTo(3.3f).Within(.0001f));
+                else{Assert.That(w/art.Sprite.pixelsPerUnit*art.Scale,Is.LessThanOrEqualTo(attack.Hitbox.Size.X+.0001f));Assert.That(h/art.Sprite.pixelsPerUnit*art.Scale,Is.LessThanOrEqualTo(attack.Hitbox.Size.Y+.0001f));}
                 Assert.That(art.Sprite.pivot.x,Is.EqualTo((b.left+b.right+1)*.5f).Within(.001));
                 Assert.That(art.Sprite.pivot.y,Is.EqualTo(e.native.height-(b.top+b.bottom+1)*.5f).Within(.001));
             }

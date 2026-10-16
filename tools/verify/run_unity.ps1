@@ -77,7 +77,12 @@ if ($Only -in 'all', 'build') {
         if (-not $oldBuildPath.StartsWith($buildRootPath + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase) -or
             ($_.Attributes -band [IO.FileAttributes]::ReparsePoint)) { throw 'Unsafe build retention path; refusing to remove it.' }
         Write-Host "removing old build: $($_.Name)"
-        Remove-Item -LiteralPath $oldBuildPath -Recurse -Force
+        $inUse = Get-Process -Name AniBato -ErrorAction SilentlyContinue | Where-Object {
+            try { $_.Path -and $_.Path.StartsWith($oldBuildPath + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase) } catch { $false }
+        }
+        if ($inUse) { Write-Warning "Keeping running game build: $($_.Name)"; return }
+        try { Remove-Item -LiteralPath $oldBuildPath -Recurse -Force }
+        catch { Write-Warning "Old build is in use; kept for a later cleanup: $($_.Name)" }
     }
 }
 # Summary of test XML files for this tag (failed cases with message + first stack line).

@@ -70,7 +70,7 @@ namespace AniBato.Tests
                 {
                 string sourcePath = twoFrames ? row.frames[frameIndex].source : row.source;
                 int headTop = twoFrames ? row.frames[frameIndex].headTopY : row.headTopY;
-                var sample = new AnimationSample { IsAttack = true, Startup = 1, AttackFrame = frameIndex };
+                var sample = new AnimationSample { IsAttack = true, Startup = 1, ProjectileReleaseFrame = 1, AttackFrame = frameIndex };
                 var source = new Texture2D(2, 2, TextureFormat.RGBA32, false); var packed = new Texture2D(2, 2, TextureFormat.RGBA32, false);
                 try
                 {
@@ -98,7 +98,7 @@ namespace AniBato.Tests
                 var pose = motion.Find(state); Assert.That(pose, Is.Not.Null, state.ToString());
                 for (int age = 0; age < 120; age++)
                 {
-                    var sample = new AnimationSample { State = state, Age = age, IsAttack = true, AttackFrame = age, Startup = 5, Active = 5, Recovery = 25 };
+                    var sample = new AnimationSample { State = state, Age = age, IsAttack = true, AttackFrame = age, Startup = 5, ProjectileReleaseFrame = 5, Active = 5, Recovery = 25 };
                     Assert.That(motion.TrySprite(sample, false, out var sprite, out var selected), Is.True);
                     Assert.That(sprite, Is.SameAs(pose.Frames[pose.Frames.Length == 2 && age >= 5 ? 1 : 0])); Assert.That(selected, Is.SameAs(pose));
                 }

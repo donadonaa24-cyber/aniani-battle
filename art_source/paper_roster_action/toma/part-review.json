@@ -20,5 +20,24 @@
   "edge": "生成されたアルファと細い白縁を保持。境界には細い半透明の生成縁・微小ノイズが残る。関節分割・全身の反転修正・人物拡縮による手修正は行わない。",
   "gameConnected": true,
   "unityVerifiedTag": "rework_r4_toma_5",
-  "artApproved": false
+  "artApproved": false,
+  "dualGunRevision": {
+    "tag": "paper_release_5",
+    "rawImpactVersion": 3,
+    "userRequirement": "上側左手は掌と握った指の内側、下側右手は従来の甲側。v2を却下。",
+    "artApproved": false,
+    "canvas": "1304x1450",
+    "pixelsPerUnit": 532.5893,
+    "resampledCharacterPixels": 0,
+    "croppedAlphaOnePixels": [
+      {
+        "id": "normal3_prepare",
+        "count": 1
+      },
+      {
+        "id": "normal3_impact",
+        "count": 17
+      }
+    ]
+  }
 }

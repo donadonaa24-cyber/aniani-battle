@@ -57,7 +57,14 @@ namespace AniBato.Tests
                     Tick();
                 }
                 Assert.That(limit,Is.LessThan(200));Assert.That(prep,Is.GreaterThan(0));Assert.That(active,Is.GreaterThan(0));Assert.That(recovery,Is.GreaterThan(0));
-                Assert.That(sim.P1.Attack,Is.Null);Assert.That(body.sprite,Is.Not.SameAs(pose.Frames[1]));
+                Assert.That(sim.P1.Attack,Is.Null);
+                if(states[action]==AnimationState.Ultimate)
+                {
+                    int wait=0;
+                    while(body.sprite==pose.Frames[1]&&wait++<data.PaperMotion.UltimateImpactMinimumTicks+1)Tick();
+                    Assert.That(wait,Is.LessThanOrEqualTo(data.PaperMotion.UltimateImpactMinimumTicks));
+                }
+                Assert.That(body.sprite,Is.Not.SameAs(pose.Frames[1]));
             }
         }
         [UnityTest]
@@ -115,23 +122,27 @@ namespace AniBato.Tests
         private static void CaptureTomaProjectile(SpriteRenderer sprite,Projectile shot,string name)
         {
             var camera=Camera.main;var position=camera.transform.position;float size=camera.orthographicSize;
-            var clear=camera.clearFlags;var color=camera.backgroundColor;int mask=camera.cullingMask,layer=sprite.gameObject.layer;
+            var clear=camera.clearFlags;var color=camera.backgroundColor;float aspect=camera.aspect;int mask=camera.cullingMask,layer=sprite.gameObject.layer;
             var previousTarget=camera.targetTexture;var previousActive=RenderTexture.active;
             var target=RenderTexture.GetTemporary(512,512,24,RenderTextureFormat.ARGB32);var image=new Texture2D(512,512,TextureFormat.RGBA32,false);
             try
             {
                 sprite.gameObject.layer=31;camera.cullingMask=1<<31;
-                camera.orthographicSize=Mathf.Max(.3f,Mathf.Max(shot.Hitbox.Size.X,shot.Hitbox.Size.Y)*.65f);
+                camera.aspect=1;
+                camera.orthographicSize=Mathf.Max(.3f,Mathf.Max(Mathf.Max(shot.Hitbox.Size.X,shot.Hitbox.Size.Y),Mathf.Max(sprite.bounds.size.x,sprite.bounds.size.y))*.65f);
                 camera.transform.position=new Vector3(sprite.transform.position.x,sprite.transform.position.y,position.z);
                 camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.125f,.15f,.19f,1);
-                camera.targetTexture=target;camera.Render();RenderTexture.active=target;
+                camera.targetTexture=target;
+                foreach(var corner in new[]{sprite.bounds.min,sprite.bounds.max})
+                {var p=camera.WorldToViewportPoint(corner);Assert.That(p.x,Is.GreaterThan(0).And.LessThan(1));Assert.That(p.y,Is.GreaterThan(0).And.LessThan(1));}
+                camera.Render();RenderTexture.active=target;
                 image.ReadPixels(new Rect(0,0,512,512),0,0);image.Apply();
                 string folder=Path.GetFullPath(Path.Combine(Application.dataPath,"../../docs/screenshots/rework_r4_toma"));Directory.CreateDirectory(folder);
                 CaptureFile.Write(Path.Combine(folder,"projectile_"+name+".png"),image.EncodeToPNG());
             }
             finally
             {
-                sprite.gameObject.layer=layer;camera.cullingMask=mask;camera.orthographicSize=size;camera.transform.position=position;
+                sprite.gameObject.layer=layer;camera.cullingMask=mask;camera.orthographicSize=size;camera.aspect=aspect;camera.transform.position=position;
                 camera.clearFlags=clear;camera.backgroundColor=color;camera.targetTexture=previousTarget;RenderTexture.active=previousActive;
                 RenderTexture.ReleaseTemporary(target);Object.Destroy(image);
             }

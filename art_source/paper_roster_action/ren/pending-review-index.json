@@ -1,0 +1,189 @@
+{
+  "key": "ren",
+  "character": "蓮",
+  "folder": "イラスト確認/蓮/攻撃原画_確認中/未梱包_残り候補",
+  "gameConnected": false,
+  "artApproved": false,
+  "entries": [
+    {
+      "id": "up_prepare",
+      "title": "地上上攻撃_予備.png",
+      "source": "art_source/paper_roster_action/ren/generated/up_prepare_v1.png",
+      "sha256": "af02ad0fe3ab620782d730760c7f38b921acd43a976793d9d5c86c8dd68e5929",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 121,
+          "top": 84,
+          "right": 1109,
+          "bottom": 1246
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    },
+    {
+      "id": "up_impact",
+      "title": "地上上攻撃_当てる.png",
+      "source": "art_source/paper_roster_action/ren/generated/up_impact_v1.png",
+      "sha256": "c3081219d40b2b0d99ed99a405bfabf35aa354e64dc4920a0715fe9732ed45b7",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 49,
+          "top": 142,
+          "right": 1097,
+          "bottom": 1368
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    },
+    {
+      "id": "down_prepare",
+      "title": "地上下攻撃_予備.png",
+      "source": "art_source/paper_roster_action/ren/generated/down_prepare_v1.png",
+      "sha256": "9fae511e5fd31e1fcc5060564cbfdc9d0961749f2895c4b4d65d1bdc7f4ab7fe",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 69,
+          "top": 265,
+          "right": 1178,
+          "bottom": 1234
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    },
+    {
+      "id": "down_impact",
+      "title": "地上下攻撃_当てる.png",
+      "source": "art_source/paper_roster_action/ren/generated/down_impact_v1.png",
+      "sha256": "4bc58ad840088730eb44dbf00668547db5e186bfb865d903f4c9a24cec1ceba3",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 13,
+          "top": 345,
+          "right": 1176,
+          "bottom": 1251
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    },
+    {
+      "id": "air_prepare",
+      "title": "空中ニュートラル_予備.png",
+      "source": "art_source/paper_roster_action/ren/generated/air_prepare_v1.png",
+      "sha256": "0eee559ce12a29a479ce355f6b3c378c652310d8a34bd6fd885c724e444b4f52",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 32,
+          "top": 120,
+          "right": 1148,
+          "bottom": 1181
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    },
+    {
+      "id": "air_impact",
+      "title": "空中ニュートラル_当てる.png",
+      "source": "art_source/paper_roster_action/ren/generated/air_impact_v1.png",
+      "sha256": "91fe5c3b51bcbdac174f4eb16ced8b0f55a54cdb336804bd1bc3e735c8151dba",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 37,
+          "top": 140,
+          "right": 1180,
+          "bottom": 1226
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊飛車変身_予備.png",
+      "source": "art_source/paper_roster_action/ren/generated/special_prepare_v1.png",
+      "sha256": "7ee60a5a3c1033b56a6cb88ea51b50b462afbb0ea4480076c7d619f1a5d362a8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 119,
+          "top": 194,
+          "right": 1073,
+          "bottom": 1263
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊飛車変身_当てる.png",
+      "source": "art_source/paper_roster_action/ren/generated/special_impact_v1.png",
+      "sha256": "7f258609ee3273be0197399e833c340a8a8d71c8911b06c6bd736031953efdd9",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 46,
+          "top": 58,
+          "right": 1093,
+          "bottom": 1372
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺連続飛車突進_予備.png",
+      "source": "art_source/paper_roster_action/ren/generated/super_prepare_v1.png",
+      "sha256": "e063254f5086dcce806534180f1bacd3a6ff10d10fe49aaf5860896d634e816d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 64,
+          "top": 96,
+          "right": 1157,
+          "bottom": 1255
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺連続飛車突進_当てる.png",
+      "source": "art_source/paper_roster_action/ren/generated/super_impact_v1.png",
+      "sha256": "ff2703644ba99e2aba3e0a723b960624f405419821ca08e78814c5ab4a0946aa",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 20,
+          "top": 58,
+          "right": 1088,
+          "bottom": 1365
+        }
+      },
+      "gameConnected": false,
+      "artApproved": false
+    }
+  ]
+}

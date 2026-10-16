@@ -12,8 +12,10 @@ namespace AniBato.Game
         private SpriteRenderer body, eye, arm, secondArm, hat, food, mogu, wave, field;
         private SpriteRenderer[] ears;
         private ChargePoseView chargePose;
+        private readonly AniBato.Presentation.PaperUltimatePoseHold ultimatePoseHold=new AniBato.Presentation.PaperUltimatePoseHold();
         private AbilityCueView abilityCue;
         private float flashUntil, headY;
+        private int curryLastActiveTick=-1;
         public int PlayerIndex => playerIndex;
         public bool UsesAnimationSprites { get; private set; }
         public bool UsesPaperSprite { get; private set; }
@@ -44,7 +46,7 @@ namespace AniBato.Game
         }
         private void OnEnable() { if (runner) { runner.EventProduced += OnBattleEvent; runner.MatchRestarted += OnRestart; } }
         private void OnDisable() { if (runner) { runner.EventProduced -= OnBattleEvent; runner.MatchRestarted -= OnRestart; } }
-        private void OnRestart() { flashUntil = 0; if (body) ApplyCharacter(); }
+        private void OnRestart() { flashUntil = 0; curryLastActiveTick=-1; ultimatePoseHold.Reset(); if (body) ApplyCharacter(); }
         private void ApplyCharacter()
         {
             character = runner.Character(playerIndex);
@@ -66,6 +68,9 @@ namespace AniBato.Game
             transform.position = new Vector3(position.X, position.Y, 0);
             var sample = runner.Animation(playerIndex); Sprite sprite = null;
             RenderedSample = sample;
+            if(fighter.ChargeFrames>0)ultimatePoseHold.Reset();
+            if(character.PaperMotion&&character.PaperMotion.Enabled)
+                sample=ultimatePoseHold.Evaluate(sample,runner.Simulation.Match.TickCount,character.PaperMotion.UltimateImpactMinimumTicks);
             UsesAnimationSprites = character.Animations && character.Animations.TrySprite(sample, out sprite);
             PaperPose paperPose = null; Sprite paperSprite = null;
             UsesPaperSprite = character.PaperMotion && character.PaperMotion.TrySprite(sample, fighter.LastDamageLostHeart, out paperSprite, out paperPose);
@@ -148,8 +153,15 @@ namespace AniBato.Game
             int effectAge = sample.IsAttack ? Mathf.Max(0, sample.AttackFrame - sample.Startup) : 0;
             wave.sprite = character.Animations ? character.Animations.Effect(effects == null ? "curry_wave" : effects.UltimateClip, effectAge) : null;
             if (character.PaperMotion && character.PaperMotion.Enabled && character.PaperMotion.CurryWave) wave.sprite = character.PaperMotion.CurryWave;
-            wave.enabled = UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.IsUltimate && fighter.Attack.IsActive && wave.sprite &&
+            bool curryActive=UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.IsUltimate && fighter.Attack.IsActive && wave.sprite &&
                 (fighter.Attack.Definition.Ability.Look == AbilityLook.Default || fighter.Attack.Definition.Ability.Look == AbilityLook.Curry);
+            int tick=runner.Simulation.Match.TickCount;
+            if(curryActive)curryLastActiveTick=tick;
+            int trail=character.PaperMotion?character.PaperMotion.CurryAfterglowTicks:0;
+            bool curryTrail=wave.sprite&&curryLastActiveTick>=0&&tick>=curryLastActiveTick&&tick-curryLastActiveTick<trail&&
+                sample.State==AniBato.Presentation.AnimationState.Ultimate&&!runner.Simulation.Match.IsFinished;
+            wave.enabled=curryActive||curryTrail;
+            wave.color=new Color(1,1,1,curryActive?1:curryTrail?1-(tick-curryLastActiveTick)/(float)trail:0);
             float waveScale = effects == null ? presentation.CurryWaveScale : effects.UltimateScale;
             Vector2 waveOffset = effects == null ? presentation.CurryWaveOffset : effects.UltimateOffset;
             wave.flipX = sample.FlipX; wave.transform.localScale = new Vector3(waveScale, waveScale, 1);

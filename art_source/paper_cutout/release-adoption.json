@@ -1,0 +1,26 @@
+{
+  "tag": "paper_release_5",
+  "buildAll": "success",
+  "edit": {
+    "total": 537,
+    "passed": 537,
+    "failed": 0,
+    "skipped": 0
+  },
+  "play": {
+    "total": 66,
+    "passed": 66,
+    "failed": 0,
+    "skipped": 0
+  },
+  "windowsBuild": "success",
+  "screenshots": "docs/screenshots/paper_release/",
+  "screenshotCount": 18,
+  "captureVerification": {
+    "tag": "paper_release_capture",
+    "scope": "enlarged drone and rocket capture bounds, both facings",
+    "playPassed": 1
+  },
+  "webGL": "browser verification recorded separately",
+  "artApproved": false
+}

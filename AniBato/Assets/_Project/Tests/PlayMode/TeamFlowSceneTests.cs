@@ -45,10 +45,10 @@ namespace AniBato.Tests
             yield return Tap(keyboard.enterKey); Assert.That(Flow.Selection.Picks(0).Count, Is.EqualTo(1));
             Assert.That(Flow.SelectionStatus, Does.Contain("同じキャラ"));
             yield return Tap(keyboard.wKey); Assert.That(Flow.Player1Index, Is.Zero); yield return Tap(keyboard.enterKey);
-            yield return Tap(keyboard.sKey); yield return Tap(keyboard.sKey); yield return Tap(keyboard.enterKey);
+            yield return Tap(keyboard.aKey); yield return Tap(keyboard.enterKey);
             Assert.That(Flow.Selection.Picks(0), Is.EqualTo(new[] { 3, 0, 4 })); Assert.That(Flow.SelectionPlayer, Is.EqualTo(1));
             CaptureScreen("01_CPUチーム選択",720,"rework_r2");
-            yield return Tap(keyboard.sKey); Assert.That(Flow.Player2Index, Is.EqualTo(5));
+            yield return Tap(keyboard.aKey); Assert.That(Flow.Player2Index, Is.EqualTo(5));
             Assert.That(Flow.Player1Index, Is.EqualTo(4)); yield return Tap(keyboard.enterKey);
             yield return Tap(keyboard.escapeKey); Assert.That(Flow.Selection.Picks(1).Count, Is.Zero);
             yield return Tap(keyboard.escapeKey); Assert.That(Flow.SelectionPlayer, Is.Zero); Assert.That(Flow.Selection.Picks(0).Count, Is.EqualTo(2));

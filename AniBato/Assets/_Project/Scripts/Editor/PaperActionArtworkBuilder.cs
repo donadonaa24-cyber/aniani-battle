@@ -73,7 +73,10 @@ namespace AniBato.EditorTools
             var pivot = new Vector2((b.left + b.right + 1) * .5f / n.width, 1 - (b.top + b.bottom + 1) * .5f / n.height);
             var sprite = Import("toma_effect_" + id, effect.source, effect.sha256, n.width, n.height, pivot);
             float width = (b.right - b.left + 1) / PixelsPerUnit, height = (b.bottom - b.top + 1) / PixelsPerUnit;
-            return new PaperProjectileArt { Look = look, Sprite = sprite, Scale = Mathf.Min(attack.Hitbox.Size.X / width, attack.Hitbox.Size.Y / height),
+            float fit=Mathf.Min(attack.Hitbox.Size.X / width, attack.Hitbox.Size.Y / height);
+            // Readable props intentionally exceed the unchanged combat hitbox.
+            float scale=id=="drone"?Mathf.Max(fit,1.65f/width):id=="rocket"?Mathf.Max(fit,3.3f/height):fit;
+            return new PaperProjectileArt { Look = look, Sprite = sprite, Scale = scale,
                 RotateWithVelocity = rotate, RotationOffsetDegrees = rotation, FlipWithFacing = flip };
         }
         internal static Sprite Import(string name, string source, string expectedSha, int width, int height, Vector2 pivot)
@@ -84,7 +87,14 @@ namespace AniBato.EditorTools
                     throw new InvalidOperationException("攻撃原画のSHA不一致: " + source);
             const string folder = "Assets/_Project/Art/PaperAction"; Directory.CreateDirectory(folder);
             string path = folder + "/" + name + ".png";
-            if (!File.Exists(path) || !bytes.AsSpan().SequenceEqual(File.ReadAllBytes(path))) File.WriteAllBytes(path, bytes);
+            if (!File.Exists(path) || !bytes.AsSpan().SequenceEqual(File.ReadAllBytes(path)))
+            {
+                // A previewer may map the previous PNG. Replace it atomically instead of truncating that mapped file.
+                string pending=path+".pending";
+                File.WriteAllBytes(pending,bytes);
+                try { if(File.Exists(path))File.Replace(pending,path,null);else File.Move(pending,path); }
+                finally { if(File.Exists(pending))File.Delete(pending); }
+            }
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceSynchronousImport);
             var importer = (TextureImporter)AssetImporter.GetAtPath(path);
             importer.GetSourceTextureWidthAndHeight(out int w, out int h);

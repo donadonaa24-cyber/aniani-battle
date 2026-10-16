@@ -1,0 +1,12 @@
+{
+  "id": "normal3_impact_dual",
+  "version": 1,
+  "key": "toma",
+  "source": "art_source/paper_roster_action/toma/dual_gun/generated/normal3_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/toma/generated/normal3_impact_v1.png",
+    "art_source/paper_roster_action/toma/dual_gun/generated/normal3_prepare_v1.png"
+  ],
+  "tool": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit. 画像1の単銃の射撃決めポーズを、画像2と同じ左右各1丁の二丁拳銃の決めポーズへ修正。画像1が人物の顔・黒髪・青い目・黒スーツ白シャツ黒ネクタイ・深い低姿勢・両脚・革靴・頭と靴の実寸・全身位置の編集対象。画像2は左右それぞれが握る小型黒拳銃の同一デザインと握り方だけの基準。右手と左手に1丁ずつ、合計2丁の黒い角形スライド・短い銃身・細いシアン線の拳銃。今回は両腕を画面右前方へ別々に力強く伸ばして、二丁とも前を狙って撃つ決め姿。手前右腕を胸から右へ伸ばし、奥左腕はその少し上を平行に伸ばす。銃2つと左右各1つの握る手を上下に分離して、重ねて1丁に見せない。指は各手のグリップと自然につながり、肘と肩を人体に正しく接続。腕2本・手左右1つずつ。両方の銃の高さを少しずらして顔を隠さない。全身や髪・靴は拡大せず、下半身は画像1を保つ。銃口炎・弾・流血・効果線・相手・背景・地面・影・文字なし。画像1と同じ1103×1426透明キャンバス。髪、両銃口、両靴まで薄いクリーム白縁を全周へ残し、端切れ禁止。手先と銃が右端からはみ出さぬよう肘をわずかに曲げて収める。銃や頭・靴を縮小して収めない。一人全身一姿勢、透明RGBA。"
+}
