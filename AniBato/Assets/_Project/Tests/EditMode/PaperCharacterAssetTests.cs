@@ -64,12 +64,14 @@ namespace AniBato.Tests
                 var pose = row.key == "hit_heavy" ? motion.HeavyDamage : System.Array.Find(motion.Poses, p => p.Key == row.key);
                 Assert.That(pose, Is.Not.Null, row.key); Assert.That(pose.Valid, Is.True); Assert.That(pose.HoldTicks, Is.EqualTo(8));
                 bool twoFrames = row.frames != null && row.frames.Length > 0;
-                Assert.That(pose.Frames.Length, Is.EqualTo(twoFrames ? 2 : 4));
+                bool single = row.key == "crouch_attack" || row.key == "air_neutral";
+                Assert.That(pose.Frames.Length, Is.EqualTo(single ? 1 : twoFrames ? 2 : 4));
                 foreach (var frame in pose.Frames) { if (!twoFrames) Assert.That(frame, Is.SameAs(pose.Frames[0])); Assert.That(frame.pixelsPerUnit, Is.EqualTo(motion.Sprite.pixelsPerUnit)); }
-                for (int frameIndex = 0; frameIndex < (twoFrames ? 2 : 1); frameIndex++)
+                for (int frameIndex = 0; frameIndex < (single ? 1 : twoFrames ? 2 : 1); frameIndex++)
                 {
-                string sourcePath = twoFrames ? row.frames[frameIndex].source : row.source;
-                int headTop = twoFrames ? row.frames[frameIndex].headTopY : row.headTopY;
+                int sourceIndex=single?row.frames.Length-1:frameIndex;
+                string sourcePath = twoFrames ? row.frames[sourceIndex].source : row.source;
+                int headTop = twoFrames ? row.frames[sourceIndex].headTopY : row.headTopY;
                 var sample = new AnimationSample { IsAttack = true, Startup = 1, ProjectileReleaseFrame = 1, AttackFrame = frameIndex };
                 var source = new Texture2D(2, 2, TextureFormat.RGBA32, false); var packed = new Texture2D(2, 2, TextureFormat.RGBA32, false);
                 try

@@ -73,7 +73,10 @@ namespace AniBato.EditorTools
             // Repeated BuildAll/tests can still have the imported file memory-mapped.
             // Reading it is safe; truncating identical content is both unnecessary and unreliable on Windows.
             if(File.Exists(path)&&bytes.AsSpan().SequenceEqual(File.ReadAllBytes(path)))return;
-            File.WriteAllBytes(path,bytes);
+            string pending=path+".pending";
+            File.WriteAllBytes(pending,bytes);
+            try { if(File.Exists(path))File.Replace(pending,path,null);else File.Move(pending,path); }
+            finally { if(File.Exists(pending))File.Delete(pending); }
         }
         private static Sprite Import(string path, float ppu, Vector2 pivot)
         {

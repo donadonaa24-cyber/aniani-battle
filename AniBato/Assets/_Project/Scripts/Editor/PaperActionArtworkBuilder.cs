@@ -37,7 +37,8 @@ namespace AniBato.EditorTools
                 AnimationState.CrouchAttack, AnimationState.AirNeutral, AnimationState.SpecialNeutral, AnimationState.Ultimate };
             for (int i = 0; i < keys.Length; i++)
             {
-                var frames = new[] { "prepare", "impact" }.Select(p => manifest.frames.Single(f => f.id == keys[i] + "_" + p)).ToArray();
+                var phases = keys[i] == "down" || keys[i] == "air" ? new[] { "impact" } : new[] { "prepare", "impact" };
+                var frames = phases.Select(p => manifest.frames.Single(f => f.id == keys[i] + "_" + p)).ToArray();
                 var pose = new PaperPose { Key = keys[i], States = new[] { states[i] }, HoldTicks = 8,
                     Frames = frames.Select(f => Import("toma_" + f.id, f.prepared, f.sha256, 1304, 1450, new Vector2(.5f, 122f / 1450))).ToArray(),
                     FrameHeadHeights = frames.Select(f => (1328 - f.headTopY) / PixelsPerUnit).ToArray(),

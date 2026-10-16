@@ -277,60 +277,6 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.5764292
     FootMaxX: 0.8130092
-  - Key: down
-    States: 19000000i
-    Frames:
-    - {fileID: 21300000, guid: c9afc5c151d666d42ae922b8f3a6e264, type: 3}
-    - {fileID: 21300000, guid: 066c2fc9b88aa82418e571d730d2f238, type: 3}
-    HoldTicks: 8
-    Airborne: 0
-    ReverseFacing: 0
-    SwitchOnProjectileRelease: 0
-    TiltDegrees: 0
-    FrameHeadHeights:
-    - 1.840067
-    - 1.840067
-    FrameFootBaseYs: []
-    FrameFootMinXs:
-    - -0.5238558
-    - -0.5257334
-    FrameFootMaxXs:
-    - 0.7604359
-    - 0.7604359
-    FrameOriginYs:
-    - 0
-    - 0
-    HeadHeight: 1.840067
-    FootBaseY: 0
-    FootMinX: -0.5238558
-    FootMaxX: 0.7604359
-  - Key: air
-    States: 1b000000i
-    Frames:
-    - {fileID: 21300000, guid: bbf7db13ca286f6489db5ec3f779a387, type: 3}
-    - {fileID: 21300000, guid: 50f4cd8dbf8cb3c4bbb173a2178fd73d, type: 3}
-    HoldTicks: 8
-    Airborne: 0
-    ReverseFacing: 0
-    SwitchOnProjectileRelease: 0
-    TiltDegrees: 0
-    FrameHeadHeights:
-    - 2.1198323
-    - 2.1254652
-    FrameFootBaseYs: []
-    FrameFootMinXs:
-    - -0.36989102
-    - -0.38115674
-    FrameFootMaxXs:
-    - 0.873093
-    - 0.8768483
-    FrameOriginYs:
-    - 0.21217099
-    - 0.20653814
-    HeadHeight: 2.1198323
-    FootBaseY: 0
-    FootMinX: -0.36989102
-    FootMaxX: 0.873093
   - Key: special
     States: 0a000000i
     Frames:
@@ -410,6 +356,52 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.54450965
     FootMaxX: 0.78108966
+  - Key: down
+    States: 19000000i
+    Frames:
+    - {fileID: 21300000, guid: 066c2fc9b88aa82418e571d730d2f238, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 1.840067
+    FrameFootBaseYs:
+    - 0
+    FrameFootMinXs:
+    - -0.5257334
+    FrameFootMaxXs:
+    - 0.7604359
+    FrameOriginYs:
+    - 0
+    HeadHeight: 1.840067
+    FootBaseY: 0
+    FootMinX: -0.5257334
+    FootMaxX: 0.7604359
+  - Key: air
+    States: 1b000000i
+    Frames:
+    - {fileID: 21300000, guid: 50f4cd8dbf8cb3c4bbb173a2178fd73d, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 2.1254652
+    FrameFootBaseYs:
+    - 0
+    FrameFootMinXs:
+    - -0.38115674
+    FrameFootMaxXs:
+    - 0.8768483
+    FrameOriginYs:
+    - 0.20653814
+    HeadHeight: 2.1254652
+    FootBaseY: 0
+    FootMinX: -0.38115674
+    FootMaxX: 0.8768483
   HeavyDamage:
     Key: 
     States: 

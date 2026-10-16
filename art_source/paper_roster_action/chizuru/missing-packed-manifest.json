@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "key": "chizuru",
+  "frames": [
+    {
+      "id": "down_prepare",
+      "prepared": "art_source/paper_roster_action/chizuru/prepared/down_prepare.png",
+      "sha256": "1796dc625213d04d3fa39a679bf32f0dbdd374ebc49530055634bc9933bab9f1",
+      "headTopY": 287,
+      "footMinX": 206,
+      "footMaxX": 1140,
+      "groundFootAnchor": 685,
+      "originOffsetY": 0
+    },
+    {
+      "id": "down_impact",
+      "prepared": "art_source/paper_roster_action/chizuru/prepared/down_impact.png",
+      "sha256": "cbc707da7e6fe191fc4ede2774cb0d1b279ef02f43348747530e7b0cd01dc415",
+      "headTopY": 379,
+      "footMinX": 129,
+      "footMaxX": 1090,
+      "groundFootAnchor": 685,
+      "originOffsetY": 0
+    },
+    {
+      "id": "air_prepare",
+      "prepared": "art_source/paper_roster_action/chizuru/prepared/air_prepare.png",
+      "sha256": "c497636aa8f4ffe7c95bb1a6349c9eedbec193b38c7653324135cd765665df6a",
+      "headTopY": 170,
+      "footMinX": 644,
+      "footMaxX": 790,
+      "groundFootAnchor": 685,
+      "originOffsetY": 0.06383905947791291
+    },
+    {
+      "id": "air_impact",
+      "prepared": "art_source/paper_roster_action/chizuru/prepared/air_impact.png",
+      "sha256": "f21c0c419b4d072aa35b53eda4d04193a9b9e52fb6a0c4a75281e374e93fd026",
+      "headTopY": 327,
+      "footMinX": 766,
+      "footMaxX": 996,
+      "groundFootAnchor": 685,
+      "originOffsetY": 0.3586253047141578
+    },
+    {
+      "id": "super_impact",
+      "prepared": "art_source/paper_roster_action/chizuru/prepared/super_impact.png",
+      "sha256": "c2e626c068ab198ca4dcfaf6ba20c41bd00bfd7e6d4ddf7fd0d6cbb1846438d8",
+      "headTopY": 165,
+      "footMinX": 176,
+      "footMaxX": 1195,
+      "groundFootAnchor": 685,
+      "originOffsetY": 0
+    }
+  ],
+  "complete": true,
+  "reviewed": true,
+  "gameConnected": false,
+  "unityVerifiedTag": "paper_single_title_3",
+  "notes": "5枚の原寸梱包記録。現在ゲーム採用は下・空中・超必殺の当てる3枚。下と空中の予備は最新指定で不採用。"
+}

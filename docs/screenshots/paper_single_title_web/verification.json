@@ -1,0 +1,16 @@
+{
+  "nativeTag": "paper_single_title_3",
+  "webTag": "paper_single_title_web",
+  "ensembleVersion": 5,
+  "checks": [
+    "修正版の透真5指と暁左掌のカードつまみ保持を集合トップで確認",
+    "同じ集合絵と9人の2段選択を確認",
+    "右キーでトップ0→1→練習、千鶴を選択",
+    "下攻撃の1枚表示、コマ送りで空中攻撃の決め絵と下降を確認",
+    "音声running"
+  ],
+  "status": "{\"screen\":\"Battle\",\"picks1\":\"2\",\"picks2\":\"1\",\"p1mode\":\"Attack\",\"p2mode\":\"Idle\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":2,\"player2\":1,\"selectionPlayer\":1,\"stage\":2,\"tick\":3539,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":-4.820000171661377,\"p2x\":5.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":142.64093017578125,\"practice\":true,\"practicePaused\":true}\n音声: running",
+  "consoleErrors": [],
+  "physicalGamepad": "not_retested",
+  "nativeChromeEdge": "not_retested"
+}

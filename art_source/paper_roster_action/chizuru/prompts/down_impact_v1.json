@@ -1,0 +1,23 @@
+{
+  "id": "down_impact",
+  "key": "chizuru",
+  "character": "千鶴",
+  "pose": "down",
+  "phase": "impact",
+  "label": "地上下攻撃",
+  "version": 1,
+  "source": "art_source/paper_roster_action/chizuru/generated/down_impact_v1.png",
+  "references": [
+    "art_source/paper_cutout/generated/chizuru_paper_idle_v1.png",
+    "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_impact.png",
+    "art_source/paper_roster_action/chizuru/generated/down_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "採用待機：人物と部位実寸",
+    "道具と握り／連続する構え",
+    "同じ下攻撃の直前の予備。髪・靴・フライパンの実寸と左手の握りの基準"
+  ],
+  "prompt": "Use case: identity-preserve. 全身のゲーム原画を1枚。画像1は千鶴の採用待機、容姿・アニメ塗り・頭身・部位の実寸の基準。画像2は同じ人物の左手のフライパンと握りの参考。茶色ボブ髪、茶色の瞳、オレンジ長袖セーター、紺プリーツスカート、白スニーカーを維持。\n動作：地上下攻撃の当てる決め姿。両足を地面につけた低い構えのまま、本人左手の小型フライパンを画面右前の膝の高さへ横に打ち出す決め姿勢。上半身を少し前へ入れ、腰と肩も入れて打つ。空いた右手は胸元の軽い握り。道具を投げない。\n胸元側が見える斜め横、画面右を向く。腕は左右1本ずつ、脚2本、手は各5指。フライパンは本人左手（胸側を見たこの構図では画面右側につながる肩）、空手は本人右手。肩→肘→手首→掌と親指を自然につなぐ。両手を右手にしない。武器は同じ丸い灰色の小型パンと短い黒い柄、2本に増やさない。\n頭髪・靴・手の大きさを画像1から変えない。髪の横幅約460px、靴は前後の投影で約170〜215pxが基準。低い姿勢をキャンバスいっぱいへ拡大しない。出力キャンバスは画像1と同じ1246×1263、余白を残して全身・手・道具・髪・靴まで切らずに収める。普通のアニメの線とセル塗り、薄い硬い白い切り抜き縁を外周全てに。縁の外は完全透明。背景・床・影・相手・文字・光彩・速度線・衝撃・紙の繊維・関節分割・3D・ピクセルなし。1人1姿勢だけ。\n追加参照の役割：最後の画像は同じ下攻撃の直前の予備。髪・靴・フライパンの実寸と左手の握りの基準。人物の寸法と武器・衣装の同一性を維持し、指定の次のポーズだけに変える。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

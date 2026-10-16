@@ -1,0 +1,96 @@
+{
+  "key": "chizuru",
+  "name": "千鶴",
+  "unityVerifiedTag": "paper_single_title_3",
+  "motionAsset": "AniBato/Assets/_Project/Data/ChizuruPaperMotion.asset",
+  "completeAttackArtwork": true,
+  "bodyFrames": 12,
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通_予備",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_attack1_anticipation_paper_chizuru.png",
+      "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/通常1・2段共通_予備.png"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_attack1_impact_paper_chizuru.png",
+      "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/通常1・2段共通_当てる.png"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段_予備",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_attack3_anticipation_paper_chizuru.png",
+      "sha256": "17012b9f6f405939a34026b8412eb0e4990f60682833f95f197c8fda1f24a584",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/通常3段_予備.png"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_attack3_impact_paper_chizuru.png",
+      "sha256": "ef65db086708b79ba4b366d1f37329f8c2aa8e1116977363d527cd79191672c4",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/通常3段_当てる.png"
+    },
+    {
+      "id": "up_prepare",
+      "title": "上攻撃_予備",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_air_up_anticipation_paper_chizuru.png",
+      "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/上攻撃_予備.png"
+    },
+    {
+      "id": "up_impact",
+      "title": "上攻撃_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_air_up_impact_paper_chizuru.png",
+      "sha256": "92c9a4b94ebd01e7e44ef246f1937c7c44c899386ac619dcf02ae17e3bc7ed6f",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/上攻撃_当てる.png"
+    },
+    {
+      "id": "down_single",
+      "title": "下攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_crouch_attack_impact_paper_chizuru.png",
+      "sha256": "cbc707da7e6fe191fc4ede2774cb0d1b279ef02f43348747530e7b0cd01dc415",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/下攻撃_1枚採用.png"
+    },
+    {
+      "id": "air_single",
+      "title": "空中攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_air_neutral_impact_paper_chizuru.png",
+      "sha256": "f21c0c419b4d072aa35b53eda4d04193a9b9e52fb6a0c4a75281e374e93fd026",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/空中攻撃_1枚採用.png"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_special_neutral_anticipation_paper_chizuru.png",
+      "sha256": "3d885b801ccc145e6ff82ad4b0eb20a3ab41c0ee65513279027857d8e00a70ed",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/特殊技_予備.png"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_special_neutral_impact_paper_chizuru.png",
+      "sha256": "03932798730bafb92d9ebd5b9d573e2240b359eeca4adff7cc2f913170ce8ad7",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/特殊技_当てる.png"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_ultimate_anticipation_paper_chizuru.png",
+      "sha256": "f15e86818c580ca15e97e8487c6658a6df52b589a25cfcfa5c34623f8c04eb1e",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/超必殺技_予備.png"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/Paper/pose_ultimate_impact_paper_chizuru.png",
+      "sha256": "c2e626c068ab198ca4dcfaf6ba20c41bd00bfd7e6d4ddf7fd0d6cbb1846438d8",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/千鶴/超必殺技_当てる.png"
+    }
+  ],
+  "extraVariants": "追加指示後",
+  "artApproved": false
+}

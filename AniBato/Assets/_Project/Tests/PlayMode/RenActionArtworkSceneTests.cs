@@ -40,7 +40,8 @@ namespace AniBato.Tests
                     Assert.That(sim.Match.IsFinished,Is.False);Assert.That(view.UsesPaperSprite,Is.True);
                     Assert.That(view.RenderedSample.State,Is.EqualTo(states[action]));
                     bool impact=attack.Frame>=attack.Definition.StartupFrames+attack.Definition.DamageDelayFrames;
-                    Assert.That(body.sprite,Is.SameAs(pose.Frames[impact?1:0]));
+                    int expectedFrame=action==1||action==2?0:impact?1:0;
+                    Assert.That(body.sprite,Is.SameAs(pose.Frames[expectedFrame]));
                     Assert.That(body.flipX,Is.EqualTo(view.RenderedSample.FlipX^pose.ReverseFacing));
                     Assert.That(body.transform.localScale,Is.EqualTo(Vector3.one));
                     if(!impact){prep++;if(!prepShot){Capture(name+"_prepare",true,"rework_r4_ren");prepShot=true;}}
@@ -71,7 +72,7 @@ namespace AniBato.Tests
                     int held=0;while(body.sprite==pose.Frames[1]&&held++<data.PaperMotion.UltimateImpactMinimumTicks+1)Tick();
                     Assert.That(held,Is.LessThanOrEqualTo(data.PaperMotion.UltimateImpactMinimumTicks));
                 }
-                Assert.That(body.sprite,Is.Not.SameAs(pose.Frames[1]));Capture(name+"_released",true,"rework_r4_ren");
+                Assert.That(body.sprite,Is.Not.SameAs(pose.Frames[pose.Frames.Length-1]));Capture(name+"_released",true,"rework_r4_ren");
             }
         }
     }

@@ -100,6 +100,63 @@
           "sha256": "b7b7d044df621250088a867b352c232519625dd093dacb556e809530e9865228"
         }
       ],
+      "selected": false
+    },
+    {
+      "key": "ensemble",
+      "version": 2,
+      "source": "art_source/title_paper/ensemble_v2.png",
+      "promptFile": "art_source/title_paper/ensemble_v2.prompt.json",
+      "sha256": "4dc529b6a8fe20e7ff23fa4ce948a5a4ed43e1e88fbbb4af2a8eb22a7095d5f6",
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "references": [
+        {
+          "path": "art_source/title_paper/ensemble_v1.png",
+          "sha256": "5054467f76063ee7f801f2ef85a7fbdf50c2f191c9cd5346a52205b167ccb3c9"
+        },
+        {
+          "path": "art_source/title_paper/references/battle_a_la_carte_card_back_user_20261017.png",
+          "sha256": "6682f4c77064fee8d6329be912e4e267d7bdf35fd754771dac3a09f3ad87a1d5"
+        },
+        {
+          "path": "art_source/paper_roster_idle/generated/minato_idle_v1.png",
+          "sha256": "4f99711aea9118b75c823364da1f25b0b7e6f2380ea4c452ed0e8bfee48c21f4"
+        },
+        {
+          "path": "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+          "sha256": "889b6e149d4d5ec44475712ec919011ce3045de39e4e8cd1a97d410e046b6275"
+        },
+        {
+          "path": "art_source/paper_roster_idle/generated/ryuta_idle_v1.png",
+          "sha256": "9b6c6bcdd9bd33a7c72f12923081ddb35d95b7babe501d5b9263c89a48eb57a1"
+        }
+      ],
+      "selected": false,
+      "rejected": "透真6指と暁の握りをユーザーが指摘"
+    },
+    {
+      "key": "ensemble",
+      "version": 5,
+      "source": "art_source/title_paper/ensemble_v5.png",
+      "promptFile": "art_source/title_paper/ensemble_v5.prompt.json",
+      "sha256": "b94c5f60062dfcaffdbc45562fb6060d990127424dd38ebe3e53010b165ad27d",
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "references": [
+        {
+          "path": "art_source/title_paper/ensemble_v3.png",
+          "sha256": "e0e421970086e6231c000ae576425deb1f25813d3866e40be62eb98e25619f8f"
+        },
+        {
+          "path": "art_source/title_paper/references/akatsuki_left_card_grip_v1.png",
+          "sha256": "ef596c7e850d5f5b5c6d52a9e6988821a4f7d2b5d43e8778a463e0fe7139077f"
+        }
+      ],
       "selected": true
     }
   ],

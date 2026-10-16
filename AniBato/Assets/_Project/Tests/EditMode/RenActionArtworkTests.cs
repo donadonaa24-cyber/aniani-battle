@@ -13,17 +13,18 @@ namespace AniBato.Tests
     {
         private static CharacterData Ren=>AssetDatabase.LoadAssetAtPath<BattleSetup>("Assets/_Project/Data/BattleSetup.asset").Character(1);
         [Test]
-        public void RenHasFourteenNativeKeysAndKeepsHisCoreAndUnmadeMotionFallbacks()
+        public void RenHasTwelveAdoptedKeysAndKeepsHisCoreAndUnmadeMotionFallbacks()
         {
             var data=Ren;var paper=data.PaperMotion;
             Assert.That(data.ActionArtworkSchemaVersion,Is.EqualTo(1));Assert.That(data.ActionArtworkPending,Is.True);
             var states=new[]{AnimationState.Attack1,AnimationState.Attack3,AnimationState.AirUp,AnimationState.CrouchAttack,
                 AnimationState.AirNeutral,AnimationState.SpecialNeutral,AnimationState.Ultimate};
-            var poses=states.Select(state=>paper.Find(state)).ToArray();Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(14));
+            var poses=states.Select(state=>paper.Find(state)).ToArray();Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(12));
             foreach(var pose in poses)
             {
-                Assert.That(pose.Valid,Is.True);Assert.That(pose.Frames.Length,Is.EqualTo(2));
-                Assert.That(pose.FrameHeadHeights.Length,Is.EqualTo(2));Assert.That(pose.FrameOriginYs.Length,Is.EqualTo(2));
+                int count=pose.Key=="down"||pose.Key=="air"?1:2;
+                Assert.That(pose.Valid,Is.True);Assert.That(pose.Frames.Length,Is.EqualTo(count));
+                Assert.That(pose.FrameHeadHeights.Length,Is.EqualTo(count));Assert.That(pose.FrameOriginYs.Length,Is.EqualTo(count));
                 foreach(var sprite in pose.Frames)
                 {
                     Assert.That(sprite.texture.width,Is.EqualTo(1304));Assert.That(sprite.texture.height,Is.EqualTo(1450));

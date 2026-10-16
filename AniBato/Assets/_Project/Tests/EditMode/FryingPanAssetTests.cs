@@ -15,7 +15,7 @@ namespace AniBato.Tests
     {
         private static CharacterData Chizuru => AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/_Project/Data/Chizuru.asset");
         [Test]
-        public void EveryNormalUsesTwoDifferentPanPicturesAtTheExactCombatPhase()
+        public void PanNormalsUseTwoPicturesAndAirAndDownUseOneAtTheExactCombatPhase()
         {
             AnimationState[] states = { AnimationState.Attack1, AnimationState.Attack2, AnimationState.Attack3, AnimationState.CrouchAttack,
                 AnimationState.BackAttack, AnimationState.AirAttack, AnimationState.AirNeutral, AnimationState.AirForward,
@@ -23,17 +23,22 @@ namespace AniBato.Tests
             foreach (var state in states)
             {
                 var pose = Chizuru.PaperMotion.Find(state);
-                Assert.That(pose.Frames.Length, Is.EqualTo(2)); Assert.That(pose.Frames[0], Is.Not.SameAs(pose.Frames[1]));
+                bool single=state==AnimationState.CrouchAttack||state==AnimationState.AirNeutral||state==AnimationState.AirAttack;
+                Assert.That(pose.Frames.Length, Is.EqualTo(single?1:2));
+                if(!single)Assert.That(pose.Frames[0], Is.Not.SameAs(pose.Frames[1]));
                 Assert.That(pose.ReverseFacing, Is.EqualTo(state == AnimationState.BackAttack || state == AnimationState.AirBack));
                 foreach (var sprite in pose.Frames) Assert.That(AssetDatabase.GetAssetPath(sprite), Does.Contain("_anticipation_").Or.Contain("_impact_"));
-                // Every chosen source is now one of the six horizontal originals, not the vertical set.
+                // Normals keep their adopted horizontal originals; dedicated directional keys replace the tilted placeholders.
                 var manifest=JsonUtility.FromJson<AniBato.EditorTools.PaperActionBuilder.Manifest>(File.ReadAllText("../art_source/paper_cutout/runtime-manifest.json"));
                 var row=manifest.poses.First(p=>p.states.Contains((int)state));
-                Assert.That(row.frames.All(f=>f.source.Contains("/horizontal_")),Is.True);
+                string required=state==AnimationState.AirUp?"/vertical_2_":
+                    state==AnimationState.CrouchAttack||state==AnimationState.AirNeutral||state==AnimationState.AirAttack?
+                    "/paper_roster_action/chizuru/prepared/":"/horizontal_";
+                Assert.That(row.frames.All(f=>f.source.Contains(required)),Is.True,state.ToString());
                 for (int frame = 0; frame < 38; frame++)
                 {
                     var sample = new AnimationSample { State = state, IsAttack = true, Age = frame, AttackFrame = frame, Startup = 11, Active = 6, Recovery = 21 };
-                    Assert.That(pose.Frame(sample), Is.SameAs(pose.Frames[frame < 11 ? 0 : 1]));
+                    Assert.That(pose.Frame(sample), Is.SameAs(pose.Frames[single?0:frame < 11 ? 0 : 1]));
                 }
             }
         }

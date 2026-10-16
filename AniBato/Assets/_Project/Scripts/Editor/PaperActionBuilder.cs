@@ -29,7 +29,7 @@ namespace AniBato.EditorTools
             foreach (var source in manifest.poses)
             {
                 VerifySource(source.source, source.sha256);
-                var pose = source.frames != null && source.frames.Length > 0 ? BuildTwoFrames(source, ppu) :
+                var pose = source.frames != null && source.frames.Length > 0 ? BuildFrames(source, ppu) :
                     PaperSourcePacking.Body(source.key, "../" + source.source, ppu, source.airborne, source.headTopY, source.footY, source.footMinX, source.footMaxX);
                 pose.ReverseFacing = source.reverseFacing;
                 pose.SwitchOnProjectileRelease = source.key=="special_neutral";
@@ -66,15 +66,18 @@ namespace AniBato.EditorTools
                 throw new InvalidOperationException("強被弾または紙効果が未完成です。");
             data.SchemaVersion = 2;
         }
-        private static PaperPose BuildTwoFrames(PoseSource source, float ppu)
+        private static PaperPose BuildFrames(PoseSource source, float ppu)
         {
-            if (source.frames.Length != 2) throw new InvalidOperationException("攻撃は予備と有効の2原画です: " + source.key);
-            var result = new PaperPose { Key = source.key, Airborne = source.airborne, Frames = new Sprite[2], HoldTicks = 8,
-                FrameHeadHeights = new float[2], FrameFootBaseYs = new float[2], FrameFootMinXs = new float[2], FrameFootMaxXs = new float[2] };
-            for (int i = 0; i < 2; i++)
+            int count = source.frames.Length;
+            bool singleAllowed = source.states != null && Array.Exists(source.states, s =>
+                s == (int)AnimationState.CrouchAttack || s == (int)AnimationState.AirNeutral);
+            if (count != 2 && !(count == 1 && singleAllowed)) throw new InvalidOperationException("通常は2原画、空中・下は1原画です: " + source.key);
+            var result = new PaperPose { Key = source.key, Airborne = source.airborne, Frames = new Sprite[count], HoldTicks = 8,
+                FrameHeadHeights = new float[count], FrameFootBaseYs = new float[count], FrameFootMinXs = new float[count], FrameFootMaxXs = new float[count] };
+            for (int i = 0; i < count; i++)
             {
                 var frame = source.frames[i]; VerifySource(frame.source, frame.sha256);
-                var packed = PaperSourcePacking.Body(source.key + "_" + (i == 0 ? "anticipation" : "impact"), "../" + frame.source, ppu,
+                var packed = PaperSourcePacking.Body(source.key + "_" + (count == 2 && i == 0 ? "anticipation" : "impact"), "../" + frame.source, ppu,
                     source.airborne, frame.headTopY, frame.footY, frame.footMinX, frame.footMaxX);
                 result.Frames[i] = packed.Frames[0]; result.FrameHeadHeights[i] = packed.HeadHeight;
                 result.FrameFootBaseYs[i] = packed.FootBaseY; result.FrameFootMinXs[i] = packed.FootMinX; result.FrameFootMaxXs[i] = packed.FootMaxX;

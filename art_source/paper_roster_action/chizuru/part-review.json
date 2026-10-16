@@ -1,0 +1,33 @@
+{
+  "character": "千鶴",
+  "reviewDate": "2026-10-17",
+  "artApproved": false,
+  "gameConnected": true,
+  "reference": "art_source/paper_cutout/generated/chizuru_paper_idle_v1.png",
+  "checks": [
+    "頭・髪・靴を待機と原寸で比較。低姿勢を枠へ合わせて拡大しない",
+    "フライパンは本人左手、胸元側が見える構図で右画面の肩から肘と手首へつながる",
+    "通常3段の当てるv2：採用済み1・2段の掌側の握りと柄の下の指を基準に修正",
+    "空中は選定当てる1枚のみ、両脚が空中。下は低い当てる1枚のみ",
+    "カレーの決めは左手のほぼ空の皿と右手のスプーン。波は別素材"
+  ],
+  "limits": [
+    "髪のなびきと靴の投影による横幅差は残る。セル枠一致だけで美術最終承認とは扱わない",
+    "手の指の一部は柄と親指の後ろへ重なり、常に5本すべてが露出するポーズではない"
+  ],
+  "packing": {
+    "canvas": [
+      1304,
+      1450
+    ],
+    "pixelsPerUnit": 532.5893,
+    "sole": 1328,
+    "resampledCharacterPixels": 0,
+    "proof": [
+      "pixel-audit.json",
+      "normal3_hand_fix/selected.json"
+    ]
+  },
+  "bagBackup": "art_source/paper_cutout/variants/bag-backup.json",
+  "unityVerifiedTag": "paper_single_title_3"
+}

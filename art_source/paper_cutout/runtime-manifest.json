@@ -329,7 +329,7 @@
       "width": 1304,
       "height": 1450,
       "artReview": "integrated_art_review_pending",
-      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "artNote": "3段当てるの左手を1・2段採用の掌側の握りへ修正。大きな踏み込み、通常4枚と性能を維持。",
       "frames": [
         {
           "key": "horizontal_3_anticipation",
@@ -344,12 +344,12 @@
         },
         {
           "key": "horizontal_3_impact",
-          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_3_impact.png",
-          "sha256": "c5548d63a36a0d635ccd1b18de7ce5077c8f585f32dc4a8daa9da5a8a6062bad",
-          "headTopY": 305,
+          "source": "art_source/paper_roster_action/chizuru/normal3_hand_fix/prepared/horizontal_3_impact.png",
+          "sha256": "ef65db086708b79ba4b366d1f37329f8c2aa8e1116977363d527cd79191672c4",
+          "headTopY": 299,
           "footY": 1329,
-          "footMinX": 953,
-          "footMaxX": 1195,
+          "footMinX": 130,
+          "footMaxX": 1199,
           "width": 1304,
           "height": 1450
         }
@@ -359,40 +359,40 @@
     },
     {
       "key": "crouch_attack",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
-      "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+      "source": "art_source/paper_roster_action/chizuru/prepared/down_prepare.png",
+      "sha256": "1796dc625213d04d3fa39a679bf32f0dbdd374ebc49530055634bc9933bab9f1",
       "states": [
         25
       ],
       "airborne": false,
-      "headTopY": 171,
+      "headTopY": 287,
       "footY": 1329,
-      "footMinX": 222,
-      "footMaxX": 1192,
+      "footMinX": 215,
+      "footMaxX": 1141,
       "width": 1304,
       "height": 1450,
-      "artReview": "integrated_art_review_pending",
-      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "artReview": "integration_verification_pending",
+      "artNote": "不足する2コマを補完。性能不変、美術最終承認は別。",
       "frames": [
         {
-          "key": "horizontal_2_anticipation",
-          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
-          "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
-          "headTopY": 171,
+          "key": "down_prepare",
+          "source": "art_source/paper_roster_action/chizuru/prepared/down_prepare.png",
+          "sha256": "1796dc625213d04d3fa39a679bf32f0dbdd374ebc49530055634bc9933bab9f1",
+          "headTopY": 287,
           "footY": 1329,
-          "footMinX": 222,
-          "footMaxX": 1192,
+          "footMinX": 215,
+          "footMaxX": 1141,
           "width": 1304,
           "height": 1450
         },
         {
-          "key": "horizontal_3_impact",
-          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_3_impact.png",
-          "sha256": "c5548d63a36a0d635ccd1b18de7ce5077c8f585f32dc4a8daa9da5a8a6062bad",
-          "headTopY": 305,
+          "key": "down_impact",
+          "source": "art_source/paper_roster_action/chizuru/prepared/down_impact.png",
+          "sha256": "cbc707da7e6fe191fc4ede2774cb0d1b279ef02f43348747530e7b0cd01dc415",
+          "headTopY": 379,
           "footY": 1329,
-          "footMinX": 953,
-          "footMaxX": 1195,
+          "footMinX": 135,
+          "footMaxX": 1091,
           "width": 1304,
           "height": 1450
         }
@@ -445,41 +445,41 @@
     },
     {
       "key": "air_neutral",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
-      "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+      "source": "art_source/paper_roster_action/chizuru/prepared/air_prepare.png",
+      "sha256": "c497636aa8f4ffe7c95bb1a6349c9eedbec193b38c7653324135cd765665df6a",
       "states": [
         9,
         27
       ],
       "airborne": true,
-      "headTopY": 159,
+      "headTopY": 170,
       "footY": 1329,
-      "footMinX": 254,
-      "footMaxX": 1202,
+      "footMinX": 684,
+      "footMaxX": 789,
       "width": 1304,
       "height": 1450,
-      "artReview": "integrated_art_review_pending",
-      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "artReview": "integration_verification_pending",
+      "artNote": "不足する2コマを補完。性能不変、美術最終承認は別。",
       "frames": [
         {
-          "key": "horizontal_1_anticipation",
-          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_anticipation.png",
-          "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
-          "headTopY": 159,
+          "key": "air_prepare",
+          "source": "art_source/paper_roster_action/chizuru/prepared/air_prepare.png",
+          "sha256": "c497636aa8f4ffe7c95bb1a6349c9eedbec193b38c7653324135cd765665df6a",
+          "headTopY": 170,
           "footY": 1329,
-          "footMinX": 254,
-          "footMaxX": 1202,
+          "footMinX": 684,
+          "footMaxX": 789,
           "width": 1304,
           "height": 1450
         },
         {
-          "key": "horizontal_1_impact",
-          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_1_impact.png",
-          "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
-          "headTopY": 237,
+          "key": "air_impact",
+          "source": "art_source/paper_roster_action/chizuru/prepared/air_impact.png",
+          "sha256": "f21c0c419b4d072aa35b53eda4d04193a9b9e52fb6a0c4a75281e374e93fd026",
+          "headTopY": 327,
           "footY": 1329,
-          "footMinX": 798,
-          "footMaxX": 1031,
+          "footMinX": 830,
+          "footMaxX": 997,
           "width": 1304,
           "height": 1450
         }
@@ -575,46 +575,46 @@
     },
     {
       "key": "air_up",
-      "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
-      "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+      "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+      "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
       "states": [
         30
       ],
-      "airborne": true,
-      "headTopY": 171,
+      "airborne": false,
+      "headTopY": 325,
       "footY": 1329,
-      "footMinX": 222,
-      "footMaxX": 1192,
+      "footMinX": 269,
+      "footMaxX": 1088,
       "width": 1304,
       "height": 1450,
-      "artReview": "integrated_art_review_pending",
-      "artNote": "左手フライパンの2原画。頭・靴・手の絵の最終審査は残る。",
+      "artReview": "integration_verification_pending",
+      "artNote": "不足する2コマを補完。性能不変、美術最終承認は別。",
       "frames": [
         {
-          "key": "horizontal_2_anticipation",
-          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_anticipation.png",
-          "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
-          "headTopY": 171,
+          "key": "up_prepare",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_anticipation.png",
+          "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
+          "headTopY": 325,
           "footY": 1329,
-          "footMinX": 222,
-          "footMaxX": 1192,
+          "footMinX": 269,
+          "footMaxX": 1088,
           "width": 1304,
           "height": 1450
         },
         {
-          "key": "horizontal_2_impact",
-          "source": "art_source/paper_cutout/variants/fryingpan/prepared/horizontal_2_impact.png",
-          "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
-          "headTopY": 213,
+          "key": "up_impact",
+          "source": "art_source/paper_cutout/variants/fryingpan/prepared/vertical_2_impact.png",
+          "sha256": "92c9a4b94ebd01e7e44ef246f1937c7c44c899386ac619dcf02ae17e3bc7ed6f",
+          "headTopY": 82,
           "footY": 1329,
-          "footMinX": 192,
-          "footMaxX": 1180,
+          "footMinX": 248,
+          "footMaxX": 1077,
           "width": 1304,
           "height": 1450
         }
       ],
       "reverseFacing": false,
-      "tiltDegrees": 60
+      "tiltDegrees": 0
     },
     {
       "key": "air_down",
@@ -847,8 +847,31 @@
       "footMaxX": 461,
       "width": 1246,
       "height": 1263,
-      "artReview": "provisional_user_requested_integration",
-      "artNote": "生成済みの候補。左右の手、紙縁、頭と靴などの大きさを最終確認する前です。ゲームへの差し替えは未完了です。"
+      "artReview": "integration_verification_pending",
+      "artNote": "不足する2コマを補完。性能不変、美術最終承認は別。",
+      "frames": [
+        {
+          "key": "super_prepare",
+          "source": "art_source/paper_cutout/generated/chizuru_paper_ultimate_v1.png",
+          "sha256": "26928604a2bf0ac486795a1565db5b5c441e8bca528ac2be3370ef8aa898ef54",
+          "headTopY": 30,
+          "footY": 1217,
+          "footMinX": 295,
+          "footMaxX": 461
+        },
+        {
+          "key": "super_impact",
+          "source": "art_source/paper_roster_action/chizuru/prepared/super_impact.png",
+          "sha256": "c2e626c068ab198ca4dcfaf6ba20c41bd00bfd7e6d4ddf7fd0d6cbb1846438d8",
+          "headTopY": 165,
+          "footY": 1329,
+          "footMinX": 209,
+          "footMaxX": 1196,
+          "width": 1304,
+          "height": 1450
+        }
+      ],
+      "tiltDegrees": 0
     }
   ],
   "effects": [

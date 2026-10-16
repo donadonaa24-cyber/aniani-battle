@@ -1,0 +1,16 @@
+{
+  "id": "normal3_impact",
+  "character": "千鶴",
+  "version": 2,
+  "tool": "built-in image_gen",
+  "source": "art_source/paper_roster_action/chizuru/normal3_hand_fix/generated/normal3_impact_v2.png",
+  "references": [
+    "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_3_impact_v2.png",
+    "art_source/paper_cutout/variants/fryingpan/generated/chizuru_pan_horizontal_1_impact_v1.png"
+  ],
+  "referenceRoles": [
+    "修正対象：通常3段目の当てる全身原画",
+    "正しい握りの基準：採用済み通常1・2段目の左手"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の千鶴の全身原画を編集する。画像2はすでに採用している1・2段目の正しい左手の握りの参考。変更するのは画像1の画面右側でフライパンの柄を持つ左手と、その手首のごく小さな範囲だけ。\n画像1では左手の甲が表に出た不自然な握りなので、画像2と同じ掌側が見える左手に描き直す。4本の指が柄の下側から自然に巻きつき、親指が反対側から柄を押さえる。掌の面と握った指の内側が見える。左肩から肘、手首、左手が自然につながるようにする。指を増やさず、4指と親指の計5指。画像2の手の向き・親指の位置・柄への指の巻きつきを直接の基準にする。\n画像1のフライパンと柄の大きさ・位置・傾きはそのまま。髪、顔、胴体、両脚、両靴、空いた右手、衣装の線と色、3段目の踏み込みの大きいポーズは変更しない。全身を反転しない。1189×1323の画像1と同じ原画キャンバス、同じ原画の配置、同じ人物倍率と部位実寸。白い切り抜き縁も手の周囲に連続して維持する。全身一人一姿勢だけ、背景は完全透明。背景・地面・影・効果・文字・新しい道具を追加しない。\n必須：画像1はゲーム用の余白を足す前の原寸の編集対象。髪の上端は元のy193付近、前脚の靴底は元のy1216付近、前の靴の横幅約242px。人物をキャンバスに合わせて縮小しない。画像1の全身をそのまま維持し、左手の掌側の握りだけを修正する。"
+}

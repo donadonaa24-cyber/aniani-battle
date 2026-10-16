@@ -1,3 +1,9 @@
+2026-10-17現在：paper_single_title_3で全4合格（Edit543／Play68）。空中・下は各1枚、通常は共有4原画。千鶴の握りと集合絵v5を反映。paper_single_title_webも49.4MBで実ビルド・内蔵ブラウザ確認済み。次はPAPER_MINATO_TWELVE_KEYS。追加差分は追加指示後。
+
+2026-10-17現在：paper_single_title_3全4合格（Edit543／Play68）。空中・下各1枚、通常共有4枚。千鶴の不足と3段の握り・集合絵v5を接続。WebGL更新中。次はPAPER_MINATO_TWELVE_KEYS。追加差分は追加指示後。
+
+2026-10-17最新指定：空中N・地上下攻撃は各1原画（決め絵のみ）。通常は各段2原画を維持し1・2段で共有、計4原画。今後の追加差分はユーザーの追加指示後。旧2枚指定・溜め／被弾の自動追加予定より docs/codex_tasks/PAPER_SINGLE_KEY_AIR_AND_DOWN.md を優先。
+
 # 実装順と交代時の確認表（2026-10-16）
 
 2026-10-17最新：蓮の14原画を実Unity rework_r4_ren_2で全4合格（Edit539／Play67）、左右の48実描画を保存。次はPAPER_CHIZURU_MISSING_KEYS、その後湊から人物順に続ける。WebGLの今回差分は未更新。全員の攻撃後に溜め・被弾を制作する。

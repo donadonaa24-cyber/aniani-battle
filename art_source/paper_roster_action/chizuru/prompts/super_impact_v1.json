@@ -1,0 +1,21 @@
+{
+  "id": "super_impact",
+  "key": "chizuru",
+  "character": "千鶴",
+  "pose": "super",
+  "phase": "impact",
+  "label": "超必殺カレーぶちまけ",
+  "version": 1,
+  "source": "art_source/paper_roster_action/chizuru/generated/super_impact_v1.png",
+  "references": [
+    "art_source/paper_cutout/generated/chizuru_paper_idle_v1.png",
+    "art_source/paper_cutout/generated/chizuru_paper_ultimate_v1.png"
+  ],
+  "referenceRoles": [
+    "採用待機：人物と部位実寸",
+    "道具と握り／連続する構え"
+  ],
+  "prompt": "Use case: identity-preserve. 全身の透明ゲーム原画を一枚。画像1は千鶴の待機、人物の顔・髪・靴の実寸の基準。画像2は超必殺の予備のカレー皿と銀スプーン。画像2の次の決めポーズを描く。茶色ボブ髪と茶目、オレンジ長袖、紺のプリーツスカート、白スニーカーを厳密に保つ。\nカレーを前へぶちまけた決め姿。両脚を接地し前の膝を深く曲げ、腰と胸を画面右へ力強く入れる。胸元側が見える斜め横。本人左肩からつながる左腕（画面右側）で同じ白いカレー皿を前へ大きく突き出し、皿の口を画面右前へ傾ける。皿はほぼ空で茶色いソースの小さい残りだけ。飛ぶカレーの波はゲームが別に表示するので描かない。本人右腕（画面左側）は同じ銀スプーンを握り後ろへ引き、右手は自然な握り。満杯のカレーは残さない。パンやおたまは持たない。\n腕2本、左右の手を1本ずつ各5指、脚2本。皿・スプーンを一つずつ。頭と髪の高さ・顔・靴の実寸を待機のままにし、髪幅約460px、靴幅約170〜215px。1246×1263透明キャンバス、全身を枠へ拡大しない。髪・両靴・皿・スプーンの先まで全て余白付きで切らずに収める。普通のアニメ線とセル塗り、薄い白い切り抜き縁を外周全て。背景・地面・影・相手・エフェクト・文字・グロー・紙繊維・関節分割なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

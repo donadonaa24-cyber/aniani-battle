@@ -14,7 +14,7 @@ namespace AniBato.Tests
     public sealed partial class PaperCharacterSceneTests
     {
         [UnityTest]
-        public IEnumerator TomaUpDownAirDroneAndRocketUseTwoKeyPosesFromActualInputsInBothDirections()
+        public IEnumerator TomaUpDownAirDroneAndRocketFollowAdoptedKeyCountsInBothDirections()
         {
             var data=runner.Setup.Character(0);var keys=controller.Bindings.P1;
             AnimationState[] states={AnimationState.AirUp,AnimationState.CrouchAttack,AnimationState.AirNeutral,AnimationState.SpecialNeutral,AnimationState.Ultimate,AnimationState.BackAttack};
@@ -41,7 +41,8 @@ namespace AniBato.Tests
                     Assert.That(sim.Match.IsFinished,Is.False,"検査用の相手も場内に保持する");
                     Assert.That(view.UsesPaperSprite,Is.True);Assert.That(view.RenderedSample.State,Is.EqualTo(states[action]));
                     bool damaging=attack.Frame>=attack.Definition.StartupFrames+attack.Definition.DamageDelayFrames;
-                    Assert.That(body.sprite,Is.SameAs(pose.Frames[damaging?1:0]));Assert.That(body.flipX,Is.EqualTo((facing<0)^pose.ReverseFacing));
+                    int expectedFrame=action==1||action==2?0:damaging?1:0;
+                    Assert.That(body.sprite,Is.SameAs(pose.Frames[expectedFrame]));Assert.That(body.flipX,Is.EqualTo((facing<0)^pose.ReverseFacing));
                     string suffix=facing>0?"_right":"_left";
                     if(!damaging){prep++;if(!capturedPrep){Capture(pose.Key+"_prepare"+suffix,true,"rework_r4_toma");capturedPrep=true;}}
                     else if(attack.IsActive)
@@ -64,7 +65,7 @@ namespace AniBato.Tests
                     while(body.sprite==pose.Frames[1]&&wait++<data.PaperMotion.UltimateImpactMinimumTicks+1)Tick();
                     Assert.That(wait,Is.LessThanOrEqualTo(data.PaperMotion.UltimateImpactMinimumTicks));
                 }
-                Assert.That(body.sprite,Is.Not.SameAs(pose.Frames[1]));
+                Assert.That(body.sprite,Is.Not.SameAs(pose.Frames[pose.Frames.Length-1]));
             }
         }
         [UnityTest]

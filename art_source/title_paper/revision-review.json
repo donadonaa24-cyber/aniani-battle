@@ -1,0 +1,31 @@
+{
+  "selectedVersion": 5,
+  "artApproved": false,
+  "candidates": [
+    {
+      "version": 2,
+      "status": "rejected_by_user",
+      "reason": "透真6指、暁が薄いカードをつまむ形でない"
+    },
+    {
+      "version": 3,
+      "status": "rejected_for_card_grip",
+      "reason": "透真5指、暁の長い指が残る"
+    },
+    {
+      "version": 4,
+      "status": "rejected_for_unchanged_card_grip",
+      "reason": "手元の形が改善しない"
+    },
+    {
+      "version": 5,
+      "status": "game_adopted_unapproved",
+      "reason": "手元の拡大原画から左手のつまみ持ちへ反映。透真5指を保持"
+    }
+  ],
+  "detailProofs": [
+    "review/透真_右手5指_拡大.png",
+    "review/暁_左手カード_拡大.png"
+  ],
+  "unityVerifiedTag": "paper_single_title_3"
+}

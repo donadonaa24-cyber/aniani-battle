@@ -15,19 +15,20 @@ namespace AniBato.Tests
     {
         private static CharacterData Toma => AssetDatabase.LoadAssetAtPath<BattleSetup>("Assets/_Project/Data/BattleSetup.asset").Character(0);
         [Test]
-        public void TomaSharesFirstTwoNormalKeysAndKeepsFourteenDistinctAttackImagesAlongsideCorePoses()
+        public void TomaSharesNormalPairsAndUsesTwelveImagesWithSingleAirAndDown()
         {
             var data=Toma; var paper=data.PaperMotion;
             Assert.That(data.ActionArtworkSchemaVersion,Is.EqualTo(1)); Assert.That(data.ActionArtworkPending,Is.True);
             string[] keys={"normal1","normal2","normal3","up","down","air","special","super"};
             var poses=keys.Select(k=>paper.Poses.Single(p=>p.Key==k)).ToArray();
-            Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(14));
+            Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(12));
             Assert.That(poses[1].Frames,Is.EqualTo(poses[0].Frames));
             Assert.That(poses.Take(3).SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(4));
             foreach(var pose in poses)
             {
-                Assert.That(pose.Valid,Is.True); Assert.That(pose.Frames.Length,Is.EqualTo(2));
-                Assert.That(pose.FrameHeadHeights.Length,Is.EqualTo(2)); Assert.That(pose.FrameOriginYs.Length,Is.EqualTo(2));
+                int count=pose.Key=="down"||pose.Key=="air"?1:2;
+                Assert.That(pose.Valid,Is.True); Assert.That(pose.Frames.Length,Is.EqualTo(count));
+                Assert.That(pose.FrameHeadHeights.Length,Is.EqualTo(count)); Assert.That(pose.FrameOriginYs.Length,Is.EqualTo(count));
                 foreach(var sprite in pose.Frames)
                 {
                     Assert.That(sprite.texture.width,Is.EqualTo(1304)); Assert.That(sprite.texture.height,Is.EqualTo(1450));

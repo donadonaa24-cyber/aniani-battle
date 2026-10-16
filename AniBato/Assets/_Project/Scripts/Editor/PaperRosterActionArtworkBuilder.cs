@@ -29,9 +29,10 @@ namespace AniBato.EditorTools
                 var additions=new List<PaperPose>();
                 for(int action=0;action<Actions.Length;action++)
                 {
-                    var frames=new[]{"prepare","impact"}.Select(phase=>m.frames.SingleOrDefault(f=>f.id==Actions[action]+"_"+phase)).ToArray();
+                    bool single=Actions[action]=="down"||Actions[action]=="air";
+                    var frames=(single?new[]{"impact"}:new[]{"prepare","impact"}).Select(phase=>m.frames.SingleOrDefault(f=>f.id==Actions[action]+"_"+phase)).ToArray();
                     if(frames.All(f=>f==null))continue;
-                    if(frames.Any(f=>f==null))throw new InvalidOperationException("予備と当てるを一組で接続: "+Actions[action]);
+                    if(frames.Any(f=>f==null))throw new InvalidOperationException("必要な攻撃原画が不足: "+Actions[action]);
                     var pose=new PaperPose{Key=Actions[action],States=new[]{States[action]},HoldTicks=8,
                         Frames=frames.Select(f=>PaperActionArtworkBuilder.Import(Keys[index]+"_"+f.id,f.prepared,f.sha256,1304,1450,new Vector2(.5f,122f/1450))).ToArray(),
                         FrameHeadHeights=frames.Select(f=>(1328-f.headTopY)/PaperActionArtworkBuilder.PixelsPerUnit).ToArray(),

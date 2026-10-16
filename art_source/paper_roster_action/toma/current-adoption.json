@@ -1,0 +1,96 @@
+{
+  "key": "toma",
+  "name": "透真",
+  "unityVerifiedTag": "paper_single_title_3",
+  "motionAsset": "AniBato/Assets/_Project/Data/tomaCorePaperMotion.asset",
+  "completeAttackArtwork": true,
+  "bodyFrames": 12,
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal1_prepare.png",
+      "sha256": "d80dbfc27c101468d5300b1e7e84ec407368ad41e3a2e80843f5db6edc491fd4",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/通常1・2段共通_予備.png"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal1_impact.png",
+      "sha256": "76c2891d015867fa4713354f274e7da3fd8bc50d753d8f9be344a3e9c2f9f674",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/通常1・2段共通_当てる.png"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal3_prepare.png",
+      "sha256": "0cd7fade3080c586adc6b84e551319a3c1a0b74876d4362c28f9c4abd6445fe3",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/通常3段_予備.png"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal3_impact.png",
+      "sha256": "bc87a951ab467d8a6021e9ee15a4eed70a67fb3186064f3502660fe27118d20a",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/通常3段_当てる.png"
+    },
+    {
+      "id": "up_prepare",
+      "title": "上攻撃_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_up_prepare.png",
+      "sha256": "9047291062b99e3b804bd78b0630543322b3ca9f4d0667d313930c5398268a28",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/上攻撃_予備.png"
+    },
+    {
+      "id": "up_impact",
+      "title": "上攻撃_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_up_impact.png",
+      "sha256": "afa746d1db39fbfd91b13feabcfebf384db0faa8857c0a504e4ef27009ddaadc",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/上攻撃_当てる.png"
+    },
+    {
+      "id": "down_single",
+      "title": "下攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_down_impact.png",
+      "sha256": "989f7b438031f25605b8120e04bc16157ffcb1a9b93b962ccffc268befaa4ce4",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/下攻撃_1枚採用.png"
+    },
+    {
+      "id": "air_single",
+      "title": "空中攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_air_impact.png",
+      "sha256": "64140223a2e0c1f62b97013009079de03aff634fe1a9c5ae7503d93ce8034441",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/空中攻撃_1枚採用.png"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_special_prepare.png",
+      "sha256": "e181a75ea06006b0324607a74f1958ad81eb925aaa540b0933a6e284700c33a4",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/特殊技_予備.png"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_special_impact.png",
+      "sha256": "5ed63490ad0740e6ba2d0ed3c7a828f532e4919c4cee897bcd2e94ea00197d30",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/特殊技_当てる.png"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_super_prepare.png",
+      "sha256": "b181000cdc238158b9bc6a450ecc7676d72ed723be820454b1493b5038990b55",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/超必殺技_予備.png"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_super_impact.png",
+      "sha256": "4413f769fc0d360bb84259fa2b4847eb973216d9b0b541ba8c81688da5a290aa",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/透真/超必殺技_当てる.png"
+    }
+  ],
+  "extraVariants": "追加指示後",
+  "artApproved": false
+}

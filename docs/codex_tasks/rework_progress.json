@@ -14,30 +14,43 @@
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "schemaVersion": 1,
-    "key": "ren",
-    "tag": "rework_r4_ren_2",
+    "tag": "paper_single_title_3",
     "buildAll": "success",
     "edit": {
-      "total": 539,
-      "passed": 539,
+      "total": 543,
+      "passed": 543,
       "failed": 0,
       "skipped": 0
     },
     "play": {
-      "total": 67,
-      "passed": 67,
+      "total": 68,
+      "passed": 68,
       "failed": 0,
       "skipped": 0
     },
     "windowsBuild": "success",
-    "bodyFrames": 14,
-    "complete": true,
-    "artApproved": false,
-    "screenshots": "docs/screenshots/rework_r4_ren/",
-    "screenshotCount": 48,
-    "remaining": "移動・溜め・被弾等の未移行姿勢。全員の攻撃後に後続。",
-    "webGL": "not_updated_for_this_checkpoint"
+    "singleActions": [
+      "down",
+      "air"
+    ],
+    "normalUniqueFrames": 4,
+    "completedDedicatedCharacters": [
+      "toma",
+      "ren",
+      "chizuru"
+    ],
+    "remainingDedicatedCharacters": [
+      "minato",
+      "shiro",
+      "yui",
+      "king",
+      "akatsuki",
+      "ryuta"
+    ],
+    "reviewFolder": "イラスト確認/現在ゲームで採用中",
+    "ensembleVersion": 5,
+    "screenshots": "docs/screenshots/paper_single_title_3/",
+    "screenshotCount": 144
   },
   "activeVerification": null,
   "attempts": [
@@ -433,31 +446,103 @@
       "screenshotCount": 48,
       "remaining": "移動・溜め・被弾等の未移行姿勢。全員の攻撃後に後続。",
       "reason": "蓮の残10原画を追加、超必殺構えv2、実Unity全4工程合格"
+    },
+    {
+      "tag": "paper_single_title_1",
+      "buildAll": "success",
+      "edit": {
+        "total": 543,
+        "passed": 541,
+        "failed": 2
+      },
+      "play": {
+        "total": 68,
+        "passed": 42,
+        "failed": 26
+      },
+      "windowsBuild": "success",
+      "reason": "RectのJSON読込で領域ゼロ。専用DTOへ修正。空中旧別名を同じ1枚へまとめ、画素監査を最新採用枚数へ更新。アサーションは維持。"
+    },
+    {
+      "tag": "paper_single_title_2",
+      "buildAll": "success",
+      "edit": {
+        "total": 543,
+        "passed": 543,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 68,
+        "passed": 68,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "reason": "1枚採用とUI修正は全4合格。集合絵v2はユーザーが6指とカード握りを指摘したため不採用、v5で最終再検証。"
+    },
+    {
+      "tag": "paper_single_title_3",
+      "buildAll": "success",
+      "edit": {
+        "total": 543,
+        "passed": 543,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 68,
+        "passed": 68,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "singleActions": [
+        "down",
+        "air"
+      ],
+      "normalUniqueFrames": 4,
+      "completedDedicatedCharacters": [
+        "toma",
+        "ren",
+        "chizuru"
+      ],
+      "remainingDedicatedCharacters": [
+        "minato",
+        "shiro",
+        "yui",
+        "king",
+        "akatsuki",
+        "ryuta"
+      ],
+      "reviewFolder": "イラスト確認/現在ゲームで採用中",
+      "ensembleVersion": 5,
+      "screenshots": "docs/screenshots/paper_single_title_3/",
+      "screenshotCount": 144
     }
   ],
   "currentArtwork": {
-    "character": "ren",
-    "manifest": "art_source/paper_roster_action/ren/manifest.json",
-    "requiredFrames": 14,
-    "packedCandidates": 14,
-    "generatedSelected": 14,
+    "character": "chizuru",
+    "requiredFrames": 12,
     "gameConnected": true,
-    "verifiedTag": "rework_r4_ren_2",
-    "nextCharacter": "chizuru_missing_actions",
-    "generatedStatus": "14 selected, packed, native Unity verified; final art approval separate"
+    "verifiedTag": "paper_single_title_3",
+    "reviewFolder": "イラスト確認/現在ゲームで採用中",
+    "nextCharacter": "minato",
+    "generatedStatus": "current adoption is authoritative; down/air preparation candidates retained but unused"
   },
-  "nextTask": "docs/codex_tasks/PAPER_CHIZURU_MISSING_KEYS.md",
+  "nextTask": "docs/codex_tasks/PAPER_MINATO_TWELVE_KEYS.md",
   "webGL": {
-    "tag": "paper_release_web",
     "result": "success",
-    "bytes": 47659654,
-    "seconds": 148.6088132,
+    "bytes": 49415100,
+    "seconds": 133.4772428,
     "files": 6,
-    "output": "Build/WebGL/",
+    "tag": "paper_single_title_web",
     "browser": "Codex in-app Chromium",
     "runtime": "passed",
-    "screenshots": "docs/screenshots/paper_release_web/",
+    "ensembleVersion": 5,
+    "screenshots": "docs/screenshots/paper_single_title_web/",
     "screenshotCount": 5,
+    "consoleErrors": 0,
     "physicalGamepad": "not_retested",
     "nativeChromeEdge": "not_retested"
   },
@@ -478,14 +563,9 @@
       "akatsuki",
       "ryuta"
     ],
-    "afterAllAttacks": [
-      "charge_prepare",
-      "charge_release",
-      "light_damage",
-      "heavy_damage"
-    ],
+    "afterAllAttacks": [],
     "status": "active",
-    "instruction": "docs/codex_tasks/PAPER_ACTION_FOUR_KEYS_AND_REMAINING.md",
+    "instruction": "docs/codex_tasks/PAPER_SINGLE_KEY_AIR_AND_DOWN.md",
     "characterNormals": {
       "toma": "1・2段ピストル、3段二丁拳銃（上左手は掌側）",
       "minato": "素手→義手",
@@ -494,7 +574,18 @@
       "king": "邪悪なオーラの爪→吠えて蹴り飛ばす",
       "akatsuki": "原作背面カード斬り→投げ",
       "ryuta": "ジャブ→アッパー"
-    }
+    },
+    "singleKeyActions": [
+      "down",
+      "air"
+    ],
+    "extraVariants": "on_user_request",
+    "deferredAdditionalArtwork": [
+      "charge_prepare",
+      "charge_release",
+      "light_damage",
+      "heavy_damage"
+    ]
   },
   "displayFixes": {
     "tag": "paper_release_5",

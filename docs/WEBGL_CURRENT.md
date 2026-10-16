@@ -1,3 +1,5 @@
+2026-10-17現在：paper_single_title_3で全4合格（Edit543／Play68）。空中・下は各1枚、通常は共有4原画。千鶴の握りと集合絵v5を反映。paper_single_title_webも49.4MBで実ビルド・内蔵ブラウザ確認済み。次はPAPER_MINATO_TWELVE_KEYS。追加差分は追加指示後。
+
 # WebGL版の実装と起動（2026-10-16）
 
 2026-10-16最新：paper_release_5全4合格（Edit537／Play66）、投げ終わりと2段選択・掌側の二丁拳銃v3を反映。WebGLもpaper_release_web成功・約47.7MB、ブラウザ確認済み。次は蓮の残10原画の審査／接続。全9人の攻撃・小物・溜め・被弾ゴールは継続。詳細はRESUME冒頭とpaper_release_final。

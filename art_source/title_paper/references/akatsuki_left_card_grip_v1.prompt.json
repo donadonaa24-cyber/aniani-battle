@@ -1,0 +1,13 @@
+{
+  "key": "akatsuki_left_card_grip",
+  "version": 1,
+  "source": "art_source/title_paper/references/akatsuki_left_card_grip_v1.png",
+  "references": [
+    "art_source/title_paper/references/akatsuki_incorrect_grip_crop.png",
+    "art_source/title_paper/references/battle_a_la_carte_card_back_user_20261017.png"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1は集合絵から切り出した、不自然なカード保持の手元。左手の形を根本から描き直す。画像2はカード背面の意匠の参考。全身や他の人物はいらない。この手元だけを大きく精細に描く。腕は画面左下の紺ブレザー袖＋白シャツ袖口から右上へ伸びる本人の左腕。左手の掌側がこちらへ見える。薄いカードを左手の親指と人差し指で下端の角から軽くつまむ。親指は短く太い指で第一関節を曲げ、指先と爪のない指腹をカード背面の下端へ縦向きに押し当てる。人差し指はカードの裏側にあり、対向して支えるので長い指をカードの表に描かない。中指・薬指・小指はカードから離し、カードの下方でゆるく曲げた3指だけを描く。親指1＋人差し指1＋他3の計5指。画像1の横に長く伸びる指と四段の拳の形は全て置換する。丸い親指の腹がカード面を押さえ、人差し指は裏という、誰が見ても薄い紙をつまんでいる形。左手の正しい関節と親指の所属、掌を保つ。手の甲を表にしない。カードは立てて背面をこちらへ。画像2の濃紺の市松、クリームの飾り枠、料理帽と赤黒スート、金のBattle à la Carte。通常アニメの線とセル塗り、切り抜きの白縁。背景は透明。一つの左手と袖口とカード1枚だけ、右手・腕の追加・人物の顔・説明文字・比較図は描かない。",
+  "tool": "built-in image_gen",
+  "status": "reference_only_not_game_asset"
+}
+
