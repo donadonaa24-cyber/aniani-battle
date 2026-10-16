@@ -32,6 +32,7 @@ namespace AniBato.Game
                 if (normalEffects != null) clip = normalEffects.NormalProjectileClip;
                 Sprite sprite = !placeholder && animations ? animations.Effect(clip, projectile.Attack.Definition.ProjectileLifetimeFrames - projectile.RemainingFrames) : null;
                 var paper = character.PaperMotion;
+                var art = paper ? paper.Projectile(look) : null;
                 if (!placeholder && paper && paper.Enabled && (normal ? paper.Bag : paper.RiceBall)) sprite = normal ? paper.Bag : paper.RiceBall;
                 if (placeholder) sprite = null;
                 sprites[i].sprite = sprite ? sprite : ProceduralSprites.Shape(true);
@@ -48,6 +49,14 @@ namespace AniBato.Game
                 var position = runner.RenderPosition(projectile);
                 sprites[i].transform.position = new Vector3(position.X, position.Y, 0);
                 sprites[i].transform.localScale = sprite ? Vector3.one * (normalEffects != null ? normalEffects.NormalProjectileScale : effects == null ? presentation.RiceBallScale : effects.ProjectileScale) : new Vector3(projectile.Hitbox.Size.X, projectile.Hitbox.Size.Y, 1);
+                if (art != null)
+                {
+                    sprites[i].sprite = art.Sprite; sprites[i].color = Color.white;
+                    sprites[i].flipX = art.FlipWithFacing && projectile.Facing < 0;
+                    float angle = art.RotateWithVelocity ? Mathf.Atan2(projectile.Velocity.Y, projectile.Velocity.X) * Mathf.Rad2Deg : 0;
+                    sprites[i].transform.localRotation = Quaternion.Euler(0, 0, angle + art.RotationOffsetDegrees);
+                    sprites[i].transform.localScale = Vector3.one * art.Scale;
+                }
             }
         }
     }

@@ -41,7 +41,7 @@ namespace AniBato.Presentation
                 return new PaperPerformanceSample(direction * settings.RecoilDegrees * strength, -direction * settings.RecoilDistance * strength);
             }
             if (!sample.IsAttack) return default;
-            if (sample.AttackFrame < sample.Startup)
+            if (sample.AttackFrame < sample.Startup + sample.DamageDelay)
                 return new PaperPerformanceSample(direction * settings.AnticipationDegrees, -direction * settings.PullDistance);
             if (sample.AttackFrame < sample.Startup + sample.Active)
                 return new PaperPerformanceSample(-direction * settings.StrikeDegrees, direction * settings.StrikeDistance);

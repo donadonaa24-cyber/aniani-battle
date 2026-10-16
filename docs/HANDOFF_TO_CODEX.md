@@ -1,3 +1,6 @@
+## 現在（2026-10-16）：R4の透真を完了
+
+rework_r4_toma_5でBuildAll／Edit525/525／Play59/59／Windowsが全合格。透真の攻撃16原画と飛翔物3種を接続し、72実描画を保存。本人の基本5ポーズと通常45判定・ゲージ14/10・千鶴素材は維持。原画／全文条件／現在版／微差／証跡はart_source/paper_roster_action/toma/。確認フォルダはイラスト確認/透真/攻撃原画_ゲーム採用済み/。美術最終承認とゲーム使用は別、移動等の旧素材も残る。次はREWORK_R4_REN_ACTIONS、R4の残8人→R5→R6。R0〜R3や基本45ポーズを重複しない。最新の保存状態はRESUMEとgit status／log／originで確認。
 # 引き継ぎ書：Claude → Codex（Codex単独で開発を続けるための手順）
 
 **最新：R3の9人固有技、rework_r3_3で実Edit521／Play57と全4工程合格、失敗・スキップ0。** 独立データと移動・落下・召喚・残留判定、透真の銃3段とドローン併用。仮表示はROSTER_MOVES_CURRENT、37実描画とCPU513戦のCSVを保存。次はREWORK_R4_ACTION_ART／REWORK_R4_TOMA_ACTIONS。R4〜R6と未移行の移動原画は残る。RESUME冒頭とGit差分から再開。

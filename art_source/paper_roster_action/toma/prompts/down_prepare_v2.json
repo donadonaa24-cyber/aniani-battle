@@ -1,0 +1,19 @@
+{
+  "id": "down_prepare",
+  "key": "toma",
+  "character": "透真",
+  "pose": "down",
+  "phase": "prepare",
+  "label": "地上下攻撃",
+  "version": 2,
+  "source": "art_source/paper_roster_action/toma/generated/down_prepare_v2.png",
+  "references": [
+    "art_source/paper_roster_action/toma/generated/down_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：下攻撃予備v1、絵全体を保持し上端の透明部だけを清掃"
+  ],
+  "prompt": "この画像は透明な全身ゲーム原画です。人物、顔、髪、腕、手、拳銃、衣装、脚、靴、白縁を一切変更しないでください。ポーズも各画素の位置と寸法もそのまま。1103×1426キャンバスを維持。変更は人物のない透明余白だけです。上端y0〜350の帯を完全に透明（alpha 0）にして、そこにある1個の極めて薄いゴミ画素だけを消してください。人物はy404から下にあるため、上の透明部のみ清掃する。人物や白縁を再描画しない、移動しない、拡縮しない、トリミングしない。背景は完全透明。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

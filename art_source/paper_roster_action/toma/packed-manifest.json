@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "key": "toma",
+  "frames": [
+    {
+      "id": "normal1_prepare",
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal1_prepare.png",
+      "sha256": "d80dbfc27c101468d5300b1e7e84ec407368ad41e3a2e80843f5db6edc491fd4",
+      "headTopY": 83,
+      "footMinX": 362,
+      "footMaxX": 1068,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal1_impact",
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal1_impact.png",
+      "sha256": "76c2891d015867fa4713354f274e7da3fd8bc50d753d8f9be344a3e9c2f9f674",
+      "headTopY": 81,
+      "footMinX": 359,
+      "footMaxX": 1070,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal2_prepare",
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal2_prepare.png",
+      "sha256": "266c233aaa48ff159ead3bd7dd3ef5209f69b5beb9b45482583a86f934f7e098",
+      "headTopY": 84,
+      "footMinX": 332,
+      "footMaxX": 1098,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal2_impact",
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal2_impact.png",
+      "sha256": "36dc91a432f9e6d7ca86224c7e66590a0f913b40335afe30c0d0a4c3d945c65f",
+      "headTopY": 80,
+      "footMinX": 329,
+      "footMaxX": 1101,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal3_prepare.png",
+      "sha256": "5351b8444e5fe36f7e6251ac8a00854ec13f9a90ac6e3a1935254b863a0049ea",
+      "headTopY": 347,
+      "footMinX": 371,
+      "footMaxX": 1058,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_impact",
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal3_impact.png",
+      "sha256": "94b03ef874b48b3907f159525034479ebb8de78fbf77c0c93c21bcd0b4056bb1",
+      "headTopY": 348,
+      "footMinX": 372,
+      "footMaxX": 1051,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_prepare",
+      "prepared": "art_source/paper_roster_action/toma/prepared/up_prepare.png",
+      "sha256": "9047291062b99e3b804bd78b0630543322b3ca9f4d0667d313930c5398268a28",
+      "headTopY": 70,
+      "footMinX": 345,
+      "footMaxX": 1085,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_impact",
+      "prepared": "art_source/paper_roster_action/toma/prepared/up_impact.png",
+      "sha256": "afa746d1db39fbfd91b13feabcfebf384db0faa8857c0a504e4ef27009ddaadc",
+      "headTopY": 60,
+      "footMinX": 343,
+      "footMaxX": 1086,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "down_prepare",
+      "prepared": "art_source/paper_roster_action/toma/prepared/down_prepare.png",
+      "sha256": "8f953c6d2c93ae5f62224d2d57b82e208383677abfbb0c626bd96bfc73417b80",
+      "headTopY": 348,
+      "footMinX": 373,
+      "footMaxX": 1057,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "down_impact",
+      "prepared": "art_source/paper_roster_action/toma/prepared/down_impact.png",
+      "sha256": "989f7b438031f25605b8120e04bc16157ffcb1a9b93b962ccffc268befaa4ce4",
+      "headTopY": 348,
+      "footMinX": 372,
+      "footMaxX": 1057,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "air_prepare",
+      "prepared": "art_source/paper_roster_action/toma/prepared/air_prepare.png",
+      "sha256": "8fddf45aa1983c37a78ef1402852fd0e488fa7604247360d86541a5671b1345a",
+      "headTopY": 199,
+      "footMinX": 455,
+      "footMaxX": 1117,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0.21217099179423995
+    },
+    {
+      "id": "air_impact",
+      "prepared": "art_source/paper_roster_action/toma/prepared/air_impact.png",
+      "sha256": "64140223a2e0c1f62b97013009079de03aff634fe1a9c5ae7503d93ce8034441",
+      "headTopY": 196,
+      "footMinX": 449,
+      "footMaxX": 1119,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0.20653813360501236
+    },
+    {
+      "id": "special_prepare",
+      "prepared": "art_source/paper_roster_action/toma/prepared/special_prepare.png",
+      "sha256": "e181a75ea06006b0324607a74f1958ad81eb925aaa540b0933a6e284700c33a4",
+      "headTopY": 80,
+      "footMinX": 380,
+      "footMaxX": 1050,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "special_impact",
+      "prepared": "art_source/paper_roster_action/toma/prepared/special_impact.png",
+      "sha256": "5ed63490ad0740e6ba2d0ed3c7a828f532e4919c4cee897bcd2e94ea00197d30",
+      "headTopY": 66,
+      "footMinX": 373,
+      "footMaxX": 1057,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_prepare",
+      "prepared": "art_source/paper_roster_action/toma/prepared/super_prepare.png",
+      "sha256": "b181000cdc238158b9bc6a450ecc7676d72ed723be820454b1493b5038990b55",
+      "headTopY": 79,
+      "footMinX": 377,
+      "footMaxX": 1052,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_impact",
+      "prepared": "art_source/paper_roster_action/toma/prepared/super_impact.png",
+      "sha256": "4413f769fc0d360bb84259fa2b4847eb973216d9b0b541ba8c81688da5a290aa",
+      "headTopY": 70,
+      "footMinX": 373,
+      "footMaxX": 1056,
+      "groundFootAnchor": 714.5,
+      "originOffsetY": 0
+    }
+  ],
+  "complete": true,
+  "reviewed": true,
+  "gameConnected": true,
+  "verifiedTag": "rework_r4_toma_5"
+}

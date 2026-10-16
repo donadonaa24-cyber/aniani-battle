@@ -1,0 +1,855 @@
+{
+  "schemaVersion": 1,
+  "key": "toma",
+  "name": "透真",
+  "characterIndex": 0,
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "sole": 1328,
+  "pixelsPerUnit": 532.5893,
+  "baseIdle": "art_source/paper_roster_idle/prepared/toma_idle.png",
+  "jobs": [
+    {
+      "id": "normal1_prepare",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/normal1_prepare_v2.json"
+    },
+    {
+      "id": "normal1_impact",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/normal1_impact_v3.json"
+    },
+    {
+      "id": "normal2_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/normal2_prepare_v1.json"
+    },
+    {
+      "id": "normal2_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/normal2_impact_v1.json"
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/normal3_prepare_v1.json"
+    },
+    {
+      "id": "normal3_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/normal3_impact_v1.json"
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/up_prepare_v1.json"
+    },
+    {
+      "id": "up_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/up_impact_v1.json"
+    },
+    {
+      "id": "down_prepare",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/down_prepare_v2.json"
+    },
+    {
+      "id": "down_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/down_impact_v1.json"
+    },
+    {
+      "id": "air_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/air_prepare_v1.json"
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/air_impact_v1.json"
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/special_prepare_v1.json"
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/special_impact_v1.json"
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/super_prepare_v1.json"
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/super_impact_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1段",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/normal1_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/prepared/toma_idle.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "参照画像は本作の透真の採用待機であり、同じ人物・同じ絵柄・同じ人物倍率で新しい1姿勢だけ描いてください。通常のアニメ塗りの全身ゲームスプライト。黒い大きな髪と青い瞳、黒スーツ、白シャツ、黒ネクタイ、黒革靴を厳密に維持。頭身・頭や髪の大きさ・手と靴の大きさは参照と同じ。\n動作：通常1段の予備動作（まだ当たらない）。胸元へ両手で小型拳銃を引き、肘を曲げて構える。腰と両膝を少し曲げ、ほんの少し後ろへ体重を置く。まだ発砲しない。\n銃を持つ場合は右手で握る小型の黒い拳銃1丁、左手が右手を支える両手構え。拳銃は角形の黒いスライドと短い銃身、細いシアンのアクセント1本。同じ銃を全姿勢で使い、銃口炎・弾丸・流血・相手・効果線は描かない。手は左右1本ずつ、各5指。胸側を斜めから見た肩→肘→手首→手のつながりを正しく描く。\n透明キャンバス1304×1450。人物の再拡縮禁止、立ち基準の髪の横幅約544px、奥の靴約218px、手前の靴約306pxを維持。接地姿勢は靴底y1328。低い姿勢では上の透明余白を残す。画面右向きの斜め横、両腕両脚が見える。髪、靴、手、銃口まで全身を余白付きで収め、切らない。薄い硬いクリーム白の切り抜き縁3〜6pxを手と銃を含む外周一周へ。縁の外は完全透明、グロー・ぼかし・半透明の光彩なし。背景、床、影、文字、名前、枠、複数ポーズ、複数人、紙の繊維、関節分割、3D、ピクセルアートは禁止。描画品質と顔は参照を維持。",
+      "tool": "built-in image_gen",
+      "status": "not_selected",
+      "sha256": "7c7cd6aef9ba7f29e26e2b04530493a6cf7bc89a8d44838e2d2e3448a57760ab",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 338,
+          "top": 77,
+          "right": 1011,
+          "bottom": 1246
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "reviewNote": "共通余白付き待機を参照した結果、出力が1189×1323へ変わり、頭と靴が概算で約1割縮小。ゲーム未採用。元の待機原画を直接参照したv2へ。"
+    },
+    {
+      "id": "normal1_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1段",
+      "version": 2,
+      "source": "art_source/paper_roster_action/toma/generated/normal1_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "参照画像は本作の透真の採用待機であり、同じ人物・同じ絵柄・同じ人物倍率で新しい1姿勢だけ描いてください。通常のアニメ塗りの全身ゲームスプライト。黒い大きな髪と青い瞳、黒スーツ、白シャツ、黒ネクタイ、黒革靴を厳密に維持。頭身・頭や髪の大きさ・手と靴の大きさは参照と同じ。\n動作：通常1段の予備動作（まだ当たらない）。胸元へ両手で小型拳銃を引き、肘を曲げて構える。腰と両膝を少し曲げ、ほんの少し後ろへ体重を置く。まだ発砲しない。\n銃を持つ場合は右手で握る小型の黒い拳銃1丁、左手が右手を支える両手構え。拳銃は角形の黒いスライドと短い銃身、細いシアンのアクセント1本。同じ銃を全姿勢で使い、銃口炎・弾丸・流血・相手・効果線は描かない。手は左右1本ずつ、各5指。胸側を斜めから見た肩→肘→手首→手のつながりを正しく描く。\n参照の原画と同じ透明キャンバス1189×1323を厳守。共通ゲーム枠への余白追加は後で行うため、出力画像の縦横へ人物を合わせて縮小しない。人物の再拡縮禁止、立ち基準の髪の横幅約544px、奥の靴約218px、手前の靴約306pxを維持。接地姿勢は靴底y1291。低い姿勢では上の透明余白を残す。画面右向きの斜め横、両腕両脚が見える。髪、靴、手、銃口まで全身を余白付きで収め、切らない。薄い硬いクリーム白の切り抜き縁3〜6pxを手と銃を含む外周一周へ。縁の外は完全透明、グロー・ぼかし・半透明の光彩なし。背景、床、影、文字、名前、枠、複数ポーズ、複数人、紙の繊維、関節分割、3D、ピクセルアートは禁止。描画品質と顔は参照を維持。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "36692e1b353d6f6bee7e2310e8c64aab9ab5964537728d9b31abc18cb03cbeed",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 308,
+          "top": 46,
+          "right": 1014,
+          "bottom": 1291
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal1_prepare.png",
+      "preparedSha256": "d80dbfc27c101468d5300b1e7e84ec407368ad41e3a2e80843f5db6edc491fd4",
+      "offsetX": 54,
+      "offsetY": 37,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal1_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1段",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/normal1_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象：同じ人物の通常1段予備v2、容姿・部位実寸・拳銃の完全な基準"
+      ],
+      "prompt": "参照画像は本作の透真の通常1段予備v2であり、同じ人物・同じ絵柄・同じ人物倍率で新しい1姿勢だけ描いてください。通常のアニメ塗りの全身ゲームスプライト。黒い大きな髪と青い瞳、黒スーツ、白シャツ、黒ネクタイ、黒革靴を厳密に維持。頭身・頭や髪の大きさ・手と靴の大きさは参照と同じ。\n動作：通常1段の攻撃／指令の決めポーズ。両手で同じ拳銃を前方の画面右へ伸ばし、軽く一歩踏み込んで射撃する瞬間。両腕の肩・肘・手首がつながり、右手が銃を握り左手が右手を下から支える。顔を銃で隠さない。\n銃を持つ場合は右手で握る小型の黒い拳銃1丁、左手が右手を支える両手構え。拳銃は角形の黒いスライドと短い銃身、細いシアンのアクセント1本。同じ銃を全姿勢で使い、銃口炎・弾丸・流血・相手・効果線は描かない。手は左右1本ずつ、各5指。胸側を斜めから見た肩→肘→手首→手のつながりを正しく描く。\n参照の原画と同じ透明キャンバス1189×1323を厳守。共通ゲーム枠への余白追加は後で行うため、出力画像の縦横へ人物を合わせて縮小しない。人物の再拡縮禁止、立ち基準の髪の横幅約544px、奥の靴約218px、手前の靴約306pxを維持。接地姿勢は靴底y1291。低い姿勢では上の透明余白を残す。画面右向きの斜め横、両腕両脚が見える。髪、靴、手、銃口まで全身を余白付きで収め、切らない。薄い硬いクリーム白の切り抜き縁3〜6pxを手と銃を含む外周一周へ。縁の外は完全透明、グロー・ぼかし・半透明の光彩なし。背景、床、影、文字、名前、枠、複数ポーズ、複数人、紙の繊維、関節分割、3D、ピクセルアートは禁止。描画品質と顔は参照を維持。 髪の外周と頭・両靴の画素寸法は参照から固定し、腕と腰と膝の姿勢だけを変更。銃は同一の個体で、シアン線の位置と銃身長を変えない。",
+      "tool": "built-in image_gen",
+      "status": "not_selected",
+      "sha256": "96996f329c5e101813e5a863857a45e8f8ed1642e293d88bd1509dc00883b40a",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 74,
+          "top": 11,
+          "right": 1074,
+          "bottom": 1381
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "reviewNote": "出力1103×1426で頭と靴が大きくなり、ゲーム未採用。元の待機原画を直接参照してv2を生成する。"
+    },
+    {
+      "id": "normal1_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1段",
+      "version": 2,
+      "source": "art_source/paper_roster_action/toma/generated/normal1_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機の原画：容姿と部位の実寸の直接基準"
+      ],
+      "prompt": "最優先：参照の頭と髪は横幅544px、靴は奥218pxと手前306pxの実寸で固定。参照と同じ1189×1323の出力。人物を画面いっぱいへ拡大してはいけない。踏み込む姿勢でも胴・顔・頭・靴の倍率を変えない。髪の頭頂はy55付近、靴底y1291付近。\n参照画像は本作の透真の採用待機であり、同じ人物・同じ絵柄・同じ人物倍率で新しい1姿勢だけ描いてください。通常のアニメ塗りの全身ゲームスプライト。黒い大きな髪と青い瞳、黒スーツ、白シャツ、黒ネクタイ、黒革靴を厳密に維持。頭身・頭や髪の大きさ・手と靴の大きさは参照と同じ。\n動作：通常1段の攻撃／指令の決めポーズ。両手で同じ拳銃を前方の画面右へ伸ばし、軽く一歩踏み込んで射撃する瞬間。両腕の肩・肘・手首がつながり、右手が銃を握り左手が右手を下から支える。顔を銃で隠さない。\n銃を持つ場合は右手で握る小型の黒い拳銃1丁、左手が右手を支える両手構え。拳銃は角形の黒いスライドと短い銃身、細いシアンのアクセント1本。同じ銃を全姿勢で使い、銃口炎・弾丸・流血・相手・効果線は描かない。手は左右1本ずつ、各5指。胸側を斜めから見た肩→肘→手首→手のつながりを正しく描く。\n参照の原画と同じ透明キャンバス1189×1323を厳守。共通ゲーム枠への余白追加は後で行うため、出力画像の縦横へ人物を合わせて縮小しない。人物の再拡縮禁止、立ち基準の髪の横幅約544px、奥の靴約218px、手前の靴約306pxを維持。接地姿勢は靴底y1291。低い姿勢では上の透明余白を残す。画面右向きの斜め横、両腕両脚が見える。髪、靴、手、銃口まで全身を余白付きで収め、切らない。薄い硬いクリーム白の切り抜き縁3〜6pxを手と銃を含む外周一周へ。縁の外は完全透明、グロー・ぼかし・半透明の光彩なし。背景、床、影、文字、名前、枠、複数ポーズ、複数人、紙の繊維、関節分割、3D、ピクセルアートは禁止。描画品質と顔は参照を維持。 髪の外周と頭・両靴の画素寸法は参照から固定し、腕と腰と膝の姿勢だけを変更。銃は同一の個体で、シアン線の位置と銃身長を変えない。",
+      "tool": "built-in image_gen",
+      "status": "not_selected",
+      "sha256": "83e5815e4fcfc39d7375415f76fc1618f12d36b39c1f05bf2ca526d01895fdff",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 92,
+          "top": 51,
+          "right": 1074,
+          "bottom": 1389
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "reviewNote": "部位と全高の差が残る。v3は準備v2を直接編集し、前腕から先だけを変更する。"
+    },
+    {
+      "id": "normal2_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "normal2",
+      "phase": "prepare",
+      "label": "通常2段",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/normal2_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "参照画像は本作の透真の採用待機であり、同じ人物・同じ絵柄・同じ人物倍率で新しい1姿勢だけ描いてください。通常のアニメ塗りの全身ゲームスプライト。黒い大きな髪と青い瞳、黒スーツ、白シャツ、黒ネクタイ、黒革靴を厳密に維持。頭身・頭や髪の大きさ・手と靴の大きさは参照と同じ。\n動作：通常2段の予備動作（まだ当たらない）。同じ拳銃を両手で胸の前へ引き戻す。腰と胸を1段目より少しひねり、左脚へ体重を移して次弾を構える。まだ発砲しない。\n銃を持つ場合は右手で握る小型の黒い拳銃1丁、左手が右手を支える両手構え。拳銃は角形の黒いスライドと短い銃身、細いシアンのアクセント1本。同じ銃を全姿勢で使い、銃口炎・弾丸・流血・相手・効果線は描かない。手は左右1本ずつ、各5指。胸側を斜めから見た肩→肘→手首→手のつながりを正しく描く。\n参照の原画と同じ透明キャンバス1189×1323を厳守。共通ゲーム枠への余白追加は後で行うため、出力画像の縦横へ人物を合わせて縮小しない。人物の再拡縮禁止、立ち基準の髪の横幅約544px、奥の靴約218px、手前の靴約306pxを維持。接地姿勢は靴底y1291。低い姿勢では上の透明余白を残す。画面右向きの斜め横、両腕両脚が見える。髪、靴、手、銃口まで全身を余白付きで収め、切らない。薄い硬いクリーム白の切り抜き縁3〜6pxを手と銃を含む外周一周へ。縁の外は完全透明、グロー・ぼかし・半透明の光彩なし。背景、床、影、文字、名前、枠、複数ポーズ、複数人、紙の繊維、関節分割、3D、ピクセルアートは禁止。描画品質と顔は参照を維持。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "18ec1936aea38b3953abd6e54dc41da9b78e0d9ed111f048a4a37f62bf7de2f9",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 295,
+          "top": 47,
+          "right": 1069,
+          "bottom": 1291
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal2_prepare.png",
+      "preparedSha256": "266c233aaa48ff159ead3bd7dd3ef5209f69b5beb9b45482583a86f934f7e098",
+      "offsetX": 37,
+      "offsetY": 37,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal1_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1段",
+      "version": 3,
+      "source": "art_source/paper_roster_action/toma/generated/normal1_impact_v3.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象：通常1段予備v2。髪・顔・胴・腰・脚・靴・外周の画素位置と寸法を固定し、両前腕と手と銃だけを前へ伸ばす"
+      ],
+      "prompt": "参照の同じ透真を局所編集してください。変更は両前腕・両手・拳銃のみ。銃を握る右手と、下から支える左手の二本を保ち、現在の曲がった肘を少し伸ばして、銃を今の位置から右へ100pxだけ前へ出す射撃ポーズにする。肩と胴は動かさない。銃口は右向き、同じ小型黒拳銃とシアンの線。銃口炎なし。髪、顔、頭、胴、腰、両脚、両靴は一切描き直さず、ピクセル位置、輪郭、寸法をそのまま固定する。特に髪幅約544px、奥靴218px、手前靴306pxの倍率を保つ。出力は参照と同じ1189×1323。靴底y1291を固定。人物を拡大しない。画像を構図に合わせて自動トリミングしない。既存の姿勢のうち両前腕から先だけを編集し、脚の踏み込みや頭の移動は足さない。全体の前進と傾きはゲームが付ける。外周は薄い硬いクリーム白の切り抜き縁を手と銃まで一周、縁外は完全透明。グロー、ぼけ、文字、背景、地面、影、相手、弾丸、余分な腕や指、3D、紙質、ピクセル化を足さない。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "6e0022f3d9987200892080b6a8e0a8eefa1522a98ee73f6ba1f72ac4819dde9e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 306,
+          "top": 45,
+          "right": 1167,
+          "bottom": 1292
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal1_impact.png",
+      "preparedSha256": "76c2891d015867fa4713354f274e7da3fd8bc50d753d8f9be344a3e9c2f9f674",
+      "offsetX": 53,
+      "offsetY": 36,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal2_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "normal2",
+      "phase": "impact",
+      "label": "通常2段",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/normal2_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/normal2_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：通常2段予備、頭・靴・倍率を固定し腕と上半身のみ変更"
+      ],
+      "prompt": "参照の同じ透真の通常2段の当てる姿勢を局所編集。出力1189×1323を固定。頭・髪の輪郭、両脚、両靴とそのピクセル寸法・位置を変更せず、そのまま保持。腕と胸元の向きだけを変更する。腰をわずかにひねった胸側の姿勢、両肘を下げながら同じ小型黒拳銃を両手で右へ伸ばす。銃を現在より右へ65px、下へ45px動かして二発目の射撃の決めポーズにする。肩の位置と頭の位置は変えない。右手で銃を握り、左手が下から右手を支え、左右の腕が肩から自然につながる。拳銃のシアン線・銃身長は同一。人物の全身倍率・頭身・靴底y1291を固定し、余白を埋めたり自動トリミングしない。銃口炎、弾丸、文字、背景、影、効果線、別の人物を足さない。既存の硬いクリーム白の薄い切り抜き縁を全身と手と銃に一周、縁外は完全透明。通常のアニメ塗りを維持し、3D、紙質、関節パーツ、ピクセル化なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "fa7638f92d481c32d54c06e50f1481a69d9fb3646e2aeb3338284e6c03994125",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 293,
+          "top": 45,
+          "right": 1138,
+          "bottom": 1293
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal2_impact.png",
+      "preparedSha256": "36dc91a432f9e6d7ca86224c7e66590a0f913b40335afe30c0d0a4c3d945c65f",
+      "offsetX": 36,
+      "offsetY": 35,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "special",
+      "phase": "prepare",
+      "label": "特殊ドローン指令",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/special_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "参照画像は本作の透真の採用待機であり、同じ人物・同じ絵柄・同じ人物倍率で新しい1姿勢だけ描いてください。通常のアニメ塗りの全身ゲームスプライト。黒い大きな髪と青い瞳、黒スーツ、白シャツ、黒ネクタイ、黒革靴を厳密に維持。頭身・頭や髪の大きさ・手と靴の大きさは参照と同じ。\n動作：特殊ドローン指令の予備動作（まだ当たらない）。銃を持たず、左手に小さな暗色の通信端末を持ち、右手を胸元に引いて指示を出す準備。両足は接地、前方の画面右を見る。ドローン自体は描かない。\n銃を持つ場合は右手で握る小型の黒い拳銃1丁、左手が右手を支える両手構え。拳銃は角形の黒いスライドと短い銃身、細いシアンのアクセント1本。同じ銃を全姿勢で使い、銃口炎・弾丸・流血・相手・効果線は描かない。手は左右1本ずつ、各5指。胸側を斜めから見た肩→肘→手首→手のつながりを正しく描く。\n参照の原画と同じ透明キャンバス1189×1323を厳守。共通ゲーム枠への余白追加は後で行うため、出力画像の縦横へ人物を合わせて縮小しない。人物の再拡縮禁止、立ち基準の髪の横幅約544px、奥の靴約218px、手前の靴約306pxを維持。接地姿勢は靴底y1291。低い姿勢では上の透明余白を残す。画面右向きの斜め横、両腕両脚が見える。髪、靴、手、銃口まで全身を余白付きで収め、切らない。薄い硬いクリーム白の切り抜き縁3〜6pxを手と銃を含む外周一周へ。縁の外は完全透明、グロー・ぼかし・半透明の光彩なし。背景、床、影、文字、名前、枠、複数ポーズ、複数人、紙の繊維、関節分割、3D、ピクセルアートは禁止。描画品質と顔は参照を維持。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "06ad873ba288723653803ab61c485921c6c04525f16e03d52e8d9455581474b6",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 320,
+          "top": 44,
+          "right": 990,
+          "bottom": 1292
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/special_prepare.png",
+      "preparedSha256": "e181a75ea06006b0324607a74f1958ad81eb925aaa540b0933a6e284700c33a4",
+      "offsetX": 60,
+      "offsetY": 36,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "special",
+      "phase": "impact",
+      "label": "特殊ドローン指令",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/special_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/special_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：特殊の予備、同じ端末と頭・足の寸法を保持"
+      ],
+      "prompt": "同じ透真の特殊技の当てる指令ポーズ。参照の全身から両腕と両手だけを局所編集する。頭、髪、顔、腰、両脚、両靴の位置とピクセル寸法は完全固定、全身を描き直したり拡大しない。同じ1189×1323の透明キャンバス、靴底y1291。本人左手（画面右側の端末を持つ手）は同じ黒とシアンの小型端末を胸元で保持する。本人右腕（画面左の肩からつながる腕）は胸の前を通って画面右へ伸ばし、右手の人差し指で前方へ突入を指示する。右手の他の3指は握り、親指は人差し指と反対側から自然に添える。右手2本にならないように左右の肩から手首のつながりを保つ。両腕を前後に重ね、顔と端末を隠さない。右の指先はx1130以下、全身・手・端末を切らない。ドローン本体、銃、文字、背景、影、攻撃線を描かない。薄い硬いクリーム白の縁を全周と指まで一周、縁外は完全透明。グロー、紙の繊維、3D、関節パーツ、ピクセル化なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "34f4d37dcf93ed145019fb82a11e01f8cc2e9e42706ec588835dee8d04681440",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 315,
+          "top": 24,
+          "right": 1073,
+          "bottom": 1286
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/special_impact.png",
+      "preparedSha256": "5ed63490ad0740e6ba2d0ed3c7a828f532e4919c4cee897bcd2e94ea00197d30",
+      "offsetX": 58,
+      "offsetY": 42,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "super_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "super",
+      "phase": "prepare",
+      "label": "超必殺ロケット指令",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/super_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/special_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：同じ端末と容姿・部位実寸、原画の手足と頭の倍率を固定"
+      ],
+      "prompt": "同じ透真の超必殺ロケット指令の予備動作を作る。参照の頭・髪・顔・両脚・両靴のピクセル寸法と位置、黒スーツ・白シャツ・黒ネクタイを固定して変えない。同じ1189×1323の透明キャンバス、靴底y1291。腕と上着の上部だけを編集。本人左手は同じ黒とシアンの小型通信端末を胸元へ引き付ける。本人右腕を大きく画面左へ引き、肘を深く曲げて拳を肩の後ろに構え、次に強く振り下ろすことがわかる強い予備シルエット。右手は閉じた拳、左右の腕がそれぞれ一つの肩から自然につながる。首と顔を隠さない。ロケット本体や銃は別素材なので描かない。全身の拡大・再構図・自動トリミングをせず、頭と靴を一切大きくしない。冷静で鋭い表情。薄い硬いクリーム白縁を全周と両手まで一周、外は完全透明。背景、影、文字、効果線、グロー、紙の質感、関節分割、3D、ピクセル化なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "186c770458dd74f358448a9393cd73109ecf7496c2b102b62c903df2423c7e93",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 190,
+          "top": 44,
+          "right": 995,
+          "bottom": 1293
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/super_prepare.png",
+      "preparedSha256": "b181000cdc238158b9bc6a450ecc7676d72ed723be820454b1493b5038990b55",
+      "offsetX": 57,
+      "offsetY": 35,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "normal3",
+      "phase": "prepare",
+      "label": "通常3段",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_core/toma/generated/toma_crouch_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象：採用しゃがみv2。低姿勢の頭・髪・靴・両脚の寸法と位置を固定し腕と武器のみ変更"
+      ],
+      "prompt": "参照の透真のしゃがみ姿勢から、両腕・両手・拳銃のみを局所編集。頭、髪、顔、胴、腰、両脚、両靴の画素位置と実寸を変えず維持する。出力は参照と同じ1103×1426、頭頂y405付近、靴底y1383付近。上半分の大きな透明余白はそのまま残す。しゃがんだ人物を画面一杯へ拡大しない。髪幅約567px、奥靴約235px、手前靴約314pxを維持。最も大きく溜めた通常3段目の予備。両手の同じ小型黒拳銃を深く胸元へ引き付け、両肘を大きく曲げる。銃は前方やや上を向く。 銃は右手で握り、左手が下から右手を支える両手構え。角形の黒いスライドと短い銃身、側面に細いシアン線1本、小型拳銃の長さ約220pxを維持。右肩と左肩から両肘・手首・指のつながりを自然にする。顔と髪を隠さない。髪・靴・銃口まで全身を余白付きで収め、切らない。原画と同じアニメ塗り、黒いスーツ、白シャツ、黒ネクタイ、黒革靴を維持。薄い硬いクリーム白の縁を手と銃を含む一周、外は完全透明。銃口炎、弾、相手、背景、床影、文字、効果線、グロー、紙質、3D、関節パーツ、ピクセル化なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "e88ea1c939302094a2bca6649f299943a8c39c690c45b00ea644a1a7e5f39552",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 258,
+          "top": 404,
+          "right": 954,
+          "bottom": 1385
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal3_prepare.png",
+      "preparedSha256": "5351b8444e5fe36f7e6251ac8a00854ec13f9a90ac6e3a1935254b863a0049ea",
+      "offsetX": 113,
+      "offsetY": -57,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "down_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "down",
+      "phase": "prepare",
+      "label": "地上下攻撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/down_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_core/toma/generated/toma_crouch_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象：採用しゃがみv2。低姿勢の頭・髪・靴・両脚の寸法と位置を固定し腕と武器のみ変更"
+      ],
+      "prompt": "参照の透真のしゃがみ姿勢から、両腕・両手・拳銃のみを局所編集。頭、髪、顔、胴、腰、両脚、両靴の画素位置と実寸を変えず維持する。出力は参照と同じ1103×1426、頭頂y405付近、靴底y1383付近。上半分の大きな透明余白はそのまま残す。しゃがんだ人物を画面一杯へ拡大しない。髪幅約567px、奥靴約235px、手前靴約314pxを維持。地上下攻撃の予備。右手の同じ小型黒拳銃を低い胸元へ引き付け、左手で右手を下から支え、銃口を前方やや下の画面右下へ向けて備える。 銃は右手で握り、左手が下から右手を支える両手構え。角形の黒いスライドと短い銃身、側面に細いシアン線1本、小型拳銃の長さ約220pxを維持。右肩と左肩から両肘・手首・指のつながりを自然にする。顔と髪を隠さない。髪・靴・銃口まで全身を余白付きで収め、切らない。原画と同じアニメ塗り、黒いスーツ、白シャツ、黒ネクタイ、黒革靴を維持。薄い硬いクリーム白の縁を手と銃を含む一周、外は完全透明。銃口炎、弾、相手、背景、床影、文字、効果線、グロー、紙質、3D、関節パーツ、ピクセル化なし。",
+      "tool": "built-in image_gen",
+      "status": "not_selected",
+      "sha256": "e4130b7b6ac8e61b1cdbf2485fb9582c30562c0ad744aef6ae9c0b98275dc40e",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 257,
+          "top": 404,
+          "right": 947,
+          "bottom": 1384
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "reviewNote": "人物のない上端にalpha1のゴミ1画素。足元梱包で枠外になるため、人物を変えず生成ツールで透明余白だけを清掃する。"
+    },
+    {
+      "id": "down_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "down",
+      "phase": "prepare",
+      "label": "地上下攻撃",
+      "version": 2,
+      "source": "art_source/paper_roster_action/toma/generated/down_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/down_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：下攻撃予備v1、絵全体を保持し上端の透明部だけを清掃"
+      ],
+      "prompt": "この画像は透明な全身ゲーム原画です。人物、顔、髪、腕、手、拳銃、衣装、脚、靴、白縁を一切変更しないでください。ポーズも各画素の位置と寸法もそのまま。1103×1426キャンバスを維持。変更は人物のない透明余白だけです。上端y0〜350の帯を完全に透明（alpha 0）にして、そこにある1個の極めて薄いゴミ画素だけを消してください。人物はy404から下にあるため、上の透明部のみ清掃する。人物や白縁を再描画しない、移動しない、拡縮しない、トリミングしない。背景は完全透明。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "5fb84a42fa08fc5cf6e8fd5dbefe9e5ab94bf82f52ea00fcffbe699469ad4812",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 258,
+          "top": 405,
+          "right": 949,
+          "bottom": 1385
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/down_prepare.png",
+      "preparedSha256": "8f953c6d2c93ae5f62224d2d57b82e208383677abfbb0c626bd96bfc73417b80",
+      "offsetX": 115,
+      "offsetY": -57,
+      "sourceRgbaPreserved": false,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 3
+    },
+    {
+      "id": "super_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "super",
+      "phase": "impact",
+      "label": "超必殺ロケット指令",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/super_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/super_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：超必殺予備、端末と頭・足の寸法を固定"
+      ],
+      "prompt": "参照の同じ透真の超必殺の決めポーズ。両腕と上着上部だけを局所編集する。参照の頭・髪・顔・胴・腰・両脚・両靴と同じ画素位置・寸法・倍率を保持し、全身を拡大しない。1189×1323の透明キャンバス、靴底y1291。本人左手で同じ黒とシアンの小型端末を胸元に持つまま、本人右腕（画面左へ引いた腕）を前方の画面右下へ大きく振り下ろし、右の握り拳をx1050,y820付近へ出して標的へ落下攻撃を命令する強い決めポーズ。右拳は正しい親指と4本の丸めた指、右肩から肘・手首・拳までの一続きの自然な腕。両肩と首がねじれない。冷静で鋭い表情、胸元を見せる斜め横向き。全身の位置や頭・足を動かさず、腕の起点と終点だけを明快に変える。ロケット本体、銃、相手、文字、背景、影、速度線、グロー、紙の質感、関節分割、3D、ピクセル化なし。薄い硬いクリーム白縁を全身・手・端末の一周、縁外は完全透明。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "15487ce53e5ab62830a6798e64865f0c4ac135b89f13ec96427546c7b7600a87",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 317,
+          "top": 36,
+          "right": 1000,
+          "bottom": 1294
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/super_impact.png",
+      "preparedSha256": "4413f769fc0d360bb84259fa2b4847eb973216d9b0b541ba8c81688da5a290aa",
+      "offsetX": 56,
+      "offsetY": 34,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/normal3_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/normal3_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：対応する予備。頭・靴・胴体・腰・両脚を固定し前腕から先だけを変更"
+      ],
+      "prompt": "参照の低い姿勢の同じ透真を局所編集。通常3段の強い射撃の決め姿勢。銃を持つ両腕を前方の画面右へはっきり伸ばし、銃口は水平。銃口の右端x1060以内。 変更は両前腕、手、同じ拳銃だけ。右手で銃を握り、左手で右手を下から支える。肩から肘、手首、5指のつながりを正しくする。元の黒い拳銃とシアン線・銃身長を維持する。髪と顔・胸・腰・両脚・両靴のピクセル位置と寸法はそのまま保持して変えない。髪幅約567px、奥靴235pxと手前靴314px、同じ1103×1426出力と靴底y1383を保持。上半分の透明余白を維持して低姿勢を拡大しない。人物のない上端y0〜350はalpha0の完全透明を保つ。原画と同じアニメ塗り、薄い硬いクリーム白の切り抜き縁を全身と手と銃まで一周、縁外は透明。銃口炎、弾、背景、地面、影、文字、効果線、グロー、紙質、3D、関節パーツ、ピクセル化なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "20fc4f21004eb4a6b1e7d5fb03daa38434ef58e82684bd34ab6734cc57fe9b89",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 171,
+          "top": 403,
+          "right": 1078,
+          "bottom": 1383
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal3_impact.png",
+      "preparedSha256": "94b03ef874b48b3907f159525034479ebb8de78fbf77c0c93c21bcd0b4056bb1",
+      "offsetX": 201,
+      "offsetY": -55,
+      "sourceRgbaPreserved": false,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 6
+    },
+    {
+      "id": "down_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "down",
+      "phase": "impact",
+      "label": "地上下攻撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/down_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/down_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象：対応する予備。頭・靴・胴体・腰・両脚を固定し前腕から先だけを変更"
+      ],
+      "prompt": "参照の低い姿勢の同じ透真を局所編集。地上下攻撃の射撃の決め姿勢。銃を持つ両前腕を画面右やや下へ伸ばし、銃口を水平より15度下へ向ける。銃口右端x1060以内、銃全体を現在から右へ100pxほど出す。 変更は両前腕、手、同じ拳銃だけ。右手で銃を握り、左手で右手を下から支える。肩から肘、手首、5指のつながりを正しくする。元の黒い拳銃とシアン線・銃身長を維持する。髪と顔・胸・腰・両脚・両靴のピクセル位置と寸法はそのまま保持して変えない。髪幅約567px、奥靴235pxと手前靴314px、同じ1103×1426出力と靴底y1383を保持。上半分の透明余白を維持して低姿勢を拡大しない。人物のない上端y0〜350はalpha0の完全透明を保つ。原画と同じアニメ塗り、薄い硬いクリーム白の切り抜き縁を全身と手と銃まで一周、縁外は透明。銃口炎、弾、背景、地面、影、文字、効果線、グロー、紙質、3D、関節パーツ、ピクセル化なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "55f6ba933ed52479573876f761ac4605bcbf60fa1b06e3cd64d2078df37e26e7",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 258,
+          "top": 404,
+          "right": 1080,
+          "bottom": 1384
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/down_impact.png",
+      "preparedSha256": "989f7b438031f25605b8120e04bc16157ffcb1a9b93b962ccffc268befaa4ce4",
+      "offsetX": 114,
+      "offsetY": -56,
+      "sourceRgbaPreserved": false,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 7
+    },
+    {
+      "id": "up_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "up",
+      "phase": "prepare",
+      "label": "地上上攻撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/up_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象：同じ拳銃と頭・靴の実寸、腕以外は固定"
+      ],
+      "prompt": "同じ透真の地上上攻撃の予備。参照の両腕と両手と同じ小型黒拳銃だけを局所編集する。頭・髪・顔・衣装・腰・両脚・両靴の形とピクセル寸法・位置を固定、1189×1323キャンバスと靴底y1291を保持。両肘を曲げたまま銃口を画面右上へ65度ほど上げて、次に真上を撃つため構える。銃は右手で握り、左手で右手を下から支える。銃は顔の右側へ寄せ、両目と顔を隠さない。手・銃口は枠の内側に余白付きで全部見せる。髪幅544px、靴218pxと306pxの実寸を保持して拡大しない。既存の角形黒スライドとシアン線をそのまま。銃口炎、弾丸、文字、背景、床影、効果線、グロー、3D、紙質、関節分割、ピクセル化なし。薄い硬いクリーム白縁を手と銃を含む全身一周、縁外は完全透明。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "841d5685f6ffa4c3266f5b4537b6073082d244a286f59ff7ea9ab5533976a726",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 292,
+          "top": 38,
+          "right": 1032,
+          "bottom": 1296
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/up_prepare.png",
+      "preparedSha256": "9047291062b99e3b804bd78b0630543322b3ca9f4d0667d313930c5398268a28",
+      "offsetX": 53,
+      "offsetY": 32,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "air_prepare",
+      "key": "toma",
+      "character": "透真",
+      "pose": "air",
+      "phase": "prepare",
+      "label": "空中ニュートラル",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/air_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象：上半身・銃・頭の実寸を固定し、脚だけを空中姿勢へ"
+      ],
+      "prompt": "同じ透真の空中射撃の予備姿勢。参照の頭、髪、顔、胴、両腕、両手、同じ小型黒拳銃の形・位置・ピクセル寸法はそのまま固定し、腰から下の両脚だけを局所編集する。両膝を自然に曲げて両足が地面に着いていない空中の姿勢。手前の膝を少し前に上げ、奥の脚は後ろへ折る。空中で脚を縮めたシルエット。両靴は参照と同じサイズ（奥218px、手前306px程度）と同じ黒革靴、靴を大きくしない。上半身を下へ移動したり拡縮しない。1189×1323透明キャンバスを維持し、余った下の透明余白を埋めない。両腕は銃を胸へ引いた現在の予備動作のまま。銃は右手で握り、左手で支える。体と両脚のつながり、左右の膝と靴を自然にする。全身・髪・靴を切らない。薄い硬いクリーム白縁を全周、背景は完全透明。地面、床影、弾丸、文字、速度線、グロー、紙質、3D、関節分割、ピクセル化なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "8a7f5c0df0a1e821c0dbe6d0ceec6ae0a3d8e6b7b7033a711bc92e31603a0f30",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 347,
+          "top": 44,
+          "right": 1060,
+          "bottom": 1173
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/air_prepare.png",
+      "preparedSha256": "8fddf45aa1983c37a78ef1402852fd0e488fa7604247360d86541a5671b1345a",
+      "offsetX": 57,
+      "offsetY": 155,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "up_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "up",
+      "phase": "impact",
+      "label": "地上上攻撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/up_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/up_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：上攻撃予備、頭・靴・胴体・腰・脚を固定し前腕と銃だけ変更"
+      ],
+      "prompt": "参照の同じ透真の地上上攻撃の射撃姿勢。両前腕・両手・同じ黒い拳銃だけを局所編集する。銃口を斜めではなくほぼ真上（水平から80〜90度）へ向け、両手を今より少し右上へ伸ばす。銃を右手で握り、左手で下から右手を支える。銃の握りはx975,y360付近、銃口はx1000,y130付近を目安にして、枠を切らず余白を残す。首・顔・両目・髪を腕で隠さない。右肩から右肘と右手、左肩から左肘と左手を自然につなぐ。頭・髪・顔・胴・腰・両脚・両靴のピクセル位置・寸法・倍率を全て固定し、描き直したり拡大しない。同じ1189×1323キャンバスと靴底y1296付近を保持。髪544px、奥靴218px、手前靴306px程度を維持。拳銃の黒スライド、銃身長、シアン線も同じ。銃口炎、弾、相手、文字、背景、床影、速度線、グロー、紙質、3D、関節分割、ピクセル化を追加しない。薄い硬いクリーム白の縁を全身・両手・銃まで一周、縁外は完全透明。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "3b548d1d763eabff5c646e36849c779c1262f36e208c00397675070abe94328f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 291,
+          "top": 29,
+          "right": 1034,
+          "bottom": 1297
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/up_impact.png",
+      "preparedSha256": "afa746d1db39fbfd91b13feabcfebf384db0faa8857c0a504e4ef27009ddaadc",
+      "offsetX": 52,
+      "offsetY": 31,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "air_impact",
+      "key": "toma",
+      "character": "透真",
+      "pose": "air",
+      "phase": "impact",
+      "label": "空中ニュートラル",
+      "version": 1,
+      "source": "art_source/paper_roster_action/toma/generated/air_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/toma/generated/air_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：空中予備、頭・靴・胴・空中で曲げた脚を固定"
+      ],
+      "prompt": "参照の同じ透真の空中射撃の決めポーズ。両前腕・両手・同じ黒い拳銃だけを局所編集し、両腕を画面右へ伸ばして同じ銃を現在から右へ100pxほど突き出す。銃口は水平で右端x1140より内側に余白を残し、銃や手を切らない。右手で銃を握り、左手が右手を下から支える正しい両手。頭・髪・顔・胴・腰・曲げた両膝・両脚・両靴のピクセル位置と寸法は固定、空中で脚を曲げた現在のシルエットを一切変えない。1189×1323キャンバスと靴の最下点y1173付近を保持し、下の透明余白を埋めない。人物を拡大・移動・再構図・自動トリミングしない。黒スーツ、白シャツ、黒ネクタイ、黒革靴と青い目、銃のシアン線をそのまま維持。顔を両腕で隠さない。銃口炎、弾丸、相手、地面、床影、背景、文字、効果線、グロー、紙質、3D、関節分割、ピクセル化なし。薄い硬いクリーム白縁を全身と両手と銃まで一周、外は完全透明。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "6ada26e09864cdd4e3713ecbf3df90694ebed78e58b8552c8b96c74a8fad5441",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 271,
+          "top": 44,
+          "right": 1177,
+          "bottom": 1176
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/toma/prepared/air_impact.png",
+      "preparedSha256": "64140223a2e0c1f62b97013009079de03aff634fe1a9c5ae7503d93ce8034441",
+      "offsetX": 115,
+      "offsetY": 152,
+      "sourceRgbaPreserved": false,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 40
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "rework_r4_toma_5"
+}

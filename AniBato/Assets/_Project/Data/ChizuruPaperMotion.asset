@@ -55,6 +55,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.24
     FootBaseY: -1.6787226e-10
     FootMinX: -0.43748534
@@ -74,6 +75,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.1085665
     FootBaseY: 0.0000000062952097
     FootMinX: 0.43748534
@@ -93,6 +95,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 1.8475775
     FootBaseY: -0.000000010100314
     FootMinX: -0.3867896
@@ -112,6 +115,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.1930594
     FootBaseY: -0.000000008225741
     FootMinX: -0.5163453
@@ -131,6 +135,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 1.1040403
     FootBaseY: -1.0439564
     FootMinX: -0.107024305
@@ -150,6 +155,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 1.1077955
     FootBaseY: -1.0439564
     FootMinX: -0.21217099
@@ -169,6 +175,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 1.5959765
     FootBaseY: -0.0000000026299987
     FootMinX: -0.44124055
@@ -188,6 +195,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.2475104
     FootBaseY: -0.000000009232974
     FootMinX: -0.5783068
@@ -207,6 +215,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.2268567
     FootBaseY: 0.0000000040009556
     FootMinX: -0.55765295
@@ -226,6 +235,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.1573846
     FootBaseY: -0.0000000020424458
     FootMinX: -0.35862532
@@ -245,6 +255,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 1.5565464
     FootBaseY: 0.0000000013989355
     FootMinX: -0.62524724
@@ -264,6 +275,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.2212238
     FootBaseY: -0.00000000520404
     FootMinX: -0.42434198
@@ -289,6 +301,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - 1.0326906
     - 0.71161777
+    FrameOriginYs: []
     HeadHeight: 2.1968148
     FootBaseY: -1.6787226e-10
     FootMinX: -0.7472925
@@ -314,6 +327,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - 1.0139145
     - 0.9913831
+    FrameOriginYs: []
     HeadHeight: 2.1742833
     FootBaseY: -1.6787226e-10
     FootMinX: -0.8073763
@@ -339,6 +353,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - -0.12955575
     - 1.0195473
+    FrameOriginYs: []
     HeadHeight: 2.2531433
     FootBaseY: -1.6787226e-10
     FootMinX: -0.54826486
@@ -364,6 +379,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - 1.0139145
     - 1.0195473
+    FrameOriginYs: []
     HeadHeight: 2.1742833
     FootBaseY: -1.6787226e-10
     FootMinX: -0.8073763
@@ -389,6 +405,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - 1.0139145
     - 0.9913831
+    FrameOriginYs: []
     HeadHeight: 2.1742833
     FootBaseY: -1.6787226e-10
     FootMinX: -0.8073763
@@ -414,6 +431,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - 1.0326906
     - 0.71161777
+    FrameOriginYs: []
     HeadHeight: 1.0627326
     FootBaseY: -1.1340821
     FootMinX: -0.7472925
@@ -439,6 +457,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - 1.0326906
     - 0.71161777
+    FrameOriginYs: []
     HeadHeight: 1.0627326
     FootBaseY: -1.1340821
     FootMinX: -0.7472925
@@ -464,6 +483,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - 1.0139145
     - 0.9913831
+    FrameOriginYs: []
     HeadHeight: 1.0402012
     FootBaseY: -1.1340821
     FootMinX: -0.8073763
@@ -489,6 +509,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - 1.0139145
     - 0.9913831
+    FrameOriginYs: []
     HeadHeight: 1.0402012
     FootBaseY: -1.1340821
     FootMinX: -0.8073763
@@ -514,6 +535,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - -0.12955575
     - 1.0195473
+    FrameOriginYs: []
     HeadHeight: 1.1190611
     FootBaseY: -1.1340821
     FootMinX: -0.54826486
@@ -539,6 +561,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - 1.0139145
     - 0.9913831
+    FrameOriginYs: []
     HeadHeight: 1.0402012
     FootBaseY: -1.1340821
     FootMinX: -0.8073763
@@ -564,6 +587,7 @@ MonoBehaviour:
     FrameFootMaxXs:
     - -0.12955575
     - 1.0195473
+    FrameOriginYs: []
     HeadHeight: 1.1190611
     FootBaseY: -1.1340821
     FootMinX: -0.54826486
@@ -583,6 +607,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.1836715
     FootBaseY: 0.0000000091770165
     FootMinX: -0.4731601
@@ -602,6 +627,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 1.9564794
     FootBaseY: -0.000000009960421
     FootMinX: -0.8524392
@@ -621,6 +647,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 0.8693378
     FootBaseY: -1.1415926
     FootMinX: 0.1164124
@@ -640,6 +667,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.2606537
     FootBaseY: -0.0000000021823394
     FootMinX: -0.30605197
@@ -659,6 +687,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.2287343
     FootBaseY: 0.0000000019864883
     FootMinX: -0.61585915
@@ -679,6 +708,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.185549
     FootBaseY: -2.797871e-11
     FootMinX: -0.31356245
@@ -687,3 +717,4 @@ MonoBehaviour:
   RiceBall: {fileID: 21300000, guid: 73d46bbeb0982b0449d12ea2443fd5a5, type: 3}
   Mogu: {fileID: 21300000, guid: be19666d910b9364cb41cca0bed66963, type: 3}
   CurryWave: {fileID: 21300000, guid: 7a857afe4dac8b4498b95e348e4a457b, type: 3}
+  Projectiles: []

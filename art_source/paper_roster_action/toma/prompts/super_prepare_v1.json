@@ -1,0 +1,19 @@
+{
+  "id": "super_prepare",
+  "key": "toma",
+  "character": "透真",
+  "pose": "super",
+  "phase": "prepare",
+  "label": "超必殺ロケット指令",
+  "version": 1,
+  "source": "art_source/paper_roster_action/toma/generated/super_prepare_v1.png",
+  "references": [
+    "art_source/paper_roster_action/toma/generated/special_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：同じ端末と容姿・部位実寸、原画の手足と頭の倍率を固定"
+  ],
+  "prompt": "同じ透真の超必殺ロケット指令の予備動作を作る。参照の頭・髪・顔・両脚・両靴のピクセル寸法と位置、黒スーツ・白シャツ・黒ネクタイを固定して変えない。同じ1189×1323の透明キャンバス、靴底y1291。腕と上着の上部だけを編集。本人左手は同じ黒とシアンの小型通信端末を胸元へ引き付ける。本人右腕を大きく画面左へ引き、肘を深く曲げて拳を肩の後ろに構え、次に強く振り下ろすことがわかる強い予備シルエット。右手は閉じた拳、左右の腕がそれぞれ一つの肩から自然につながる。首と顔を隠さない。ロケット本体や銃は別素材なので描かない。全身の拡大・再構図・自動トリミングをせず、頭と靴を一切大きくしない。冷静で鋭い表情。薄い硬いクリーム白縁を全周と両手まで一周、外は完全透明。背景、影、文字、効果線、グロー、紙の質感、関節分割、3D、ピクセル化なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

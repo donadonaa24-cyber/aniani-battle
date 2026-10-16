@@ -52,6 +52,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.3094718
     FootBaseY: 0
     FootMinX: -0.48630342
@@ -68,6 +69,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.3057168
     FootBaseY: 0
     FootMinX: -0.518223
@@ -84,6 +86,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 1.8419447
     FootBaseY: 0
     FootMinX: -0.503202
@@ -100,6 +103,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.3075943
     FootBaseY: 0
     FootMinX: -0.49005866
@@ -116,6 +120,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.3151047
     FootBaseY: 0
     FootMinX: -0.48630342
@@ -132,6 +137,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.3057168
     FootBaseY: 0
     FootMinX: -0.5257334
@@ -148,6 +154,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 2.3094718
     FootBaseY: 0
     FootMinX: -0.48630342
@@ -164,6 +171,7 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
+    FrameOriginYs: []
     HeadHeight: 0
     FootBaseY: 0
     FootMinX: 0
@@ -172,3 +180,4 @@ MonoBehaviour:
   RiceBall: {fileID: 0}
   Mogu: {fileID: 0}
   CurryWave: {fileID: 0}
+  Projectiles: []

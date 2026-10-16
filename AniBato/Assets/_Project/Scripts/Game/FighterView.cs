@@ -86,6 +86,7 @@ namespace AniBato.Game
                 float baseY = paperPose != null && paperPose.Airborne ? 0 : -fighter.Definition.HurtboxSize.Y * .5f;
                 if (paperPose != null && paperPose.Airborne && fighter.Grounded)
                     baseY = -fighter.Definition.HurtboxSize.Y * .5f - paperPose.Foot(sample);
+                if (UsesPaperSprite && paperPose != null) baseY += paperPose.OriginY(sample);
                 float paperHeight = paperPose == null ? character.PaperMotion ? character.PaperMotion.StandingHeight : 0 : paperPose.Head(sample);
                 Vector3 offset = new Vector3(performance.X, performance.Y, 0);
                 if (performance.RotateAboutCenter)

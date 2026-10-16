@@ -72,6 +72,7 @@ namespace AniBato.EditorTools
             PaperRosterCoreBuilder.Apply(setup.Characters);
             CombatInputBuilder.Apply(setup.Characters);
             RosterMoveSetBuilder.Apply(setup.Characters);
+            PaperActionArtworkBuilder.Apply(setup.Characters);
             if (setup.Stages == null || setup.Stages.Length == 0) setup.Stages = stages;
             if (setup.CpuDifficulties == null || setup.CpuDifficulties.Length == 0) setup.CpuDifficulties = cpuDifficulties;
             if (setup.CpuDifficulties.Length != 3) throw new InvalidOperationException("CPU difficulty assets must have three entries.");

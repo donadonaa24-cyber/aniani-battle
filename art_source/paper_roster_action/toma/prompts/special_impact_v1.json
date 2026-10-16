@@ -1,0 +1,19 @@
+{
+  "id": "special_impact",
+  "key": "toma",
+  "character": "透真",
+  "pose": "special",
+  "phase": "impact",
+  "label": "特殊ドローン指令",
+  "version": 1,
+  "source": "art_source/paper_roster_action/toma/generated/special_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/toma/generated/special_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：特殊の予備、同じ端末と頭・足の寸法を保持"
+  ],
+  "prompt": "同じ透真の特殊技の当てる指令ポーズ。参照の全身から両腕と両手だけを局所編集する。頭、髪、顔、腰、両脚、両靴の位置とピクセル寸法は完全固定、全身を描き直したり拡大しない。同じ1189×1323の透明キャンバス、靴底y1291。本人左手（画面右側の端末を持つ手）は同じ黒とシアンの小型端末を胸元で保持する。本人右腕（画面左の肩からつながる腕）は胸の前を通って画面右へ伸ばし、右手の人差し指で前方へ突入を指示する。右手の他の3指は握り、親指は人差し指と反対側から自然に添える。右手2本にならないように左右の肩から手首のつながりを保つ。両腕を前後に重ね、顔と端末を隠さない。右の指先はx1130以下、全身・手・端末を切らない。ドローン本体、銃、文字、背景、影、攻撃線を描かない。薄い硬いクリーム白の縁を全周と指まで一周、縁外は完全透明。グロー、紙の繊維、3D、関節パーツ、ピクセル化なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

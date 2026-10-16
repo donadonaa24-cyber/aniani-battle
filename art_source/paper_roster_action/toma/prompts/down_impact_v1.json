@@ -1,0 +1,19 @@
+{
+  "id": "down_impact",
+  "key": "toma",
+  "character": "透真",
+  "pose": "down",
+  "phase": "impact",
+  "label": "地上下攻撃",
+  "version": 1,
+  "source": "art_source/paper_roster_action/toma/generated/down_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/toma/generated/down_prepare_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象：対応する予備。頭・靴・胴体・腰・両脚を固定し前腕から先だけを変更"
+  ],
+  "prompt": "参照の低い姿勢の同じ透真を局所編集。地上下攻撃の射撃の決め姿勢。銃を持つ両前腕を画面右やや下へ伸ばし、銃口を水平より15度下へ向ける。銃口右端x1060以内、銃全体を現在から右へ100pxほど出す。 変更は両前腕、手、同じ拳銃だけ。右手で銃を握り、左手で右手を下から支える。肩から肘、手首、5指のつながりを正しくする。元の黒い拳銃とシアン線・銃身長を維持する。髪と顔・胸・腰・両脚・両靴のピクセル位置と寸法はそのまま保持して変えない。髪幅約567px、奥靴235pxと手前靴314px、同じ1103×1426出力と靴底y1383を保持。上半分の透明余白を維持して低姿勢を拡大しない。人物のない上端y0〜350はalpha0の完全透明を保つ。原画と同じアニメ塗り、薄い硬いクリーム白の切り抜き縁を全身と手と銃まで一周、縁外は透明。銃口炎、弾、背景、地面、影、文字、効果線、グロー、紙質、3D、関節パーツ、ピクセル化なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

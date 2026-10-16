@@ -30,3 +30,7 @@ R3の発生・有効・硬直・通常前進0.18は固定。予備はダメー�
 art_source/paper_roster_action/toma/へ原画、全文prompt、参照の役割、SHA、選定版、部位の概算／微差、生成／梱包／ゲーム接続／Unity検証の状態を保存。候補と採用を区別し、イラスト確認/透真/の現在版を動作名で更新する。
 
 Editor接続でPaperRosterCoreBuilderの基本5ポーズを保持し、追加原画だけをマージ。BuildAllで同じ結果を再現する。FighterViewで左右・予備／ダメージ開始／硬直／解除を実入力検査し、飛翔物は同じ攻撃定義・位置と寿命を使う。全4工程合格と実描画を保存後、資料を更新して通常commit／push。その後に蓮へ進む。
+
+## 受入記録（2026-10-16）
+
+rework_r4_toma_5でBuildAll／Edit525/525／Play59/59／Windows全合格。16原画＋飛翔物3、実描画72PNGを接続。原画候補20と全文条件、部位微差・梱包例外は本人フォルダへ保持。報告はdocs/codex_logs/rework_r4_toma_final.md。次はREWORK_R4_REN_ACTIONS。美術最終承認と移動等の未移行は別。

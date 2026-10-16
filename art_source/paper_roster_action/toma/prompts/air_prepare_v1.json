@@ -1,0 +1,19 @@
+{
+  "id": "air_prepare",
+  "key": "toma",
+  "character": "透真",
+  "pose": "air",
+  "phase": "prepare",
+  "label": "空中ニュートラル",
+  "version": 1,
+  "source": "art_source/paper_roster_action/toma/generated/air_prepare_v1.png",
+  "references": [
+    "art_source/paper_roster_action/toma/generated/normal1_prepare_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象：上半身・銃・頭の実寸を固定し、脚だけを空中姿勢へ"
+  ],
+  "prompt": "同じ透真の空中射撃の予備姿勢。参照の頭、髪、顔、胴、両腕、両手、同じ小型黒拳銃の形・位置・ピクセル寸法はそのまま固定し、腰から下の両脚だけを局所編集する。両膝を自然に曲げて両足が地面に着いていない空中の姿勢。手前の膝を少し前に上げ、奥の脚は後ろへ折る。空中で脚を縮めたシルエット。両靴は参照と同じサイズ（奥218px、手前306px程度）と同じ黒革靴、靴を大きくしない。上半身を下へ移動したり拡縮しない。1189×1323透明キャンバスを維持し、余った下の透明余白を埋めない。両腕は銃を胸へ引いた現在の予備動作のまま。銃は右手で握り、左手で支える。体と両脚のつながり、左右の膝と靴を自然にする。全身・髪・靴を切らない。薄い硬いクリーム白縁を全周、背景は完全透明。地面、床影、弾丸、文字、速度線、グロー、紙質、3D、関節分割、ピクセル化なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

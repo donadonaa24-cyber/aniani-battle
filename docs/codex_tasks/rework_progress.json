@@ -8,37 +8,29 @@
     "R1": "complete",
     "R2": "complete",
     "R3": "complete",
-    "R4": "pending",
+    "R4": "art_in_progress",
     "R5": "pending",
     "R6": "pending"
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "rework_r3_3",
+    "tag": "rework_r4_toma_5",
     "buildAll": "success",
     "edit": {
-      "passed": 521,
-      "total": 521,
-      "skipped": 0,
-      "failed": 0
+      "total": 525,
+      "passed": 525,
+      "failed": 0,
+      "skipped": 0
     },
     "play": {
-      "passed": 57,
-      "total": 57,
-      "skipped": 0,
-      "failed": 0
+      "total": 59,
+      "passed": 59,
+      "failed": 0,
+      "skipped": 0
     },
     "windowsBuild": "success",
-    "screenshots": "docs/screenshots/rework_r3/",
-    "screenshotCount": 37,
-    "cpu": {
-      "rosterWithUltimate": 155,
-      "originalMatches": 270,
-      "originalWithUltimate": 188,
-      "rosterMatches": 243,
-      "unforcedRingOuts": 0,
-      "bothAttackAndHeartLoss": 513
-    }
+    "screenshots": "docs/screenshots/rework_r4_toma/",
+    "screenshotCount": 72
   },
   "activeVerification": null,
   "attempts": [
@@ -251,6 +243,86 @@
         "unforcedRingOuts": 0,
         "bothAttackAndHeartLoss": 513
       }
+    },
+    {
+      "tag": "rework_r4_toma_1",
+      "buildAll": "compiler_error",
+      "reason": "追加PlayModeテストのKeyメソッドとKey.None列挙値の名前衝突。型名を完全修飾して修正。",
+      "edit": null,
+      "play": null,
+      "windowsBuild": "not_run"
+    },
+    {
+      "tag": "rework_r4_toma_2",
+      "buildAll": "success",
+      "edit": {
+        "skipped": 0,
+        "passed": 525,
+        "failed": 0,
+        "total": 525
+      },
+      "play": {
+        "skipped": 0,
+        "passed": 57,
+        "failed": 2,
+        "total": 59
+      },
+      "windowsBuild": "success",
+      "reason": "追加2テストで相手を場外x40へ置いたため即決着。場内かつ銃の射程外へ修正、Match未決着の検査を追加。"
+    },
+    {
+      "tag": "rework_r4_toma_3",
+      "scope": "focused_playmode_Toma",
+      "play": {
+        "skipped": 0,
+        "failed": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "allFourComplete": false
+    },
+    {
+      "tag": "rework_r4_toma_4",
+      "scope": "focused_playmode_Toma",
+      "play": {
+        "skipped": 0,
+        "failed": 0,
+        "passed": 2,
+        "total": 2
+      },
+      "allFourComplete": false
+    },
+    {
+      "tag": "rework_r4_toma_5",
+      "buildAll": "success",
+      "edit": {
+        "total": 525,
+        "passed": 525,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 59,
+        "passed": 59,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "screenshots": "docs/screenshots/rework_r4_toma/",
+      "screenshotCount": 72
     }
-  ]
+  ],
+  "currentArtwork": {
+    "character": "toma",
+    "manifest": "art_source/paper_roster_action/toma/manifest.json",
+    "requiredFrames": 16,
+    "generatedCandidates": 20,
+    "packedCandidates": 16,
+    "gameConnected": true,
+    "generatedEffects": 3,
+    "runtimeCode": "unity_verified",
+    "verifiedTag": "rework_r4_toma_5",
+    "nextCharacter": "ren"
+  },
+  "nextTask": "docs/codex_tasks/REWORK_R4_REN_ACTIONS.md"
 }

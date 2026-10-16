@@ -14,18 +14,28 @@ namespace AniBato.Game
         public bool Airborne;
         public bool ReverseFacing;
         public float TiltDegrees;
-        public float[] FrameHeadHeights, FrameFootBaseYs, FrameFootMinXs, FrameFootMaxXs;
+        public float[] FrameHeadHeights, FrameFootBaseYs, FrameFootMinXs, FrameFootMaxXs, FrameOriginYs;
         public float HeadHeight, FootBaseY, FootMinX, FootMaxX;
         public bool Valid => HoldTicks > 0 && Frames != null && Frames.Length > 0 && System.Array.TrueForAll(Frames, frame => frame);
         public Sprite Frame(int age) => Frames[System.Math.Min(Frames.Length - 1, System.Math.Max(0, age) / HoldTicks)];
         public int FrameIndex(in AnimationSample sample) => sample.IsAttack && Frames.Length == 2 ?
-            sample.AttackFrame < sample.Startup ? 0 : 1 : System.Math.Min(Frames.Length - 1, System.Math.Max(0, sample.Age) / HoldTicks);
+            sample.AttackFrame < sample.Startup + sample.DamageDelay ? 0 : 1 : System.Math.Min(Frames.Length - 1, System.Math.Max(0, sample.Age) / HoldTicks);
         public Sprite Frame(in AnimationSample sample) => Frames[FrameIndex(sample)];
         private float Layout(float[] values, float fallback, in AnimationSample sample) => values != null && values.Length == Frames.Length ? values[FrameIndex(sample)] : fallback;
         public float Head(in AnimationSample sample) => Layout(FrameHeadHeights, HeadHeight, sample);
         public float Foot(in AnimationSample sample) => Layout(FrameFootBaseYs, FootBaseY, sample);
         public float FootMin(in AnimationSample sample) => Layout(FrameFootMinXs, FootMinX, sample);
         public float FootMax(in AnimationSample sample) => Layout(FrameFootMaxXs, FootMaxX, sample);
+        public float OriginY(in AnimationSample sample) => Layout(FrameOriginYs, 0, sample);
+    }
+    [System.Serializable]
+    public sealed class PaperProjectileArt
+    {
+        public AniBato.Battle.AbilityLook Look;
+        public Sprite Sprite;
+        public float Scale = 1;
+        public bool RotateWithVelocity, FlipWithFacing;
+        public float RotationOffsetDegrees;
     }
     [CreateAssetMenu(menuName = "あにバト/紙人形の待機・歩行")]
     public sealed class PaperCharacterMotion : ScriptableObject
@@ -41,6 +51,9 @@ namespace AniBato.Game
         public PaperPose[] Poses;
         public PaperPose HeavyDamage;
         public Sprite Bag, RiceBall, Mogu, CurryWave;
+        public PaperProjectileArt[] Projectiles;
+        public PaperProjectileArt Projectile(AniBato.Battle.AbilityLook look) => !Enabled || Projectiles == null ? null :
+            System.Array.Find(Projectiles, art => art != null && art.Sprite && art.Scale > 0 && art.Look == look);
         public PaperPose Find(AnimationState state, bool lostHeart = false)
         {
             if (!Enabled) return null;

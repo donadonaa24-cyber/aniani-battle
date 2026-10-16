@@ -1,0 +1,19 @@
+{
+  "id": "normal2_impact",
+  "key": "toma",
+  "character": "透真",
+  "pose": "normal2",
+  "phase": "impact",
+  "label": "通常2段",
+  "version": 1,
+  "source": "art_source/paper_roster_action/toma/generated/normal2_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/toma/generated/normal2_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：通常2段予備、頭・靴・倍率を固定し腕と上半身のみ変更"
+  ],
+  "prompt": "参照の同じ透真の通常2段の当てる姿勢を局所編集。出力1189×1323を固定。頭・髪の輪郭、両脚、両靴とそのピクセル寸法・位置を変更せず、そのまま保持。腕と胸元の向きだけを変更する。腰をわずかにひねった胸側の姿勢、両肘を下げながら同じ小型黒拳銃を両手で右へ伸ばす。銃を現在より右へ65px、下へ45px動かして二発目の射撃の決めポーズにする。肩の位置と頭の位置は変えない。右手で銃を握り、左手が下から右手を支え、左右の腕が肩から自然につながる。拳銃のシアン線・銃身長は同一。人物の全身倍率・頭身・靴底y1291を固定し、余白を埋めたり自動トリミングしない。銃口炎、弾丸、文字、背景、影、効果線、別の人物を足さない。既存の硬いクリーム白の薄い切り抜き縁を全身と手と銃に一周、縁外は完全透明。通常のアニメ塗りを維持し、3D、紙質、関節パーツ、ピクセル化なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

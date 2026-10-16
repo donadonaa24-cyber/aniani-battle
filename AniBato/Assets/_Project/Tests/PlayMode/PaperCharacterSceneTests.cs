@@ -145,9 +145,17 @@ namespace AniBato.Tests
                 yield return Key(controller.Bindings.P1.Attack, true); Tick();
                 Assert.That(runner.Simulation.P1.Mode, Is.EqualTo(AniBato.Battle.FighterMode.Charging));
                 yield return Key(controller.Bindings.P1.Attack, false); Tick();
-                Assert.That(view.UsesPaperSprite, Is.False, "透真／蓮の通常攻撃はこの段階では旧素材を維持");
-                Assert.That(other.Animations.TrySprite(view.RenderedSample, out Sprite pixel), Is.True);
-                Assert.That(body.sprite, Is.SameAs(pixel));
+                if (c == 0)
+                {
+                    Assert.That(view.UsesPaperSprite, Is.True); Assert.That(other.ActionArtworkSchemaVersion, Is.EqualTo(1));
+                    Assert.That(body.sprite, Is.SameAs(other.PaperMotion.Find(AnimationState.Attack1).Frames[0]));
+                }
+                else
+                {
+                    Assert.That(view.UsesPaperSprite, Is.False, "蓮の未移行通常は旧素材を維持");
+                    Assert.That(other.Animations.TrySprite(view.RenderedSample, out Sprite pixel), Is.True);
+                    Assert.That(body.sprite, Is.SameAs(pixel));
+                }
                 yield return Key(controller.Bindings.P1.Attack, false);
             }
             yield return null;

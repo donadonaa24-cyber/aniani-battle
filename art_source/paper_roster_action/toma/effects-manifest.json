@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "key": "toma",
+  "jobs": [
+    {
+      "id": "drone",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/effect_drone_v1.json"
+    },
+    {
+      "id": "rocket",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/effect_rocket_v1.json"
+    },
+    {
+      "id": "bullet",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/toma/prompts/effect_bullet_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "drone",
+      "look": "Drone",
+      "version": 1,
+      "key": "toma",
+      "source": "art_source/paper_roster_action/toma/generated/effect_drone_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "透真の画風・配色の基準。人物は生成しない"
+      ],
+      "prompt": "オリジナル2D対戦ゲーム用、透真が飛ばす小型ドローン1機だけの全身透明スプライト。参照は透真の採用待機で、黒・白・シアンの未来機器と同じ通常のアニメ塗り／薄い硬いクリーム白の切り抜き縁だけを合わせ、人物は描かない。横向き寄りの少し斜めから見た四ローターの小型ドローン。黒と濃いグレーの小さな中央本体、短い四本のアームと四つのローター、中央に小さなシアンのライト。画面右へ飛ぶ決め姿勢。機体は横長で横:縦が約1.45:1の読みやすいシルエット。立体レンダリングではなく平面的なセル塗りの工作舞台向けイラスト。全体を余白付きで中央に収め、プロペラを切らない。薄い硬いクリーム白縁をプロペラも含む一周、外は完全透明、背景と床影なし。文字・数字・ロゴ・人物・銃・爆発・速度線・紙の繊維・グロー・ぼかし・3D・ピクセル化なし。1枚1機、複数案やシートなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "fitAttackHitbox": true,
+      "sha256": "45097665396d93e27673d094ca066960b1b0486922365bc35ef35c4dfa10629e",
+      "native": {
+        "width": 1510,
+        "height": 1041,
+        "bounds": {
+          "left": 25,
+          "top": 305,
+          "right": 1495,
+          "bottom": 713
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "rocket",
+      "look": "Rocket",
+      "version": 1,
+      "key": "toma",
+      "source": "art_source/paper_roster_action/toma/generated/effect_rocket_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "透真の画風・配色の基準。人物は生成しない"
+      ],
+      "prompt": "オリジナル2D対戦ゲーム用、画面外の上から落ちるロケット1本だけの透明スプライト。参照の透真と同じ普通のアニメ塗りと薄いクリーム白の切り抜き縁で、人物は描かない。ロケットは機首の尖った先端を真下へ向け、エンジンと短い左右の尾翼は上側、上下を逆にしない。黒と濃いグレーの胴体、白い帯、細いシアンのアクセント。短めで少しデフォルメした機体、全体の横幅:高さが約1.8:2.8。平面的なセル塗り、前面〜少し斜め横で輪郭が読みやすい。金属の写実や3D描画ではない。全体を余白付きで収め、先端と尾翼を切らない。薄い硬いクリーム白縁を全周、外は完全透明。人物・背景・床影・雲・煙・炎・爆発・弾道線・文字・ロゴ・紙の繊維・グロー・ぼかし・ピクセル化なし。1枚1本のみ。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "fitAttackHitbox": true,
+      "sha256": "356d3600d84bece1944c9d976956e6b3e8274a8b56829f55da49e88560cf9b9e",
+      "native": {
+        "width": 1006,
+        "height": 1564,
+        "bounds": {
+          "left": 191,
+          "top": 100,
+          "right": 821,
+          "bottom": 1392
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "bullet",
+      "look": "Bullet",
+      "version": 1,
+      "key": "toma",
+      "source": "art_source/paper_roster_action/toma/generated/effect_bullet_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "prompt": "オリジナル2D対戦ゲーム用、空を飛ぶ光る銃弾を示す小さな切り絵風の弾丸マーカー1個だけ。画面右へ向く短い丸いカプセル形、左にごく短い2本の紙の三角形の尾。全体の横幅:高さは約1.2:1のコンパクトな形。白い芯と明るいシアン、少量の淡い黄色、通常の平面的なアニメ塗り。輪郭を硬くし、小さいゲーム表示でも見える簡潔なシルエット。写実的な金属の実弾や薬莢ではなく、本作の未来的な射撃を示す明るい2Dイラスト。薄い硬いクリーム白縁を全体に一周、外は完全透明。背景・床影・人物・銃・文字・数字・ロゴ・複数弾・爆発・グロー・ぼかし・紙の繊維・3D・ピクセル化なし。中央に1個、全体を十分な余白で収める。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "fitAttackHitbox": true,
+      "sha256": "d6fba72a74169be895898ff16f6fe374589a8bf8df5e8ecc3da0ebf6a30cdf35",
+      "native": {
+        "width": 1374,
+        "height": 1145,
+        "bounds": {
+          "left": 369,
+          "top": 448,
+          "right": 1013,
+          "bottom": 729
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    }
+  ],
+  "gameConnected": true,
+  "verifiedTag": "rework_r4_toma_5"
+}

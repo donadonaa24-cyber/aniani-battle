@@ -1,0 +1,19 @@
+{
+  "id": "up_prepare",
+  "key": "toma",
+  "character": "透真",
+  "pose": "up",
+  "phase": "prepare",
+  "label": "地上上攻撃",
+  "version": 1,
+  "source": "art_source/paper_roster_action/toma/generated/up_prepare_v1.png",
+  "references": [
+    "art_source/paper_roster_action/toma/generated/normal1_prepare_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象：同じ拳銃と頭・靴の実寸、腕以外は固定"
+  ],
+  "prompt": "同じ透真の地上上攻撃の予備。参照の両腕と両手と同じ小型黒拳銃だけを局所編集する。頭・髪・顔・衣装・腰・両脚・両靴の形とピクセル寸法・位置を固定、1189×1323キャンバスと靴底y1291を保持。両肘を曲げたまま銃口を画面右上へ65度ほど上げて、次に真上を撃つため構える。銃は右手で握り、左手で右手を下から支える。銃は顔の右側へ寄せ、両目と顔を隠さない。手・銃口は枠の内側に余白付きで全部見せる。髪幅544px、靴218pxと306pxの実寸を保持して拡大しない。既存の角形黒スライドとシアン線をそのまま。銃口炎、弾丸、文字、背景、床影、効果線、グロー、3D、紙質、関節分割、ピクセル化なし。薄い硬いクリーム白縁を手と銃を含む全身一周、縁外は完全透明。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

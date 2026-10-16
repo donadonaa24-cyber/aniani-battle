@@ -1,0 +1,19 @@
+{
+  "id": "super_impact",
+  "key": "toma",
+  "character": "透真",
+  "pose": "super",
+  "phase": "impact",
+  "label": "超必殺ロケット指令",
+  "version": 1,
+  "source": "art_source/paper_roster_action/toma/generated/super_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/toma/generated/super_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：超必殺予備、端末と頭・足の寸法を固定"
+  ],
+  "prompt": "参照の同じ透真の超必殺の決めポーズ。両腕と上着上部だけを局所編集する。参照の頭・髪・顔・胴・腰・両脚・両靴と同じ画素位置・寸法・倍率を保持し、全身を拡大しない。1189×1323の透明キャンバス、靴底y1291。本人左手で同じ黒とシアンの小型端末を胸元に持つまま、本人右腕（画面左へ引いた腕）を前方の画面右下へ大きく振り下ろし、右の握り拳をx1050,y820付近へ出して標的へ落下攻撃を命令する強い決めポーズ。右拳は正しい親指と4本の丸めた指、右肩から肘・手首・拳までの一続きの自然な腕。両肩と首がねじれない。冷静で鋭い表情、胸元を見せる斜め横向き。全身の位置や頭・足を動かさず、腕の起点と終点だけを明快に変える。ロケット本体、銃、相手、文字、背景、影、速度線、グロー、紙の質感、関節分割、3D、ピクセル化なし。薄い硬いクリーム白縁を全身・手・端末の一周、縁外は完全透明。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}
