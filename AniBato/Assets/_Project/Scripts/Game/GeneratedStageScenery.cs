@@ -23,7 +23,7 @@ namespace AniBato.Game
             {
                 var panel = art.BoardPanel; var source = art.Mid;
                 var ink = ProceduralSprites.Create(mid.transform,"Board Grid Ink",Vector2.one,new Color(.18f,.09f,.045f),sortingOrder:-34);
-                ink.transform.localPosition = new Vector3((panel.center.x-source.texture.width*.5f)/100,(panel.center.y-source.texture.height*.5f)/100,0);
+                ink.transform.localPosition = new Vector3((panel.center.x-source.rect.width*.5f)/100,(panel.center.y-source.rect.height*.5f)/100,0);
                 ink.transform.localScale = new Vector3(panel.width/100,panel.height/100,1);
                 for(int r=0;r<6;r++)for(int c=0;c<6;c++)
                 {
@@ -31,7 +31,7 @@ namespace AniBato.Game
                     var rect=new Rect(panel.x+c*panel.width/6,panel.y+r*panel.height/6,panel.width/6,panel.height/6);
                     cells[i]=Add("Board Backdrop Cell "+r+"-"+c,GeneratedStageArt.Region(source,rect,Vector2.one*.5f),-33);
                     cells[i].transform.SetParent(mid.transform,false);
-                    cellOrigins[i]=new Vector3((rect.center.x-source.texture.width*.5f)/100,(rect.center.y-source.texture.height*.5f)/100,0);
+                    cellOrigins[i]=new Vector3((rect.center.x-source.rect.width*.5f)/100,(rect.center.y-source.rect.height*.5f)/100,0);
                     cells[i].transform.localPosition=cellOrigins[i];
                     cells[i].transform.localScale=new Vector3(.97f,.97f,1);
                 }

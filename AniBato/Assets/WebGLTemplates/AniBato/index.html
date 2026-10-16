@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>あにあにバトル！！</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#152334;color:#fff3d8;font-family:system-ui,sans-serif;text-align:center}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 3%;background:#372a26;border-bottom:4px solid #ad7547}
+h1{font-size:19px;margin:0}button{font:inherit;color:#201a18;background:#ffe4a8;border:2px solid #95613e;border-radius:5px;padding:7px 18px;cursor:pointer}button:focus-visible{outline:3px solid cyan}button:disabled{opacity:.4;cursor:default}
+#stage{width:min(100vw,calc((100dvh - 115px)*1.77778));aspect-ratio:16/9;margin:auto;position:relative;background:#142031;border:5px solid #936748;box-shadow:0 6px 0 #60472e}
+canvas{display:block;width:100%;height:100%;outline:0}#curtain{position:absolute;inset:0;display:grid;place-content:center;gap:20px;background:#241e24e8}#load{margin:0}progress{width:260px}footer{padding:10px;font-size:13px;line-height:1.6}#verify{margin:0 auto;max-width:1100px;text-align:left;font-size:11px;white-space:pre-wrap;overflow-wrap:anywhere}
+#player.expanded{position:fixed;inset:0;z-index:10;background:#152334;overflow:auto}#player.expanded #stage{width:min(100vw,calc((100dvh - 64px)*1.77778))}
+</style></head><body>
+<div id="player">
+<header><h1>あにあにバトル！！</h1><div><button id="pause" disabled>ポーズ</button> <button id="fullscreen" disabled>全画面</button></div></header>
+<main id="stage"><canvas id="unity-canvas" width="1920" height="1080" tabindex="0" aria-label="あにあにバトル！！ ゲーム画面"></canvas>
+<div id="curtain"><p id="load">紙の舞台へようこそ！</p><progress id="progress" max="1" value="0" hidden></progress><button id="boot">ゲームを読み込む</button><button id="play" hidden>音を有効にして開演！</button></div></main></div>
+<footer>PC・キーボード／ゲームパッド向け。ゲーム画面をクリックして操作。<br>P1：WASD 移動・J 通常・K 特殊・U 超必殺・Space ジャンプ　／　P2：矢印・テンキー0〜6　／　P ポーズ・選択中 M 技表<br>練習：1 速度・2 静止・3 コマ送り・4 判定表示。戻る：K／Esc。全画面の解除：Esc／上のボタン。 <a href="ThirdPartyNotices.txt" style="color:inherit">ライセンス</a></footer>
+<pre id="verify" hidden></pre>
+<section id="pad-test" hidden aria-label="仮想ゲームパッドAPIの検査"><p>仮想ゲームパッドAPIの検査（実機ではありません）</p>
+<button id="pad-connect">仮想パッド接続</button><button id="pad-disconnect">仮想パッド切断</button>
+<button data-pad="12">パッド上</button><button data-pad="13">パッド下</button><button data-pad="14">パッド左</button><button data-pad="15">パッド右</button>
+<button data-pad="0">パッド決定 A</button><button data-pad="1">パッド戻る B</button><button data-pad="2">パッド通常 X</button><button data-pad="9">パッドStart</button></section>
+<script>
+const canvas=document.querySelector('#unity-canvas'),curtain=document.querySelector('#curtain'),load=document.querySelector('#load'),progress=document.querySelector('#progress');
+const verification=new URLSearchParams(location.search).get('verify')==='1';document.querySelector('#verify').hidden=!verification;
+document.querySelector('#pad-test').hidden=!verification;
+if(verification){
+ const nativePads=navigator.getGamepads.bind(navigator);let virtual=null;
+ navigator.getGamepads=()=>{const pads=Array.from(nativePads());if(virtual)pads[virtual.index]=virtual;return pads;};
+ document.querySelector('#pad-connect').onclick=()=>{
+  if(virtual)return;const pads=Array.from(nativePads());let index=0;while(pads[index])index++;
+  virtual={id:'Xbox 360 Controller (STANDARD GAMEPAD) - AniBato virtual verification',index,connected:true,mapping:'standard',axes:[0,0,0,0],buttons:Array.from({length:17},()=>({pressed:false,touched:false,value:0})),timestamp:performance.now()};
+  const event=new Event('gamepadconnected');Object.defineProperty(event,'gamepad',{value:virtual});window.dispatchEvent(event);
+ };
+ document.querySelector('#pad-disconnect').onclick=()=>{if(!virtual)return;virtual.connected=false;const event=new Event('gamepaddisconnected');Object.defineProperty(event,'gamepad',{value:virtual});window.dispatchEvent(event);virtual=null;};
+ for(const button of document.querySelectorAll('#pad-test button'))button.addEventListener('pointerdown',e=>e.preventDefault());
+ for(const button of document.querySelectorAll('[data-pad]'))button.onclick=()=>{
+  if(!virtual)return;const pad=virtual,b=pad.buttons[Number(button.dataset.pad)];b.pressed=b.touched=true;b.value=1;pad.timestamp=performance.now();
+  setTimeout(()=>{b.pressed=b.touched=false;b.value=0;pad.timestamp=performance.now();},250);
+ };
+}
+window.AniBatoStatus=json=>{if(verification)document.querySelector('#verify').textContent=json+'\n音声: '+(window.AniBatoAudioState||'未開始');};
+const send=(method,arg)=>window.unityInstance?.SendMessage('Web Player',method,arg);
+document.querySelector('#boot').onclick=()=>{
+ document.querySelector('#boot').hidden=true;progress.hidden=false;load.textContent='舞台を準備しています…';
+ const script=document.createElement('script');script.src='Build/{{{ LOADER_FILENAME }}}';
+ script.onload=()=>createUnityInstance(canvas,{
+  dataUrl:'Build/{{{ DATA_FILENAME }}}',frameworkUrl:'Build/{{{ FRAMEWORK_FILENAME }}}',codeUrl:'Build/{{{ CODE_FILENAME }}}',
+  streamingAssetsUrl:'StreamingAssets',companyName:'aniani',productName:'あにあにバトル！！',productVersion:'0.1',autoSyncPersistentDataPath:true,
+  showBanner:(message,type)=>{if(type==='error'){load.textContent='起動エラー：'+message;curtain.hidden=false;}}
+ },p=>progress.value=p).then(instance=>{
+  window.unityInstance=instance;load.textContent='準備できました';progress.hidden=true;document.querySelector('#play').hidden=false;
+ }).catch(error=>load.textContent='読み込みに失敗しました：'+error.message);
+ script.onerror=()=>load.textContent='読み込みファイルを取得できません。HTTPサーバーから開いてください。';document.body.appendChild(script);
+};
+document.querySelector('#play').onclick=()=>{curtain.remove();send('BeginAudio');canvas.focus();document.querySelector('#pause').disabled=false;document.querySelector('#fullscreen').disabled=false;};
+document.querySelector('#pause').onclick=()=>{send('BrowserPause');canvas.focus();};
+// Keep DOM controls and the canvas aspect ratio together. The page-sized fallback also
+// works in embedded browsers that do not expose the native Fullscreen API.
+const player=document.querySelector('#player'),fullscreen=document.querySelector('#fullscreen');
+const expanded=value=>{player.classList.toggle('expanded',value);fullscreen.textContent=value?'全画面を解除':'全画面';};
+const leaveFullscreen=()=>{expanded(false);if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});canvas.focus();};
+fullscreen.onclick=()=>{
+ if(player.classList.contains('expanded')){leaveFullscreen();return;}
+ expanded(true);canvas.focus();
+ if(player.requestFullscreen)player.requestFullscreen().catch(()=>{});
+};
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)expanded(false);});
+document.addEventListener('keydown',e=>{if(e.code==='Escape'&&player.classList.contains('expanded')){leaveFullscreen();e.preventDefault();e.stopImmediatePropagation();}},true);
+canvas.addEventListener('focus',()=>send('BrowserFocus','1'));
+canvas.addEventListener('blur',()=>send('BrowserFocus','0'));
+canvas.addEventListener('pointerdown',()=>{canvas.focus();send('BeginAudio');});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)send('BrowserFocus','0');});
+window.addEventListener('keydown',e=>{if(document.activeElement===canvas&&!e.metaKey&&['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Home','End','PageUp','PageDown','Delete','Tab'].includes(e.code))e.preventDefault();});
+</script></body></html>

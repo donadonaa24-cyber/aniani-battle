@@ -1,7 +1,7 @@
 {
   "date": "2026-10-16",
   "spec": "docs/SPEC_REVISION_20261016.md",
-  "current": "R6",
+  "current": "R5_R6_complete",
   "baseCommit": "a169ee3",
   "stages": {
     "R0": "complete",
@@ -10,15 +10,15 @@
     "R3": "complete",
     "R4": "art_in_progress",
     "R5": "complete",
-    "R6": "implementation"
+    "R6": "complete"
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "rework_r5_4",
+    "tag": "webgl_native_3",
     "buildAll": "success",
     "edit": {
-      "total": 527,
-      "passed": 527,
+      "total": 533,
+      "passed": 533,
       "failed": 0,
       "skipped": 0
     },
@@ -29,8 +29,8 @@
       "skipped": 0
     },
     "windowsBuild": "success",
-    "screenshots": "docs/screenshots/rework_r5/",
-    "screenshotCount": 16
+    "screenshots": "docs/screenshots/rework_r6/",
+    "screenshotCount": 19
   },
   "activeVerification": null,
   "attempts": [
@@ -310,6 +310,49 @@
       "windowsBuild": "success",
       "screenshots": "docs/screenshots/rework_r4_toma/",
       "screenshotCount": 72
+    },
+    {
+      "tag": "webgl_native_1",
+      "buildAll": "compiler_error",
+      "reason": "追加EditorコードのAnimationState型名衝突を別名指定で修正。"
+    },
+    {
+      "tag": "webgl_native_2",
+      "buildAll": "success",
+      "edit": {
+        "total": 530,
+        "passed": 530,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 61,
+        "passed": 61,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "reason": "Web入力・日本語・複製不変を確認。画像梱包と領域の回帰3検査を追加し3で再検証。"
+    },
+    {
+      "tag": "webgl_native_3",
+      "buildAll": "success",
+      "edit": {
+        "total": 533,
+        "passed": 533,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 61,
+        "passed": 61,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "screenshots": "docs/screenshots/rework_r6/",
+      "screenshotCount": 19,
+      "reason": "画像梱包と顔領域を含め実Unity全4合格。WebGL_1のコールドBee失敗は2で解消。非4倍数の原画に透明余白を足し3で47.4MBへ。4〜5は全画面と保存同期のHTML修正。"
     }
   ],
   "currentArtwork": {
@@ -324,5 +367,19 @@
     "verifiedTag": "rework_r4_toma_5",
     "nextCharacter": "ren"
   },
-  "nextTask": "docs/codex_tasks/REWORK_R6_WEBGL.md"
+  "nextTask": "docs/codex_tasks/REWORK_R4_REN_ACTIONS.md",
+  "webGL": {
+    "tag": "webgl_5",
+    "result": "success",
+    "bytes": 47385522,
+    "seconds": 36.4886468,
+    "files": 6,
+    "output": "Build/WebGL/",
+    "browser": "Codex in-app Chromium",
+    "runtime": "passed",
+    "physicalGamepad": "not_tested",
+    "nativeChromeEdge": "not_tested",
+    "paddedImages": 274,
+    "sourceRgbaPreserved": true
+  }
 }

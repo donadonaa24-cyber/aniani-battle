@@ -52,6 +52,7 @@ namespace AniBato.EditorTools
             var grid=new GameObject("Nine Character Selection",typeof(RectTransform));grid.transform.SetParent(root.transform,false);grid.AddComponent<PaperRosterGrid>().Configure(ensemble);
             var flow = runner.gameObject.AddComponent<GameFlowController>();
             flow.Configure(runner, input, setup, settings, view, world, hud, stage);
+            new GameObject("Web Player").AddComponent<WebPlayerBridge>();
             world.SetActive(false); hud.SetActive(false);
         }
         public static Sprite[] ImportPaperRoster()

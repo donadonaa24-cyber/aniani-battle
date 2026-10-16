@@ -235,6 +235,7 @@ namespace AniBato.Game
                 else if (MenuIndex == 3) OpenSettings();
                 else
                 {
+                    if(WebInputPolicy.Enabled){Show(GameScreen.Title,true);return;}
 #if UNITY_EDITOR
                     UnityEditor.EditorApplication.isPlaying = false;
 #else

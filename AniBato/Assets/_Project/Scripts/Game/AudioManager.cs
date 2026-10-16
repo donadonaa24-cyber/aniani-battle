@@ -49,6 +49,7 @@ namespace AniBato.Game
         {
             if (bgm) { BgmVolume = Mathf.Clamp01(BgmVolume + delta); music.volume = BgmVolume; PlayerPrefs.SetFloat("AniBato.BgmVolume", BgmVolume); }
             else { SeVolume = Mathf.Clamp01(SeVolume + delta); effects.volume = SeVolume; PlayerPrefs.SetFloat("AniBato.SeVolume", SeVolume); }
+            PlayerPrefs.Save();
         }
         private void OnDestroy()
         { if (cues != null) foreach (var clip in cues) Destroy(clip); if (tracks != null) foreach (var clip in tracks) Destroy(clip); }

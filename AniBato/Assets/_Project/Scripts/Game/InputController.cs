@@ -97,7 +97,7 @@ namespace AniBato.Game
                 { Configuration.Profile(player, true).Rebind(action, id); Configuration.Save(player, true); blocked.Add(ControlConfiguration.PadButton(p, id)); Clear(); return true; }
             }
             else if (ActiveKeyboard != null) foreach (var key in ActiveKeyboard.allKeys)
-                if (key.keyCode != Key.Escape && key.keyCode != Key.F9 && key.keyCode != Key.F11 && key.keyCode != Key.Tab && Pressed(key))
+                if (WebInputPolicy.CanBind(key.keyCode,WebInputPolicy.Enabled) && Pressed(key))
                 { Configuration.Profile(player, false).Rebind(action, (int)key.keyCode); Configuration.Save(player, false); blocked.Add(key); Clear(); return true; }
             return false;
         }
@@ -153,20 +153,20 @@ namespace AniBato.Game
         public FrameInput Consume(int player) => latches[player].Consume();
         public void Clear() { foreach (var latch in latches) latch.Clear(); }
         private void OnApplicationFocus(bool focus) { if (!focus) Clear(); }
-        public bool DebugBoxesPressed => KeyPressed(Key.F9);
-        public bool PracticeRatePressed => KeyPressed(Key.F5);
-        public bool PracticePausePressed => KeyPressed(Key.F6);
-        public bool PracticeStepPressed => KeyPressed(Key.F7);
+        public bool DebugBoxesPressed => KeyPressed(WebInputPolicy.Enabled?Key.Digit4:Key.F9);
+        public bool PracticeRatePressed => KeyPressed(WebInputPolicy.Enabled?Key.Digit1:Key.F5);
+        public bool PracticePausePressed => KeyPressed(WebInputPolicy.Enabled?Key.Digit2:Key.F6);
+        public bool PracticeStepPressed => KeyPressed(WebInputPolicy.Enabled?Key.Digit3:Key.F7);
         public bool RematchPressed => bindings && KeyPressed(bindings.Rematch);
-        public bool FullscreenPressed => bindings && KeyPressed(bindings.Fullscreen);
+        public bool FullscreenPressed => !WebInputPolicy.Enabled && bindings && KeyPressed(bindings.Fullscreen);
         public int CharacterSelectionDelta(int player) =>
             (KeyPressed(player == 0 ? Key.F2 : Key.F4) ? 1 : 0) - (KeyPressed(player == 0 ? Key.F1 : Key.F3) ? 1 : 0);
 
         public bool AnyMenuKeyPressed
         { get { bool value = false; if (ActiveKeyboard != null) foreach (var key in ActiveKeyboard.allKeys) value |= MenuButton(key, MenuAction.AnyKey); return value; } }
         public bool EscapePressed => MenuKey(Key.Escape, MenuAction.Cancel);
-        public bool CommandListPressed => MenuKey(Key.Tab, MenuAction.Start) || assignedPads[0] != null && MenuButton(assignedPads[0].selectButton, MenuAction.Start);
-        public string CommandListLabel => labelDevice[0] == InputLabelDevice.Keyboard ? "Tab" : InputGlyphs.Pad(16, labelDevice[0]);
+        public bool CommandListPressed => MenuKey(WebInputPolicy.Enabled?Key.M:Key.Tab, MenuAction.Start) || assignedPads[0] != null && MenuButton(assignedPads[0].selectButton, MenuAction.Start);
+        public string CommandListLabel => labelDevice[0] == InputLabelDevice.Keyboard ? WebInputPolicy.Enabled?"M":"Tab" : InputGlyphs.Pad(16, labelDevice[0]);
         public MenuInput ReadMenu(int player)
         {
             var keys = EffectiveKeys(player);

@@ -131,6 +131,12 @@ namespace AniBato.Game
             { heading.text = "練習設定"; subtitle.text = "練習中：F5 速度／F6 静止／F7 1コマ進める／F9 判定表示"; options.text = Choices(flow.MenuIndex, "相手  " + new[] { "棒立ち", "ガード", "ジャンプ", "ふつうCPU" }[(int)flow.Practice.Opponent], "ハート固定  " + (flow.Practice.FreezeHearts ? "ON" : "OFF"), "時間固定  " + (flow.Practice.FreezeTimer ? "ON" : "OFF"),"練習で判定表示  "+(flow.Practice.DebugDefault?"ON":"OFF"),"速度  "+flow.Runner.PracticeRateLabel,"静止  "+(flow.Runner.PracticePlaybackPaused?"ON":"OFF"),"1コマ進める（静止中）"); }
             if (screen != GameScreen.Controls) options.fontSize = screen == GameScreen.KeyConfig ? 26 : screen == GameScreen.CommandList || screen == GameScreen.Pause || screen == GameScreen.Settings ? 30 : 38;
             if(screen==GameScreen.MainMenu)options.fontSize=28;
+            if(WebInputPolicy.Enabled)
+            {
+                heading.text=WebInputPolicy.Text(heading.text);subtitle.text=WebInputPolicy.Text(subtitle.text);
+                options.text=WebInputPolicy.Text(options.text);footer.text=WebInputPolicy.Text(footer.text);
+                if(screen==GameScreen.MainMenu)options.text=options.text.Replace("終了","タイトルへ");
+            }
         }
         private void Characters(GameFlowController flow)
         {

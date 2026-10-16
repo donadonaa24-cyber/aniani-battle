@@ -65,6 +65,7 @@ namespace AniBato.Game
                 legend.enabled=show;
                 legend.text="<color=#78ff8a>緑：やられ判定</color>　<color=#ff6868>赤：攻撃有効</color>　<color=#ffe265>黄：飛び道具</color>　<color=#ffaaaa>薄赤：予備範囲</color>　残像：命中時の位置（0.5秒）　F9 表示切替";
                 if(runner.Practice!=null)legend.text+="\nF5 速度："+runner.PracticeRateLabel+"　F6 "+(runner.PracticePlaybackPaused?"静止中":"再生中")+"　F7 1コマ進める";
+                legend.text=WebInputPolicy.Text(legend.text);
             }
             if(show)
             {

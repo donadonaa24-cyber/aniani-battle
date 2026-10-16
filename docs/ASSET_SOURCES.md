@@ -212,3 +212,9 @@ art_source/paper_roster_core/の新規ポーズは内蔵image_genによる本作
 ## 2026-10-16 R5の生成舞台と集合絵
 
 内蔵image_genで自作した舞台21レイヤーと集合4原画。art_source/paper_stages/およびtitle_paper/のmanifestに原寸・SHA・全文条件と参照の役割を保存。生成画像を無加工で保持し、ゲームではSpriteのUVとアルファしきい値shaderを使う。9人の外見は既存の採用待機を継承。AIの電子窓や工作セットは本作独自表現であり原作設定の追加ではない。原作の容姿が未確認のサポート人物は勝手に追加しない。詳細はGENERATED_STAGE_ART.md。
+
+## 2026-10-16 WebGLの日本語フォントと画像梱包
+
+Noto Sans JP Regularは[Noto CJK公式](https://github.com/notofonts/noto-cjk/blob/main/Sans/SubsetOTF/JP/NotoSansJP-Regular.otf)のSIL Open Font License 1.1の配布物を無改変で同梱。SHA-256はdff723ba59d57d136764a04b9b2d03205544f7cd785a711442d6d2d085ac5073。原本・ライセンス・条件はart_source/fonts/、ゲームはResources/NotoSansJP-Regular.otf。Windows／WebGL出力へThirdPartyNotices.txtをコピーする。OSのフォントは転載していない。
+
+Web用に自作画像274件を右／上の透明余白で4の倍数へ梱包する。原画ファイルと元RGBA画素を保持し、再サンプルなし。ビルド専用キャッシュのDXT5は非可逆GPU圧縮であり、実表示の画素全一致とは区別する。元のSprite領域・PPU・支点と人物寸法を維持する。予備カバンと旧原画は削除せずWebの未使用参照だけを外す。詳細はWEBGL_CURRENT.md。

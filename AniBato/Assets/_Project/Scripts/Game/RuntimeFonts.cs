@@ -9,6 +9,7 @@ namespace AniBato.Game
         {
             get
             {
+                if(!japanese)japanese=Resources.Load<Font>("NotoSansJP-Regular");
                 if (!japanese) japanese = Font.CreateDynamicFontFromOSFont(new[] { "Yu Gothic", "Meiryo", "Arial" }, 28);
                 return japanese;
             }

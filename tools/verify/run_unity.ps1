@@ -9,7 +9,8 @@
 param(
     [Parameter(Mandatory = $true)][string]$Tag,
     [ValidateSet('all', 'buildall', 'editmode', 'playmode', 'build', 'summary')][string]$Only = 'all',
-    [string]$Filter = ''
+    [string]$Filter = '',
+    [string]$CaptureRoot = ''
 )
 $ErrorActionPreference = 'Stop'
 $Root = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
@@ -17,6 +18,12 @@ $Project = Join-Path $Root 'AniBato'
 $Results = Join-Path $Root 'TestResults'
 $Unity = 'C:\Program Files\Unity\Hub\Editor\6000.6.0f1\Editor\Unity.exe'
 New-Item -ItemType Directory -Force $Results | Out-Null
+if($CaptureRoot){
+    $capturePath=[IO.Path]::GetFullPath((Join-Path $Root $CaptureRoot))
+    if(-not $capturePath.StartsWith($Root+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'CaptureRoot must stay within this project.'}
+    New-Item -ItemType Directory -Force $capturePath | Out-Null
+    $env:ANIBATO_CAPTURE_ROOT=$capturePath
+}
 
 if (Test-Path (Join-Path $Project 'Temp\UnityLockfile')) {
     $locked = $true
@@ -55,6 +62,9 @@ if ($Only -in 'all', 'build') {
     $exe = Join-Path $Root "Build\$Tag\AniBato.exe"
     $code = Invoke-Unity @('-batchmode', '-quit', '-projectPath', (Q $Project), '-buildWindows64Player', (Q $exe), '-logFile', (Q $log))
     Write-Host "winbuild=$code"
+    if($code -eq 0 -and (Test-Path (Join-Path $Root 'art_source/fonts/OFL-NotoCJK.txt'))){
+        Copy-Item -LiteralPath (Join-Path $Root 'art_source/fonts/OFL-NotoCJK.txt') -Destination (Join-Path (Split-Path $exe) 'ThirdPartyNotices.txt') -Force
+    }
     Select-String -Path $log -Pattern 'Build Finished' -Encoding UTF8 | ForEach-Object { $_.Line }
     # Retention: Windows builds are ~100-160 MB each and every version is recoverable from git,
     # so keep only the newest $KeepBuilds build folders (this one included).

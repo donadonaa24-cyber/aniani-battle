@@ -12,8 +12,8 @@ namespace AniBato.Game
         public Vector2 Size(int index)=>Vector2.Scale(Hotspots[index].size,DisplaySize);
         public Sprite Face(int index)
         {
-            var r=Hotspots[index];var t=Artwork.texture;
-            return GeneratedStageArt.Region(Artwork,new Rect(r.x*t.width,(1-r.yMax)*t.height,r.width*t.width,r.height*t.height),Vector2.one*.5f);
+            var r=Hotspots[index];var frame=Artwork.rect;
+            return GeneratedStageArt.Region(Artwork,new Rect(frame.x+r.x*frame.width,frame.y+(1-r.yMax)*frame.height,r.width*frame.width,r.height*frame.height),Vector2.one*.5f);
         }
     }
 }

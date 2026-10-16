@@ -1,3 +1,7 @@
+## 現在（2026-10-16）：生成舞台・集合絵・WebGLを完了
+
+最新はRESUME冒頭とWEBGL_CURRENT.md。R5は8918206で保存済み、R6はwebgl_native_3のBuildAll／Edit533／Play61／Windows全合格とwebgl_5実ビルド・内蔵Chromium実動まで完了。約47.4MB、起動はtools/verify/start_webgl.ps1。3舞台・縮小・2勝先取・再戦・保存・入力と全画面を確認。通常Chrome／Edgeと物理パッドは未確認。R4の残8人原画は後続、REWORK_R4_REN_ACTIONSから。既存の基本45姿勢、透真攻撃16、カバン予備、判定調整を維持する。旧記録は以下。
+
 ## 現在（2026-10-16）：R4の透真を完了
 
 rework_r4_toma_5でBuildAll／Edit525/525／Play59/59／Windowsが全合格。透真の攻撃16原画と飛翔物3種を接続し、72実描画を保存。本人の基本5ポーズと通常45判定・ゲージ14/10・千鶴素材は維持。原画／全文条件／現在版／微差／証跡はart_source/paper_roster_action/toma/。確認フォルダはイラスト確認/透真/攻撃原画_ゲーム採用済み/。美術最終承認とゲーム使用は別、移動等の旧素材も残る。次はREWORK_R4_REN_ACTIONS、R4の残8人→R5→R6。R0〜R3や基本45ポーズを重複しない。最新の保存状態はRESUMEとgit status／log／originで確認。

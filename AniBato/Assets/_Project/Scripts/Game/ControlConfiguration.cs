@@ -14,17 +14,17 @@ namespace AniBato.Game
         { DoubleTapDashEnabled = !DoubleTapDashEnabled; PlayerPrefs.SetInt(DoubleTapStorage, DoubleTapDashEnabled ? 1 : 0); PlayerPrefs.Save(); }
         private readonly ControlProfile[] keyboard = new ControlProfile[2], pad = new ControlProfile[2];
         public ControlProfile Profile(int player, bool gamepad) => gamepad ? pad[player] : keyboard[player];
-        private static string Storage(int player, bool gamepad) => "AniBato.Controls.v1." + player + (gamepad ? ".pad" : ".keyboard");
+        private static string Storage(int player, bool gamepad) => (WebInputPolicy.Enabled?"AniBato.Controls.web.v1.":"AniBato.Controls.v1.") + player + (gamepad ? ".pad" : ".keyboard");
         public void Initialize(InputBindings bindings)
         {
             DoubleTapDashEnabled = PlayerPrefs.GetInt(DoubleTapStorage, 1) != 0;
             for (int i = 0; i < 2; i++)
             {
-                var k = bindings.ForPlayer(i);
+                var k = WebInputPolicy.Keys(bindings.ForPlayer(i),i,WebInputPolicy.Enabled);
                 keyboard[i] = new ControlProfile(new[] { (int)k.Left, (int)k.Right, (int)k.Up, (int)k.Down, (int)k.Jump, (int)k.Attack,
-                    (int)k.Special, (int)k.Guard, (int)k.Dodge, (int)k.Counter, (int)k.Ultimate, (int)k.Dash, i == 0 ? (int)Key.Escape : (int)Key.Backspace });
+                    (int)k.Special, (int)k.Guard, (int)k.Dodge, (int)k.Counter, (int)k.Ultimate, (int)k.Dash, (int)WebInputPolicy.Pause(i,WebInputPolicy.Enabled) });
                 pad[i] = new ControlProfile(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 });
-                keyboard[i].Load(PlayerPrefs.GetString(Storage(i, false), ""), value => Enum.IsDefined(typeof(Key), value) && value != (int)Key.None);
+                keyboard[i].Load(PlayerPrefs.GetString(Storage(i, false), ""), value => Enum.IsDefined(typeof(Key), value) && value != (int)Key.None&&(!WebInputPolicy.Enabled||WebInputPolicy.CanBind((Key)value,true)));
                 pad[i].Load(PlayerPrefs.GetString(Storage(i, true), ""), value => value >= 1 && value <= 16);
             }
         }
