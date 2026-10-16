@@ -1,13 +1,272 @@
 {
   "character": "蓮",
   "artApproved": false,
-  "gameConnected": "normal_four_keys_only",
-  "unityVerifiedTag": "paper_fourkeys_3",
+  "gameConnected": true,
+  "unityVerifiedTag": "rework_r4_ren_2",
   "resampledCharacterPixels": 0,
   "review": [
     "待機を基準に頭巾・顔・スニーカーの実寸を目視比較。低姿勢を枠へ拡大しない。",
     "頭突きは予備2版、倒立の予備は2版、両足蹴りは4版を選定。首の向き・尾の重複・靴の切断・可視幅超過の候補を除外。",
     "選定4枚は頭1・ミトン2・脚2・尾1、倒立は顔も逆向き。端切れなし。",
-    "頭巾の耳の張りと靴の投影による微差は残り、美術最終承認待ち。枠・PPU一致を部位同一の保証とはしない。"
+    "頭巾の耳の張りと靴の投影による微差は残り、美術最終承認待ち。枠・PPU一致を部位同一の保証とはしない。",
+    "残10原画を原寸表示し、頭巾／顔／ミトン／靴と四肢・尾のつながりを確認。超必殺予備のみ部位修正v2へ。",
+    "人物原画の倍率とRGBAを保持して透明梱包。枠一致を人体部位の完全一致とは扱わない。",
+    "飛車は本人が駒へ変身した別シルエット。人物の頭や靴の部位比を適用して縮小しない。",
+    "美術最終承認はユーザーの確認待ち。耳の開き・前後の靴の投影による微差を記録し、完全同寸とは報告しない。"
+  ],
+  "baseIdle": "art_source/paper_roster_idle/generated/ren_idle_v1.png",
+  "selected": [
+    {
+      "id": "normal1_prepare",
+      "version": 2,
+      "source": "art_source/paper_roster_action/ren/generated/normal1_prepare_v2.png",
+      "sha256": "5c00c18f61cad5742501de5a03efd9415de947955c6416db969816454a8edbce",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 67,
+          "top": 225,
+          "right": 1140,
+          "bottom": 1272
+        }
+      },
+      "note": "通常4原画の前回採用版を維持。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal1_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/normal1_impact_v1.png",
+      "sha256": "17ce043889b5fb7cdb514fb1c0961fe00cd6226d2116aaf6e9b2d4e039d24f59",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 20,
+          "top": 338,
+          "right": 1101,
+          "bottom": 1225
+        }
+      },
+      "note": "通常4原画の前回採用版を維持。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 2,
+      "source": "art_source/paper_roster_action/ren/generated/normal3_prepare_v2.png",
+      "sha256": "e2b3e229b029a6be60c548e00d83cc1815e6b594e7ca03c51e249acf64a943a1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 87,
+          "top": 296,
+          "right": 1169,
+          "bottom": 1229
+        }
+      },
+      "note": "通常4原画の前回採用版を維持。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal3_impact",
+      "version": 4,
+      "source": "art_source/paper_roster_action/ren/generated/normal3_impact_v4.png",
+      "sha256": "2e9a5c4a08a27380ff3629682923a48d7b8431806b5da9758a2ced8ec5fdb860",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 9,
+          "top": 338,
+          "right": 1126,
+          "bottom": 1218
+        }
+      },
+      "note": "通常4原画の前回採用版を維持。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/up_prepare_v1.png",
+      "sha256": "af02ad0fe3ab620782d730760c7f38b921acd43a976793d9d5c86c8dd68e5929",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 121,
+          "top": 84,
+          "right": 1109,
+          "bottom": 1246
+        }
+      },
+      "note": "片脚で支持、反対の膝を上げる。ミトン2、脚2、尾1。両靴と耳を画面内に保持。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "up_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/up_impact_v1.png",
+      "sha256": "c3081219d40b2b0d99ed99a405bfabf35aa354e64dc4920a0715fe9732ed45b7",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 49,
+          "top": 142,
+          "right": 1097,
+          "bottom": 1368
+        }
+      },
+      "note": "軸脚を残した蹴り上げ。蹴り脚の根元・膝・足首がつながり、頭巾の犬耳と区別できる。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "down_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/down_prepare_v1.png",
+      "sha256": "9fae511e5fd31e1fcc5060564cbfdc9d0961749f2895c4b4d65d1bdc7f4ab7fe",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 69,
+          "top": 265,
+          "right": 1178,
+          "bottom": 1234
+        }
+      },
+      "note": "低い腰、2脚、接地ミトンと前のミトン。立ち枠を埋める拡大をしていない。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "down_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/down_impact_v1.png",
+      "sha256": "4bc58ad840088730eb44dbf00668547db5e186bfb865d903f4c9a24cec1ceba3",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 13,
+          "top": 345,
+          "right": 1176,
+          "bottom": 1251
+        }
+      },
+      "note": "接地した軸脚と地面に沿う横蹴り、尾1。靴の横向き投影の幅差は残る。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "air_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/air_prepare_v1.png",
+      "sha256": "0eee559ce12a29a479ce355f6b3c378c652310d8a34bd6fd885c724e444b4f52",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 32,
+          "top": 120,
+          "right": 1148,
+          "bottom": 1181
+        }
+      },
+      "note": "両膝を引いた浮遊シルエット。脚2本、靴2つ、ミトン2つ、尾1。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/air_impact_v1.png",
+      "sha256": "91fe5c3b51bcbdac174f4eb16ced8b0f55a54cdb336804bd1bc3e735c8151dba",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 37,
+          "top": 140,
+          "right": 1180,
+          "bottom": 1226
+        }
+      },
+      "note": "前の蹴り脚と後ろの曲げ脚を区別。両靴・両ミトン・尾のつながりを確認。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/special_prepare_v1.png",
+      "sha256": "7ee60a5a3c1033b56a6cb88ea51b50b462afbb0ea4480076c7d619f1a5d362a8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 119,
+          "top": 194,
+          "right": 1073,
+          "bottom": 1263
+        }
+      },
+      "note": "人物の低い飛車変身前の構え。胸元の両ミトン、尾1。耳の広がりに待機との差が残る。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/special_impact_v1.png",
+      "sha256": "7f258609ee3273be0197399e833c340a8a8d71c8911b06c6bd736031953efdd9",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 46,
+          "top": 58,
+          "right": 1093,
+          "bottom": 1372
+        }
+      },
+      "note": "蜂蜜色／赤縁／青緑帯／飛車の墨字、1駒のみ。人の手足なし。変身後の駒の寸法として審査。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "super_prepare",
+      "version": 2,
+      "source": "art_source/paper_roster_action/ren/generated/super_prepare_v2.png",
+      "sha256": "2ab7b60c48dedd2bcfb6e11fc2ee35e1f5def7ba21aacaa25b05654c4ede3716",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 95,
+          "top": 162,
+          "right": 1098,
+          "bottom": 1258
+        }
+      },
+      "note": "v1の大きい頭巾・靴を却下しv2を選定。低い構え・両ミトンを保ち部位を修正。耳の張りと靴の投影に微差は残る。",
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ren/generated/super_impact_v1.png",
+      "sha256": "ff2703644ba99e2aba3e0a723b960624f405419821ca08e78814c5ab4a0946aa",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 20,
+          "top": 58,
+          "right": 1088,
+          "bottom": 1365
+        }
+      },
+      "note": "特殊と同じ飛車の意匠。反対の傾きの1駒。突進・切返しはシミュレーションが制御する。",
+      "reviewedAtNativeScale": true
+    }
   ]
 }

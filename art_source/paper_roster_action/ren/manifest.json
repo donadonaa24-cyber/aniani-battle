@@ -73,8 +73,8 @@
     },
     {
       "id": "super_prepare",
-      "version": 1,
-      "promptFile": "art_source/paper_roster_action/ren/prompts/super_prepare_v1.json"
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/ren/prompts/super_prepare_v2.json"
     },
     {
       "id": "super_impact",
@@ -425,7 +425,7 @@
       ],
       "prompt": "Use case: identity-preserve. 全身ゲーム原画1枚。画像1は本人の採用待機の編集対象、容姿・頭身・頭髪・ミトンと靴の実寸の基準。画像1と同じ人物・同じアニメ塗り・同じ人物倍率で1姿勢だけ描く。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n動作：地上上攻撃の予備（まだ当てない）。接地した軸脚を曲げ、反対の脚の膝を前へ上げ、上へ蹴り出す直前。両ミトンは顔を隠さず横へ。\n右向きの斜め横で両腕・両脚と顔を明快に見せる。通常1と2は同じ2原画を使う。3段目だけ最大の溜めと決め姿。将棋駒の指定以外は、人の頭と身体は一つ、ミトン2つ、脚2本、靴2つ。左右を単純反転して人体を誤魔化さない。\n透明キャンバスは参照と同じ1189×1323。人物全体をキャンバスに合わせて拡大縮小しない。立ち待機の犬頭巾・人間の顔・スニーカーの実寸を維持。低姿勢では上に大きな透明余白があってよい。四肢を深く曲げて収め、頭・靴を小さくして収めない。全身、耳、尾、手先、靴まで切らずに余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ、ミトンや装備にも同じ白縁。縁の外は完全透明。地面、影、背景、効果線、衝撃、相手、枠、複数コマ、複数人、名前、文字（駒の「飛車」以外）、紙の繊維、3D、ピクセルアートは禁止。\n寸法固定：前後の靴は待機と同じ約210〜230px。顔と犬頭巾も待機の部位実寸を維持し、全身をキャンバスいっぱいへ拡大しない。通常の低い予備は上に約250〜330px透明余白、飛び込みは身体を横へ傾けて可視高さが低くなってよい。左右に最低40px透明余白。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "game_adopted_unapproved",
       "sha256": "af02ad0fe3ab620782d730760c7f38b921acd43a976793d9d5c86c8dd68e5929",
       "native": {
         "width": 1189,
@@ -438,7 +438,14 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/up_prepare.png",
+      "preparedSha256": "90bdfd20d6b33f35b3c2b98f07ee346c48f2bc14abb72f4e1baf92235ecc6a0e",
+      "offsetX": 1,
+      "offsetY": 82,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
     },
     {
       "id": "up_impact",
@@ -459,7 +466,7 @@
       ],
       "prompt": "Use case: identity-preserve. 全身ゲーム原画1枚。画像1は本人の採用待機の編集対象、容姿・頭身・頭髪・ミトンと靴の実寸の基準。画像1と同じ人物・同じアニメ塗り・同じ人物倍率で1姿勢だけ描く。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n動作：地上上攻撃の当てる決めポーズ。片足を地面に残して支え、反対の足を頭の斜め右上へ大きく蹴り上げる。上攻撃だと一目で分かるシルエット。頭巾の耳と足を混同せず、脚二本の根元と膝を正しくつなぐ。\n右向きの斜め横で両腕・両脚と顔を明快に見せる。通常1と2は同じ2原画を使う。3段目だけ最大の溜めと決め姿。将棋駒の指定以外は、人の頭と身体は一つ、ミトン2つ、脚2本、靴2つ。左右を単純反転して人体を誤魔化さない。\n透明キャンバスは参照と同じ1189×1323。人物全体をキャンバスに合わせて拡大縮小しない。立ち待機の犬頭巾・人間の顔・スニーカーの実寸を維持。低姿勢では上に大きな透明余白があってよい。四肢を深く曲げて収め、頭・靴を小さくして収めない。全身、耳、尾、手先、靴まで切らずに余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ、ミトンや装備にも同じ白縁。縁の外は完全透明。地面、影、背景、効果線、衝撃、相手、枠、複数コマ、複数人、名前、文字（駒の「飛車」以外）、紙の繊維、3D、ピクセルアートは禁止。\n寸法固定：前後の靴は待機と同じ約210〜230px。顔と犬頭巾も待機の部位実寸を維持し、全身をキャンバスいっぱいへ拡大しない。通常の低い予備は上に約250〜330px透明余白、飛び込みは身体を横へ傾けて可視高さが低くなってよい。左右に最低40px透明余白。\n画像2は直前の同一人物のポーズ。画像1の容姿と部位実寸を保ち、画像2から指定した1姿勢へ描き替える。衣装・道具・頭巾と顔の描き方を変えない。画像1と2から人物を二人描く意味ではない。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "game_adopted_unapproved",
       "sha256": "c3081219d40b2b0d99ed99a405bfabf35aa354e64dc4920a0715fe9732ed45b7",
       "native": {
         "width": 1103,
@@ -472,7 +479,14 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/up_impact.png",
+      "preparedSha256": "17c6c978d6a255de04f1bd6a5cd56290d65f6f0c4b85c01bd7d08ab5f06c50f5",
+      "offsetX": 201,
+      "offsetY": -40,
+      "sourceRgbaPreserved": false,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 3
     },
     {
       "id": "down_prepare",
@@ -491,7 +505,7 @@
       ],
       "prompt": "Use case: identity-preserve. 全身ゲーム原画1枚。画像1は本人の採用待機の編集対象、容姿・頭身・頭髪・ミトンと靴の実寸の基準。画像1と同じ人物・同じアニメ塗り・同じ人物倍率で1姿勢だけ描く。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n動作：地上下攻撃の予備（まだ当てない）。頭と靴を拡大せず、腰と両膝を深く曲げた低い構え。片ミトンを地面の近くへ下ろし、反対の脚を横へ蹴り出す直前。\n右向きの斜め横で両腕・両脚と顔を明快に見せる。通常1と2は同じ2原画を使う。3段目だけ最大の溜めと決め姿。将棋駒の指定以外は、人の頭と身体は一つ、ミトン2つ、脚2本、靴2つ。左右を単純反転して人体を誤魔化さない。\n透明キャンバスは参照と同じ1189×1323。人物全体をキャンバスに合わせて拡大縮小しない。立ち待機の犬頭巾・人間の顔・スニーカーの実寸を維持。低姿勢では上に大きな透明余白があってよい。四肢を深く曲げて収め、頭・靴を小さくして収めない。全身、耳、尾、手先、靴まで切らずに余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ、ミトンや装備にも同じ白縁。縁の外は完全透明。地面、影、背景、効果線、衝撃、相手、枠、複数コマ、複数人、名前、文字（駒の「飛車」以外）、紙の繊維、3D、ピクセルアートは禁止。\n寸法固定：前後の靴は待機と同じ約210〜230px。顔と犬頭巾も待機の部位実寸を維持し、全身をキャンバスいっぱいへ拡大しない。通常の低い予備は上に約250〜330px透明余白、飛び込みは身体を横へ傾けて可視高さが低くなってよい。左右に最低40px透明余白。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "game_adopted_unapproved",
       "sha256": "9fae511e5fd31e1fcc5060564cbfdc9d0961749f2895c4b4d65d1bdc7f4ab7fe",
       "native": {
         "width": 1189,
@@ -504,7 +518,14 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/down_prepare.png",
+      "preparedSha256": "e83bbaf226c2dff2d2f7ad100e632c15487689acdb2ef8906be4f896a0de843e",
+      "offsetX": 0,
+      "offsetY": 94,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
     },
     {
       "id": "down_impact",
@@ -525,7 +546,7 @@
       ],
       "prompt": "Use case: identity-preserve. 全身ゲーム原画1枚。画像1は本人の採用待機の編集対象、容姿・頭身・頭髪・ミトンと靴の実寸の基準。画像1と同じ人物・同じアニメ塗り・同じ人物倍率で1姿勢だけ描く。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n動作：地上下攻撃の当てる決めポーズ。腰を低く保ち、一方の脚で支え、反対の脚を地面すれすれの画面右へ伸ばす低い足払い。両方のミトン・脚・頭巾のつながりを明快にし、空中ポーズにしない。\n右向きの斜め横で両腕・両脚と顔を明快に見せる。通常1と2は同じ2原画を使う。3段目だけ最大の溜めと決め姿。将棋駒の指定以外は、人の頭と身体は一つ、ミトン2つ、脚2本、靴2つ。左右を単純反転して人体を誤魔化さない。\n透明キャンバスは参照と同じ1189×1323。人物全体をキャンバスに合わせて拡大縮小しない。立ち待機の犬頭巾・人間の顔・スニーカーの実寸を維持。低姿勢では上に大きな透明余白があってよい。四肢を深く曲げて収め、頭・靴を小さくして収めない。全身、耳、尾、手先、靴まで切らずに余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ、ミトンや装備にも同じ白縁。縁の外は完全透明。地面、影、背景、効果線、衝撃、相手、枠、複数コマ、複数人、名前、文字（駒の「飛車」以外）、紙の繊維、3D、ピクセルアートは禁止。\n寸法固定：前後の靴は待機と同じ約210〜230px。顔と犬頭巾も待機の部位実寸を維持し、全身をキャンバスいっぱいへ拡大しない。通常の低い予備は上に約250〜330px透明余白、飛び込みは身体を横へ傾けて可視高さが低くなってよい。左右に最低40px透明余白。\n画像2は直前の同一人物のポーズ。画像1の容姿と部位実寸を保ち、画像2から指定した1姿勢へ描き替える。衣装・道具・頭巾と顔の描き方を変えない。画像1と2から人物を二人描く意味ではない。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "game_adopted_unapproved",
       "sha256": "4bc58ad840088730eb44dbf00668547db5e186bfb865d903f4c9a24cec1ceba3",
       "native": {
         "width": 1189,
@@ -538,7 +559,14 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/down_impact.png",
+      "preparedSha256": "ff7adab472ae8b50f9bd9e5a9195f2a8dbb951ddca441d62357a77cf970ddde2",
+      "offsetX": 0,
+      "offsetY": 77,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
     },
     {
       "id": "air_prepare",
@@ -557,7 +585,7 @@
       ],
       "prompt": "Use case: identity-preserve. 全身ゲーム原画1枚。画像1は本人の採用待機の編集対象、容姿・頭身・頭髪・ミトンと靴の実寸の基準。画像1と同じ人物・同じアニメ塗り・同じ人物倍率で1姿勢だけ描く。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n動作：空中ニュートラルの予備（まだ当てない）。全身が空中。両膝を胸の近くへ曲げ、両ミトンを横へ開いて空中蹴りを溜める。頭巾と顔と靴を見せる。\n右向きの斜め横で両腕・両脚と顔を明快に見せる。通常1と2は同じ2原画を使う。3段目だけ最大の溜めと決め姿。将棋駒の指定以外は、人の頭と身体は一つ、ミトン2つ、脚2本、靴2つ。左右を単純反転して人体を誤魔化さない。\n透明キャンバスは参照と同じ1189×1323。人物全体をキャンバスに合わせて拡大縮小しない。立ち待機の犬頭巾・人間の顔・スニーカーの実寸を維持。低姿勢では上に大きな透明余白があってよい。四肢を深く曲げて収め、頭・靴を小さくして収めない。全身、耳、尾、手先、靴まで切らずに余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ、ミトンや装備にも同じ白縁。縁の外は完全透明。地面、影、背景、効果線、衝撃、相手、枠、複数コマ、複数人、名前、文字（駒の「飛車」以外）、紙の繊維、3D、ピクセルアートは禁止。\n寸法固定：前後の靴は待機と同じ約210〜230px。顔と犬頭巾も待機の部位実寸を維持し、全身をキャンバスいっぱいへ拡大しない。通常の低い予備は上に約250〜330px透明余白、飛び込みは身体を横へ傾けて可視高さが低くなってよい。左右に最低40px透明余白。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "game_adopted_unapproved",
       "sha256": "0eee559ce12a29a479ce355f6b3c378c652310d8a34bd6fd885c724e444b4f52",
       "native": {
         "width": 1189,
@@ -570,7 +598,14 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/air_prepare.png",
+      "preparedSha256": "5a980527676b9f70110681ee8df402b25cbd755c4e5cfd225f05ef41ead22764",
+      "offsetX": 57,
+      "offsetY": 147,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
     },
     {
       "id": "air_impact",
@@ -591,7 +626,7 @@
       ],
       "prompt": "Use case: identity-preserve. 全身ゲーム原画1枚。画像1は本人の採用待機の編集対象、容姿・頭身・頭髪・ミトンと靴の実寸の基準。画像1と同じ人物・同じアニメ塗り・同じ人物倍率で1姿勢だけ描く。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n動作：空中ニュートラルの当てる決めポーズ。全身が空中。一方の脚を画面右へ蹴り出し、反対の脚を膝で曲げる。両ミトンはバランスを取って左右へ。地面・影・効果は描かず、浮いた蹴りと分かる。\n右向きの斜め横で両腕・両脚と顔を明快に見せる。通常1と2は同じ2原画を使う。3段目だけ最大の溜めと決め姿。将棋駒の指定以外は、人の頭と身体は一つ、ミトン2つ、脚2本、靴2つ。左右を単純反転して人体を誤魔化さない。\n透明キャンバスは参照と同じ1189×1323。人物全体をキャンバスに合わせて拡大縮小しない。立ち待機の犬頭巾・人間の顔・スニーカーの実寸を維持。低姿勢では上に大きな透明余白があってよい。四肢を深く曲げて収め、頭・靴を小さくして収めない。全身、耳、尾、手先、靴まで切らずに余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ、ミトンや装備にも同じ白縁。縁の外は完全透明。地面、影、背景、効果線、衝撃、相手、枠、複数コマ、複数人、名前、文字（駒の「飛車」以外）、紙の繊維、3D、ピクセルアートは禁止。\n寸法固定：前後の靴は待機と同じ約210〜230px。顔と犬頭巾も待機の部位実寸を維持し、全身をキャンバスいっぱいへ拡大しない。通常の低い予備は上に約250〜330px透明余白、飛び込みは身体を横へ傾けて可視高さが低くなってよい。左右に最低40px透明余白。\n画像2は直前の同一人物のポーズ。画像1の容姿と部位実寸を保ち、画像2から指定した1姿勢へ描き替える。衣装・道具・頭巾と顔の描き方を変えない。画像1と2から人物を二人描く意味ではない。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "game_adopted_unapproved",
       "sha256": "91fe5c3b51bcbdac174f4eb16ced8b0f55a54cdb336804bd1bc3e735c8151dba",
       "native": {
         "width": 1189,
@@ -604,7 +639,14 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/air_impact.png",
+      "preparedSha256": "d40078c5693a6253563908b47e5baa070517b0e88d3ad73ffc0d3860b6fb7c02",
+      "offsetX": 115,
+      "offsetY": 102,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
     },
     {
       "id": "special_prepare",
@@ -623,7 +665,7 @@
       ],
       "prompt": "Use case: identity-preserve. 全身ゲーム原画1枚。画像1は本人の採用待機の編集対象、容姿・頭身・頭髪・ミトンと靴の実寸の基準。画像1と同じ人物・同じアニメ塗り・同じ人物倍率で1姿勢だけ描く。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n動作：特殊飛車変身の予備（まだ当てない）。犬頭巾の少年の全身のまま、両ミトンを胸元に引き、膝を曲げて右前へ向かう突進の準備。まだ将棋駒へ変わらない。\n右向きの斜め横で両腕・両脚と顔を明快に見せる。通常1と2は同じ2原画を使う。3段目だけ最大の溜めと決め姿。将棋駒の指定以外は、人の頭と身体は一つ、ミトン2つ、脚2本、靴2つ。左右を単純反転して人体を誤魔化さない。\n透明キャンバスは参照と同じ1189×1323。人物全体をキャンバスに合わせて拡大縮小しない。立ち待機の犬頭巾・人間の顔・スニーカーの実寸を維持。低姿勢では上に大きな透明余白があってよい。四肢を深く曲げて収め、頭・靴を小さくして収めない。全身、耳、尾、手先、靴まで切らずに余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ、ミトンや装備にも同じ白縁。縁の外は完全透明。地面、影、背景、効果線、衝撃、相手、枠、複数コマ、複数人、名前、文字（駒の「飛車」以外）、紙の繊維、3D、ピクセルアートは禁止。\n寸法固定：前後の靴は待機と同じ約210〜230px。顔と犬頭巾も待機の部位実寸を維持し、全身をキャンバスいっぱいへ拡大しない。通常の低い予備は上に約250〜330px透明余白、飛び込みは身体を横へ傾けて可視高さが低くなってよい。左右に最低40px透明余白。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "game_adopted_unapproved",
       "sha256": "7ee60a5a3c1033b56a6cb88ea51b50b462afbb0ea4480076c7d619f1a5d362a8",
       "native": {
         "width": 1189,
@@ -636,7 +678,14 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/special_prepare.png",
+      "preparedSha256": "417ec93df34c06d9f9d058b559374008eec6319b5fbbbfbf1dad82fa09d1e45f",
+      "offsetX": 97,
+      "offsetY": 65,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
     },
     {
       "id": "special_impact",
@@ -655,7 +704,7 @@
       ],
       "prompt": "Use case: game-asset. 透明背景の全身スプライト1素材。参照の蓮が完全に将棋の飛車へ変身した姿を、人物なしで描く。描くものは大きな五角形の将棋駒1個だけ。蜂蜜色の平たい木色、赤い外縁と下部の細い青緑帯、薄いクリーム白の切り抜き縁。正面に太い墨文字で縦書きの『飛車』2文字を正しく読みやすく。先の尖った五角形の将棋駒で、チェスの塔ではない。全体を右へ約12度傾ける。太い濃茶輪郭、通常のアニメ塗り2段階、簡潔な面。3Dや強い木目・厚い立体感・関節・人間・顔・腕・脚・頭巾・犬耳・尻尾・別の駒を描かない。参照の少年は色使いと線の品質だけの資料。キャンバス1189×1323、駒の可視高さ約1000px、可視幅約720px。底がy1263付近、左右と上に透明余白を残して1個全体を切らない。光・影・地面・残像・速度線・効果は別素材なので不要。駒に飛車以外の文字やラベルなし。透明RGBA。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "game_adopted_unapproved",
       "sha256": "7f258609ee3273be0197399e833c340a8a8d71c8911b06c6bd736031953efdd9",
       "native": {
         "width": 1103,
@@ -668,7 +717,14 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/special_impact.png",
+      "preparedSha256": "667101d8fff1282e191b734c1a8a4c6df9560d30a9d843f75226eda94ad3c0ec",
+      "offsetX": 114,
+      "offsetY": -44,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
     },
     {
       "id": "super_prepare",
@@ -687,7 +743,7 @@
       ],
       "prompt": "Use case: identity-preserve. 全身ゲーム原画1枚。画像1は本人の採用待機の編集対象、容姿・頭身・頭髪・ミトンと靴の実寸の基準。画像1と同じ人物・同じアニメ塗り・同じ人物倍率で1姿勢だけ描く。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n動作：超必殺連続飛車突進の予備（まだ当てない）。犬頭巾の少年の全身のまま、最大の指令の構え。両足を大きく開き、両ミトンを斜め上へ力強く掲げ、胸をひねって突進へ溜める。元気で鋭い決め顔。\n右向きの斜め横で両腕・両脚と顔を明快に見せる。通常1と2は同じ2原画を使う。3段目だけ最大の溜めと決め姿。将棋駒の指定以外は、人の頭と身体は一つ、ミトン2つ、脚2本、靴2つ。左右を単純反転して人体を誤魔化さない。\n透明キャンバスは参照と同じ1189×1323。人物全体をキャンバスに合わせて拡大縮小しない。立ち待機の犬頭巾・人間の顔・スニーカーの実寸を維持。低姿勢では上に大きな透明余白があってよい。四肢を深く曲げて収め、頭・靴を小さくして収めない。全身、耳、尾、手先、靴まで切らずに余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ、ミトンや装備にも同じ白縁。縁の外は完全透明。地面、影、背景、効果線、衝撃、相手、枠、複数コマ、複数人、名前、文字（駒の「飛車」以外）、紙の繊維、3D、ピクセルアートは禁止。\n寸法固定：前後の靴は待機と同じ約210〜230px。顔と犬頭巾も待機の部位実寸を維持し、全身をキャンバスいっぱいへ拡大しない。通常の低い予備は上に約250〜330px透明余白、飛び込みは身体を横へ傾けて可視高さが低くなってよい。左右に最低40px透明余白。\n両肘を曲げて両ミトンを頭巾の左右の高さへ掲げ、耳・手・靴を切らず最低40pxの透明余白を残す。頭巾や靴を拡大しない。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "revision_required",
       "sha256": "e063254f5086dcce806534180f1bacd3a6ff10d10fe49aaf5860896d634e816d",
       "native": {
         "width": 1189,
@@ -700,7 +756,8 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": false,
+      "artNote": "構えv1は犬頭巾と手前の靴が採用待機より拡大しているため、同じポーズのまま頭巾・人間の顔・靴だけを待機の実寸へ描き直す。頭巾の耳を含む幅は約600〜615px、靴は待機と同じ遠近・投影で横幅約210〜230px。身体全体の再拡縮ではなく、衣装と四肢のつながりを自然に保った部位の修正。画像1は採用待機の寸法基準、画像2は保持する構え。両ミトンを掲げた低い広い構え、表情・色・1本の尾・2本の脚と白縁を保つ。"
     },
     {
       "id": "super_impact",
@@ -719,7 +776,7 @@
       ],
       "prompt": "Use case: identity-preserve. 添付の五角形の飛車の駒1個を基準に、蓮の超必殺の突進の決め原画を1枚。蜂蜜色の平たい木色、赤い縁、下の青緑帯、墨文字の飛車、濃茶輪郭、薄いクリーム白縁、同じ駒の形・大きさ・塗りを維持。今の傾きから切り返して左へ10度ほど傾けた1個にする。文字は飛車の縦書き2文字を正しく保つ。変身後なので人間、犬、顔、腕、脚、耳、尻尾は描かない。余分な駒なし。1103×1426透明キャンバス、同じ駒の倍率を維持し中央に1個全体を切らず配置、外周に透明余白を残す。背景、床、影、光、残像、炎、効果線、追加文字なし。全体を一枚のアニメ塗りのゲームスプライトとして、透明RGBA。",
       "tool": "built-in image_gen",
-      "status": "candidate",
+      "status": "game_adopted_unapproved",
       "sha256": "ff2703644ba99e2aba3e0a723b960624f405419821ca08e78814c5ab4a0946aa",
       "native": {
         "width": 1103,
@@ -732,9 +789,57 @@
         }
       },
       "artApproved": false,
-      "gameConnected": false
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/super_impact.png",
+      "preparedSha256": "51e058a4a7c0248190ab2302e02a150020aed0cea50da7a961680c27beb52d15",
+      "offsetX": 167,
+      "offsetY": -37,
+      "sourceRgbaPreserved": false,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 1
+    },
+    {
+      "id": "super_prepare",
+      "key": "ren",
+      "character": "蓮",
+      "pose": "super",
+      "phase": "prepare",
+      "label": "超必殺連続飛車突進",
+      "version": 2,
+      "source": "art_source/paper_roster_action/ren/generated/super_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png",
+        "art_source/paper_roster_action/ren/generated/super_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：人物と部位実寸の基準",
+        "修正対象：超必殺の構えv1"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像2の蓮の超必殺の構えを修正する全身の透明PNG1枚。画像1は同じ人物の待機で、部位サイズの正解。画像2のポーズ、衣装、配色、両腕を上げた構え、1本の尻尾、顔の表情、薄い白縁を保ち、頭巾と顔と靴だけを画像1と同じ実寸へ自然に描き直す。頭巾の耳を含む横幅は600〜615px、足先の靴の横幅は約210〜230pxとし、元の構えの大きい頭巾約680pxと手前の靴約250pxをそのまま写さない。体全体を拡大縮小しない。頭を小さくした分の首と襟、靴を直した分の足首を自然につなぐ。人間の少年一人、犬の頭巾、茶髪、青緑の目、肉球ミトン2つ、腕2本、脚2本、靴2つ、尻尾1つ。犬耳と腕を混同しない。1189×1323透明キャンバス、上部の余白を残し、全身を余白付きで切らずに収める。普通のアニメの線とセル塗り。背景・地面・影・文字・エフェクト・グロー・紙の繊維なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "2ab7b60c48dedd2bcfb6e11fc2ee35e1f5def7ba21aacaa25b05654c4ede3716",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 95,
+          "top": 162,
+          "right": 1098,
+          "bottom": 1258
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/ren/prepared/super_prepare.png",
+      "preparedSha256": "39dfe552d2ba1fcbfb818a7eb210fd3ae39f91a18d32e5b06549e6af719ad393",
+      "offsetX": 45,
+      "offsetY": 70,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
     }
   ],
-  "integrated": "normal_four_keys_only",
-  "verifiedTag": "paper_fourkeys_3"
+  "integrated": true,
+  "verifiedTag": "rework_r4_ren_2"
 }

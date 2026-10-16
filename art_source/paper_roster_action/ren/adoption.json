@@ -1,24 +1,25 @@
 {
   "schemaVersion": 1,
   "key": "ren",
-  "tag": "paper_fourkeys_3",
+  "tag": "rework_r4_ren_2",
   "buildAll": "success",
   "edit": {
-    "total": 535,
-    "passed": 535,
+    "total": 539,
+    "passed": 539,
     "failed": 0,
     "skipped": 0
   },
   "play": {
-    "total": 63,
-    "passed": 63,
+    "total": 67,
+    "passed": 67,
     "failed": 0,
     "skipped": 0
   },
   "windowsBuild": "success",
-  "bodyFrames": 4,
-  "complete": false,
+  "bodyFrames": 14,
+  "complete": true,
   "artApproved": false,
-  "screenshots": "docs/screenshots/paper_fourkeys/",
-  "remaining": "上・下・空中Nの6原画は保存済み未接続。特殊と超必殺4枚は未生成。"
+  "screenshots": "docs/screenshots/rework_r4_ren/",
+  "screenshotCount": 48,
+  "remaining": "移動・溜め・被弾等の未移行姿勢。全員の攻撃後に後続。"
 }

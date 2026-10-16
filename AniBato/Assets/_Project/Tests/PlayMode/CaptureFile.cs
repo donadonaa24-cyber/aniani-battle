@@ -1,11 +1,25 @@
 using System;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading;
 
 namespace AniBato.Tests
 {
     internal static class CaptureFile
     {
+        public static void WriteReport(string path,IEnumerable<string> lines)
+        {
+            string captureRoot=Environment.GetEnvironmentVariable("ANIBATO_CAPTURE_ROOT");
+            if(!string.IsNullOrEmpty(captureRoot))
+            {
+                path=Path.Combine(captureRoot,Path.GetFileName(path));
+                lines=lines.Select(line=>line.Replace("screenshots/",""));
+            }
+            Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));
+            Write(path,Encoding.UTF8.GetBytes(string.Join(Environment.NewLine,lines)+Environment.NewLine));
+        }
         public static void Write(string path, byte[] bytes)
         {
             path=Path.GetFullPath(path);

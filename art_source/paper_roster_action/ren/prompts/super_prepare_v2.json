@@ -1,0 +1,21 @@
+{
+  "id": "super_prepare",
+  "key": "ren",
+  "character": "蓮",
+  "pose": "super",
+  "phase": "prepare",
+  "label": "超必殺連続飛車突進",
+  "version": 2,
+  "source": "art_source/paper_roster_action/ren/generated/super_prepare_v2.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/ren_idle_v1.png",
+    "art_source/paper_roster_action/ren/generated/super_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "採用待機：人物と部位実寸の基準",
+    "修正対象：超必殺の構えv1"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像2の蓮の超必殺の構えを修正する全身の透明PNG1枚。画像1は同じ人物の待機で、部位サイズの正解。画像2のポーズ、衣装、配色、両腕を上げた構え、1本の尻尾、顔の表情、薄い白縁を保ち、頭巾と顔と靴だけを画像1と同じ実寸へ自然に描き直す。頭巾の耳を含む横幅は600〜615px、足先の靴の横幅は約210〜230pxとし、元の構えの大きい頭巾約680pxと手前の靴約250pxをそのまま写さない。体全体を拡大縮小しない。頭を小さくした分の首と襟、靴を直した分の足首を自然につなぐ。人間の少年一人、犬の頭巾、茶髪、青緑の目、肉球ミトン2つ、腕2本、脚2本、靴2つ、尻尾1つ。犬耳と腕を混同しない。1189×1323透明キャンバス、上部の余白を残し、全身を余白付きで切らずに収める。普通のアニメの線とセル塗り。背景・地面・影・文字・エフェクト・グロー・紙の繊維なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

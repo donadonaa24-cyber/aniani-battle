@@ -77,7 +77,7 @@ namespace AniBato.Tests
                 "通常45件の半減とゲージ14/10を保持。今回、判定の数値変更は0件。頭身の大きい紙絵ではフライパン・手足と判定の終端が必ずしも一致しない。横振りに対して長い通常判定、回転した上下空中技の縦方向、復帰技・超必殺の広い効果範囲が調整候補。通常の範囲をさらに絵へ短縮する場合は近接戦の成立とCPU／ゲージ頻度も変わるため、ユーザー確認後に一技ずつ調整する。",
                 "","横振りの上下方向は原画を追加せず全身の固定傾き（上60度／下−60度／斜め±30度）で表示。フライパンの柄も抽出範囲に含まれるので、数値だけで判定を自動修正しない。緑枠は髪／服の全輪郭を覆うためのものではなく、しゃがみ・空中を含む戦闘用のやられ判定。","",
                 "表示はF9／ポーズ／メニュー設定。緑＝やられ、赤＝有効、黄＝飛翔、薄赤＝予備。練習はF5速度、F6静止、F7単一tick。"});
-            File.WriteAllLines(Path.Combine(Application.dataPath,"../../docs/HITBOX_REVIEW_CHIZURU.md"),rows);
+            CaptureFile.WriteReport(Path.Combine(Application.dataPath,"../../docs/HITBOX_REVIEW_CHIZURU.md"),rows);
             runner.RestartMatch();runner.SetDebugBoxes(false,false);yield return null;
         }
         [UnityTest]

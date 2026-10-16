@@ -1,5 +1,7 @@
 # 実装順と交代時の確認表（2026-10-16）
 
+2026-10-17最新：蓮の14原画を実Unity rework_r4_ren_2で全4合格（Edit539／Play67）、左右の48実描画を保存。次はPAPER_CHIZURU_MISSING_KEYS、その後湊から人物順に続ける。WebGLの今回差分は未更新。全員の攻撃後に溜め・被弾を制作する。
+
 2026-10-16最新：paper_release_5全4合格（Edit537／Play66）、投げ終わりと2段選択・掌側の二丁拳銃v3を反映。WebGLもpaper_release_web成功・約47.7MB、ブラウザ確認済み。次は蓮の残10原画の審査／接続。全9人の攻撃・小物・溜め・被弾ゴールは継続。詳細はRESUME冒頭とpaper_release_final。
 
 2026-10-16最新：paper_fourkeys_3全4合格（Edit535／Play63）、通常4原画と透真・蓮の紙表示を完了。全攻撃は未完。次はPAPER_RELEASE_PROPS_AND_ROW_SELECTION、その後PAPER_ACTION_FOUR_KEYS_AND_REMAINING。全員の攻撃後に溜め／被弾を生成する最新指示が、旧「溜め絵生成なし」より優先。本人別の最新通常指定も後者へ記録。詳細はRESUME冒頭。
@@ -14,7 +16,7 @@
 | R1 | 地上上下・空中Nのみ・滞空廃止・通常相殺・特殊1種・練習超必殺無制限 | 完了。rework_r1_3でEdit499／Play52・全4工程合格、実描画44PNG |
 | R2 | 3人ずつ選択し順番に最大3ラウンド・先に2勝、設定整理 | 完了。rework_r2_2でEdit505／Play55・全4工程合格、実描画6PNG |
 | R3 | 最新の9人の通常武器・特殊・超必殺 | 完了。rework_r3_3でEdit521／Play57・全4工程合格、37実描画。専用原画はR4 |
-| R4 | 人物単位の攻撃・小物、後に溜め／被弾原画 | 透真は通常4枚を含む14ユニーク姿勢、3段は二丁拳銃の掌側v3。蓮は候補14枠・通常4枚接続済み。千鶴の投げ終わりも接続。残りはPAPER_ACTION_FOUR_KEYS_AND_REMAININGとPAPER_PROP_ART_INVENTORY |
+| R4 | 人物単位の攻撃・小物、後に溜め／被弾原画 | 透真は通常4枚を含む14ユニーク姿勢、3段は二丁拳銃の掌側v3。蓮も14原画を接続・検証済み。千鶴の投げ終わりも接続。残りはPAPER_ACTION_FOUR_KEYS_AND_REMAININGとPAPER_PROP_ART_INVENTORY |
 | R5 | 生成した紙舞台・足場・ギミック、3作品別9人集合と同絵の選択 | 完了。21生成レイヤーと9人集合を接続、rework_r5_4でEdit527／Play61・全4工程合格、16実描画 |
 | R6 | WebGL実装・ローカルブラウザ実動 | 完了。webgl_5成功・約47.4MB、内蔵Chromium実動。Windows全4工程webgl_native_3でEdit533／Play61合格。実機パッドと通常Chrome／Edge個別は未確認 |
 

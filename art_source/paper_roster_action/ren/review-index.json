@@ -2,7 +2,8 @@
   "schemaVersion": 1,
   "character": "蓮",
   "artApproved": false,
-  "unityVerifiedTag": "paper_fourkeys_3",
+  "unityVerifiedTag": "rework_r4_ren_2",
+  "folder": "イラスト確認/蓮/攻撃原画_ゲーム採用済み",
   "entries": [
     {
       "id": "normal1_prepare",
@@ -10,7 +11,8 @@
       "source": "art_source/paper_roster_action/ren/generated/normal1_prepare_v2.png",
       "prepared": "art_source/paper_roster_action/ren/prepared/normal1_prepare.png",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_normal1_prepare.png",
-      "status": "通常4原画だけゲーム使用・美術最終承認は別"
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/通常1・2段共通頭突き_予備.png",
+      "status": "ゲーム採用／美術最終承認は別"
     },
     {
       "id": "normal1_impact",
@@ -18,7 +20,8 @@
       "source": "art_source/paper_roster_action/ren/generated/normal1_impact_v1.png",
       "prepared": "art_source/paper_roster_action/ren/prepared/normal1_impact.png",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_normal1_impact.png",
-      "status": "通常4原画だけゲーム使用・美術最終承認は別"
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/通常1・2段共通頭突き_当てる.png",
+      "status": "ゲーム採用／美術最終承認は別"
     },
     {
       "id": "normal3_prepare",
@@ -26,7 +29,8 @@
       "source": "art_source/paper_roster_action/ren/generated/normal3_prepare_v2.png",
       "prepared": "art_source/paper_roster_action/ren/prepared/normal3_prepare.png",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_normal3_prepare.png",
-      "status": "通常4原画だけゲーム使用・美術最終承認は別"
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/通常3段両足蹴り_予備.png",
+      "status": "ゲーム採用／美術最終承認は別"
     },
     {
       "id": "normal3_impact",
@@ -34,7 +38,98 @@
       "source": "art_source/paper_roster_action/ren/generated/normal3_impact_v4.png",
       "prepared": "art_source/paper_roster_action/ren/prepared/normal3_impact.png",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_normal3_impact.png",
-      "status": "通常4原画だけゲーム使用・美術最終承認は別"
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/通常3段両足蹴り_当てる.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "up_prepare",
+      "title": "地上上攻撃_予備",
+      "source": "art_source/paper_roster_action/ren/generated/up_prepare_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/up_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_up_prepare.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/地上上攻撃_予備.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "up_impact",
+      "title": "地上上攻撃_当てる",
+      "source": "art_source/paper_roster_action/ren/generated/up_impact_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/up_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_up_impact.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/地上上攻撃_当てる.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "down_prepare",
+      "title": "地上下攻撃_予備",
+      "source": "art_source/paper_roster_action/ren/generated/down_prepare_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/down_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_down_prepare.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/地上下攻撃_予備.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "down_impact",
+      "title": "地上下攻撃_当てる",
+      "source": "art_source/paper_roster_action/ren/generated/down_impact_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/down_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_down_impact.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/地上下攻撃_当てる.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "air_prepare",
+      "title": "空中ニュートラル_予備",
+      "source": "art_source/paper_roster_action/ren/generated/air_prepare_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/air_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_air_prepare.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/空中ニュートラル_予備.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "air_impact",
+      "title": "空中ニュートラル_当てる",
+      "source": "art_source/paper_roster_action/ren/generated/air_impact_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/air_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_air_impact.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/空中ニュートラル_当てる.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊飛車変身_予備",
+      "source": "art_source/paper_roster_action/ren/generated/special_prepare_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/special_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_special_prepare.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/特殊飛車変身_予備.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊飛車変身_当てる",
+      "source": "art_source/paper_roster_action/ren/generated/special_impact_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/special_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_special_impact.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/特殊飛車変身_当てる.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺連続飛車突進_予備",
+      "source": "art_source/paper_roster_action/ren/generated/super_prepare_v2.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/super_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_super_prepare.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/超必殺連続飛車突進_予備.png",
+      "status": "ゲーム採用／美術最終承認は別"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺連続飛車突進_当てる",
+      "source": "art_source/paper_roster_action/ren/generated/super_impact_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/super_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_super_impact.png",
+      "reviewFile": "イラスト確認/蓮/攻撃原画_ゲーム採用済み/超必殺連続飛車突進_当てる.png",
+      "status": "ゲーム採用／美術最終承認は別"
     }
   ]
 }

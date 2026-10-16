@@ -41,10 +41,110 @@
       "footMaxX": 714,
       "groundFootAnchor": 697,
       "originOffsetY": 0
+    },
+    {
+      "id": "up_prepare",
+      "prepared": "art_source/paper_roster_action/ren/prepared/up_prepare.png",
+      "sha256": "90bdfd20d6b33f35b3c2b98f07ee346c48f2bc14abb72f4e1baf92235ecc6a0e",
+      "headTopY": 166,
+      "footMinX": 560,
+      "footMaxX": 835,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_impact",
+      "prepared": "art_source/paper_roster_action/ren/prepared/up_impact.png",
+      "sha256": "17c6c978d6a255de04f1bd6a5cd56290d65f6f0c4b85c01bd7d08ab5f06c50f5",
+      "headTopY": 102,
+      "footMinX": 556,
+      "footMaxX": 766,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0
+    },
+    {
+      "id": "down_prepare",
+      "prepared": "art_source/paper_roster_action/ren/prepared/down_prepare.png",
+      "sha256": "e83bbaf226c2dff2d2f7ad100e632c15487689acdb2ef8906be4f896a0de843e",
+      "headTopY": 359,
+      "footMinX": 234,
+      "footMaxX": 1178,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0
+    },
+    {
+      "id": "down_impact",
+      "prepared": "art_source/paper_roster_action/ren/prepared/down_impact.png",
+      "sha256": "ff7adab472ae8b50f9bd9e5a9195f2a8dbb951ddca441d62357a77cf970ddde2",
+      "headTopY": 422,
+      "footMinX": 221,
+      "footMaxX": 1176,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0
+    },
+    {
+      "id": "air_prepare",
+      "prepared": "art_source/paper_roster_action/ren/prepared/air_prepare.png",
+      "sha256": "5a980527676b9f70110681ee8df402b25cbd755c4e5cfd225f05ef41ead22764",
+      "headTopY": 267,
+      "footMinX": 585,
+      "footMaxX": 859,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0.2929086258398357
+    },
+    {
+      "id": "air_impact",
+      "prepared": "art_source/paper_roster_action/ren/prepared/air_impact.png",
+      "sha256": "d40078c5693a6253563908b47e5baa070517b0e88d3ad73ffc0d3860b6fb7c02",
+      "headTopY": 242,
+      "footMinX": 384,
+      "footMaxX": 538,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0.24596814092960562
+    },
+    {
+      "id": "special_prepare",
+      "prepared": "art_source/paper_roster_action/ren/prepared/special_prepare.png",
+      "sha256": "417ec93df34c06d9f9d058b559374008eec6319b5fbbbfbf1dad82fa09d1e45f",
+      "headTopY": 259,
+      "footMinX": 337,
+      "footMaxX": 1057,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0
+    },
+    {
+      "id": "special_impact",
+      "prepared": "art_source/paper_roster_action/ren/prepared/special_impact.png",
+      "sha256": "667101d8fff1282e191b734c1a8a4c6df9560d30a9d843f75226eda94ad3c0ec",
+      "headTopY": 14,
+      "footMinX": 188,
+      "footMaxX": 1207,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_prepare",
+      "prepared": "art_source/paper_roster_action/ren/prepared/super_prepare.png",
+      "sha256": "39dfe552d2ba1fcbfb818a7eb210fd3ae39f91a18d32e5b06549e6af719ad393",
+      "headTopY": 232,
+      "footMinX": 295,
+      "footMaxX": 1100,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_impact",
+      "prepared": "art_source/paper_roster_action/ren/prepared/super_impact.png",
+      "sha256": "51e058a4a7c0248190ab2302e02a150020aed0cea50da7a961680c27beb52d15",
+      "headTopY": 21,
+      "footMinX": 187,
+      "footMaxX": 1208,
+      "groundFootAnchor": 697,
+      "originOffsetY": 0
     }
   ],
-  "complete": false,
+  "complete": true,
   "reviewed": true,
   "gameConnected": true,
-  "verifiedTag": "paper_fourkeys_3"
+  "verifiedTag": "rework_r4_ren_2"
 }

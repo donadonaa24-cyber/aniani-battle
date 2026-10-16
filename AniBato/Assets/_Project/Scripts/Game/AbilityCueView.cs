@@ -15,7 +15,7 @@ namespace AniBato.Game
             go.GetComponent<MeshRenderer>().material = label.font.material;
             go.GetComponent<MeshRenderer>().sortingOrder = 4; go.SetActive(false);
         }
-        public void Apply(FighterState fighter, SpriteRenderer body, bool finished)
+        public void Apply(FighterState fighter, SpriteRenderer body, bool finished, bool generatedTransformation=false)
         {
             var attack = finished ? null : fighter.Attack; string text = "";
             if (attack != null)
@@ -23,7 +23,7 @@ namespace AniBato.Game
                 switch (attack.Definition.Ability.Look)
                 {
                     case AbilityLook.Alma: text = attack.IsDamageActive ? "ALMA!" : attack.Frame / 6 % 2 == 0 ? "0101 1010\n1010 0101" : "1010 0101\n0101 1010"; break;
-                    case AbilityLook.Rook: text = "飛"; break;
+                    case AbilityLook.Rook: text = generatedTransformation ? "" : "飛"; break;
                     case AbilityLook.Bishop: text = "角"; break;
                     case AbilityLook.King: text = "王"; break;
                     case AbilityLook.Emp: text = "電磁パルス"; break;
