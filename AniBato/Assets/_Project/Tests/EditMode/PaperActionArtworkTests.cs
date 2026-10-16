@@ -15,13 +15,15 @@ namespace AniBato.Tests
     {
         private static CharacterData Toma => AssetDatabase.LoadAssetAtPath<BattleSetup>("Assets/_Project/Data/BattleSetup.asset").Character(0);
         [Test]
-        public void TomaHasSixteenDistinctActionImagesAlongsideHisFiveCorePoses()
+        public void TomaSharesFirstTwoNormalKeysAndKeepsFourteenDistinctAttackImagesAlongsideCorePoses()
         {
             var data=Toma; var paper=data.PaperMotion;
             Assert.That(data.ActionArtworkSchemaVersion,Is.EqualTo(1)); Assert.That(data.ActionArtworkPending,Is.True);
             string[] keys={"normal1","normal2","normal3","up","down","air","special","super"};
             var poses=keys.Select(k=>paper.Poses.Single(p=>p.Key==k)).ToArray();
-            Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(16));
+            Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(14));
+            Assert.That(poses[1].Frames,Is.EqualTo(poses[0].Frames));
+            Assert.That(poses.Take(3).SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(4));
             foreach(var pose in poses)
             {
                 Assert.That(pose.Valid,Is.True); Assert.That(pose.Frames.Length,Is.EqualTo(2));
@@ -37,7 +39,8 @@ namespace AniBato.Tests
             Assert.That(paper.Poses.SelectMany(p=>p.States).Distinct().Count(),Is.EqualTo(paper.Poses.Sum(p=>p.States.Length)));
             Assert.That(paper.Find(AnimationState.BackAttack).ReverseFacing,Is.True);
             Assert.That(paper.Find(AnimationState.BackAttack).Frames,Is.EqualTo(paper.Find(AnimationState.Attack1).Frames));
-            Assert.That(paper.Supports(AnimationState.Dodge),Is.False,"未移行を完成と偽らない");
+            Assert.That(paper.Supports(AnimationState.Dodge),Is.True);
+            Assert.That(paper.Find(AnimationState.Dodge).Frames.Single(),Is.SameAs(paper.Sprite),"未生成姿勢は本人の紙待機、完成した専用原画とは区別");
         }
         [Test]
         public void TomaImportedBodiesAndProjectilesAreByteIdenticalToSelectedSources()

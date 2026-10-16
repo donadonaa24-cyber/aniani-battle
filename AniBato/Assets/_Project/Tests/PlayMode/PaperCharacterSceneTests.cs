@@ -129,7 +129,7 @@ namespace AniBato.Tests
             Assert.That(view.RenderedSample.Age, Is.Zero); Assert.That(Angle(body), Is.EqualTo(0).Within(.001));
         }
         [UnityTest]
-        public IEnumerator BothPlayerSlotsUsePaperAndUnconvertedActionsKeepTheirExistingSprites()
+        public IEnumerator BothPlayerSlotsUsePaperAndUnconvertedActionsUseTheirStandingPaperIllustration()
         {
             var chizuru = runner.Setup.Character(2);
             runner.BeginMatch(chizuru, chizuru, runner.CurrentStage, false);
@@ -152,9 +152,8 @@ namespace AniBato.Tests
                 }
                 else
                 {
-                    Assert.That(view.UsesPaperSprite, Is.False, "蓮の未移行通常は旧素材を維持");
-                    Assert.That(other.Animations.TrySprite(view.RenderedSample, out Sprite pixel), Is.True);
-                    Assert.That(body.sprite, Is.SameAs(pixel));
+                    Assert.That(view.UsesPaperSprite, Is.True, "蓮の未移行通常は本人の紙待機で表示");
+                    Assert.That(body.sprite, Is.SameAs(other.PaperMotion.Find(AnimationState.Attack1).Frame(view.RenderedSample)));
                 }
                 yield return Key(controller.Bindings.P1.Attack, false);
             }

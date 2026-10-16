@@ -52,7 +52,9 @@ namespace AniBato.EditorTools
                     foreach (var state in pose.States) if (!covered.Add(state)) throw new InvalidOperationException("基本ポーズの状態重複");
                     poses.Add(pose);
                 }
-                if (entry.characterIndex >= 3)
+                // New art replaces this explicit standing placeholder state by state.
+                // Toma/Ren must never fall back to the retired pixel body artwork.
+                if (entry.characterIndex != 2)
                 {
                     var fallback = Import(entry.key, "idle", entry.idle, manifest.pixelsPerUnit);
                     fallback.Key = "prototype_whole_illustration";

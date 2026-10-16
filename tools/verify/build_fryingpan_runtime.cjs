@@ -2,7 +2,7 @@
 const fs=require('node:fs'),crypto=require('node:crypto'),sharp=require('sharp');
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,''));
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-const combinations={attack1:['horizontal_1'],attack2:['horizontal_2'],attack3:['horizontal_3'],crouch_attack:['horizontal_2','horizontal_3'],back_attack:['horizontal_2'],air_neutral:['horizontal_1'],air_forward:['horizontal_1'],air_back:['horizontal_2'],air_up:['horizontal_2'],air_down:['horizontal_3'],air_forward_up:['horizontal_2'],air_forward_down:['horizontal_3']};
+const combinations={attack1:['horizontal_1'],attack2:['horizontal_1'],attack3:['horizontal_3'],crouch_attack:['horizontal_2','horizontal_3'],back_attack:['horizontal_2'],air_neutral:['horizontal_1'],air_forward:['horizontal_1'],air_back:['horizontal_2'],air_up:['horizontal_2'],air_down:['horizontal_3'],air_forward_up:['horizontal_2'],air_forward_down:['horizontal_3']};
 async function markers(source){
  const {data,info}=await sharp(source).ensureAlpha().raw().toBuffer({resolveWithObject:true}),w=info.width,h=info.height,shoes=[];let head=h;
  for(let y=0;y<h;y++)for(let x=0;x<w;x++){

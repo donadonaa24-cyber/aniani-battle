@@ -309,29 +309,29 @@ MonoBehaviour:
   - Key: attack2
     States: 07000000i
     Frames:
-    - {fileID: 21300000, guid: 9cfe5549376a03c4aa9fc717523c0fa9, type: 3}
-    - {fileID: 21300000, guid: 5c106d061c1ddb54a93bdd9c6e45b5da, type: 3}
+    - {fileID: 21300000, guid: 26274c3ecdda71e46939e56d4afd28f2, type: 3}
+    - {fileID: 21300000, guid: fc995bf2c034d3c489f6fa67d614ba81, type: 3}
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
     TiltDegrees: 0
     FrameHeadHeights:
-    - 2.1742833
-    - 2.0954232
+    - 2.1968148
+    - 2.0503604
     FrameFootBaseYs:
     - -1.6787226e-10
     - -1.6787226e-10
     FrameFootMinXs:
-    - -0.8073763
-    - -0.8637049
+    - -0.7472925
+    - 0.27413243
     FrameFootMaxXs:
-    - 1.0139145
-    - 0.9913831
+    - 1.0326906
+    - 0.71161777
     FrameOriginYs: []
-    HeadHeight: 2.1742833
+    HeadHeight: 2.1968148
     FootBaseY: -1.6787226e-10
-    FootMinX: -0.8073763
-    FootMaxX: 1.0139145
+    FootMinX: -0.7472925
+    FootMaxX: 1.0326906
   - Key: attack3
     States: 08000000i
     Frames:

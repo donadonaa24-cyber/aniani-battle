@@ -19,5 +19,11 @@
   "bodyFrames": 16,
   "effectFrames": 3,
   "artApproved": false,
-  "screenshots": "docs/screenshots/rework_r4_toma/"
+  "screenshots": "docs/screenshots/rework_r4_toma/",
+  "normalRevision": {
+    "tag": "paper_fourkeys_3",
+    "normalUniqueFrames": 4,
+    "bodyUniqueFrames": 14,
+    "comboSecondUsesFirst": true
+  }
 }

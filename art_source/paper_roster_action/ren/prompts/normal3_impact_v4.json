@@ -1,0 +1,19 @@
+{
+  "id": "normal3_impact",
+  "key": "ren",
+  "character": "蓮",
+  "pose": "normal3",
+  "phase": "impact",
+  "label": "通常3段両足蹴り",
+  "version": 4,
+  "source": "art_source/paper_roster_action/ren/generated/normal3_impact_v4.png",
+  "references": [
+    "art_source/paper_roster_action/ren/generated/normal3_impact_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象：ポーズを保持し脚と靴の端のみ修正。"
+  ],
+  "prompt": "Use case: precise-object-edit. 添付の縦長1189×1323px透明原画を編集。犬頭巾の少年一人、両ミトンで地面を押し、右上へ両足キックする姿勢。この縦長キャンバスのまま。頭・顔・犬頭巾・マント・両腕と手・胴体・尻尾1本を一切変えない。編集は2本の脚と2個の靴だけ。膝をほんの少し曲げて両方の靴を画像の左へ80px、下へ40pxだけ戻し、右端から60px以上離して足先と白縁を完全に収める。靴を縮小するのでなく、膝と股関節をわずかに曲げる。大きく前方へ出す両足キックと読めること。既存の顔と頭巾、ミトンと靴の実寸は保持。全身をズーム／拡大縮小しない。背景は完全透明。影、床、文字、効果、新しい人物や尻尾を追加しない。横長へ変更せず1189×1323の縦長1枚。上の透明余白を維持。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

@@ -42,8 +42,14 @@ namespace AniBato.Tests
                     Assert.That(paper.Find(AnimationState.Attack1).Frames.Length, Is.EqualTo(2));
                     Assert.That(paper.Find(AnimationState.Attack1).Frames[0].name, Is.EqualTo("toma_normal1_prepare"));
                 }
-                else if (entry.characterIndex < 3) Assert.That(paper.Supports(AnimationState.Attack1), Is.False);
-                else if (data.ActionArtworkPending) Assert.That(paper.Find(AnimationState.Attack1).Frames[0], Is.SameAs(paper.Sprite));
+                else if (entry.characterIndex == 1)
+                {
+                    Assert.That(paper.Supports(AnimationState.Attack1), Is.True);
+                    Assert.That(paper.Find(AnimationState.Attack1).Frames[0].name, Is.EqualTo("ren_normal1_prepare"));
+                    Assert.That(paper.Find(AnimationState.Attack2).Frames, Is.EqualTo(paper.Find(AnimationState.Attack1).Frames));
+                }
+                else if (data.ActionArtworkSchemaVersion==0) Assert.That(paper.Find(AnimationState.Attack1).Frames[0], Is.SameAs(paper.Sprite));
+                else Assert.That(paper.Find(AnimationState.Attack1).Frames.Length, Is.EqualTo(2));
             }
         }
         [Test]

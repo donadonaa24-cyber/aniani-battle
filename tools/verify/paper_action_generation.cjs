@@ -30,18 +30,27 @@ function feet(data,info,b) {
  return {left,right,center:(left+right)/2};
 }
 async function init(key) {
- requireThat(key==='toma','本人の指示を追加してから次の人物を初期化する');
+ const config=require('./paper_action_jobs.cjs')[key];
+ requireThat(key==='toma'||config,'本人の指示を追加してから次の人物を初期化する');
  const folder=`${root}/${key}`, file=`${folder}/manifest.json`; if(fs.existsSync(file)){console.log(file);return;}
- const reference='art_source/paper_roster_idle/generated/toma_idle_v2.png'; const jobs=[];
- for(const [pose,[label,prepare,impact]] of Object.entries(poses)) for(const [phase,text] of [['prepare',prepare],['impact',impact]]) {
+ const reference=config?config.reference:'art_source/paper_roster_idle/generated/toma_idle_v2.png'; const jobs=[];
+ for(const [pose,[label,prepare,impact]] of Object.entries(config?config.poses:poses)) for(const [phase,text] of [['prepare',prepare],['impact',impact]]) {
   const id=pose+'_'+phase, prompt=`参照画像は本作の透真の採用待機であり、同じ人物・同じ絵柄・同じ人物倍率で新しい1姿勢だけ描いてください。通常のアニメ塗りの全身ゲームスプライト。黒い大きな髪と青い瞳、黒スーツ、白シャツ、黒ネクタイ、黒革靴を厳密に維持。頭身・頭や髪の大きさ・手と靴の大きさは参照と同じ。\n動作：${label}の${phase==='prepare'?'予備動作（まだ当たらない）':'攻撃／指令の決めポーズ'}。${text}\n銃を持つ場合は右手で握る小型の黒い拳銃1丁、左手が右手を支える両手構え。拳銃は角形の黒いスライドと短い銃身、細いシアンのアクセント1本。同じ銃を全姿勢で使い、銃口炎・弾丸・流血・相手・効果線は描かない。手は左右1本ずつ、各5指。胸側を斜めから見た肩→肘→手首→手のつながりを正しく描く。\n参照の原画と同じ透明キャンバス1189×1323を厳守。共通ゲーム枠への余白追加は後で行うため、出力画像の縦横へ人物を合わせて縮小しない。人物の再拡縮禁止、立ち基準の髪の横幅約544px、奥の靴約218px、手前の靴約306pxを維持。接地姿勢は靴底y1291。低い姿勢では上の透明余白を残す。画面右向きの斜め横、両腕両脚が見える。髪、靴、手、銃口まで全身を余白付きで収め、切らない。薄い硬いクリーム白の切り抜き縁3〜6pxを手と銃を含む外周一周へ。縁の外は完全透明、グロー・ぼかし・半透明の光彩なし。背景、床、影、文字、名前、枠、複数ポーズ、複数人、紙の繊維、関節分割、3D、ピクセルアートは禁止。描画品質と顔は参照を維持。`;
-  const job={id,key,character:'透真',pose,phase,label,version:1,source:`${folder}/generated/${id}_v1.png`,references:[reference],referenceRoles:['採用待機：直接の編集対象、容姿・部位実寸・倍率の基準'],prompt,tool:'built-in image_gen',status:'planned'};
+  const actualPrompt=config?`Use case: identity-preserve. 全身ゲーム原画1枚。画像1は本人の採用待機の編集対象、容姿・頭身・頭髪・ミトンと靴の実寸の基準。画像1と同じ人物・同じアニメ塗り・同じ人物倍率で1姿勢だけ描く。${config.identity}\n動作：${label}の${phase==='prepare'?'予備（まだ当てない）':'当てる決めポーズ'}。${text}\n右向きの斜め横で両腕・両脚と顔を明快に見せる。通常1と2は同じ2原画を使う。3段目だけ最大の溜めと決め姿。将棋駒の指定以外は、人の頭と身体は一つ、ミトン2つ、脚2本、靴2つ。左右を単純反転して人体を誤魔化さない。\n透明キャンバスは参照と同じ1189×1323。人物全体をキャンバスに合わせて拡大縮小しない。立ち待機の犬頭巾・人間の顔・スニーカーの実寸を維持。低姿勢では上に大きな透明余白があってよい。四肢を深く曲げて収め、頭・靴を小さくして収めない。全身、耳、尾、手先、靴まで切らずに余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ、ミトンや装備にも同じ白縁。縁の外は完全透明。地面、影、背景、効果線、衝撃、相手、枠、複数コマ、複数人、名前、文字（駒の「飛車」以外）、紙の繊維、3D、ピクセルアートは禁止。` :prompt;
+  const job={id,key,character:config?config.name:'透真',pose,phase,label,version:1,source:`${folder}/generated/${id}_v1.png`,references:[reference],referenceRoles:['採用待機：直接の編集対象、容姿・部位実寸・倍率の基準'],prompt:actualPrompt,tool:'built-in image_gen',status:'planned'};
   const promptFile=`${folder}/prompts/${id}_v1.json`;write(promptFile,job);jobs.push({id,version:1,promptFile});
  }
- write(file,{schemaVersion:1,key,name:'透真',characterIndex:0,canvas:{width:1304,height:1450},sole:1328,pixelsPerUnit:532.5893,baseIdle:reference,jobs,entries:[],integrated:false,verifiedTag:null});
+ write(file,{schemaVersion:1,key,name:config?config.name:'透真',characterIndex:config?config.index:0,canvas:{width:1304,height:1450},sole:1328,pixelsPerUnit:532.5893,baseIdle:reference,jobs,entries:[],integrated:false,verifiedTag:null});
  console.log(JSON.stringify({file,jobs:jobs.length}));
 }
 async function job(key,id) {const m=read(`${root}/${key}/manifest.json`), j=read(m.jobs.find(j=>j.id===id).promptFile);requireThat(!fs.existsSync(j.source),'原画保存済み。重複生成しない');console.log(JSON.stringify(j));}
+async function revise(key,id,note) {
+ const file=`${root}/${key}/manifest.json`,m=read(file),job=m.jobs.find(j=>j.id===id),old=read(job.promptFile);
+ requireThat(fs.existsSync(old.source)&&note,'保存済み候補と具体的な修正条件を指定');
+ const version=job.version+1,j={...old,version,source:old.source.replace(/_v\d+\.png$/,`_v${version}.png`),prompt:old.prompt+'\n修正条件：'+note};
+ const entry=m.entries.find(e=>e.id===id&&e.version===old.version);entry.status='revision_required';entry.artNote=note;
+ job.version=version;job.promptFile=job.promptFile.replace(/_v\d+\.json$/,`_v${version}.json`);write(job.promptFile,j);write(file,m);console.log(JSON.stringify(j));
+}
 async function save(key,id,source) {
  const file=`${root}/${key}/manifest.json`,m=read(file),j=read(m.jobs.find(j=>j.id===id).promptFile);
  const allowed=path.resolve(process.env.USERPROFILE,'.codex/generated_images')+path.sep;
@@ -65,7 +74,7 @@ async function effectSave(key,id,source) {
 }
 async function pack(key, partial=false) {
  const file=`${root}/${key}/manifest.json`,m=read(file),entries=m.jobs.map(j=>m.entries.find(e=>e.id===j.id&&e.version===j.version));
- if(!partial)requireThat(entries.every(Boolean),'本人の16原画を揃えてから梱包する');
+ if(!partial)requireThat(entries.every(Boolean),'本人の予定原画を揃えてから梱包する');
  const output=[];
  const idle=await pixels(`art_source/paper_roster_idle/prepared/${key}_idle.png`);
  const idleBounds=bounds(idle.data,idle.info),anchor=feet(idle.data,idle.info,idleBounds).center;
@@ -101,4 +110,4 @@ async function pack(key, partial=false) {
  write(file,m);write(`${root}/${key}/packed-manifest.json`,{schemaVersion:1,key,frames:output,complete:entries.every(Boolean),reviewed:false,gameConnected:false});console.log(JSON.stringify({key,packed:output.length,complete:entries.every(Boolean)}));
 }
 const [command,key,id,source]=process.argv.slice(2);
-({init,job,save,'save-effect':effectSave,pack:key=>pack(key),review:key=>pack(key,true)}[command]||(()=>{throw Error('init/job/save/save-effect/pack/reviewを指定')}))(key,id,source).catch(e=>{console.error(e.stack);process.exitCode=1});
+({init,job,revise,save,'save-effect':effectSave,pack:key=>pack(key),review:key=>pack(key,true)}[command]||(()=>{throw Error('init/job/revise/save/save-effect/pack/reviewを指定')}))(key,id,source).catch(e=>{console.error(e.stack);process.exitCode=1});

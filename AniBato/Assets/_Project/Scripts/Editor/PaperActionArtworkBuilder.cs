@@ -76,7 +76,7 @@ namespace AniBato.EditorTools
             return new PaperProjectileArt { Look = look, Sprite = sprite, Scale = Mathf.Min(attack.Hitbox.Size.X / width, attack.Hitbox.Size.Y / height),
                 RotateWithVelocity = rotate, RotationOffsetDegrees = rotation, FlipWithFacing = flip };
         }
-        private static Sprite Import(string name, string source, string expectedSha, int width, int height, Vector2 pivot)
+        internal static Sprite Import(string name, string source, string expectedSha, int width, int height, Vector2 pivot)
         {
             byte[] bytes = File.ReadAllBytes("../" + source);
             using (var hash = SHA256.Create())

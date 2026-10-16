@@ -1,0 +1,19 @@
+{
+  "id": "normal3_impact",
+  "key": "ren",
+  "character": "蓮",
+  "pose": "normal3",
+  "phase": "impact",
+  "label": "通常3段両足蹴り",
+  "version": 3,
+  "source": "art_source/paper_roster_action/ren/generated/normal3_impact_v3.png",
+  "references": [
+    "art_source/paper_roster_action/ren/generated/normal3_impact_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象：選定中の両足蹴り。足先の切断だけを補修し、身体は保持。"
+  ],
+  "prompt": "Use case: precise-object-edit. 添付は本作の蓮の両足蹴り原画1枚。構図と全身ポーズ、犬頭巾、人の顔、衣装、尾1本、両ミトンと2本の脚は全てこの画像を保持する。修正点は右端で切れたスニーカーの白縁・靴底の端だけ。画像のキャンバスを左に32px、右に64pxの透明余白を追加して横1285×縦1323pxに広げ、右端で欠けた靴の輪郭を自然に完結するよう少しだけ描き足す。人物の拡大縮小・ズーム・位置変更・ポーズ変更・頭や靴の大きさ変更は禁止。全身の既存の画素をできるだけそのまま保つ局所編集。足先と白縁の外には透明余白を残す。背景は完全透明。新たな影、紙繊維、床、人物、効果、文字を追加しない。両足蹴りの勢いは保持。原画が横へ広いことは許容し、枠を埋めるため拡大しない。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

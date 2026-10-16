@@ -248,7 +248,7 @@
       ],
       "prompt": "参照画像は本作の透真の採用待機であり、同じ人物・同じ絵柄・同じ人物倍率で新しい1姿勢だけ描いてください。通常のアニメ塗りの全身ゲームスプライト。黒い大きな髪と青い瞳、黒スーツ、白シャツ、黒ネクタイ、黒革靴を厳密に維持。頭身・頭や髪の大きさ・手と靴の大きさは参照と同じ。\n動作：通常2段の予備動作（まだ当たらない）。同じ拳銃を両手で胸の前へ引き戻す。腰と胸を1段目より少しひねり、左脚へ体重を移して次弾を構える。まだ発砲しない。\n銃を持つ場合は右手で握る小型の黒い拳銃1丁、左手が右手を支える両手構え。拳銃は角形の黒いスライドと短い銃身、細いシアンのアクセント1本。同じ銃を全姿勢で使い、銃口炎・弾丸・流血・相手・効果線は描かない。手は左右1本ずつ、各5指。胸側を斜めから見た肩→肘→手首→手のつながりを正しく描く。\n参照の原画と同じ透明キャンバス1189×1323を厳守。共通ゲーム枠への余白追加は後で行うため、出力画像の縦横へ人物を合わせて縮小しない。人物の再拡縮禁止、立ち基準の髪の横幅約544px、奥の靴約218px、手前の靴約306pxを維持。接地姿勢は靴底y1291。低い姿勢では上の透明余白を残す。画面右向きの斜め横、両腕両脚が見える。髪、靴、手、銃口まで全身を余白付きで収め、切らない。薄い硬いクリーム白の切り抜き縁3〜6pxを手と銃を含む外周一周へ。縁の外は完全透明、グロー・ぼかし・半透明の光彩なし。背景、床、影、文字、名前、枠、複数ポーズ、複数人、紙の繊維、関節分割、3D、ピクセルアートは禁止。描画品質と顔は参照を維持。",
       "tool": "built-in image_gen",
-      "status": "game_adopted_unapproved",
+      "status": "retained_unused_normal2",
       "sha256": "18ec1936aea38b3953abd6e54dc41da9b78e0d9ed111f048a4a37f62bf7de2f9",
       "native": {
         "width": 1189,
@@ -261,7 +261,7 @@
         }
       },
       "artApproved": false,
-      "gameConnected": true,
+      "gameConnected": false,
       "prepared": "art_source/paper_roster_action/toma/prepared/normal2_prepare.png",
       "preparedSha256": "266c233aaa48ff159ead3bd7dd3ef5209f69b5beb9b45482583a86f934f7e098",
       "offsetX": 37,
@@ -326,7 +326,7 @@
       ],
       "prompt": "参照の同じ透真の通常2段の当てる姿勢を局所編集。出力1189×1323を固定。頭・髪の輪郭、両脚、両靴とそのピクセル寸法・位置を変更せず、そのまま保持。腕と胸元の向きだけを変更する。腰をわずかにひねった胸側の姿勢、両肘を下げながら同じ小型黒拳銃を両手で右へ伸ばす。銃を現在より右へ65px、下へ45px動かして二発目の射撃の決めポーズにする。肩の位置と頭の位置は変えない。右手で銃を握り、左手が下から右手を支え、左右の腕が肩から自然につながる。拳銃のシアン線・銃身長は同一。人物の全身倍率・頭身・靴底y1291を固定し、余白を埋めたり自動トリミングしない。銃口炎、弾丸、文字、背景、影、効果線、別の人物を足さない。既存の硬いクリーム白の薄い切り抜き縁を全身と手と銃に一周、縁外は完全透明。通常のアニメ塗りを維持し、3D、紙質、関節パーツ、ピクセル化なし。",
       "tool": "built-in image_gen",
-      "status": "game_adopted_unapproved",
+      "status": "retained_unused_normal2",
       "sha256": "fa7638f92d481c32d54c06e50f1481a69d9fb3646e2aeb3338284e6c03994125",
       "native": {
         "width": 1189,
@@ -339,7 +339,7 @@
         }
       },
       "artApproved": false,
-      "gameConnected": true,
+      "gameConnected": false,
       "prepared": "art_source/paper_roster_action/toma/prepared/normal2_impact.png",
       "preparedSha256": "36dc91a432f9e6d7ca86224c7e66590a0f913b40335afe30c0d0a4c3d945c65f",
       "offsetX": 36,
@@ -851,5 +851,11 @@
     }
   ],
   "integrated": true,
-  "verifiedTag": "rework_r4_toma_5"
+  "verifiedTag": "rework_r4_toma_5",
+  "normalRevision": {
+    "tag": "paper_fourkeys_3",
+    "normalUniqueFrames": 4,
+    "bodyUniqueFrames": 14,
+    "comboSecondUsesFirst": true
+  }
 }

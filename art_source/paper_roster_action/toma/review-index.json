@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "character": "透真",
   "artApproved": false,
-  "unityVerifiedTag": "rework_r4_toma_5",
+  "unityVerifiedTag": "paper_fourkeys_3",
   "entries": [
     {
       "id": "normal1_prepare",
@@ -26,19 +26,29 @@
       "id": "normal2_prepare",
       "title": "通常2段_予備",
       "version": 1,
-      "source": "art_source/paper_roster_action/toma/generated/normal2_prepare_v1.png",
-      "prepared": "art_source/paper_roster_action/toma/prepared/normal2_prepare.png",
-      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal2_prepare.png",
-      "status": "ゲーム採用／美術の最終承認は別"
+      "source": "art_source/paper_roster_action/toma/generated/normal1_prepare_v2.png",
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal1_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal1_prepare.png",
+      "status": "通常1段と共通でゲーム使用・独立2段は予備保管",
+      "retainedOriginal": {
+        "source": "art_source/paper_roster_action/toma/generated/normal2_prepare_v1.png",
+        "prepared": "art_source/paper_roster_action/toma/prepared/normal2_prepare.png",
+        "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal2_prepare.png"
+      }
     },
     {
       "id": "normal2_impact",
       "title": "通常2段_当てる",
       "version": 1,
-      "source": "art_source/paper_roster_action/toma/generated/normal2_impact_v1.png",
-      "prepared": "art_source/paper_roster_action/toma/prepared/normal2_impact.png",
-      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal2_impact.png",
-      "status": "ゲーム採用／美術の最終承認は別"
+      "source": "art_source/paper_roster_action/toma/generated/normal1_impact_v3.png",
+      "prepared": "art_source/paper_roster_action/toma/prepared/normal1_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal1_impact.png",
+      "status": "通常1段と共通でゲーム使用・独立2段は予備保管",
+      "retainedOriginal": {
+        "source": "art_source/paper_roster_action/toma/generated/normal2_impact_v1.png",
+        "prepared": "art_source/paper_roster_action/toma/prepared/normal2_impact.png",
+        "runtime": "AniBato/Assets/_Project/Art/PaperAction/toma_normal2_impact.png"
+      }
     },
     {
       "id": "normal3_prepare",

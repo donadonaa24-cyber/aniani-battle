@@ -142,6 +142,127 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.43185246
     FootMaxX: 0.5707963
+  - Key: prototype_whole_illustration
+    States: 020000000300000004000000090000000a0000000b0000000c0000000d0000000e000000100000001300000014000000190000001b0000001c0000001d0000001e0000001f0000002000000021000000i
+    Frames:
+    - {fileID: 21300000, guid: 1320fb5b5d1e03a40b343e91356870e9, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs: []
+    HeadHeight: 2.2850628
+    FootBaseY: 0
+    FootMinX: -0.79047775
+    FootMaxX: 0.78296727
+  - Key: normal1
+    States: 06000000i
+    Frames:
+    - {fileID: 21300000, guid: ecb2856dbf4a68e4d92fae544834ae0a, type: 3}
+    - {fileID: 21300000, guid: e770f3b47627a1546bed42e7f04f8db7, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 1.9658675
+    - 1.6654484
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.62524724
+    - -0.42809722
+    FrameFootMaxXs:
+    - 0.794233
+    - 0.06947192
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 1.9658675
+    FootBaseY: 0
+    FootMinX: -0.62524724
+    FootMaxX: 0.794233
+  - Key: normal2
+    States: 07000000i
+    Frames:
+    - {fileID: 21300000, guid: ecb2856dbf4a68e4d92fae544834ae0a, type: 3}
+    - {fileID: 21300000, guid: e770f3b47627a1546bed42e7f04f8db7, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 1.9658675
+    - 1.6654484
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.62524724
+    - -0.42809722
+    FrameFootMaxXs:
+    - 0.794233
+    - 0.06947192
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 1.9658675
+    FootBaseY: 0
+    FootMinX: -0.62524724
+    FootMaxX: 0.794233
+  - Key: back
+    States: 1a000000i
+    Frames:
+    - {fileID: 21300000, guid: ecb2856dbf4a68e4d92fae544834ae0a, type: 3}
+    - {fileID: 21300000, guid: e770f3b47627a1546bed42e7f04f8db7, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 1
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 1.9658675
+    - 1.6654484
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.62524724
+    - -0.42809722
+    FrameFootMaxXs:
+    - 0.794233
+    - 0.06947192
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 1.9658675
+    FootBaseY: 0
+    FootMinX: -0.62524724
+    FootMaxX: 0.794233
+  - Key: normal3
+    States: 08000000i
+    Frames:
+    - {fileID: 21300000, guid: 61594ae550045d44698a0b0815c92a47, type: 3}
+    - {fileID: 21300000, guid: f6247e6ac28a06845be83fb2a3bba30f, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 1.7518189
+    - 1.6523051
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.7454149
+    - -0.6552892
+    FrameFootMaxXs:
+    - 0.9162783
+    - 0.1164124
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 1.7518189
+    FootBaseY: 0
+    FootMinX: -0.7454149
+    FootMaxX: 0.9162783
   HeavyDamage:
     Key: 
     States: 

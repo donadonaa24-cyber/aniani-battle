@@ -6,6 +6,7 @@
 - Unityプロジェクト本体：`AniBato/`（製品名は「あにあにバトル！！」、companyName は `aniani`）。
 - 原本仕様：`docs/SPEC_ORIGINAL.md`（必ず参照。迷ったらこれに従う）。
 - 最新の共通演出：`docs/PAPER_THEATRE_DIRECTION.md`。通常のアニメ全身イラスト1枚を丸ごと動かすペープサート方式。初期は関節分割／ボーンなし。攻撃は各段「予備→当てる」の2コマ、3段目は最大。戦闘性能は絵の都合で変えない。
+- 2026-10-16最新：通常1・2段は同じ予備／当てる2原画を共有し、3段目の大振り2原画と合わせ計4原画。透真・蓮の未生成の旧ピクセル姿勢は本人の紙待機へ。全員の攻撃原画を揃えた後、溜めと被弾原画へ進む。`docs/codex_tasks/PAPER_ACTION_FOUR_KEYS_AND_REMAINING.md`が旧6原画・溜め絵生成なしより優先。
 - ゴールと実装順：`docs/IMPLEMENTATION_ORDER.md`。RESUME冒頭に現在工程／直近の検証結果／次の指示書を記録する。完了済みを重複せず、小工程ごとに実装・検証・通常保存する。
 - 役割（2026-10-12 ユーザー指定）：**Codex＝メイン実装・レビュー・Unity検証・取りまとめ**。Claudeも交代して作業できる。指示書は `docs/codex_tasks/`、最新の再開・交代手順は `docs/RESUME.md` と `docs/HANDOFF_TO_CODEX.md` に残す。
 

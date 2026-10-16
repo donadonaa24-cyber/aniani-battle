@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "character": "蓮",
+  "artApproved": false,
+  "unityVerifiedTag": "paper_fourkeys_3",
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通頭突き_予備",
+      "source": "art_source/paper_roster_action/ren/generated/normal1_prepare_v2.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/normal1_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_normal1_prepare.png",
+      "status": "通常4原画だけゲーム使用・美術最終承認は別"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通頭突き_当てる",
+      "source": "art_source/paper_roster_action/ren/generated/normal1_impact_v1.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/normal1_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_normal1_impact.png",
+      "status": "通常4原画だけゲーム使用・美術最終承認は別"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段両足蹴り_予備",
+      "source": "art_source/paper_roster_action/ren/generated/normal3_prepare_v2.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/normal3_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_normal3_prepare.png",
+      "status": "通常4原画だけゲーム使用・美術最終承認は別"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段両足蹴り_当てる",
+      "source": "art_source/paper_roster_action/ren/generated/normal3_impact_v4.png",
+      "prepared": "art_source/paper_roster_action/ren/prepared/normal3_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ren_normal3_impact.png",
+      "status": "通常4原画だけゲーム使用・美術最終承認は別"
+    }
+  ]
+}

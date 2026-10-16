@@ -218,3 +218,7 @@ art_source/paper_roster_core/の新規ポーズは内蔵image_genによる本作
 Noto Sans JP Regularは[Noto CJK公式](https://github.com/notofonts/noto-cjk/blob/main/Sans/SubsetOTF/JP/NotoSansJP-Regular.otf)のSIL Open Font License 1.1の配布物を無改変で同梱。SHA-256はdff723ba59d57d136764a04b9b2d03205544f7cd785a711442d6d2d085ac5073。原本・ライセンス・条件はart_source/fonts/、ゲームはResources/NotoSansJP-Regular.otf。Windows／WebGL出力へThirdPartyNotices.txtをコピーする。OSのフォントは転載していない。
 
 Web用に自作画像274件を右／上の透明余白で4の倍数へ梱包する。原画ファイルと元RGBA画素を保持し、再サンプルなし。ビルド専用キャッシュのDXT5は非可逆GPU圧縮であり、実表示の画素全一致とは区別する。元のSprite領域・PPU・支点と人物寸法を維持する。予備カバンと旧原画は削除せずWebの未使用参照だけを外す。詳細はWEBGL_CURRENT.md。
+
+### 通常4原画の改訂（2026-10-16）
+
+蓮の選定4枚は内蔵image_genで本人の紙待機を参照して生成。原画10枚と除外候補・全文条件はart_source/paper_roster_action/ren/。通常4枚だけゲーム使用、上／下／空中Nは未接続。透明余白梱包1304×1450、PPU532.5893、可視支点1328、再サンプル0。SHAと枠内RGBA監査はpixel-audit.json、部位審査と最終美術承認の区別はpart-review.json。透真と千鶴は通常1段の2枚を2段へ共有、旧独立2段とカバン予備を保持。実Unity paper_fourkeys_3全4合格、実描画48PNG。

@@ -1,5 +1,7 @@
 # 実装順と交代時の確認表（2026-10-16）
 
+2026-10-16最新：paper_fourkeys_3全4合格（Edit535／Play63）、通常4原画と透真・蓮の紙表示を完了。全攻撃は未完。次はPAPER_RELEASE_PROPS_AND_ROW_SELECTION、その後PAPER_ACTION_FOUR_KEYS_AND_REMAINING。全員の攻撃後に溜め／被弾を生成する最新指示が、旧「溜め絵生成なし」より優先。本人別の最新通常指定も後者へ記録。詳細はRESUME冒頭。
+
 ## 今回の上位工程（2026-10-16追加）
 
 最新指定はSPEC_REVISION_20261016、進行表はcodex_tasks/rework_progress.json。先行していた透真の空中原画より今回の変更を優先。
