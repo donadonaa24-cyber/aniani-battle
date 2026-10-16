@@ -30,6 +30,7 @@ namespace AniBato.EditorTools
             if (stage.Platforms == null || stage.Platforms.Length == 0) SetStage(stage, PhaseOneDefaults.Stage());
             EditorUtility.SetDirty(stage);
             var stages = StageThemeBuilder.Build(stage);
+            GeneratedStageArtBuilder.Apply(stages);
             var inputBindings = LoadOrCreate<InputBindings>("InputBindings");
             if (inputBindings.P1.Jump == UnityEngine.InputSystem.Key.None)
             { inputBindings.P1 = InputBindings.DefaultP1; inputBindings.P2 = InputBindings.DefaultP2; }

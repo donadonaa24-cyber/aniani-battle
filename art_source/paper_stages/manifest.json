@@ -1,0 +1,841 @@
+{
+  "schemaVersion": 1,
+  "jobs": [
+    {
+      "id": "future_far",
+      "promptFile": "art_source/paper_stages/future/prompts/far_v1.json"
+    },
+    {
+      "id": "future_mid",
+      "promptFile": "art_source/paper_stages/future/prompts/mid_v1.json"
+    },
+    {
+      "id": "future_frame",
+      "promptFile": "art_source/paper_stages/future/prompts/frame_v1.json"
+    },
+    {
+      "id": "future_main",
+      "promptFile": "art_source/paper_stages/future/prompts/main_v2.json"
+    },
+    {
+      "id": "future_upper",
+      "promptFile": "art_source/paper_stages/future/prompts/upper_v1.json"
+    },
+    {
+      "id": "future_warning",
+      "promptFile": "art_source/paper_stages/future/prompts/warning_v2.json"
+    },
+    {
+      "id": "future_removal",
+      "promptFile": "art_source/paper_stages/future/prompts/removal_v1.json"
+    },
+    {
+      "id": "board_far",
+      "promptFile": "art_source/paper_stages/board/prompts/far_v1.json"
+    },
+    {
+      "id": "board_mid",
+      "promptFile": "art_source/paper_stages/board/prompts/mid_v3.json"
+    },
+    {
+      "id": "board_frame",
+      "promptFile": "art_source/paper_stages/board/prompts/frame_v1.json"
+    },
+    {
+      "id": "board_main",
+      "promptFile": "art_source/paper_stages/board/prompts/main_v1.json"
+    },
+    {
+      "id": "board_upper",
+      "promptFile": "art_source/paper_stages/board/prompts/upper_v1.json"
+    },
+    {
+      "id": "board_warning",
+      "promptFile": "art_source/paper_stages/board/prompts/warning_v2.json"
+    },
+    {
+      "id": "board_removal",
+      "promptFile": "art_source/paper_stages/board/prompts/removal_v1.json"
+    },
+    {
+      "id": "festival_far",
+      "promptFile": "art_source/paper_stages/festival/prompts/far_v1.json"
+    },
+    {
+      "id": "festival_mid",
+      "promptFile": "art_source/paper_stages/festival/prompts/mid_v1.json"
+    },
+    {
+      "id": "festival_frame",
+      "promptFile": "art_source/paper_stages/festival/prompts/frame_v1.json"
+    },
+    {
+      "id": "festival_main",
+      "promptFile": "art_source/paper_stages/festival/prompts/main_v2.json"
+    },
+    {
+      "id": "festival_upper",
+      "promptFile": "art_source/paper_stages/festival/prompts/upper_v1.json"
+    },
+    {
+      "id": "festival_warning",
+      "promptFile": "art_source/paper_stages/festival/prompts/warning_v2.json"
+    },
+    {
+      "id": "festival_removal",
+      "promptFile": "art_source/paper_stages/festival/prompts/removal_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "future_far",
+      "key": "future",
+      "name": "星の終わり",
+      "layer": "far",
+      "label": "遠景",
+      "transparent": false,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。星の終わり用、青・紺と控えめなシアン。管理AIの未来都市、電子の窓、打ち上げタワー。横長の舞台背景1枚。幅:高さ2.4:1、空と遠い建物の書き割り、複数の紙を重ねた穏やかな遠景。全キャンバスを背景で埋める。中央は細部を減らす。地面や戦闘足場を描かず、遠い都市／塔／校舎を下側に配置する。不透明。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。本レイヤーは不透明の背景。",
+      "source": "art_source/paper_stages/future/generated/far_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "cd0869ffac1d880298284d778d17d359e09ccbcd11f9f578ea0a24c519ffa04b",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "visible": {
+        "left": 0,
+        "top": 0,
+        "right": 1941,
+        "bottom": 808
+      },
+      "transparentPixels": 0
+    },
+    {
+      "id": "board_far",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "far",
+      "label": "遠景",
+      "transparent": false,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。推し駒Battle用、蜂蜜色の木目と朱色・金。将棋風の6×6盤面、無地の五角形の駒、塔。横長の舞台背景1枚。幅:高さ2.4:1、空と遠い建物の書き割り、複数の紙を重ねた穏やかな遠景。全キャンバスを背景で埋める。中央は細部を減らす。地面や戦闘足場を描かず、遠い都市／塔／校舎を下側に配置する。不透明。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。本レイヤーは不透明の背景。",
+      "source": "art_source/paper_stages/board/generated/far_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "1dbaa4bd9b56d2109ac0ede92f8ba6b9b161238d65c7e2eae874d593d1d6e58e",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "visible": {
+        "left": 0,
+        "top": 0,
+        "right": 1941,
+        "bottom": 808
+      },
+      "transparentPixels": 0
+    },
+    {
+      "id": "festival_far",
+      "key": "festival",
+      "name": "Battle à la carte",
+      "layer": "far",
+      "label": "遠景",
+      "transparent": false,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。Battle à la carte用、暖かなオレンジとクリーム。秋の文化祭、校舎、調理場、屋台、黒板、料理と花飾り。横長の舞台背景1枚。幅:高さ2.4:1、空と遠い建物の書き割り、複数の紙を重ねた穏やかな遠景。全キャンバスを背景で埋める。中央は細部を減らす。地面や戦闘足場を描かず、遠い都市／塔／校舎を下側に配置する。不透明。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。本レイヤーは不透明の背景。",
+      "source": "art_source/paper_stages/festival/generated/far_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "1a3c22db3c4173f811cc888b7bb3965fc8661f30ffd8c52438e9e3db145e17ea",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "visible": {
+        "left": 0,
+        "top": 0,
+        "right": 1941,
+        "bottom": 808
+      },
+      "transparentPixels": 0
+    },
+    {
+      "id": "future_mid",
+      "key": "future",
+      "name": "星の終わり",
+      "layer": "mid",
+      "label": "中景",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。星の終わり用、青・紺と控えめなシアン。管理AIの未来都市、電子の窓、打ち上げタワー。横長2.4:1の独立した舞台の書き割り1レイヤー。下の端に並ぶ大きな建物や小道具。上半分は大きく透明に空け、手前の人物を邪魔しない。未来都市なら窓と回路のビル群、将棋なら6×6の盤を背中に大きく立てた工作セットと両端の塔／無地の駒、文化祭なら屋台と無地黒板、鍋・カレー・おにぎりの絵看板。外は完全透明。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/future/generated/mid_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "bcd29ce080637e36c56d201b8e2750fb9dbe688092c57a568f324eb61e6196b6",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "visible": {
+        "left": 12,
+        "top": 20,
+        "right": 1929,
+        "bottom": 778
+      },
+      "transparentPixels": 806948
+    },
+    {
+      "id": "board_mid",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "mid",
+      "label": "中景",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。推し駒Battle用、蜂蜜色の木目と朱色・金。将棋風の6×6盤面、無地の五角形の駒、塔。横長2.4:1の独立した舞台の書き割り1レイヤー。下の端に並ぶ大きな建物や小道具。上半分は大きく透明に空け、手前の人物を邪魔しない。未来都市なら窓と回路のビル群、将棋なら6×6の盤を背中に大きく立てた工作セットと両端の塔／無地の駒、文化祭なら屋台と無地黒板、鍋・カレー・おにぎりの絵看板。外は完全透明。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/board/generated/mid_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "66d8caf210d2c9f01f8f10a12a972acf4c42a9030edaf52737e782ae84ff6013",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "visible": {
+        "left": 6,
+        "top": 255,
+        "right": 1937,
+        "bottom": 766
+      },
+      "transparentPixels": 856955
+    },
+    {
+      "id": "festival_mid",
+      "key": "festival",
+      "name": "Battle à la carte",
+      "layer": "mid",
+      "label": "中景",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。Battle à la carte用、暖かなオレンジとクリーム。秋の文化祭、校舎、調理場、屋台、黒板、料理と花飾り。横長2.4:1の独立した舞台の書き割り1レイヤー。下の端に並ぶ大きな建物や小道具。上半分は大きく透明に空け、手前の人物を邪魔しない。未来都市なら窓と回路のビル群、将棋なら6×6の盤を背中に大きく立てた工作セットと両端の塔／無地の駒、文化祭なら屋台と無地黒板、鍋・カレー・おにぎりの絵看板。外は完全透明。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/festival/generated/mid_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "7e2d74dd9a2f613f64ccc92c801c46a45becfe45bfcd696446e41f1d04afec33",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "visible": {
+        "left": 0,
+        "top": 284,
+        "right": 1941,
+        "bottom": 808
+      },
+      "transparentPixels": 824039
+    },
+    {
+      "id": "future_main",
+      "key": "future",
+      "name": "星の終わり",
+      "layer": "main",
+      "label": "メイン足場",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。星の終わり用、青・紺と控えめなシアン。管理AIの未来都市、電子の窓、打ち上げタワー。1個の極端に横長の帯状の足場だけ。透明な横長キャンバス中央へ、物体自体の幅:高さは約10:1、余白を上下に残す。上端の輪郭は全幅にわたり完全にまっすぐ水平。その下へ厚紙の断面・短い硬い影と貼り重ねた紙を描く。未来は青い細線入り金属パネル風の厚紙、将棋は等間隔に6列の盤の木目、文化祭は調理台の木の天板と紙工作の断面。遠近で台形にしない。上面に出っ張り・小物を置かない。外は透明、台だけ1個。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/future/generated/main_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "9a93007d4013a708793b94b9d98f560719bbd6e65b3f129678faea3020f7dffd",
+      "native": {
+        "width": 2172,
+        "height": 724
+      },
+      "visible": {
+        "left": 10,
+        "top": 146,
+        "right": 2160,
+        "bottom": 510
+      },
+      "transparentPixels": 1162373
+    },
+    {
+      "id": "board_main",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "main",
+      "label": "メイン足場",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。推し駒Battle用、蜂蜜色の木目と朱色・金。将棋風の6×6盤面、無地の五角形の駒、塔。1個の極端に横長の帯状の足場だけ。透明な横長キャンバス中央へ、物体自体の幅:高さは約10:1、余白を上下に残す。上端の輪郭は全幅にわたり完全にまっすぐ水平。その下へ厚紙の断面・短い硬い影と貼り重ねた紙を描く。未来は青い細線入り金属パネル風の厚紙、将棋は等間隔に6列の盤の木目、文化祭は調理台の木の天板と紙工作の断面。遠近で台形にしない。上面に出っ張り・小物を置かない。外は透明、台だけ1個。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/board/generated/main_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "32926aaab80fdf64cc524ae1f71e7f5374a08046d8b678df4d4042b5e2076d22",
+      "native": {
+        "width": 2056,
+        "height": 765
+      },
+      "visible": {
+        "left": 14,
+        "top": 308,
+        "right": 2040,
+        "bottom": 525
+      },
+      "transparentPixels": 1168614
+    },
+    {
+      "id": "festival_main",
+      "key": "festival",
+      "name": "Battle à la carte",
+      "layer": "main",
+      "label": "メイン足場",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。Battle à la carte用、暖かなオレンジとクリーム。秋の文化祭、校舎、調理場、屋台、黒板、料理と花飾り。1個の極端に横長の帯状の足場だけ。透明な横長キャンバス中央へ、物体自体の幅:高さは約10:1、余白を上下に残す。上端の輪郭は全幅にわたり完全にまっすぐ水平。その下へ厚紙の断面・短い硬い影と貼り重ねた紙を描く。未来は青い細線入り金属パネル風の厚紙、将棋は等間隔に6列の盤の木目、文化祭は調理台の木の天板と紙工作の断面。遠近で台形にしない。上面に出っ張り・小物を置かない。外は透明、台だけ1個。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/festival/generated/main_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "b91fe1db14aa0aa9a629efca87c9bcc7cbcf9eb1cf3af8c7d4a23fec23f02f3d",
+      "native": {
+        "width": 2172,
+        "height": 724
+      },
+      "visible": {
+        "left": 30,
+        "top": 187,
+        "right": 2142,
+        "bottom": 512
+      },
+      "transparentPixels": 981685
+    },
+    {
+      "id": "future_main",
+      "key": "future",
+      "name": "星の終わり",
+      "layer": "main",
+      "label": "メイン足場",
+      "transparent": true,
+      "prompt": "参照の下部の細長い足場だけを残して描き直す。建物、空、街、タワー、校舎、屋台、黒板、花、鍋、旗、背景の切り絵をすべて除去する。必要なのは青い細線の金属パネル風の厚紙 の帯1個だけ。上端は全幅にわたり完全にまっすぐ水平で、上端より上は100%透明。足場の上へ物を一切置かない。下へ短い紙の断面を付ける。全体の横幅:高さは約12:1の極端に薄い帯、透明な横長キャンバス中央へ十分な余白付き。足場以外の全域は完全透明、文字・数字・ロゴ・人物なし。参照の足場の色・画風を維持。手作りの厚紙と薄い硬い白縁で、3Dではない。",
+      "source": "art_source/paper_stages/future/generated/main_v2.png",
+      "version": 2,
+      "tool": "built-in image_gen",
+      "references": [
+        "art_source/paper_stages/future/generated/main_v1.png"
+      ],
+      "status": "candidate",
+      "referenceRoles": [
+        "元の1レイヤーの編集対象。指定箇所以外の画風と色を維持"
+      ],
+      "sha256": "db04887e52b30392bbe51c2c678b12da52bab8830251797d275da65dafc9ba74",
+      "native": {
+        "width": 2172,
+        "height": 724
+      },
+      "visible": {
+        "left": 9,
+        "top": 420,
+        "right": 2163,
+        "bottom": 511
+      },
+      "transparentPixels": 1373931
+    },
+    {
+      "id": "festival_main",
+      "key": "festival",
+      "name": "Battle à la carte",
+      "layer": "main",
+      "label": "メイン足場",
+      "transparent": true,
+      "prompt": "参照の下部の細長い足場だけを残して描き直す。建物、空、街、タワー、校舎、屋台、黒板、花、鍋、旗、背景の切り絵をすべて除去する。必要なのは文化祭の木の調理台の天板と厚紙の断面 の帯1個だけ。上端は全幅にわたり完全にまっすぐ水平で、上端より上は100%透明。足場の上へ物を一切置かない。下へ短い紙の断面を付ける。全体の横幅:高さは約12:1の極端に薄い帯、透明な横長キャンバス中央へ十分な余白付き。足場以外の全域は完全透明、文字・数字・ロゴ・人物なし。参照の足場の色・画風を維持。手作りの厚紙と薄い硬い白縁で、3Dではない。",
+      "source": "art_source/paper_stages/festival/generated/main_v2.png",
+      "version": 2,
+      "tool": "built-in image_gen",
+      "references": [
+        "art_source/paper_stages/festival/generated/main_v1.png"
+      ],
+      "status": "candidate",
+      "referenceRoles": [
+        "元の1レイヤーの編集対象。指定箇所以外の画風と色を維持"
+      ],
+      "sha256": "aad68dcbd66046146f026ebc8c7da0802057578a7f8ceb7de3a2d5e2024b3f26",
+      "native": {
+        "width": 2172,
+        "height": 724
+      },
+      "visible": {
+        "left": 19,
+        "top": 357,
+        "right": 2155,
+        "bottom": 456
+      },
+      "transparentPixels": 1351623
+    },
+    {
+      "id": "board_mid",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "mid",
+      "label": "中景",
+      "transparent": true,
+      "prompt": "この参照画像の将棋の舞台セットを編集。中央の木の盤の格子だけを正確な6行×6列、36マスへ直す。境界を含め水平線7本、垂直線7本。数を必ず確認して6行と6列を等間隔にする。塔・無地の駒・朱と金の厚紙・全体の配置と透明背景を維持。文字・数字なし。平面の切り絵の舞台セット1枚。盤の横幅と高さを少し調整して正しい36マスを明快に見せる。",
+      "source": "art_source/paper_stages/board/generated/mid_v2.png",
+      "version": 2,
+      "tool": "built-in image_gen",
+      "references": [
+        "art_source/paper_stages/board/generated/mid_v1.png"
+      ],
+      "status": "candidate",
+      "referenceRoles": [
+        "元の1レイヤーの編集対象。指定箇所以外の画風と色を維持"
+      ],
+      "sha256": "c2d47b9b78c9076b776d8a47812226a81487fee7278be12619ebc269eacd22d3",
+      "native": {
+        "width": 1945,
+        "height": 809
+      },
+      "visible": {
+        "left": 4,
+        "top": 209,
+        "right": 1942,
+        "bottom": 744
+      },
+      "transparentPixels": 832009
+    },
+    {
+      "id": "future_upper",
+      "key": "future",
+      "name": "星の終わり",
+      "layer": "upper",
+      "label": "小足場",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。星の終わり用、青・紺と控えめなシアン。管理AIの未来都市、電子の窓、打ち上げタワー。1個の横長の薄い小足場だけ。物体自体の幅:高さは約7:1、透明キャンバス中央、上下に余白。上端は全幅にわたり完全にまっすぐ水平。その下に厚紙の断面と短い硬い影。未来は青く光る金属パネル風厚紙、将棋は木の駒台、文化祭はまな板。遠近で台形にしない。上面に突起・道具・駒を置かない。外は透明。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/future/generated/upper_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "22e0a520ddfdf5c31493f616503116ed5a6f653523792de4b20bddf4ba0e4794",
+      "native": {
+        "width": 2079,
+        "height": 756
+      },
+      "visible": {
+        "left": 25,
+        "top": 123,
+        "right": 2059,
+        "bottom": 617
+      },
+      "transparentPixels": 893846
+    },
+    {
+      "id": "board_upper",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "upper",
+      "label": "小足場",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。推し駒Battle用、蜂蜜色の木目と朱色・金。将棋風の6×6盤面、無地の五角形の駒、塔。1個の横長の薄い小足場だけ。物体自体の幅:高さは約7:1、透明キャンバス中央、上下に余白。上端は全幅にわたり完全にまっすぐ水平。その下に厚紙の断面と短い硬い影。未来は青く光る金属パネル風厚紙、将棋は木の駒台、文化祭はまな板。遠近で台形にしない。上面に突起・道具・駒を置かない。外は透明。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/board/generated/upper_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "d49fd601a62b30e9a18f354f4b3caf5851e0869c5f5f5e613b2083531fe382ee",
+      "native": {
+        "width": 1890,
+        "height": 832
+      },
+      "visible": {
+        "left": 12,
+        "top": 208,
+        "right": 1877,
+        "bottom": 547
+      },
+      "transparentPixels": 1124024
+    },
+    {
+      "id": "festival_upper",
+      "key": "festival",
+      "name": "Battle à la carte",
+      "layer": "upper",
+      "label": "小足場",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。Battle à la carte用、暖かなオレンジとクリーム。秋の文化祭、校舎、調理場、屋台、黒板、料理と花飾り。1個の横長の薄い小足場だけ。物体自体の幅:高さは約7:1、透明キャンバス中央、上下に余白。上端は全幅にわたり完全にまっすぐ水平。その下に厚紙の断面と短い硬い影。未来は青く光る金属パネル風厚紙、将棋は木の駒台、文化祭はまな板。遠近で台形にしない。上面に突起・道具・駒を置かない。外は透明。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/festival/generated/upper_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "9021d34c6101f2266983b89844026bbe2903d88c8ef29db2809aa90265fef23f",
+      "native": {
+        "width": 2172,
+        "height": 724
+      },
+      "visible": {
+        "left": 18,
+        "top": 176,
+        "right": 2155,
+        "bottom": 507
+      },
+      "transparentPixels": 950305
+    },
+    {
+      "id": "future_frame",
+      "key": "future",
+      "name": "星の終わり",
+      "layer": "frame",
+      "label": "舞台枠",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。星の終わり用、青・紺と控えめなシアン。管理AIの未来都市、電子の窓、打ち上げタワー。横長16:9の舞台額縁。左右端の細い袖幕と、上端の小さな無地の看板、少量のマスキングテープ。中央の横幅85%×高さ85%は完全透明で何も置かない。未来は紺色、将棋は朱と金、文化祭は紅白。画面下側も広く透明。枠だけ1枚。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/future/generated/frame_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "07d3876850480cafeccf664453cc734567a21c4d0f765193eb10e463a0ddc305",
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "visible": {
+        "left": 1,
+        "top": 0,
+        "right": 1670,
+        "bottom": 931
+      },
+      "transparentPixels": 880023
+    },
+    {
+      "id": "board_frame",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "frame",
+      "label": "舞台枠",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。推し駒Battle用、蜂蜜色の木目と朱色・金。将棋風の6×6盤面、無地の五角形の駒、塔。横長16:9の舞台額縁。左右端の細い袖幕と、上端の小さな無地の看板、少量のマスキングテープ。中央の横幅85%×高さ85%は完全透明で何も置かない。未来は紺色、将棋は朱と金、文化祭は紅白。画面下側も広く透明。枠だけ1枚。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/board/generated/frame_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "468124cf2486b7402bd5d8bd8878d204474c7cae1678f15415553df07914f32b",
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "visible": {
+        "left": 2,
+        "top": 1,
+        "right": 1670,
+        "bottom": 937
+      },
+      "transparentPixels": 893113
+    },
+    {
+      "id": "festival_frame",
+      "key": "festival",
+      "name": "Battle à la carte",
+      "layer": "frame",
+      "label": "舞台枠",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。Battle à la carte用、暖かなオレンジとクリーム。秋の文化祭、校舎、調理場、屋台、黒板、料理と花飾り。横長16:9の舞台額縁。左右端の細い袖幕と、上端の小さな無地の看板、少量のマスキングテープ。中央の横幅85%×高さ85%は完全透明で何も置かない。未来は紺色、将棋は朱と金、文化祭は紅白。画面下側も広く透明。枠だけ1枚。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/festival/generated/frame_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "9576f862c562781092746016d93f34a59413b1c3a7df5eceb6c7ff23332bcb78",
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "visible": {
+        "left": 4,
+        "top": 2,
+        "right": 1668,
+        "bottom": 899
+      },
+      "transparentPixels": 799181
+    },
+    {
+      "id": "board_mid",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "mid",
+      "label": "中景",
+      "transparent": true,
+      "prompt": "この画像の中央の木の盤の格子線だけを完全に消す。中央の盤面は線もマスも文字も数字も無い、なめらかな薄い木目の無地の板にする。枠は残す。塔・朱と金の厚紙・雲・無地の駒・段差など、盤の格子以外の全要素は維持。格子はゲーム側で正確に重ねるため、ここでは1本も描かない。元と同じ横長の透明な切り絵舞台背景1枚。文字・人物・ロゴなし。",
+      "source": "art_source/paper_stages/board/generated/mid_v3.png",
+      "version": 3,
+      "tool": "built-in image_gen",
+      "references": [
+        "art_source/paper_stages/board/generated/mid_v2.png"
+      ],
+      "status": "candidate",
+      "referenceRoles": [
+        "元の1レイヤーの編集対象。指定箇所以外の画風と色を維持"
+      ],
+      "sha256": "dc468dbf55547aa40589a27e4ca83721642ba9a27ffc9d5c7fd2772ab2f70356",
+      "native": {
+        "width": 1945,
+        "height": 808
+      },
+      "visible": {
+        "left": 4,
+        "top": 206,
+        "right": 1943,
+        "bottom": 744
+      },
+      "transparentPixels": 822673
+    },
+    {
+      "id": "future_warning",
+      "key": "future",
+      "name": "星の終わり",
+      "layer": "warning",
+      "label": "縮小予告",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。星の終わり用、青・紺と控えめなシアン。管理AIの未来都市、電子の窓、打ち上げタワー。小さな紙の舞台小道具1個だけ、正方形の透明キャンバス。未来は赤い警告ビーコンの紙工作、将棋はめくれかけた木目の盤の一マス、文化祭はたたまれかけた紅白の小旗。文字・記号・数字を入れない。シンプルで小さく表示しても読める輪郭。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/future/generated/warning_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "582a608b729949ec7d03b56265a3ccc29d88975283a2a9383046bf4f65a82d82",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "visible": {
+        "left": 13,
+        "top": 19,
+        "right": 1527,
+        "bottom": 1002
+      },
+      "transparentPixels": 327342
+    },
+    {
+      "id": "board_warning",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "warning",
+      "label": "縮小予告",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。推し駒Battle用、蜂蜜色の木目と朱色・金。将棋風の6×6盤面、無地の五角形の駒、塔。小さな紙の舞台小道具1個だけ、正方形の透明キャンバス。未来は赤い警告ビーコンの紙工作、将棋はめくれかけた木目の盤の一マス、文化祭はたたまれかけた紅白の小旗。文字・記号・数字を入れない。シンプルで小さく表示しても読める輪郭。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/board/generated/warning_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "f81449ec64f3fb805cfe416ea2659c88cf7b4f9b38c43896bf32727f8580b159",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "visible": {
+        "left": 26,
+        "top": 22,
+        "right": 1507,
+        "bottom": 996
+      },
+      "transparentPixels": 449462
+    },
+    {
+      "id": "festival_warning",
+      "key": "festival",
+      "name": "Battle à la carte",
+      "layer": "warning",
+      "label": "縮小予告",
+      "transparent": true,
+      "prompt": "オリジナル2D対戦ゲーム「あにあにバトル！！」の生成背景素材。厚紙と切り絵を何枚も貼り重ねたペープサートの舞台セット。Battle à la carte用、暖かなオレンジとクリーム。秋の文化祭、校舎、調理場、屋台、黒板、料理と花飾り。小さな紙の舞台小道具1個だけ、正方形の透明キャンバス。未来は赤い警告ビーコンの紙工作、将棋はめくれかけた木目の盤の一マス、文化祭はたたまれかけた紅白の小旗。文字・記号・数字を入れない。シンプルで小さく表示しても読める輪郭。\n普通の手作り工作を丁寧な2Dアニメ背景イラストとして描く。濃淡のある厚紙、切った縁、薄く硬いクリーム白の外周、数ミリ浮かせた短く硬い影、少しずれた重なり。落ち着いた彩度と中間調で、手前のアニメ人物が読みやすい色。写真・写実・3DCG・強い被写界深度・ピクセルアート・文字・ロゴ・透かし・数字・人物・キャラクター・人体・操作UIを描かない。1枚1素材、分割シートや複数案にしない。輪郭の外は本当の透明。グローやぼかした境界なし。",
+      "source": "art_source/paper_stages/festival/generated/warning_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "568fce3bedde0630fe0201433bbd1ccd70b5ee796c1048080c156bfefa62bf27",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "visible": {
+        "left": 4,
+        "top": 78,
+        "right": 1530,
+        "bottom": 930
+      },
+      "transparentPixels": 475888
+    },
+    {
+      "id": "future_warning",
+      "key": "future",
+      "name": "星の終わり",
+      "layer": "warning",
+      "label": "縮小予告",
+      "transparent": true,
+      "prompt": "小物を1個だけ切り抜いたゲーム用透明PNG。赤い回転灯の小さなビーコン1個だけ。短い黒い台座と赤い半透明風のドーム。 画像中央に物体だけを大きく、周囲に十分な透明余白。平面的な2Dイラスト、手で切った厚紙の工作、薄く硬いクリーム白の縁。背景・風景・都市・建物・校舎・ステージ・舞台・足場・塔・幕・文字・数字・人物を一切描かない。床面も描かない。小物の外側は完全透明、ぼかし・グロー・影の背景なし。複数案やシートなし。切り抜いた1個のアイテムだけ。",
+      "source": "art_source/paper_stages/future/generated/warning_v2.png",
+      "version": 2,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "f5e55c28dd4d83f7376521d5f44524cf239a3275706ec16aa39623481035d913",
+      "native": {
+        "width": 1267,
+        "height": 1241
+      },
+      "visible": {
+        "left": 296,
+        "top": 255,
+        "right": 969,
+        "bottom": 1031
+      },
+      "transparentPixels": 1137868
+    },
+    {
+      "id": "board_warning",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "warning",
+      "label": "縮小予告",
+      "transparent": true,
+      "prompt": "小物を1個だけ切り抜いたゲーム用透明PNG。折り返りかけた正方形の木目の板1枚だけ。 画像中央に物体だけを大きく、周囲に十分な透明余白。平面的な2Dイラスト、手で切った厚紙の工作、薄く硬いクリーム白の縁。背景・風景・都市・建物・校舎・ステージ・舞台・足場・塔・幕・文字・数字・人物を一切描かない。床面も描かない。小物の外側は完全透明、ぼかし・グロー・影の背景なし。複数案やシートなし。切り抜いた1個のアイテムだけ。",
+      "source": "art_source/paper_stages/board/generated/warning_v2.png",
+      "version": 2,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "798ef2ce1ae8256cd9305c5094be0c610682f81f390ef944d1149702246ca23d",
+      "native": {
+        "width": 1264,
+        "height": 1244
+      },
+      "visible": {
+        "left": 72,
+        "top": 192,
+        "right": 1211,
+        "bottom": 1088
+      },
+      "transparentPixels": 949884
+    },
+    {
+      "id": "festival_warning",
+      "key": "festival",
+      "name": "Battle à la carte",
+      "layer": "warning",
+      "label": "縮小予告",
+      "transparent": true,
+      "prompt": "小物を1個だけ切り抜いたゲーム用透明PNG。折れかけた紅白の小さな三角の旗と短い棒だけ。 画像中央に物体だけを大きく、周囲に十分な透明余白。平面的な2Dイラスト、手で切った厚紙の工作、薄く硬いクリーム白の縁。背景・風景・都市・建物・校舎・ステージ・舞台・足場・塔・幕・文字・数字・人物を一切描かない。床面も描かない。小物の外側は完全透明、ぼかし・グロー・影の背景なし。複数案やシートなし。切り抜いた1個のアイテムだけ。",
+      "source": "art_source/paper_stages/festival/generated/warning_v2.png",
+      "version": 2,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "7f7b9e8cba0866e4d539538c715ad1c01b70e55bc77e9b8ce5323f266abb23f7",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "visible": {
+        "left": 368,
+        "top": 73,
+        "right": 1234,
+        "bottom": 959
+      },
+      "transparentPixels": 1256590
+    },
+    {
+      "id": "future_removal",
+      "key": "future",
+      "name": "星の終わり",
+      "layer": "removal",
+      "label": "縮小小物",
+      "transparent": true,
+      "prompt": "小物を1個だけ切り抜いたゲーム用透明PNG。シアン色の小さな正方形の紙片1枚だけ。表面に2本の白い短い回路線。 画像中央に物体だけを大きく、周囲に十分な透明余白。平面的な2Dイラスト、手で切った厚紙の工作、薄く硬いクリーム白の縁。背景・風景・都市・建物・校舎・ステージ・舞台・足場・塔・幕・文字・数字・人物を一切描かない。床面も描かない。小物の外側は完全透明、ぼかし・グロー・影の背景なし。複数案やシートなし。切り抜いた1個のアイテムだけ。",
+      "source": "art_source/paper_stages/future/generated/removal_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "5b77a8d870e676bf1a0307455d7d6a4edafbad1f326e68752f920387df2851c4",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "visible": {
+        "left": 432,
+        "top": 160,
+        "right": 1142,
+        "bottom": 867
+      },
+      "transparentPixels": 1240184
+    },
+    {
+      "id": "board_removal",
+      "key": "board",
+      "name": "推し駒Battle",
+      "layer": "removal",
+      "label": "縮小小物",
+      "transparent": true,
+      "prompt": "小物を1個だけ切り抜いたゲーム用透明PNG。裏返りかけた正方形の木目のマスの紙片1枚だけ。 画像中央に物体だけを大きく、周囲に十分な透明余白。平面的な2Dイラスト、手で切った厚紙の工作、薄く硬いクリーム白の縁。背景・風景・都市・建物・校舎・ステージ・舞台・足場・塔・幕・文字・数字・人物を一切描かない。床面も描かない。小物の外側は完全透明、ぼかし・グロー・影の背景なし。複数案やシートなし。切り抜いた1個のアイテムだけ。",
+      "source": "art_source/paper_stages/board/generated/removal_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "51b4085e3c12b3e9b778d783b2510440e5348e510a36c112cf3a3c4c0572f83b",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "visible": {
+        "left": 323,
+        "top": 68,
+        "right": 1212,
+        "bottom": 963
+      },
+      "transparentPixels": 1158461
+    },
+    {
+      "id": "festival_removal",
+      "key": "festival",
+      "name": "Battle à la carte",
+      "layer": "removal",
+      "label": "縮小小物",
+      "transparent": true,
+      "prompt": "小物を1個だけ切り抜いたゲーム用透明PNG。片付ける白い紙皿とその上の小さな折れた紅白の旗を一つの小物として描く。 画像中央に物体だけを大きく、周囲に十分な透明余白。平面的な2Dイラスト、手で切った厚紙の工作、薄く硬いクリーム白の縁。背景・風景・都市・建物・校舎・ステージ・舞台・足場・塔・幕・文字・数字・人物を一切描かない。床面も描かない。小物の外側は完全透明、ぼかし・グロー・影の背景なし。複数案やシートなし。切り抜いた1個のアイテムだけ。",
+      "source": "art_source/paper_stages/festival/generated/removal_v1.png",
+      "version": 1,
+      "tool": "built-in image_gen",
+      "references": [],
+      "status": "candidate",
+      "sha256": "a0e11048c2c93bd9050213d4f5057f79e2eac905b10eecc1e92443a78bb0590d",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "visible": {
+        "left": 296,
+        "top": 65,
+        "right": 1237,
+        "bottom": 944
+      },
+      "transparentPixels": 908866
+    }
+  ],
+  "integrated": false,
+  "verifiedTag": null
+}

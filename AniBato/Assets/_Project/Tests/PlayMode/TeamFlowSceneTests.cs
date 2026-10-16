@@ -82,7 +82,9 @@ namespace AniBato.Tests
             CaptureScreen("05_設定画面",720,"rework_r2");
             yield return Tap(keyboard.escapeKey); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.MainMenu));
             choices = Object.FindObjectsByType<Text>().Single(t => t.text.Contains("CPUチーム対戦"));
-            Assert.That(choices.text.Split('\n').Length, Is.EqualTo(5)); Assert.That(choices.text, Does.Not.Contain("フレームレート"));
+            foreach(var item in new[]{"CPUチーム対戦","2人チーム対戦","練習モード","設定","終了"})
+                Assert.That(choices.text.Split(new[]{item},System.StringSplitOptions.None).Length-1,Is.EqualTo(1));
+            Assert.That(choices.text, Does.Not.Contain("フレームレート"));
             yield return ChooseMain(1); yield return Pick(1,5,6,0,3,4); yield return Tap(keyboard.enterKey);
             FastForwardPanel("countdownElapsed"); yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "対戦開始失敗");
             Flow.Runner.enabled = false; yield return EndTeamRound(true); yield return Tap(keyboard.enterKey);

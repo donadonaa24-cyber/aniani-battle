@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "tool": "builtin image_gen",
+  "prompt": "参照1は透真、2は湊、3はシロ。3体だけの完成された全身集合イラスト。3人の外見、服、色を維持。中央最前列に主役透真を大きく、黒髪青目、黒スーツ白シャツ黒ネクタイ、冷静な戦闘ポーズ。左上の奥に義手と青い片目、黒いベストの湊。透真の右足側の手前に白いサイボーグ犬シロ、4本脚の犬のまま。顔と手足は重ねず十分な間隔。通常のアニメ塗りを白い切り抜き縁と木の棒でペープサートにしたイラスト。元画像の頭身を維持。右手左手を正しく2本ずつ、余分な肢は描かない。紙の舞台で戦う元気なクロスオーバーのキービジュアルの中央用素材。正面〜やや横。シロを人間にしない。透真が主役として最も目立つ。文字、背景、床、影、光のぼかしは描かない。背景は本当の透過。3体全身を欠けず画面内に収める。",
+  "references": [
+    "art_source/paper_roster_idle/prepared/toma_idle.png",
+    "art_source/paper_roster_idle/prepared/minato_idle.png",
+    "art_source/paper_roster_idle/prepared/shiro_idle.png"
+  ],
+  "transparent": true
+}

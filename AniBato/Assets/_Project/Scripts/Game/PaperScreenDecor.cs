@@ -7,12 +7,15 @@ namespace AniBato.Game
     public sealed class PaperScreenDecor : MonoBehaviour
     {
         [SerializeField] private Sprite[] portraits;
+        [SerializeField] private PaperEnsembleArt artwork;
         private CanvasGroup ensemble;
         private RectTransform[] figures;
         private GameScreen previous;
         private float fade;
         public Sprite[] Portraits => portraits;
-        public void Configure(Sprite[] values){portraits=values;}
+        public PaperEnsembleArt Artwork=>artwork;
+        public float EnsembleAlpha=>ensemble?ensemble.alpha:0;
+        public void Configure(Sprite[] values,PaperEnsembleArt art=null){portraits=values;artwork=art;}
         private static Image Image(Transform parent,string name,Vector2 p,Vector2 size,Color color)
         {
             var go=new GameObject(name,typeof(RectTransform),typeof(UnityEngine.UI.Image));go.transform.SetParent(parent,false);
@@ -30,6 +33,12 @@ namespace AniBato.Game
             }
             var group=new GameObject("Nine Paper Puppets",typeof(RectTransform),typeof(CanvasGroup));group.transform.SetParent(transform,false);
             ensemble=group.GetComponent<CanvasGroup>();ensemble.blocksRaycasts=false;ensemble.interactable=false;
+            if(artwork&&artwork.Artwork)
+            {
+                ensemble.alpha=0;
+                Image(group.transform,"Generated Nine Character Ensemble",PaperEnsembleArt.DisplayPosition,PaperEnsembleArt.DisplaySize,Color.white).sprite=artwork.Artwork;
+                figures=System.Array.Empty<RectTransform>();return;
+            }
             figures=new RectTransform[portraits.Length];
             float[] xs={0,-660,-480,360,570,760,-280,-820,210};
             float[] ys={-25,-25,-140,-15,-65,-90,-120,-110,5};
@@ -52,6 +61,12 @@ namespace AniBato.Game
             bool title=flow.Screen==GameScreen.Title,top=flow.Screen==GameScreen.MainMenu;
             if(flow.Screen!=previous)
             {if(flow.Screen==GameScreen.CharacterSelect&&previous==GameScreen.MainMenu)fade=.6f;previous=flow.Screen;}
+            if(artwork)
+            {
+                float target=top?1:flow.Screen==GameScreen.CharacterSelect?.66f:0;
+                ensemble.alpha=Mathf.MoveTowards(ensemble.alpha,target,Time.unscaledDeltaTime*.85f);
+                return;
+            }
             if(!title&&!top)fade=Mathf.Max(0,fade-Time.unscaledDeltaTime);
             ensemble.alpha=title?1:top?.22f:fade;
             int pose=Mathf.FloorToInt(Time.unscaledTime*5)%4;

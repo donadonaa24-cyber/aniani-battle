@@ -1,0 +1,19 @@
+{
+  "id": "board_mid",
+  "key": "board",
+  "name": "推し駒Battle",
+  "layer": "mid",
+  "label": "中景",
+  "transparent": true,
+  "prompt": "この参照画像の将棋の舞台セットを編集。中央の木の盤の格子だけを正確な6行×6列、36マスへ直す。境界を含め水平線7本、垂直線7本。数を必ず確認して6行と6列を等間隔にする。塔・無地の駒・朱と金の厚紙・全体の配置と透明背景を維持。文字・数字なし。平面の切り絵の舞台セット1枚。盤の横幅と高さを少し調整して正しい36マスを明快に見せる。",
+  "source": "art_source/paper_stages/board/generated/mid_v2.png",
+  "version": 2,
+  "tool": "built-in image_gen",
+  "references": [
+    "art_source/paper_stages/board/generated/mid_v1.png"
+  ],
+  "status": "planned",
+  "referenceRoles": [
+    "元の1レイヤーの編集対象。指定箇所以外の画風と色を維持"
+  ]
+}

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4015ca30a6f5f48b8987a3cbeef375, type: 3}
+  m_Name: festivalGeneratedStage
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.GeneratedStageArt
+  Far: {fileID: 21300000, guid: 4e32542ac7b7f074fb95f58362cbb167, type: 3}
+  Mid: {fileID: 21300000, guid: 0e05774ccb5f15f4e9945578e3646ecb, type: 3}
+  Frame: {fileID: 21300000, guid: 559f619761680744fad0f3916d4eae42, type: 3}
+  Main: {fileID: 21300000, guid: 344164836a8da8942ab254981aa3c819, type: 3}
+  Upper: {fileID: 21300000, guid: 397dd12c12cefa748b5c4e572e022006, type: 3}
+  Warning: {fileID: 21300000, guid: 528138c754499c647856562d8f7a0d49, type: 3}
+  Removal: {fileID: 21300000, guid: 7bd85c6b68e22cb45a2f87446f24d294, type: 3}
+  MainRegion:
+    serializedVersion: 2
+    x: 82
+    y: 267
+    width: 2009
+    height: 95
+  UpperRegion:
+    serializedVersion: 2
+    x: 19
+    y: 216
+    width: 2134
+    height: 48
+  WarningRegion:
+    serializedVersion: 2
+    x: 368
+    y: 64
+    width: 867
+    height: 887
+  RemovalRegion:
+    serializedVersion: 2
+    x: 296
+    y: 79
+    width: 942
+    height: 880
+  BoardPanel:
+    serializedVersion: 2
+    x: 818
+    y: 237
+    width: 310
+    height: 264
+  Cutout: {fileID: 2100000, guid: 58f9e101258bf2e4a9c1f382124c7898, type: 2}

@@ -10,7 +10,10 @@ namespace AniBato.Game
         private Text[] labels;
         private Text status;
         private GameFlowController flow;
-        public static readonly int[] Layout={0,1,2,3,5,7,4,6,8};
+        [SerializeField] private PaperEnsembleArt artwork;
+        public PaperEnsembleArt Artwork=>artwork;
+        public void Configure(PaperEnsembleArt value){artwork=value;}
+        public static readonly int[] Layout={1,0,2,5,3,7,6,4,8};
         public static int Move(int index,int x,int y)
         {
             int p=System.Array.IndexOf(Layout,index);if(p<0)p=0;
@@ -31,23 +34,36 @@ namespace AniBato.Game
         private void Build()
         {
             portraits=new Image[9];backgrounds=new Image[9];labels=new Text[9];
-            string[] works={"星の終わりに君は生きる","推し駒Battle","Battle à la carte"};
+            string[] works={"推し駒Battle","星の終わりに君は生きる","Battle à la carte"};
             Color[] colors={new Color(.24f,.39f,.5f),new Color(.48f,.32f,.34f),new Color(.45f,.4f,.27f)};
             for(int c=0;c<3;c++)
             {
                 var panel=Picture(transform,"Work Paper "+c,new Vector2((c-1)*565,0),new Vector2(535,670),colors[c]);
+                panel.enabled=!artwork;
                 panel.rectTransform.localRotation=Quaternion.Euler(0,0,c==1?-.5f:.5f);
-                Label(transform,"Work Title "+c,new Vector2((c-1)*565,300),new Vector2(530,65),26).text=works[c];
+                var work=Label(transform,"Work Title "+c,new Vector2((c-1)*565,artwork?314:300),new Vector2(530,58),26);work.text=works[c];
+                if(artwork)PaperSign.Attach(work,"Work Paper Sign "+c);
             }
             for(int cell=0;cell<9;cell++)
             {
                 int index=Layout[cell];var data=flow.Setup.Character(index);float x=(cell%3-1)*565,y=167-cell/3*200;
+                if(artwork)
+                {
+                    var p=artwork.Position(index);var size=artwork.Size(index);
+                    backgrounds[index]=Picture(transform,"Roster Card "+index,p,size+Vector2.one*12,new Color(0,0,0,.6f));
+                    portraits[index]=Picture(transform,"Roster Illustration "+index,p,size,Color.white);
+                    portraits[index].sprite=artwork.Face(index);
+                    Picture(transform,"Roster Name Plate "+index,p+new Vector2(0,-size.y*.5f+8),new Vector2(size.x+8,48),new Color(.08f,.1f,.15f,.92f));
+                    labels[index]=Label(transform,"Roster Name "+index,p+new Vector2(0,-size.y*.5f+8),new Vector2(size.x+6,48),30);
+                    continue;
+                }
                 backgrounds[index]=Picture(transform,"Roster Card "+index,new Vector2(x,y),new Vector2(500,190),new Color(.13f,.17f,.22f));
                 portraits[index]=Picture(transform,"Roster Illustration "+index,new Vector2(x-130,y+5),new Vector2(175,180),Color.white);
                 portraits[index].sprite=data.SelectionSprite;portraits[index].preserveAspect=true;
                 labels[index]=Label(transform,"Roster Name "+index,new Vector2(x+93,y),new Vector2(270,160),26);
             }
             status=Label(transform,"Roster Selection Status",new Vector2(0,-365),new Vector2(1720,65),25);
+            if(artwork)PaperSign.Attach(status,"Team Selection Paper");
         }
         public void Render(GameFlowController value)
         {
@@ -59,10 +75,11 @@ namespace AniBato.Game
                 bool focus = cursor == i; int first = flow.Selection.Slot(0, i), second = flow.Selection.Slot(1, i);
                 backgrounds[i].color = focus ? (flow.SelectionPlayer == 0 ? new Color(.62f,.28f,.22f) : new Color(.15f,.43f,.58f)) : new Color(.13f,.17f,.22f);
                 var data = flow.Setup.Character(i);
-                labels[i].text = data.Movement.Name + (focus ? " ◀" : "") + "\n" +
+                labels[i].text = data.Movement.Name + (focus ? " ◀" : "") + (artwork?" ":"\n") +
                     (first >= 0 ? "P1 " + (first + 1) + "番目 " : "") +
                     (second >= 0 ? (flow.CpuMode ? "CPU " : "P2 ") + (second + 1) + "番目" : "") +
-                    (data.PrototypeSharedMoves ? "\n基本技を共有・試作" : data.ActionArtworkPending ? "\n専用原画は制作中" : "");
+                    (artwork?"":data.PrototypeSharedMoves ? "\n基本技を共有・試作" : data.ActionArtworkPending ? "\n専用原画は制作中" : "");
+                if(artwork)portraits[i].color=new Color(1,1,1,focus?1:.7f);
             }
             status.fontSize = 23;
             status.text = Summary(flow, 0) + "　／　" + Summary(flow, 1) + "\n" + flow.SelectionStatus;

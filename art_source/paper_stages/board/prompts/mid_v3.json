@@ -1,0 +1,19 @@
+{
+  "id": "board_mid",
+  "key": "board",
+  "name": "推し駒Battle",
+  "layer": "mid",
+  "label": "中景",
+  "transparent": true,
+  "prompt": "この画像の中央の木の盤の格子線だけを完全に消す。中央の盤面は線もマスも文字も数字も無い、なめらかな薄い木目の無地の板にする。枠は残す。塔・朱と金の厚紙・雲・無地の駒・段差など、盤の格子以外の全要素は維持。格子はゲーム側で正確に重ねるため、ここでは1本も描かない。元と同じ横長の透明な切り絵舞台背景1枚。文字・人物・ロゴなし。",
+  "source": "art_source/paper_stages/board/generated/mid_v3.png",
+  "version": 3,
+  "tool": "built-in image_gen",
+  "references": [
+    "art_source/paper_stages/board/generated/mid_v2.png"
+  ],
+  "status": "planned",
+  "referenceRoles": [
+    "元の1レイヤーの編集対象。指定箇所以外の画風と色を維持"
+  ]
+}

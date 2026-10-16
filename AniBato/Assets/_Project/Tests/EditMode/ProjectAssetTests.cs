@@ -103,7 +103,9 @@ namespace AniBato.Tests
                 Assert.That(setup.Stages[i].Thumbnail, Is.Not.Null);
                 Assert.That(setup.Stages[i].FarArtwork, Is.Not.Null);
                 Assert.That(setup.Stages[i].AppearanceSchemaVersion, Is.EqualTo(2));
-                Assert.That(setup.Stages[i].Thumbnail.texture.width, Is.EqualTo(480));
+                Assert.That(setup.Stages[i].Thumbnail, Is.SameAs(setup.Stages[i].GeneratedArt.Far));
+                Assert.That(setup.Stages[i].Thumbnail.texture.width, Is.EqualTo(1942));
+                Assert.That(setup.Stages[i].Thumbnail.texture.height, Is.EqualTo(809));
                 Assert.That(setup.Stages[i].FarArtwork.texture.width, Is.EqualTo(1280));
                 Assert.That(setup.Stages[i].Theme, Is.EqualTo((StageTheme)i));
                 Assert.That(setup.Stages[i].ToGeometry().PlatformCount, Is.EqualTo(3));

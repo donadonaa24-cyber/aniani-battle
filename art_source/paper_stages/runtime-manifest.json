@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "future_far",
+      "key": "future",
+      "layer": "far",
+      "label": "遠景",
+      "source": "art_source/paper_stages/future/generated/far_v1.png",
+      "sha256": "cd0869ffac1d880298284d778d17d359e09ccbcd11f9f578ea0a24c519ffa04b",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1942,
+        "height": 809
+      },
+      "version": 1
+    },
+    {
+      "id": "future_mid",
+      "key": "future",
+      "layer": "mid",
+      "label": "中景",
+      "source": "art_source/paper_stages/future/generated/mid_v1.png",
+      "sha256": "bcd29ce080637e36c56d201b8e2750fb9dbe688092c57a568f324eb61e6196b6",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1942,
+        "height": 809
+      },
+      "version": 1
+    },
+    {
+      "id": "future_frame",
+      "key": "future",
+      "layer": "frame",
+      "label": "舞台枠",
+      "source": "art_source/paper_stages/future/generated/frame_v1.png",
+      "sha256": "07d3876850480cafeccf664453cc734567a21c4d0f765193eb10e463a0ddc305",
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1672,
+        "height": 941
+      },
+      "version": 1
+    },
+    {
+      "id": "future_main",
+      "key": "future",
+      "layer": "main",
+      "label": "メイン足場",
+      "source": "art_source/paper_stages/future/generated/main_v2.png",
+      "sha256": "db04887e52b30392bbe51c2c678b12da52bab8830251797d275da65dafc9ba74",
+      "native": {
+        "width": 2172,
+        "height": 724
+      },
+      "rect": {
+        "x": 50,
+        "y": 212,
+        "width": 2071,
+        "height": 90
+      },
+      "version": 2
+    },
+    {
+      "id": "future_upper",
+      "key": "future",
+      "layer": "upper",
+      "label": "小足場",
+      "source": "art_source/paper_stages/future/generated/upper_v1.png",
+      "sha256": "22e0a520ddfdf5c31493f616503116ed5a6f653523792de4b20bddf4ba0e4794",
+      "native": {
+        "width": 2079,
+        "height": 756
+      },
+      "rect": {
+        "x": 32,
+        "y": 138,
+        "width": 2023,
+        "height": 83
+      },
+      "version": 1
+    },
+    {
+      "id": "future_warning",
+      "key": "future",
+      "layer": "warning",
+      "label": "縮小予告",
+      "source": "art_source/paper_stages/future/generated/warning_v2.png",
+      "sha256": "f5e55c28dd4d83f7376521d5f44524cf239a3275706ec16aa39623481035d913",
+      "native": {
+        "width": 1267,
+        "height": 1241
+      },
+      "rect": {
+        "x": 296,
+        "y": 209,
+        "width": 674,
+        "height": 777
+      },
+      "version": 2
+    },
+    {
+      "id": "future_removal",
+      "key": "future",
+      "layer": "removal",
+      "label": "縮小小物",
+      "source": "art_source/paper_stages/future/generated/removal_v1.png",
+      "sha256": "5b77a8d870e676bf1a0307455d7d6a4edafbad1f326e68752f920387df2851c4",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rect": {
+        "x": 432,
+        "y": 156,
+        "width": 711,
+        "height": 708
+      },
+      "version": 1
+    },
+    {
+      "id": "board_far",
+      "key": "board",
+      "layer": "far",
+      "label": "遠景",
+      "source": "art_source/paper_stages/board/generated/far_v1.png",
+      "sha256": "1dbaa4bd9b56d2109ac0ede92f8ba6b9b161238d65c7e2eae874d593d1d6e58e",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1942,
+        "height": 809
+      },
+      "version": 1
+    },
+    {
+      "id": "board_mid",
+      "key": "board",
+      "layer": "mid",
+      "label": "中景",
+      "source": "art_source/paper_stages/board/generated/mid_v3.png",
+      "sha256": "dc468dbf55547aa40589a27e4ca83721642ba9a27ffc9d5c7fd2772ab2f70356",
+      "native": {
+        "width": 1945,
+        "height": 808
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1945,
+        "height": 808
+      },
+      "version": 3
+    },
+    {
+      "id": "board_frame",
+      "key": "board",
+      "layer": "frame",
+      "label": "舞台枠",
+      "source": "art_source/paper_stages/board/generated/frame_v1.png",
+      "sha256": "468124cf2486b7402bd5d8bd8878d204474c7cae1678f15415553df07914f32b",
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1672,
+        "height": 941
+      },
+      "version": 1
+    },
+    {
+      "id": "board_main",
+      "key": "board",
+      "layer": "main",
+      "label": "メイン足場",
+      "source": "art_source/paper_stages/board/generated/main_v1.png",
+      "sha256": "32926aaab80fdf64cc524ae1f71e7f5374a08046d8b678df4d4042b5e2076d22",
+      "native": {
+        "width": 2056,
+        "height": 765
+      },
+      "rect": {
+        "x": 22,
+        "y": 239,
+        "width": 2012,
+        "height": 128
+      },
+      "version": 1
+    },
+    {
+      "id": "board_upper",
+      "key": "board",
+      "layer": "upper",
+      "label": "小足場",
+      "source": "art_source/paper_stages/board/generated/upper_v1.png",
+      "sha256": "d49fd601a62b30e9a18f354f4b3caf5851e0869c5f5f5e613b2083531fe382ee",
+      "native": {
+        "width": 1890,
+        "height": 832
+      },
+      "rect": {
+        "x": 16,
+        "y": 284,
+        "width": 1858,
+        "height": 98
+      },
+      "version": 1
+    },
+    {
+      "id": "board_warning",
+      "key": "board",
+      "layer": "warning",
+      "label": "縮小予告",
+      "source": "art_source/paper_stages/board/generated/warning_v2.png",
+      "sha256": "798ef2ce1ae8256cd9305c5094be0c610682f81f390ef944d1149702246ca23d",
+      "native": {
+        "width": 1264,
+        "height": 1244
+      },
+      "rect": {
+        "x": 72,
+        "y": 155,
+        "width": 1140,
+        "height": 897
+      },
+      "version": 2
+    },
+    {
+      "id": "board_removal",
+      "key": "board",
+      "layer": "removal",
+      "label": "縮小小物",
+      "source": "art_source/paper_stages/board/generated/removal_v1.png",
+      "sha256": "51b4085e3c12b3e9b778d783b2510440e5348e510a36c112cf3a3c4c0572f83b",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rect": {
+        "x": 323,
+        "y": 60,
+        "width": 890,
+        "height": 896
+      },
+      "version": 1
+    },
+    {
+      "id": "festival_far",
+      "key": "festival",
+      "layer": "far",
+      "label": "遠景",
+      "source": "art_source/paper_stages/festival/generated/far_v1.png",
+      "sha256": "1a3c22db3c4173f811cc888b7bb3965fc8661f30ffd8c52438e9e3db145e17ea",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1942,
+        "height": 809
+      },
+      "version": 1
+    },
+    {
+      "id": "festival_mid",
+      "key": "festival",
+      "layer": "mid",
+      "label": "中景",
+      "source": "art_source/paper_stages/festival/generated/mid_v1.png",
+      "sha256": "7e2d74dd9a2f613f64ccc92c801c46a45becfe45bfcd696446e41f1d04afec33",
+      "native": {
+        "width": 1942,
+        "height": 809
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1942,
+        "height": 809
+      },
+      "version": 1
+    },
+    {
+      "id": "festival_frame",
+      "key": "festival",
+      "layer": "frame",
+      "label": "舞台枠",
+      "source": "art_source/paper_stages/festival/generated/frame_v1.png",
+      "sha256": "9576f862c562781092746016d93f34a59413b1c3a7df5eceb6c7ff23332bcb78",
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 1672,
+        "height": 941
+      },
+      "version": 1
+    },
+    {
+      "id": "festival_main",
+      "key": "festival",
+      "layer": "main",
+      "label": "メイン足場",
+      "source": "art_source/paper_stages/festival/generated/main_v2.png",
+      "sha256": "aad68dcbd66046146f026ebc8c7da0802057578a7f8ceb7de3a2d5e2024b3f26",
+      "native": {
+        "width": 2172,
+        "height": 724
+      },
+      "rect": {
+        "x": 82,
+        "y": 267,
+        "width": 2009,
+        "height": 95
+      },
+      "version": 2
+    },
+    {
+      "id": "festival_upper",
+      "key": "festival",
+      "layer": "upper",
+      "label": "小足場",
+      "source": "art_source/paper_stages/festival/generated/upper_v1.png",
+      "sha256": "9021d34c6101f2266983b89844026bbe2903d88c8ef29db2809aa90265fef23f",
+      "native": {
+        "width": 2172,
+        "height": 724
+      },
+      "rect": {
+        "x": 19,
+        "y": 216,
+        "width": 2134,
+        "height": 48
+      },
+      "version": 1
+    },
+    {
+      "id": "festival_warning",
+      "key": "festival",
+      "layer": "warning",
+      "label": "縮小予告",
+      "source": "art_source/paper_stages/festival/generated/warning_v2.png",
+      "sha256": "7f7b9e8cba0866e4d539538c715ad1c01b70e55bc77e9b8ce5323f266abb23f7",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rect": {
+        "x": 368,
+        "y": 64,
+        "width": 867,
+        "height": 887
+      },
+      "version": 2
+    },
+    {
+      "id": "festival_removal",
+      "key": "festival",
+      "layer": "removal",
+      "label": "縮小小物",
+      "source": "art_source/paper_stages/festival/generated/removal_v1.png",
+      "sha256": "a0e11048c2c93bd9050213d4f5057f79e2eac905b10eecc1e92443a78bb0590d",
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rect": {
+        "x": 296,
+        "y": 79,
+        "width": 942,
+        "height": 880
+      },
+      "version": 1
+    }
+  ],
+  "boardPanel": {
+    "x": 818,
+    "y": 237,
+    "width": 310,
+    "height": 264
+  },
+  "notes": "原画はそのまま保持。足場は不透明な水平天面から下のSprite領域を採用し、上面の不要な背景は描画しない。盤面は生成された無地の木目へ正確な6×6の線を重ねる。"
+}

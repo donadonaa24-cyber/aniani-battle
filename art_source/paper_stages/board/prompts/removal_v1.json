@@ -1,0 +1,14 @@
+{
+  "id": "board_removal",
+  "key": "board",
+  "name": "推し駒Battle",
+  "layer": "removal",
+  "label": "縮小小物",
+  "transparent": true,
+  "prompt": "小物を1個だけ切り抜いたゲーム用透明PNG。裏返りかけた正方形の木目のマスの紙片1枚だけ。 画像中央に物体だけを大きく、周囲に十分な透明余白。平面的な2Dイラスト、手で切った厚紙の工作、薄く硬いクリーム白の縁。背景・風景・都市・建物・校舎・ステージ・舞台・足場・塔・幕・文字・数字・人物を一切描かない。床面も描かない。小物の外側は完全透明、ぼかし・グロー・影の背景なし。複数案やシートなし。切り抜いた1個のアイテムだけ。",
+  "source": "art_source/paper_stages/board/generated/removal_v1.png",
+  "version": 1,
+  "tool": "built-in image_gen",
+  "references": [],
+  "status": "planned"
+}

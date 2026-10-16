@@ -14,6 +14,7 @@ namespace AniBato.Game
         private BattleRect originalMain;
         private StageBackgroundView backgroundView;
         private PaperPlatformView[] paperPlatforms;
+        private GeneratedPlatformView[] generatedPlatforms;
         public void Configure(StageData data, PresentationSettings settings, BattleRunner battleRunner = null)
         { stage = data; presentation = settings; runner = battleRunner; }
         private void Start() => Rebuild(stage);
@@ -27,6 +28,7 @@ namespace AniBato.Game
             originalMain = geometry[0].Bounds;
             floors = new SpriteRenderer[geometry.PlatformCount]; edges = new SpriteRenderer[geometry.PlatformCount];
             paperPlatforms = new PaperPlatformView[geometry.PlatformCount];
+            generatedPlatforms=stage.GeneratedArt&&stage.GeneratedArt.Complete?new GeneratedPlatformView[geometry.PlatformCount]:null;
             for (int i = 0; i < geometry.PlatformCount; i++)
             {
                 StagePlatform platform = geometry[i];
@@ -37,8 +39,15 @@ namespace AniBato.Game
                 var edge = ProceduralSprites.Create(transform, "Platform Edge " + i, new Vector2(platform.Bounds.Size.X, 0.06f), stage.Accent, sortingOrder: 1);
                 edges[i] = edge;
                 edge.transform.localPosition = new Vector3(platform.Bounds.Center.X, platform.Bounds.Top, 0);
-                paperPlatforms[i] = new PaperPlatformView(transform, stage.Theme, platform.Bounds, i);
-                paperPlatforms[i].Render(platform.Bounds, true, 0);
+                if(generatedPlatforms!=null)
+                {
+                    generatedPlatforms[i]=new GeneratedPlatformView(transform,stage,platform.Bounds,i,visual);edge.enabled=false;
+                }
+                else
+                {
+                    paperPlatforms[i] = new PaperPlatformView(transform, stage.Theme, platform.Bounds, i);
+                    paperPlatforms[i].Render(platform.Bounds, true, 0);
+                }
             }
             AddBlastLine("Left Boundary", new Vector2(geometry.LeftBlastLine, -1), new Vector2(0.08f, 20));
             AddBlastLine("Right Boundary", new Vector2(geometry.RightBlastLine, -1), new Vector2(0.08f, 20));
@@ -46,7 +55,7 @@ namespace AniBato.Game
             leftWarning = ProceduralSprites.Create(transform, "Left Disappearing Area", Vector2.one, presentation.Warning, sortingOrder: 2);
             rightWarning = ProceduralSprites.Create(transform, "Right Disappearing Area", Vector2.one, presentation.Warning, sortingOrder: 2);
             leftWarning.enabled = rightWarning.enabled = false;
-            boardTiles = stage.Theme == StageTheme.BoardArena ? new SpriteRenderer[6] : null;
+            boardTiles = generatedPlatforms==null&&stage.Theme == StageTheme.BoardArena ? new SpriteRenderer[6] : null;
             if (boardTiles != null)
                 for (int i = 0; i < boardTiles.Length; i++)
                     boardTiles[i] = ProceduralSprites.Create(transform, "Board Floor Cell " + i, Vector2.one,
@@ -60,6 +69,11 @@ namespace AniBato.Game
             for (int i = 0; i < floors.Length; i++)
             {
                 var platform = sim.Stage[i];
+                if(generatedPlatforms!=null)
+                {
+                    generatedPlatforms[i].Render(platform.Bounds,sim.Stage.IsActive(i),sim.Match.TickCount,i>0&&sim.Shrink.UpperPlatformsWarned&&flash);
+                    continue;
+                }
                 paperPlatforms[i].Render(platform.Bounds, sim.Stage.IsActive(i), sim.Match.TickCount);
                 floors[i].enabled = edges[i].enabled = sim.Stage.IsActive(i);
                 floors[i].transform.localScale = new Vector3(platform.Bounds.Size.X, platform.Bounds.Size.Y, 1);

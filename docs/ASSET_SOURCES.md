@@ -208,3 +208,7 @@ art_source/paper_roster_core/の新規ポーズは内蔵image_genによる本作
 ## 透真の銃通常・指令と飛翔物（2026-10-16、R4）
 
 内蔵image_genで自作した16全身原画（通常3段・上下・空中N・特殊・超必殺の予備と当てる）と銃弾／ドローン／ロケット3原画。参照は本作の透真の採用待機v2、低姿勢は本人の採用しゃがみv2、各予備→当てるは同じ予備を局所編集。第三者アセットの取り込みなし。art_source/paper_roster_action/toma/のmanifest・effects-manifest・promptsに全文条件／参照役割／SHA／選定版を保持する。部位目視はpart-review、枠内RGBA一致と枠外alpha1ノイズ56画素の例外はpixel-audit。原画自体は不変、人物の再サンプル0。正式美術承認とゲーム使用は別。通常／特殊／超必殺の性能はR3から変更しない。
+
+## 2026-10-16 R5の生成舞台と集合絵
+
+内蔵image_genで自作した舞台21レイヤーと集合4原画。art_source/paper_stages/およびtitle_paper/のmanifestに原寸・SHA・全文条件と参照の役割を保存。生成画像を無加工で保持し、ゲームではSpriteのUVとアルファしきい値shaderを使う。9人の外見は既存の採用待機を継承。AIの電子窓や工作セットは本作独自表現であり原作設定の追加ではない。原作の容姿が未確認のサポート人物は勝手に追加しない。詳細はGENERATED_STAGE_ART.md。

@@ -12,9 +12,14 @@ namespace AniBato.Game
         private readonly List<SpriteRenderer> boardCells = new List<SpriteRenderer>();
         private SpriteRenderer backing, leftClosed, rightClosed, warningPanel;
         private float boardLeft, boardWidth;
+        private GeneratedStageScenery generated;
         public void Build(StageData stage)
         {
             data = stage; cameraComponent = Camera.main;
+            if(stage.GeneratedArt&&stage.GeneratedArt.Complete)
+            {
+                generated=gameObject.AddComponent<GeneratedStageScenery>();generated.Build(stage);return;
+            }
             far = new GameObject("Far Scenery").transform; far.SetParent(transform, false);
             mid = new GameObject("Mid Scenery").transform; mid.SetParent(transform, false);
             if (cameraComponent) cameraComponent.backgroundColor = data.Background;
@@ -33,6 +38,7 @@ namespace AniBato.Game
         }
         public void SetShrinkStep(int step,int total,bool warning=false,int tick=0,float remaining=1)
         {
+            if(generated){generated.Shrink(warning,tick,remaining);return;}
             if(warningPanel){warningPanel.enabled=warning;warningPanel.color=new Color(data.Accent.r,data.Accent.g,data.Accent.b,tick/12%2==0?.65f:.25f);}
             float removed=boardWidth*.5f*(1-remaining),left=boardLeft+removed,right=boardLeft+boardWidth-removed;
             leftClosed.enabled=rightClosed.enabled=removed>.01f;
@@ -49,6 +55,7 @@ namespace AniBato.Game
         }
         private void LateUpdate()
         {
+            if(generated)return;
             if(!cameraComponent||!data)return;var p=cameraComponent.transform.position;
             far.localPosition=new Vector3(p.x*data.FarParallax,p.y*data.FarParallax,0);
             mid.localPosition=data.Theme==StageTheme.BoardArena?Vector3.zero:new Vector3(p.x*data.MidParallax,p.y*data.MidParallax,0);

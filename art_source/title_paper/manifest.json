@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "tool": "builtin image_gen",
+  "entries": [
+    {
+      "key": "sf",
+      "source": "art_source/title_paper/sf_v1.png",
+      "promptFile": "art_source/title_paper/sf_v1.prompt.json",
+      "sha256": "39a048fcce54f7f06f1fe25a3c7ee72e9b3144cc19ec6869339ba113faa38391",
+      "native": {
+        "width": 1189,
+        "height": 1323
+      },
+      "references": [
+        {
+          "path": "art_source/paper_roster_idle/prepared/toma_idle.png",
+          "sha256": "bba2647bbe44fb6ab05b5a57f2ca9f6bf74ce05ec3490403ce6bb6f33f8e79ed"
+        },
+        {
+          "path": "art_source/paper_roster_idle/prepared/minato_idle.png",
+          "sha256": "e4d286fbe83182881d79b23fa723f44ff0a42ef03f7ac231bbc3d9174e4e3f0a"
+        },
+        {
+          "path": "art_source/paper_roster_idle/prepared/shiro_idle.png",
+          "sha256": "dee47999eda41dd5971c9b45ff8bcb57624443dcbd5381d6b200b391ac6ef404"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "key": "shogi",
+      "source": "art_source/title_paper/shogi_v1.png",
+      "promptFile": "art_source/title_paper/shogi_v1.prompt.json",
+      "sha256": "9561160906cec86acffca79f639bb3d6c6f7171e09e72e67772a2a636c725183",
+      "native": {
+        "width": 1189,
+        "height": 1323
+      },
+      "references": [
+        {
+          "path": "art_source/paper_roster_idle/prepared/ren_idle.png",
+          "sha256": "be94ef030e8a53ce9ab00e345136ce953fa40e6e003346040bf10cd08a188c8c"
+        },
+        {
+          "path": "art_source/paper_roster_idle/prepared/yui_idle.png",
+          "sha256": "fd701d3d2864351d48e61d2793d5dc2e90ef829414cdc5b104a0a54b4301edbf"
+        },
+        {
+          "path": "art_source/paper_roster_idle/prepared/king_idle.png",
+          "sha256": "2094de5b1c27614ef9877807b64927996ba3a27b3acc00a29a95af721f90400f"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "key": "cook",
+      "source": "art_source/title_paper/cook_v1.png",
+      "promptFile": "art_source/title_paper/cook_v1.prompt.json",
+      "sha256": "b7b7d044df621250088a867b352c232519625dd093dacb556e809530e9865228",
+      "native": {
+        "width": 1189,
+        "height": 1323
+      },
+      "references": [
+        {
+          "path": "art_source/paper_roster_idle/prepared/chizuru_idle.png",
+          "sha256": "16b1c35870c40dce23304c8b9d9b9d827ee47313aa17558734b2ea0a9105320c"
+        },
+        {
+          "path": "art_source/paper_roster_idle/prepared/akatsuki_idle.png",
+          "sha256": "eae40aa2874589169045a2223c02b49f16ba01ad75290131cf237135f00efc4e"
+        },
+        {
+          "path": "art_source/paper_roster_idle/prepared/ryuta_idle.png",
+          "sha256": "99c457a9d628f5ed679f2b784fc897f2ec3d68ae8f60bd818f2a1fe4d17f8121"
+        }
+      ],
+      "selected": false
+    },
+    {
+      "key": "ensemble",
+      "source": "art_source/title_paper/ensemble_v1.png",
+      "promptFile": "art_source/title_paper/ensemble_v1.prompt.json",
+      "sha256": "5054467f76063ee7f801f2ef85a7fbdf50c2f191c9cd5346a52205b167ccb3c9",
+      "native": {
+        "width": 1672,
+        "height": 941
+      },
+      "references": [
+        {
+          "path": "art_source/title_paper/sf_v1.png",
+          "sha256": "39a048fcce54f7f06f1fe25a3c7ee72e9b3144cc19ec6869339ba113faa38391"
+        },
+        {
+          "path": "art_source/title_paper/shogi_v1.png",
+          "sha256": "9561160906cec86acffca79f639bb3d6c6f7171e09e72e67772a2a636c725183"
+        },
+        {
+          "path": "art_source/title_paper/cook_v1.png",
+          "sha256": "b7b7d044df621250088a867b352c232519625dd093dacb556e809530e9865228"
+        }
+      ],
+      "selected": true
+    }
+  ],
+  "notes": "9人の待機→3作品別集合→9人集合。人物の正史の追加なし。背景のAI窓と小物は本作独自表現。原画は無加工で保持。"
+}

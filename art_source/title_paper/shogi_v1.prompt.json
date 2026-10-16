@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "tool": "builtin image_gen",
+  "prompt": "参照1は蓮、2は結衣、3は黒獅子王。3人だけの完成された全身集合イラスト。3人の外見、服、色を維持。中央最前列に犬フード赤マントの元気な蓮が拳で戦闘ポーズ、左下の前列に猫フード紫衣装の結衣がかわいく戦闘ポーズ、左上の奥にライオンフード黒金鎧赤マントの黒獅子王が爪付き手袋を広げる。王の顔はライオンフードの口の下に人間の顔。全員の顔が別々に見え手足が混ざらない。通常の鮮明なアニメ塗りを白い切り抜き縁と木の棒でペープサートにしたイラスト。元画像の頭身を維持。余分な肢なし。紙の舞台で戦う元気なクロスオーバーのキービジュアルの左側用素材。人物は右向き寄り、正面斜め。文字、背景、床、影、光のぼかしは描かない。本当の透過。3人全身を欠けず画面内に収める。",
+  "references": [
+    "art_source/paper_roster_idle/prepared/ren_idle.png",
+    "art_source/paper_roster_idle/prepared/yui_idle.png",
+    "art_source/paper_roster_idle/prepared/king_idle.png"
+  ],
+  "transparent": true
+}

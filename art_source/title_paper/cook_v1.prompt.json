@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "tool": "builtin image_gen",
+  "prompt": "参照1は千鶴、2は暁、3は龍太。3人だけの完成された全身集合イラスト。3人の外見、服、色を維持。中央最前列にオレンジ長袖紺スカート白スニーカーの茶髪ボブの千鶴が右手にフライパンを持ち元気な戦闘ポーズ。右上の奥に黒髪眼鏡紺制服緑ネクタイの暁がカードを構える。右下の前列に金髪赤目黒い学ラン赤ネクタイの龍太が拳の戦闘ポーズ。全員の顔を離し手足を混ぜない。千鶴にカバンを持たせない。料理人服に変えない。通常の鮮明なアニメ塗りを白い切り抜き縁と木の棒でペープサートにしたイラスト。元画像の頭身を維持。正しい手と指、余分な肢なし。紙の舞台で戦う元気なクロスオーバーのキービジュアルの右側用素材。正面斜め、左向き寄り。文字、背景、床、影、光のぼかしは描かない。本当の透過。3人全身を欠けず画面内に収める。",
+  "references": [
+    "art_source/paper_roster_idle/prepared/chizuru_idle.png",
+    "art_source/paper_roster_idle/prepared/akatsuki_idle.png",
+    "art_source/paper_roster_idle/prepared/ryuta_idle.png"
+  ],
+  "transparent": true
+}

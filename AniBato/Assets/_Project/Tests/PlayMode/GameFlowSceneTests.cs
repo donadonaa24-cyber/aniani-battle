@@ -486,7 +486,7 @@ namespace AniBato.Tests
             yield return Pick(0, 3, 4);
             Set(second.dpad, Vector2.right, queueEventOnly: true); yield return null; yield return null;
             Set(second.dpad, Vector2.zero, queueEventOnly: true); yield return null; yield return null;
-            Assert.That(Flow.Player2Index, Is.EqualTo(2));
+            Assert.That(Flow.Player2Index, Is.EqualTo(0), "集合絵で蓮の右隣は中央作品の透真");
             yield return Tap(first.buttonSouth); Assert.That(Flow.Selection.Picks(1).Count, Is.Zero);
             yield return Tap(second.buttonSouth); yield return Pick(7, 8); Assert.That(Flow.Screen, Is.EqualTo(GameScreen.StageSelect));
             yield return Tap(first.buttonSouth); yield return WaitFor(() => Flow.Screen == GameScreen.Battle, "パッド操作で試合を開始できませんでした。");

@@ -1,0 +1,19 @@
+{
+  "id": "future_main",
+  "key": "future",
+  "name": "星の終わり",
+  "layer": "main",
+  "label": "メイン足場",
+  "transparent": true,
+  "prompt": "参照の下部の細長い足場だけを残して描き直す。建物、空、街、タワー、校舎、屋台、黒板、花、鍋、旗、背景の切り絵をすべて除去する。必要なのは青い細線の金属パネル風の厚紙 の帯1個だけ。上端は全幅にわたり完全にまっすぐ水平で、上端より上は100%透明。足場の上へ物を一切置かない。下へ短い紙の断面を付ける。全体の横幅:高さは約12:1の極端に薄い帯、透明な横長キャンバス中央へ十分な余白付き。足場以外の全域は完全透明、文字・数字・ロゴ・人物なし。参照の足場の色・画風を維持。手作りの厚紙と薄い硬い白縁で、3Dではない。",
+  "source": "art_source/paper_stages/future/generated/main_v2.png",
+  "version": 2,
+  "tool": "built-in image_gen",
+  "references": [
+    "art_source/paper_stages/future/generated/main_v1.png"
+  ],
+  "status": "planned",
+  "referenceRoles": [
+    "元の1レイヤーの編集対象。指定箇所以外の画風と色を維持"
+  ]
+}

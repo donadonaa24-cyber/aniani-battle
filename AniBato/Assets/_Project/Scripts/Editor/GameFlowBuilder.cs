@@ -22,7 +22,8 @@ namespace AniBato.EditorTools
             var view = root.AddComponent<MenuScreenView>();
             Image shade = Picture(root.transform, "Screen Background", Vector2.zero, new Vector2(5000, 5000));
             var decor = new GameObject("Paper Screen Stage",typeof(RectTransform)); decor.transform.SetParent(root.transform,false);
-            decor.AddComponent<PaperScreenDecor>().Configure(ImportPaperRoster());
+            var ensemble=PaperEnsembleBuilder.Import();
+            decor.AddComponent<PaperScreenDecor>().Configure(ImportPaperRoster(),ensemble);
             var title = Label(root.transform, "Screen Title", new Vector2(0, 432), new Vector2(1740, 120), 62);
             var subtitle = Label(root.transform, "Screen Subtitle", new Vector2(0, 342), new Vector2(1740, 70), 28);
             var options = Label(root.transform, "Screen Options", Vector2.zero, new Vector2(1740, 420), 38);
@@ -31,6 +32,8 @@ namespace AniBato.EditorTools
             var banner = Label(root.transform, "Battle Banner", Vector2.zero, new Vector2(1740, 200), 110);
             banner.color = new Color(1, 0.76f, 0.35f);
             PaperSign.Attach(title,"Paper Title Sign");
+            PaperSign.Attach(options,"Paper Menu Choices");
+            PaperSign.Attach(subtitle,"Paper Menu Subtitle");
             PaperSign.Attach(banner,"Paper Battle Banner");
             var cards = new Image[3]; var labels = new Text[3];
             for (int i = 0; i < 3; i++)
@@ -46,7 +49,7 @@ namespace AniBato.EditorTools
                 columns[i].alignment = TextAnchor.MiddleLeft; columns[i].lineSpacing = 1.25f;
             }
             view.Configure(shade, title, subtitle, options, footer, banner, cards, labels, columns);
-            var grid=new GameObject("Nine Character Selection",typeof(RectTransform));grid.transform.SetParent(root.transform,false);grid.AddComponent<PaperRosterGrid>();
+            var grid=new GameObject("Nine Character Selection",typeof(RectTransform));grid.transform.SetParent(root.transform,false);grid.AddComponent<PaperRosterGrid>().Configure(ensemble);
             var flow = runner.gameObject.AddComponent<GameFlowController>();
             flow.Configure(runner, input, setup, settings, view, world, hud, stage);
             world.SetActive(false); hud.SetActive(false);

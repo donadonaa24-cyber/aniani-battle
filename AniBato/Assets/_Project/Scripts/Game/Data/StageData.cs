@@ -15,6 +15,7 @@ namespace AniBato.Game
         public string ShrinkMessage;
         public Sprite Thumbnail;
         public Sprite FarArtwork;
+        public GeneratedStageArt GeneratedArt;
         public int AppearanceSchemaVersion;
         public Color Background = new Color(0.025f, 0.04f, 0.09f);
         public Color FarColor = new Color(0.06f, 0.1f, 0.18f);
