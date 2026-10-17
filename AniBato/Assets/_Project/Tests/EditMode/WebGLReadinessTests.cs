@@ -11,6 +11,32 @@ namespace AniBato.Tests
     public sealed class WebGLReadinessTests
     {
         [Test]
+        public void PaperMipPaddingPreservesRgbaAndLeavesBackgroundAndPixelImportsAlone()
+        {
+            var source=Enumerable.Range(0,35).Select(i=>new Color32((byte)i,57,93,(byte)(i%3==0?0:255))).ToArray();
+            var packed=WebGLSpritePacking.PadMipChain(source,5,7,out int w,out int h);
+            Assert.That(w,Is.EqualTo(8));Assert.That(h,Is.EqualTo(8));
+            for(int y=0;y<h;y++)for(int x=0;x<w;x++)Assert.That(packed[y*w+x],Is.EqualTo(x<5&&y<7?source[y*5+x]:default(Color32)));
+            foreach(string folder in new[]{"Paper","PaperAction","PaperCore","PaperRoster"})Assert.That(WebGLSpritePacking.UsesMipmaps("Assets/_Project/Art/"+folder+"/sample.png"),Is.True);
+            foreach(string folder in new[]{"Sprites","GeneratedStages","PaperEnsemble","Stages"})Assert.That(WebGLSpritePacking.UsesMipmaps("Assets/_Project/Art/"+folder+"/sample.png"),Is.False);
+        }
+        [Test]
+        public void MipmappedAlphaRemainsStableWhenFineDetailsShrinkToSeventeenPixels()
+        {
+            var texture=new Texture2D(256,256,TextureFormat.RGBA32,true){filterMode=FilterMode.Trilinear};
+            var pixels=new Color32[256*256];for(int y=0;y<256;y++)for(int x=0;x<256;x++)pixels[y*256+x]=new Color32(255,255,255,(byte)((x+y)%2==0?255:0));
+            texture.SetPixels32(pixels);texture.Apply(true);
+            var target=RenderTexture.GetTemporary(17,17,0,RenderTextureFormat.ARGB32);var previous=RenderTexture.active;
+            var image=new Texture2D(17,17,TextureFormat.RGBA32,false);
+            try
+            {
+                Graphics.Blit(texture,target);RenderTexture.active=target;image.ReadPixels(new Rect(0,0,17,17),0,0);image.Apply();
+                foreach(var pixel in image.GetPixels32())Assert.That((int)pixel.a,Is.InRange(124,131),"Small details must retain average coverage rather than disappear between samples");
+                Assert.That(texture.width,Is.EqualTo(256));Assert.That(texture.GetPixels32(0),Is.EqualTo(pixels));
+            }
+            finally{RenderTexture.active=previous;RenderTexture.ReleaseTemporary(target);Object.DestroyImmediate(image);Object.DestroyImmediate(texture);}
+        }
+        [Test]
         public void BlockPaddingPreservesEveryRgbaPixelAndOnlyAddsTransparentTopAndRight()
         {
             var source=Enumerable.Range(0,35).Select(i=>new Color32((byte)i,(byte)(i*2),37,(byte)(i%3==0?0:255))).ToArray();

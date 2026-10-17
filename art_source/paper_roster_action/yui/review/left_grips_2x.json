@@ -1,0 +1,69 @@
+{
+  "purpose": "診断用の等倍切出しの整数2倍。原画とゲームPNGは変更しない。",
+  "order": [
+    {
+      "id": "normal1_prepare_v1",
+      "left": 860,
+      "top": 390,
+      "width": 180,
+      "height": 180,
+      "integerScale": 2
+    },
+    {
+      "id": "normal1_impact_v2",
+      "left": 785,
+      "top": 580,
+      "width": 180,
+      "height": 180,
+      "integerScale": 2
+    },
+    {
+      "id": "normal3_prepare_v1",
+      "left": 825,
+      "top": 755,
+      "width": 180,
+      "height": 180,
+      "integerScale": 2
+    },
+    {
+      "id": "normal3_impact_v2",
+      "left": 740,
+      "top": 555,
+      "width": 180,
+      "height": 180,
+      "integerScale": 2
+    },
+    {
+      "id": "up_impact_v2",
+      "left": 770,
+      "top": 360,
+      "width": 180,
+      "height": 180,
+      "integerScale": 2
+    },
+    {
+      "id": "down_impact_v2",
+      "left": 570,
+      "top": 800,
+      "width": 180,
+      "height": 180,
+      "integerScale": 2
+    },
+    {
+      "id": "air_impact_v2",
+      "left": 830,
+      "top": 375,
+      "width": 180,
+      "height": 180,
+      "integerScale": 2
+    },
+    {
+      "id": "super_prepare_v2",
+      "left": 920,
+      "top": 450,
+      "width": 180,
+      "height": 180,
+      "integerScale": 2
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
@@ -20,6 +21,15 @@ namespace AniBato.EditorTools
             for(int y=0;y<height;y++)Array.Copy(source,y*width,pixels,y*packedWidth,width);
             return pixels;
         }
+        public static bool UsesMipmaps(string path)=>new[]{"Paper","PaperAction","PaperCore","PaperRoster"}
+            .Any(folder=>path.StartsWith("Assets/_Project/Art/"+folder+"/",StringComparison.Ordinal));
+        public static Color32[] PadMipChain(Color32[] source,int width,int height,out int packedWidth,out int packedHeight)
+        {
+            packedWidth=Mathf.NextPowerOfTwo(width);packedHeight=Mathf.NextPowerOfTwo(height);
+            var pixels=new Color32[packedWidth*packedHeight];
+            for(int y=0;y<height;y++)Array.Copy(source,y*width,pixels,y*packedWidth,width);
+            return pixels;
+        }
         public static void Prepare()
         {
             Enabled=true;textures.Clear();const string folder="Assets/_WebGLPacked";Directory.CreateDirectory(folder);
@@ -28,14 +38,16 @@ namespace AniBato.EditorTools
                 string source=AssetDatabase.GUIDToAssetPath(guid);if(!source.EndsWith(".png",StringComparison.OrdinalIgnoreCase))continue;
                 byte[] bytes=File.ReadAllBytes(source);string hash;
                 using(var sha=SHA256.Create())hash=BitConverter.ToString(sha.ComputeHash(bytes)).Replace("-","").Substring(0,12);
-                string path=folder+"/"+guid+"_"+hash+".png";
+                bool mipmaps=UsesMipmaps(source);
+                string path=folder+"/"+guid+"_"+hash+(mipmaps?"_mip1":"")+".png";
                 if(!File.Exists(path))
                 {
                     var decoded=new Texture2D(2,2,TextureFormat.RGBA32,false);Texture2D padded=null;
                     try
                     {
                         if(!ImageConversion.LoadImage(decoded,bytes))throw new InvalidOperationException("PNGの復号失敗");
-                        var pixels=Pad(decoded.GetPixels32(),decoded.width,decoded.height,out int w,out int h);
+                        int w,h;var sourcePixels=decoded.GetPixels32();
+                        var pixels=mipmaps?PadMipChain(sourcePixels,decoded.width,decoded.height,out w,out h):Pad(sourcePixels,decoded.width,decoded.height,out w,out h);
                         padded=new Texture2D(w,h,TextureFormat.RGBA32,false);padded.SetPixels32(pixels);padded.Apply();
                         File.WriteAllBytes(path,ImageConversion.EncodeToPNG(padded));
                     }
@@ -43,11 +55,12 @@ namespace AniBato.EditorTools
                 }
                 AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
                 var importer=(TextureImporter)AssetImporter.GetAtPath(path);
-                if(importer.textureType!=TextureImporterType.Sprite||importer.textureCompression!=TextureImporterCompression.CompressedHQ)
+                var filtering=mipmaps?FilterMode.Trilinear:((TextureImporter)AssetImporter.GetAtPath(source)).filterMode;
+                if(importer.textureType!=TextureImporterType.Sprite||importer.textureCompression!=TextureImporterCompression.CompressedHQ||importer.mipmapEnabled!=mipmaps||importer.filterMode!=filtering)
                 {
                     importer.textureType=TextureImporterType.Sprite;importer.spriteImportMode=SpriteImportMode.Single;
-                    importer.npotScale=TextureImporterNPOTScale.None;importer.maxTextureSize=16384;importer.mipmapEnabled=false;
-                    importer.filterMode=((TextureImporter)AssetImporter.GetAtPath(source)).filterMode;
+                    importer.npotScale=TextureImporterNPOTScale.None;importer.maxTextureSize=16384;importer.mipmapEnabled=mipmaps;
+                    importer.filterMode=filtering;
                     importer.alphaIsTransparency=true;importer.isReadable=false;importer.textureCompression=TextureImporterCompression.CompressedHQ;
                     var p=importer.GetPlatformTextureSettings("WebGL");p.name="WebGL";p.overridden=true;p.format=TextureImporterFormat.DXT5;p.maxTextureSize=16384;
                     importer.SetPlatformTextureSettings(p);importer.SaveAndReimport();

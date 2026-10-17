@@ -1,12 +1,97 @@
 {
   "key": "yui",
   "name": "結衣",
-  "unityVerifiedTag": "rework_r4_shiro_2",
+  "unityVerifiedTag": "rework_r4_yui_2",
   "motionAsset": "AniBato/Assets/_Project/Data/yuiCorePaperMotion.asset",
-  "completeAttackArtwork": false,
-  "bodyFrames": 0,
-  "uniqueBodyImages": 0,
-  "entries": [],
+  "completeAttackArtwork": true,
+  "bodyFrames": 12,
+  "uniqueBodyImages": 9,
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_normal1_prepare.png",
+      "sha256": "ed18b34cbe461f74b618a78254bdaf45c63087ec96c42a96ebbd85eb77c2332f",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/通常1・2段共通_予備.png"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_normal1_impact.png",
+      "sha256": "ad1f3f8ad98c310a4becc484882f49a4b0bc50b033699b6c71471deb956390b5",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/通常1・2段共通_当てる.png"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_normal3_prepare.png",
+      "sha256": "558998dbbd849d99bcede23bba342cd2818d27b6cfcbbb4e57afa05d51531390",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/通常3段_予備.png"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_normal3_impact.png",
+      "sha256": "3b0b637c6c89b7bdd77cf7fec36384c3116c234efcfce025ad505cab92e0c6b3",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/通常3段_当てる.png"
+    },
+    {
+      "id": "up_prepare",
+      "title": "上攻撃_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_normal3_prepare.png",
+      "sha256": "558998dbbd849d99bcede23bba342cd2818d27b6cfcbbb4e57afa05d51531390",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/上攻撃_予備.png"
+    },
+    {
+      "id": "up_impact",
+      "title": "上攻撃_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_up_impact.png",
+      "sha256": "4bdb048ab64b7918fc855500d8f1fca1e5da1abbf91a54e6aec5a675a5c65a1c",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/上攻撃_当てる.png"
+    },
+    {
+      "id": "down_single",
+      "title": "下攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_down_impact.png",
+      "sha256": "1fc856e5025320aa77568368f10f1ec3edac0540793ec65cb05b393e2648c370",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/下攻撃_1枚採用.png"
+    },
+    {
+      "id": "air_single",
+      "title": "空中攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_air_impact.png",
+      "sha256": "1d2fea67acd5c6827bd6fe0a853eec158e092be39a89d80b8246d0dfb79647bb",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/空中攻撃_1枚採用.png"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_normal3_prepare.png",
+      "sha256": "558998dbbd849d99bcede23bba342cd2818d27b6cfcbbb4e57afa05d51531390",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/特殊技_予備.png"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_special_impact.png",
+      "sha256": "44f0b1af0ac70669389e1fc1948073962002127bf227d88abc7825d124922528",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/特殊技_当てる.png"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_super_prepare.png",
+      "sha256": "0241a7a825dc0b48a811b495c76ba29dfc2c43fda22e04f614e790b10a3f1414",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/超必殺技_予備.png"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/yui_special_impact.png",
+      "sha256": "44f0b1af0ac70669389e1fc1948073962002127bf227d88abc7825d124922528",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/結衣/超必殺技_当てる.png"
+    }
+  ],
   "extraVariants": "追加指示後",
   "artApproved": false
 }

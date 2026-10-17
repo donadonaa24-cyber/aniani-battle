@@ -1,0 +1,19 @@
+{
+  "id": "super_prepare",
+  "key": "yui",
+  "character": "結衣",
+  "pose": "super",
+  "phase": "prepare",
+  "label": "超必殺角の交差急襲",
+  "version": 2,
+  "source": "art_source/paper_roster_action/yui/generated/super_prepare_v2.png",
+  "references": [
+    "art_source/paper_roster_action/yui/generated/super_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "直接の編集対象：全身の最大の構えは採用候補、杖先が上端で切れる"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の結衣の超必殺の大きい構えを全体そのままに、左の人間の手と握ったステッキの高さだけ直す。今の杖の上端の金の葉が画像の上端で切れている。左肘を少し深く曲げ、左手首と杖全体を約70px下げる。左手は頭の右横で顔の高さぐらいに保ち、杖の軸はまっすぐ縦のまま。金の輪の上の尖った飾りまで完全な形に復元し、画像の上端から40px以上の透明余白を付ける。杖そのものの長さと部品の大きさは同じで、縮小して収めない。\n本人の左肩から左肘・左手首へ自然につなぎ、左の5指で紫の柄を正しく握る。右の白い肉球ミトンとその腕は変更しない。猫耳フード・顔・髪・服・マント・尾・胸と腰・大きく開いた脚・両ブーツは位置と大きさを厳密に維持。全身を拡大縮小や反転や移動で処理しない。1189×1323の同じ真の透明PNG、硬い薄いクリーム白縁を全外周へ。1人1姿勢。背景・床・影・文字・効果・別のキャラ・余分な手足はなし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

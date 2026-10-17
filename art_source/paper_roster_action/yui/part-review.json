@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "key": "yui",
+  "artApproved": false,
+  "gameConnected": true,
+  "reviewedAtNativeScale": true,
+  "baseline": "art_source/paper_roster_idle/generated/yui_idle_v1.png",
+  "lowPoseReference": "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png",
+  "bodySlots": 12,
+  "uniqueBodyImages": 9,
+  "findings": [
+    "本人左手は人間の手で杖を持ち、右手は肉球ミトン。右脚だけ縞ストッキング、左脚は素肌と紫リボン。左の握り8姿勢を原寸と整数2倍で確認。",
+    "通常1・2段共通2枚と3段の大振り2枚。上予備と特殊予備は通常3予備を再利用、超必殺の角は特殊決めを共有。下・空中Nは決め各1枚。",
+    "頭・髪・靴を採用待機と比較し、低姿勢をキャンバスへ合わせて独立拡大しない。腕・ミトン・靴の投影の微差は残り、美術の最終承認と画素監査を区別する。",
+    "通常1決め初稿と空中初稿の右端切れ、靴の拡大、下初稿の杖の飾りが靴より下へ出る形、超必殺予備初稿の上端切れは不採用。特殊予備初稿は靴の大きさと不要な差分追加を避け、既存の低い構えを共有した。",
+    "通常3予備と下の握りは甲側、ほかは主に掌側。肩から左腕へ辿り、親指が棒の反対側に隠れる形と追加の指を混同しない。反転加工で手を修正していない。",
+    "通常3決めv2の右余白5px、上決めv2の上余白6px、通常1決めv2の左余白16px。輪郭が閉じ切断がないことを拡大確認したが、指示の全周20px余白を満たしたとは記録しない。",
+    "下決めの支持点測定は最下部64pxを使い、杖の星飾りを靴と誤認しない。梱包は平行移動と透明余白のみ、原画を変形・再サンプルしない。",
+    "角の駒は新規1103×1426原画を原寸保持。文字を反転せず全体回転で実際の斜め上と斜め下の突進へ向ける。本作独自の演出。",
+    "魔法のプレビューの光彩に見えたRGBは透明部。実alphaで灰色背景へ合成し硬い紙片の輪郭を確認。別効果2枚を4行動へ共有し、余韻中の表示で追加のダメージを発生させない。"
+  ],
+  "diagnostics": [
+    "art_source/paper_roster_action/yui/review/left_grips_2x.png",
+    "art_source/paper_roster_action/yui/review/normal3_staff_edge_check.png",
+    "art_source/paper_roster_action/yui/review/effect_magic_alpha_check.png"
+  ],
+  "selected": [
+    {
+      "id": "normal1_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/normal1_prepare_v1.png",
+      "sha256": "f0bb2b22b2b9bcebdf1233d0842b4bdbc884d521dd2af55f5760b08253ef6ef9",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 50,
+          "top": 63,
+          "right": 1156,
+          "bottom": 1283
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal1_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/normal1_impact_v2.png",
+      "sha256": "257e903ef15f4e40faf2e4b910c4c7557d1bac90e89bf0ab08180e647161b39f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 16,
+          "top": 30,
+          "right": 1170,
+          "bottom": 1257
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+      "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 53,
+          "top": 290,
+          "right": 1166,
+          "bottom": 1262
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal3_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/normal3_impact_v2.png",
+      "sha256": "07305d725a02b360e79bb76bdc22746588f4d199502071cdb2e088bd65428992",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 22,
+          "top": 102,
+          "right": 1183,
+          "bottom": 1278
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+      "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 53,
+          "top": 290,
+          "right": 1166,
+          "bottom": 1262
+        }
+      },
+      "reuseOf": {
+        "id": "normal3_prepare",
+        "version": 1,
+        "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+        "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+        "promptFile": "art_source/paper_roster_action/yui/prompts/normal3_prepare_v1.json"
+      },
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "up_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/up_impact_v2.png",
+      "sha256": "634bd6adfc4897aaf6424503d65da893bd8330c3fa756a434cbe54c09f83c9d2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 48,
+          "top": 6,
+          "right": 1140,
+          "bottom": 1282
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "down_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/down_impact_v2.png",
+      "sha256": "28d373af33795940147def052525569b81d7a461cd6a06797bcbe6ea9f007f27",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 34,
+          "top": 342,
+          "right": 1039,
+          "bottom": 1230
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "air_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/air_impact_v2.png",
+      "sha256": "b82d47fa8bb1a3989ce03184603539920110d53bc97067dc0156358d52baa8fe",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 25,
+          "top": 66,
+          "right": 1153,
+          "bottom": 1232
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "special_prepare",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+      "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 53,
+          "top": 290,
+          "right": 1166,
+          "bottom": 1262
+        }
+      },
+      "reuseOf": {
+        "id": "normal3_prepare",
+        "version": 1,
+        "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+        "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+        "promptFile": "art_source/paper_roster_action/yui/prompts/normal3_prepare_v1.json"
+      },
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/special_impact_v1.png",
+      "sha256": "0d5261f9ecb58a6c4d1f0efd44ffed7097320692eca022242f629f6602047974",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 41,
+          "top": 101,
+          "right": 1061,
+          "bottom": 1283
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "super_prepare",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/super_prepare_v2.png",
+      "sha256": "5c4e6843076e7bb7b8e429e0ad6af317a6d7d5fe2f14aca43c482b2165acda90",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 35,
+          "top": 135,
+          "right": 1163,
+          "bottom": 1276
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/special_impact_v1.png",
+      "sha256": "0d5261f9ecb58a6c4d1f0efd44ffed7097320692eca022242f629f6602047974",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 41,
+          "top": 101,
+          "right": 1061,
+          "bottom": 1283
+        }
+      },
+      "reuseOf": {
+        "id": "special_impact",
+        "version": 1,
+        "source": "art_source/paper_roster_action/yui/generated/special_impact_v1.png",
+        "sha256": "0d5261f9ecb58a6c4d1f0efd44ffed7097320692eca022242f629f6602047974",
+        "promptFile": "art_source/paper_roster_action/yui/prompts/special_impact_v1.json"
+      },
+      "reviewedAtNativeScale": true
+    }
+  ],
+  "unityVerifiedTag": "rework_r4_yui_2"
+}

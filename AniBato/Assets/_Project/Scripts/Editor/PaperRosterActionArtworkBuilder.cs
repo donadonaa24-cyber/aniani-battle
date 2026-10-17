@@ -41,6 +41,7 @@ namespace AniBato.EditorTools
                     if(frames.All(f=>f==null)&&!m.complete)continue;
                     if(frames.Any(f=>f==null))throw new InvalidOperationException("必要な攻撃原画が不足: "+Actions[action]);
                     var pose=new PaperPose{Key=Actions[action],States=new[]{States[action]},HoldTicks=8,
+                        RotateWithRush=Keys[index]=="yui"&&(action==5||action==6),
                         Frames=frames.Select(Import).ToArray(),
                         FrameHeadHeights=frames.Select(f=>(1328-f.headTopY)/PaperActionArtworkBuilder.PixelsPerUnit).ToArray(),
                         FrameFootMinXs=frames.Select(f=>(f.footMinX-652)/PaperActionArtworkBuilder.PixelsPerUnit).ToArray(),
@@ -59,10 +60,21 @@ namespace AniBato.EditorTools
                 foreach(var pose in poses)pose.States=pose.States.Where(s=>!replaced.Contains(s)).ToArray();
                 poses.RemoveAll(p=>p.States.Length==0);poses.AddRange(additions);paper.Poses=poses.ToArray();
                 data.ActionArtworkSchemaVersion=m.complete?1:data.ActionArtworkSchemaVersion;
+                if(Keys[index]=="yui"&&m.complete)NameYuiMoves(data);
                 PaperRosterEffectArtworkBuilder.Apply(Keys[index],data);
                 data.ActionArtworkPending=true;EditorUtility.SetDirty(paper);EditorUtility.SetDirty(data);
             }
         }
+        private static void NameYuiMoves(CharacterData data)
+        {
+            for(int i=0;i<data.GroundNormals.Length;i++)Name(data.GroundNormals[i],i<2?"ステッキ打撃 "+(i+1):"ステッキ魔法 3");
+            Name(data.UpNormal,"ステッキ打ち上げ");
+            Name(data.DirectionalNormals[(int)AniBato.Battle.NormalDirection.Crouch],"低いステッキ打撃");
+            Name(data.DirectionalNormals[(int)AniBato.Battle.NormalDirection.Back],"背後へのステッキ打撃");
+            Name(data.DirectionalNormals[(int)AniBato.Battle.NormalDirection.AirNeutral],"空中ステッキ打撃");
+        }
+        private static void Name(AttackData asset,string label)
+        { var definition=asset.Definition;definition.Name=label;asset.Definition=definition;EditorUtility.SetDirty(asset); }
         private static PaperPose Copy(PaperPose from,string key,AnimationState state,bool reverse)=>new PaperPose{
             Key=key,States=new[]{state},Frames=from.Frames,HoldTicks=from.HoldTicks,ReverseFacing=reverse,
             FrameHeadHeights=from.FrameHeadHeights,FrameFootMinXs=from.FrameFootMinXs,FrameFootMaxXs=from.FrameFootMaxXs,

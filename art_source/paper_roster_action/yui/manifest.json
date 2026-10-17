@@ -1,0 +1,833 @@
+{
+  "schemaVersion": 1,
+  "key": "yui",
+  "name": "結衣",
+  "characterIndex": 5,
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "sole": 1328,
+  "pixelsPerUnit": 532.5893,
+  "baseIdle": "art_source/paper_roster_idle/generated/yui_idle_v1.png",
+  "jobs": [
+    {
+      "id": "normal1_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/normal1_prepare_v1.json"
+    },
+    {
+      "id": "normal1_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/normal1_impact_v2.json"
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/normal3_prepare_v1.json"
+    },
+    {
+      "id": "normal3_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/normal3_impact_v2.json"
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/up_prepare_v1.json"
+    },
+    {
+      "id": "up_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/up_impact_v2.json"
+    },
+    {
+      "id": "down_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/down_impact_v2.json"
+    },
+    {
+      "id": "air_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/air_impact_v2.json"
+    },
+    {
+      "id": "special_prepare",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/special_prepare_v2.json"
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/special_impact_v1.json"
+    },
+    {
+      "id": "super_prepare",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/super_prepare_v2.json"
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/super_impact_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通ステッキ打撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/normal1_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣を同じ人物・同じアニメ塗り・同じ部位の実寸で全身1姿勢へ編集。画像1は採用待機であり、容姿と部位寸法の基準。紫の短い髪と紫の瞳、クリーム白と紫の猫耳フード、紫リボンと金の鈴、クリーム白・紫・青緑の魔法使い服とマント、紫の猫の尾1本。本人右手（画面左の手前側）は白い肉球ミトン、本人左手（画面右の奥側）のみ人間の指で紫の柄のステッキを握る。本人右脚のみ紫の縞靴下、左脚は素肌と太腿の紫リボン。紫のブーツ2個。\n動作：通常1・2段共通ステッキ打撃の予備、まだ当てない。両足を接地し膝を少し曲げ、腰と胸を少し後ろへ引く。左肘を曲げてステッキを左肩の横へ引き、杖頭を斜め上に構え、可愛く叩く直前の予備。右の肉球ミトンは胸の近くへ引く。まだ叩かない。\n左右の所属を厳守。左肩→左肘→左手首→左の人間の手→ステッキの柄を自然につなぐ。左手は親指1本と他4本の計5指、親指は他4本と対向して細い柄を握る。右は肉球ミトンのままで、人間の指や第二のステッキを付けない。両腕・両脚は各2本、猫耳2・尾1だけ。杖は同じ金の花形の輪と紫の菱形の宝石、大きい紫リボン、小さい金の星のぶら下がり、細い紫の柄、下端の紫の小さい宝石を保つ。\n1189×1323の真の透明PNG一枚、右向き3/4で胸側・両腕両脚が見える。猫耳フードと髪、肉球、ブーツと杖の装飾の実寸を待機から変えない。低い姿勢をキャンバスいっぱいに拡大せず、上に透明余白を残す。近い右ブーツの幅は約160px、奥の左ブーツ約145pxを基準とし、投影の自然な差以外は巨大化しない。全身・猫耳・尾・ブーツ・杖の上端と下端を切らず、20px以上余白を残す。杖の向きと肘・膝を曲げて収め、部品を縮めてごまかさない。薄く硬いクリーム白の縁を全外周と杖の外周へ連続させる。背景・床・影・相手・文字（角の駒の「角」以外）・別の猫・ハートや星の効果・魔法陣・光彩・ぼかし・複数案・紙の繊維・関節分割・3D・写実・ピクセルは禁止。衣服にもとからある星やリボンは残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "f0bb2b22b2b9bcebdf1233d0842b4bdbc884d521dd2af55f5760b08253ef6ef9",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 50,
+          "top": 63,
+          "right": 1156,
+          "bottom": 1283
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/yui/prepared/normal1_prepare.png",
+      "preparedSha256": "ed18b34cbe461f74b618a78254bdaf45c63087ec96c42a96ebbd85eb77c2332f",
+      "offsetX": 19,
+      "offsetY": 45,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal1_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通ステッキ打撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/normal1_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/normal1_prepare_v1.png",
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：予備と同じ人物・杖・衣服と部位実寸",
+        "採用待機：帽子・ミトン・ブーツ・杖の実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣を同じ人物・同じアニメ塗り・同じ部位の実寸で全身1姿勢へ編集。画像1は採用待機であり、容姿と部位寸法の基準。紫の短い髪と紫の瞳、クリーム白と紫の猫耳フード、紫リボンと金の鈴、クリーム白・紫・青緑の魔法使い服とマント、紫の猫の尾1本。本人右手（画面左の手前側）は白い肉球ミトン、本人左手（画面右の奥側）のみ人間の指で紫の柄のステッキを握る。本人右脚のみ紫の縞靴下、左脚は素肌と太腿の紫リボン。紫のブーツ2個。\n動作：通常1・2段共通ステッキ打撃の当てる決め。腰と胸を右前へ出し、左腕のステッキを右前方へ振り下ろして叩く決め。左肘と左手首を自然につなぎ、杖の金枠の宝石が右前方へ来る。両足で踏み込み、右の肉球ミトンはバランスを取って横へ。可愛く元気な決め顔。\n左右の所属を厳守。左肩→左肘→左手首→左の人間の手→ステッキの柄を自然につなぐ。左手は親指1本と他4本の計5指、親指は他4本と対向して細い柄を握る。右は肉球ミトンのままで、人間の指や第二のステッキを付けない。両腕・両脚は各2本、猫耳2・尾1だけ。杖は同じ金の花形の輪と紫の菱形の宝石、大きい紫リボン、小さい金の星のぶら下がり、細い紫の柄、下端の紫の小さい宝石を保つ。\n1189×1323の真の透明PNG一枚、右向き3/4で胸側・両腕両脚が見える。猫耳フードと髪、肉球、ブーツと杖の装飾の実寸を待機から変えない。低い姿勢をキャンバスいっぱいに拡大せず、上に透明余白を残す。近い右ブーツの幅は約160px、奥の左ブーツ約145pxを基準とし、投影の自然な差以外は巨大化しない。全身・猫耳・尾・ブーツ・杖の上端と下端を切らず、20px以上余白を残す。杖の向きと肘・膝を曲げて収め、部品を縮めてごまかさない。薄く硬いクリーム白の縁を全外周と杖の外周へ連続させる。背景・床・影・相手・文字（角の駒の「角」以外）・別の猫・ハートや星の効果・魔法陣・光彩・ぼかし・複数案・紙の繊維・関節分割・3D・写実・ピクセルは禁止。衣服にもとからある星やリボンは残す。\n画像1の予備から、左のステッキを右前へ振り下ろして当てる終点へ変更する。杖頭は頭の横の高い位置から、右前方の顔より低い高さへ。左腕をしっかり伸ばし体軸と腰を右前へ出すので、予備と同じポーズにしない。杖頭や指を右端で切らない。帽子と顔と衣服とブーツの大きさは画像1・2を維持。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "a52cc0abd726ef9be2f11c972429985bdafb609ffd1bc2a9fdc057078eeeeafb",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 63,
+          "right": 1188,
+          "bottom": 1285
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "右端の杖飾りが切れ、右ブーツが待機より大きい。構図を保ち、杖を少し内側へ引き、両ブーツを基準の実寸に戻す。"
+    },
+    {
+      "id": "normal1_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通ステッキ打撃",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/normal1_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/normal1_impact_v1.png",
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png",
+        "art_source/paper_roster_action/yui/generated/normal1_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：踏み込んで杖を叩く決め。靴と杖端に問題",
+        "ブーツと帽子と杖の実寸の基準",
+        "同じ通常の予備：共通の部位寸法"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣の決めポーズを保ち、二点だけを丁寧に描き直す。1189×1323の透明PNG。\n1. 右端から金の杖頭の飾りがはみ出して切れている。杖の大きさと形は同じまま、左肘を少し曲げ左手首と杖全体を80pxほど内側へ戻し、金の装飾と星の先端まで右端から25px以上余白を作る。左肩からの腕と左の人間の5指の自然な握りを保ち、手を交換しない。\n2. ブーツが拡大されている。画像2の採用待機と画像3の予備のブーツの同じ実寸へ両方を戻す。近い本人右（画面左の縞靴下側）は幅約160〜180px、高さ約180〜210px。奥の本人左（素肌の脚側）は幅約145〜165px、高さ約175〜200px。今の画面左の大きい靴は幅220px以上あり大きすぎるので、輪郭から正しく描き直す。膝や足首は元の脚へ自然につなぎ、足先は待機と同じ斜め右を向ける。巨大な正面の靴底を作らない。靴だけを小人サイズにせず、上記の待機の実寸を守る。\n顔・猫耳フード・胴体・衣服・右ミトン・尾と大きい踏み込みの決めは画像1を維持する。頭や全身を拡縮して解決しない。左手のステッキは同じ紫の柄と金の輪と紫宝石、右手は白い肉球ミトン、縞靴下は本人右脚だけ。白い切り抜き縁も連続させる。背景・床・影・文字・効果・別の人物・余分な手足は描かない。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "257e903ef15f4e40faf2e4b910c4c7557d1bac90e89bf0ab08180e647161b39f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 16,
+          "top": 30,
+          "right": 1170,
+          "bottom": 1257
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/yui/prepared/normal1_impact.png",
+      "preparedSha256": "ad1f3f8ad98c310a4becc484882f49a4b0bc50b033699b6c71471deb956390b5",
+      "offsetX": 84,
+      "offsetY": 71,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "normal3",
+      "phase": "prepare",
+      "label": "通常3段大きい魔法",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png",
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：採用しゃがみ。低い身体と部位の実寸",
+        "採用待機：頭・ブーツ・杖の実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の採用しゃがみの結衣を編集し、魔法の3段目の最大の予備ポーズへ。顔・猫耳フード・衣服と頭や靴の大きさ、深く膝を曲げた低い姿勢は画像1を基準にする。両足を地面に残し、胸を少し後ろへ引く。本人左の人間の手で同じ紫のステッキの柄を握り、左肘をさらに深く曲げ、杖を左胸の近くへ強く引きつける。右の白い肉球ミトンは胸元で魔力を溜める構え。口を小さく閉じ、鋭い紫の目で右前を見る。まだ魔法は出さない。\n左肩→左肘→左手首→左手の5指→杖の柄を自然につなぐ。右手は肉球ミトンで、裸の指にしない。縞靴下は本人右脚だけ、本人左脚は素肌と紫リボン。ステッキは画像1・2と同じ金の花の輪と紫の宝石、紫リボン、ぶら下がる金の星、紫の柄、下端の小さい紫宝石。杖を短縮したり巨大化しない。\n1189×1323、完全透明背景。低い姿勢の上には大きい透明余白を残す。全身を枠に合わせて拡大しない。ブーツの大きさは画像1・2のまま。全身と猫耳と尾、杖の上下先端を切らず、20px以上余白。普通のアニメ塗り、全外周の硬い薄いクリーム白縁。1人1姿勢だけ。背景・床・影・文字・魔法の効果・光彩・別の猫・余分な手足・ピクセル・関節分割なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 53,
+          "top": 290,
+          "right": 1166,
+          "bottom": 1262
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/yui/prepared/normal3_prepare.png",
+      "preparedSha256": "558998dbbd849d99bcede23bba342cd2818d27b6cfcbbb4e57afa05d51531390",
+      "offsetX": 86,
+      "offsetY": 66,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段大きい魔法",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/normal3_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+        "art_source/paper_roster_action/yui/generated/normal1_impact_v2.png",
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：3段最大の予備",
+        "同じ人物・杖・足先の基準と、通常1の決めとの差別化",
+        "採用待機：部位の実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣を同じ人物・同じアニメ塗り・同じ部位の実寸で全身1姿勢へ編集。画像1は採用待機であり、容姿と部位寸法の基準。紫の短い髪と紫の瞳、クリーム白と紫の猫耳フード、紫リボンと金の鈴、クリーム白・紫・青緑の魔法使い服とマント、紫の猫の尾1本。本人右手（画面左の手前側）は白い肉球ミトン、本人左手（画面右の奥側）のみ人間の指で紫の柄のステッキを握る。本人右脚のみ紫の縞靴下、左脚は素肌と太腿の紫リボン。紫のブーツ2個。\n動作：通常3段大きい魔法の当てる決め。三段の中で最も大きく踏み込み、腰・胸と左のステッキを右前方へ突き出す魔法の決めポーズ。杖頭を画面右へ向け、柄は体の前を斜めに横切る。左の人間の手は柄を一本自然に握り、右の肉球ミトンを横へ大きく開く。魔法の紙片は別素材なのでこの人物には描かない。\n左右の所属を厳守。左肩→左肘→左手首→左の人間の手→ステッキの柄を自然につなぐ。左手は親指1本と他4本の計5指、親指は他4本と対向して細い柄を握る。右は肉球ミトンのままで、人間の指や第二のステッキを付けない。両腕・両脚は各2本、猫耳2・尾1だけ。杖は同じ金の花形の輪と紫の菱形の宝石、大きい紫リボン、小さい金の星のぶら下がり、細い紫の柄、下端の紫の小さい宝石を保つ。\n1189×1323の真の透明PNG一枚、右向き3/4で胸側・両腕両脚が見える。猫耳フードと髪、肉球、ブーツと杖の装飾の実寸を待機から変えない。低い姿勢をキャンバスいっぱいに拡大せず、上に透明余白を残す。近い右ブーツの幅は約160px、奥の左ブーツ約145pxを基準とし、投影の自然な差以外は巨大化しない。全身・猫耳・尾・ブーツ・杖の上端と下端を切らず、20px以上余白を残す。杖の向きと肘・膝を曲げて収め、部品を縮めてごまかさない。薄く硬いクリーム白の縁を全外周と杖の外周へ連続させる。背景・床・影・相手・文字（角の駒の「角」以外）・別の猫・ハートや星の効果・魔法陣・光彩・ぼかし・複数案・紙の繊維・関節分割・3D・写実・ピクセルは禁止。衣服にもとからある星やリボンは残す。\n画像1の低い最大の予備から大きく伸び、両足を広く開いて接地し、体軸を強く右前へ倒す。魔法を放つステッキは画像2のような斜め上の打撃とは変え、横に近い角度で宝石を右前へ向ける。杖の長い軸は身体の前を斜めに横切り、左の人間の手だけで柄を自然に握る。右の肉球ミトンは大きく後ろの横へ開く。杖先を右端で切らない。杖と両ブーツを拡大しない。顔は鋭い決め顔だが本人の可愛さを保つ。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "0736074e40a1e78f1d4d6dc3ec19cd3eb856e41c889de69fe3346ea4fe7204a1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 22,
+          "top": 103,
+          "right": 1185,
+          "bottom": 1277
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "杖頭の右端が切れている。全身の決めと部位倍率を保ち、左手と杖を内側へ引いて全飾りに余白を作る。"
+    },
+    {
+      "id": "normal3_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段大きい魔法",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/normal3_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/normal3_impact_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：3段の魔法の決め。右端の杖飾りだけ不良"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の全身の魔法の決めを厳密に保ち、画面右端で切れているステッキだけを修正する。左の肘を少し曲げ、左手首と握った同じ杖を70pxほど画面左へ引く。杖頭の金の葉のような飾りから星の先まで、画面右端から30px以上離して完全な形に描く。杖の形と大きさを変えず、切れた先端を復元する。前方へ向けた横に近い角度を保つ。本人左肩からつながる人間の左手の5指で柄を自然に握る。右は肉球ミトンのまま。顔・帽子・髪・胴体・マント・脚・ブーツ・尾と全身の倍率や位置は一切変えない。画像1の全身を縮小したり移動して解決しない。1189×1323の同じ透明キャンバス。全外周の硬い薄い白縁、1人1姿勢。床・影・背景・効果・文字・別のキャラ・余分な手足はなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "07305d725a02b360e79bb76bdc22746588f4d199502071cdb2e088bd65428992",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 22,
+          "top": 102,
+          "right": 1183,
+          "bottom": 1278
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/yui/prepared/normal3_impact.png",
+      "preparedSha256": "3b0b637c6c89b7bdd77cf7fec36384c3116c234efcfce025ad505cab92e0c6b3",
+      "offsetX": 115,
+      "offsetY": 50,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "up_prepare",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "up",
+      "phase": "prepare",
+      "label": "地上上攻撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png",
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：採用しゃがみ。低い身体と部位の実寸",
+        "採用待機：頭・ブーツ・杖の実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の採用しゃがみの結衣を編集し、魔法の3段目の最大の予備ポーズへ。顔・猫耳フード・衣服と頭や靴の大きさ、深く膝を曲げた低い姿勢は画像1を基準にする。両足を地面に残し、胸を少し後ろへ引く。本人左の人間の手で同じ紫のステッキの柄を握り、左肘をさらに深く曲げ、杖を左胸の近くへ強く引きつける。右の白い肉球ミトンは胸元で魔力を溜める構え。口を小さく閉じ、鋭い紫の目で右前を見る。まだ魔法は出さない。\n左肩→左肘→左手首→左手の5指→杖の柄を自然につなぐ。右手は肉球ミトンで、裸の指にしない。縞靴下は本人右脚だけ、本人左脚は素肌と紫リボン。ステッキは画像1・2と同じ金の花の輪と紫の宝石、紫リボン、ぶら下がる金の星、紫の柄、下端の小さい紫宝石。杖を短縮したり巨大化しない。\n1189×1323、完全透明背景。低い姿勢の上には大きい透明余白を残す。全身を枠に合わせて拡大しない。ブーツの大きさは画像1・2のまま。全身と猫耳と尾、杖の上下先端を切らず、20px以上余白。普通のアニメ塗り、全外周の硬い薄いクリーム白縁。1人1姿勢だけ。背景・床・影・文字・魔法の効果・光彩・別の猫・余分な手足・ピクセル・関節分割なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 53,
+          "top": 290,
+          "right": 1166,
+          "bottom": 1262
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "normal3_prepare",
+        "version": 1,
+        "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+        "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+        "promptFile": "art_source/paper_roster_action/yui/prompts/normal3_prepare_v1.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "膝を深く曲げ左の杖を胸へ引いた同じ構えを、上へ打ち上げる予備として原寸再利用する。",
+      "prepared": "art_source/paper_roster_action/yui/prepared/up_prepare.png",
+      "preparedSha256": "558998dbbd849d99bcede23bba342cd2818d27b6cfcbbb4e57afa05d51531390",
+      "offsetX": 86,
+      "offsetY": 66,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "up_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "up",
+      "phase": "impact",
+      "label": "地上上攻撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/up_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png",
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：低姿勢の部位寸法を維持",
+        "採用待機：衣服とステッキと手足の実寸"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣の全身を、地上の上攻撃の決めへ編集。本人の顔・服・猫耳フード・髪と両ブーツと杖の大きさは画像1・2のまま。両足は接地し、両膝を曲げて腰を低く残し、本人左の人間の腕を上へ大きく伸ばし、同じステッキで頭の斜め右上へ打ち上げる。杖頭の金の輪と紫の宝石が、猫耳の一番高い位置よりさらに上へ来る。顔は右上を見て、右の白い肉球ミトンは体の横へ。腕が顔を完全に隠さない。\n低い身体は少しだけ立ち上がってよいが、膝を曲げて猫耳の上に杖を描ける余白を十分残す。杖を振り上げる左手は親指1＋ほか4指で紫の柄を正しく握る。左右の手を交換せず、右は肉球ミトンのまま。右脚だけ紫の縞靴下、左脚は素肌と紫のリボン。杖は元と同じ形と長さ、金の花の輪・紫の宝石・紫リボン・ぶら下がる金の星・紫の柄・下端の小さい紫宝石を保持。\n1189×1323、真の透明背景。同じ人物倍率で、上げた杖と猫耳と全身・尾・両ブーツを完全に収め、各端から20px以上余白。頭や杖を縮めたり、全身を拡縮して収めない。足の大きさを画像1のままにし、上の空白へ低姿勢を拡大しない。普通のアニメ塗り、硬い薄いクリーム白縁を全外周に一周。1人1姿勢。床・影・効果・文字・背景・別の猫・余分な手足・3D・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "eabc452dbe8f1e55178426a52675a8c6ecad4aa79595f57881b6e1f178d00efe",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 44,
+          "top": 15,
+          "right": 1186,
+          "bottom": 1281
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "杖の右端が可視端へ達している。左腕と杖を縦の打ち上げへ描き直し、杖頭を画面中央寄りへ置いて切断を避ける。"
+    },
+    {
+      "id": "up_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "up",
+      "phase": "impact",
+      "label": "地上上攻撃",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/up_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/up_impact_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：低い身体は正しいが、右上の杖の端に問題"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の上攻撃の全身を保ち、左腕と握ったステッキだけをまっすぐ真上へ打ち上げる姿へ描き直す。現在の斜め右上へ伸ばす腕と杖をやめ、左肩から上がった左肘を少し曲げて内側へ寄せ、左の手首を画面x850前後に置き、杖の長い軸を縦と平行に立てる。杖頭の金の輪と紫宝石の中心を画面x880・y180付近にして、右端から100px近く余白を残す。杖の下端は手首の下に来る。杖の大きさと長さは同じで、金の輪の上端まで切らず上にも20px以上余白を付ける。左の人間の手は親指1＋ほか4指で細い紫の柄を自然に握る。右の肉球ミトンは変更しない。\n猫耳より杖頭を高くする、上攻撃だと分かる明快なシルエット。画像1の顔・髪・猫耳フード・衣服・マント・尾・低い胴体・脚と両ブーツは大きさと位置まで同じに保つ。人物や杖を縮小して解決しない。1189×1323の同じ透明PNG、全外周の硬い薄いクリーム白縁、1人1姿勢。背景・床・影・文字・効果・余分な手足なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "634bd6adfc4897aaf6424503d65da893bd8330c3fa756a434cbe54c09f83c9d2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 48,
+          "top": 6,
+          "right": 1140,
+          "bottom": 1282
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/yui/prepared/up_impact.png",
+      "preparedSha256": "4bdb048ab64b7918fc855500d8f1fca1e5da1abbf91a54e6aec5a675a5c65a1c",
+      "offsetX": 81,
+      "offsetY": 46,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "down_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "down",
+      "phase": "impact",
+      "label": "地上下攻撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/down_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png",
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：採用しゃがみの全身と部位寸法",
+        "採用待機：ステッキと左右の手の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣の採用しゃがみを基に、地面の低い位置を狙う下攻撃の決め1姿勢へ。顔と猫耳フード、髪・衣服・尾・低い胴体と脚・両ブーツの大きさは画像1を維持し、身体を枠いっぱいへ拡大しない。両足を地面に残し、左肩からつながる左腕の人間の手で同じ紫の杖の柄を持ち、杖頭を右前の低い位置へ大きく振り出す。ステッキの金の輪と紫宝石は顔より低く、膝から足首程度の高さで右前へ、柄は体の前を斜め右下に向く。右の白い肉球ミトンは身体の横でバランス。低い打撃だと分かる。\n左手は親指1＋ほか4指で柄を自然に握り、右は肉球ミトンのまま。右脚だけ紫の縞靴下、左脚は素肌と紫リボン。ステッキは画像1・2の同じ長さと装飾、金の花の輪・紫の宝石・紫リボン・金の星・紫の柄・下端の小さい紫宝石。杖先が靴底より下に来ないよう、左肘の角度で調整。頭と杖とブーツの倍率を変えない。\n同じ1189×1323透明キャンバス、上の大きい余白を残す。全身、耳、尾、杖の上下端と金の星、両ブーツを切らず20px以上余白。普通のアニメ塗り、硬い薄いクリーム白縁を全外周へ。1人1姿勢だけ。背景・床・影・文字・効果・別の猫・余分な手足・ピクセル・3Dなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "f1f8330a7746fe548404995e4c45096f31b4e25d6c0367c342ea0b07924ef6c4",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 34,
+          "top": 343,
+          "right": 1182,
+          "bottom": 1252
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "杖の星が靴底より下へ出て足元支点を乱す。低い姿勢を保ち、左腕と杖を膝の高さへ引き上げて内側へ収める。"
+    },
+    {
+      "id": "down_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "down",
+      "phase": "impact",
+      "label": "地上下攻撃",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/down_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/down_impact_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：身体とブーツは良いが、杖が地面より下へ出る"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣の低い打撃の全身を維持して、左腕と握ったステッキだけを描き直す。現在の杖は右下へ出すぎて星が靴底より下になっているので誤り。左肘を深く曲げ、左の手首と同じ杖を約150px上、70px左へ戻す。杖頭の金の輪と宝石を、足先の横でなく右の膝の横の高さへ置く。ぶら下がる星の最下端は画像のy1100より上、両ブーツの靴底より少なくとも120px高い位置に収める。右端に40px以上余白を作る。杖の軸は斜め右下のまま、杖頭が顔より低ければよい。紫の柄・金の輪・紫宝石・紫リボン・金の星の形と大きさは変えない。\n左肩からつながる左の人間の手の5指で柄を自然に握る。右の肉球ミトンとその腕は画像1のまま。顔・猫耳フード・髪・衣服・マント・尾・胴体・脚・両ブーツの大きさと位置を完全に維持。低い身体や全身を拡大縮小して解決しない。1189×1323の同じ透明PNG、硬い薄いクリーム白縁、1人1姿勢。背景・床・影・文字・効果・別の猫・余分な手足はなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "28d373af33795940147def052525569b81d7a461cd6a06797bcbe6ea9f007f27",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 34,
+          "top": 342,
+          "right": 1039,
+          "bottom": 1230
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "footBandPixels": 64,
+      "supportNote": "靴底から64px内の2つのブーツだけを支持幅へ含め、低い杖の星を足として数えない。原画は変形しない。",
+      "prepared": "art_source/paper_roster_action/yui/prepared/down_impact.png",
+      "preparedSha256": "1fc856e5025320aa77568368f10f1ec3edac0540793ec65cb05b393e2648c370",
+      "offsetX": 115,
+      "offsetY": 98,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "air_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "air",
+      "phase": "impact",
+      "label": "空中Nステッキ打撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/air_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/normal1_impact_v2.png",
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：同じステッキ打撃の決め、足の倍率も基準",
+        "採用待機：容姿・猫耳フード・ミトンとブーツの実寸"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1のステッキ打撃の決めを、全身が空中に浮いた一枚の空中攻撃へ編集。顔と猫耳フードと髪・衣服・ステッキ・右の肉球ミトンと両ブーツの実寸は画像1・2を維持。腰と両膝を曲げて、両方のブーツを地面から浮かせた明快な跳躍中の姿勢にする。本人右の縞靴下の脚を後ろへ折り曲げ、本人左の素肌と紫リボンの脚は膝を前へ上げ、左右の膝と足首を自然につなぎ、脚は2本だけ。\n左の人間の手の5指で同じ紫のステッキの柄を握り、左腕を画面右前へ伸ばして振り出した決め。右は白い肉球ミトンのまま後ろ横へ開いてバランス。杖の金の輪・紫宝石・紫リボン・金の星・紫の柄・小さい下端宝石を同じ形と大きさで保つ。杖は画像1と同じような斜め右上へ向け、右端からは40px以上余白を残す。予備コマは不要、決め1姿勢だけ。\n1189×1323の真の透明キャンバス。頭や全身を空中ポーズに合わせて拡大縮小しない。ブーツは画像1の修正済みの実寸をそのまま、巨大な足裏や靴を描かない。全身・猫耳・尾・手・杖の先と星・両ブーツを切らず完全に収める。普通のアニメ塗り、硬い薄いクリーム白縁を全外周に一周。背景・床・影・相手・文字・効果・別の猫・余分な手足・関節分割・3D・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "fb2d689df7291d0c538146c677fa8e691390e3ac5929bab3f2531de681f5ada3",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 24,
+          "top": 67,
+          "right": 1188,
+          "bottom": 1231
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "空中の脚は正しいが、杖頭の輪郭が右端1188に達している。手首を起こして杖を縦に近づけ、飾り全体を内側へ収める。"
+    },
+    {
+      "id": "air_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "air",
+      "phase": "impact",
+      "label": "空中Nステッキ打撃",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/air_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/air_impact_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：空中の全身と両脚は正しいが杖の右端が切れる"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の空中攻撃の結衣の全身を厳密に保ち、左手首の角度とステッキだけを修正する。現在の斜め右上へ大きく傾いた杖の金の輪が右端で切れている。左手首を少し内側へ起こし、ステッキの長い柄を縦に近い角度に立て直す。上の金の輪と紫の宝石の中心を画面x950前後に置き、輪の右端も画面右端から80px以上の空白を残す。杖の長さ、金の輪・宝石・紫リボン・金の星と下端の紫宝石の大きさは同じ。新しい杖の角度に合わせ、左の人間の手の5指で細い柄を自然に握る。右の白い肉球ミトンは画像1のまま。\n画像1の猫耳フード・顔・髪・胴体・衣服とマント・尾・浮いた両脚と両ブーツは位置と大きさまで完全に維持。全身を拡縮・反転・移動して直さない。1189×1323の同じ真の透明PNG、硬い薄いクリーム白縁を全外周へ。1人1姿勢。床・影・文字・背景・効果・別の猫・余分な手足・ピクセル・3Dなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "b82d47fa8bb1a3989ce03184603539920110d53bc97067dc0156358d52baa8fe",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 25,
+          "top": 66,
+          "right": 1153,
+          "bottom": 1232
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/yui/prepared/air_impact.png",
+      "preparedSha256": "1d2fea67acd5c6827bd6fe0a853eec158e092be39a89d80b8246d0dfb79647bb",
+      "offsetX": 57,
+      "offsetY": 96,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_prepare",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "special",
+      "phase": "prepare",
+      "label": "特殊角変身",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/special_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/normal1_prepare_v1.png",
+        "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：採用予定の通常予備、左右の手と杖の自然な握り",
+        "低い膝と同じブーツの実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣を、角に変身して斜めへ飛び出す直前の構えの一枚へ編集する。まだ人間の全身で、駒は描かない。猫耳フード・顔・髪・衣服とマント・右の白い肉球ミトン・左の人間の手で握る同じステッキを画像1のまま保つ。両膝を画像2のように強く曲げて腰を低く集め、胸と顔を斜め右上へ少し向け、次の瞬間に右上へ飛び出す直前。右の肉球ミトンを胸へ寄せ、左肘を曲げて同じ杖を左胸の近くへ構える。左手の5指の自然な握りと右の肉球を交換しない。口を少し閉じ、紫の瞳は決意の目。\n縞靴下は本人右脚だけ、本人左脚は素肌と太腿リボン。頭と猫耳フード、両ブーツと杖の金枠と宝石の実寸は画像1・2を維持。膝と股関節を曲げ、身長を縮めるため部位を縮小しない。低い姿勢の上には透明な空白を残す。杖は直立に近く体の近くへ収め、先端を右端から40px以上内側にする。\n1189×1323の真の透明キャンバス。本人の全身、耳、尾、ブーツ、杖の上下と星を切らずに収める。普通のアニメ塗りと薄い硬いクリーム白縁。1人1姿勢。床・影・背景・文字・魔法の効果・別の猫・余分な手足・関節分割・3D・ピクセルはなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "b5779683e9c87e04429c6b44070acbe9e426bc3865b466ef51da0c85f351855c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 39,
+          "top": 71,
+          "right": 1165,
+          "bottom": 1267
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "初稿はブーツが基準より大きく、マントが右端へ出る。適切な通常3段の低い構えを原寸再利用する。"
+    },
+    {
+      "id": "special_prepare",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "special",
+      "phase": "prepare",
+      "label": "特殊角変身",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png",
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：採用しゃがみ。低い身体と部位の実寸",
+        "採用待機：頭・ブーツ・杖の実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の採用しゃがみの結衣を編集し、魔法の3段目の最大の予備ポーズへ。顔・猫耳フード・衣服と頭や靴の大きさ、深く膝を曲げた低い姿勢は画像1を基準にする。両足を地面に残し、胸を少し後ろへ引く。本人左の人間の手で同じ紫のステッキの柄を握り、左肘をさらに深く曲げ、杖を左胸の近くへ強く引きつける。右の白い肉球ミトンは胸元で魔力を溜める構え。口を小さく閉じ、鋭い紫の目で右前を見る。まだ魔法は出さない。\n左肩→左肘→左手首→左手の5指→杖の柄を自然につなぐ。右手は肉球ミトンで、裸の指にしない。縞靴下は本人右脚だけ、本人左脚は素肌と紫リボン。ステッキは画像1・2と同じ金の花の輪と紫の宝石、紫リボン、ぶら下がる金の星、紫の柄、下端の小さい紫宝石。杖を短縮したり巨大化しない。\n1189×1323、完全透明背景。低い姿勢の上には大きい透明余白を残す。全身を枠に合わせて拡大しない。ブーツの大きさは画像1・2のまま。全身と猫耳と尾、杖の上下先端を切らず、20px以上余白。普通のアニメ塗り、全外周の硬い薄いクリーム白縁。1人1姿勢だけ。背景・床・影・文字・魔法の効果・光彩・別の猫・余分な手足・ピクセル・関節分割なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 53,
+          "top": 290,
+          "right": 1166,
+          "bottom": 1262
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "normal3_prepare",
+        "version": 1,
+        "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+        "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+        "promptFile": "art_source/paper_roster_action/yui/prompts/normal3_prepare_v1.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "胸と左の杖を引き、四肢を深く集めた同じ構えを角への変身直前として再利用。新しい画像を生成したとは数えない。",
+      "prepared": "art_source/paper_roster_action/yui/prepared/special_prepare.png",
+      "preparedSha256": "558998dbbd849d99bcede23bba342cd2818d27b6cfcbbb4e57afa05d51531390",
+      "offsetX": 86,
+      "offsetY": 66,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "special",
+      "phase": "impact",
+      "label": "特殊角変身",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/special_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の配色・リボン・金の鈴とアニメ塗りだけの参考。人物は描かず将棋の駒一個"
+      ],
+      "prompt": "2Dペープサート対戦ゲームの結衣が変身した角の将棋駒を、一個だけ描く。画像1は本人の配色とリボンと鈴の参考であり、人間の顔と身体を描かない。平たい蜂蜜色の木製の五角形の将棋駒。尖った上辺一個と広い平らな底辺、左右の斜めの側面。正面の中央に大きく太い墨文字「角」を一文字だけ正しく読む形で描く。「飛」「王」「B」など別の文字にしない。\nクリーム白と紫の細い縁を駒の外周へ、下部に紫のリボンと小さい金の丸い鈴一個、青緑の細い飾り帯。原作正史の意匠ではなく本作独自の変身姿として、本人の猫の魔法使いの配色を引き継ぐ。木目は控えめで平面的な普通のアニメ塗り、強い3Dの箱や立体像にしない。駒の上に猫耳や顔や頭を付けず、人の腕・脚・ミトン・尾・ステッキは一切描かない。\n1189×1323の真の透明キャンバス。駒は傾けず、まっすぐ立つ正面の一個。傾きと斜め移動はゲームで駒全体へ加える。目安は駒本体幅約760px、高さ約1050px、画面中央、上下左右に70px以上透明余白。底のリボンまで完全に収める。硬い薄いクリーム白の切り抜き縁を全外周へ。背景・床・影・光彩・魔法の輪・速度線・効果・浮かぶ星・別の猫・ほかの文字・複数案・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "0d5261f9ecb58a6c4d1f0efd44ffed7097320692eca022242f629f6602047974",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 41,
+          "top": 101,
+          "right": 1061,
+          "bottom": 1283
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/yui/prepared/special_impact.png",
+      "preparedSha256": "44f0b1af0ac70669389e1fc1948073962002127bf227d88abc7825d124922528",
+      "offsetX": 147,
+      "offsetY": 45,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "super_impact",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "super",
+      "phase": "impact",
+      "label": "超必殺角の交差急襲",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/special_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の配色・リボン・金の鈴とアニメ塗りだけの参考。人物は描かず将棋の駒一個"
+      ],
+      "prompt": "2Dペープサート対戦ゲームの結衣が変身した角の将棋駒を、一個だけ描く。画像1は本人の配色とリボンと鈴の参考であり、人間の顔と身体を描かない。平たい蜂蜜色の木製の五角形の将棋駒。尖った上辺一個と広い平らな底辺、左右の斜めの側面。正面の中央に大きく太い墨文字「角」を一文字だけ正しく読む形で描く。「飛」「王」「B」など別の文字にしない。\nクリーム白と紫の細い縁を駒の外周へ、下部に紫のリボンと小さい金の丸い鈴一個、青緑の細い飾り帯。原作正史の意匠ではなく本作独自の変身姿として、本人の猫の魔法使いの配色を引き継ぐ。木目は控えめで平面的な普通のアニメ塗り、強い3Dの箱や立体像にしない。駒の上に猫耳や顔や頭を付けず、人の腕・脚・ミトン・尾・ステッキは一切描かない。\n1189×1323の真の透明キャンバス。駒は傾けず、まっすぐ立つ正面の一個。傾きと斜め移動はゲームで駒全体へ加える。目安は駒本体幅約760px、高さ約1050px、画面中央、上下左右に70px以上透明余白。底のリボンまで完全に収める。硬い薄いクリーム白の切り抜き縁を全外周へ。背景・床・影・光彩・魔法の輪・速度線・効果・浮かぶ星・別の猫・ほかの文字・複数案・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "0d5261f9ecb58a6c4d1f0efd44ffed7097320692eca022242f629f6602047974",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 41,
+          "top": 101,
+          "right": 1061,
+          "bottom": 1283
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "special_impact",
+        "version": 1,
+        "source": "art_source/paper_roster_action/yui/generated/special_impact_v1.png",
+        "sha256": "0d5261f9ecb58a6c4d1f0efd44ffed7097320692eca022242f629f6602047974",
+        "promptFile": "art_source/paper_roster_action/yui/prompts/special_impact_v1.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "同じ結衣の角の駒を超必殺の変身後にも原寸再利用し、斜め急襲と交差急襲の実移動で区別する。",
+      "prepared": "art_source/paper_roster_action/yui/prepared/super_impact.png",
+      "preparedSha256": "44f0b1af0ac70669389e1fc1948073962002127bf227d88abc7825d124922528",
+      "offsetX": 147,
+      "offsetY": 45,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "super_prepare",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "super",
+      "phase": "prepare",
+      "label": "超必殺角の交差急襲",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/super_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png",
+        "art_source/paper_roster_action/yui/generated/normal1_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：低い身体と部位の実寸",
+        "本人の自然な左手の握りと同じステッキの基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣を、超必殺で角の駒へ変身する直前の最大の構えへ編集する。まだ人間の全身。両足を左右へ大きく広げ、両膝を深く曲げたまま胸を起こし、本人右の白い肉球ミトンを斜め左上の横へ大きく広げる。本人左の人間の手は同じステッキを握り、左肘を上げて杖を頭の斜め右上へ高く掲げる。両腕を大きく開いたVのような構えで、大技の予備だと分かる明快なシルエット。杖は体の近くで縦に近い角度にして、杖頭と紫の宝石を右端から100px以上内側にする。低い腰と両膝を維持して杖の上端を描く空白を残す。\n顔は少し得意げで決意の紫の目、小さい口の笑顔。猫耳フードと顔と髪、衣服とマント、右ミトン、左の5指、尾と両ブーツの形と実寸は画像1・2を維持。右脚だけ紫の縞靴下、左脚は素肌と太腿リボン。右に杖や人の指を付けず、左手だけが同じ紫の柄を自然に握る。金の花形の輪・紫宝石・紫リボン・金の星・下端宝石も同じ大きさ。\n1189×1323の真の透明キャンバス、全身と杖を切らずに完全に収める。猫耳と帽子を拡大しない。ブーツは採用しゃがみと同じ実寸、低い姿勢を画面いっぱいに拡大しない。硬い薄いクリーム白縁を全外周に。1人1姿勢。背景・床・影・文字・駒・効果・別の猫・余分な手足・3D・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "8e98fee70134dd6b0cb848e8338cb463c641cf8c4059d95da3bd65ee3117f79d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 35,
+          "top": 0,
+          "right": 1163,
+          "bottom": 1276
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "杖の上端が画像上端0へ達している。全身の最大の構えを保ち、左肘を少し曲げ杖を下げて上端に余白を確保する。"
+    },
+    {
+      "id": "super_prepare",
+      "key": "yui",
+      "character": "結衣",
+      "pose": "super",
+      "phase": "prepare",
+      "label": "超必殺角の交差急襲",
+      "version": 2,
+      "source": "art_source/paper_roster_action/yui/generated/super_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_action/yui/generated/super_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "直接の編集対象：全身の最大の構えは採用候補、杖先が上端で切れる"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の結衣の超必殺の大きい構えを全体そのままに、左の人間の手と握ったステッキの高さだけ直す。今の杖の上端の金の葉が画像の上端で切れている。左肘を少し深く曲げ、左手首と杖全体を約70px下げる。左手は頭の右横で顔の高さぐらいに保ち、杖の軸はまっすぐ縦のまま。金の輪の上の尖った飾りまで完全な形に復元し、画像の上端から40px以上の透明余白を付ける。杖そのものの長さと部品の大きさは同じで、縮小して収めない。\n本人の左肩から左肘・左手首へ自然につなぎ、左の5指で紫の柄を正しく握る。右の白い肉球ミトンとその腕は変更しない。猫耳フード・顔・髪・服・マント・尾・胸と腰・大きく開いた脚・両ブーツは位置と大きさを厳密に維持。全身を拡大縮小や反転や移動で処理しない。1189×1323の同じ真の透明PNG、硬い薄いクリーム白縁を全外周へ。1人1姿勢。背景・床・影・文字・効果・別のキャラ・余分な手足はなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "5c4e6843076e7bb7b8e429e0ad6af317a6d7d5fe2f14aca43c482b2165acda90",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 35,
+          "top": 135,
+          "right": 1163,
+          "bottom": 1276
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/yui/prepared/super_prepare.png",
+      "preparedSha256": "0241a7a825dc0b48a811b495c76ba29dfc2c43fda22e04f614e790b10a3f1414",
+      "offsetX": 21,
+      "offsetY": 52,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "rework_r4_yui_2"
+}

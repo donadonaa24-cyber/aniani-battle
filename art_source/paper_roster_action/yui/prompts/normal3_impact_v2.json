@@ -1,0 +1,19 @@
+{
+  "id": "normal3_impact",
+  "key": "yui",
+  "character": "結衣",
+  "pose": "normal3",
+  "phase": "impact",
+  "label": "通常3段大きい魔法",
+  "version": 2,
+  "source": "art_source/paper_roster_action/yui/generated/normal3_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/yui/generated/normal3_impact_v1.png"
+  ],
+  "referenceRoles": [
+    "直接の編集対象：3段の魔法の決め。右端の杖飾りだけ不良"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の全身の魔法の決めを厳密に保ち、画面右端で切れているステッキだけを修正する。左の肘を少し曲げ、左手首と握った同じ杖を70pxほど画面左へ引く。杖頭の金の葉のような飾りから星の先まで、画面右端から30px以上離して完全な形に描く。杖の形と大きさを変えず、切れた先端を復元する。前方へ向けた横に近い角度を保つ。本人左肩からつながる人間の左手の5指で柄を自然に握る。右は肉球ミトンのまま。顔・帽子・髪・胴体・マント・脚・ブーツ・尾と全身の倍率や位置は一切変えない。画像1の全身を縮小したり移動して解決しない。1189×1323の同じ透明キャンバス。全外周の硬い薄い白縁、1人1姿勢。床・影・背景・効果・文字・別のキャラ・余分な手足はなし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

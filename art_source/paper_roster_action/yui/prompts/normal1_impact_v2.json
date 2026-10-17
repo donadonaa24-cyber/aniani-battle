@@ -1,0 +1,23 @@
+{
+  "id": "normal1_impact",
+  "key": "yui",
+  "character": "結衣",
+  "pose": "normal1",
+  "phase": "impact",
+  "label": "通常1・2段共通ステッキ打撃",
+  "version": 2,
+  "source": "art_source/paper_roster_action/yui/generated/normal1_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/yui/generated/normal1_impact_v1.png",
+    "art_source/paper_roster_idle/generated/yui_idle_v1.png",
+    "art_source/paper_roster_action/yui/generated/normal1_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "直接の編集対象：踏み込んで杖を叩く決め。靴と杖端に問題",
+    "ブーツと帽子と杖の実寸の基準",
+    "同じ通常の予備：共通の部位寸法"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の結衣の決めポーズを保ち、二点だけを丁寧に描き直す。1189×1323の透明PNG。\n1. 右端から金の杖頭の飾りがはみ出して切れている。杖の大きさと形は同じまま、左肘を少し曲げ左手首と杖全体を80pxほど内側へ戻し、金の装飾と星の先端まで右端から25px以上余白を作る。左肩からの腕と左の人間の5指の自然な握りを保ち、手を交換しない。\n2. ブーツが拡大されている。画像2の採用待機と画像3の予備のブーツの同じ実寸へ両方を戻す。近い本人右（画面左の縞靴下側）は幅約160〜180px、高さ約180〜210px。奥の本人左（素肌の脚側）は幅約145〜165px、高さ約175〜200px。今の画面左の大きい靴は幅220px以上あり大きすぎるので、輪郭から正しく描き直す。膝や足首は元の脚へ自然につなぎ、足先は待機と同じ斜め右を向ける。巨大な正面の靴底を作らない。靴だけを小人サイズにせず、上記の待機の実寸を守る。\n顔・猫耳フード・胴体・衣服・右ミトン・尾と大きい踏み込みの決めは画像1を維持する。頭や全身を拡縮して解決しない。左手のステッキは同じ紫の柄と金の輪と紫宝石、右手は白い肉球ミトン、縞靴下は本人右脚だけ。白い切り抜き縁も連続させる。背景・床・影・文字・効果・別の人物・余分な手足は描かない。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

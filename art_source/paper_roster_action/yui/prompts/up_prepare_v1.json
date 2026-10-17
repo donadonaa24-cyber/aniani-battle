@@ -1,0 +1,27 @@
+{
+  "id": "up_prepare",
+  "key": "yui",
+  "character": "結衣",
+  "pose": "up",
+  "phase": "prepare",
+  "label": "地上上攻撃",
+  "version": 1,
+  "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の結衣を同じ人物・同じアニメ塗り・同じ部位の実寸で全身1姿勢へ編集。画像1は採用待機であり、容姿と部位寸法の基準。紫の短い髪と紫の瞳、クリーム白と紫の猫耳フード、紫リボンと金の鈴、クリーム白・紫・青緑の魔法使い服とマント、紫の猫の尾1本。本人右手（画面左の手前側）は白い肉球ミトン、本人左手（画面右の奥側）のみ人間の指で紫の柄のステッキを握る。本人右脚のみ紫の縞靴下、左脚は素肌と太腿の紫リボン。紫のブーツ2個。\n動作：地上上攻撃の予備、まだ当てない。膝を曲げ胸と左のステッキを引く、上へ打ち上げる直前。\n左右の所属を厳守。左肩→左肘→左手首→左の人間の手→ステッキの柄を自然につなぐ。左手は親指1本と他4本の計5指、親指は他4本と対向して細い柄を握る。右は肉球ミトンのままで、人間の指や第二のステッキを付けない。両腕・両脚は各2本、猫耳2・尾1だけ。杖は同じ金の花形の輪と紫の菱形の宝石、大きい紫リボン、小さい金の星のぶら下がり、細い紫の柄、下端の紫の小さい宝石を保つ。\n1189×1323の真の透明PNG一枚、右向き3/4で胸側・両腕両脚が見える。猫耳フードと髪、肉球、ブーツと杖の装飾の実寸を待機から変えない。低い姿勢をキャンバスいっぱいに拡大せず、上に透明余白を残す。近い右ブーツの幅は約160px、奥の左ブーツ約145pxを基準とし、投影の自然な差以外は巨大化しない。全身・猫耳・尾・ブーツ・杖の上端と下端を切らず、20px以上余白を残す。杖の向きと肘・膝を曲げて収め、部品を縮めてごまかさない。薄く硬いクリーム白の縁を全外周と杖の外周へ連続させる。背景・床・影・相手・文字（角の駒の「角」以外）・別の猫・ハートや星の効果・魔法陣・光彩・ぼかし・複数案・紙の繊維・関節分割・3D・写実・ピクセルは禁止。衣服にもとからある星やリボンは残す。",
+  "tool": "built-in image_gen",
+  "status": "reused_existing_native_art",
+  "reuseOf": {
+    "id": "normal3_prepare",
+    "version": 1,
+    "source": "art_source/paper_roster_action/yui/generated/normal3_prepare_v1.png",
+    "sha256": "108375761ed0d03ddc9eabd0805cda9f885e0d49eb9a4272b18da5a15ce7f5cd",
+    "promptFile": "art_source/paper_roster_action/yui/prompts/normal3_prepare_v1.json"
+  },
+  "reuseReason": "膝を深く曲げ左の杖を胸へ引いた同じ構えを、上へ打ち上げる予備として原寸再利用する。"
+}

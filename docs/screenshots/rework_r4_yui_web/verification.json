@@ -1,0 +1,53 @@
+{
+  "nativeTag": "rework_r4_yui_2",
+  "webTag": "rework_r4_yui_mip_web",
+  "ensembleVersion": 5,
+  "checks": [
+    "修正版集合トップと9人2段選択",
+    "左右キーで練習へ、P1結衣確定後CPU蓮",
+    "通常1・2段の共通打撃と3段の大きい構えから魔法",
+    "特殊の角変身と斜め上から斜め下の実突進",
+    "超必殺の構え・上昇・折り返し・解除、相手の実Hitstun",
+    "739px幅で修正前後を比較、細かい欠けのような縮小エイリアシングを軽減",
+    "音声running、表示幅の一時変更は解除"
+  ],
+  "finalStatus": {
+    "screen": "Battle",
+    "picks1": "5",
+    "picks2": "1",
+    "p1mode": "Idle",
+    "p2mode": "Idle",
+    "result": "Playing",
+    "reason": "None",
+    "attackKey": "J",
+    "menu": 0,
+    "player1": 5,
+    "player2": 1,
+    "selectionPlayer": 1,
+    "stage": 0,
+    "tick": 4503,
+    "shrinks": 0,
+    "hearts1": 3,
+    "hearts2": 3,
+    "round": 0,
+    "score1": 0,
+    "score2": 0,
+    "pads": 0,
+    "remaining": 70,
+    "p1x": -0.5099995136260986,
+    "p2x": 9.979996681213379,
+    "bgm": 0.3499999940395355,
+    "se": 0.6499999761581421,
+    "fps": 142.3816375732422,
+    "practice": true,
+    "practicePaused": true
+  },
+  "consoleErrors": [],
+  "preFixScreenshots": [
+    "03_通常予備.png",
+    "04_修正前_縮小表示.png"
+  ],
+  "physicalGamepad": "not_retested",
+  "nativeChromeEdge": "not_retested",
+  "note": "厳密な有効tick・重力・多重ヒット防止・左右の駒の角度は実Unityの入力テストで検証。縮小LODとDXT圧縮の表示は原画全画素一致とは別。小さい表示で輪郭はやや柔らかくなる。"
+}

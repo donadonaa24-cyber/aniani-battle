@@ -13,6 +13,7 @@ namespace AniBato.Game
         public int HoldTicks = 8;
         public bool Airborne;
         public bool ReverseFacing;
+        public bool RotateWithRush;
         public bool SwitchOnProjectileRelease;
         public float TiltDegrees;
         public float[] FrameHeadHeights, FrameFootBaseYs, FrameFootMinXs, FrameFootMaxXs, FrameOriginYs;
@@ -81,7 +82,7 @@ namespace AniBato.Game
         public PaperAbilityArt[] AbilityEffects;
         public PaperAbilityArt AbilityEffect(AnimationState state) => !Enabled || AbilityEffects == null ? null :
             System.Array.Find(AbilityEffects, art => art != null && art.Sprite && art.Scale > 0 && art.State == state);
-        public PaperAbilityArt AbilityEffect(AniBato.Battle.AbilityLook look) => !Enabled || AbilityEffects == null ? null :
+        public PaperAbilityArt AbilityEffect(AniBato.Battle.AbilityLook look) => !Enabled || AbilityEffects == null || look == AniBato.Battle.AbilityLook.Default ? null :
             System.Array.Find(AbilityEffects, art => art != null && art.Sprite && art.Scale > 0 && art.Look == look);
         public PaperProjectileArt Projectile(AniBato.Battle.AbilityLook look) => !Enabled || Projectiles == null ? null :
             System.Array.Find(Projectiles, art => art != null && art.Sprite && art.Scale > 0 && art.Look == look);

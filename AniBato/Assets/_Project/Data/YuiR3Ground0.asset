@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: YuiR3Ground0
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
-    Name: "\u8089\u7403\u30D1\u30F3\u30C1 0"
+    Name: "\u30B9\u30C6\u30C3\u30AD\u6253\u6483 1"
     Ability:
       Motion: 0
       ChangeFrame: 0
@@ -32,6 +32,7 @@ MonoBehaviour:
       AllowZeroProjectileSpeed: 0
       ReplaceOwnProjectiles: 0
       ProjectileAtDamageFrame: 0
+      IndependentNormalProjectile: 0
       Look: 0
     Kind: 0
     IsCloseRange: 1

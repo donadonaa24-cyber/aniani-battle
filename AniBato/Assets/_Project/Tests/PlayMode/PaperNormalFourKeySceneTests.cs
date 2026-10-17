@@ -17,7 +17,7 @@ namespace AniBato.Tests
         public IEnumerator CompletedRosterUsesSharedFirstTwoKeysAndLargeThirdThroughActualComboInputs()
         {
             var keys=controller.Bindings.P1;
-            foreach(int index in new[]{1,2,3,4})foreach(int facing in new[]{1,-1})
+            foreach(int index in new[]{1,2,3,4,5})foreach(int facing in new[]{1,-1})
             {
                 var data=runner.Setup.Character(index);runner.BeginMatch(data,runner.Setup.Character(0),runner.CurrentStage,false);
                 var sim=runner.Simulation;Set(sim.P1,"Facing",facing);Set(sim.P2,"Position",new BattleVector(sim.Stage[0].Bounds.Right-1,sim.P2.Position.Y));
@@ -32,9 +32,18 @@ namespace AniBato.Tests
                         Assert.That(sim.Match.IsFinished,Is.False);Assert.That(view.RenderedSample.State,Is.EqualTo(state));Assert.That(view.UsesPaperSprite,Is.True);
                         bool anticipation=attack.Frame<attack.Definition.StartupFrames+attack.Definition.DamageDelayFrames;
                         Assert.That(body.sprite,Is.SameAs(pose.Frames[anticipation?0:1]));Assert.That(body.flipX,Is.EqualTo(facing<0));
+                        if(index==5)
+                        {
+                            var art=data.PaperMotion.AbilityEffect(state);var effect=view.transform.Find("Paper Ability").GetComponent<SpriteRenderer>();
+                            Assert.That(effect.enabled,Is.EqualTo(!anticipation));if(effect.enabled)Assert.That(effect.sprite,Is.SameAs(art.Sprite));
+                        }
                         string name=data.Movement.Name+"_"+stage+"_"+facing;
                         if(anticipation&&!prep){prep=true;Capture(name+"_prepare",true,"rework_fourkeys");}
-                        if(attack.IsActive&&!active){active=true;Capture(name+"_impact",true,"rework_fourkeys");}
+                        if(attack.IsActive&&!active)
+                        {
+                            active=true;Capture(name+"_impact",true,"rework_fourkeys");
+                            if(index==5)CaptureActionEffects("rework_r4_yui",name+"_effect",body,view.transform.Find("Paper Ability").GetComponent<SpriteRenderer>());
+                        }
                         if(!anticipation&&!attack.IsActive&&!recovery){recovery=true;Capture(name+"_recovery",true,"rework_fourkeys");}
                         if(stage<2&&!queued&&attack.IsActive){yield return Key(keys.Attack,true);Tick();yield return Key(keys.Attack,false);queued=true;}
                         Tick();

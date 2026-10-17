@@ -1,3 +1,5 @@
+2026-10-17現在：結衣12枠／9原画と打撃・魔法2効果を接続。rework_r4_yui_2全4合格（Edit557／Play73）、384実描画。WebGL rework_r4_yui_mip_webは78.9MB・実ブラウザ19PNG・console error 0。小さい表示の人物のざらつきはWeb用ミップマップで軽減、329画像の元RGBA保存を照合。集合絵v5の透真5指と暁本人左のカードつまみを維持。次はPAPER_KING_TWELVE_KEYS。追加差分は追加指示後。詳細はRESUME冒頭。
+
 2026-10-17現在：湊の12枠／10人物原画と効果3種を接続。rework_r4_minato_2全4合格（Edit547／Play69）、220実描画。採用はイラスト確認/現在ゲームで採用中/湊/。WebGLもrework_r4_minato_webで53.5MBの実ビルドと内蔵ブラウザ確認、8PNG、console error 0。次はPAPER_SHIRO_TWELVE_KEYS。空中・下各1枚、通常共有4枚、追加差分は追加指示後。詳細はRESUME冒頭。
 
 2026-10-17現在：paper_single_title_3で全4合格（Edit543／Play68）。空中・下は各1枚、通常は共有4原画。千鶴の握りと集合絵v5を反映。paper_single_title_webも49.4MBで実ビルド・内蔵ブラウザ確認済み。次はPAPER_MINATO_TWELVE_KEYS。追加差分は追加指示後。
@@ -42,7 +44,7 @@ UnityビルドはライセンスIPCのためサンドボックス外で実行す
 
 WebGLビルド時だけScriptableObjectとSpriteのコピーを作り、未使用の旧方向攻撃・紙絵で置き換わった旧アニメ・カバン投射参照を外す。元アセットと予備カバン、戦闘定義は変更しない。
 
-1304×1450など4の倍数でない原画は、右と上に透明画素を足したキャッシュへ梱包する。人物の再サンプルはせず、Sprite.rect・支点・PPU・ワールド寸法を維持。顔領域と盤面36セルはテクスチャ全体でなく元Sprite.rectを使う。キャッシュは `AniBato/Assets/_WebGLPacked/`（Git管理外、再生成可能）。274画像の梱包前後RGBAを全照合済み。GPU用DXT5は非可逆圧縮であり、実表示の全画素一致を主張するものではない。
+1304×1450などの原画は、右と上に透明画素を足したWeb専用キャッシュへ梱包する。紙人物のPaper／PaperAction／PaperCore／PaperRosterは2の累乗へ透明梱包し、ミップマップとトリリニア補間を使って小さい表示のエイリアシングを軽減する。背景・集合絵・旧ピクセルは従来の4の倍数への梱包。元RGBA・Sprite.rect・支点・PPU・ワールド寸法は維持し、原画を縮めて枠へ収めない。顔領域と盤面36セルはテクスチャ全体でなく元Sprite.rectを使う。キャッシュは `AniBato/Assets/_WebGLPacked/`（Git管理外、再生成可能）。329画像の梱包前後の元RGBAと透明余白を全照合済み。縮小LODの生成とGPU用DXT5は、原画の全画素一致とは別である。小さい表示の輪郭は柔らかくなり、今回のWeb成果物は約78.9MB。比較画像はdocs/screenshots/rework_r4_yui_web/。
 
 最終成果物は約47.4MB、全6ファイル。Unityのgzip＋decompression fallback、ハッシュ付きファイル名、データキャッシュ、初期メモリ256MB／最大2048MB。ローカル配信はwasm／JSのMIMEを設定し、`.unityweb` はUnity側で展開するためContent-Encodingを付けない。通常の `.gz`／`.br` を配信する場合のヘッダーも用意してある。
 

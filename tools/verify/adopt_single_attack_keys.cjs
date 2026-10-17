@@ -59,7 +59,7 @@ for(const [key,asset,name] of roster){
 }
 const shots=[];
 const completed=entries.filter(e=>e.completeAttackArtwork).map(e=>e.key),remaining=entries.filter(e=>!e.completeAttackArtwork).map(e=>e.key);
-for(const sub of ['rework_r4_chizuru','rework_r4_ren','rework_fourkeys','rework_r5',...['minato','shiro'].filter(key=>completed.includes(key)).map(key=>'rework_r4_'+key)]){
+for(const sub of ['rework_r4_chizuru','rework_r4_ren','rework_fourkeys','rework_r5',...['minato','shiro','yui'].filter(key=>completed.includes(key)).map(key=>'rework_r4_'+key)]){
  const from=`TestResults/${tag}_screenshots/${sub}`;assert(fs.existsSync(from),'Missing real render captures '+sub);
  for(const name of fs.readdirSync(from).filter(n=>n.endsWith('.png'))){const to=`docs/screenshots/${tag}/${sub}/${name}`;copy(from+'/'+name,to);shots.push(to);}
 }

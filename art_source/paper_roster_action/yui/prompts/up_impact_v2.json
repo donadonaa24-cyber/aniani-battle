@@ -1,0 +1,19 @@
+{
+  "id": "up_impact",
+  "key": "yui",
+  "character": "結衣",
+  "pose": "up",
+  "phase": "impact",
+  "label": "地上上攻撃",
+  "version": 2,
+  "source": "art_source/paper_roster_action/yui/generated/up_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/yui/generated/up_impact_v1.png"
+  ],
+  "referenceRoles": [
+    "直接の編集対象：低い身体は正しいが、右上の杖の端に問題"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の上攻撃の全身を保ち、左腕と握ったステッキだけをまっすぐ真上へ打ち上げる姿へ描き直す。現在の斜め右上へ伸ばす腕と杖をやめ、左肩から上がった左肘を少し曲げて内側へ寄せ、左の手首を画面x850前後に置き、杖の長い軸を縦と平行に立てる。杖頭の金の輪と紫宝石の中心を画面x880・y180付近にして、右端から100px近く余白を残す。杖の下端は手首の下に来る。杖の大きさと長さは同じで、金の輪の上端まで切らず上にも20px以上余白を付ける。左の人間の手は親指1＋ほか4指で細い紫の柄を自然に握る。右の肉球ミトンは変更しない。\n猫耳より杖頭を高くする、上攻撃だと分かる明快なシルエット。画像1の顔・髪・猫耳フード・衣服・マント・尾・低い胴体・脚と両ブーツは大きさと位置まで同じに保つ。人物や杖を縮小して解決しない。1189×1323の同じ透明PNG、全外周の硬い薄いクリーム白縁、1人1姿勢。背景・床・影・文字・効果・余分な手足なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

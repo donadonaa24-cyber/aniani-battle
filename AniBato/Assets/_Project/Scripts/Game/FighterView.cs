@@ -82,11 +82,16 @@ namespace AniBato.Game
             {
                 var visualSample = sample;
                 if (paperPose != null && paperPose.ReverseFacing) visualSample.FlipX = !visualSample.FlipX;
-                body.sprite = sprite; body.flipX = visualSample.FlipX;
+                bool turnWithRush=UsesPaperSprite&&paperPose!=null&&paperPose.RotateWithRush&&paperPose.Frames.Length==2&&paperPose.FrameIndex(sample)==1;
+                body.sprite = sprite; body.flipX = !turnWithRush&&visualSample.FlipX;
                 body.transform.localScale = Vector3.one;
                 var rock = UsesPaperSprite ? character.PaperMotion.Transform(visualSample, paperPose) : default;
                 var performance = UsesPaperSprite ? AniBato.Presentation.PaperPerformance.Evaluate(character.PaperMotion.Performance, visualSample, fighter.LastDamageLostHeart) : default;
                 float angle = rock.Degrees + performance.Degrees + (paperPose==null?0:paperPose.TiltDegrees*(visualSample.FlipX?-1:1));
+                if(turnWithRush&&fighter.Attack!=null&&fighter.Attack.IsActive&&
+                    fighter.Attack.Definition.Ability.Motion==AniBato.Battle.AbilityMotion.TwoPhaseRush&&
+                    Mathf.Abs(fighter.Velocity.X)+Mathf.Abs(fighter.Velocity.Y)>.001f)
+                    angle=Mathf.Atan2(fighter.Velocity.Y,fighter.Velocity.X)*Mathf.Rad2Deg-90;
                 body.transform.localRotation = Quaternion.Euler(0, 0, angle);
                 float baseY = paperPose != null && paperPose.Airborne ? 0 : -fighter.Definition.HurtboxSize.Y * .5f;
                 if (paperPose != null && paperPose.Airborne && fighter.Grounded)
@@ -94,7 +99,7 @@ namespace AniBato.Game
                 if (UsesPaperSprite && paperPose != null) baseY += paperPose.OriginY(sample);
                 float paperHeight = paperPose == null ? character.PaperMotion ? character.PaperMotion.StandingHeight : 0 : paperPose.Head(sample);
                 Vector3 offset = new Vector3(performance.X, performance.Y, 0);
-                if (performance.RotateAboutCenter)
+                if (performance.RotateAboutCenter||turnWithRush)
                 {
                     Vector3 center = new Vector3(0, paperHeight * .5f, 0);
                     offset += center - body.transform.localRotation * center;
@@ -109,7 +114,7 @@ namespace AniBato.Game
                 body.transform.localPosition = new Vector3(0, baseY + rock.Lift, 0) + offset;
                 float spriteHeight = UsesPaperSprite ? paperHeight * Mathf.Cos(angle * Mathf.Deg2Rad) + rock.Lift + offset.y :
                     character.Animations.HeadHeight(sample) / character.Animations.PixelsPerUnit;
-                if (performance.RotateAboutCenter) spriteHeight = paperHeight + rock.Lift;
+                if (performance.RotateAboutCenter||turnWithRush) spriteHeight = paperHeight + rock.Lift;
                 headY = position.Y + baseY + spriteHeight;
             }
             else

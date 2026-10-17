@@ -1,0 +1,21 @@
+{
+  "id": "special_prepare",
+  "key": "yui",
+  "character": "結衣",
+  "pose": "special",
+  "phase": "prepare",
+  "label": "特殊角変身",
+  "version": 1,
+  "source": "art_source/paper_roster_action/yui/generated/special_prepare_v1.png",
+  "references": [
+    "art_source/paper_roster_action/yui/generated/normal1_prepare_v1.png",
+    "art_source/paper_roster_core/yui/generated/yui_crouch_v3.png"
+  ],
+  "referenceRoles": [
+    "直接の編集対象：採用予定の通常予備、左右の手と杖の自然な握り",
+    "低い膝と同じブーツの実寸の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の結衣を、角に変身して斜めへ飛び出す直前の構えの一枚へ編集する。まだ人間の全身で、駒は描かない。猫耳フード・顔・髪・衣服とマント・右の白い肉球ミトン・左の人間の手で握る同じステッキを画像1のまま保つ。両膝を画像2のように強く曲げて腰を低く集め、胸と顔を斜め右上へ少し向け、次の瞬間に右上へ飛び出す直前。右の肉球ミトンを胸へ寄せ、左肘を曲げて同じ杖を左胸の近くへ構える。左手の5指の自然な握りと右の肉球を交換しない。口を少し閉じ、紫の瞳は決意の目。\n縞靴下は本人右脚だけ、本人左脚は素肌と太腿リボン。頭と猫耳フード、両ブーツと杖の金枠と宝石の実寸は画像1・2を維持。膝と股関節を曲げ、身長を縮めるため部位を縮小しない。低い姿勢の上には透明な空白を残す。杖は直立に近く体の近くへ収め、先端を右端から40px以上内側にする。\n1189×1323の真の透明キャンバス。本人の全身、耳、尾、ブーツ、杖の上下と星を切らずに収める。普通のアニメ塗りと薄い硬いクリーム白縁。1人1姿勢。床・影・背景・文字・魔法の効果・別の猫・余分な手足・関節分割・3D・ピクセルはなし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

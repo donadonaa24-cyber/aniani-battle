@@ -1,0 +1,20 @@
+{
+  "kind": "ability",
+  "look": "Default",
+  "duringStartup": false,
+  "duringRecovery": true,
+  "offsetX": 1.05,
+  "offsetY": 0.15,
+  "id": "magic",
+  "state": "Attack3",
+  "worldWidth": 1.8,
+  "worldHeight": 1.4,
+  "prompt": "オリジナル2Dペープサート対戦ゲームの、ステッキから右へ放つ可愛い魔法の切り絵エフェクト一個。右端寄りに大きい金色の五角星、その左後方から右へ押し出す紫・ラベンダー・白の角ばった紙の衝撃波と短い三角の紙片。小さいピンクのハート二個と金の星三個が一緒に右へ飛ぶ。明快な右向きの魔法の一撃として一つの扇形のシルエット。紙片の隙間と全周は完全透明で、大きい不透明な丸い背景を敷かない。クリーム白・金・紫・ラベンダー・ピンクの平らな普通のアニメ塗り、硬い輪郭と細いクリーム白縁。1536×1024の真の透明PNG、全体に80px以上の透明余白で切らずに収める。人物・手・杖・猫・顔・文字・数字・背景・床・影・光彩・グロー・ぼかし・写真・3D・ピクセル・複数案なし。魔法の紙片の一撃だけ。",
+  "key": "yui",
+  "version": 1,
+  "source": "art_source/paper_roster_action/yui/generated/effect_magic_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

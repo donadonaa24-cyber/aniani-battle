@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "key": "yui",
+  "jobs": [
+    {
+      "id": "tap",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/effect_tap_v1.json"
+    },
+    {
+      "id": "magic",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/effect_magic_v1.json"
+    },
+    {
+      "id": "tap_second",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/effect_tap_second_v1.json"
+    },
+    {
+      "id": "tap_back",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/yui/prompts/effect_tap_back_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "kind": "ability",
+      "look": "Default",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 1.05,
+      "offsetY": 0.15,
+      "id": "tap",
+      "state": "Attack1",
+      "worldWidth": 1.3,
+      "worldHeight": 1.3,
+      "prompt": "オリジナル2Dペープサート対戦ゲームの、可愛いステッキ打撃の切り絵の衝撃エフェクト一個。小さな金色の五角の星一個を右寄りに置き、その周りへ紫とピンクの小さいハート三個、白と淡い黄色の短いギザギザの紙片六個ほどを扇状に散らす。紙片と紙片の隙間は広く完全透明にして、中央を一枚の光の雲で塗りつぶさない。クリーム白・紫・ピンク・金色の平面的な普通のアニメ塗り、画用紙を切った硬い輪郭と細いクリーム白縁。1024×1024の真の透明PNG、全体を中央に収め、上下左右に80px以上透明余白。人物・手・杖・猫・顔・文字・数字・背景・床・影・光彩・グロー・ぼかし・写真・3D・ピクセル・複数案はなし。1個のまとまった衝撃素材だけ。",
+      "key": "yui",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/effect_tap_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "7a78a41be3d785acba20eea06f7b56d67bd2d73c54ae7209b0c64e1ffabb3dfa",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 312,
+          "top": 354,
+          "right": 1007,
+          "bottom": 914
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "kind": "ability",
+      "look": "Default",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 1.05,
+      "offsetY": 0.15,
+      "id": "magic",
+      "state": "Attack3",
+      "worldWidth": 1.8,
+      "worldHeight": 1.4,
+      "prompt": "オリジナル2Dペープサート対戦ゲームの、ステッキから右へ放つ可愛い魔法の切り絵エフェクト一個。右端寄りに大きい金色の五角星、その左後方から右へ押し出す紫・ラベンダー・白の角ばった紙の衝撃波と短い三角の紙片。小さいピンクのハート二個と金の星三個が一緒に右へ飛ぶ。明快な右向きの魔法の一撃として一つの扇形のシルエット。紙片の隙間と全周は完全透明で、大きい不透明な丸い背景を敷かない。クリーム白・金・紫・ラベンダー・ピンクの平らな普通のアニメ塗り、硬い輪郭と細いクリーム白縁。1536×1024の真の透明PNG、全体に80px以上の透明余白で切らずに収める。人物・手・杖・猫・顔・文字・数字・背景・床・影・光彩・グロー・ぼかし・写真・3D・ピクセル・複数案なし。魔法の紙片の一撃だけ。",
+      "key": "yui",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/effect_magic_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "cb8766d36865ed8fd419c556b47e6562010d5adc64806a2d7441e1e42aa7d37a",
+      "native": {
+        "width": 1536,
+        "height": 1024,
+        "bounds": {
+          "left": 170,
+          "top": 185,
+          "right": 1476,
+          "bottom": 806
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "kind": "ability",
+      "look": "Default",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 1.05,
+      "offsetY": 0.15,
+      "id": "tap_second",
+      "state": "Attack2",
+      "worldWidth": 1.3,
+      "worldHeight": 1.3,
+      "prompt": "オリジナル2Dペープサート対戦ゲームの、可愛いステッキ打撃の切り絵の衝撃エフェクト一個。小さな金色の五角の星一個を右寄りに置き、その周りへ紫とピンクの小さいハート三個、白と淡い黄色の短いギザギザの紙片六個ほどを扇状に散らす。紙片と紙片の隙間は広く完全透明にして、中央を一枚の光の雲で塗りつぶさない。クリーム白・紫・ピンク・金色の平面的な普通のアニメ塗り、画用紙を切った硬い輪郭と細いクリーム白縁。1024×1024の真の透明PNG、全体を中央に収め、上下左右に80px以上透明余白。人物・手・杖・猫・顔・文字・数字・背景・床・影・光彩・グロー・ぼかし・写真・3D・ピクセル・複数案はなし。1個のまとまった衝撃素材だけ。",
+      "key": "yui",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/effect_tap_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "7a78a41be3d785acba20eea06f7b56d67bd2d73c54ae7209b0c64e1ffabb3dfa",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 312,
+          "top": 354,
+          "right": 1007,
+          "bottom": 914
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "tap",
+        "version": 1,
+        "sha256": "7a78a41be3d785acba20eea06f7b56d67bd2d73c54ae7209b0c64e1ffabb3dfa",
+        "source": "art_source/paper_roster_action/yui/generated/effect_tap_v1.png"
+      },
+      "newlyGenerated": false
+    },
+    {
+      "kind": "ability",
+      "look": "Default",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 1.05,
+      "offsetY": 0.15,
+      "id": "tap_back",
+      "state": "BackAttack",
+      "worldWidth": 1.3,
+      "worldHeight": 1.3,
+      "prompt": "オリジナル2Dペープサート対戦ゲームの、可愛いステッキ打撃の切り絵の衝撃エフェクト一個。小さな金色の五角の星一個を右寄りに置き、その周りへ紫とピンクの小さいハート三個、白と淡い黄色の短いギザギザの紙片六個ほどを扇状に散らす。紙片と紙片の隙間は広く完全透明にして、中央を一枚の光の雲で塗りつぶさない。クリーム白・紫・ピンク・金色の平面的な普通のアニメ塗り、画用紙を切った硬い輪郭と細いクリーム白縁。1024×1024の真の透明PNG、全体を中央に収め、上下左右に80px以上透明余白。人物・手・杖・猫・顔・文字・数字・背景・床・影・光彩・グロー・ぼかし・写真・3D・ピクセル・複数案はなし。1個のまとまった衝撃素材だけ。",
+      "key": "yui",
+      "version": 1,
+      "source": "art_source/paper_roster_action/yui/generated/effect_tap_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "7a78a41be3d785acba20eea06f7b56d67bd2d73c54ae7209b0c64e1ffabb3dfa",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 312,
+          "top": 354,
+          "right": 1007,
+          "bottom": 914
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "tap",
+        "version": 1,
+        "sha256": "7a78a41be3d785acba20eea06f7b56d67bd2d73c54ae7209b0c64e1ffabb3dfa",
+        "source": "art_source/paper_roster_action/yui/generated/effect_tap_v1.png"
+      },
+      "newlyGenerated": false
+    }
+  ],
+  "gameConnected": true,
+  "verifiedTag": "rework_r4_yui_2"
+}

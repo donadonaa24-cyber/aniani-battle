@@ -27,9 +27,9 @@ namespace AniBato.Game
             artwork.enabled=!finished&&art!=null&&art.Visible(sample);
             if(art!=null)
             {
-                artwork.sprite=art.SpriteFor(sample);artwork.color=Color.white;artwork.flipX=sample.FlipX;
+                artwork.sprite=art.SpriteFor(sample);artwork.color=Color.white;artwork.flipX=body.flipX;
                 artwork.sortingOrder=body.sortingOrder-1;
-                artwork.transform.position=body.bounds.center+new Vector3((sample.FlipX?-1:1)*art.Offset.x,art.Offset.y,0);
+                artwork.transform.position=body.bounds.center+new Vector3((body.flipX?-1:1)*art.Offset.x,art.Offset.y,0);
                 artwork.transform.localScale=Vector3.one*art.ScaleFor(sample);
                 float turn=sample.AttackFrame/Mathf.Max(1,art.StepTicks)%2==0?-art.RockDegrees:art.RockDegrees;
                 artwork.transform.localRotation=Quaternion.Euler(0,0,turn);
@@ -43,7 +43,7 @@ namespace AniBato.Game
                 {
                     case AbilityLook.Alma: text = attack.IsDamageActive ? "ALMA!" : attack.Frame / 6 % 2 == 0 ? "0101 1010\n1010 0101" : "1010 0101\n0101 1010"; break;
                     case AbilityLook.Rook: text = generatedTransformation ? "" : "飛"; break;
-                    case AbilityLook.Bishop: text = "角"; break;
+                    case AbilityLook.Bishop: text = generatedTransformation ? "" : "角"; break;
                     case AbilityLook.King: text = "王"; break;
                     case AbilityLook.Emp: text = "電磁パルス"; break;
                     case AbilityLook.Teleport: text = attack.IsActive ? "瞬移" : "接続…"; break;

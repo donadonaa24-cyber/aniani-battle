@@ -23,9 +23,10 @@ function bounds(data, info) {
  }
  requireThat(right>=left,'No visible character'); return {left,top,right,bottom};
 }
-function feet(data,info,b) {
+function feet(data,info,b,bandPixels=null) {
+ requireThat(bandPixels==null||Number.isInteger(bandPixels)&&bandPixels>=32&&bandPixels<=b.bottom-b.top+1,'Invalid measured support band');
  let left=info.width,right=-1;
- for(let y=Math.max(0,b.bottom-Math.max(32,Math.floor((b.bottom-b.top+1)*.1)));y<=b.bottom;y++)
+ for(let y=Math.max(0,b.bottom-(bandPixels??Math.max(32,Math.floor((b.bottom-b.top+1)*.1))));y<=b.bottom;y++)
   for(let x=0;x<info.width;x++)if(data[(y*info.width+x)*4+3]>=32){left=Math.min(left,x);right=Math.max(right,x);}
  return {left,right,center:(left+right)/2};
 }
@@ -84,7 +85,7 @@ async function pack(key, partial=false) {
  const reviewFolder=`イラスト確認/${m.name}/攻撃原画_確認中`;fs.mkdirSync(reviewFolder,{recursive:true});
  fs.copyFileSync(`art_source/paper_roster_idle/prepared/${key}_idle.png`,`${reviewFolder}/00_待機基準.png`);
  for(const e of entries.filter(Boolean)) {
-  const {data,info}=await pixels(e.source),b=bounds(data,info),span=feet(data,info,b);
+  const {data,info}=await pixels(e.source),b=bounds(data,info),span=feet(data,info,b,e.footBandPixels);
   const desired=Math.round((e.pose==='air'?airAnchor:anchor)-span.center);
   const dx=info.width<=1304?Math.max(0,Math.min(1304-info.width,desired)):desired,dy=1328-b.bottom;
   requireThat(b.left>0&&b.top>0&&b.right<info.width-1&&b.bottom<info.height-1,e.id+':原画端の切断を要確認');

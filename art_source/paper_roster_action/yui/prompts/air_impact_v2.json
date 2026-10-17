@@ -1,0 +1,19 @@
+{
+  "id": "air_impact",
+  "key": "yui",
+  "character": "結衣",
+  "pose": "air",
+  "phase": "impact",
+  "label": "空中Nステッキ打撃",
+  "version": 2,
+  "source": "art_source/paper_roster_action/yui/generated/air_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/yui/generated/air_impact_v1.png"
+  ],
+  "referenceRoles": [
+    "直接の編集対象：空中の全身と両脚は正しいが杖の右端が切れる"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の空中攻撃の結衣の全身を厳密に保ち、左手首の角度とステッキだけを修正する。現在の斜め右上へ大きく傾いた杖の金の輪が右端で切れている。左手首を少し内側へ起こし、ステッキの長い柄を縦に近い角度に立て直す。上の金の輪と紫の宝石の中心を画面x950前後に置き、輪の右端も画面右端から80px以上の空白を残す。杖の長さ、金の輪・宝石・紫リボン・金の星と下端の紫宝石の大きさは同じ。新しい杖の角度に合わせ、左の人間の手の5指で細い柄を自然に握る。右の白い肉球ミトンは画像1のまま。\n画像1の猫耳フード・顔・髪・胴体・衣服とマント・尾・浮いた両脚と両ブーツは位置と大きさまで完全に維持。全身を拡縮・反転・移動して直さない。1189×1323の同じ真の透明PNG、硬い薄いクリーム白縁を全外周へ。1人1姿勢。床・影・文字・背景・効果・別の猫・余分な手足・ピクセル・3Dなし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

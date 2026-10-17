@@ -1,0 +1,21 @@
+{
+  "id": "down_impact",
+  "key": "yui",
+  "character": "結衣",
+  "pose": "down",
+  "phase": "impact",
+  "label": "地上下攻撃",
+  "version": 2,
+  "source": "art_source/paper_roster_action/yui/generated/down_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/yui/generated/down_impact_v1.png"
+  ],
+  "referenceRoles": [
+    "直接の編集対象：身体とブーツは良いが、杖が地面より下へ出る"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の結衣の低い打撃の全身を維持して、左腕と握ったステッキだけを描き直す。現在の杖は右下へ出すぎて星が靴底より下になっているので誤り。左肘を深く曲げ、左の手首と同じ杖を約150px上、70px左へ戻す。杖頭の金の輪と宝石を、足先の横でなく右の膝の横の高さへ置く。ぶら下がる星の最下端は画像のy1100より上、両ブーツの靴底より少なくとも120px高い位置に収める。右端に40px以上余白を作る。杖の軸は斜め右下のまま、杖頭が顔より低ければよい。紫の柄・金の輪・紫宝石・紫リボン・金の星の形と大きさは変えない。\n左肩からつながる左の人間の手の5指で柄を自然に握る。右の肉球ミトンとその腕は画像1のまま。顔・猫耳フード・髪・衣服・マント・尾・胴体・脚・両ブーツの大きさと位置を完全に維持。低い身体や全身を拡大縮小して解決しない。1189×1323の同じ透明PNG、硬い薄いクリーム白縁、1人1姿勢。背景・床・影・文字・効果・別の猫・余分な手足はなし。",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "footBandPixels": 64,
+  "supportNote": "靴底から64px内の2つのブーツだけを支持幅へ含め、低い杖の星を足として数えない。原画は変形しない。"
+}
