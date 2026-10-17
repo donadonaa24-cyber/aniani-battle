@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "key": "shiro",
+  "artApproved": false,
+  "gameConnected": true,
+  "reviewedAtNativeScale": true,
+  "baseline": "art_source/paper_roster_idle/generated/shiro_idle_v1.png",
+  "lowPoseReference": "art_source/paper_roster_core/shiro/generated/shiro_crouch_v2.png",
+  "bodySlots": 12,
+  "uniqueBodyImages": 10,
+  "findings": [
+    "四足4本・耳2・尾1を目視。通常1・2段は噛みつき、3段は閉じた口の頭突きで区別。",
+    "上予備は通常3予備、超必殺決めは特殊決めを再利用。空中Nと下は決め各1枚。",
+    "初期の右端切れ／上の全身拡大／3段の余分な小さい足は不採用。選定版で修正。",
+    "頭・耳・足先と装備を待機と原寸比較。四足の低姿勢をセルに合わせて拡大しない。頭や尾の投影の微差は残り、枠・画素監査の合格を美術の最終承認と混同しない。",
+    "下決めは尾の左余白10px。切断なしだが、指示の20px余白を満たしたとは記録しない。",
+    "EMPとALMAは別効果。ALMAの六角形の核と切り絵の波は本作独自の抽象演出であり、未確認の原作姿ではない。"
+  ],
+  "selected": [
+    {
+      "id": "normal1_prepare",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/normal1_prepare_v2.png",
+      "sha256": "d7af62924e7ba92df27ec447d8bcb8609e0b1de48c4bdcd1a1c7a4164a90f9f6",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 59,
+          "top": 369,
+          "right": 1157,
+          "bottom": 1274
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal1_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/normal1_impact_v2.png",
+      "sha256": "ce5b5517a2d03ff145d23fb05fd13f929a9cfb5a1513b9ab7cc52c63bfa749a3",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 59,
+          "top": 367,
+          "right": 1165,
+          "bottom": 1275
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png",
+      "sha256": "30d2303083d68298d97fdf1ca152bfa367f0c19b7e13389346c4a85d273416ab",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 31,
+          "top": 594,
+          "right": 1172,
+          "bottom": 1272
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal3_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/normal3_impact_v2.png",
+      "sha256": "1e51a82dca33cc22ec1f521a05137e19d9bd73b4660519b2f17543d8dbe71ee7",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 142,
+          "right": 1172,
+          "bottom": 1167
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png",
+      "sha256": "30d2303083d68298d97fdf1ca152bfa367f0c19b7e13389346c4a85d273416ab",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 31,
+          "top": 594,
+          "right": 1172,
+          "bottom": 1272
+        }
+      },
+      "reuseOf": {
+        "id": "normal3_prepare",
+        "version": 1,
+        "source": "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png",
+        "sha256": "30d2303083d68298d97fdf1ca152bfa367f0c19b7e13389346c4a85d273416ab",
+        "promptFile": "art_source/paper_roster_action/shiro/prompts/normal3_prepare_v1.json"
+      },
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "up_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/up_impact_v2.png",
+      "sha256": "568c536d543fb32b1febd5fb18993f7b918a97b26edd5054c755f2f99770f02c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 68,
+          "top": 27,
+          "right": 1164,
+          "bottom": 1271
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "down_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/down_impact_v2.png",
+      "sha256": "fc6fbd4f4d88760f18aeedc959863b34e73bee35f4ac21ed89f95af8932a17d2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 10,
+          "top": 531,
+          "right": 1163,
+          "bottom": 1254
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/air_impact_v1.png",
+      "sha256": "aa81d3e01e674761d5b5da1a0a499df8c486862f109a8d26be3ccb1abd455d4a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 142,
+          "right": 1172,
+          "bottom": 1167
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/special_prepare_v1.png",
+      "sha256": "9d66672d29d640ad2b7366150777e0cb504d7012aa6e8426fa5c9ecac84936ba",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 92,
+          "top": 127,
+          "right": 1134,
+          "bottom": 1266
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/special_impact_v1.png",
+      "sha256": "d97eb2c019d4ab4877fe73d6c991ad95f4e551fadf34e8631f2fa04e4bb15e55",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 66,
+          "top": 25,
+          "right": 1167,
+          "bottom": 1272
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/super_prepare_v1.png",
+      "sha256": "d2bc9f1a47787af963ab7eb812e6ae018bb9b288242ef9710bbcd137c0f1c5d8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 29,
+          "top": 590,
+          "right": 1171,
+          "bottom": 1273
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/special_impact_v1.png",
+      "sha256": "d97eb2c019d4ab4877fe73d6c991ad95f4e551fadf34e8631f2fa04e4bb15e55",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 66,
+          "top": 25,
+          "right": 1167,
+          "bottom": 1272
+        }
+      },
+      "reuseOf": {
+        "id": "special_impact",
+        "version": 1,
+        "source": "art_source/paper_roster_action/shiro/generated/special_impact_v1.png",
+        "sha256": "d97eb2c019d4ab4877fe73d6c991ad95f4e551fadf34e8631f2fa04e4bb15e55",
+        "promptFile": "art_source/paper_roster_action/shiro/prompts/special_impact_v1.json"
+      },
+      "reviewedAtNativeScale": true
+    }
+  ],
+  "pixelAudit": "pixel-audit.json",
+  "resampledCharacterPixels": 0,
+  "unityVerifiedTag": "rework_r4_shiro_2"
+}

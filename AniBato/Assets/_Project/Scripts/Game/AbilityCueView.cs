@@ -22,18 +22,21 @@ namespace AniBato.Game
         public void Apply(FighterState fighter, SpriteRenderer body, bool finished, PaperCharacterMotion paper,
             in AnimationSample sample, bool generatedTransformation=false)
         {
-            var art=paper?paper.AbilityEffect(sample.State):null;
+            var attack = finished ? null : fighter.Attack;
+            var art=paper?(paper.AbilityEffect(sample.State)??(attack==null?null:paper.AbilityEffect(attack.Definition.Ability.Look))):null;
             artwork.enabled=!finished&&art!=null&&art.Visible(sample);
             if(art!=null)
             {
-                artwork.sprite=art.Sprite;artwork.color=Color.white;artwork.flipX=sample.FlipX;
+                artwork.sprite=art.SpriteFor(sample);artwork.color=Color.white;artwork.flipX=sample.FlipX;
                 artwork.sortingOrder=body.sortingOrder-1;
                 artwork.transform.position=body.bounds.center+new Vector3((sample.FlipX?-1:1)*art.Offset.x,art.Offset.y,0);
-                artwork.transform.localScale=Vector3.one*art.Scale;
+                artwork.transform.localScale=Vector3.one*art.ScaleFor(sample);
                 float turn=sample.AttackFrame/Mathf.Max(1,art.StepTicks)%2==0?-art.RockDegrees:art.RockDegrees;
                 artwork.transform.localRotation=Quaternion.Euler(0,0,turn);
             }
-            var attack = finished ? null : fighter.Attack; string text = "";
+            string text = "";
+            bool binary=artwork.enabled&&art.Anticipating(sample)&&!string.IsNullOrEmpty(art.AnticipationText);
+            if(binary)text=sample.AttackFrame/Mathf.Max(1,art.StepTicks)%2==0||string.IsNullOrEmpty(art.AlternateAnticipationText)?art.AnticipationText:art.AlternateAnticipationText;
             if (attack != null && art == null)
             {
                 switch (attack.Definition.Ability.Look)
@@ -51,8 +54,10 @@ namespace AniBato.Game
                 }
             }
             label.gameObject.SetActive(text.Length > 0); label.text = text;
+            label.characterSize=binary?art.AnticipationTextSize:.08f;
             label.color = new Color(.55f,.95f,1,.85f);
             label.transform.localPosition = new Vector3(0, fighter.Definition.HurtboxSize.Y * .65f, 0);
+            if(binary)label.transform.position=body.bounds.center;
         }
     }
 }

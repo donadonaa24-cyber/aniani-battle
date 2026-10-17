@@ -1,0 +1,19 @@
+{
+  "id": "normal1_impact",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "normal1",
+  "phase": "impact",
+  "label": "通常1・2段共通噛みつき",
+  "version": 2,
+  "source": "art_source/paper_roster_action/shiro/generated/normal1_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/shiro/generated/normal1_prepare_v2.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、胴体・四脚・足の実寸と位置を固定"
+  ],
+  "prompt": "Use case: precise-object-edit. このシロのイラストの顔と首だけを編集し、噛みつく決め絵にする。口を大きく開いて上顎と下顎と小さい犬の牙を見せる。首を少し伸ばし、鼻と口を右へ30pxほど前へ出す。頭と耳を拡大しない。目は集中した青い目。\n胴体と装甲、四脚4本、4つの足先、尾、全身の倍率と位置はこの画像と同じまま厳密に維持。とくに足先の大きさと位置を変えない。画面右側の足先は余白を維持して切らない。噛みつく動きは首と大きく開いた口で表現し、胸はほんの少し前へ出してよい。1189×1323の透過キャンバスのまま、全周の白縁を維持、背景と影と光と文字は追加しない。平たい通常のアニメ塗り、白い毛、白銀黒の機械、琥珀ランプ。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

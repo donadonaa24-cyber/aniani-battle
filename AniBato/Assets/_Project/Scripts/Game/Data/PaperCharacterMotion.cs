@@ -47,9 +47,16 @@ namespace AniBato.Game
         public Sprite Sprite;
         public float Scale = 1;
         public Vector2 Offset;
+        public Sprite AnticipationSprite;
+        public float AnticipationScale = 1;
+        public string AnticipationText, AlternateAnticipationText;
+        public float AnticipationTextSize = .08f;
         public bool DuringStartup, DuringRecovery;
         public int StepTicks = 6;
         public float RockDegrees = 3;
+        public bool Anticipating(in AnimationSample sample) => sample.IsAttack && sample.State == State && sample.AttackFrame < sample.Startup + sample.DamageDelay;
+        public Sprite SpriteFor(in AnimationSample sample) => AnticipationSprite && Anticipating(sample) ? AnticipationSprite : Sprite;
+        public float ScaleFor(in AnimationSample sample) => AnticipationSprite && Anticipating(sample) ? AnticipationScale : Scale;
         public bool Visible(in AnimationSample sample) => sample.IsAttack && sample.State == State &&
             (sample.AttackFrame < sample.Startup + sample.DamageDelay ? DuringStartup :
              sample.AttackFrame < sample.Startup + sample.Active || DuringRecovery);
@@ -74,6 +81,8 @@ namespace AniBato.Game
         public PaperAbilityArt[] AbilityEffects;
         public PaperAbilityArt AbilityEffect(AnimationState state) => !Enabled || AbilityEffects == null ? null :
             System.Array.Find(AbilityEffects, art => art != null && art.Sprite && art.Scale > 0 && art.State == state);
+        public PaperAbilityArt AbilityEffect(AniBato.Battle.AbilityLook look) => !Enabled || AbilityEffects == null ? null :
+            System.Array.Find(AbilityEffects, art => art != null && art.Sprite && art.Scale > 0 && art.Look == look);
         public PaperProjectileArt Projectile(AniBato.Battle.AbilityLook look) => !Enabled || Projectiles == null ? null :
             System.Array.Find(Projectiles, art => art != null && art.Sprite && art.Scale > 0 && art.Look == look);
         public PaperPose Find(AnimationState state, bool lostHeart = false)

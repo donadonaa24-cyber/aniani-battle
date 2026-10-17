@@ -1,0 +1,21 @@
+{
+  "id": "normal3_impact",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "normal3",
+  "phase": "impact",
+  "label": "通常3段大きな頭突き",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/normal3_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png",
+    "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、最大の溜めから身体を前へ出す",
+    "本人の頭と足先と機械装備の実寸の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1のシロが後脚で強く蹴って、額から画面右前へ飛び込む大きい頭突きの決めポーズへ編集。口を閉じ、顎を軽く引き、額を先頭にして頭・首・胸・胴体を一気に右へ出す。身体はほぼ水平、前脚2本は肘から胸の下へ曲げて足先を身体の下へまとめる。前脚を右端へ伸ばさない。後脚2本は後ろへ蹴った形で膝を軽く曲げる。尾は左の脇へ曲げて1本。全体に大胆な前進のシルエット。\n本人は四足の犬型AI、四脚4本・頭1・耳2・尾1。頭・耳・鼻・機械装甲・足先は画像1と同じ実寸、巨大化や全体縮小をしない。前脚と後脚を肩と骨盤から自然につなぐ。頭だけを胴体から外さない。1189×1323の透明キャンバスで、鼻先はx1150より左、尾はx30より右、足先はy1290より上に収め、全周20px以上の余白。四脚は曲げて収める。白い毛、青い目、白銀と黒の装甲、琥珀色の小さいランプ、普通のアニメ塗り、薄いクリーム白縁。背景・床・影・相手・文字・効果線・光・3D・人間の手・ピクセルなし。一体一姿勢。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

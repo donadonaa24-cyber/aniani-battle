@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "key": "shiro",
+  "frames": [
+    {
+      "id": "normal1_prepare",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/normal1_prepare.png",
+      "sha256": "2dffd7b6a2ff40c22aabc8ec4a289773caf25566513de4fb442a49dced87c16f",
+      "headTopY": 423,
+      "footMinX": 202,
+      "footMaxX": 1196,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal1_impact",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/normal1_impact.png",
+      "sha256": "6f58f7cce79666f9f2dd9df8c6f376a9754706fb6c0bb19a19e9a6e51fe329c2",
+      "headTopY": 420,
+      "footMinX": 198,
+      "footMaxX": 1201,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/normal3_prepare.png",
+      "sha256": "47aa9417624b312e7f994119731563f11ffc506df4faa4a7b3fb169f8d524c2c",
+      "headTopY": 650,
+      "footMinX": 188,
+      "footMaxX": 1210,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_impact",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/normal3_impact.png",
+      "sha256": "3968b5d6038d88bc867e51095d8fa03ba92c78c6461cb8f5ddab017cde45eabf",
+      "headTopY": 303,
+      "footMinX": 775,
+      "footMaxX": 1108,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_prepare",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/up_prepare.png",
+      "sha256": "47aa9417624b312e7f994119731563f11ffc506df4faa4a7b3fb169f8d524c2c",
+      "headTopY": 650,
+      "footMinX": 188,
+      "footMaxX": 1210,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_impact",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/up_impact.png",
+      "sha256": "d1ffb81071412e61bfbc80f0bf16c7f7a70eb061c8effa6f91a899d1ca3ed133",
+      "headTopY": 84,
+      "footMinX": 207,
+      "footMaxX": 1192,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "down_impact",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/down_impact.png",
+      "sha256": "23a2af7b3106b45d5fe89835c95ad8ae5ef2cf7f9300a5e782f61fa648b1f9ca",
+      "headTopY": 605,
+      "footMinX": 195,
+      "footMaxX": 1204,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "air_impact",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/air_impact.png",
+      "sha256": "1677a7645cf66fafb5135ed680b44a463dac60ae9ba3bda3987894e9e1d6d820",
+      "headTopY": 303,
+      "footMinX": 832,
+      "footMaxX": 1165,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0.16710812628041907
+    },
+    {
+      "id": "special_prepare",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/special_prepare.png",
+      "sha256": "903796de010cd59f2d37b6f5a5b80e20dceb25dd7cad9cb5d44f08b9cc8c7695",
+      "headTopY": 189,
+      "footMinX": 231,
+      "footMaxX": 1167,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "special_impact",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/special_impact.png",
+      "sha256": "c1c2fff4efd5c77044ac21dfc52e776d57b4cb2312b0fd9da158db4892789689",
+      "headTopY": 81,
+      "footMinX": 205,
+      "footMaxX": 1194,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_prepare",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/super_prepare.png",
+      "sha256": "d92662c9a054559727d08f0b62bfa89d9a7f96929a10a93c681acb5af5febc6f",
+      "headTopY": 645,
+      "footMinX": 185,
+      "footMaxX": 1214,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_impact",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/super_impact.png",
+      "sha256": "c1c2fff4efd5c77044ac21dfc52e776d57b4cb2312b0fd9da158db4892789689",
+      "headTopY": 81,
+      "footMinX": 205,
+      "footMaxX": 1194,
+      "groundFootAnchor": 699,
+      "originOffsetY": 0
+    }
+  ],
+  "complete": true,
+  "reviewed": true,
+  "gameConnected": true,
+  "verifiedTag": "rework_r4_shiro_2"
+}

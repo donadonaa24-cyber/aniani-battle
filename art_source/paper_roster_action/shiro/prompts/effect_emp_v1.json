@@ -1,0 +1,18 @@
+{
+  "id": "emp",
+  "look": "Emp",
+  "kind": "ability",
+  "state": "SpecialNeutral",
+  "worldHeight": 4,
+  "duringStartup": false,
+  "duringRecovery": false,
+  "prompt": "2Dペープサート対戦ゲームの電磁パルスの切り絵エフェクト1個。横:縦が約3:2の横長の輪。シアン、水色、白、濃紺の平らな紙の輪2〜3層と、外周の短いギザギザの稲妻状紙片8個ほど。中心60パーセントは完全透明、外側も完全透明。人物の背後に置くので中央を塗りつぶさない。普通のアニメセル塗りで、厚紙を切って重ねた硬い輪郭、薄いクリーム白縁を一周。1536×1024の透明PNG、全体を60px以上の余白で中央に収める。平たい正面の横長のパルス輪で、床に寝かせた輪にしない。人物・犬・顔・目・手・背景・床・影・数字・文字・グロー・ぼかし・写実・3D・ピクセル・複数案なし。固い紙片の形のみ、半透明の光雲を付けない。",
+  "key": "shiro",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/effect_emp_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "worldWidth": 6
+}

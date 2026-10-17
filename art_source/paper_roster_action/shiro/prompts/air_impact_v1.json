@@ -1,0 +1,19 @@
+{
+  "id": "air_impact",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "air",
+  "phase": "impact",
+  "label": "空中N・飛びつき噛みつき",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/air_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/shiro/generated/normal3_impact_v2.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、正しい四脚と足先・装甲・頭の実寸を維持"
+  ],
+  "prompt": "Use case: precise-object-edit. この空中で四脚を浮かせているシロの画像を、空中噛みつきの決めにする。変更は口だけ。鼻と顔と頭と耳の位置とサイズを完全に固定し、下顎を下げて口を大きく前向きに開き、犬の小さい牙と舌を見せる。鼻先を前へ動かさず、首を伸ばさず、頭を拡大しない。\nそのほか胴体・首・尾・前脚2本・後脚2本・足先4つ・装甲・青い目・琥珀ランプ・全身倍率はそのまま厳密に維持。元の四脚4本を増やさず、人間の手や第五の足先を描かない。尾も1本。1189×1323の真の透過PNG、頭と尾と四脚の余白を保持し切らない。薄い白縁を全周。普通のアニメ塗り、白毛と白銀黒の装甲、背景・床・影・粒・効果・光・文字・3D・ピクセルなし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

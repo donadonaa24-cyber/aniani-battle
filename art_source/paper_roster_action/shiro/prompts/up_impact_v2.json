@@ -1,0 +1,19 @@
+{
+  "id": "up_impact",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "up",
+  "phase": "impact",
+  "label": "上攻撃・上への噛みつき",
+  "version": 2,
+  "source": "art_source/paper_roster_action/shiro/generated/up_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、胴体・尾・4つの足先の同じ寸法と位置を厳守"
+  ],
+  "prompt": "Use case: precise-object-edit. このシロの採用待機イラストを地上から上への噛みつきへ編集。頭と首だけを変更する。頭を右上へ向け、犬の口を大きく上へ開いて、上方の相手に噛みつく決め。首を少し上へ伸ばすが、鼻先がキャンバス上から50px以上下に収まるように頭を傾ける。頭と耳と鼻の大きさは変更しない。\n胴体・尾・四脚4本・装甲・4つの足先の大きさと位置はこの画像から厳密に保つ。四足とも接地する姿勢のまま。立ち上がらず、人間の二足にしない。機械の脚や足先を描き直して大きくしない。頭以外の部位を同じにすることで同じ本人に見せる。白毛・青い目・白銀と黒の機械装甲・琥珀ランプを保持。1189×1323の真の透過PNG、薄いクリーム白縁を全周、背景・床・影・光・効果・文字・3D・ピクセルなし。一体一姿勢。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

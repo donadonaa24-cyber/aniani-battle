@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 1,
+  "key": "shiro",
+  "name": "シロ",
+  "characterIndex": 4,
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "sole": 1328,
+  "pixelsPerUnit": 532.5893,
+  "baseIdle": "art_source/paper_roster_idle/generated/shiro_idle_v1.png",
+  "jobs": [
+    {
+      "id": "normal1_prepare",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/normal1_prepare_v2.json"
+    },
+    {
+      "id": "normal1_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/normal1_impact_v2.json"
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/normal3_prepare_v1.json"
+    },
+    {
+      "id": "normal3_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/normal3_impact_v2.json"
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/up_prepare_v1.json"
+    },
+    {
+      "id": "up_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/up_impact_v2.json"
+    },
+    {
+      "id": "down_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/down_impact_v2.json"
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/air_impact_v1.json"
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/special_prepare_v1.json"
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/special_impact_v1.json"
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/super_prepare_v1.json"
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/shiro/prompts/super_impact_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通噛みつき",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/normal1_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1のシロの全身を1つのポーズへ編集。採用待機と同じ普通のアニメの線とセル塗り、同じ部位の実寸を維持。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n動作：通常1・2段共通噛みつきの予備、まだ当てない。四脚を接地し、前脚の肘と後脚の膝を曲げ、胸と首と頭を少し後ろへ引く。口を開き、犬の小さな牙を見せて噛みつく直前。顔は右を向き、上と前に大きい余白があってよい。\n重要：前脚2本＋後脚2本＝四脚だけ。各脚を肩または骨盤→関節→足首→犬の足先へ追えるようにつなぐ。耳2つ、頭1つ、尾1本。人間の手や指、二足の少年、服、頭巾、武器、余分な脚を生成しない。犬の歯を人間の平たい歯列にしない。\n本人の頭・耳・鼻先・脚の機械装甲・足先を画像1と同じ大きさにする。目安は頭と耳の幅約360px、近い前足の幅約160px、遠い前足約130px、近い後足約143px。低姿勢を枠いっぱいへ拡大しない。顔を巨大化しない。四脚は深く曲げて枠へ収めてよい。\n1189×1323の真の透明キャンバス、右向きの少し斜め横で四脚の所属を見せる。元の全身倍率を維持し、全身、耳、尾、足先を20px以上の余白で切らずに収める。低い姿勢では上に大きい透明余白を残す。薄い硬いクリーム白の切り抜き縁を外周一周へ。背景・床・影・相手・文字・数字・効果線・霧・輪・グロー・紙の繊維・関節分割・3D・写実・ピクセルは禁止。1枚に本人一体、1姿勢のみ。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "1490a6a3cb82c865b3d162374ed04941916a30db50e06bd99d0443968b0c922c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 25,
+          "top": 391,
+          "right": 1185,
+          "bottom": 1266
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "遠い前足の右余白が約3pxで不足し、足先も基準より大きく見えるため不採用。採用しゃがみ基準へ戻した。"
+    },
+    {
+      "id": "normal1_prepare",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通噛みつき",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/normal1_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_core/shiro/generated/shiro_crouch_v2.png",
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、採用しゃがみの四脚・頭と足先の実寸と位置を維持",
+        "本人の容姿と装甲の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1のシロの採用しゃがみ絵を、噛みつく直前の予備動作へ編集する。変更するのは顔と首の表情だけ。頭と首をほんの少し後ろへ引き、青い目を前へ集中させ、口を少し開けて小さい犬の牙を見せる。まだ前へ飛び出さない。\n画像1の胴体、四脚、4つの足先、耳と尾、全体の大きさ・位置・装甲の形と琥珀のランプは同じに保つ。頭と足を拡大しない。四足の犬型AI、腕や人間の手は描かない。画像1の遠い前足先の右余白を保持して切らない。\n1189×1323の真の透過PNG、普通のアニメの線とセル塗り、薄いクリーム白の縁を全周。背景・床・影・効果・文字・光・3D・ピクセルなし。1体1ポーズ。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "d7af62924e7ba92df27ec447d8bcb8609e0b1de48c4bdcd1a1c7a4164a90f9f6",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 59,
+          "top": 369,
+          "right": 1157,
+          "bottom": 1274
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/normal1_prepare.png",
+      "preparedSha256": "2dffd7b6a2ff40c22aabc8ec4a289773caf25566513de4fb442a49dced87c16f",
+      "offsetX": 39,
+      "offsetY": 54,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal1_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通噛みつき",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/normal1_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/normal1_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、正しい四脚・足先と頭の実寸を維持した予備",
+        "本人の容姿と装甲の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1のシロを、前方へ噛みつく決めポーズに編集する。犬の口を大きく開けて上顎と下顎を離し、小さな牙を見せる。首と胸を画面右へ伸ばし、頭が右前方へ出る噛みつき。首を伸ばしても頭と鼻と耳を拡大しない。胸と肩を前へ、後脚の関節を曲げて蹴り出し、前脚2本を前へ踏み出す。四脚が追える斜め横。尾は後ろへ長く広げず、左側の脇へ軽く曲げて収める。\n四脚4本、犬の頭1つ、耳2つ、尾1本。画像1と同じ足先、脚の装甲、頭髪と耳の大きさ。各脚は肩か骨盤→関節→足首→足先につなぐ。1189×1323の透明キャンバスで、右側の鼻先と4つの足先に最低20pxの余白。人物全体を縮小して収めない。身体を低くして上に余白を残す。普通のアニメ塗り、白い毛、青い目、白銀と黒の装甲、琥珀ランプ、薄いクリーム白縁を一周。背景・床・影・相手・効果線・光・文字・人間の手・二足歩行・余分な脚・3D・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "6a6e53bd97a7d39fa13c5b6d54768696719d6f2b21da15ac50f1d34c70605942",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 26,
+          "top": 294,
+          "right": 1188,
+          "bottom": 1216
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "画面右の前足が切れ、足先も大きいため不採用。採用予備の胴体と四脚を固定し、首と口を編集。"
+    },
+    {
+      "id": "normal1_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通噛みつき",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/normal1_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、胴体・四脚・足の実寸と位置を固定"
+      ],
+      "prompt": "Use case: precise-object-edit. このシロのイラストの顔と首だけを編集し、噛みつく決め絵にする。口を大きく開いて上顎と下顎と小さい犬の牙を見せる。首を少し伸ばし、鼻と口を右へ30pxほど前へ出す。頭と耳を拡大しない。目は集中した青い目。\n胴体と装甲、四脚4本、4つの足先、尾、全身の倍率と位置はこの画像と同じまま厳密に維持。とくに足先の大きさと位置を変えない。画面右側の足先は余白を維持して切らない。噛みつく動きは首と大きく開いた口で表現し、胸はほんの少し前へ出してよい。1189×1323の透過キャンバスのまま、全周の白縁を維持、背景と影と光と文字は追加しない。平たい通常のアニメ塗り、白い毛、白銀黒の機械、琥珀ランプ。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "ce5b5517a2d03ff145d23fb05fd13f929a9cfb5a1513b9ab7cc52c63bfa749a3",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 59,
+          "top": 367,
+          "right": 1165,
+          "bottom": 1275
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/normal1_impact.png",
+      "preparedSha256": "6f58f7cce79666f9f2dd9df8c6f376a9754706fb6c0bb19a19e9a6e51fe329c2",
+      "offsetX": 36,
+      "offsetY": 53,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "normal3",
+      "phase": "prepare",
+      "label": "通常3段大きな頭突き",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/normal1_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、全身と部位の同じ寸法を維持",
+        "本人の装備と容姿の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1のシロを、大きい頭突きの直前の最大の溜めへ編集。四脚をさらに深く曲げて胸を低く落とし、肩と首を画面左へ強く引く。頭を下げ、顎を胸へ引き、額を右前方へ向ける。口を閉じる。噛みつきではなく全身で頭から飛び込む直前。尾を左の脇へ曲げる。\n頭、耳、犬の鼻、四脚の装甲、4つの足先は画像1と同じ実寸。低姿勢のため頭と足を拡大せず、上に大きい透明余白を残す。肩と骨盤からそれぞれ2本ずつの脚、合計4本だけを自然につなぐ。1189×1323の透過キャンバス、全身を同じ倍率で、耳と尾と4つの足先は20px以上余白で切らない。白い毛、青い目、白銀と黒の機械装備、琥珀色の小さいランプを厳密に維持。普通のアニメ塗り、薄いクリーム白縁を全周。背景・床・影・文字・数字・相手・効果線・光・3D・ピクセルなし。四足動物一体。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "30d2303083d68298d97fdf1ca152bfa367f0c19b7e13389346c4a85d273416ab",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 31,
+          "top": 594,
+          "right": 1172,
+          "bottom": 1272
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/normal3_prepare.png",
+      "preparedSha256": "47aa9417624b312e7f994119731563f11ffc506df4faa4a7b3fb169f8d524c2c",
+      "offsetX": 38,
+      "offsetY": 56,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段大きな頭突き",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/normal3_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png",
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、最大の溜めから身体を前へ出す",
+        "本人の頭と足先と機械装備の実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1のシロが後脚で強く蹴って、額から画面右前へ飛び込む大きい頭突きの決めポーズへ編集。口を閉じ、顎を軽く引き、額を先頭にして頭・首・胸・胴体を一気に右へ出す。身体はほぼ水平、前脚2本は肘から胸の下へ曲げて足先を身体の下へまとめる。前脚を右端へ伸ばさない。後脚2本は後ろへ蹴った形で膝を軽く曲げる。尾は左の脇へ曲げて1本。全体に大胆な前進のシルエット。\n本人は四足の犬型AI、四脚4本・頭1・耳2・尾1。頭・耳・鼻・機械装甲・足先は画像1と同じ実寸、巨大化や全体縮小をしない。前脚と後脚を肩と骨盤から自然につなぐ。頭だけを胴体から外さない。1189×1323の透明キャンバスで、鼻先はx1150より左、尾はx30より右、足先はy1290より上に収め、全周20px以上の余白。四脚は曲げて収める。白い毛、青い目、白銀と黒の装甲、琥珀色の小さいランプ、普通のアニメ塗り、薄いクリーム白縁。背景・床・影・相手・文字・効果線・光・3D・人間の手・ピクセルなし。一体一姿勢。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "b06a0f2ed7aa6f3536e8f7b0b1d597cc88049dec980dde2c2b8981d964ca9f7c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 28,
+          "top": 126,
+          "right": 1171,
+          "bottom": 1147
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "前脚の下に小さい余分な足先があり、合計5本に見えるため不採用。正しい四脚に修正し、周囲の白い粒も除去。"
+    },
+    {
+      "id": "normal3_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段大きな頭突き",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/normal3_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/normal3_impact_v1.png",
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、余分な第五の足先を取り除く",
+        "正しい四脚の構造と装備の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の頭突きポーズを維持し、脚を正しく四本に修正する。現状、前足の大きい足先の左後ろ、座標およそx730 y1030に小さい余分な第五の白い足先がある。この小さい足先と短い余計な腕だけを取り除く。\n残す足先は4つだけ：左端x90 y920の後足、左の奥x290 y930の後足、手前x830 y1090の大きい前足、右側x960 y1060の前足。各前足は肩から一本ずつ、各後足は骨盤から一本ずつつながるようにする。新たな足は足さない。4本の足先のサイズを変更しない。画像2は元の正しい四足と装甲の基準。\n頭・顔・耳・閉じた口・胴体・尾の一本と大きさ・機械装甲・ランプ・ポーズ・全身倍率は画像1から変えない。外周に浮いた小さい白いゴミの粒も取り除く。1189×1323の真の透過PNG、薄い白縁を全周。普通のアニメ塗り。背景・床・影・光・文字なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "1e51a82dca33cc22ec1f521a05137e19d9bd73b4660519b2f17543d8dbe71ee7",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 142,
+          "right": 1172,
+          "bottom": 1167
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/normal3_impact.png",
+      "preparedSha256": "3968b5d6038d88bc867e51095d8fa03ba92c78c6461cb8f5ddab017cde45eabf",
+      "offsetX": 0,
+      "offsetY": 161,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "up_prepare",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "up",
+      "phase": "prepare",
+      "label": "上攻撃・上への噛みつき",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/normal1_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、全身と部位の同じ寸法を維持",
+        "本人の装備と容姿の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1のシロを、大きい頭突きの直前の最大の溜めへ編集。四脚をさらに深く曲げて胸を低く落とし、肩と首を画面左へ強く引く。頭を下げ、顎を胸へ引き、額を右前方へ向ける。口を閉じる。噛みつきではなく全身で頭から飛び込む直前。尾を左の脇へ曲げる。\n頭、耳、犬の鼻、四脚の装甲、4つの足先は画像1と同じ実寸。低姿勢のため頭と足を拡大せず、上に大きい透明余白を残す。肩と骨盤からそれぞれ2本ずつの脚、合計4本だけを自然につなぐ。1189×1323の透過キャンバス、全身を同じ倍率で、耳と尾と4つの足先は20px以上余白で切らない。白い毛、青い目、白銀と黒の機械装備、琥珀色の小さいランプを厳密に維持。普通のアニメ塗り、薄いクリーム白縁を全周。背景・床・影・文字・数字・相手・効果線・光・3D・ピクセルなし。四足動物一体。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "30d2303083d68298d97fdf1ca152bfa367f0c19b7e13389346c4a85d273416ab",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 31,
+          "top": 594,
+          "right": 1172,
+          "bottom": 1272
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "normal3_prepare",
+        "version": 1,
+        "source": "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png",
+        "sha256": "30d2303083d68298d97fdf1ca152bfa367f0c19b7e13389346c4a85d273416ab",
+        "promptFile": "art_source/paper_roster_action/shiro/prompts/normal3_prepare_v1.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "深く四脚を曲げて首を引く共通の溜めから、上への噛みつきへ移る。原寸の適切な最大予備を再利用。",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/up_prepare.png",
+      "preparedSha256": "47aa9417624b312e7f994119731563f11ffc506df4faa4a7b3fb169f8d524c2c",
+      "offsetX": 38,
+      "offsetY": 56,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "up_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "up",
+      "phase": "impact",
+      "label": "上攻撃・上への噛みつき",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/up_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png",
+        "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、頭と耳と四つの足先・装甲の大きさを維持",
+        "低い共通予備から上へ立ち上がる動作の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1のシロを、地上から上へ噛みつく決めポーズへ編集。後脚2本の足先を地面に残し、後脚の膝と腰を伸ばして胸と首を上へ起こす。頭を画面右上へ向け、犬の口を大きく上向きに開き、斜め上へ噛みつく。前脚2本は肩から肘を曲げ、犬の足先をそれぞれ胸の横へ上げる。前足を手や人間の腕にしない。\n四脚は合計4本だけ、後足2つが接地、前足2つが胸の横で浮く。犬の頭1つ耳2つ尾1本、白銀と黒の装甲、琥珀の小さいランプ、白い毛と青い目を保持。頭と耳と鼻と各足先の大きさは画像1と同じ。胴体を起こすが二足歩行の人間にはしない。1189×1323の透明キャンバス、上げた鼻と耳を20px以上余白で収め、後足も切らない。前足と後足の装甲を追えるようにつなぐ。普通のアニメ塗りと薄いクリーム白縁、背景・床・影・相手・文字・効果線・光・3D・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "c24316843777b203a3af20b8c58e54c0821ecb20ccf03e1a3123f63e5fe24b7d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 4,
+          "top": 9,
+          "right": 1188,
+          "bottom": 1304
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "立ち上がり候補は尾と前足が原画端へ出て、足先も大きいため不採用。採用待機の四足接地を保ち、頭と首だけを右上へ出す。"
+    },
+    {
+      "id": "up_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "up",
+      "phase": "impact",
+      "label": "上攻撃・上への噛みつき",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/up_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、胴体・尾・4つの足先の同じ寸法と位置を厳守"
+      ],
+      "prompt": "Use case: precise-object-edit. このシロの採用待機イラストを地上から上への噛みつきへ編集。頭と首だけを変更する。頭を右上へ向け、犬の口を大きく上へ開いて、上方の相手に噛みつく決め。首を少し上へ伸ばすが、鼻先がキャンバス上から50px以上下に収まるように頭を傾ける。頭と耳と鼻の大きさは変更しない。\n胴体・尾・四脚4本・装甲・4つの足先の大きさと位置はこの画像から厳密に保つ。四足とも接地する姿勢のまま。立ち上がらず、人間の二足にしない。機械の脚や足先を描き直して大きくしない。頭以外の部位を同じにすることで同じ本人に見せる。白毛・青い目・白銀と黒の機械装甲・琥珀ランプを保持。1189×1323の真の透過PNG、薄いクリーム白縁を全周、背景・床・影・光・効果・文字・3D・ピクセルなし。一体一姿勢。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "568c536d543fb32b1febd5fb18993f7b918a97b26edd5054c755f2f99770f02c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 68,
+          "top": 27,
+          "right": 1164,
+          "bottom": 1271
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/up_impact.png",
+      "preparedSha256": "d1ffb81071412e61bfbc80f0bf16c7f7a70eb061c8effa6f91a899d1ca3ed133",
+      "offsetX": 28,
+      "offsetY": 57,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "down_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "down",
+      "phase": "impact",
+      "label": "下攻撃・低い噛みつき",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/down_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、正しい四脚と足先・装甲・頭の実寸を維持"
+      ],
+      "prompt": "Use case: precise-object-edit. この低く構えたシロの画像の頭と口だけを編集して、低い噛みつきの決め絵にする。首を低いまま右へほんの少し伸ばし、鼻を前へ、大きく犬の口を開けて小さい牙を見せる。鼻と口は地面近くの低い位置、足先よりは上。頭と耳と足先のサイズは変えない。胴体、四脚4本とそれぞれの装甲と足先、尾1本と位置をそのまま厳密に維持。低姿勢を枠に合わせて拡大しない。1189×1323の真の透過キャンバス、全身の倍率を維持し、鼻先を右端から25px以上の内側へ。薄いクリーム白縁を全周、普通のアニメ塗り、白毛・青い目・白銀と黒の機械装甲・琥珀のランプ。背景・床・影・効果・光・文字・3D・ピクセルなし。四足動物一体。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "a444f6038e8b204582b2b01fa4a660b8cbd07c2b6a7fa227b071c0e711a25f70",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 595,
+          "right": 1187,
+          "bottom": 1273
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "低い口と耳が右端へ出て切れるため不採用。頭と首を左へ戻し、遠い前足も少し内側へ曲げる。"
+    },
+    {
+      "id": "down_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "down",
+      "phase": "impact",
+      "label": "下攻撃・低い噛みつき",
+      "version": 2,
+      "source": "art_source/paper_roster_action/shiro/generated/down_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/down_impact_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、低い噛みつきを保ち右端の切断だけを直す"
+      ],
+      "prompt": "Use case: precise-object-edit. この低い噛みつきのシロの画像を修正する。右端で切れている頭を直すため、頭と首のまとまりを70pxほど画面左へ引き戻して、鼻先と右耳と口がキャンバスの右端から40px以上内側へ完全に入るようにする。頭や耳や口を縮小しない。同じ大きさのまま首を少し折り曲げて左へ戻す。口は大きく開けたまま低い位置。右端に近い奥の前脚だけも肘を少し内側へ曲げ、同じ大きさの足先を左へ40px移し、右に十分な透明余白を作る。\nほかの胴体・後脚2本・手前の前脚・尾の位置とサイズ、装甲と色、全体の倍率は維持。四脚4本、頭1つ耳2つ尾1本。拡大縮小せず、姿勢の小さい修正だけで枠内へ入れる。1189×1323の真の透過PNG、薄いクリーム白縁を途切れず一周。白毛、青い目、琥珀ランプ、普通のアニメ塗り。背景・床・影・光・効果・文字は描かない。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "fc6fbd4f4d88760f18aeedc959863b34e73bee35f4ac21ed89f95af8932a17d2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 10,
+          "top": 531,
+          "right": 1163,
+          "bottom": 1254
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/down_impact.png",
+      "preparedSha256": "23a2af7b3106b45d5fe89835c95ad8ae5ef2cf7f9300a5e782f61fa648b1f9ca",
+      "offsetX": 73,
+      "offsetY": 74,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "air_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "air",
+      "phase": "impact",
+      "label": "空中N・飛びつき噛みつき",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/air_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/normal3_impact_v2.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、正しい四脚と足先・装甲・頭の実寸を維持"
+      ],
+      "prompt": "Use case: precise-object-edit. この空中で四脚を浮かせているシロの画像を、空中噛みつきの決めにする。変更は口だけ。鼻と顔と頭と耳の位置とサイズを完全に固定し、下顎を下げて口を大きく前向きに開き、犬の小さい牙と舌を見せる。鼻先を前へ動かさず、首を伸ばさず、頭を拡大しない。\nそのほか胴体・首・尾・前脚2本・後脚2本・足先4つ・装甲・青い目・琥珀ランプ・全身倍率はそのまま厳密に維持。元の四脚4本を増やさず、人間の手や第五の足先を描かない。尾も1本。1189×1323の真の透過PNG、頭と尾と四脚の余白を保持し切らない。薄い白縁を全周。普通のアニメ塗り、白毛と白銀黒の装甲、背景・床・影・粒・効果・光・文字・3D・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "aa81d3e01e674761d5b5da1a0a499df8c486862f109a8d26be3ccb1abd455d4a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 142,
+          "right": 1172,
+          "bottom": 1167
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/air_impact.png",
+      "preparedSha256": "1677a7645cf66fafb5135ed680b44a463dac60ae9ba3bda3987894e9e1d6d820",
+      "offsetX": 57,
+      "offsetY": 161,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_prepare",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "special",
+      "phase": "prepare",
+      "label": "特殊・ALMA接続とEMP",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/special_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、四脚・足先・頭と装甲の同じ実寸と位置を維持"
+      ],
+      "prompt": "Use case: precise-object-edit. このシロの全身イラストを編集。ALMAにつながる特殊技の予備にする。頭と首を少し後ろへ引き、青い目を集中した鋭い表情へ。口を閉じる。耳・頬・喉・四脚の機械の小さいランプだけを琥珀から水色へ変える。機械の装甲の形そのものは変更しない。\n胴体と四脚4本、4つの足先、頭と耳2つ、尾1本の大きさ、元の全身倍率と位置を厳密に保持する。足先と装甲を拡大しない。白い毛、青い目、白銀と黒の装甲の細部を元と同じにする。人間の腕や手、余分な脚や尾を描かない。\n1189×1323の真の透過PNG、元の全身の余白を保持し切らない。薄い硬いクリーム白縁を全周。普通のアニメ塗り。ALMAの空間、波紋、電撃、霧、数字、光線、光彩は別効果で描くのでこの人物原画へ追加しない。背景・床・影・文字・粒・3D・ピクセルなし。一体一姿勢。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "9d66672d29d640ad2b7366150777e0cb504d7012aa6e8426fa5c9ecac84936ba",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 92,
+          "top": 127,
+          "right": 1134,
+          "bottom": 1266
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/special_prepare.png",
+      "preparedSha256": "903796de010cd59f2d37b6f5a5b80e20dceb25dd7cad9cb5d44f08b9cc8c7695",
+      "offsetX": 33,
+      "offsetY": 62,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "special",
+      "phase": "impact",
+      "label": "特殊・ALMA接続とEMP",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/special_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/up_impact_v2.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、四脚・足先・頭と装甲の同じ実寸と位置を維持"
+      ],
+      "prompt": "Use case: precise-object-edit. このシロの全身イラストを編集。ALMAと融合して電磁パルスを解放する特殊技の決めにする。この胸を張り、口を上へ開いた遠吠えのポーズは同じまま。変更は機械の小さいランプの色だけ。耳・頬・喉・四脚のランプを琥珀から青白い水色へ変える。青い目は青いまま鋭くする。装甲や全身の色そのものは変えない。\n胴体と四脚4本、4つの足先、頭と耳2つ、尾1本の大きさ、元の全身倍率と位置を厳密に保持する。足先と装甲を拡大しない。白い毛、青い目、白銀と黒の装甲の細部を元と同じにする。人間の腕や手、余分な脚や尾を描かない。\n1189×1323の真の透過PNG、元の全身の余白を保持し切らない。薄い硬いクリーム白縁を全周。普通のアニメ塗り。ALMAの空間、波紋、電撃、霧、数字、光線、光彩は別効果で描くのでこの人物原画へ追加しない。背景・床・影・文字・粒・3D・ピクセルなし。一体一姿勢。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "d97eb2c019d4ab4877fe73d6c991ad95f4e551fadf34e8631f2fa04e4bb15e55",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 66,
+          "top": 25,
+          "right": 1167,
+          "bottom": 1272
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/special_impact.png",
+      "preparedSha256": "c1c2fff4efd5c77044ac21dfc52e776d57b4cb2312b0fd9da158db4892789689",
+      "offsetX": 27,
+      "offsetY": 56,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "super_impact",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "super",
+      "phase": "impact",
+      "label": "超必殺・ALMA二進数空間",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/special_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/up_impact_v2.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、四脚・足先・頭と装甲の同じ実寸と位置を維持"
+      ],
+      "prompt": "Use case: precise-object-edit. このシロの全身イラストを編集。ALMAと融合して電磁パルスを解放する特殊技の決めにする。この胸を張り、口を上へ開いた遠吠えのポーズは同じまま。変更は機械の小さいランプの色だけ。耳・頬・喉・四脚のランプを琥珀から青白い水色へ変える。青い目は青いまま鋭くする。装甲や全身の色そのものは変えない。\n胴体と四脚4本、4つの足先、頭と耳2つ、尾1本の大きさ、元の全身倍率と位置を厳密に保持する。足先と装甲を拡大しない。白い毛、青い目、白銀と黒の装甲の細部を元と同じにする。人間の腕や手、余分な脚や尾を描かない。\n1189×1323の真の透過PNG、元の全身の余白を保持し切らない。薄い硬いクリーム白縁を全周。普通のアニメ塗り。ALMAの空間、波紋、電撃、霧、数字、光線、光彩は別効果で描くのでこの人物原画へ追加しない。背景・床・影・文字・粒・3D・ピクセルなし。一体一姿勢。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "d97eb2c019d4ab4877fe73d6c991ad95f4e551fadf34e8631f2fa04e4bb15e55",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 66,
+          "top": 25,
+          "right": 1167,
+          "bottom": 1272
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "special_impact",
+        "version": 1,
+        "source": "art_source/paper_roster_action/shiro/generated/special_impact_v1.png",
+        "sha256": "d97eb2c019d4ab4877fe73d6c991ad95f4e551fadf34e8631f2fa04e4bb15e55",
+        "promptFile": "art_source/paper_roster_action/shiro/prompts/special_impact_v1.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "同じALMA接続色の遠吠えを原寸再利用し、専用の二進数空間とALMAの攻撃原画で超必殺を読み分ける。",
+      "prepared": "art_source/paper_roster_action/shiro/prepared/super_impact.png",
+      "preparedSha256": "c1c2fff4efd5c77044ac21dfc52e776d57b4cb2312b0fd9da158db4892789689",
+      "offsetX": 27,
+      "offsetY": 56,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "super_prepare",
+      "key": "shiro",
+      "character": "シロ",
+      "pose": "super",
+      "phase": "prepare",
+      "label": "超必殺・ALMA二進数空間",
+      "version": 1,
+      "source": "art_source/paper_roster_action/shiro/generated/super_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、四脚・足先・頭と装甲の同じ実寸と位置を維持"
+      ],
+      "prompt": "Use case: precise-object-edit. このシロの全身イラストを編集。ALMAの空間攻撃を解放する最大の構えにする。四脚を深く曲げたこの低いポーズと部位の寸法を維持し、頭と視線を少し上へ向け、口を閉じて力を集める。耳・頬・喉・四脚の機械の小さいランプだけを琥珀から青白い水色へ変える。装甲の形は変えない。\n胴体と四脚4本、4つの足先、頭と耳2つ、尾1本の大きさ、元の全身倍率と位置を厳密に保持する。足先と装甲を拡大しない。白い毛、青い目、白銀と黒の装甲の細部を元と同じにする。人間の腕や手、余分な脚や尾を描かない。\n1189×1323の真の透過PNG、元の全身の余白を保持し切らない。薄い硬いクリーム白縁を全周。普通のアニメ塗り。ALMAの空間、波紋、電撃、霧、数字、光線、光彩は別効果で描くのでこの人物原画へ追加しない。背景・床・影・文字・粒・3D・ピクセルなし。一体一姿勢。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "d2bc9f1a47787af963ab7eb812e6ae018bb9b288242ef9710bbcd137c0f1c5d8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 29,
+          "top": 590,
+          "right": 1171,
+          "bottom": 1273
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/shiro/prepared/super_prepare.png",
+      "preparedSha256": "d92662c9a054559727d08f0b62bfa89d9a7f96929a10a93c681acb5af5febc6f",
+      "offsetX": 43,
+      "offsetY": 55,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "rework_r4_shiro_2"
+}

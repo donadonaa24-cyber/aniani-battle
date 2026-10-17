@@ -14,17 +14,17 @@
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "rework_r4_minato_2",
+    "tag": "rework_r4_shiro_2",
     "buildAll": "success",
     "edit": {
-      "total": 547,
-      "passed": 547,
+      "total": 551,
+      "passed": 551,
       "failed": 0,
       "skipped": 0
     },
     "play": {
-      "total": 69,
-      "passed": 69,
+      "total": 71,
+      "passed": 71,
       "failed": 0,
       "skipped": 0
     },
@@ -38,10 +38,10 @@
       "toma",
       "ren",
       "chizuru",
-      "minato"
+      "minato",
+      "shiro"
     ],
     "remainingDedicatedCharacters": [
-      "shiro",
       "yui",
       "king",
       "akatsuki",
@@ -49,8 +49,8 @@
     ],
     "reviewFolder": "イラスト確認/現在ゲームで採用中",
     "ensembleVersion": 5,
-    "screenshots": "docs/screenshots/rework_r4_minato_2/",
-    "screenshotCount": 220
+    "screenshots": "docs/screenshots/rework_r4_shiro_2/",
+    "screenshotCount": 292
   },
   "activeVerification": null,
   "attempts": [
@@ -555,31 +555,50 @@
       },
       "windowsBuild": "success",
       "reason": "最終版で全4工程に合格。左右と実入力、重力、瞬間移動1回、180tickの場を検証。"
+    },
+    {
+      "tag": "rework_r4_shiro_1",
+      "buildAll": "success",
+      "edit": {
+        "total": 551,
+        "passed": 550,
+        "failed": 1,
+        "skipped": 0
+      },
+      "play": {
+        "total": 71,
+        "passed": 71,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "reason": "新規Webコピー検査のUnity null比較1件を修正。実描画で二進数が枠より大きかったため文字サイズ.32→.08と枠内検査を追加し再検証。戦闘処理は不変。"
     }
   ],
   "currentArtwork": {
-    "character": "minato",
-    "requiredSlots": 12,
+    "character": "shiro",
+    "bodySlots": 12,
     "uniqueBodyImages": 10,
     "generatedEffects": 3,
     "gameConnected": true,
-    "verifiedTag": "rework_r4_minato_2",
-    "reviewFolder": "イラスト確認/現在ゲームで採用中/湊",
-    "nextCharacter": "shiro",
-    "generatedStatus": "current adoption is authoritative; explicit native-key reuse is recorded"
+    "verifiedTag": "rework_r4_shiro_2",
+    "reviewFolder": "イラスト確認/現在ゲームで採用中/シロ",
+    "nextCharacter": "yui",
+    "generatedStatus": "current adoption is authoritative; native-key reuse and anatomy review are recorded",
+    "requiredSlots": 12
   },
-  "nextTask": "docs/codex_tasks/PAPER_SHIRO_TWELVE_KEYS.md",
+  "nextTask": "docs/codex_tasks/PAPER_YUI_TWELVE_KEYS.md",
   "webGL": {
     "result": "success",
-    "bytes": 53484495,
-    "seconds": 142.86543,
+    "bytes": 57623482,
+    "seconds": 139.27505589999998,
     "files": 6,
-    "tag": "rework_r4_minato_web",
-    "nativeTag": "rework_r4_minato_2",
+    "tag": "rework_r4_shiro_web",
+    "nativeTag": "rework_r4_shiro_2",
     "browser": "Codex in-app Chromium",
     "runtime": "passed",
     "ensembleVersion": 5,
-    "screenshots": "docs/screenshots/rework_r4_minato_web/",
+    "screenshots": "docs/screenshots/rework_r4_shiro_web/",
     "screenshotCount": 8,
     "consoleErrors": 0,
     "physicalGamepad": "not_retested",

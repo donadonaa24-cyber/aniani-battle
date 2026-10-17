@@ -11,3 +11,4 @@ module.exports={ren:{name:'蓮',index:1,reference:'art_source/paper_roster_idle/
  super:['超必殺連続飛車突進','犬頭巾の少年の全身のまま、最大の指令の構え。両足を大きく開き、両ミトンを斜め上へ力強く掲げ、胸をひねって突進へ溜める。元気で鋭い決め顔。','人物から変身した飛車の将棋駒一体だけ。特殊と同じ蜂蜜色の平たい木の五角形、墨文字「飛車」、赤い縁と青緑の帯。同じ形と大きさを保ち、右へ強く突進する大胆な傾き。一体のみ、光・速度線・炎・別の駒は描かない。']
  }} };
 module.exports.minato=require('./paper_action_minato.cjs');
+module.exports.shiro=require('./paper_action_shiro.cjs');

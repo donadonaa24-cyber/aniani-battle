@@ -1,0 +1,19 @@
+{
+  "id": "down_impact",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "down",
+  "phase": "impact",
+  "label": "下攻撃・低い噛みつき",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/down_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、正しい四脚と足先・装甲・頭の実寸を維持"
+  ],
+  "prompt": "Use case: precise-object-edit. この低く構えたシロの画像の頭と口だけを編集して、低い噛みつきの決め絵にする。首を低いまま右へほんの少し伸ばし、鼻を前へ、大きく犬の口を開けて小さい牙を見せる。鼻と口は地面近くの低い位置、足先よりは上。頭と耳と足先のサイズは変えない。胴体、四脚4本とそれぞれの装甲と足先、尾1本と位置をそのまま厳密に維持。低姿勢を枠に合わせて拡大しない。1189×1323の真の透過キャンバス、全身の倍率を維持し、鼻先を右端から25px以上の内側へ。薄いクリーム白縁を全周、普通のアニメ塗り、白毛・青い目・白銀と黒の機械装甲・琥珀のランプ。背景・床・影・効果・光・文字・3D・ピクセルなし。四足動物一体。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

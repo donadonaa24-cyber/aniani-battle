@@ -1,0 +1,21 @@
+{
+  "id": "normal1_impact",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "normal1",
+  "phase": "impact",
+  "label": "通常1・2段共通噛みつき",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/normal1_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/shiro/generated/normal1_prepare_v2.png",
+    "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、正しい四脚・足先と頭の実寸を維持した予備",
+    "本人の容姿と装甲の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1のシロを、前方へ噛みつく決めポーズに編集する。犬の口を大きく開けて上顎と下顎を離し、小さな牙を見せる。首と胸を画面右へ伸ばし、頭が右前方へ出る噛みつき。首を伸ばしても頭と鼻と耳を拡大しない。胸と肩を前へ、後脚の関節を曲げて蹴り出し、前脚2本を前へ踏み出す。四脚が追える斜め横。尾は後ろへ長く広げず、左側の脇へ軽く曲げて収める。\n四脚4本、犬の頭1つ、耳2つ、尾1本。画像1と同じ足先、脚の装甲、頭髪と耳の大きさ。各脚は肩か骨盤→関節→足首→足先につなぐ。1189×1323の透明キャンバスで、右側の鼻先と4つの足先に最低20pxの余白。人物全体を縮小して収めない。身体を低くして上に余白を残す。普通のアニメ塗り、白い毛、青い目、白銀と黒の装甲、琥珀ランプ、薄いクリーム白縁を一周。背景・床・影・相手・効果線・光・文字・人間の手・二足歩行・余分な脚・3D・ピクセルなし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

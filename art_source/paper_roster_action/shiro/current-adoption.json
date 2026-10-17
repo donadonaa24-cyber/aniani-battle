@@ -1,12 +1,97 @@
 {
   "key": "shiro",
   "name": "シロ",
-  "unityVerifiedTag": "rework_r4_minato_2",
+  "unityVerifiedTag": "rework_r4_shiro_2",
   "motionAsset": "AniBato/Assets/_Project/Data/shiroCorePaperMotion.asset",
-  "completeAttackArtwork": false,
-  "bodyFrames": 0,
-  "uniqueBodyImages": 0,
-  "entries": [],
+  "completeAttackArtwork": true,
+  "bodyFrames": 12,
+  "uniqueBodyImages": 10,
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_normal1_prepare.png",
+      "sha256": "2dffd7b6a2ff40c22aabc8ec4a289773caf25566513de4fb442a49dced87c16f",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/通常1・2段共通_予備.png"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_normal1_impact.png",
+      "sha256": "6f58f7cce79666f9f2dd9df8c6f376a9754706fb6c0bb19a19e9a6e51fe329c2",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/通常1・2段共通_当てる.png"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_normal3_prepare.png",
+      "sha256": "47aa9417624b312e7f994119731563f11ffc506df4faa4a7b3fb169f8d524c2c",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/通常3段_予備.png"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_normal3_impact.png",
+      "sha256": "3968b5d6038d88bc867e51095d8fa03ba92c78c6461cb8f5ddab017cde45eabf",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/通常3段_当てる.png"
+    },
+    {
+      "id": "up_prepare",
+      "title": "上攻撃_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_normal3_prepare.png",
+      "sha256": "47aa9417624b312e7f994119731563f11ffc506df4faa4a7b3fb169f8d524c2c",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/上攻撃_予備.png"
+    },
+    {
+      "id": "up_impact",
+      "title": "上攻撃_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_up_impact.png",
+      "sha256": "d1ffb81071412e61bfbc80f0bf16c7f7a70eb061c8effa6f91a899d1ca3ed133",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/上攻撃_当てる.png"
+    },
+    {
+      "id": "down_single",
+      "title": "下攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_down_impact.png",
+      "sha256": "23a2af7b3106b45d5fe89835c95ad8ae5ef2cf7f9300a5e782f61fa648b1f9ca",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/下攻撃_1枚採用.png"
+    },
+    {
+      "id": "air_single",
+      "title": "空中攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_air_impact.png",
+      "sha256": "1677a7645cf66fafb5135ed680b44a463dac60ae9ba3bda3987894e9e1d6d820",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/空中攻撃_1枚採用.png"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_special_prepare.png",
+      "sha256": "903796de010cd59f2d37b6f5a5b80e20dceb25dd7cad9cb5d44f08b9cc8c7695",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/特殊技_予備.png"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_special_impact.png",
+      "sha256": "c1c2fff4efd5c77044ac21dfc52e776d57b4cb2312b0fd9da158db4892789689",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/特殊技_当てる.png"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_super_prepare.png",
+      "sha256": "d92662c9a054559727d08f0b62bfa89d9a7f96929a10a93c681acb5af5febc6f",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/超必殺技_予備.png"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/shiro_special_impact.png",
+      "sha256": "c1c2fff4efd5c77044ac21dfc52e776d57b4cb2312b0fd9da158db4892789689",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/シロ/超必殺技_当てる.png"
+    }
+  ],
   "extraVariants": "追加指示後",
   "artApproved": false
 }

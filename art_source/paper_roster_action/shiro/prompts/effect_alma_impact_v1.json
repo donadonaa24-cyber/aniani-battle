@@ -1,0 +1,19 @@
+{
+  "id": "alma_impact",
+  "look": "Alma",
+  "kind": "ability",
+  "state": "Ultimate",
+  "phase": "impact",
+  "worldHeight": 5,
+  "duringStartup": true,
+  "duringRecovery": true,
+  "prompt": "オリジナル2Dペープサート対戦ゲームのALMAの攻撃エフェクト1個。本作独自の抽象的なAI攻撃の姿。画面中央の小さな白銀と濃紺の幾何学的な機械の核から、左右へシアン・青・白の大きい角ばった紙の衝撃波が広がる。核は顔や目のない六角形、周囲に分割された青い紙の輪3層、横へ短い矩形パネルや鋭い紙片が飛び出す。全体の横:縦は約1.8:1。前後の人物を隠さないよう輪の間と中央の周りは透明な抜きを大きく取り、真っ黒な全面の塗りつぶしを避ける。大きい攻撃を正面から見た平たい切り絵の波。1536×1024の真の透明PNG、全体を60px以上余白で切らずに収める。普通のアニメセル塗りと硬いクリーム白縁、不透明な紙片の形のみ。人物・犬・動物・顔・人型AI・目・背景・床・影・数字・文字・粒・光彩・ぼかし・写実・3D・ピクセル・複数案なし。",
+  "key": "shiro",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/effect_alma_impact_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "worldWidth": 9
+}

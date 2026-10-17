@@ -1,0 +1,21 @@
+{
+  "id": "normal3_prepare",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "normal3",
+  "phase": "prepare",
+  "label": "通常3段大きな頭突き",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png",
+  "references": [
+    "art_source/paper_roster_action/shiro/generated/normal1_prepare_v2.png",
+    "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、全身と部位の同じ寸法を維持",
+    "本人の装備と容姿の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1のシロを、大きい頭突きの直前の最大の溜めへ編集。四脚をさらに深く曲げて胸を低く落とし、肩と首を画面左へ強く引く。頭を下げ、顎を胸へ引き、額を右前方へ向ける。口を閉じる。噛みつきではなく全身で頭から飛び込む直前。尾を左の脇へ曲げる。\n頭、耳、犬の鼻、四脚の装甲、4つの足先は画像1と同じ実寸。低姿勢のため頭と足を拡大せず、上に大きい透明余白を残す。肩と骨盤からそれぞれ2本ずつの脚、合計4本だけを自然につなぐ。1189×1323の透過キャンバス、全身を同じ倍率で、耳と尾と4つの足先は20px以上余白で切らない。白い毛、青い目、白銀と黒の機械装備、琥珀色の小さいランプを厳密に維持。普通のアニメ塗り、薄いクリーム白縁を全周。背景・床・影・文字・数字・相手・効果線・光・3D・ピクセルなし。四足動物一体。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

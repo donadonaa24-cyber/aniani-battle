@@ -1,0 +1,21 @@
+{
+  "id": "normal3_impact",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "normal3",
+  "phase": "impact",
+  "label": "通常3段大きな頭突き",
+  "version": 2,
+  "source": "art_source/paper_roster_action/shiro/generated/normal3_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/shiro/generated/normal3_impact_v1.png",
+    "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、余分な第五の足先を取り除く",
+    "正しい四脚の構造と装備の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の頭突きポーズを維持し、脚を正しく四本に修正する。現状、前足の大きい足先の左後ろ、座標およそx730 y1030に小さい余分な第五の白い足先がある。この小さい足先と短い余計な腕だけを取り除く。\n残す足先は4つだけ：左端x90 y920の後足、左の奥x290 y930の後足、手前x830 y1090の大きい前足、右側x960 y1060の前足。各前足は肩から一本ずつ、各後足は骨盤から一本ずつつながるようにする。新たな足は足さない。4本の足先のサイズを変更しない。画像2は元の正しい四足と装甲の基準。\n頭・顔・耳・閉じた口・胴体・尾の一本と大きさ・機械装甲・ランプ・ポーズ・全身倍率は画像1から変えない。外周に浮いた小さい白いゴミの粒も取り除く。1189×1323の真の透過PNG、薄い白縁を全周。普通のアニメ塗り。背景・床・影・光・文字なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

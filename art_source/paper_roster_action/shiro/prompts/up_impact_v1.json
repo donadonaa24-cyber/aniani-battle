@@ -1,0 +1,21 @@
+{
+  "id": "up_impact",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "up",
+  "phase": "impact",
+  "label": "上攻撃・上への噛みつき",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/up_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/shiro_idle_v1.png",
+    "art_source/paper_roster_action/shiro/generated/normal3_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、頭と耳と四つの足先・装甲の大きさを維持",
+    "低い共通予備から上へ立ち上がる動作の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1のシロを、地上から上へ噛みつく決めポーズへ編集。後脚2本の足先を地面に残し、後脚の膝と腰を伸ばして胸と首を上へ起こす。頭を画面右上へ向け、犬の口を大きく上向きに開き、斜め上へ噛みつく。前脚2本は肩から肘を曲げ、犬の足先をそれぞれ胸の横へ上げる。前足を手や人間の腕にしない。\n四脚は合計4本だけ、後足2つが接地、前足2つが胸の横で浮く。犬の頭1つ耳2つ尾1本、白銀と黒の装甲、琥珀の小さいランプ、白い毛と青い目を保持。頭と耳と鼻と各足先の大きさは画像1と同じ。胴体を起こすが二足歩行の人間にはしない。1189×1323の透明キャンバス、上げた鼻と耳を20px以上余白で収め、後足も切らない。前足と後足の装甲を追えるようにつなぐ。普通のアニメ塗りと薄いクリーム白縁、背景・床・影・相手・文字・効果線・光・3D・ピクセルなし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

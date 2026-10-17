@@ -55,18 +55,18 @@ for(const [key,asset,name] of roster){
  const report={key,name,unityVerifiedTag:tag,motionAsset:motionPath,completeAttackArtwork:complete,bodyFrames:selected.length,
   uniqueBodyImages:new Set(selected.map(e=>e.sha256)).size,entries:selected,extraVariants:'追加指示後',artApproved:false};
  write(folder+'/採用一覧.json',report);write(`art_source/paper_roster_action/${key}/current-adoption.json`,report);entries.push(report);
- fs.writeFileSync(folder+'/必ず読んでください.txt',complete?`現在のゲーム用攻撃12枠・${report.uniqueBodyImages}ユニーク原画です。通常1・2段共通2枚／3段2枚／上2枚／下1枚／空中1枚／特殊2枚／超必殺2枚。湊は上予備と通常3予備、特殊決めと通常1決めを共有します。${tag}で実Unity4工程合格。絵の最終承認は別。原画の候補や修正前はこのフォルダに混ぜません。\n`:'専用の攻撃原画は未完成です。下・空中は1枚表示へ設定済みですが、現在は本人の既存紙イラストを仮表示しています。待機や基本5姿勢の完成を全攻撃の完成とは扱いません。\n');
+ fs.writeFileSync(folder+'/必ず読んでください.txt',complete?`現在のゲーム用攻撃12枠・${report.uniqueBodyImages}ユニーク原画です。通常1・2段共通2枚／3段2枚／上2枚／下1枚／空中1枚／特殊2枚／超必殺2枚。適切な原画の共有は採用一覧のSHAと原画manifestのreuseOfに記録します。${tag}で実Unity4工程合格。絵の最終承認は別。原画の候補や修正前はこのフォルダに混ぜません。\n`:'専用の攻撃原画は未完成です。下・空中は1枚表示へ設定済みですが、現在は本人の既存紙イラストを仮表示しています。待機や基本5姿勢の完成を全攻撃の完成とは扱いません。\n');
 }
 const shots=[];
 const completed=entries.filter(e=>e.completeAttackArtwork).map(e=>e.key),remaining=entries.filter(e=>!e.completeAttackArtwork).map(e=>e.key);
-for(const sub of ['rework_r4_chizuru','rework_r4_ren','rework_fourkeys','rework_r5',...(completed.includes('minato')?['rework_r4_minato']:[])]){
+for(const sub of ['rework_r4_chizuru','rework_r4_ren','rework_fourkeys','rework_r5',...['minato','shiro'].filter(key=>completed.includes(key)).map(key=>'rework_r4_'+key)]){
  const from=`TestResults/${tag}_screenshots/${sub}`;assert(fs.existsSync(from),'Missing real render captures '+sub);
  for(const name of fs.readdirSync(from).filter(n=>n.endsWith('.png'))){const to=`docs/screenshots/${tag}/${sub}/${name}`;copy(from+'/'+name,to);shots.push(to);}
 }
 const ensembleSelection=read('art_source/title_paper/selected.json');
 assert(ensembleSelection.version===5,'Corrected five-digit ensemble required');
 copy(ensembleSelection.source,base+'/集合絵_採用中.png');
-fs.writeFileSync(base+'/ここから確認してください.txt',`このフォルダは${tag}で確認した現在の採用画像です。人物名ごとの日本語動作名で指摘してください。専用攻撃完成：${entries.filter(e=>e.completeAttackArtwork).map(e=>e.name).join('・')}。未完成：${entries.filter(e=>!e.completeAttackArtwork).map(e=>e.name).join('・')}。各12枠、湊は10ユニーク原画。古い別フォルダには旧確認用の画像が残ります。こちらの採用一覧.jsonが現在版です。空中・下は1枚、通常は予備／当てる2枚。他動作の追加差分は追加指示後。\n`);
+fs.writeFileSync(base+'/ここから確認してください.txt',`このフォルダは${tag}で確認した現在の採用画像です。人物名ごとの日本語動作名で指摘してください。専用攻撃完成：${entries.filter(e=>e.completeAttackArtwork).map(e=>e.name).join('・')}。未完成：${entries.filter(e=>!e.completeAttackArtwork).map(e=>e.name).join('・')}。各12枠、ユニーク原画数は各採用一覧に記載。古い別フォルダには旧確認用の画像が残ります。こちらの採用一覧.jsonが現在版です。空中・下は1枚、通常は予備／当てる2枚。他動作の追加差分は追加指示後。\n`);
 fs.writeFileSync('イラスト確認/最初に読んでください.txt','現在ゲームで使用している画像は「現在ゲームで採用中」フォルダを見てください。そこから人物名→動作名で選べます。ほかの確認フォルダは以前の採用・候補の履歴を含みます。最新の採用一覧.jsonと区別してください。カバン版は指定により保護しています。\n');
 const selected=read('art_source/title_paper/selected.json');Object.assign(selected,{gameConnected:true,unityVerifiedTag:tag});write('art_source/title_paper/selected.json',selected);
 const hand='art_source/paper_roster_action/chizuru/normal3_hand_fix/selected.json',h=read(hand);Object.assign(h,{gameConnected:true,unityVerifiedTag:tag});write(hand,h);

@@ -1,0 +1,19 @@
+{
+  "id": "special_prepare",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "special",
+  "phase": "prepare",
+  "label": "特殊・ALMA接続とEMP",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/special_prepare_v1.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、四脚・足先・頭と装甲の同じ実寸と位置を維持"
+  ],
+  "prompt": "Use case: precise-object-edit. このシロの全身イラストを編集。ALMAにつながる特殊技の予備にする。頭と首を少し後ろへ引き、青い目を集中した鋭い表情へ。口を閉じる。耳・頬・喉・四脚の機械の小さいランプだけを琥珀から水色へ変える。機械の装甲の形そのものは変更しない。\n胴体と四脚4本、4つの足先、頭と耳2つ、尾1本の大きさ、元の全身倍率と位置を厳密に保持する。足先と装甲を拡大しない。白い毛、青い目、白銀と黒の装甲の細部を元と同じにする。人間の腕や手、余分な脚や尾を描かない。\n1189×1323の真の透過PNG、元の全身の余白を保持し切らない。薄い硬いクリーム白縁を全周。普通のアニメ塗り。ALMAの空間、波紋、電撃、霧、数字、光線、光彩は別効果で描くのでこの人物原画へ追加しない。背景・床・影・文字・粒・3D・ピクセルなし。一体一姿勢。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

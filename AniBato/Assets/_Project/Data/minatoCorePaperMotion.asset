@@ -440,6 +440,11 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: bd9715f5cfa2aa845895fc4f54177d4d, type: 3}
     Scale: 1.2547916
     Offset: {x: 0, y: 0}
+    AnticipationSprite: {fileID: 0}
+    AnticipationScale: 1
+    AnticipationText: 
+    AlternateAnticipationText: 
+    AnticipationTextSize: 0.08
     DuringStartup: 1
     DuringRecovery: 0
     StepTicks: 6
@@ -449,6 +454,11 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 2ca31a17b46f0b248a161dd8d684654a, type: 3}
     Scale: 1.0370306
     Offset: {x: 0, y: 0}
+    AnticipationSprite: {fileID: 0}
+    AnticipationScale: 1
+    AnticipationText: 
+    AlternateAnticipationText: 
+    AnticipationTextSize: 0.08
     DuringStartup: 0
     DuringRecovery: 1
     StepTicks: 6

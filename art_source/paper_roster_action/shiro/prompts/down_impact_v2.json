@@ -1,0 +1,19 @@
+{
+  "id": "down_impact",
+  "key": "shiro",
+  "character": "シロ",
+  "pose": "down",
+  "phase": "impact",
+  "label": "下攻撃・低い噛みつき",
+  "version": 2,
+  "source": "art_source/paper_roster_action/shiro/generated/down_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/shiro/generated/down_impact_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、低い噛みつきを保ち右端の切断だけを直す"
+  ],
+  "prompt": "Use case: precise-object-edit. この低い噛みつきのシロの画像を修正する。右端で切れている頭を直すため、頭と首のまとまりを70pxほど画面左へ引き戻して、鼻先と右耳と口がキャンバスの右端から40px以上内側へ完全に入るようにする。頭や耳や口を縮小しない。同じ大きさのまま首を少し折り曲げて左へ戻す。口は大きく開けたまま低い位置。右端に近い奥の前脚だけも肘を少し内側へ曲げ、同じ大きさの足先を左へ40px移し、右に十分な透明余白を作る。\nほかの胴体・後脚2本・手前の前脚・尾の位置とサイズ、装甲と色、全体の倍率は維持。四脚4本、頭1つ耳2つ尾1本。拡大縮小せず、姿勢の小さい修正だけで枠内へ入れる。1189×1323の真の透過PNG、薄いクリーム白縁を途切れず一周。白毛、青い目、琥珀ランプ、普通のアニメ塗り。背景・床・影・光・効果・文字は描かない。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

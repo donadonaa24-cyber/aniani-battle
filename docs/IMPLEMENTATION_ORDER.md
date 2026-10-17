@@ -1,3 +1,5 @@
+2026-10-17現在：シロ12枠／10人物原画とEMP・ALMA効果3種を接続。rework_r4_shiro_2全4合格（Edit551／Play71）、292実描画。WebGL rework_r4_shiro_webも57.6MB・実ブラウザ確認・8PNG・console error 0。集合絵v5の透真5指と暁左手を維持。次はPAPER_YUI_TWELVE_KEYS。空中・下各1枚、通常共有4枚、追加差分は追加指示後。詳細はRESUME冒頭。
+
 2026-10-17現在：湊の12枠／10人物原画と効果3種を接続。rework_r4_minato_2全4合格（Edit547／Play69）、220実描画。採用はイラスト確認/現在ゲームで採用中/湊/。WebGLもrework_r4_minato_webで53.5MBの実ビルドと内蔵ブラウザ確認、8PNG、console error 0。次はPAPER_SHIRO_TWELVE_KEYS。空中・下各1枚、通常共有4枚、追加差分は追加指示後。詳細はRESUME冒頭。
 
 2026-10-17現在：paper_single_title_3で全4合格（Edit543／Play68）。空中・下は各1枚、通常は共有4原画。千鶴の握りと集合絵v5を反映。paper_single_title_webも49.4MBで実ビルド・内蔵ブラウザ確認済み。次はPAPER_MINATO_TWELVE_KEYS。追加差分は追加指示後。

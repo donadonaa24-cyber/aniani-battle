@@ -1,0 +1,22 @@
+{
+  "id": "alma_prepare",
+  "look": "Alma",
+  "kind": "ability",
+  "state": "Ultimate",
+  "phase": "prepare",
+  "worldHeight": 5,
+  "duringStartup": true,
+  "duringRecovery": true,
+  "anticipationText": "01010101 10101010 01010101\n10101010 01010101 10101010\n01010101 10101010 01010101\n10101010 01010101 10101010",
+  "alternateAnticipationText": "10101010 01010101 10101010\n01010101 10101010 01010101\n10101010 01010101 10101010\n01010101 10101010 01010101",
+  "anticipationTextSize": 0.08,
+  "prompt": "オリジナル2D対戦ゲームの管理AIに接続する空間の切り絵エフェクト1個。横長のデジタルな額縁のような形。横:縦が約1.8:1。青とシアンと白の細い直線と角ばった紙パネルで上辺、下辺、四隅を囲む。枠内に小さい矩形の紙片を数個だけ、中央の広い80パーセントは完全透明の空洞にし、後で文字とキャラを重ねられる。数字や記号や文字はこの絵に描かない。3枚の薄い透明な画面の額縁を少しずらして貼り重ねたような平面的な工作舞台の効果。普通のアニメセル塗り、硬い輪郭と細いクリーム白縁。1536×1024の透明キャンバス、全体に60px以上余白。人物・犬・顔・眼・人型AI・球・ロボット・背景・床・影・光彩・ぼかし・写真・3D・ピクセル・複数案なし。透明な部分はalpha0で、枠の紙片だけを不透明に描く。",
+  "key": "shiro",
+  "version": 1,
+  "source": "art_source/paper_roster_action/shiro/generated/effect_alma_prepare_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "worldWidth": 9
+}
