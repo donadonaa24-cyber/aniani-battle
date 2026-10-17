@@ -1,0 +1,21 @@
+{
+  "id": "down_impact",
+  "key": "king",
+  "character": "黒獅子王",
+  "pose": "down",
+  "phase": "impact",
+  "label": "地上下の低い爪",
+  "version": 2,
+  "source": "art_source/paper_roster_action/king/generated/down_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/king/generated/down_impact_v1.png",
+    "art_source/paper_roster_action/king/generated/normal1_impact_v3.png"
+  ],
+  "referenceRoles": [
+    "編集対象、右前腕と右手甲以外は維持",
+    "同じ本人の採用候補の手甲の実寸の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の低い爪攻撃を修正する。右前腕と右の手甲だけを修正し、顔・頭巾・王冠・身体・左の後ろの腕・両脚・ブーツ・マント・尾・透明キャンバスは同じまま。新しい手や腕を増やさない。\n右手甲が今は巨大で地面より下へ出ているので、画像2の同じ本人の右手甲の実寸と投影へ戻す。手甲の幅は約190〜210px、今の約300pxの巨大な手から基準に戻す。手甲をカメラへ突き出さず、爪を画面右へ向ける側面寄りの握り。甲の金の板を爪にしない。右の肩→肘→手首→手甲を一本のまま、肘をもっと曲げ右手甲を約120px上げる。手首を不自然に折らず、爪先と手甲の最下部はブーツ底より少なくとも100px上。低い攻撃のまま、右手甲が左の接地ブーツより下にならないようにする。\n右手は本人右の甲側、4本の指と対向親指の5本。爪は自然な指先にだけ付く。両ブーツは同じ2個、各3つの金爪のまま一切変更しない。頭や靴や人物全体を拡大縮小しない。1189×1323の真の透明PNG、薄い硬い白縁、背景・床・影・文字・相手・効果なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

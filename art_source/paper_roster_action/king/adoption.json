@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "key": "king",
+  "tag": "rework_r4_king_2",
+  "bodyFrames": 12,
+  "uniqueBodyImages": 9,
+  "effectBindings": 7,
+  "uniqueEffectImages": 5,
+  "artApproved": false,
+  "buildAll": "success",
+  "edit": {
+    "total": 563,
+    "passed": 563,
+    "failed": 0,
+    "skipped": 0
+  },
+  "play": {
+    "total": 75,
+    "passed": 75,
+    "failed": 0,
+    "skipped": 0
+  },
+  "windowsBuild": "success",
+  "screenshots": "docs/screenshots/rework_r4_king_2/rework_r4_king/",
+  "screenshotCount": 62,
+  "body": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_normal1_prepare.png",
+      "sha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/通常1・2段共通_予備.png"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_normal1_impact.png",
+      "sha256": "5bbc473a03d0308a993ab6fe937d07e31e0ee5611510506ca27bb888ae779690",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/通常1・2段共通_当てる.png"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_normal3_prepare.png",
+      "sha256": "b4c71b5f85fe15f31b369405587e64948787b275e91c4e730938b2499ed4f773",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/通常3段_予備.png"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_normal3_impact.png",
+      "sha256": "af6f57d77621ae5e598f21e5874fefa2f4d8d45786299b97e6b9952777b7fe6e",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/通常3段_当てる.png"
+    },
+    {
+      "id": "up_prepare",
+      "title": "上攻撃_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_normal1_prepare.png",
+      "sha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/上攻撃_予備.png"
+    },
+    {
+      "id": "up_impact",
+      "title": "上攻撃_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_up_impact.png",
+      "sha256": "d8a94aabfcb648306980c40af64749e83ee4f483216fd780c80415cb286aaa4c",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/上攻撃_当てる.png"
+    },
+    {
+      "id": "down_single",
+      "title": "下攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_down_impact.png",
+      "sha256": "55e19060dbaa2cbf3f496d17ba5f5772548347a19322c2cda44c289ddbb641b7",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/下攻撃_1枚採用.png"
+    },
+    {
+      "id": "air_single",
+      "title": "空中攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_air_impact.png",
+      "sha256": "e6f38659daad86d6240cb9752b2db8b2cb10cb1861e537208582ba4a7dd970d9",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/空中攻撃_1枚採用.png"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_normal1_prepare.png",
+      "sha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/特殊技_予備.png"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_special_impact.png",
+      "sha256": "f416a309696afb17586e785a373b2897779587545b3263571f365fecbd336a47",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/特殊技_当てる.png"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_super_prepare.png",
+      "sha256": "2553714b267af5b6c7db8266c79a283861a052149ec9fd40460065b3504e2f7d",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/超必殺技_予備.png"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_special_impact.png",
+      "sha256": "f416a309696afb17586e785a373b2897779587545b3263571f365fecbd336a47",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/超必殺技_当てる.png"
+    }
+  ],
+  "effectEntries": [
+    {
+      "id": "claw",
+      "version": 1,
+      "title": "通常1・2段_邪悪な爪の効果",
+      "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_effect_claw.png",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/通常1・2段_邪悪な爪の効果.png",
+      "reuseOf": null,
+      "variantIndex": null
+    },
+    {
+      "id": "roar",
+      "version": 3,
+      "title": "通常3段_咆哮効果",
+      "source": "art_source/paper_roster_action/king/generated/effect_roar_v3.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_effect_roar.png",
+      "sha256": "5247770d2ac2a7feb7534c4187a78f654b48e4780292fd20230f326873fd9ebe",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/通常3段_咆哮効果.png",
+      "reuseOf": null,
+      "variantIndex": null
+    },
+    {
+      "id": "leila",
+      "name": "豹妬レイラ",
+      "version": 1,
+      "title": "召喚部下1_豹妬レイラ",
+      "source": "art_source/paper_roster_action/king/generated/effect_leila_v1.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_effect_leila.png",
+      "sha256": "0458a9a3aa9f3c70fea00aac28c6b432837e7b8ebfb3b254d8abe2ccdb7e7c3e",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/召喚部下1_豹妬レイラ.png",
+      "reuseOf": null,
+      "variantIndex": 0
+    },
+    {
+      "id": "shion",
+      "name": "銀狼シオン",
+      "version": 3,
+      "title": "召喚部下2_銀狼シオン",
+      "source": "art_source/paper_roster_action/king/generated/effect_shion_v3.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_effect_shion.png",
+      "sha256": "ae8b7ca86ea495dbf15639b2dd48a09a2f9dba6cc85c8d3c38faaeda082485cf",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/召喚部下2_銀狼シオン.png",
+      "reuseOf": null,
+      "variantIndex": 1
+    },
+    {
+      "id": "noa",
+      "name": "鹿角ノア",
+      "version": 3,
+      "title": "召喚部下3_鹿角ノア",
+      "source": "art_source/paper_roster_action/king/generated/effect_noa_v3.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_effect_noa.png",
+      "sha256": "30334d0a3429bc56dc3b264f4c4c049e26c6592f4321ece52977652f43f849ad",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/召喚部下3_鹿角ノア.png",
+      "reuseOf": null,
+      "variantIndex": 2
+    },
+    {
+      "id": "claw_second",
+      "version": 1,
+      "title": "通常1・2段_邪悪な爪の効果",
+      "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_effect_claw.png",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/通常1・2段_邪悪な爪の効果.png",
+      "reuseOf": {
+        "id": "claw",
+        "version": 1,
+        "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854"
+      },
+      "variantIndex": null
+    },
+    {
+      "id": "claw_back",
+      "version": 1,
+      "title": "通常1・2段_邪悪な爪の効果",
+      "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/king_effect_claw.png",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/黒獅子王/通常1・2段_邪悪な爪の効果.png",
+      "reuseOf": {
+        "id": "claw",
+        "version": 1,
+        "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854"
+      },
+      "variantIndex": null
+    }
+  ],
+  "supportSource": "docs/art_reference/king_supports/sources.json",
+  "supportOrder": [
+    "豹妬レイラ",
+    "銀狼シオン",
+    "鹿角ノア"
+  ],
+  "remaining": "追加差分は追加指示後。残2人は暁→龍太。"
+}

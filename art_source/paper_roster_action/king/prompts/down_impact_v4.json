@@ -1,0 +1,21 @@
+{
+  "id": "down_impact",
+  "key": "king",
+  "character": "黒獅子王",
+  "pose": "down",
+  "phase": "impact",
+  "label": "地上下の低い爪",
+  "version": 4,
+  "source": "art_source/paper_roster_action/king/generated/down_impact_v4.png",
+  "references": [
+    "art_source/paper_roster_action/king/generated/down_impact_v3.png",
+    "art_source/paper_roster_action/king/review/adopted_boots_reference.png"
+  ],
+  "referenceRoles": [
+    "編集対象。右下のブーツだけ修正",
+    "採用待機から切り出したブーツ部分の参照。左右とも金爪3つ、部位実寸の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の全身で、画面右下の接地ブーツだけを修正。画像2は採用待機から切り出した本人の正しいブーツで、どちらも別々の金爪が3つある。\n画像1の右下のブーツの金爪は今2つしか見えない。画像2の右側のブーツを参考に、手前から奥へ3つの金爪が並び、3つが別々に見える黒金の爪ブーツへ描き直す。大きい2つの爪ではなく、同じ大きさの金爪3つ。3つ目をブーツや裏側に隠さず、先端3個を見せる。ブーツの甲の装甲・赤い菱形の宝石・足首からのつながりは画像2の意匠と同じ。\nブーツを巨大化しない。画像2の右側のブーツと同じ約250pxの横幅。左下のブーツと同じ接地の高さ。右下以外の顔・頭巾・冠・手甲・腕・身体・左ブーツ・マント・尾・ポーズ・画素の倍率・薄い白縁・1189×1323の透明キャンバスは完全に維持。背景・影・文字・相手・効果を足さない。全身一体だけを出力。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

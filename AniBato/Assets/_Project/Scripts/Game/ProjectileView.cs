@@ -9,11 +9,13 @@ namespace AniBato.Game
         [SerializeField] private BattleRunner runner;
         [SerializeField] private PresentationSettings presentation;
         private readonly List<SpriteRenderer> sprites = new List<SpriteRenderer>();
+        private readonly ProjectileArtworkSlots artworkSlots=new ProjectileArtworkSlots();
         public void Configure(BattleRunner value, PresentationSettings settings) { runner = value; presentation = settings; }
         private void LateUpdate()
         {
             if (runner.Simulation == null) return;
             var projectiles = runner.Simulation.Projectiles;
+            artworkSlots.Refresh(projectiles);
             while (sprites.Count < projectiles.Count)
                 sprites.Add(ProceduralSprites.Create(transform, "Projectile", Vector2.one, presentation.ProjectileTint, true, 7));
             for (int i = 0; i < sprites.Count; i++)
@@ -52,12 +54,13 @@ namespace AniBato.Game
                 sprites[i].transform.localScale = sprite ? Vector3.one * (normalEffects != null ? normalEffects.NormalProjectileScale : effects == null ? presentation.RiceBallScale : effects.ProjectileScale) : new Vector3(projectile.Hitbox.Size.X, projectile.Hitbox.Size.Y, 1);
                 if (art != null)
                 {
-                    sprites[i].sprite = art.Sprite; sprites[i].color = Color.white;
+                    int variant=artworkSlots.Index(projectile);
+                    sprites[i].sprite = art.SpriteFor(variant); sprites[i].color = Color.white;
                     sprites[i].sortingOrder = art.SortingOrder;
                     sprites[i].flipX = art.FlipWithFacing && projectile.Facing < 0;
                     float angle = art.RotateWithVelocity ? Mathf.Atan2(projectile.Velocity.Y, projectile.Velocity.X) * Mathf.Rad2Deg : 0;
                     sprites[i].transform.localRotation = Quaternion.Euler(0, 0, angle + art.RotationOffsetDegrees);
-                    sprites[i].transform.localScale = Vector3.one * art.Scale;
+                    sprites[i].transform.localScale = Vector3.one * art.ScaleFor(projectile.Hitbox.Size,variant);
                 }
             }
         }

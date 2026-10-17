@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "spec": "docs/SPEC_REVISION_20261016.md",
   "current": "R4_four_key_actions",
   "baseCommit": "a169ee3",
@@ -14,17 +14,17 @@
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "rework_r4_yui_2",
+    "tag": "rework_r4_king_2",
     "buildAll": "success",
     "edit": {
-      "total": 557,
-      "passed": 557,
+      "total": 563,
+      "passed": 563,
       "failed": 0,
       "skipped": 0
     },
     "play": {
-      "total": 73,
-      "passed": 73,
+      "total": 75,
+      "passed": 75,
       "failed": 0,
       "skipped": 0
     },
@@ -40,17 +40,17 @@
       "chizuru",
       "minato",
       "shiro",
-      "yui"
+      "yui",
+      "king"
     ],
     "remainingDedicatedCharacters": [
-      "king",
       "akatsuki",
       "ryuta"
     ],
     "reviewFolder": "イラスト確認/現在ゲームで採用中",
     "ensembleVersion": 5,
-    "screenshots": "docs/screenshots/rework_r4_yui_2/",
-    "screenshotCount": 384
+    "screenshots": "docs/screenshots/rework_r4_king_2/",
+    "screenshotCount": 464
   },
   "activeVerification": null,
   "attempts": [
@@ -573,20 +573,52 @@
       },
       "windowsBuild": "success",
       "reason": "新規Webコピー検査のUnity null比較1件を修正。実描画で二進数が枠より大きかったため文字サイズ.32→.08と枠内検査を追加し再検証。戦闘処理は不変。"
+    },
+    {
+      "tag": "rework_r4_king_1",
+      "buildAll": "success",
+      "edit": {
+        "total": 561,
+        "passed": 561,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 75,
+        "passed": 75,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "note": "全4合格。ただし撮影で3体の位置重なりを発見し、最終採用は2。"
+    },
+    {
+      "tag": "rework_r4_king_2",
+      "buildAll": "success",
+      "edit": {
+        "total": 563,
+        "passed": 563,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 75,
+        "passed": 75,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "note": "位置の回帰2件と実描画間隔検査を追加して全4合格。"
     }
   ],
   "currentArtwork": {
-    "character": "yui",
-    "requiredSlots": 12,
-    "generatedSlots": 12,
-    "uniqueBodyImages": 9,
-    "effectBindings": 4,
-    "uniqueEffectImages": 2,
-    "gameConnected": true,
-    "generatedStatus": "native_and_browser_verified_final_art_approval_separate",
-    "nextCharacter": "king"
+    "character": "akatsuki",
+    "status": "next_not_started",
+    "previousCharacter": "king",
+    "previousAdoption": "art_source/paper_roster_action/king/adoption.json",
+    "nextCharacter": "ryuta"
   },
-  "nextTask": "docs/codex_tasks/PAPER_KING_TWELVE_KEYS.md",
+  "nextTask": "docs/codex_tasks/PAPER_AKATSUKI_TWELVE_KEYS.md",
   "webGL": {
     "result": "success",
     "bytes": 78922689,
@@ -665,5 +697,19 @@
       ]
     ],
     "allOtherPropsComplete": false
+  },
+  "latestWebVerification": {
+    "nativeTag": "rework_r4_king_2",
+    "tag": "rework_r4_king_fixed_web",
+    "build": {
+      "result": "success",
+      "bytes": 87174424,
+      "seconds": 203.33505209999998,
+      "files": 6
+    },
+    "screenshots": "docs/screenshots/rework_r4_king_web/",
+    "consoleErrors": 0,
+    "mipmaps": true,
+    "paddingAudit": 343
   }
 }

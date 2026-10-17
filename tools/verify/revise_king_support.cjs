@@ -1,0 +1,11 @@
+const fs=require('fs');const root='art_source/paper_roster_action/king/';
+const [id,reason,change]=process.argv.slice(2);if(!reason||!change)throw Error('id, reason and change required');
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8')),write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n');
+const m=read(root+'effects-manifest.json'),job=m.jobs.find(j=>j.id===id);if(!job)throw Error(id);
+const old=m.entries.find(e=>e.id===id&&e.version===job.version);if(!old)throw Error('Save candidate before revision');
+old.status='rejected';old.rejectionReason=reason;
+const j=read(job.promptFile);j.version++;j.source=root+'generated/effect_'+id+'_v'+j.version+'.png';j.revisionReason=reason;
+j.references=[old.source,'docs/art_reference/king_supports/'+id+'.webp'];
+j.referenceRoles=['編集対象の候補。指定箇所だけを修正','本人の原作容姿資料'];
+j.prompt=`Use case: precise-object-edit. 画像1の${j.name}の全身透過原画を修正。画像2は原作の本人の容姿基準。変更：${change}\n本人の顔・髪・衣服・装備の配色と模様、全身の落下攻撃姿勢、普通のアニメのセル塗り、クリーム白の切り抜き縁を維持する。人物一人、顔一つ、腕2本、脚2本、ブーツ2つ。杖は一本。真の透明背景。全身と装備を切らず、周囲に完全透明の余白を60px以上残す。透明キャンバスを広げて余白を確保してよい。背景・床・影・文字・効果は追加しない。`;
+job.version=j.version;job.promptFile=root+'prompts/effect_'+id+'_v'+j.version+'.json';write(job.promptFile,j);write(root+'effects-manifest.json',m);console.log(job.promptFile);

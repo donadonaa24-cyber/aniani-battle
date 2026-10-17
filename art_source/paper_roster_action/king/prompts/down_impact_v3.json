@@ -1,0 +1,19 @@
+{
+  "id": "down_impact",
+  "key": "king",
+  "character": "黒獅子王",
+  "pose": "down",
+  "phase": "impact",
+  "label": "地上下の低い爪",
+  "version": 3,
+  "source": "art_source/paper_roster_action/king/generated/down_impact_v3.png",
+  "references": [
+    "art_source/paper_roster_action/king/generated/down_impact_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象。画面右下の接地ブーツだけを修正、ほかは維持"
+  ],
+  "prompt": "Use case: precise-object-edit. この全身イラストの画面右下、地面に接地している前足の黒金ブーツだけを修正する。画面右中ほどの前へ出した爪手甲は手なので変更しない。左下の後ろ足のブーツも変更しない。\n右下のブーツが5本の爪のある手甲のような形になっている。この手のような形と甲の金の菱形板を消して、左下のブーツと同じ種類の、金の爪が3つだけの黒金の爪ブーツへ描き直す。右の脛の赤い菱形宝石と鎧から、足首→靴の甲→金の爪先3つへ自然につなげる。親指や4本指の手として描かず、ブーツに手甲の小さい金の菱形板を描かない。金の爪先は3つだけ。\nブーツの実寸と接地の高さは左下と同程度、今の輪郭の範囲に収める。脚は2本、腕2本、手甲2つのまま。新しい手や足を足さない。顔・髪・冠・頭巾・身体・両腕・上の爪手甲・左の接地ブーツ・マント・尾の原寸と位置とポーズ、1189×1323の透明キャンバスを維持。薄い硬い白縁も保つ。背景・影・文字・相手・効果なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

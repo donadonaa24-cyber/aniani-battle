@@ -14,6 +14,7 @@ namespace AniBato.Game
         public bool Airborne;
         public bool ReverseFacing;
         public bool RotateWithRush;
+        public bool UnmirroredImpact;
         public bool SwitchOnProjectileRelease;
         public float TiltDegrees;
         public float[] FrameHeadHeights, FrameFootBaseYs, FrameFootMinXs, FrameFootMaxXs, FrameOriginYs;
@@ -35,10 +36,20 @@ namespace AniBato.Game
     {
         public AniBato.Battle.AbilityLook Look;
         public Sprite Sprite;
+        public Sprite[] Variants;
+        public Vector2[] VariantVisibleSizes;
         public float Scale = 1;
+        public bool FitToHitbox;
+        public Vector2 VisibleSize;
         public bool RotateWithVelocity, FlipWithFacing;
         public float RotationOffsetDegrees;
         public int SortingOrder = 7;
+        public Sprite SpriteFor(int index) => Variants != null && Variants.Length > 0 ? Variants[System.Math.Max(0,index) % Variants.Length] : Sprite;
+        public float ScaleFor(Battle.BattleVector hitboxSize,int index=0)
+        {
+            var size=VariantVisibleSizes!=null&&VariantVisibleSizes.Length>0 ? VariantVisibleSizes[System.Math.Max(0,index)%VariantVisibleSizes.Length] : VisibleSize;
+            return FitToHitbox && size.x>0 && size.y>0 ? Mathf.Min(hitboxSize.X/size.x,hitboxSize.Y/size.y) : Scale;
+        }
     }
     [System.Serializable]
     public sealed class PaperAbilityArt

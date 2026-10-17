@@ -51,6 +51,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -70,6 +71,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -89,6 +91,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -108,6 +111,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -127,6 +131,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -146,6 +151,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -158,13 +164,14 @@ MonoBehaviour:
     FootMinX: -0.6440235
     FootMaxX: 0.9481978
   - Key: prototype_whole_illustration
-    States: 0200000003000000040000000600000007000000080000000a0000000b0000000c0000000d0000000e0000001000000013000000140000001a0000001c0000001d0000001e0000001f0000002000000021000000i
+    States: 020000000300000004000000090000000b0000000c0000000d0000001000000013000000140000001c0000001d0000001f0000002000000021000000i
     Frames:
     - {fileID: 21300000, guid: 775c00a5b4cfb994a9fd67ee53b1342b, type: 3}
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -176,54 +183,259 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -1.006404
     FootMaxX: 1.021425
-  - Key: prototype_whole_illustration_CrouchAttack
+  - Key: normal1
+    States: 06000000i
+    Frames:
+    - {fileID: 21300000, guid: b2ac410d3db720848aed7826625ca183, type: 3}
+    - {fileID: 21300000, guid: 0ca646f1bbc808f4eaea9cdabf59916d, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 2.2625313
+    - 2.3958423
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.71912825
+    - -0.6346354
+    FrameFootMaxXs:
+    - 0.9857502
+    - 0.9782397
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 2.2625313
+    FootBaseY: 0
+    FootMinX: -0.71912825
+    FootMaxX: 0.9857502
+  - Key: normal2
+    States: 07000000i
+    Frames:
+    - {fileID: 21300000, guid: b2ac410d3db720848aed7826625ca183, type: 3}
+    - {fileID: 21300000, guid: 0ca646f1bbc808f4eaea9cdabf59916d, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 2.2625313
+    - 2.3958423
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.71912825
+    - -0.6346354
+    FrameFootMaxXs:
+    - 0.9857502
+    - 0.9782397
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 2.2625313
+    FootBaseY: 0
+    FootMinX: -0.71912825
+    FootMaxX: 0.9857502
+  - Key: back
+    States: 1a000000i
+    Frames:
+    - {fileID: 21300000, guid: b2ac410d3db720848aed7826625ca183, type: 3}
+    - {fileID: 21300000, guid: 0ca646f1bbc808f4eaea9cdabf59916d, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 1
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 2.2625313
+    - 2.3958423
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.71912825
+    - -0.6346354
+    FrameFootMaxXs:
+    - 0.9857502
+    - 0.9782397
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 2.2625313
+    FootBaseY: 0
+    FootMinX: -0.71912825
+    FootMaxX: 0.9857502
+  - Key: normal3
+    States: 08000000i
+    Frames:
+    - {fileID: 21300000, guid: 52bdd9be99e93c34dba4eb4b79720013, type: 3}
+    - {fileID: 21300000, guid: 70ccb1fd2be7a0440ac65b083fb95e48, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 2.39772
+    - 2.4315171
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.40181056
+    - -0.38866723
+    FrameFootMaxXs:
+    - 0.06383906
+    - 0.037552387
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 2.39772
+    FootBaseY: 0
+    FootMinX: -0.40181056
+    FootMaxX: 0.06383906
+  - Key: up
+    States: 1e000000i
+    Frames:
+    - {fileID: 21300000, guid: b2ac410d3db720848aed7826625ca183, type: 3}
+    - {fileID: 21300000, guid: 45a98e93d531b5a4cada270c9f902b66, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 2.2625313
+    - 2.3920872
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.71912825
+    - -0.72851634
+    FrameFootMaxXs:
+    - 0.9857502
+    - 0.9970159
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 2.2625313
+    FootBaseY: 0
+    FootMinX: -0.71912825
+    FootMaxX: 0.9857502
+  - Key: special
+    States: 0a000000i
+    Frames:
+    - {fileID: 21300000, guid: b2ac410d3db720848aed7826625ca183, type: 3}
+    - {fileID: 21300000, guid: bd05aff28ba910a43a456e4fcac5e157, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 1
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 2.2625313
+    - 2.0578709
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.71912825
+    - -0.72100586
+    FrameFootMaxXs:
+    - 0.9857502
+    - 0.9350545
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 2.2625313
+    FootBaseY: 0
+    FootMinX: -0.71912825
+    FootMaxX: 0.9857502
+  - Key: super
+    States: 0e000000i
+    Frames:
+    - {fileID: 21300000, guid: 28ab69bfdd20f534d9f7c552ef7f318f, type: 3}
+    - {fileID: 21300000, guid: bd05aff28ba910a43a456e4fcac5e157, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 1
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights:
+    - 2.2080805
+    - 2.0578709
+    FrameFootBaseYs: []
+    FrameFootMinXs:
+    - -0.7735792
+    - -0.72100586
+    FrameFootMaxXs:
+    - 1.0420787
+    - 0.9350545
+    FrameOriginYs:
+    - 0
+    - 0
+    HeadHeight: 2.2080805
+    FootBaseY: 0
+    FootMinX: -0.7735792
+    FootMaxX: 1.0420787
+  - Key: down
     States: 19000000i
     Frames:
-    - {fileID: 21300000, guid: 775c00a5b4cfb994a9fd67ee53b1342b, type: 3}
+    - {fileID: 21300000, guid: 29cf63eaa0a80424bb7611cef4491059, type: 3}
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
-    - 2.388332
+    - 1.9076613
     FrameFootBaseYs:
     - 0
     FrameFootMinXs:
-    - -1.006404
+    - -0.78672254
     FrameFootMaxXs:
-    - 1.021425
+    - 1.0552222
     FrameOriginYs:
     - 0
-    HeadHeight: 2.388332
+    HeadHeight: 1.9076613
     FootBaseY: 0
-    FootMinX: -1.006404
-    FootMaxX: 1.021425
-  - Key: prototype_whole_illustration_AirNeutral
-    States: 090000001b000000i
+    FootMinX: -0.78672254
+    FootMaxX: 1.0552222
+  - Key: air
+    States: 1b000000i
     Frames:
-    - {fileID: 21300000, guid: 775c00a5b4cfb994a9fd67ee53b1342b, type: 3}
+    - {fileID: 21300000, guid: 29234ff095aa0b945805e0851504ec28, type: 3}
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
-    - 2.388332
+    - 2.3808215
     FrameFootBaseYs:
     - 0
     FrameFootMinXs:
-    - -1.006404
+    - -0.33233863
     FrameFootMaxXs:
-    - 1.021425
+    - 0.028164292
     FrameOriginYs:
-    - 0
-    HeadHeight: 2.388332
+    - 0.0075104777
+    HeadHeight: 2.3808215
     FootBaseY: 0
-    FootMinX: -1.006404
-    FootMaxX: 1.021425
+    FootMinX: -0.33233863
+    FootMaxX: 0.028164292
   HeavyDamage:
     Key: 
     States: 
@@ -232,6 +444,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -247,5 +460,78 @@ MonoBehaviour:
   RiceBall: {fileID: 0}
   Mogu: {fileID: 0}
   CurryWave: {fileID: 0}
-  Projectiles: []
-  AbilityEffects: []
+  Projectiles:
+  - Look: 9
+    Sprite: {fileID: 21300000, guid: 2634bda05da24064a897255302cc6cb8, type: 3}
+    Variants:
+    - {fileID: 21300000, guid: 2634bda05da24064a897255302cc6cb8, type: 3}
+    - {fileID: 21300000, guid: 769a3c55726f4044998506e3163ecb93, type: 3}
+    - {fileID: 21300000, guid: 330392ba2bb669d42b9738a4bc7dd71d, type: 3}
+    VariantVisibleSizes:
+    - {x: 2.215591, y: 2.39772}
+    - {x: 2.1479967, y: 2.343269}
+    - {x: 2.1386085, y: 2.4258842}
+    Scale: 0.54161626
+    FitToHitbox: 1
+    VisibleSize: {x: 2.215591, y: 2.39772}
+    RotateWithVelocity: 0
+    FlipWithFacing: 0
+    RotationOffsetDegrees: 0
+    SortingOrder: 7
+  AbilityEffects:
+  - State: 6
+    Look: 0
+    Sprite: {fileID: 21300000, guid: 33a5624ab244be448a601c53d7b2898c, type: 3}
+    Scale: 0.5895823
+    Offset: {x: 0.85, y: 0.15}
+    AnticipationSprite: {fileID: 0}
+    AnticipationScale: 1
+    AnticipationText: 
+    AlternateAnticipationText: 
+    AnticipationTextSize: 0.08
+    DuringStartup: 0
+    DuringRecovery: 1
+    StepTicks: 6
+    RockDegrees: 3
+  - State: 8
+    Look: 0
+    Sprite: {fileID: 21300000, guid: f39edeb0eed1cd74696a1ecc025774e9, type: 3}
+    Scale: 0.7501258
+    Offset: {x: 0.8, y: 0.55}
+    AnticipationSprite: {fileID: 0}
+    AnticipationScale: 1
+    AnticipationText: 
+    AlternateAnticipationText: 
+    AnticipationTextSize: 0.08
+    DuringStartup: 0
+    DuringRecovery: 1
+    StepTicks: 6
+    RockDegrees: 3
+  - State: 7
+    Look: 0
+    Sprite: {fileID: 21300000, guid: 33a5624ab244be448a601c53d7b2898c, type: 3}
+    Scale: 0.5895823
+    Offset: {x: 0.85, y: 0.15}
+    AnticipationSprite: {fileID: 0}
+    AnticipationScale: 1
+    AnticipationText: 
+    AlternateAnticipationText: 
+    AnticipationTextSize: 0.08
+    DuringStartup: 0
+    DuringRecovery: 1
+    StepTicks: 6
+    RockDegrees: 3
+  - State: 26
+    Look: 0
+    Sprite: {fileID: 21300000, guid: 33a5624ab244be448a601c53d7b2898c, type: 3}
+    Scale: 0.5895823
+    Offset: {x: 0.85, y: 0.15}
+    AnticipationSprite: {fileID: 0}
+    AnticipationScale: 1
+    AnticipationText: 
+    AlternateAnticipationText: 
+    AnticipationTextSize: 0.08
+    DuringStartup: 0
+    DuringRecovery: 1
+    StepTicks: 6
+    RockDegrees: 3

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "key": "king",
+  "frames": [
+    {
+      "id": "normal1_prepare",
+      "prepared": "art_source/paper_roster_action/king/prepared/normal1_prepare.png",
+      "sha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "headTopY": 123,
+      "footMinX": 269,
+      "footMaxX": 1177,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal1_impact",
+      "prepared": "art_source/paper_roster_action/king/prepared/normal1_impact.png",
+      "sha256": "5bbc473a03d0308a993ab6fe937d07e31e0ee5611510506ca27bb888ae779690",
+      "headTopY": 52,
+      "footMinX": 314,
+      "footMaxX": 1173,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "prepared": "art_source/paper_roster_action/king/prepared/normal3_prepare.png",
+      "sha256": "b4c71b5f85fe15f31b369405587e64948787b275e91c4e730938b2499ed4f773",
+      "headTopY": 51,
+      "footMinX": 438,
+      "footMaxX": 686,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_impact",
+      "prepared": "art_source/paper_roster_action/king/prepared/normal3_impact.png",
+      "sha256": "af6f57d77621ae5e598f21e5874fefa2f4d8d45786299b97e6b9952777b7fe6e",
+      "headTopY": 33,
+      "footMinX": 445,
+      "footMaxX": 672,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_prepare",
+      "prepared": "art_source/paper_roster_action/king/prepared/up_prepare.png",
+      "sha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "headTopY": 123,
+      "footMinX": 269,
+      "footMaxX": 1177,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_impact",
+      "prepared": "art_source/paper_roster_action/king/prepared/up_impact.png",
+      "sha256": "d8a94aabfcb648306980c40af64749e83ee4f483216fd780c80415cb286aaa4c",
+      "headTopY": 54,
+      "footMinX": 264,
+      "footMaxX": 1183,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "down_impact",
+      "prepared": "art_source/paper_roster_action/king/prepared/down_impact.png",
+      "sha256": "55e19060dbaa2cbf3f496d17ba5f5772548347a19322c2cda44c289ddbb641b7",
+      "headTopY": 312,
+      "footMinX": 233,
+      "footMaxX": 1214,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "air_impact",
+      "prepared": "art_source/paper_roster_action/king/prepared/air_impact.png",
+      "sha256": "e6f38659daad86d6240cb9752b2db8b2cb10cb1861e537208582ba4a7dd970d9",
+      "headTopY": 60,
+      "footMinX": 475,
+      "footMaxX": 667,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0.007510477585636813
+    },
+    {
+      "id": "special_prepare",
+      "prepared": "art_source/paper_roster_action/king/prepared/special_prepare.png",
+      "sha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "headTopY": 123,
+      "footMinX": 269,
+      "footMaxX": 1177,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "special_impact",
+      "prepared": "art_source/paper_roster_action/king/prepared/special_impact.png",
+      "sha256": "f416a309696afb17586e785a373b2897779587545b3263571f365fecbd336a47",
+      "headTopY": 232,
+      "footMinX": 268,
+      "footMaxX": 1150,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_prepare",
+      "prepared": "art_source/paper_roster_action/king/prepared/super_prepare.png",
+      "sha256": "2553714b267af5b6c7db8266c79a283861a052149ec9fd40460065b3504e2f7d",
+      "headTopY": 152,
+      "footMinX": 240,
+      "footMaxX": 1207,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_impact",
+      "prepared": "art_source/paper_roster_action/king/prepared/super_impact.png",
+      "sha256": "f416a309696afb17586e785a373b2897779587545b3263571f365fecbd336a47",
+      "headTopY": 232,
+      "footMinX": 268,
+      "footMaxX": 1150,
+      "groundFootAnchor": 723,
+      "originOffsetY": 0
+    }
+  ],
+  "complete": true,
+  "reviewed": true,
+  "gameConnected": true,
+  "verifiedTag": "rework_r4_king_2"
+}

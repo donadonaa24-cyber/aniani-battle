@@ -1,0 +1,20 @@
+{
+  "id": "claw",
+  "kind": "ability",
+  "look": "Default",
+  "state": "Attack1",
+  "duringStartup": false,
+  "duringRecovery": true,
+  "offsetX": 0.85,
+  "offsetY": 0.15,
+  "worldWidth": 1.45,
+  "worldHeight": 1.2,
+  "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームの、邪悪な爪のひっかきの切り絵エフェクト一個。右へ振り抜く3本の短い平行した斜めの爪痕。濃い紫・黒・深紅の平らな紙の太い曲線が右上から右下へ弧を描き、縁に薄い金の線とクリーム白縁。小さい紫の角ばった紙片を4つほど周囲へ散らす。3本の爪痕の間は広く完全透明、中央を大きい不透明な丸い雲で埋めない。普通のアニメの線とセル塗り、硬い切り絵の輪郭。1024×1024の真の透明PNG、全体を中央に収め全周80px以上余白。人物・手・指・手甲・顔・文字・数字・背景・床・影・光彩・グロー・ぼかし・3D・写実・ピクセル・複数案なし。爪の紙の効果一つだけ。",
+  "key": "king",
+  "version": 1,
+  "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

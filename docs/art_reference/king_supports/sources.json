@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "references": [
+    {
+      "key": "leila",
+      "name": "豹妬レイラ",
+      "copy": "docs/art_reference/king_supports/leila.webp",
+      "origin": "%USERPROFILE%/OneDrive/デスクトップ/あにあにの遊び場/images/gacha/oshikoma/shade1.webp",
+      "sha256": "9867f64e4a7ab70d465f9ef01953bf66a992047dd863465a0f66b53157d8119e",
+      "identityRecord": "trial-gacha-data.js: 豹の女性幹部／援型",
+      "note": "原作の容姿を参照。頭上からの攻撃ポーズは本作のクロスオーバー表現。元フォルダは読み取りのみ。"
+    },
+    {
+      "key": "shion",
+      "name": "銀狼シオン",
+      "copy": "docs/art_reference/king_supports/shion.webp",
+      "origin": "%USERPROFILE%/OneDrive/デスクトップ/あにあにの遊び場/images/gacha/oshikoma/shade2.webp",
+      "sha256": "9094c73ccbeb286dbdb352fa8e83e18b7b02d2358cd8bb650d3c5f7d624bb7e4",
+      "identityRecord": "trial-gacha-data.js: 狼の男性幹部／銀型",
+      "note": "原作の容姿を参照。頭上からの攻撃ポーズは本作のクロスオーバー表現。元フォルダは読み取りのみ。"
+    },
+    {
+      "key": "noa",
+      "name": "鹿角ノア",
+      "copy": "docs/art_reference/king_supports/noa.webp",
+      "origin": "%USERPROFILE%/OneDrive/デスクトップ/あにあにの遊び場/images/gacha/oshikoma/shade3.webp",
+      "sha256": "a6d36578191fd3868334e5f9152052bae9ac9c864005a73603ea10683a8c5add",
+      "identityRecord": "trial-gacha-data.js: 鹿の女性幹部／角型",
+      "note": "原作の容姿を参照。頭上からの攻撃ポーズは本作のクロスオーバー表現。元フォルダは読み取りのみ。"
+    }
+  ]
+}

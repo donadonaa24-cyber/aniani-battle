@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "key": "king",
+  "jobs": [
+    {
+      "id": "claw",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/effect_claw_v1.json"
+    },
+    {
+      "id": "roar",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_action/king/prompts/effect_roar_v3.json"
+    },
+    {
+      "id": "leila",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/effect_leila_v1.json"
+    },
+    {
+      "id": "shion",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_action/king/prompts/effect_shion_v3.json"
+    },
+    {
+      "id": "noa",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_action/king/prompts/effect_noa_v3.json"
+    },
+    {
+      "id": "claw_second",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/effect_claw_second_v1.json"
+    },
+    {
+      "id": "claw_back",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/effect_claw_back_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "claw",
+      "kind": "ability",
+      "look": "Default",
+      "state": "Attack1",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 0.85,
+      "offsetY": 0.15,
+      "worldWidth": 1.45,
+      "worldHeight": 1.2,
+      "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームの、邪悪な爪のひっかきの切り絵エフェクト一個。右へ振り抜く3本の短い平行した斜めの爪痕。濃い紫・黒・深紅の平らな紙の太い曲線が右上から右下へ弧を描き、縁に薄い金の線とクリーム白縁。小さい紫の角ばった紙片を4つほど周囲へ散らす。3本の爪痕の間は広く完全透明、中央を大きい不透明な丸い雲で埋めない。普通のアニメの線とセル塗り、硬い切り絵の輪郭。1024×1024の真の透明PNG、全体を中央に収め全周80px以上余白。人物・手・指・手甲・顔・文字・数字・背景・床・影・光彩・グロー・ぼかし・3D・写実・ピクセル・複数案なし。爪の紙の効果一つだけ。",
+      "key": "king",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 161,
+          "top": 98,
+          "right": 1173,
+          "bottom": 1181
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "leila",
+      "key": "king",
+      "name": "豹妬レイラ",
+      "kind": "projectile",
+      "look": "King",
+      "variantIndex": 0,
+      "version": 1,
+      "fitAttackHitbox": true,
+      "fitEachProjectileHitbox": true,
+      "sortingOrder": 7,
+      "source": "art_source/paper_roster_action/king/generated/effect_leila_v1.png",
+      "references": [
+        "docs/art_reference/king_supports/leila.webp",
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の原作容姿資料（ユーザー作品の既存ポータル掲載画像）",
+        "絵柄のみ。黒獅子王をこの人物へ混ぜない"
+      ],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "prompt": "Use case: identity-preserve. Asset type: オリジナル2Dペープサート格闘ゲームの召喚キャラクターの全身透過原画。画像1は『推し駒Battle』の豹妬レイラ本人の容姿基準。画像2は同じゲームの黒獅子王で、太いアニメ線・明快なセル塗り・白縁の絵柄だけの参照。画像1の本人一人だけを画像2と統一感ある普通のアニメ絵に描き直す。\n容姿：黒から赤紫へ流れる長いウェーブの髪、赤い瞳、額の金の菱形、豹耳のある豹柄の毛皮フード、裏が深紅の豹柄マント、黒と金の装飾鎧と爪手袋、豹の顔のベルト、金の鎖、豹の尾。参照の成人女性らしい顔・衣服を維持。\n動作：斜め下の画面右へ爪で飛びかかる全身ポーズ。右肩から右肘・手首へ続く右の爪手袋を下前へ差し出し、左手は胸の横へ引く。両膝を曲げて両足は浮く。髪と豹柄マントは上後ろへ広がり、落下攻撃と読める。5本の指が同じ方向の刃5本にならず親指の対向を描く。\nComposition: 1189×1323の真の透明PNG、全身一人だけ。角や頭巾の先・両手・両足・杖・尾まで全体を切らず、全周40px以上の透明余白を残す。少し斜め横で胸側が見える。衣装や動物の飾りを余分な手足へ変えず、左右の腕2本・脚2本、人間の顔1つ。指は各5本、握る指を杖に巻き、手首をひねって左右の手を取り違えない。素材全体の外周へ薄く硬いクリーム白の切り抜き縁。既存キャラの髪と装備の色・模様を変えない。\nAvoid: 王冠・黒獅子王の姿・新しい武器・木の将棋駒・「歩」の文字・文字全般・背景・床・影・相手・光彩・グロー・速度線・紙の繊維・3D・写実・ピクセル・分割した手足・複数案。武器や角を画面外へ切らない。",
+      "sha256": "0458a9a3aa9f3c70fea00aac28c6b432837e7b8ebfb3b254d8abe2ccdb7e7c3e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 6,
+          "top": 11,
+          "right": 1185,
+          "bottom": 1287
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "shion",
+      "key": "king",
+      "name": "銀狼シオン",
+      "kind": "projectile",
+      "look": "King",
+      "variantIndex": 1,
+      "version": 1,
+      "fitAttackHitbox": true,
+      "fitEachProjectileHitbox": true,
+      "sortingOrder": 7,
+      "source": "art_source/paper_roster_action/king/generated/effect_shion_v1.png",
+      "references": [
+        "docs/art_reference/king_supports/shion.webp",
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の原作容姿資料（ユーザー作品の既存ポータル掲載画像）",
+        "絵柄のみ。黒獅子王をこの人物へ混ぜない"
+      ],
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "prompt": "Use case: identity-preserve. Asset type: オリジナル2Dペープサート格闘ゲームの召喚キャラクターの全身透過原画。画像1は『推し駒Battle』の銀狼シオン本人の容姿基準。画像2は同じゲームの黒獅子王で、太いアニメ線・明快なセル塗り・白縁の絵柄だけの参照。画像1の本人一人だけを画像2と統一感ある普通のアニメ絵に描き直す。\n容姿：短い黒髪と白銀の前髪、青い瞳、額の金の菱形、狼の顔と尖った耳のある灰色フード、黒い毛皮の肩、黒と銀の鱗状鎧と金の細い縁、青い宝石、黒いマント、黒銀のブーツ、銀色の狼の頭を先端に持つ黒い長杖。参照の少年らしい顔と頭身を保つ。\n動作：両手で同じ一本の狼頭の杖を握り、両肘を曲げて斜め下の画面右へ杖の頭を打ち下ろす瞬間の全身。左右の肩から両腕がそれぞれ手袋へつながり、二つの手で一本の杖を握る。両膝は曲げて足が浮く。狼のフードと顔を杖で隠さず、マントが上後ろへ流れて落下攻撃と読める。杖は短縮せず対角線に傾けて全体を収める。\nComposition: 1189×1323の真の透明PNG、全身一人だけ。角や頭巾の先・両手・両足・杖・尾まで全体を切らず、全周40px以上の透明余白を残す。少し斜め横で胸側が見える。衣装や動物の飾りを余分な手足へ変えず、左右の腕2本・脚2本、人間の顔1つ。指は各5本、握る指を杖に巻き、手首をひねって左右の手を取り違えない。素材全体の外周へ薄く硬いクリーム白の切り抜き縁。既存キャラの髪と装備の色・模様を変えない。\nAvoid: 王冠・黒獅子王の姿・新しい武器・木の将棋駒・「歩」の文字・文字全般・背景・床・影・相手・光彩・グロー・速度線・紙の繊維・3D・写実・ピクセル・分割した手足・複数案。武器や角を画面外へ切らない。",
+      "sha256": "cf48bcaa24e416060e1ba3040cf80b5b9dbd6b8bde25e14582a509076d989503",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 8,
+          "top": 5,
+          "right": 1181,
+          "bottom": 1315
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "rejectionReason": "脚と靴が3本に見える。マント上端の余白も5px。"
+    },
+    {
+      "id": "noa",
+      "key": "king",
+      "name": "鹿角ノア",
+      "kind": "projectile",
+      "look": "King",
+      "variantIndex": 2,
+      "version": 1,
+      "fitAttackHitbox": true,
+      "fitEachProjectileHitbox": true,
+      "sortingOrder": 7,
+      "source": "art_source/paper_roster_action/king/generated/effect_noa_v1.png",
+      "references": [
+        "docs/art_reference/king_supports/noa.webp",
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の原作容姿資料（ユーザー作品の既存ポータル掲載画像）",
+        "絵柄のみ。黒獅子王をこの人物へ混ぜない"
+      ],
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "prompt": "Use case: identity-preserve. Asset type: オリジナル2Dペープサート格闘ゲームの召喚キャラクターの全身透過原画。画像1は『推し駒Battle』の鹿角ノア本人の容姿基準。画像2は同じゲームの黒獅子王で、太いアニメ線・明快なセル塗り・白縁の絵柄だけの参照。画像1の本人一人だけを画像2と統一感ある普通のアニメ絵に描き直す。\n容姿：茶色の長い髪、紫の瞳、額の金の菱形、左右の鹿耳と枝分かれする鹿の角が付いた暗いフード、黒と深緑の金縁の衣装とマント、紫の結晶の留め具、黒いブーツ、枝に囲まれた大きな紫の結晶が先端に付く一本の杖。参照の少女らしい顔と頭身を保つ。\n動作：右手で一本の枝の杖を胸の横へ持ち、左腕を斜め下の画面右へ伸ばし掌を開いて攻撃を指示する全身。左右の肩・肘・手首と手の所属が一続き、開いた左手は親指1本と4本指の計5本。両膝を軽く曲げ、両足は浮く。衣装とマントが上後ろへ流れ、落下して攻撃する姿勢。別の浮く結晶・魔法・光はこの人物原画へ描かない。\nComposition: 1189×1323の真の透明PNG、全身一人だけ。角や頭巾の先・両手・両足・杖・尾まで全体を切らず、全周40px以上の透明余白を残す。少し斜め横で胸側が見える。衣装や動物の飾りを余分な手足へ変えず、左右の腕2本・脚2本、人間の顔1つ。指は各5本、握る指を杖に巻き、手首をひねって左右の手を取り違えない。素材全体の外周へ薄く硬いクリーム白の切り抜き縁。既存キャラの髪と装備の色・模様を変えない。\nAvoid: 王冠・黒獅子王の姿・新しい武器・木の将棋駒・「歩」の文字・文字全般・背景・床・影・相手・光彩・グロー・速度線・紙の繊維・3D・写実・ピクセル・分割した手足・複数案。武器や角を画面外へ切らない。",
+      "sha256": "cb7424405330e97304458c8972bcf32bcb64fe35dfb0e37e3ea4d73d5e8f7ea4",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 44,
+          "top": 8,
+          "right": 1181,
+          "bottom": 1300
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "rejectionReason": "左手の拡大で親指1本と指5本、合計6本の指を確認した。"
+    },
+    {
+      "id": "shion",
+      "key": "king",
+      "name": "銀狼シオン",
+      "kind": "projectile",
+      "look": "King",
+      "variantIndex": 1,
+      "version": 2,
+      "fitAttackHitbox": true,
+      "fitEachProjectileHitbox": true,
+      "sortingOrder": 7,
+      "source": "art_source/paper_roster_action/king/generated/effect_shion_v2.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/effect_shion_v1.png",
+        "docs/art_reference/king_supports/shion.webp"
+      ],
+      "referenceRoles": [
+        "編集対象の候補。指定箇所だけを修正",
+        "本人の原作容姿資料"
+      ],
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "prompt": "Use case: precise-object-edit. 画像1の銀狼シオンの全身透過原画を修正。画像2は原作の本人の容姿基準。変更：脚と靴を左右2本だけへ描き直す。画面左後方の小さいブーツを1つ削除し、その上の銀の膝から脛を手前のブーツへ自然につなぐ。本人の左脚と右脚が腰からそれぞれ一本ずつ出て膝とブーツまで追える。脚が三つに枝分かれしない。マントの上先端を60px以上の透明余白付きで収める。\n本人の顔・髪・衣服・装備の配色と模様、全身の落下攻撃姿勢、普通のアニメのセル塗り、クリーム白の切り抜き縁を維持する。人物一人、顔一つ、腕2本、脚2本、ブーツ2つ。杖は一本。真の透明背景。全身と装備を切らず、周囲に完全透明の余白を60px以上残す。透明キャンバスを広げて余白を確保してよい。背景・床・影・文字・効果は追加しない。",
+      "revisionReason": "脚と靴が3本に見える。マント上端の余白も5px。",
+      "sha256": "9a552caa09aadccd83310dcd7b5dae07c777ae6a7f92cf35df0161f17dc34c67",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 40,
+          "top": 52,
+          "right": 1183,
+          "bottom": 1307
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "rejectionReason": "v2は余分な脚を削除したが、見える靴が1つになった。両脚を明確に見せる。"
+    },
+    {
+      "id": "shion",
+      "key": "king",
+      "name": "銀狼シオン",
+      "kind": "projectile",
+      "look": "King",
+      "variantIndex": 1,
+      "version": 3,
+      "fitAttackHitbox": true,
+      "fitEachProjectileHitbox": true,
+      "sortingOrder": 7,
+      "source": "art_source/paper_roster_action/king/generated/effect_shion_v3.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/effect_shion_v2.png",
+        "docs/art_reference/king_supports/shion.webp"
+      ],
+      "referenceRoles": [
+        "編集対象の候補。指定箇所だけを修正",
+        "本人の原作容姿資料"
+      ],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "prompt": "Use case: precise-object-edit. 画像1の銀狼シオンの全身透過原画を修正。画像2は原作の本人の容姿基準。変更：腰の下に左右2本の太腿を分け、両膝を横並びに曲げて二つの銀の膝当てを見せる。左右2本の脛と黒銀のブーツを並べ、靴先を同じ斜め下方向へ向ける。両足は空中で、マントや杖と重ならず二つとも完全に見える。シルエットで脚2本・靴2つと明確に分かる。上半身と二つの手袋による杖の握りは維持。\n本人の顔・髪・衣服・装備の配色と模様、全身の落下攻撃姿勢、普通のアニメのセル塗り、クリーム白の切り抜き縁を維持する。人物一人、顔一つ、腕2本、脚2本、ブーツ2つ。杖は一本。真の透明背景。全身と装備を切らず、周囲に完全透明の余白を60px以上残す。透明キャンバスを広げて余白を確保してよい。背景・床・影・文字・効果は追加しない。",
+      "revisionReason": "v2は余分な脚を削除したが、見える靴が1つになった。両脚を明確に見せる。",
+      "sha256": "ae8b7ca86ea495dbf15639b2dd48a09a2f9dba6cc85c8d3c38faaeda082485cf",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 39,
+          "top": 52,
+          "right": 1182,
+          "bottom": 1299
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "noa",
+      "key": "king",
+      "name": "鹿角ノア",
+      "kind": "projectile",
+      "look": "King",
+      "variantIndex": 2,
+      "version": 2,
+      "fitAttackHitbox": true,
+      "fitEachProjectileHitbox": true,
+      "sortingOrder": 7,
+      "source": "art_source/paper_roster_action/king/generated/effect_noa_v2.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/effect_noa_v1.png",
+        "docs/art_reference/king_supports/noa.webp"
+      ],
+      "referenceRoles": [
+        "編集対象の候補。指定箇所だけを修正",
+        "本人の原作容姿資料"
+      ],
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "prompt": "Use case: precise-object-edit. 画像1の鹿角ノアの全身透過原画を修正。画像2は原作の本人の容姿基準。変更：画面右に伸びる本人左手だけを描き直し、指先は親指1本＋ほか4本の合計5本にする。現状の一番上に立つ余分な指を削除する。左手の掌を見せる黒い指なし手袋の握り。親指は画面左下に1本、ほか4本だけが右上・右・右下・下へ扇形に開く。指と指の股は4か所のみ。左の肩→肘→手首→左の掌→5本の指が自然につながり、手の甲へ勝手に変更しない。杖を握る本人右手・顔・角・服・両脚とポーズは変えない。\n本人の顔・髪・衣服・装備の配色と模様、全身の落下攻撃姿勢、普通のアニメのセル塗り、クリーム白の切り抜き縁を維持する。人物一人、顔一つ、腕2本、脚2本、ブーツ2つ。杖は一本。真の透明背景。全身と装備を切らず、周囲に完全透明の余白を60px以上残す。透明キャンバスを広げて余白を確保してよい。背景・床・影・文字・効果は追加しない。",
+      "revisionReason": "左手の拡大で親指1本と指5本、合計6本の指を確認した。",
+      "sha256": "3294f016e0210371e90a1e9c8116fc39f26f853146f0508156c2111c67bda9aa",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 45,
+          "top": 9,
+          "right": 1184,
+          "bottom": 1301
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "rejectionReason": "v2も開いた左手が6本指のため不採用。指を扇状に開く形をやめて明瞭な指示ポーズへ変更。"
+    },
+    {
+      "id": "noa",
+      "key": "king",
+      "name": "鹿角ノア",
+      "kind": "projectile",
+      "look": "King",
+      "variantIndex": 2,
+      "version": 3,
+      "fitAttackHitbox": true,
+      "fitEachProjectileHitbox": true,
+      "sortingOrder": 7,
+      "source": "art_source/paper_roster_action/king/generated/effect_noa_v3.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/effect_noa_v2.png",
+        "docs/art_reference/king_supports/noa.webp"
+      ],
+      "referenceRoles": [
+        "編集対象の候補。指定箇所だけを修正",
+        "本人の原作容姿資料"
+      ],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "prompt": "Use case: precise-object-edit. 画像1の鹿角ノアの全身透過原画を修正。画像2は原作の本人の容姿基準。変更：画面右の本人左手を、斜め下を人差し指一本で指す指示の形へ描き直す。中指・薬指・小指の三本を掌へ曲げて軽く握り、親指一本をその上へ自然に添える。まっすぐ伸びる指は人差し指の一本だけ。黒い指なし手袋と肌の指先を保つ。開いた星形の手を完全に置き換え、余分な指の残骸を残さない。その他の全身は変えない。\n本人の顔・髪・衣服・装備の配色と模様、全身の落下攻撃姿勢、普通のアニメのセル塗り、クリーム白の切り抜き縁を維持する。人物一人、顔一つ、腕2本、脚2本、ブーツ2つ。杖は一本。真の透明背景。全身と装備を切らず、周囲に完全透明の余白を60px以上残す。透明キャンバスを広げて余白を確保してよい。背景・床・影・文字・効果は追加しない。",
+      "revisionReason": "v2も開いた左手が6本指のため不採用。指を扇状に開く形をやめて明瞭な指示ポーズへ変更。",
+      "sha256": "30334d0a3429bc56dc3b264f4c4c049e26c6592f4321ece52977652f43f849ad",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 45,
+          "top": 9,
+          "right": 1183,
+          "bottom": 1300
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "roar",
+      "kind": "ability",
+      "look": "Default",
+      "state": "Attack3",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 0.8,
+      "offsetY": 0.55,
+      "worldWidth": 1.7,
+      "worldHeight": 1.2,
+      "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームの、王の咆哮が右前方へ広がる切り絵の衝撃波一個。左を発生点に右へ広がる扇形で、深紅・黒・金色の角ばった三重の弧状の紙片。右側ほど大きい弧を置き、短い金の三角の紙片を右へ放射する。弧の間は完全透明、ひとつながりの不透明な丸い背景を敷かない。大きい蹴りと同時に発生する雄叫びの圧力として、太く明快な右向きのシルエット。普通のアニメの線とセル塗り、硬い紙の輪郭と薄いクリーム白縁。1536×1024の真の透明PNG、中央に一つ、全周80px以上余白で切らない。人物・獅子の顔・口・手足・駒・文字・数字・背景・床・影・光彩・グロー・ぼかし・3D・写実・ピクセル・複数案なし。",
+      "key": "king",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/effect_roar_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "sha256": "0e6d3ab02e799ea6019487ef29005cc66e6e642bf626a928eeae8b590d42d0ad",
+      "native": {
+        "width": 1536,
+        "height": 1024,
+        "bounds": {
+          "left": 100,
+          "top": 38,
+          "right": 1465,
+          "bottom": 991
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "rejectionReason": "紙片以外に広い光彩と背景状の不透明な色がある。"
+    },
+    {
+      "id": "roar",
+      "kind": "ability",
+      "look": "Default",
+      "state": "Attack3",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 0.8,
+      "offsetY": 0.55,
+      "worldWidth": 1.7,
+      "worldHeight": 1.2,
+      "prompt": "Use case: background-extraction. 画像1の赤・黒・金の切り絵の衝撃波を編集。鋭い輪郭の紙片だけを完全に不透明で残し、その紙片の外側と紙片同士の広い隙間は全て完全透明にする。赤色・金色・茶色・白のぼんやりした光彩やグラデーションを全て除去する。黒い背景色も全て除去。硬い赤・黒・金の弧と三角の紙片、薄い硬い白縁だけが残る。色を透過の市松模様に置き換えない。背景が本当に透明なPNG。全周の透明余白80px以上、紙片を切らない。人物や文字を追加しない。",
+      "key": "king",
+      "version": 2,
+      "source": "art_source/paper_roster_action/king/generated/effect_roar_v2.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/effect_roar_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象。光彩だけを除去"
+      ],
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "sha256": "59be223387e02b9b10c2db6c8893d295fbbabecef85a66f1a1ad166ae495e657",
+      "native": {
+        "width": 1536,
+        "height": 1024,
+        "bounds": {
+          "left": 107,
+          "top": 28,
+          "right": 1472,
+          "bottom": 991
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "rejectionReason": "背景の光彩が除去されていない。"
+    },
+    {
+      "id": "roar",
+      "kind": "ability",
+      "look": "Default",
+      "state": "Attack3",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 0.8,
+      "offsetY": 0.55,
+      "worldWidth": 1.7,
+      "worldHeight": 1.2,
+      "prompt": "Use case: stylized-concept. 真の透明PNGのゲーム用図形一枚。三つの大きさの異なる角ばった括弧「）」を横に並べた赤・黒・金の平たい切り紙。左から小、中、大の順。各括弧は赤の太い帯と細い黒・金のふち。帯の輪郭はギザギザで硬く、細いクリーム白の切り抜き縁。右側に小さな金の三角形を三つ。背景も括弧の間も完全透明、透明部へ一切着色しない。全体を1024×1024の中央に一つ、透明余白80px以上。無地の平らなベタ色だけ。光・発光・グラデーション・グロー・ぼかし・影・背景色・背景模様・紙の質感・文字・人物なし。咆哮の紙の圧力線として使う一つの素材。",
+      "key": "king",
+      "version": 3,
+      "source": "art_source/paper_roster_action/king/generated/effect_roar_v3.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "5247770d2ac2a7feb7534c4187a78f654b48e4780292fd20230f326873fd9ebe",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 205,
+          "top": 207,
+          "right": 1119,
+          "bottom": 1058
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "claw_second",
+      "kind": "ability",
+      "look": "Default",
+      "state": "Attack2",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 0.85,
+      "offsetY": 0.15,
+      "worldWidth": 1.45,
+      "worldHeight": 1.2,
+      "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームの、邪悪な爪のひっかきの切り絵エフェクト一個。右へ振り抜く3本の短い平行した斜めの爪痕。濃い紫・黒・深紅の平らな紙の太い曲線が右上から右下へ弧を描き、縁に薄い金の線とクリーム白縁。小さい紫の角ばった紙片を4つほど周囲へ散らす。3本の爪痕の間は広く完全透明、中央を大きい不透明な丸い雲で埋めない。普通のアニメの線とセル塗り、硬い切り絵の輪郭。1024×1024の真の透明PNG、全体を中央に収め全周80px以上余白。人物・手・指・手甲・顔・文字・数字・背景・床・影・光彩・グロー・ぼかし・3D・写実・ピクセル・複数案なし。爪の紙の効果一つだけ。",
+      "key": "king",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 161,
+          "top": 98,
+          "right": 1173,
+          "bottom": 1181
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "claw",
+        "version": 1,
+        "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854"
+      },
+      "newlyGenerated": false,
+      "reason": "通常1・2段と背後の爪に同じ原画を共有。"
+    },
+    {
+      "id": "claw_back",
+      "kind": "ability",
+      "look": "Default",
+      "state": "BackAttack",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "offsetX": 0.85,
+      "offsetY": 0.15,
+      "worldWidth": 1.45,
+      "worldHeight": 1.2,
+      "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームの、邪悪な爪のひっかきの切り絵エフェクト一個。右へ振り抜く3本の短い平行した斜めの爪痕。濃い紫・黒・深紅の平らな紙の太い曲線が右上から右下へ弧を描き、縁に薄い金の線とクリーム白縁。小さい紫の角ばった紙片を4つほど周囲へ散らす。3本の爪痕の間は広く完全透明、中央を大きい不透明な丸い雲で埋めない。普通のアニメの線とセル塗り、硬い切り絵の輪郭。1024×1024の真の透明PNG、全体を中央に収め全周80px以上余白。人物・手・指・手甲・顔・文字・数字・背景・床・影・光彩・グロー・ぼかし・3D・写実・ピクセル・複数案なし。爪の紙の効果一つだけ。",
+      "key": "king",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 161,
+          "top": 98,
+          "right": 1173,
+          "bottom": 1181
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "claw",
+        "version": 1,
+        "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854"
+      },
+      "newlyGenerated": false,
+      "reason": "通常1・2段と背後の爪に同じ原画を共有。"
+    }
+  ],
+  "gameConnected": true,
+  "cancelledJobs": [
+    {
+      "id": "pawn",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/effect_pawn_v1.json",
+      "status": "cancelled_before_generation",
+      "reason": "2026-10-18 ユーザー指定：汎用歩ではなくレイラ・シオン・ノア。"
+    }
+  ],
+  "verifiedTag": "rework_r4_king_2"
+}

@@ -42,6 +42,7 @@ namespace AniBato.EditorTools
                     if(frames.Any(f=>f==null))throw new InvalidOperationException("必要な攻撃原画が不足: "+Actions[action]);
                     var pose=new PaperPose{Key=Actions[action],States=new[]{States[action]},HoldTicks=8,
                         RotateWithRush=Keys[index]=="yui"&&(action==5||action==6),
+                        UnmirroredImpact=Keys[index]=="king"&&(action==5||action==6),
                         Frames=frames.Select(Import).ToArray(),
                         FrameHeadHeights=frames.Select(f=>(1328-f.headTopY)/PaperActionArtworkBuilder.PixelsPerUnit).ToArray(),
                         FrameFootMinXs=frames.Select(f=>(f.footMinX-652)/PaperActionArtworkBuilder.PixelsPerUnit).ToArray(),

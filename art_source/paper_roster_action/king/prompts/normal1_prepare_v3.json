@@ -1,0 +1,19 @@
+{
+  "id": "normal1_prepare",
+  "key": "king",
+  "character": "黒獅子王",
+  "pose": "normal1",
+  "phase": "prepare",
+  "label": "通常1・2段共通の爪ひっかき",
+  "version": 3,
+  "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png",
+  "references": [
+    "art_source/paper_roster_action/king/generated/normal1_prepare_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象。右手甲だけを修正し、ほかは維持"
+  ],
+  "prompt": "Use case: precise-object-edit. この全身イラストの、画面左上で肩の横へ引いている本人右手の黒金の爪手甲だけを描き直す。顔・獅子頭巾・王冠・身体・もう一方の手・マント・尾・両足・位置・倍率・輪郭・ポーズと1189×1323の透明キャンバスは変えない。\n右手は甲側をこちらへ向け、手首は左下、4本の指は右上へ軽く曲げてまとめる。親指は4指の反対側の右下へ自然に折り、右手の骨格としてつなぐ。四指のそれぞれの指先に金の爪が1個ずつ、下側の対向する親指先に金の爪1個、合計5個だけ。指の根元の関節の区切りを4指分だけ見せる。甲の金の菱形の板4個は薄く平らな装甲板で、尖った追加の爪や指にしない。複数の先端が同じ一本の指から生える形にしない。黒い手袋の丸い指の関節と5つの金の爪先を一対一で対応させる。右手甲の大きさはこの画像のまま。白い縁は右手の全周にも続ける。実透過PNG一枚、背景・影・文字・図解・効果は足さない。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

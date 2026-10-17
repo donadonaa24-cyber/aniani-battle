@@ -1,0 +1,16 @@
+{
+  "id": "pawn",
+  "kind": "projectile",
+  "look": "King",
+  "fitAttackHitbox": true,
+  "fitEachProjectileHitbox": true,
+  "sortingOrder": 7,
+  "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームで、黒獅子王が頭上から召喚して落とす部下の将棋駒一個。真っ直ぐ上向き、正面から見た平たい五角形の蜂蜜色の木の駒。太い黒と金の縁、下部に細い深紅の帯、小さい金の丸い鋲を左右に一つずつ。中央に太く大きい正確な墨文字「歩」一字だけを読みやすく置く。主役の王と区別して王冠・獅子の顔・宝石は付けない。普通のアニメの線とセル塗り、奥行きの斜め厚みのない正面の平たい小道具、薄い硬いクリーム白の切り抜き縁。1024×1024の真の透明PNGに駒一体、全周80px以上透明余白。人物・顔・手・足・尾・腕・王冠・ほかの駒・「歩」以外の文字・背景・床・影・速度線・光彩・グロー・ぼかし・3D・写実・ピクセル・複数案なし。",
+  "key": "king",
+  "version": 1,
+  "source": "art_source/paper_roster_action/king/generated/effect_pawn_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

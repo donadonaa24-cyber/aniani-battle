@@ -1,0 +1,897 @@
+{
+  "schemaVersion": 1,
+  "key": "king",
+  "name": "黒獅子王",
+  "characterIndex": 6,
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "sole": 1328,
+  "pixelsPerUnit": 532.5893,
+  "baseIdle": "art_source/paper_roster_idle/generated/king_idle_v1.png",
+  "jobs": [
+    {
+      "id": "normal1_prepare",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_action/king/prompts/normal1_prepare_v3.json"
+    },
+    {
+      "id": "normal1_impact",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_action/king/prompts/normal1_impact_v3.json"
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/normal3_prepare_v1.json"
+    },
+    {
+      "id": "normal3_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/king/prompts/normal3_impact_v2.json"
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/up_prepare_v1.json"
+    },
+    {
+      "id": "up_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/king/prompts/up_impact_v2.json"
+    },
+    {
+      "id": "down_impact",
+      "version": 4,
+      "promptFile": "art_source/paper_roster_action/king/prompts/down_impact_v4.json"
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/air_impact_v1.json"
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/special_prepare_v1.json"
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/special_impact_v1.json"
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/super_prepare_v1.json"
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/king/prompts/super_impact_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通の爪ひっかき",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の黒獅子王の全身を新しい一姿勢へ編集。画像1は採用待機であり、同じ本人・普通のアニメの線とセル塗り・部位の実寸を保つ。黒髪に赤い筋、赤い瞳、額の小さい金の菱形。人間の少年が、赤い宝石の金の冠が付いた黄金色の獅子の頭巾をかぶる。獅子の飾りの口から人間の顔が一つだけ見える。黒と金の鎧、赤い宝石、金の鎖と腰の獅子の留め具、深紅のマント、左右の黒い爪手甲、金の爪が3つの黒金ブーツ。獅子の尾1本。マントの左右の獅子の毛皮の垂れた飾りを、本人の余分な腕にしない。\n動作：通常1・2段共通の爪ひっかきの予備、まだ当てない。両足を地面に置き両膝を曲げ、腰と胸を少し後ろへ引く。本人右の爪手甲を右肩の近くへ引き、5本の指を自然に曲げ、斜め右前へひっかく直前。本人左の手甲は胸の横でバランスを取る。人間の顔は自信のある小さい笑み、まだ攻撃しない。\n人間の顔は一つ、獅子の頭巾も一つ。本人の腕は左右2本、脚も左右2本。頭巾の口や毛皮の飾りを追加の顔・腕・脚へ変えない。本人右腕は画面左の手前の肩から、本人左腕は画面右の奥の肩から、肘→手首→手甲まで追えること。各手甲は親指1本と4本の指で、爪の本数と親指の所属を自然にする。左右のブーツは各1個、爪先の金爪3つずつ。\n1189×1323の真の透明PNG一枚。右向きの少し斜め横で胸側と両腕両脚が見える。頭巾と冠の横幅、見えている人間の頭、手甲、爪ブーツの実寸は画像1を基準に保つ。低いポーズは上に透明余白を残し、枠へ合わせて拡大しない。長い腕や脚は肘と膝を自然に曲げて収め、武器や部品を縮めてごまかさない。王冠・頭巾・マント・手甲の指先・尾・両ブーツを切らず全周20px以上の余白。薄い硬いクリーム白の切り抜き縁を全外周へ連続させる。背景・床・影・相手・文字（駒の「王」以外）・紙の繊維・オーラ・攻撃効果・グロー・ぼかし・複数案・関節分割・3D・写実・ピクセルは禁止。本人一体、一姿勢だけ。",
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "sha256": "ec644836d8678fe0325b953c04e52a1055790a59e58e7d4cd3200de4d087cf6e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 19,
+          "top": 9,
+          "right": 1188,
+          "bottom": 1306
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "マント右端切断と手甲・靴の部位拡大を修正。右腕は肩へ引く予備、金の指先は親指1と4指の計5つ。冠とマントは全周20px余白。",
+      "rejection": "マント右端が原画端へ到達し、手甲と靴も拡大したため不採用。"
+    },
+    {
+      "id": "normal1_prepare",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通の爪ひっかき",
+      "version": 2,
+      "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png",
+        "art_source/paper_roster_core/king/generated/king_crouch_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機、容姿と頭巾・手甲・ブーツの原寸の基準",
+        "採用しゃがみ、低い予備と同じ部位実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の黒獅子王の全身を新しい一姿勢へ編集。画像1は採用待機であり、同じ本人・普通のアニメの線とセル塗り・部位の実寸を保つ。黒髪に赤い筋、赤い瞳、額の小さい金の菱形。人間の少年が、赤い宝石の金の冠が付いた黄金色の獅子の頭巾をかぶる。獅子の飾りの口から人間の顔が一つだけ見える。黒と金の鎧、赤い宝石、金の鎖と腰の獅子の留め具、深紅のマント、左右の黒い爪手甲、金の爪が3つの黒金ブーツ。獅子の尾1本。マントの左右の獅子の毛皮の垂れた飾りを、本人の余分な腕にしない。\n動作：通常1・2段共通の爪ひっかきの予備、まだ当てない。両足を地面に置き両膝を曲げ、腰と胸を少し後ろへ引く。本人右の爪手甲を右肩の近くへ引き、5本の指を自然に曲げ、斜め右前へひっかく直前。本人左の手甲は胸の横でバランスを取る。人間の顔は自信のある小さい笑み、まだ攻撃しない。\n人間の顔は一つ、獅子の頭巾も一つ。本人の腕は左右2本、脚も左右2本。頭巾の口や毛皮の飾りを追加の顔・腕・脚へ変えない。本人右腕は画面左の手前の肩から、本人左腕は画面右の奥の肩から、肘→手首→手甲まで追えること。各手甲は親指1本と4本の指で、爪の本数と親指の所属を自然にする。左右のブーツは各1個、爪先の金爪3つずつ。\n1189×1323の真の透明PNG一枚。右向きの少し斜め横で胸側と両腕両脚が見える。頭巾と冠の横幅、見えている人間の頭、手甲、爪ブーツの実寸は画像1を基準に保つ。低いポーズは上に透明余白を残し、枠へ合わせて拡大しない。長い腕や脚は肘と膝を自然に曲げて収め、武器や部品を縮めてごまかさない。王冠・頭巾・マント・手甲の指先・尾・両ブーツを切らず全周20px以上の余白。薄い硬いクリーム白の切り抜き縁を全外周へ連続させる。背景・床・影・相手・文字（駒の「王」以外）・紙の繊維・オーラ・攻撃効果・グロー・ぼかし・複数案・関節分割・3D・写実・ピクセルは禁止。本人一体、一姿勢だけ。\n修正条件：画像2の採用しゃがみと同じ部位の実寸。右手甲を手前へ突き出さず、右肘を曲げて肩のすぐ横へ後ろへ引く。右手の金の指先は親指1本と他4本の計5本だけ。金の甲の菱形の飾りを追加の指先にしない。近い右ブーツの幅は約210px、奥の左ブーツ約250pxを基準、拳を約1.5倍や靴を1.3倍へ膨らませない。腕とマントの脇を少し畳み、全身を切らず左右30px以上、王冠の上に30px以上余白。頭巾と人間の頭の大きさは採用待機から変えず、低い姿勢を上へ詰めない。",
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "sha256": "f15e54a89f9681c451ab13069f2e41de769cee3586709323fe5efd467afb1b3c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 20,
+          "top": 61,
+          "right": 1176,
+          "bottom": 1264
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "右手甲の4指と親指のつながりを明確にする。甲の飾りは平らな板にして追加の爪に見せない。ほかの人物部分と倍率は維持。",
+      "rejection": "甲の金の板と指先の区別を明確にしたv3を優先。"
+    },
+    {
+      "id": "normal1_prepare",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通の爪ひっかき",
+      "version": 3,
+      "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象。右手甲だけを修正し、ほかは維持"
+      ],
+      "prompt": "Use case: precise-object-edit. この全身イラストの、画面左上で肩の横へ引いている本人右手の黒金の爪手甲だけを描き直す。顔・獅子頭巾・王冠・身体・もう一方の手・マント・尾・両足・位置・倍率・輪郭・ポーズと1189×1323の透明キャンバスは変えない。\n右手は甲側をこちらへ向け、手首は左下、4本の指は右上へ軽く曲げてまとめる。親指は4指の反対側の右下へ自然に折り、右手の骨格としてつなぐ。四指のそれぞれの指先に金の爪が1個ずつ、下側の対向する親指先に金の爪1個、合計5個だけ。指の根元の関節の区切りを4指分だけ見せる。甲の金の菱形の板4個は薄く平らな装甲板で、尖った追加の爪や指にしない。複数の先端が同じ一本の指から生える形にしない。黒い手袋の丸い指の関節と5つの金の爪先を一対一で対応させる。右手甲の大きさはこの画像のまま。白い縁は右手の全周にも続ける。実透過PNG一枚、背景・影・文字・図解・効果は足さない。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "f3d2373b2b4907b63b49e86136d8dbe1a7eff8523a025983ee13f1a26da2f75f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 20,
+          "top": 61,
+          "right": 1180,
+          "bottom": 1266
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/normal1_prepare.png",
+      "preparedSha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "offsetX": 38,
+      "offsetY": 62,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal1_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通の爪ひっかき",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/normal1_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png",
+        "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準",
+        "共通予備。部位の大きさと衣装の同一性の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の黒獅子王の全身を新しい一姿勢へ編集。画像1は採用待機であり、同じ本人・普通のアニメの線とセル塗り・部位の実寸を保つ。黒髪に赤い筋、赤い瞳、額の小さい金の菱形。人間の少年が、赤い宝石の金の冠が付いた黄金色の獅子の頭巾をかぶる。獅子の飾りの口から人間の顔が一つだけ見える。黒と金の鎧、赤い宝石、金の鎖と腰の獅子の留め具、深紅のマント、左右の黒い爪手甲、金の爪が3つの黒金ブーツ。獅子の尾1本。マントの左右の獅子の毛皮の垂れた飾りを、本人の余分な腕にしない。\n動作：通常1・2段共通の爪ひっかきの当てる決め。腰と胸を画面右前へひねって一歩踏み込み、本人右腕の爪手甲を胸の前から画面右へ振り出してひっかく決め。右肩→右肘→右手首→右手甲が自然につながり、右手の親指1本と4本の指の計5本が一方向の爪にならない。本人左手甲は胸の横へ引き、両足は接地。人間の顔を腕で隠さない。邪悪なオーラと斬撃は別素材なので描かない。\n人間の顔は一つ、獅子の頭巾も一つ。本人の腕は左右2本、脚も左右2本。頭巾の口や毛皮の飾りを追加の顔・腕・脚へ変えない。本人右腕は画面左の手前の肩から、本人左腕は画面右の奥の肩から、肘→手首→手甲まで追えること。各手甲は親指1本と4本の指で、爪の本数と親指の所属を自然にする。左右のブーツは各1個、爪先の金爪3つずつ。\n1189×1323の真の透明PNG一枚。右向きの少し斜め横で胸側と両腕両脚が見える。頭巾と冠の横幅、見えている人間の頭、手甲、爪ブーツの実寸は画像1を基準に保つ。低いポーズは上に透明余白を残し、枠へ合わせて拡大しない。長い腕や脚は肘と膝を自然に曲げて収め、武器や部品を縮めてごまかさない。王冠・頭巾・マント・手甲の指先・尾・両ブーツを切らず全周20px以上の余白。薄い硬いクリーム白の切り抜き縁を全外周へ連続させる。背景・床・影・相手・文字（駒の「王」以外）・紙の繊維・オーラ・攻撃効果・グロー・ぼかし・複数案・関節分割・3D・写実・ピクセルは禁止。本人一体、一姿勢だけ。\n画像2と同じ人物の部位実寸。本人右手甲が画面右の前へ出て、右手の甲側がこちらへ見える。4本の指は右へ曲げて爪を出し、対向する親指は下辺に来る。金の甲の板は平らな装飾で、指先や追加の爪にはしない。右肘を少し曲げ、手甲の右端とマントの端を画像右端30pxより内側へ収める。近い右ブーツの幅約210px、奥の左ブーツ約250px。手甲とブーツを巨大化しない。",
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "sha256": "a1a4f0bc26a7ec437d5bd4e7bec1ac4cdb42f69f22cdcb7adcb8811190d8a756",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 28,
+          "top": 51,
+          "right": 1184,
+          "bottom": 1281
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "右端切断を修正。腰と胸を右へ強く回して背中側の深紅マントを見せ、画面右前が本人右肩と右手になる体のつながりへ。",
+      "rejection": "右余白4pxで指示の30pxを満たさず、手と肩の所属が不明瞭。"
+    },
+    {
+      "id": "normal1_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通の爪ひっかき",
+      "version": 2,
+      "source": "art_source/paper_roster_action/king/generated/normal1_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png",
+        "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準",
+        "共通予備。部位の大きさと衣装の同一性の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1は黒獅子王の採用待機、画像2は共通の予備。同じ本人、同じアニメ線とセル塗り、同じ人間の頭と獅子フード・王冠・手甲・爪ブーツの原寸を維持し、右の爪で大きくひっかく終点ポーズを一枚描く。\n重要な胴体の向き：腰と肩を右へ強く回し、こちらには背中側の深紅マントが見える右向きの背面3/4。本人右肩は画面右前、本人左肩は画面左後ろ。胸の正面の鎧をこちらへ向けない。背中のマントの上に胸飾りや腰の前側の獅子バックルを透かして描かない。顔は首を無理にひねらず斜め右を見て、右頬と人間の目を見せる。\n右肩から右肘、右手首、右爪手甲へつなぎ、右の爪を画面右前へひっかく決め。右肘は少し曲げる。右手の甲がこちらに見え、4本の指は右へ曲げ、対向する親指は下辺。爪は親指1＋4指の5つ、自然な重なり以外で指を増やさない。甲の金の菱形板は平らな板で、尖った追加の爪ではない。左腕は身体の後ろへ引いてバランスを取る。右前へ一歩踏み込んだ体軸の大きいひねり。\n黒髪に赤い筋、赤い瞳、額の金の菱形、黄金の獅子フードと赤宝石の冠、黒金の鎧、深紅マント、金の鎖、黒金の爪ブーツ2個、尾1本を維持。獅子は被り物の飾り、人間の本人1体、腕2本脚2本。\n1189×1323の真の透明PNG。全身の各部位は画像1の実寸、右のブーツ幅約210px・左約250pxを基準。マントと両肘と両膝を自然に少し畳んで収め、右手の指先・冠・マント・尾・両靴を切らず全周30px以上の透明余白。人物や部品を拡大縮小して余白を埋めない。全外周に薄い硬いクリーム白縁、背景・床・影・相手・オーラ・攻撃効果・文字・グロー・ぼかし・複数案なし。",
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "sha256": "ba41765f82995035269c80fa777a9cbbed70ea4976d777b55bd5269062054b09",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 9,
+          "top": 21,
+          "right": 1180,
+          "bottom": 1275
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "背面の体軸回転は維持。右肘を深く曲げ右手の最右端をx1080以内、右の足を内へ寄せ、マントを畳んで全周余白を確保。",
+      "rejection": "背面の所属は改善。肘とマントをさらに畳んだv3を優先。"
+    },
+    {
+      "id": "normal1_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通の爪ひっかき",
+      "version": 3,
+      "source": "art_source/paper_roster_action/king/generated/normal1_impact_v3.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/normal1_impact_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象。背中側の体軸回転と容姿の原寸を維持し、肘と足とマントの広がりだけを修正"
+      ],
+      "prompt": "Use case: precise-object-edit. この黒獅子王の全身を、同じ1189×1323の真の透明キャンバスの内側へ全身が切れずに収まるように、関節とマントの広がりだけ修正する。人物や部位を縮小しない。頭・人間の顔・髪・獅子のフード・王冠の画素の大きさと見た目、黒金の鎧、金の爪手甲、金の爪ブーツの大きさを維持。背面の深紅マントが見え、右肩から右手を前へ出す強い体軸の回転は維持。\n変更点1：前へ出した本人右肘を約90度深く曲げ、右前腕と右手を身体の近くへ戻す。右手の甲と自然な親指＋4指の5つの爪先は維持し、右手の最右端を画像x1080より内側に収める。爪の一部を切ったり短く縮めて収めない。\n変更点2：前の右足の膝を曲げて足を身体の近くへ約100px寄せ、右ブーツの先端をx1080より内側へ。両ブーツの大きさは同じ、両足接地。\n変更点3：画面左へ広がり過ぎたマントと毛皮の飾りを少し身体へ畳み、左端はx60より右側へ。尾も切らず内側に収める。余分な手や脚を作らない。\nキャンバスは背景・床・影・文字・効果なしの実透過PNG一枚。元の全身と1体の顔の数、腕2本脚2本と尾1本、全外周の薄い硬い白縁を保つ。金の甲の小さい板は平らな装飾、追加の指先ではない。右手・両足・マントのすべてに透明余白が見えるようにする。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "982d8cf812347e3e8e52d0e9b573cf281f57712275732cc9439225e67c1129d8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 68,
+          "top": 15,
+          "right": 1173,
+          "bottom": 1291
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/normal1_impact.png",
+      "preparedSha256": "5bbc473a03d0308a993ab6fe937d07e31e0ee5611510506ca27bb888ae779690",
+      "offsetX": 0,
+      "offsetY": 37,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "normal3",
+      "phase": "prepare",
+      "label": "通常3段の咆哮と大きい蹴り",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png",
+        "art_source/paper_roster_core/king/generated/king_crouch_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準",
+        "採用しゃがみ、頭巾・手甲とブーツの実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の黒獅子王の全身を新しい一姿勢へ編集。画像1は採用待機であり、同じ本人・普通のアニメの線とセル塗り・部位の実寸を保つ。黒髪に赤い筋、赤い瞳、額の小さい金の菱形。人間の少年が、赤い宝石の金の冠が付いた黄金色の獅子の頭巾をかぶる。獅子の飾りの口から人間の顔が一つだけ見える。黒と金の鎧、赤い宝石、金の鎖と腰の獅子の留め具、深紅のマント、左右の黒い爪手甲、金の爪が3つの黒金ブーツ。獅子の尾1本。マントの左右の獅子の毛皮の垂れた飾りを、本人の余分な腕にしない。\n動作：通常3段の咆哮と大きい蹴りの予備、まだ当てない。三段中最大の溜め。本人右脚を曲げて接地し、本人左脚の膝を胸の前へ高く持ち上げる。腰と胸を強く後ろへ引き、両方の爪手甲を胸へ引く。人間の口を閉じて鋭く見据え、大きい蹴りと咆哮の直前。持ち上げた足先を巨大化しない。\n人間の顔は一つ、獅子の頭巾も一つ。本人の腕は左右2本、脚も左右2本。頭巾の口や毛皮の飾りを追加の顔・腕・脚へ変えない。本人右腕は画面左の手前の肩から、本人左腕は画面右の奥の肩から、肘→手首→手甲まで追えること。各手甲は親指1本と4本の指で、爪の本数と親指の所属を自然にする。左右のブーツは各1個、爪先の金爪3つずつ。\n1189×1323の真の透明PNG一枚。右向きの少し斜め横で胸側と両腕両脚が見える。頭巾と冠の横幅、見えている人間の頭、手甲、爪ブーツの実寸は画像1を基準に保つ。低いポーズは上に透明余白を残し、枠へ合わせて拡大しない。長い腕や脚は肘と膝を自然に曲げて収め、武器や部品を縮めてごまかさない。王冠・頭巾・マント・手甲の指先・尾・両ブーツを切らず全周20px以上の余白。薄い硬いクリーム白の切り抜き縁を全外周へ連続させる。背景・床・影・相手・文字（駒の「王」以外）・紙の繊維・オーラ・攻撃効果・グロー・ぼかし・複数案・関節分割・3D・写実・ピクセルは禁止。本人一体、一姿勢だけ。\n画像2は低い姿勢でも部位の実寸を保つ基準。近い右ブーツは幅約210px、奥の左ブーツ約250px、手甲は約190pxを基準。左膝を胸の前へ上げ、左のブーツは膝の下へ折りたたんで浮かせる。右のブーツだけで接地。両手甲は閉じ気味にし、指先を内側へ自然に曲げる。マントの裾を両足の内側へ畳み、画面右に飛び出さず、余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "1426eb69de6c809a9957ad8c7430677df9ddef039c0c9bda87ec97588f2b956a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 36,
+          "top": 15,
+          "right": 1160,
+          "bottom": 1292
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/normal3_prepare.png",
+      "preparedSha256": "b4c71b5f85fe15f31b369405587e64948787b275e91c4e730938b2499ed4f773",
+      "offsetX": 115,
+      "offsetY": 36,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段の咆哮と大きい蹴り",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/normal3_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png",
+        "art_source/paper_roster_action/king/generated/normal3_prepare_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準",
+        "三段目の予備。持ち上げた本人左脚を右前方へ蹴り出す起点"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の黒獅子王の全身を新しい一姿勢へ編集。画像1は採用待機であり、同じ本人・普通のアニメの線とセル塗り・部位の実寸を保つ。黒髪に赤い筋、赤い瞳、額の小さい金の菱形。人間の少年が、赤い宝石の金の冠が付いた黄金色の獅子の頭巾をかぶる。獅子の飾りの口から人間の顔が一つだけ見える。黒と金の鎧、赤い宝石、金の鎖と腰の獅子の留め具、深紅のマント、左右の黒い爪手甲、金の爪が3つの黒金ブーツ。獅子の尾1本。マントの左右の獅子の毛皮の垂れた飾りを、本人の余分な腕にしない。\n動作：通常3段の咆哮と大きい蹴りの当てる決め。接地した本人右脚で全身を支え、本人左脚を画面右前へ大きく蹴り伸ばす。頭巾と胸を後ろへ倒し腰と肩をひねる明快な大振りの蹴り。左の爪ブーツの先は右を向き、太腿→膝→脛→足首→ブーツの接続を一続きにする。両腕の爪手甲は左右へ開いてバランスを取り、人間の口を大きく開いて吠える。別の獅子の顔や口を生やさず、頭巾の飾りの顔は変えない。咆哮と衝撃は別素材。\n人間の顔は一つ、獅子の頭巾も一つ。本人の腕は左右2本、脚も左右2本。頭巾の口や毛皮の飾りを追加の顔・腕・脚へ変えない。本人右腕は画面左の手前の肩から、本人左腕は画面右の奥の肩から、肘→手首→手甲まで追えること。各手甲は親指1本と4本の指で、爪の本数と親指の所属を自然にする。左右のブーツは各1個、爪先の金爪3つずつ。\n1189×1323の真の透明PNG一枚。右向きの少し斜め横で胸側と両腕両脚が見える。頭巾と冠の横幅、見えている人間の頭、手甲、爪ブーツの実寸は画像1を基準に保つ。低いポーズは上に透明余白を残し、枠へ合わせて拡大しない。長い腕や脚は肘と膝を自然に曲げて収め、武器や部品を縮めてごまかさない。王冠・頭巾・マント・手甲の指先・尾・両ブーツを切らず全周20px以上の余白。薄い硬いクリーム白の切り抜き縁を全外周へ連続させる。背景・床・影・相手・文字（駒の「王」以外）・紙の繊維・オーラ・攻撃効果・グロー・ぼかし・複数案・関節分割・3D・写実・ピクセルは禁止。本人一体、一姿勢だけ。\n画像2の持ち上げた左脚を画面右へ蹴り伸ばす終点。右足だけで接地。左のブーツの爪先は右向きで、足裏を巨大な面としてカメラへ向けない。左ブーツの横幅は約250px、接地右ブーツ約210px。蹴った左足先はx1100以内、後ろへ流すマントはx60より内側に収め、必要なら左膝を少し曲げて収める。人物全体を縮めず、頭巾と冠と人間の顔は画像1の実寸。両手の爪手甲は閉じ気味の拳で支え、余分な指先を出さない。大きく開いて吠えるのは人間の口だけ、頭巾の獅子の装飾の口は変えない。",
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "sha256": "9e234ee04ef59479f2c3865b48967dacc4c3426d31fad63dfafc1cd18038fdaf",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 7,
+          "top": 7,
+          "right": 1184,
+          "bottom": 1286
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "蹴りブーツの金爪を採用待機と同じ3つへ。左の蹴りを腰の高さでほぼ水平にし、膝を少し曲げ先端x1080内、マント左右に余白を確保。",
+      "rejection": "蹴りブーツの金爪4つを待機と同じ3つへ修正し、水平の蹴りに変更。"
+    },
+    {
+      "id": "normal3_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段の咆哮と大きい蹴り",
+      "version": 2,
+      "source": "art_source/paper_roster_action/king/generated/normal3_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/normal3_impact_v1.png",
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象。口を開いた咆哮と片足で支える姿勢を維持",
+        "採用待機の原寸・3つずつの金爪のブーツの基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の蹴りポーズの黒獅子王を修正。画像2は採用待機であり、同じ人物、同じ頭巾・王冠・人間の頭・手甲・ブーツの原寸を維持する。人間の口を大きく開けて吠える顔、右脚で接地して支える姿勢、黒金の鎧、深紅マントと獅子頭巾の装飾の顔は維持。\n最重要：持ち上げている左脚を高い蹴りから、腰の高さで画面右へほぼ水平に出す蹴りへ変更。左膝は少し曲げ、左の足首とブーツを画像の右端へ伸ばし切らない。左ブーツの先端をx1080より内側、足の中心は腰のベルトとほぼ同じy700付近へ。太腿→膝→脛→足首→足先は左脚一本のまま自然につなぐ。両脚の根元を取り違えない。\nブーツの金の爪は左右どちらも3つずつ。蹴りのブーツに4つ目の金の爪を付けない。画像2のブーツと同じ3つだけの形で、ブーツを巨大化せず約250pxの幅の側面として見せる。右の接地ブーツは幅約210px、足裏は同じ地面に接地。\nマントの左右の飾りを身体へ少し畳み、左右x60からx1100の範囲に収める。冠の上にも30px以上透明余白。人物を拡大縮小して収めず、関節を曲げ布を畳む。指を出さない両方の閉じた手甲を維持し、余分な腕・脚・顔は足さない。\n1189×1323、全身一体・一姿勢、薄い硬い白縁、実透過PNG。背景・床・影・相手・文字・攻撃エフェクト・グロー・ぼかしなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "6952d55b6480b480055832f0880b036a7491f2cce2931538e9d714e9044dfc61",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 1,
+          "top": 5,
+          "right": 1186,
+          "bottom": 1300
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/normal3_impact.png",
+      "preparedSha256": "af6f57d77621ae5e598f21e5874fefa2f4d8d45786299b97e6b9952777b7fe6e",
+      "offsetX": 115,
+      "offsetY": 28,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "up_prepare",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "up",
+      "phase": "prepare",
+      "label": "地上上への爪",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象。右手甲だけを修正し、ほかは維持"
+      ],
+      "prompt": "Use case: precise-object-edit. この全身イラストの、画面左上で肩の横へ引いている本人右手の黒金の爪手甲だけを描き直す。顔・獅子頭巾・王冠・身体・もう一方の手・マント・尾・両足・位置・倍率・輪郭・ポーズと1189×1323の透明キャンバスは変えない。\n右手は甲側をこちらへ向け、手首は左下、4本の指は右上へ軽く曲げてまとめる。親指は4指の反対側の右下へ自然に折り、右手の骨格としてつなぐ。四指のそれぞれの指先に金の爪が1個ずつ、下側の対向する親指先に金の爪1個、合計5個だけ。指の根元の関節の区切りを4指分だけ見せる。甲の金の菱形の板4個は薄く平らな装甲板で、尖った追加の爪や指にしない。複数の先端が同じ一本の指から生える形にしない。黒い手袋の丸い指の関節と5つの金の爪先を一対一で対応させる。右手甲の大きさはこの画像のまま。白い縁は右手の全周にも続ける。実透過PNG一枚、背景・影・文字・図解・効果は足さない。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "f3d2373b2b4907b63b49e86136d8dbe1a7eff8523a025983ee13f1a26da2f75f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 20,
+          "top": 61,
+          "right": 1180,
+          "bottom": 1266
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/up_prepare.png",
+      "preparedSha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "offsetX": 38,
+      "offsetY": 62,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "reuseOf": {
+        "id": "normal1_prepare",
+        "version": 3,
+        "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png",
+        "sha256": "f3d2373b2b4907b63b49e86136d8dbe1a7eff8523a025983ee13f1a26da2f75f",
+        "promptFile": "art_source/paper_roster_action/king/prompts/normal1_prepare_v3.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "右手甲を肩へ引いた共通の予備を原寸で再利用。上へ爪を突き上げる起点。"
+    },
+    {
+      "id": "special_prepare",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "special",
+      "phase": "prepare",
+      "label": "特殊の王変身と部下招集",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象。右手甲だけを修正し、ほかは維持"
+      ],
+      "prompt": "Use case: precise-object-edit. この全身イラストの、画面左上で肩の横へ引いている本人右手の黒金の爪手甲だけを描き直す。顔・獅子頭巾・王冠・身体・もう一方の手・マント・尾・両足・位置・倍率・輪郭・ポーズと1189×1323の透明キャンバスは変えない。\n右手は甲側をこちらへ向け、手首は左下、4本の指は右上へ軽く曲げてまとめる。親指は4指の反対側の右下へ自然に折り、右手の骨格としてつなぐ。四指のそれぞれの指先に金の爪が1個ずつ、下側の対向する親指先に金の爪1個、合計5個だけ。指の根元の関節の区切りを4指分だけ見せる。甲の金の菱形の板4個は薄く平らな装甲板で、尖った追加の爪や指にしない。複数の先端が同じ一本の指から生える形にしない。黒い手袋の丸い指の関節と5つの金の爪先を一対一で対応させる。右手甲の大きさはこの画像のまま。白い縁は右手の全周にも続ける。実透過PNG一枚、背景・影・文字・図解・効果は足さない。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "f3d2373b2b4907b63b49e86136d8dbe1a7eff8523a025983ee13f1a26da2f75f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 20,
+          "top": 61,
+          "right": 1180,
+          "bottom": 1266
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/special_prepare.png",
+      "preparedSha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "offsetX": 38,
+      "offsetY": 62,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "reuseOf": {
+        "id": "normal1_prepare",
+        "version": 3,
+        "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png",
+        "sha256": "f3d2373b2b4907b63b49e86136d8dbe1a7eff8523a025983ee13f1a26da2f75f",
+        "promptFile": "art_source/paper_roster_action/king/prompts/normal1_prepare_v3.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "人間の姿で両手甲を引いて変身する起点として、共通予備を原寸再利用。"
+    },
+    {
+      "id": "up_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "up",
+      "phase": "impact",
+      "label": "地上上への爪",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/up_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png",
+        "art_source/paper_roster_core/king/generated/king_crouch_v1.png",
+        "art_source/paper_roster_action/king/generated/normal1_impact_v3.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準",
+        "低い姿勢でも頭巾と手甲と靴を拡大しない実寸の基準",
+        "右肩から右手甲を出す背面3/4の方向の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の黒獅子王の全身を新しい一姿勢へ編集。画像1は採用待機であり、同じ本人・普通のアニメの線とセル塗り・部位の実寸を保つ。黒髪に赤い筋、赤い瞳、額の小さい金の菱形。人間の少年が、赤い宝石の金の冠が付いた黄金色の獅子の頭巾をかぶる。獅子の飾りの口から人間の顔が一つだけ見える。黒と金の鎧、赤い宝石、金の鎖と腰の獅子の留め具、深紅のマント、左右の黒い爪手甲、金の爪が3つの黒金ブーツ。獅子の尾1本。マントの左右の獅子の毛皮の垂れた飾りを、本人の余分な腕にしない。\n動作：地上上への爪の当てる決め。両足を地面に残し、本人右の爪手甲を胸の下から頭の右上へ突き上げる爪の打ち上げ。右肘を少し曲げて頭巾と手甲が切れないようにする。人間の顔を隠さず本人左手は胸の横へ。\n人間の顔は一つ、獅子の頭巾も一つ。本人の腕は左右2本、脚も左右2本。頭巾の口や毛皮の飾りを追加の顔・腕・脚へ変えない。本人右腕は画面左の手前の肩から、本人左腕は画面右の奥の肩から、肘→手首→手甲まで追えること。各手甲は親指1本と4本の指で、爪の本数と親指の所属を自然にする。左右のブーツは各1個、爪先の金爪3つずつ。\n1189×1323の真の透明PNG一枚。右向きの背面3/4で、マントの背中側と両腕両脚が見える。頭巾と冠の横幅、見えている人間の頭、手甲、爪ブーツの実寸は画像1を基準に保つ。低いポーズは上に透明余白を残し、枠へ合わせて拡大しない。長い腕や脚は肘と膝を自然に曲げて収め、武器や部品を縮めてごまかさない。王冠・頭巾・マント・手甲の指先・尾・両ブーツを切らず全周20px以上の余白。薄い硬いクリーム白の切り抜き縁を全外周へ連続させる。背景・床・影・相手・文字（駒の「王」以外）・紙の繊維・オーラ・攻撃効果・グロー・ぼかし・複数案・関節分割・3D・写実・ピクセルは禁止。本人一体、一姿勢だけ。\n画像2と同じ深く膝を曲げた低い姿勢、頭巾の原寸と両ブーツの実寸。画像3のように背面3/4へ上半身をひねり、前の右肩からの右手甲を、今度は横ではなくほぼ真上へ突き上げる。深紅のマントの背中側が見える。右手首と右手甲は人間の顔の右横を通って上へ。右手甲の爪先は、低くした頭巾の王冠より上へ出て、画像の上端70px以上の余白へ収まる。ほかの部位を拡大縮小しない。右手甲の4本の指と対向親指の5本は自然に軽く曲げ、甲の金板は平らな飾り。人物全体を立った姿へ伸ばさず、両足接地、頭巾を巨大化しない。",
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "sha256": "85750d5ad0ad182ed23218fecd090e0f8aba2a6cb0345013b105d9706181c1e7",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 51,
+          "top": 25,
+          "right": 1181,
+          "bottom": 1293
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "腕が3本になった初稿は不採用。元の右腕を上へ動かし、元の位置の右腕を残さない。左腕は背中側の一本のみ。",
+      "rejection": "背中側の左腕、胸前の右腕に加えて上への腕が追加されて3本。"
+    },
+    {
+      "id": "up_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "up",
+      "phase": "impact",
+      "label": "地上上への爪",
+      "version": 2,
+      "source": "art_source/paper_roster_action/king/generated/up_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/normal1_impact_v3.png"
+      ],
+      "referenceRoles": [
+        "編集対象。既存の右腕一本だけを上へ動かす。ほかの本人の部位の実寸は維持"
+      ],
+      "prompt": "Use case: precise-object-edit. この黒獅子王の全身一体を上への爪攻撃に編集。新しい腕を追加せず、現在画面右前へ出ている本人右腕一本の肩→肘→手首→手甲の向きだけを変える。\n現在の右の手甲は胸の前、画面右中ほどにある。この右腕一本を上へ持ち上げる。右肩から上へ伸びる上腕、頭の右横で曲がる右肘、そこから頭巾の右上へ立つ前腕、その先の右手甲だけ。今の胸前の位置に右の上腕・前腕・手甲を残さない。本人左腕は画面左の背中側へ引いた一本をそのまま残す。腕は二本、手甲も二つだけ。\n両膝を深く曲げ腰と頭を少し低くする。低くした頭巾の王冠より上へ右手の爪を突き出し、爪の最上部に40px以上、最右部に60px以上余白。右肘は少し曲げて収め、右手甲の大きさを変えない。人間の顔を隠さない。両足を接地。ブーツの金爪は3つずつ。\n背面3/4の深紅マントと右向きの顔、獅子頭巾と王冠、髪、人間の頭、装飾、手甲と靴の原寸は維持。右手は甲側の4指と対向親指で計5指、金の甲板を追加の指先にしない。左の拳は閉じたまま。\n1189×1323の真の透明PNG、全身一体一姿勢、薄い硬い白縁。背景・床・影・文字・相手・効果なし。人物を拡大縮小して枠へ合わせない。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "70c1ad9c896bba9a0ee193835d026a2a0f232231fda422430e977f7a5e6729fa",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 48,
+          "top": 25,
+          "right": 1182,
+          "bottom": 1299
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/up_impact.png",
+      "preparedSha256": "d8a94aabfcb648306980c40af64749e83ee4f483216fd780c80415cb286aaa4c",
+      "offsetX": 1,
+      "offsetY": 29,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "down_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "down",
+      "phase": "impact",
+      "label": "地上下の低い爪",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/down_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/up_impact_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象。既存の右腕を下へ動かし、膝と股関節を深く曲げる。部位寸法の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. この全身の黒獅子王を、地上で低く爪を出す一つの姿勢へ編集。本人の髪・人間の頭・獅子頭巾・冠・両手甲・両ブーツの画素の大きさと意匠、黒金の鎧、深紅マント、尾1本を維持。\n両膝と股関節を深く曲げ、採用待機よりずっと低くしゃがむ。頭と頭巾を巨大化せず、頭巾の上に大きい透明余白を残す。背面3/4のマントと右向きの人間の顔、両足接地。\n現在上へ伸ばしている本人右腕一本を下へ動かし、右の爪手甲で画面右下の低い位置をひっかく。既存の上の腕と手甲を残さない。右肩→右肘→右手首→右手甲を低い身体の前の一本の腕として自然につなぐ。右手甲の指先はブーツ底より100pxほど上、地面近くへ向ける。本人左腕は背中側へ引いた一本のまま。腕2本、手甲2個、脚2本、ブーツ2個。4指と対向親指の自然な爪を維持し、金の甲の板を指にしない。\n両ブーツの爪は3つずつ、接地ブーツよりマントや手を下へ出さない。マントを身体へ畳み、両足と手甲を切らず全周30px以上余白。1189×1323の真の透明PNG一枚。人物を拡大縮小して収めず、頭や足先は元と同じ原寸。薄い硬い白縁を全外周へ、背景・床・影・文字・相手・効果・グローなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "111deebbcb4b9eada1da9c284e369d3046e671cd9d495b75b4f3620dc781fe41",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 238,
+          "right": 1178,
+          "bottom": 1242
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "右手甲が大きく、ブーツ底より下に出た。採用の手甲の部位実寸へ戻し、肘を曲げて手甲だけを約120px上げ、ブーツ底が最下部になる形へ。"
+    },
+    {
+      "id": "down_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "down",
+      "phase": "impact",
+      "label": "地上下の低い爪",
+      "version": 2,
+      "source": "art_source/paper_roster_action/king/generated/down_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/down_impact_v1.png",
+        "art_source/paper_roster_action/king/generated/normal1_impact_v3.png"
+      ],
+      "referenceRoles": [
+        "編集対象、右前腕と右手甲以外は維持",
+        "同じ本人の採用候補の手甲の実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の低い爪攻撃を修正する。右前腕と右の手甲だけを修正し、顔・頭巾・王冠・身体・左の後ろの腕・両脚・ブーツ・マント・尾・透明キャンバスは同じまま。新しい手や腕を増やさない。\n右手甲が今は巨大で地面より下へ出ているので、画像2の同じ本人の右手甲の実寸と投影へ戻す。手甲の幅は約190〜210px、今の約300pxの巨大な手から基準に戻す。手甲をカメラへ突き出さず、爪を画面右へ向ける側面寄りの握り。甲の金の板を爪にしない。右の肩→肘→手首→手甲を一本のまま、肘をもっと曲げ右手甲を約120px上げる。手首を不自然に折らず、爪先と手甲の最下部はブーツ底より少なくとも100px上。低い攻撃のまま、右手甲が左の接地ブーツより下にならないようにする。\n右手は本人右の甲側、4本の指と対向親指の5本。爪は自然な指先にだけ付く。両ブーツは同じ2個、各3つの金爪のまま一切変更しない。頭や靴や人物全体を拡大縮小しない。1189×1323の真の透明PNG、薄い硬い白縁、背景・床・影・文字・相手・効果なし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "2042d048a46fb414c84721d9221f4e205ff3857e5059b4d599bc1c0e1295cfd9",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 238,
+          "right": 1162,
+          "bottom": 1242
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "右下の接地ブーツが五爪の手甲の形なので、甲の板を除去し採用待機と同じ3本爪のブーツへ。上へ直した右手甲と他の部位は保持。"
+    },
+    {
+      "id": "down_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "down",
+      "phase": "impact",
+      "label": "地上下の低い爪",
+      "version": 3,
+      "source": "art_source/paper_roster_action/king/generated/down_impact_v3.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/down_impact_v2.png"
+      ],
+      "referenceRoles": [
+        "編集対象。画面右下の接地ブーツだけを修正、ほかは維持"
+      ],
+      "prompt": "Use case: precise-object-edit. この全身イラストの画面右下、地面に接地している前足の黒金ブーツだけを修正する。画面右中ほどの前へ出した爪手甲は手なので変更しない。左下の後ろ足のブーツも変更しない。\n右下のブーツが5本の爪のある手甲のような形になっている。この手のような形と甲の金の菱形板を消して、左下のブーツと同じ種類の、金の爪が3つだけの黒金の爪ブーツへ描き直す。右の脛の赤い菱形宝石と鎧から、足首→靴の甲→金の爪先3つへ自然につなげる。親指や4本指の手として描かず、ブーツに手甲の小さい金の菱形板を描かない。金の爪先は3つだけ。\nブーツの実寸と接地の高さは左下と同程度、今の輪郭の範囲に収める。脚は2本、腕2本、手甲2つのまま。新しい手や足を足さない。顔・髪・冠・頭巾・身体・両腕・上の爪手甲・左の接地ブーツ・マント・尾の原寸と位置とポーズ、1189×1323の透明キャンバスを維持。薄い硬い白縁も保つ。背景・影・文字・相手・効果なし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "57db38100506d3ffd0e249c31dd81d3baa72df74bf922ce6c85f5425b8e18634",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 238,
+          "right": 1162,
+          "bottom": 1253
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "右下のブーツの金爪が2つになったので、採用待機の部分参照を使い、3つが別々に見える爪先へ修正。"
+    },
+    {
+      "id": "down_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "down",
+      "phase": "impact",
+      "label": "地上下の低い爪",
+      "version": 4,
+      "source": "art_source/paper_roster_action/king/generated/down_impact_v4.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/down_impact_v3.png",
+        "art_source/paper_roster_action/king/review/adopted_boots_reference.png"
+      ],
+      "referenceRoles": [
+        "編集対象。右下のブーツだけ修正",
+        "採用待機から切り出したブーツ部分の参照。左右とも金爪3つ、部位実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の全身で、画面右下の接地ブーツだけを修正。画像2は採用待機から切り出した本人の正しいブーツで、どちらも別々の金爪が3つある。\n画像1の右下のブーツの金爪は今2つしか見えない。画像2の右側のブーツを参考に、手前から奥へ3つの金爪が並び、3つが別々に見える黒金の爪ブーツへ描き直す。大きい2つの爪ではなく、同じ大きさの金爪3つ。3つ目をブーツや裏側に隠さず、先端3個を見せる。ブーツの甲の装甲・赤い菱形の宝石・足首からのつながりは画像2の意匠と同じ。\nブーツを巨大化しない。画像2の右側のブーツと同じ約250pxの横幅。左下のブーツと同じ接地の高さ。右下以外の顔・頭巾・冠・手甲・腕・身体・左ブーツ・マント・尾・ポーズ・画素の倍率・薄い白縁・1189×1323の透明キャンバスは完全に維持。背景・影・文字・相手・効果を足さない。全身一体だけを出力。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "c5acb9dd8f28c6f00d7a880b752b45dbe1f62a7f4dc2456fbd253012ea590b07",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 238,
+          "right": 1175,
+          "bottom": 1254
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/down_impact.png",
+      "preparedSha256": "55e19060dbaa2cbf3f496d17ba5f5772548347a19322c2cda44c289ddbb641b7",
+      "offsetX": 39,
+      "offsetY": 74,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "air_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "air",
+      "phase": "impact",
+      "label": "空中Nの飛びつき爪",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/air_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/king/generated/normal1_impact_v3.png"
+      ],
+      "referenceRoles": [
+        "編集対象。既存の右の爪攻撃と体のひねり、部位の実寸を保ち、両脚を空中へ曲げる"
+      ],
+      "prompt": "Use case: precise-object-edit. この黒獅子王を、右へ飛びつきながら爪で攻撃する空中一姿勢へ編集する。頭と人間の顔・獅子頭巾・冠・髪・右手甲と左手甲・鎧・ブーツの原寸と意匠は維持。右肩から右の爪へつながる背面3/4の体軸のひねり、前へ出した右手甲、背中側へ引いた左腕の二本だけを維持し、新しい腕は足さない。\n変更は下半身と布の流れ。両脚を完全に空中へ浮かせ、両膝を深く曲げる。一方の膝は胴体の下へ引き付け、反対の膝は後ろへ曲げ、両方のブーツが横向きに後ろへ浮いた、空中と明快に分かるシルエット。元のまっすぐ地面へ伸ばした脚や接地ブーツは残さない。股関節→太腿→膝→脛→足首→爪ブーツが左右一本ずつ。脚2本、ブーツ2つ、ブーツの金爪は3つずつ。\n胸と腰は少し右へ前傾、マントと尾を左後ろへ流す。手足を巨大化せず、接地したしゃがみと区別する。両腕2本と両脚2本、人間の顔1つ、獅子の頭巾1つ、尾1本だけ。\n1189×1323の真の透明PNG一枚、全身の原寸を保ち、関節を曲げて全周30px以上余白。王冠・手の指先・マント・尾・ブーツを切らない。薄い硬い白縁を全外周へ。背景・床・影・相手・文字・オーラ・効果・グローなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "443a5db064f75ff61028a1a8e29301bc6fed53156c550a307a3bfdb3494ff2f8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 29,
+          "top": 18,
+          "right": 1173,
+          "bottom": 1286
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/air_impact.png",
+      "preparedSha256": "e6f38659daad86d6240cb9752b2db8b2cb10cb1861e537208582ba4a7dd970d9",
+      "offsetX": 57,
+      "offsetY": 42,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "special",
+      "phase": "impact",
+      "label": "特殊の王変身と部下招集",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/special_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "容姿の編集対象ではなく、黒・金・深紅と冠の意匠の参考"
+      ],
+      "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームの、黒獅子王が変身した王の将棋駒一体を生成。参照は本人の黒・金・深紅、赤い宝石の金の冠と小さい獅子の紋章の意匠だけに使い、人間の人物を描かない。\n正面から見た平たい五角形の木の将棋駒一体。真っ直ぐ上向き。蜂蜜色の平らな木の面、黒と金の二重の輪郭、下部に細い深紅の帯。駒の上部に小さい赤い宝石の金の冠を飾り、下端に金の小さい獅子の紋章を一つ。中央に墨色の太く大きい正確な文字「王」一字だけ。三本の横線と中央の縦線、点は付けず「玉」にしない。文字は人や冠と重ねず中央に読みやすく置く。\n同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁。立体の斜め厚みや大きい陰影のない、正面の平らな駒。1189×1323の真の透明PNG一枚、中央に一体、冠を含め全周60px以上透明余白、切らない。人物の顔・獅子の生きた顔・腕・脚・手・尾・ほかの駒・数字・「王」以外の文字・背景・床・影・オーラ・効果・グロー・ぼかし・複数案・3D・写実・ピクセルは禁止。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "f6fcc9144ce6e1d8dfee02742d35a16658a1eafa598ccc2c01875f6ddf04a92d",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 152,
+          "top": 76,
+          "right": 1034,
+          "bottom": 1172
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/special_impact.png",
+      "preparedSha256": "f416a309696afb17586e785a373b2897779587545b3263571f365fecbd336a47",
+      "offsetX": 116,
+      "offsetY": 156,
+      "sourceRgbaPreserved": false,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 48
+    },
+    {
+      "id": "super_impact",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "super",
+      "phase": "impact",
+      "label": "超必殺の駒軍勢総攻撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/special_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "容姿の編集対象ではなく、黒・金・深紅と冠の意匠の参考"
+      ],
+      "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームの、黒獅子王が変身した王の将棋駒一体を生成。参照は本人の黒・金・深紅、赤い宝石の金の冠と小さい獅子の紋章の意匠だけに使い、人間の人物を描かない。\n正面から見た平たい五角形の木の将棋駒一体。真っ直ぐ上向き。蜂蜜色の平らな木の面、黒と金の二重の輪郭、下部に細い深紅の帯。駒の上部に小さい赤い宝石の金の冠を飾り、下端に金の小さい獅子の紋章を一つ。中央に墨色の太く大きい正確な文字「王」一字だけ。三本の横線と中央の縦線、点は付けず「玉」にしない。文字は人や冠と重ねず中央に読みやすく置く。\n同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁。立体の斜め厚みや大きい陰影のない、正面の平らな駒。1189×1323の真の透明PNG一枚、中央に一体、冠を含め全周60px以上透明余白、切らない。人物の顔・獅子の生きた顔・腕・脚・手・尾・ほかの駒・数字・「王」以外の文字・背景・床・影・オーラ・効果・グロー・ぼかし・複数案・3D・写実・ピクセルは禁止。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "f6fcc9144ce6e1d8dfee02742d35a16658a1eafa598ccc2c01875f6ddf04a92d",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 152,
+          "top": 76,
+          "right": 1034,
+          "bottom": 1172
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "special_impact",
+        "version": 1,
+        "source": "art_source/paper_roster_action/king/generated/special_impact_v1.png",
+        "sha256": "f6fcc9144ce6e1d8dfee02742d35a16658a1eafa598ccc2c01875f6ddf04a92d",
+        "promptFile": "art_source/paper_roster_action/king/prompts/special_impact_v1.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "超必殺の発動後も同じ王の駒を原寸で再利用。大きい構えと召喚軍勢は別表示で区別する。",
+      "prepared": "art_source/paper_roster_action/king/prepared/super_impact.png",
+      "preparedSha256": "f416a309696afb17586e785a373b2897779587545b3263571f365fecbd336a47",
+      "offsetX": 116,
+      "offsetY": 156,
+      "sourceRgbaPreserved": false,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 48
+    },
+    {
+      "id": "super_prepare",
+      "key": "king",
+      "character": "黒獅子王",
+      "pose": "super",
+      "phase": "prepare",
+      "label": "超必殺の駒軍勢総攻撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/super_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象。既存の両腕と膝の向きだけを変え、容姿と部位実寸を維持"
+      ],
+      "prompt": "Use case: precise-object-edit. この黒獅子王の全身一体を、超必殺の駒軍勢を招集する最大の構えへ編集する。人間の頭・髪・獅子フード・冠・手甲・ブーツの画素の大きさ、黒金の鎧と赤い宝石、深紅のマント、尾1本を維持。\n既存の左右の腕二本を動かし、両方の爪手甲を顔の左右の斜め上へ大胆に掲げる。両肘を曲げ、左右の手甲は拳を閉じたまま。古い位置の腕や手甲は残さず、腕は左右二本・手甲も二つだけ。人間の顔は口を大きく開いて吠え、獅子頭巾の飾りの顔はそのまま。\n両足を広げて接地し、両膝を深く曲げて腰と頭を約150px低くし、上げた手甲と冠に上の透明余白が40px以上できる構え。頭巾・頭・手甲・ブーツを巨大化せず、手甲は顔の横へ置いて顔を隠さない。手甲の指は閉じた自然な握りで、金の甲の板を追加の指先にしない。ブーツは同じ二個で、金の爪は各3つずつ。\n通常より大きい溜めと伝わる、堂々とした両腕のV字と低い踏ん張り。1189×1323の真の透明PNG一枚、同じアニメ線とセル塗り、薄い硬い白縁。全身とマントと尾と両手と両足を切らず全周30px以上余白。人物を拡大縮小して枠へ合わせず、関節を曲げマントを少し畳んで収める。背景・床・影・文字・相手・召喚物・オーラ・効果・グローなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "3536a31573b6765a8d1d8942906f49af86f47fc636ea7660bdf66d0e0355dd9b",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 34,
+          "top": 85,
+          "right": 1176,
+          "bottom": 1261
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/king/prepared/super_prepare.png",
+      "preparedSha256": "2553714b267af5b6c7db8266c79a283861a052149ec9fd40460065b3504e2f7d",
+      "offsetX": 82,
+      "offsetY": 67,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "rework_r4_king_2"
+}

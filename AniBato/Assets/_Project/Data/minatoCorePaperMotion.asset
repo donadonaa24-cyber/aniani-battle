@@ -51,6 +51,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -70,6 +71,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -89,6 +91,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -108,6 +111,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -127,6 +131,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -146,6 +151,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -165,6 +171,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -185,6 +192,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
@@ -213,6 +221,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
@@ -241,6 +250,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 1
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
@@ -269,6 +279,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
@@ -297,6 +308,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
@@ -325,6 +337,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
@@ -353,6 +366,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
@@ -380,6 +394,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
@@ -404,6 +419,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
@@ -428,6 +444,7 @@ MonoBehaviour:
     Airborne: 0
     ReverseFacing: 0
     RotateWithRush: 0
+    UnmirroredImpact: 0
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights: []
@@ -446,7 +463,11 @@ MonoBehaviour:
   Projectiles:
   - Look: 4
     Sprite: {fileID: 21300000, guid: bc7a89d833d000040a0b32b5a49d4e55, type: 3}
+    Variants: []
+    VariantVisibleSizes: []
     Scale: 2.1218696
+    FitToHitbox: 0
+    VisibleSize: {x: 2.2850628, y: 1.8851299}
     RotateWithVelocity: 0
     FlipWithFacing: 0
     RotationOffsetDegrees: 0

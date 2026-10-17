@@ -83,7 +83,8 @@ namespace AniBato.Game
                 var visualSample = sample;
                 if (paperPose != null && paperPose.ReverseFacing) visualSample.FlipX = !visualSample.FlipX;
                 bool turnWithRush=UsesPaperSprite&&paperPose!=null&&paperPose.RotateWithRush&&paperPose.Frames.Length==2&&paperPose.FrameIndex(sample)==1;
-                body.sprite = sprite; body.flipX = !turnWithRush&&visualSample.FlipX;
+                bool unmirroredImpact=UsesPaperSprite&&paperPose!=null&&paperPose.UnmirroredImpact&&paperPose.Frames.Length==2&&paperPose.FrameIndex(sample)==1;
+                body.sprite = sprite; body.flipX = !turnWithRush&&!unmirroredImpact&&visualSample.FlipX;
                 body.transform.localScale = Vector3.one;
                 var rock = UsesPaperSprite ? character.PaperMotion.Transform(visualSample, paperPose) : default;
                 var performance = UsesPaperSprite ? AniBato.Presentation.PaperPerformance.Evaluate(character.PaperMotion.Performance, visualSample, fighter.LastDamageLostHeart) : default;

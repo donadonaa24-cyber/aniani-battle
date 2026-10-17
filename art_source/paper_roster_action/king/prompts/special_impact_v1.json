@@ -1,0 +1,19 @@
+{
+  "id": "special_impact",
+  "key": "king",
+  "character": "黒獅子王",
+  "pose": "special",
+  "phase": "impact",
+  "label": "特殊の王変身と部下招集",
+  "version": 1,
+  "source": "art_source/paper_roster_action/king/generated/special_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_idle/generated/king_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "容姿の編集対象ではなく、黒・金・深紅と冠の意匠の参考"
+  ],
+  "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームの、黒獅子王が変身した王の将棋駒一体を生成。参照は本人の黒・金・深紅、赤い宝石の金の冠と小さい獅子の紋章の意匠だけに使い、人間の人物を描かない。\n正面から見た平たい五角形の木の将棋駒一体。真っ直ぐ上向き。蜂蜜色の平らな木の面、黒と金の二重の輪郭、下部に細い深紅の帯。駒の上部に小さい赤い宝石の金の冠を飾り、下端に金の小さい獅子の紋章を一つ。中央に墨色の太く大きい正確な文字「王」一字だけ。三本の横線と中央の縦線、点は付けず「玉」にしない。文字は人や冠と重ねず中央に読みやすく置く。\n同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁。立体の斜め厚みや大きい陰影のない、正面の平らな駒。1189×1323の真の透明PNG一枚、中央に一体、冠を含め全周60px以上透明余白、切らない。人物の顔・獅子の生きた顔・腕・脚・手・尾・ほかの駒・数字・「王」以外の文字・背景・床・影・オーラ・効果・グロー・ぼかし・複数案・3D・写実・ピクセルは禁止。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

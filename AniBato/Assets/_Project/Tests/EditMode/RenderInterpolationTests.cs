@@ -56,7 +56,7 @@ namespace AniBato.Tests
             Assert.That(ticks, Is.EqualTo(30)); Assert.That(clock.PendingSeconds, Is.LessThan(1e-9));
         }
         [Test]
-        public void ProjectileInterpolatesByAttackIdentityAndNewShotSnaps()
+        public void ProjectileInterpolatesByProjectileIdentityAndNewShotSnaps()
         {
             var simulation = BattleTestFactory.Create(); var frames = new RenderSnapshots(); frames.Reset(simulation);
             var definition = simulation.P1.Definition.Specials[0]; definition.StartupFrames = 0; definition.ActiveFrames = 4; definition.ProjectileLifetimeFrames = 10;
@@ -80,6 +80,31 @@ namespace AniBato.Tests
             frames.BeforeTick(simulation); simulation.Tick(default, default); frames.AfterTick(simulation);
             Assert.That(simulation.Projectiles.Count, Is.EqualTo(1)); Assert.That(simulation.Projectiles[0].Attack.Id, Is.EqualTo(31));
             Assert.That(frames.ProjectilePosition(simulation.Projectiles[0], .1), Is.EqualTo(simulation.Projectiles[0].Position));
+        }
+        [TestCase(1.5f)]
+        [TestCase(2.6f)]
+        public void FormationMembersKeepTheirOwnPositionsAndSpacingDuringInterpolationAndReset(float spacing)
+        {
+            var simulation=BattleTestFactory.Create();var frames=new RenderSnapshots();frames.Reset(simulation);
+            var definition=simulation.P1.Definition.Specials[0];definition.StartupFrames=0;definition.ActiveFrames=4;definition.ProjectileLifetimeFrames=20;
+            definition.Ability.ProjectileCount=3;definition.Ability.ProjectileSpacing=spacing;
+            simulation.P1.Attack=new AttackInstance(100,definition,0,false);
+            frames.BeforeTick(simulation);simulation.Tick(default,default);frames.AfterTick(simulation);
+            Assert.That(simulation.Projectiles.Count,Is.EqualTo(3));var shots=simulation.Projectiles;
+            Assert.That(shots[0].Attack,Is.SameAs(shots[1].Attack));Assert.That(shots[1].Attack,Is.SameAs(shots[2].Attack));
+            foreach(var shot in shots)Assert.That(frames.ProjectilePosition(shot,.5),Is.EqualTo(shot.Position),"New members snap to their individual positions");
+            var old=new[]{shots[0].Position,shots[1].Position,shots[2].Position};
+            frames.BeforeTick(simulation);simulation.Tick(default,default);frames.AfterTick(simulation);
+            foreach(double alpha in new[]{0d,.25d,.5d,1d})for(int i=0;i<3;i++)
+            {
+                var drawn=frames.ProjectilePosition(shots[i],alpha);var now=shots[i].Position;
+                Assert.That(drawn.X,Is.EqualTo(old[i].X+(now.X-old[i].X)*alpha).Within(.00001f));
+                Assert.That(drawn.Y,Is.EqualTo(old[i].Y+(now.Y-old[i].Y)*alpha).Within(.00001f));
+                if(i>0)Assert.That(drawn.X-frames.ProjectilePosition(shots[i-1],alpha).X,Is.EqualTo(spacing).Within(.00001f));
+                Assert.That(frames.ProjectilePosition(shots[i],alpha,true),Is.EqualTo(now));
+            }
+            frames.Reset(simulation);foreach(var shot in shots)Assert.That(frames.ProjectilePosition(shot,0),Is.EqualTo(shot.Position));
+            var rematch=BattleTestFactory.Create();frames.Reset(rematch);Assert.That(rematch.Projectiles.Count,Is.EqualTo(0));
         }
     }
 }

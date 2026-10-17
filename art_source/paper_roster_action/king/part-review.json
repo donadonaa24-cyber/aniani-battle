@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "key": "king",
+  "artApproved": false,
+  "gameConnected": true,
+  "reviewedAtNativeScale": true,
+  "baseline": "art_source/paper_roster_idle/generated/king_idle_v1.png",
+  "bodySlotsCompleted": 12,
+  "uniqueBodyImages": 9,
+  "findings": [
+    "通常1・2段の共通予備v3／決めv3、3段の膝上げ予備v1／咆哮と水平蹴りv2の4原画候補。",
+    "共通決めは背面の深紅マントを見せる強い体軸回転。右肩から右手甲へつなぎ、本人右の甲側を見せる。胸を見せたまま反対の手を付けない。",
+    "人間の顔1つと被り物の獅子の顔を区別。腕2本・脚2本・尾1本、マントの飾りの毛皮を余分な四肢にしない。閉じた手甲の金の板と爪先、隠れる指を区別し、全指が見えて5本と数えられたとは主張しない。",
+    "頭巾・人間の頭・手甲・靴を採用待機と原寸比較。靴と手甲は投影や角度の差が残る。持ち上げた左足の金爪は3つへ修正。",
+    "原画の余白は狭い。通常1決めは上15px／右15px、3段予備は上15px、3段決めは左1px・上5px・右2px。測定上は可視画素が切れていないが全周20pxを満たすとは扱わない。透明梱包と美術最終承認は別。",
+    "上は余分な腕を除いたv2、下は爪ブーツ3本ずつへ直したv4、空中は両足が浮いたv1。上と特殊の予備に共通通常予備、超必殺の決めに王を原寸再利用。",
+    "王の字は正面から読める原画のまま。表示の左右反転で文字を逆にせず、部下を落とす性能は既存のまま。",
+    "ユーザー指定の部下は豹妬レイラ・銀狼シオン・鹿角ノア。既存ポータルの原作容姿を確認し、汎用の歩は生成せず中止。全身人物の落下攻撃として本作独自のポーズを生成。",
+    "レイラv1は豹フード・爪・髪と尾、シオンv3は狼フード・杖と両膝／ブーツ2個、ノアv3は鹿角・紫結晶の杖と左手の下向き指示。握りで隠れる指を5本見えると主張しない。",
+    "ノアv1/v2は左手の6指を原寸3倍の診断画像で確認し不採用。v3は人差し指のみ伸ばし中指・薬指・小指を曲げ親指を添える。シオンv1の3脚状とv2の片足しか見えない形は不採用。",
+    "召喚人物の角やマントの余白は指定40pxより狭い箇所が残る。ノア上9px、レイラ右3px、シオン右6px。可視alpha32の輪郭は原画端から離れている。原寸を保存し、最終美術承認と区別。",
+    "咆哮v1/v2は光彩が残り不採用、v3は平たい括弧状の紙圧力線。爪と咆哮以外の人物に効果を焼き込まず別描画。"
+  ],
+  "selected": [
+    {
+      "id": "normal1_prepare",
+      "version": 3,
+      "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png",
+      "sha256": "f3d2373b2b4907b63b49e86136d8dbe1a7eff8523a025983ee13f1a26da2f75f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 20,
+          "top": 61,
+          "right": 1180,
+          "bottom": 1266
+        }
+      }
+    },
+    {
+      "id": "normal1_impact",
+      "version": 3,
+      "source": "art_source/paper_roster_action/king/generated/normal1_impact_v3.png",
+      "sha256": "982d8cf812347e3e8e52d0e9b573cf281f57712275732cc9439225e67c1129d8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 68,
+          "top": 15,
+          "right": 1173,
+          "bottom": 1291
+        }
+      }
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/normal3_prepare_v1.png",
+      "sha256": "1426eb69de6c809a9957ad8c7430677df9ddef039c0c9bda87ec97588f2b956a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 36,
+          "top": 15,
+          "right": 1160,
+          "bottom": 1292
+        }
+      }
+    },
+    {
+      "id": "normal3_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/king/generated/normal3_impact_v2.png",
+      "sha256": "6952d55b6480b480055832f0880b036a7491f2cce2931538e9d714e9044dfc61",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 1,
+          "top": 5,
+          "right": 1186,
+          "bottom": 1300
+        }
+      }
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png",
+      "sha256": "f3d2373b2b4907b63b49e86136d8dbe1a7eff8523a025983ee13f1a26da2f75f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 20,
+          "top": 61,
+          "right": 1180,
+          "bottom": 1266
+        }
+      }
+    },
+    {
+      "id": "up_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/king/generated/up_impact_v2.png",
+      "sha256": "70c1ad9c896bba9a0ee193835d026a2a0f232231fda422430e977f7a5e6729fa",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 48,
+          "top": 25,
+          "right": 1182,
+          "bottom": 1299
+        }
+      }
+    },
+    {
+      "id": "down_impact",
+      "version": 4,
+      "source": "art_source/paper_roster_action/king/generated/down_impact_v4.png",
+      "sha256": "c5acb9dd8f28c6f00d7a880b752b45dbe1f62a7f4dc2456fbd253012ea590b07",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 30,
+          "top": 238,
+          "right": 1175,
+          "bottom": 1254
+        }
+      }
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/air_impact_v1.png",
+      "sha256": "443a5db064f75ff61028a1a8e29301bc6fed53156c550a307a3bfdb3494ff2f8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 29,
+          "top": 18,
+          "right": 1173,
+          "bottom": 1286
+        }
+      }
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/normal1_prepare_v3.png",
+      "sha256": "f3d2373b2b4907b63b49e86136d8dbe1a7eff8523a025983ee13f1a26da2f75f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 20,
+          "top": 61,
+          "right": 1180,
+          "bottom": 1266
+        }
+      }
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/special_impact_v1.png",
+      "sha256": "f6fcc9144ce6e1d8dfee02742d35a16658a1eafa598ccc2c01875f6ddf04a92d",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 152,
+          "top": 76,
+          "right": 1034,
+          "bottom": 1172
+        }
+      }
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/super_prepare_v1.png",
+      "sha256": "3536a31573b6765a8d1d8942906f49af86f47fc636ea7660bdf66d0e0355dd9b",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 34,
+          "top": 85,
+          "right": 1176,
+          "bottom": 1261
+        }
+      }
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/special_impact_v1.png",
+      "sha256": "f6fcc9144ce6e1d8dfee02742d35a16658a1eafa598ccc2c01875f6ddf04a92d",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 152,
+          "top": 76,
+          "right": 1034,
+          "bottom": 1172
+        }
+      }
+    }
+  ],
+  "effects": [
+    {
+      "id": "claw",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 161,
+          "top": 98,
+          "right": 1173,
+          "bottom": 1181
+        }
+      }
+    },
+    {
+      "id": "roar",
+      "version": 3,
+      "source": "art_source/paper_roster_action/king/generated/effect_roar_v3.png",
+      "sha256": "5247770d2ac2a7feb7534c4187a78f654b48e4780292fd20230f326873fd9ebe",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 205,
+          "top": 207,
+          "right": 1119,
+          "bottom": 1058
+        }
+      }
+    },
+    {
+      "id": "leila",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/effect_leila_v1.png",
+      "sha256": "0458a9a3aa9f3c70fea00aac28c6b432837e7b8ebfb3b254d8abe2ccdb7e7c3e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 6,
+          "top": 11,
+          "right": 1185,
+          "bottom": 1287
+        }
+      }
+    },
+    {
+      "id": "shion",
+      "version": 3,
+      "source": "art_source/paper_roster_action/king/generated/effect_shion_v3.png",
+      "sha256": "ae8b7ca86ea495dbf15639b2dd48a09a2f9dba6cc85c8d3c38faaeda082485cf",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 39,
+          "top": 52,
+          "right": 1182,
+          "bottom": 1299
+        }
+      }
+    },
+    {
+      "id": "noa",
+      "version": 3,
+      "source": "art_source/paper_roster_action/king/generated/effect_noa_v3.png",
+      "sha256": "30334d0a3429bc56dc3b264f4c4c049e26c6592f4321ece52977652f43f849ad",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 45,
+          "top": 9,
+          "right": 1183,
+          "bottom": 1300
+        }
+      }
+    },
+    {
+      "id": "claw_second",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 161,
+          "top": 98,
+          "right": 1173,
+          "bottom": 1181
+        }
+      }
+    },
+    {
+      "id": "claw_back",
+      "version": 1,
+      "source": "art_source/paper_roster_action/king/generated/effect_claw_v1.png",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 161,
+          "top": 98,
+          "right": 1173,
+          "bottom": 1181
+        }
+      }
+    }
+  ],
+  "rejectedEffects": [
+    {
+      "id": "shion",
+      "version": 1,
+      "reason": "脚と靴が3本に見える。マント上端の余白も5px。"
+    },
+    {
+      "id": "noa",
+      "version": 1,
+      "reason": "左手の拡大で親指1本と指5本、合計6本の指を確認した。"
+    },
+    {
+      "id": "shion",
+      "version": 2,
+      "reason": "v2は余分な脚を削除したが、見える靴が1つになった。両脚を明確に見せる。"
+    },
+    {
+      "id": "noa",
+      "version": 2,
+      "reason": "v2も開いた左手が6本指のため不採用。指を扇状に開く形をやめて明瞭な指示ポーズへ変更。"
+    },
+    {
+      "id": "roar",
+      "version": 1,
+      "reason": "紙片以外に広い光彩と背景状の不透明な色がある。"
+    },
+    {
+      "id": "roar",
+      "version": 2,
+      "reason": "背景の光彩が除去されていない。"
+    }
+  ],
+  "unityVerifiedTag": "rework_r4_king_2"
+}

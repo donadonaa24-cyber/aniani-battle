@@ -18,10 +18,11 @@ namespace AniBato.EditorTools
         {
             public string id,look,kind,state,phase,source,sha256,anticipationText,alternateAnticipationText;
             public int version;
+            public int variantIndex;
             public int sortingOrder = 7;
             public float worldHeight,worldWidth,offsetX,offsetY;
             public float anticipationTextSize = .08f;
-            public bool duringStartup,duringRecovery,fitAttackHitbox;
+            public bool duringStartup,duringRecovery,fitAttackHitbox,fitEachProjectileHitbox;
             public PaperActionArtworkBuilder.Native native;
         }
         public static void Apply(string key,CharacterData data)
@@ -55,14 +56,21 @@ namespace AniBato.EditorTools
                     AnticipationTextSize=prepare == null ? .08f : prepare.anticipationTextSize,
                     DuringStartup=prepare!=null||e.duringStartup,DuringRecovery=e.duringRecovery };
             }).ToArray();
-            var projectiles=selected.Where(e=>e.kind=="projectile").Select(e=>
+            var projectiles=selected.Where(e=>e.kind=="projectile").GroupBy(e=>e.look).Select(group=>
             {
+                var variants=group.OrderBy(e=>e.variantIndex).ToArray();var e=variants[0];
+                if(variants.Length>1&&!variants.Select(v=>v.variantIndex).SequenceEqual(Enumerable.Range(0,variants.Length)))throw new InvalidOperationException("召喚原画の並びが不正: "+key);
                 var look=(AbilityLook)Enum.Parse(typeof(AbilityLook),e.look);
-                var attack=data.Specials.Concat(new[]{data.Ultimate}).Single(a=>a.Definition.SpawnProjectile&&a.Definition.Ability.Look==look).Definition;
-                if(!e.fitAttackHitbox)throw new InvalidOperationException("持続場の表示寸法が未指定: "+key+"/"+e.id);
+                var attacks=data.Specials.Concat(new[]{data.Ultimate}).Where(a=>a.Definition.SpawnProjectile&&a.Definition.Ability.Look==look).ToArray();
+                if(attacks.Length==0||attacks.Length>1&&!e.fitEachProjectileHitbox)throw new InvalidOperationException("飛翔物の判定寸法の選択が不正: "+key);
+                var attack=attacks[0].Definition;
+                if(variants.Any(v=>!v.fitAttackHitbox||v.fitEachProjectileHitbox!=e.fitEachProjectileHitbox))throw new InvalidOperationException("持続場の表示寸法が未指定: "+key+"/"+e.id);
                 var b=e.native.bounds;
                 float width=(b.right-b.left+1)/PaperActionArtworkBuilder.PixelsPerUnit;
-                return new PaperProjectileArt { Look=look,Sprite=ImportEntry(e),Scale=Mathf.Min(attack.Hitbox.Size.X/width,attack.Hitbox.Size.Y/Height(e)),SortingOrder=e.sortingOrder };
+                return new PaperProjectileArt { Look=look,Sprite=ImportEntry(e),Variants=variants.Length>1?variants.Select(ImportEntry).ToArray():null,
+                    VariantVisibleSizes=variants.Length>1?variants.Select(v=>new Vector2((v.native.bounds.right-v.native.bounds.left+1)/PaperActionArtworkBuilder.PixelsPerUnit,Height(v))).ToArray():null,
+                    VisibleSize=new Vector2(width,Height(e)),FitToHitbox=e.fitEachProjectileHitbox,
+                    Scale=Mathf.Min(attack.Hitbox.Size.X/width,attack.Hitbox.Size.Y/Height(e)),SortingOrder=e.sortingOrder };
             }).ToArray();
             paper.AbilityEffects=(paper.AbilityEffects??Array.Empty<PaperAbilityArt>()).Where(a=>a!=null&&!abilities.Any(n=>n.State==a.State)).Concat(abilities).ToArray();
             paper.Projectiles=(paper.Projectiles??Array.Empty<PaperProjectileArt>()).Where(a=>a!=null&&!projectiles.Any(n=>n.Look==a.Look)).Concat(projectiles).ToArray();

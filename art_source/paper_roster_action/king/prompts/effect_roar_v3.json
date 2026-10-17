@@ -1,0 +1,20 @@
+{
+  "id": "roar",
+  "kind": "ability",
+  "look": "Default",
+  "state": "Attack3",
+  "duringStartup": false,
+  "duringRecovery": true,
+  "offsetX": 0.8,
+  "offsetY": 0.55,
+  "worldWidth": 1.7,
+  "worldHeight": 1.2,
+  "prompt": "Use case: stylized-concept. 真の透明PNGのゲーム用図形一枚。三つの大きさの異なる角ばった括弧「）」を横に並べた赤・黒・金の平たい切り紙。左から小、中、大の順。各括弧は赤の太い帯と細い黒・金のふち。帯の輪郭はギザギザで硬く、細いクリーム白の切り抜き縁。右側に小さな金の三角形を三つ。背景も括弧の間も完全透明、透明部へ一切着色しない。全体を1024×1024の中央に一つ、透明余白80px以上。無地の平らなベタ色だけ。光・発光・グラデーション・グロー・ぼかし・影・背景色・背景模様・紙の質感・文字・人物なし。咆哮の紙の圧力線として使う一つの素材。",
+  "key": "king",
+  "version": 3,
+  "source": "art_source/paper_roster_action/king/generated/effect_roar_v3.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

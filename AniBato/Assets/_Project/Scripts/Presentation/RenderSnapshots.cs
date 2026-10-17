@@ -16,8 +16,8 @@ namespace AniBato.Presentation
             { Position = fighter.Position; Facing = fighter.Facing; Frozen = fighter.IsFrozenThisTick || fighter.HitstopRemaining > 0; KnockedOut = fighter.Mode == FighterMode.KO; }
         }
         private readonly Pose[] previous = new Pose[2], current = new Pose[2];
-        private readonly Dictionary<long, BattleVector> previousShots = new Dictionary<long, BattleVector>();
-        private readonly Dictionary<long, BattleVector> currentShots = new Dictionary<long, BattleVector>();
+        private readonly Dictionary<Projectile, BattleVector> previousShots = new Dictionary<Projectile, BattleVector>();
+        private readonly Dictionary<Projectile, BattleVector> currentShots = new Dictionary<Projectile, BattleVector>();
         private BattleSimulation owner;
         public bool Cinematic { get; private set; }
         public float DiscontinuityDistance { get; set; } = 5;
@@ -38,7 +38,8 @@ namespace AniBato.Presentation
         {
             current[0] = new Pose(simulation.P1); current[1] = new Pose(simulation.P2);
             Cinematic = simulation.CutInRemainingFrames > 0;
-            currentShots.Clear(); foreach (var shot in simulation.Projectiles) currentShots[shot.Attack.Id] = shot.Position;
+            // Formation members share one damage instance, but each has its own render position.
+            currentShots.Clear(); foreach (var shot in simulation.Projectiles) currentShots[shot] = shot.Position;
         }
         public bool CanInterpolate(int player, bool paused)
         {
@@ -49,7 +50,7 @@ namespace AniBato.Presentation
         public BattleVector FighterPosition(int player, double fraction, bool paused = false) =>
             CanInterpolate(player, paused) ? Blend(previous[player].Position, current[player].Position, fraction) : current[player].Position;
         public BattleVector ProjectilePosition(Projectile shot, double fraction, bool paused = false) =>
-            !paused && !Cinematic && !current[shot.Owner.PlayerIndex].Frozen && previousShots.TryGetValue(shot.Attack.Id, out var position) && currentShots.TryGetValue(shot.Attack.Id, out var now)
+            !paused && !Cinematic && !current[shot.Owner.PlayerIndex].Frozen && previousShots.TryGetValue(shot, out var position) && currentShots.TryGetValue(shot, out var now)
                 ? Blend(position, now, fraction) : shot.Position;
         private static BattleVector Blend(BattleVector a, BattleVector b, double fraction)
         { float alpha = (float)Math.Max(0, Math.Min(1, fraction)); return new BattleVector(a.X + (b.X - a.X) * alpha, a.Y + (b.Y - a.Y) * alpha); }

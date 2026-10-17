@@ -1,0 +1,24 @@
+{
+  "id": "roar",
+  "kind": "ability",
+  "look": "Default",
+  "state": "Attack3",
+  "duringStartup": false,
+  "duringRecovery": true,
+  "offsetX": 0.8,
+  "offsetY": 0.55,
+  "worldWidth": 1.7,
+  "worldHeight": 1.2,
+  "prompt": "Use case: background-extraction. 画像1の赤・黒・金の切り絵の衝撃波を編集。鋭い輪郭の紙片だけを完全に不透明で残し、その紙片の外側と紙片同士の広い隙間は全て完全透明にする。赤色・金色・茶色・白のぼんやりした光彩やグラデーションを全て除去する。黒い背景色も全て除去。硬い赤・黒・金の弧と三角の紙片、薄い硬い白縁だけが残る。色を透過の市松模様に置き換えない。背景が本当に透明なPNG。全周の透明余白80px以上、紙片を切らない。人物や文字を追加しない。",
+  "key": "king",
+  "version": 2,
+  "source": "art_source/paper_roster_action/king/generated/effect_roar_v2.png",
+  "references": [
+    "art_source/paper_roster_action/king/generated/effect_roar_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象。光彩だけを除去"
+  ],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

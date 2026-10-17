@@ -1,3 +1,5 @@
+2026-10-18現在：黒獅子王12枠／9人物原画と爪・咆哮・既存部下レイラ／シオン／ノアの5効果を接続。rework_r4_king_2全4合格（Edit563／Play75）、464実描画・専用62PNG。召喚物が重なる描画不具合を各Projectileの位置保持へ修正し、戦闘値は不変。WebGL rework_r4_king_fixed_webも実ビルド・ブラウザ確認・console error 0。次はPAPER_AKATSUKI_TWELVE_KEYS→龍太。追加差分は追加指示後。詳細はRESUME冒頭。
+
 2026-10-17現在：結衣12枠／9原画と打撃・魔法2効果を接続。rework_r4_yui_2全4合格（Edit557／Play73）、384実描画。WebGL rework_r4_yui_mip_webは78.9MB・実ブラウザ19PNG・console error 0。小さい表示の人物のざらつきはWeb用ミップマップで軽減、329画像の元RGBA保存を照合。集合絵v5の透真5指と暁本人左のカードつまみを維持。次はPAPER_KING_TWELVE_KEYS。追加差分は追加指示後。詳細はRESUME冒頭。
 
 2026-10-17現在：湊の12枠／10人物原画と効果3種を接続。rework_r4_minato_2全4合格（Edit547／Play69）、220実描画。採用はイラスト確認/現在ゲームで採用中/湊/。WebGLもrework_r4_minato_webで53.5MBの実ビルドと内蔵ブラウザ確認、8PNG、console error 0。次はPAPER_SHIRO_TWELVE_KEYS。空中・下各1枚、通常共有4枚、追加差分は追加指示後。詳細はRESUME冒頭。
