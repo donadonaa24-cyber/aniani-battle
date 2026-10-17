@@ -1,0 +1,251 @@
+{
+  "character": "湊",
+  "artApproved": false,
+  "gameConnected": true,
+  "resampledCharacterPixels": 0,
+  "requiredSlots": 12,
+  "uniqueNativeImages": 10,
+  "baseIdle": "art_source/paper_roster_idle/generated/minato_idle_v1.png",
+  "review": [
+    "採用待機と全身原画を原寸で比較。低い下攻撃は採用しゃがみの直接編集にして頭とブーツの拡大を抑えた。",
+    "右生身／左義手と左機械眼を肩から追跡。通常1の決めは背中と右脇が見えるひねりで、左眼は遠側へ隠れる。機械眼を右へ移さない。",
+    "正面の右パンチ候補の腕の左右混同、端切れ、拡大した頭と靴の候補を除外。選定版でも髪の張りと靴の投影には姿勢による差が残り、完全な部位同寸とは保証しない。",
+    "通常1・2共通2枚＋3段2枚。上予備は通常3予備、特殊決めは通常1決めを再利用し、12枠10ユニーク原画。",
+    "上は左義手アッパー、下と空中は左義手打撃1枚。超必殺の決めの開いた左機械掌は親指1＋長指4。生身右拳は胸前。",
+    "透明枠へ整数移動だけで梱包し、再サンプルなし。画素監査を参照。枠・PPU・テスト合格と美術の最終承認を区別。",
+    "接続、霧、持続場は人物と別の全体スプライト。光彩に見えたプレビューの透明RGBは背景合成で確認。半透明の光彩不良と確定しない。"
+  ],
+  "selected": [
+    {
+      "id": "normal1_prepare",
+      "version": 2,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png",
+      "sha256": "f28458691b7affa937a261eb8d5cf6a3d3d3c6d9e788f2805ac5443817d8b3ed",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 327,
+          "top": 58,
+          "right": 1045,
+          "bottom": 1260
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal1_impact",
+      "version": 4,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_impact_v4.png",
+      "sha256": "19cfc9ffd06e2ebd827d93d5c49b6bdf74e57e40b866383a28d4dc275cd2ecd2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 103,
+          "top": 19,
+          "right": 1167,
+          "bottom": 1281
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 2,
+      "source": "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+      "sha256": "2b2e126ada1fd6c5e4767a0275841f64926a3b86e418eae67740b0428b3a4490",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 225,
+          "top": 113,
+          "right": 1120,
+          "bottom": 1256
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "normal3_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/normal3_impact_v1.png",
+      "sha256": "0e8548edef0e8ee3cb19ea796387433c51ef0d55f93b3564f86f95a18c9b4422",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 35,
+          "top": 70,
+          "right": 1173,
+          "bottom": 1261
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+      "sha256": "2b2e126ada1fd6c5e4767a0275841f64926a3b86e418eae67740b0428b3a4490",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 225,
+          "top": 113,
+          "right": 1120,
+          "bottom": 1256
+        }
+      },
+      "reuseOf": {
+        "id": "normal3_prepare",
+        "version": 2,
+        "source": "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+        "sha256": "2b2e126ada1fd6c5e4767a0275841f64926a3b86e418eae67740b0428b3a4490",
+        "promptFile": "art_source/paper_roster_action/minato/prompts/normal3_prepare_v2.json"
+      },
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "up_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/up_impact_v1.png",
+      "sha256": "dcf502c7fb7f579d9028ace93abd655fa703e2ff34c8703fc96cc4d81c770cc0",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 224,
+          "top": 11,
+          "right": 1067,
+          "bottom": 1295
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "down_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/minato/generated/down_impact_v2.png",
+      "sha256": "753c800ff1097d4cc6d4ae8801737d67526da5984c8655b92614f43aa2bc1047",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 301,
+          "top": 297,
+          "right": 1110,
+          "bottom": 1278
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/air_impact_v1.png",
+      "sha256": "c498fb430e524c4a64acd2dbba0635df6271c95c7a48e4bbf4cd0a2bf8e35894",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 80,
+          "top": 41,
+          "right": 1173,
+          "bottom": 1270
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/special_prepare_v1.png",
+      "sha256": "930efcaf8971f77e00353b015fc14907cd083787559423f6fb8cbd43a1f1f281",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 318,
+          "top": 29,
+          "right": 1053,
+          "bottom": 1266
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_impact_v4.png",
+      "sha256": "19cfc9ffd06e2ebd827d93d5c49b6bdf74e57e40b866383a28d4dc275cd2ecd2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 103,
+          "top": 19,
+          "right": 1167,
+          "bottom": 1281
+        }
+      },
+      "reuseOf": {
+        "id": "normal1_impact",
+        "version": 4,
+        "source": "art_source/paper_roster_action/minato/generated/normal1_impact_v4.png",
+        "sha256": "19cfc9ffd06e2ebd827d93d5c49b6bdf74e57e40b866383a28d4dc275cd2ecd2",
+        "promptFile": "art_source/paper_roster_action/minato/prompts/normal1_impact_v4.json"
+      },
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/super_prepare_v1.png",
+      "sha256": "01c908980446a7c025d8ba659fea612375ecc10ff5d6411034ce6941b3f11ee2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 232,
+          "top": 59,
+          "right": 1107,
+          "bottom": 1271
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/super_impact_v1.png",
+      "sha256": "37098f509a03d960aeedda4d4ddca7326aecfc9eef766cd52e0e65e5e2db735d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 130,
+          "top": 41,
+          "right": 1173,
+          "bottom": 1293
+        }
+      },
+      "reuseOf": null,
+      "reviewedAtNativeScale": true
+    }
+  ],
+  "pixelAudit": "pixel-audit.json",
+  "croppedOutsideAlphaOnePixels": 0,
+  "unityVerifiedTag": "rework_r4_minato_2"
+}

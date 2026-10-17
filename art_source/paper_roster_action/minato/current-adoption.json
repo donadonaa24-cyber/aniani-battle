@@ -1,11 +1,97 @@
 {
   "key": "minato",
   "name": "湊",
-  "unityVerifiedTag": "paper_single_title_3",
+  "unityVerifiedTag": "rework_r4_minato_2",
   "motionAsset": "AniBato/Assets/_Project/Data/minatoCorePaperMotion.asset",
-  "completeAttackArtwork": false,
-  "bodyFrames": 0,
-  "entries": [],
+  "completeAttackArtwork": true,
+  "bodyFrames": 12,
+  "uniqueBodyImages": 10,
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_normal1_prepare.png",
+      "sha256": "a49499ceb9d7b4d158d62878f132f2217a011d01b2f7e87c7574b4023affdc3a",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/通常1・2段共通_予備.png"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_normal1_impact.png",
+      "sha256": "a9a01a07340c0ff3e4c57f5974ec45a7f9ebe09c156345b2095ba522456ae894",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/通常1・2段共通_当てる.png"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_normal3_prepare.png",
+      "sha256": "71c6be50db52b62f509119caa2c2a82c217c7134e4fbcd57792cb91cf450902f",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/通常3段_予備.png"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_normal3_impact.png",
+      "sha256": "afd98576d2101bef14348c10d6e4fe3a82ef0a9a8683124d472011bff7b54610",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/通常3段_当てる.png"
+    },
+    {
+      "id": "up_prepare",
+      "title": "上攻撃_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_normal3_prepare.png",
+      "sha256": "71c6be50db52b62f509119caa2c2a82c217c7134e4fbcd57792cb91cf450902f",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/上攻撃_予備.png"
+    },
+    {
+      "id": "up_impact",
+      "title": "上攻撃_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_up_impact.png",
+      "sha256": "f64e0c8849d01838518ee0cddb4686baf7900ba124c7d43692a732f0a0c22c7b",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/上攻撃_当てる.png"
+    },
+    {
+      "id": "down_single",
+      "title": "下攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_down_impact.png",
+      "sha256": "fe54e331eb1c952633e7ade7328382e9e237d0c3d23e5fb8025f59ede8fe1659",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/下攻撃_1枚採用.png"
+    },
+    {
+      "id": "air_single",
+      "title": "空中攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_air_impact.png",
+      "sha256": "02638a7d50d06eab724e814a65af096f094eb693a5cbd6ad3a43be0e87411f57",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/空中攻撃_1枚採用.png"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_special_prepare.png",
+      "sha256": "0020c277610140673cf43f935e8b45f9736c24a3113c37e7f4c85025d1660386",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/特殊技_予備.png"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_normal1_impact.png",
+      "sha256": "a9a01a07340c0ff3e4c57f5974ec45a7f9ebe09c156345b2095ba522456ae894",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/特殊技_当てる.png"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_super_prepare.png",
+      "sha256": "b0e4f7892da3ad1bb4718cde07c536d1ec02efd4820a3cee84d748a0e2803e50",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/超必殺技_予備.png"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/minato_super_impact.png",
+      "sha256": "416e8c077f18a6485b2cc1ab148588d2387dde1aec218dd6109ed60de39bcd7d",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/湊/超必殺技_当てる.png"
+    }
+  ],
   "extraVariants": "追加指示後",
   "artApproved": false
 }

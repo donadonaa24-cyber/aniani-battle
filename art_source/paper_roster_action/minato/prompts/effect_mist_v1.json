@@ -1,0 +1,17 @@
+{
+  "id": "mist",
+  "look": "BlackHole",
+  "kind": "ability",
+  "state": "Ultimate",
+  "worldHeight": 2.8,
+  "duringStartup": false,
+  "duringRecovery": true,
+  "prompt": "オリジナル2D対戦ゲームで人物の背後に表示する意識状態の霧のオーラ1個。白、水色、淡い青紫、紺の平たい切り絵の雲を重ねる。人物そのものは描かず、縦長の大きな空洞の周りを細い三日月状の霧の紙片6〜9枚が囲む。上と左右にふわりと立つ形、下側も細く巻くが床は描かない。全体は幅0.75:高さ1程度の縦長、中心60パーセントは完全に透明で、後で重ねる人物の顔や四肢を隠さない。霧は写真ではなく明快な輪郭と2〜3段階のセル塗りで、画用紙の雲のようにカタカタ動かせる形。薄いクリーム白の切り抜き縁。1024×1536の透明キャンバス、全体を40px以上余白で収める。人物、顔、手、眼、文字、背景、床、影、黒い球、光線、写実的煙、ぼかし、グロー、3D、ピクセル、複数案なし。外周と空洞は真の透明。",
+  "key": "minato",
+  "version": 1,
+  "source": "art_source/paper_roster_action/minato/generated/effect_mist_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

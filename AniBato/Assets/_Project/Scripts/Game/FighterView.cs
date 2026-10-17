@@ -138,7 +138,7 @@ namespace AniBato.Game
             headY += chargePose.Apply(body, fighter, runner.Simulation.Rules.Charge);
             bool generatedTransformation=UsesPaperSprite&&paperPose!=null&&paperPose.Frames.Length==2&&
                 paperPose.Frames[1]==body.sprite&&(paperPose.Key=="special"||paperPose.Key=="super");
-            abilityCue.Apply(fighter, body, runner.Simulation.Match.IsFinished,generatedTransformation);
+            abilityCue.Apply(fighter, body, runner.Simulation.Match.IsFinished,UsesPaperSprite?character.PaperMotion:null,sample,generatedTransformation);
             food.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0;
             if (food.enabled) food.transform.localPosition = new Vector3(0.45f, 0.35f + Mathf.Sin(fighter.Attack.Frame * 0.5f) * 0.08f, 0);
             arm.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.IsActive && !fighter.Attack.Definition.SpawnProjectile;

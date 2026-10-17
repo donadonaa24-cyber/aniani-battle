@@ -1,3 +1,5 @@
+2026-10-17現在：湊の12枠／10人物原画と効果3種を接続。rework_r4_minato_2全4合格（Edit547／Play69）、220実描画。採用はイラスト確認/現在ゲームで採用中/湊/。WebGLもrework_r4_minato_webで53.5MBの実ビルドと内蔵ブラウザ確認、8PNG、console error 0。次はPAPER_SHIRO_TWELVE_KEYS。空中・下各1枚、通常共有4枚、追加差分は追加指示後。詳細はRESUME冒頭。
+
 ## 現在（2026-10-16）：生成舞台・集合絵・WebGLを完了
 
 2026-10-16最新：paper_release_5全4合格（Edit537／Play66）、投げ終わりと2段選択・掌側の二丁拳銃v3を反映。WebGLもpaper_release_web成功・約47.7MB、ブラウザ確認済み。次は蓮の残10原画の審査／接続。全9人の攻撃・小物・溜め・被弾ゴールは継続。詳細はRESUME冒頭とpaper_release_final。

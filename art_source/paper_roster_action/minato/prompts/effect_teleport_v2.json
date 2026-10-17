@@ -1,0 +1,21 @@
+{
+  "id": "teleport",
+  "look": "Teleport",
+  "kind": "ability",
+  "state": "SpecialNeutral",
+  "worldHeight": 2.7,
+  "duringStartup": true,
+  "duringRecovery": false,
+  "prompt": "Use case: precise-object-edit. この切り絵の輪の形とシアン・紺・白の色と白縁はそのまま。修正は、輪の外側と内側に広がるぼやけた光彩・霧・グローを完全に削除すること。輪と紙片の硬い形だけを残した平坦な切り抜きPNGにする。紙片の中は完全不透明、外側と中央の空洞はalpha0の完全透明。境界は数pxのアンチエイリアスのみ。半透明の雲やぼかしを残さない。発光しない厚紙の舞台小道具である。1024×1536の透過キャンバス、形と位置を維持。背景なし、黒背景も白背景も灰色背景も描かない。人物や文字を追加しない。",
+  "key": "minato",
+  "version": 2,
+  "source": "art_source/paper_roster_action/minato/generated/effect_teleport_v2.png",
+  "references": [
+    "art_source/paper_roster_action/minato/generated/effect_teleport_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象。輪の切り絵の形と色だけを保持し、光彩と霧を除去"
+  ],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

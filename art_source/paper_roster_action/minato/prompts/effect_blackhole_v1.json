@@ -1,0 +1,14 @@
+{
+  "id": "blackhole",
+  "look": "BlackHole",
+  "kind": "projectile",
+  "fitAttackHitbox": true,
+  "prompt": "オリジナル2Dペープサート対戦ゲームの、触れると危険なブラックホール状の空間エフェクト1個。横長の楕円、幅:高さが5:4ほど。濃紺と黒紫の深い中心、青紫とシアンと白の鋭い切り絵の渦の輪を3層ほど重ねる。紙を切って重ねた平面的な楕円の渦、左右に短いギザギザの紙片を少し。中心は不透明な深い濃紺、外側は真の透明、薄いクリーム白の切り抜き縁で輪郭が読みやすい。全体を1536×1024の透明キャンバスに十分な余白で収め、紙片を切らない。暗い色でも青い縁で舞台の上で見分けられる。普通のアニメセル塗り、2D舞台用の危険地帯。人物、手、顔、星空、銀河、背景、床、文字、数字、ロゴ、光線、写実、グロー、ぼかし、3D、ピクセル、複数案なし。",
+  "key": "minato",
+  "version": 1,
+  "source": "art_source/paper_roster_action/minato/generated/effect_blackhole_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

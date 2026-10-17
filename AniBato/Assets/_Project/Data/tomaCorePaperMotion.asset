@@ -431,15 +431,19 @@ MonoBehaviour:
     RotateWithVelocity: 1
     FlipWithFacing: 0
     RotationOffsetDegrees: 0
+    SortingOrder: 7
   - Look: 2
     Sprite: {fileID: 21300000, guid: 0df278075475fa84da144b852f1e31db, type: 3}
     Scale: 0.5973979
     RotateWithVelocity: 0
     FlipWithFacing: 1
     RotationOffsetDegrees: 0
+    SortingOrder: 7
   - Look: 3
     Sprite: {fileID: 21300000, guid: 75513e7872040ff4aa99f37636361546, type: 3}
     Scale: 1.3592767
     RotateWithVelocity: 1
     FlipWithFacing: 0
     RotationOffsetDegrees: 90
+    SortingOrder: 7
+  AbilityEffects: []

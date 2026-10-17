@@ -1,0 +1,19 @@
+{
+  "id": "blackhole",
+  "look": "BlackHole",
+  "kind": "projectile",
+  "fitAttackHitbox": true,
+  "prompt": "Use case: precise-object-edit. Edit this paper-cut vortex into an UPRIGHT front-facing portal: the aperture faces the viewer directly. It is almost circular, width only 1.25 times its height. Do not show an oblique ellipse lying on a floor. Increase the aperture vertical height and reduce its width. Keep the same indigo center and sharp cyan / blue / purple / cream paper rings. Canvas 1536x1024, portal visible width about1100px and height about880px, all pieces inside with margins. Flat anime cardstock illustration, solid opaque dark indigo center, actual alpha-zero transparent exterior, thin hard cream cutout outline. No ground, no character, no background, no glow, no photo, no text, no diagram. One large nearly round frontal standing portal only.",
+  "key": "minato",
+  "version": 2,
+  "source": "art_source/paper_roster_action/minato/generated/effect_blackhole_v2.png",
+  "references": [
+    "art_source/paper_roster_action/minato/generated/effect_blackhole_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：渦の色・切り絵の輪郭を維持し、正面へ起こす"
+  ],
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "sortingOrder": 3
+}

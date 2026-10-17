@@ -1,0 +1,795 @@
+{
+  "schemaVersion": 1,
+  "key": "minato",
+  "name": "湊",
+  "characterIndex": 3,
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "sole": 1328,
+  "pixelsPerUnit": 532.5893,
+  "baseIdle": "art_source/paper_roster_idle/generated/minato_idle_v1.png",
+  "jobs": [
+    {
+      "id": "normal1_prepare",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/normal1_prepare_v2.json"
+    },
+    {
+      "id": "normal1_impact",
+      "version": 4,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/normal1_impact_v4.json"
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/normal3_prepare_v2.json"
+    },
+    {
+      "id": "normal3_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/normal3_impact_v1.json"
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/up_prepare_v1.json"
+    },
+    {
+      "id": "up_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/up_impact_v1.json"
+    },
+    {
+      "id": "down_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/down_impact_v2.json"
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/air_impact_v1.json"
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/special_prepare_v1.json"
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/special_impact_v1.json"
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/super_prepare_v1.json"
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/super_impact_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "key": "minato",
+      "character": "湊",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通右パンチ",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "Use case: identity-preserve. 全身のゲーム原画を1枚だけ。画像1は湊の採用待機。本人の容姿・アニメ塗り・頭身・髪と手とブーツの原寸を維持して姿勢だけ変える。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n動作：通常1・2段共通右パンチの予備、まだ当てない。両膝を軽く曲げ、腰と胸を後ろへ引く。生身の右拳を右脇へ引いてパンチの準備、左の機械腕は肘を曲げ胸の横でガード。胸元側が斜めに見える。まだ殴らない。\n重要：義手・機械の目は解剖学的な本人左だけ。自然の右腕は生身。腕二本と脚二本、頭一つ。胸元側が見える右向きの斜め横。肩→肘→手首を追って左右を守り、各手5指。画面の左右と本人の左右を混同しない。機械の左前腕の金属の丸い肘と関節、黒銀の5指を採用待機から維持。\n参照と同じ1189×1323の透明キャンバス。髪の横幅約450px、左右のブーツ各約210〜230px、靴底は立ち基準y1291付近。人物を枠に合わせて縮小・拡大しない。低姿勢では大きい上の透明余白を残す。全身、髪、両手、両ブーツまで余白を残して切らない。拳の遠近を誇張して巨大化しない。\n普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を手や機械の指も含め外周一周へ。縁の外は完全透明。背景、床、影、相手、文字、効果線、煙、光彩、ポータル、紙の繊維、関節分割、3D、ピクセルは禁止。犬耳・頭巾・尻尾・ミトンなど他人の要素を混ぜない。一人一姿勢のみ。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "1557e6dedd0ca8cbff613808fcfbbd8e01680f65f79a38917a050362fa09a203",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 206,
+          "top": 18,
+          "right": 1067,
+          "bottom": 1297
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "前候補は画面左の靴が約290pxまで大きく、待機の約230pxから拡大しているので不採用。待機と同じ左右それぞれ約220〜230pxのブーツにする。頭髪も約450pxの横幅、上端y50付近を維持。立ち待機より大きい靴や頭を描かない。全身を縮めるのでなく本人の各部位の同じ実寸で両膝を曲げた予備姿勢へ。両靴を同じ遠近と向きで見せ、靴底はy1291付近、上側の透明余白を残す。"
+    },
+    {
+      "id": "normal1_prepare",
+      "key": "minato",
+      "character": "湊",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通右パンチ",
+      "version": 2,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "Use case: identity-preserve. 全身のゲーム原画を1枚だけ。画像1は湊の採用待機。本人の容姿・アニメ塗り・頭身・髪と手とブーツの原寸を維持して姿勢だけ変える。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n動作：通常1・2段共通右パンチの予備、まだ当てない。両膝を軽く曲げ、腰と胸を後ろへ引く。生身の右拳を右脇へ引いてパンチの準備、左の機械腕は肘を曲げ胸の横でガード。胸元側が斜めに見える。まだ殴らない。\n重要：義手・機械の目は解剖学的な本人左だけ。自然の右腕は生身。腕二本と脚二本、頭一つ。胸元側が見える右向きの斜め横。肩→肘→手首を追って左右を守り、各手5指。画面の左右と本人の左右を混同しない。機械の左前腕の金属の丸い肘と関節、黒銀の5指を採用待機から維持。\n参照と同じ1189×1323の透明キャンバス。髪の横幅約450px、左右のブーツ各約210〜230px、靴底は立ち基準y1291付近。人物を枠に合わせて縮小・拡大しない。低姿勢では大きい上の透明余白を残す。全身、髪、両手、両ブーツまで余白を残して切らない。拳の遠近を誇張して巨大化しない。\n普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を手や機械の指も含め外周一周へ。縁の外は完全透明。背景、床、影、相手、文字、効果線、煙、光彩、ポータル、紙の繊維、関節分割、3D、ピクセルは禁止。犬耳・頭巾・尻尾・ミトンなど他人の要素を混ぜない。一人一姿勢のみ。\n修正条件：前候補は画面左の靴が約290pxまで大きく、待機の約230pxから拡大しているので不採用。待機と同じ左右それぞれ約220〜230pxのブーツにする。頭髪も約450pxの横幅、上端y50付近を維持。立ち待機より大きい靴や頭を描かない。全身を縮めるのでなく本人の各部位の同じ実寸で両膝を曲げた予備姿勢へ。両靴を同じ遠近と向きで見せ、靴底はy1291付近、上側の透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "f28458691b7affa937a261eb8d5cf6a3d3d3c6d9e788f2805ac5443817d8b3ed",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 327,
+          "top": 58,
+          "right": 1045,
+          "bottom": 1260
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/normal1_prepare.png",
+      "preparedSha256": "a49499ceb9d7b4d158d62878f132f2217a011d01b2f7e87c7574b4023affdc3a",
+      "offsetX": 18,
+      "offsetY": 68,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal1_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通右パンチ",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png",
+        "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準",
+        "同じ人物・髪とブーツ・義手の実寸の採用候補の予備。画面左のブーツを大きくせず、生身の右腕だけをパンチへ伸ばす続き。"
+      ],
+      "prompt": "Use case: identity-preserve. 全身のゲーム原画を1枚だけ。画像1は湊の採用待機。本人の容姿・アニメ塗り・頭身・髪と手とブーツの原寸を維持して姿勢だけ変える。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n動作：通常1・2段共通右パンチの当てる決めポーズ。生身の右拳だけを画面右へまっすぐ突き出し、一歩踏み込み、腰と右肩を前へ回したパンチ。右肩は胸を見た画面左側から肘・手首・裸の右拳へつながる。左の機械腕は肘を曲げて身体の横へ引き、機械の手でパンチしない。\n重要：義手・機械の目は解剖学的な本人左だけ。自然の右腕は生身。腕二本と脚二本、頭一つ。胸元側が見える右向きの斜め横。肩→肘→手首を追って左右を守り、各手5指。画面の左右と本人の左右を混同しない。機械の左前腕の金属の丸い肘と関節、黒銀の5指を採用待機から維持。\n参照と同じ1189×1323の透明キャンバス。髪の横幅約450px、左右のブーツ各約210〜230px、靴底は立ち基準y1291付近。人物を枠に合わせて縮小・拡大しない。低姿勢では大きい上の透明余白を残す。全身、髪、両手、両ブーツまで余白を残して切らない。拳の遠近を誇張して巨大化しない。\n普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を手や機械の指も含め外周一周へ。縁の外は完全透明。背景、床、影、相手、文字、効果線、煙、光彩、ポータル、紙の繊維、関節分割、3D、ピクセルは禁止。犬耳・頭巾・尻尾・ミトンなど他人の要素を混ぜない。一人一姿勢のみ。\n追加参照の役割：最後の画像は同じ人物・髪とブーツ・義手の実寸の採用候補の予備。画面左のブーツを大きくせず、生身の右腕だけをパンチへ伸ばす続き。。人物の寸法と武器・衣装の同一性を維持し、指定の次のポーズだけに変える。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "ddf517559bb7046aaf65b306d8416254eb16f33a0f52fd79f3bcb2fba5fa8ea5",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 58,
+          "top": 18,
+          "right": 1171,
+          "bottom": 1283
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "最重要の修正：前候補は生身と義手の肩を逆へ入れ替えているため不採用。この胸元側が見える構図では、生身の右肩は画面左側、機械の左肩は画面右側。裸の右腕を画面左の白袖から伸ばし、右上腕と右前腕が胸の手前を横切って画面右へ出るクロスのパンチとして描く。画面左の袖を機械腕へつながない。画面右側の左肩からは機械の左腕が下へ伸び、肘を曲げて画面右の腰の横へ引く。画像2の構えと同じ肩の所属を保ったまま生身の右拳を胸の前を横切らせる。両腕は2本だけ。正しい左機械眼も右へ移さない。"
+    },
+    {
+      "id": "normal1_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通右パンチ",
+      "version": 2,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png",
+        "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準",
+        "同じ人物・髪とブーツ・義手の実寸の採用候補の予備。画面左のブーツを大きくせず、生身の右腕だけをパンチへ伸ばす続き。"
+      ],
+      "prompt": "Use case: identity-preserve. 全身のゲーム原画を1枚だけ。画像1は湊の採用待機。本人の容姿・アニメ塗り・頭身・髪と手とブーツの原寸を維持して姿勢だけ変える。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n動作：通常1・2段共通右パンチの当てる決めポーズ。生身の右拳だけを画面右へまっすぐ突き出し、一歩踏み込み、腰と右肩を前へ回したパンチ。右肩は胸を見た画面左側から肘・手首・裸の右拳へつながる。左の機械腕は肘を曲げて身体の横へ引き、機械の手でパンチしない。\n重要：義手・機械の目は解剖学的な本人左だけ。自然の右腕は生身。腕二本と脚二本、頭一つ。胸元側が見える右向きの斜め横。肩→肘→手首を追って左右を守り、各手5指。画面の左右と本人の左右を混同しない。機械の左前腕の金属の丸い肘と関節、黒銀の5指を採用待機から維持。\n参照と同じ1189×1323の透明キャンバス。髪の横幅約450px、左右のブーツ各約210〜230px、靴底は立ち基準y1291付近。人物を枠に合わせて縮小・拡大しない。低姿勢では大きい上の透明余白を残す。全身、髪、両手、両ブーツまで余白を残して切らない。拳の遠近を誇張して巨大化しない。\n普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を手や機械の指も含め外周一周へ。縁の外は完全透明。背景、床、影、相手、文字、効果線、煙、光彩、ポータル、紙の繊維、関節分割、3D、ピクセルは禁止。犬耳・頭巾・尻尾・ミトンなど他人の要素を混ぜない。一人一姿勢のみ。\n追加参照の役割：最後の画像は同じ人物・髪とブーツ・義手の実寸の採用候補の予備。画面左のブーツを大きくせず、生身の右腕だけをパンチへ伸ばす続き。。人物の寸法と武器・衣装の同一性を維持し、指定の次のポーズだけに変える。\n修正条件：最重要の修正：前候補は生身と義手の肩を逆へ入れ替えているため不採用。この胸元側が見える構図では、生身の右肩は画面左側、機械の左肩は画面右側。裸の右腕を画面左の白袖から伸ばし、右上腕と右前腕が胸の手前を横切って画面右へ出るクロスのパンチとして描く。画面左の袖を機械腕へつながない。画面右側の左肩からは機械の左腕が下へ伸び、肘を曲げて画面右の腰の横へ引く。画像2の構えと同じ肩の所属を保ったまま生身の右拳を胸の前を横切らせる。両腕は2本だけ。正しい左機械眼も右へ移さない。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "c0010881196a988f6033ff0fb81b6e5e596633dd676790e80c7f49bbb7a1fed6",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 176,
+          "top": 28,
+          "right": 1169,
+          "bottom": 1294
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "胸側の肩の入れ替わりが再発したため、右パンチの体軸を描き直す。今回は胸元を見せる指定を取り消し、背中と生身の右脇が見える右側面の3/4に強くひねる。近い右肩・右上腕・右前腕・右拳が生身の一本のパンチとして画面右へ伸びる。遠い左肩と左機械腕は体の向こう側で画面左後ろへ引く。背中の黒ベストには前の襟やボタンや前面ポケットを描かず背中の一枚の面を見せる。頭は画面右の横顔、近い自然の右眼だけ見えてよく、左の機械眼が隠れても正しい。顔に右の機械眼を新設しない。"
+    },
+    {
+      "id": "normal1_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通右パンチ",
+      "version": 3,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_impact_v3.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png",
+        "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準",
+        "同じ人物・髪とブーツ・義手の実寸の採用候補の予備。画面左のブーツを大きくせず、生身の右腕だけをパンチへ伸ばす続き。"
+      ],
+      "prompt": "Use case: identity-preserve. 画像1と画像2の湊本人の全身ゲーム原画1枚。服・機械装備・顔と髪・頭身・頭とブーツの実寸は採用待機と同じ。黒茶の髪、白い巻き袖、黒い戦術ベスト、黒パンツ、茶黒ブーツ。本人右腕は生身、本人左前腕と左手は機械。\n通常1・2段の共通の当てる絵。身体を大きくひねった生身の右ストレート。今回は背中と右脇が見える右側面3/4。近い右肩から右上腕・肘・裸の右前腕と右拳を画面右へまっすぐ伸ばす。遠い機械の左腕は身体の向こう側に隠れつつ、左の腰の後ろの画面左へ引いた金属拳を一つ見せる。背中の黒ベストは前面ポケットや襟を描かず、後ろのベストの面とストラップを見せる。胸側の絵で腕の所属を入れ替えない。頭は画面右の横顔、自然の右眼だけが見えてよい。本人左の機械眼は遠い側に隠れる、反対側に機械眼を付けない。生身の右拳で殴ることと、後ろへ引く左の機械腕という所属を守る。前脚へ体重を乗せた明確な打撃シルエット。\n元と同じ1189×1323透明キャンバス。髪横幅約450px、ブーツ各約220〜230pxの実寸。全身を枠に合わせて拡大縮小しない。頭と拳と両靴を切らない。薄い白い切り抜き縁を外周すべてへ。背景は完全透明、地面・影・効果・文字なし。全身一人、腕2本、脚2本、各手5指。普通のアニメ塗り、関節分割やピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "e0598082e9e171f875db495f8083d059356e0d8af79aef0c4f73021006b1e6dd",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 42,
+          "top": 18,
+          "right": 1188,
+          "bottom": 1297
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "v3で背中側と腕の所属は正しくなったが右拳が原画の右端で切れているため採用不可。右肘を少し曲げて右拳先をx1110付近へ引き、右端に最低35pxの透明余白を残す。左右ブーツも参照待機より広がって大きいので、同じ約220〜230pxの靴にして外観を一致させる。"
+    },
+    {
+      "id": "normal1_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通右パンチ",
+      "version": 4,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_impact_v4.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal1_impact_v3.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "腕の所属と背中のひねりが正しい編集対象。右拳の切れとブーツ寸法だけを修正",
+        "本人の頭・義手・ブーツの実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の右ストレートの全身原画を編集する。背中と右脇が見え、近い生身の右腕でパンチし、遠い機械の左腕を後ろへ引く所属は正しいので厳密に維持。自然の右眼だけが見える横顔、顔と髪、黒ベストの背中、白巻き袖、黒パンツ、機械の左腕を変えない。修正は原画の右端で切れている右拳とブーツの大きさ。右肘を軽く曲げて右拳全体を少し左へ引き、拳の先をx1110以内、右端に最低35pxの透明余白を残す。拳を切らない。パンチの方向と勢いは維持する。左右のブーツは画像2の採用待機と同じ靴の実寸へ戻し、それぞれ横幅約220〜230px、靴の細部と靴底の厚みも画像2へ一致。巨大な靴を維持しない。脚の開きを少し狭めてもよいが頭と身体の倍率は変えない。全身をまとめて縮小しない。1189×1323の同じ透明キャンバス。全身一人だけ、腕2本、脚2本、各手5指。薄い白縁を全身と拳の外周へ連続。背景、地面、影、効果、文字なし。普通のアニメ塗りを維持。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "19cfc9ffd06e2ebd827d93d5c49b6bdf74e57e40b866383a28d4dc275cd2ecd2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 103,
+          "top": 19,
+          "right": 1167,
+          "bottom": 1281
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/normal1_impact.png",
+      "preparedSha256": "a9a01a07340c0ff3e4c57f5974ec45a7f9ebe09c156345b2095ba522456ae894",
+      "offsetX": 104,
+      "offsetY": 47,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "key": "minato",
+      "character": "湊",
+      "pose": "normal3",
+      "phase": "prepare",
+      "label": "通常3段左義手の大打撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png",
+        "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準",
+        "頭・髪・靴と左義手の同一性の基準。こちらより大きい構えにするが部位を拡大しない。"
+      ],
+      "prompt": "Use case: identity-preserve. 全身のゲーム原画を1枚だけ。画像1は湊の採用待機。本人の容姿・アニメ塗り・頭身・髪と手とブーツの原寸を維持して姿勢だけ変える。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n動作：通常3段左義手の大打撃の予備、まだ当てない。最大の溜め。両膝と腰を低く落とし、胸と肩を大きくひねる。本人左の機械の拳を左脇の後ろへ大きく引き、次に全体重を乗せてパンチする直前。生身の右拳は胸前でガード。頭とブーツは拡大しない。\n重要：義手・機械の目は解剖学的な本人左だけ。自然の右腕は生身。腕二本と脚二本、頭一つ。胸元側が見える右向きの斜め横。肩→肘→手首を追って左右を守り、各手5指。画面の左右と本人の左右を混同しない。機械の左前腕の金属の丸い肘と関節、黒銀の5指を採用待機から維持。\n参照と同じ1189×1323の透明キャンバス。髪の横幅約450px、左右のブーツ各約210〜230px、靴底は立ち基準y1291付近。人物を枠に合わせて縮小・拡大しない。低姿勢では大きい上の透明余白を残す。全身、髪、両手、両ブーツまで余白を残して切らない。拳の遠近を誇張して巨大化しない。\n普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を手や機械の指も含め外周一周へ。縁の外は完全透明。背景、床、影、相手、文字、効果線、煙、光彩、ポータル、紙の繊維、関節分割、3D、ピクセルは禁止。犬耳・頭巾・尻尾・ミトンなど他人の要素を混ぜない。一人一姿勢のみ。\n追加参照の役割：最後の画像は頭・髪・靴と左義手の同一性の基準。こちらより大きい構えにするが部位を拡大しない。。人物の寸法と武器・衣装の同一性を維持し、指定の次のポーズだけに変える。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "c26a75f72da23e3b5b1fe94c1f56f0889902f84e3a618803d871f9d33d77cd4e",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 22,
+          "top": 151,
+          "right": 1095,
+          "bottom": 1362
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "機械腕と生身の腕の肩が逆で不採用。正しい構えの局所編集へ切り替える。"
+    },
+    {
+      "id": "normal3_prepare",
+      "key": "minato",
+      "character": "湊",
+      "pose": "normal3",
+      "phase": "prepare",
+      "label": "通常3段左義手の大打撃",
+      "version": 2,
+      "source": "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "両腕の所属が正しい全身の直接編集対象",
+        "頭・靴・装備の同じ実寸"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の全身を編集する。画面右側の肩につながる機械の左腕、画面左側の肩につながる生身の右腕という所属を絶対に維持。左機械眼も画面右側の顔のまま。腕の所属は画像1が正しいので入れ替えない。\n3段目の大きい溜め。画像1より両膝と股関節を深く曲げ、腰を少し後ろへ引く。画像1の画面右側の機械腕は肩の所属を保ったまま肘を曲げ、金属の左拳を画面右側の腰の横へ下げて強く引きつける。機械の肘も画面右側へ残す。機械腕を画面左へ移さない。画面左側の生身の右拳は胸の前へ上げてガード。身体と肩をひねり、次に左義手で大きく殴ると分かる力強い構え。胸側が斜めに見える。\n画像1の頭・髪・顔・義手・手・ブーツの実寸と衣装をそのまま維持し、全身を拡大しない。画像1と同じ1189×1323透明キャンバス。低い姿勢だから頭上に余白を残す。ブーツを大きくせず画像1と同じ靴にする。原画枠の上下左右から最低20pxの透明余白。両腕両脚を切らず、腕2本・脚2本・頭1つ・各手5指。普通のアニメ塗り、薄い白縁が外周一周。背景・地面・影・効果・文字なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "2b2e126ada1fd6c5e4767a0275841f64926a3b86e418eae67740b0428b3a4490",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 225,
+          "top": 113,
+          "right": 1120,
+          "bottom": 1256
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/normal3_prepare.png",
+      "preparedSha256": "71c6be50db52b62f509119caa2c2a82c217c7134e4fbcd57792cb91cf450902f",
+      "offsetX": 32,
+      "offsetY": 72,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段左義手の大打撃",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/normal3_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "続く決めポーズへの直接編集対象、正しい機械左腕と生身右腕",
+        "本人の部位実寸と衣装の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の左義手パンチの大きい溜めから、攻撃が当たる最大の決めポーズへ編集する。画面右の肩からつながる機械の左腕を画面右前へ大きく伸ばす。金属の左拳で殴る。肩・肘・手首・機械の左拳のつながりを明快にし、右の生身の腕へ入れ替えない。画面左の生身の右腕は胸元へ引いてガード。腰と左肩を一気に前へ乗せ、右前の脚へ深く踏み込み、後ろ脚を伸ばした大きい打撃。顔は右、胸元を斜めから見せる。画像1と同じ本人、同じ頭とブーツと機械腕の大きさ。\n拳と機械指を巨大化しない。右前の拳先はx1110以内、原画の右端に最低30px透明余白。両腕と両靴を切らない。拳が収まるよう左肘に軽い曲げを残してよい。1189×1323透明キャンバス、人物を全体縮小しない。髪と顔とブーツは画像1と画像2と同じ実寸。普通のアニメ塗りと薄い白い切り抜き縁。背景、地面、影、相手、効果、文字なし。一人、腕2本、脚2本、各手5指。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "0e8548edef0e8ee3cb19ea796387433c51ef0d55f93b3564f86f95a18c9b4422",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 35,
+          "top": 70,
+          "right": 1173,
+          "bottom": 1261
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/normal3_impact.png",
+      "preparedSha256": "afd98576d2101bef14348c10d6e4fe3a82ef0a9a8683124d472011bff7b54610",
+      "offsetX": 0,
+      "offsetY": 67,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "up_prepare",
+      "key": "minato",
+      "character": "湊",
+      "pose": "up",
+      "phase": "prepare",
+      "label": "上攻撃・義手アッパー",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "両腕の所属が正しい全身の直接編集対象",
+        "頭・靴・装備の同じ実寸"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の全身を編集する。画面右側の肩につながる機械の左腕、画面左側の肩につながる生身の右腕という所属を絶対に維持。左機械眼も画面右側の顔のまま。腕の所属は画像1が正しいので入れ替えない。\n3段目の大きい溜め。画像1より両膝と股関節を深く曲げ、腰を少し後ろへ引く。画像1の画面右側の機械腕は肩の所属を保ったまま肘を曲げ、金属の左拳を画面右側の腰の横へ下げて強く引きつける。機械の肘も画面右側へ残す。機械腕を画面左へ移さない。画面左側の生身の右拳は胸の前へ上げてガード。身体と肩をひねり、次に左義手で大きく殴ると分かる力強い構え。胸側が斜めに見える。\n画像1の頭・髪・顔・義手・手・ブーツの実寸と衣装をそのまま維持し、全身を拡大しない。画像1と同じ1189×1323透明キャンバス。低い姿勢だから頭上に余白を残す。ブーツを大きくせず画像1と同じ靴にする。原画枠の上下左右から最低20pxの透明余白。両腕両脚を切らず、腕2本・脚2本・頭1つ・各手5指。普通のアニメ塗り、薄い白縁が外周一周。背景・地面・影・効果・文字なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "2b2e126ada1fd6c5e4767a0275841f64926a3b86e418eae67740b0428b3a4490",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 225,
+          "top": 113,
+          "right": 1120,
+          "bottom": 1256
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "normal3_prepare",
+        "version": 2,
+        "source": "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+        "sha256": "2b2e126ada1fd6c5e4767a0275841f64926a3b86e418eae67740b0428b3a4490",
+        "promptFile": "art_source/paper_roster_action/minato/prompts/normal3_prepare_v2.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "同じ左機械拳を腰へ引く深い構えが上アッパーの準備にも適切。原寸で再利用。",
+      "prepared": "art_source/paper_roster_action/minato/prepared/up_prepare.png",
+      "preparedSha256": "71c6be50db52b62f509119caa2c2a82c217c7134e4fbcd57792cb91cf450902f",
+      "offsetX": 32,
+      "offsetY": 72,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "up_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "up",
+      "phase": "impact",
+      "label": "地上上攻撃・義手アッパー",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/up_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "機械左拳を腰へ引いた構え、腕の所属と部位実寸",
+        "本人の採用待機"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の構えから、左の機械拳を上へ突き上げるアッパーの決めへ。画面右の肩につながる機械の左腕を、肩と肘から頭の斜め右上へ突き上げる。裸の右手は画面左の肩につながったまま胸前でガード。機械の肩と裸の肩を入れ替えない。両足を接地して膝を伸ばし、腰と肩を上へ起こす強い上攻撃。胸側が斜めから見え、自然の右眼と機械の左眼は元の所属のまま。\n顔・髪・義手とブーツの実寸は画像1と画像2から維持する。拳を上へ伸ばしても全身を拡大縮小しない。左肘を適度に曲げ、拳の先を原画の上端から最低30px内へ収める。1189×1323透明キャンバス、頭と手とブーツを切らない。髪横幅約450px、ブーツ約220〜230px、一人一姿勢、腕2本脚2本、各手5指。普通のアニメ塗りと薄い白縁、完全透過、背景・床・影・効果・文字なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "dcf502c7fb7f579d9028ace93abd655fa703e2ff34c8703fc96cc4d81c770cc0",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 224,
+          "top": 11,
+          "right": 1067,
+          "bottom": 1295
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/up_impact.png",
+      "preparedSha256": "f64e0c8849d01838518ee0cddb4686baf7900ba124c7d43692a732f0a0c22c7b",
+      "offsetX": 59,
+      "offsetY": 33,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "down_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "down",
+      "phase": "impact",
+      "label": "下攻撃・低い義手パンチ",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/down_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "機械左腕と生身右腕の所属、顔と装備と部位実寸が正しい直接編集対象",
+        "本人の採用待機"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の全身原画を編集する。同じ人物、同じ黒茶の髪、自然の右眼と機械の左眼、白巻き袖と黒ベスト、黒パンツと茶黒ブーツ。画像1の画面右の肩につながる左機械腕、画面左の肩につながる生身の右腕を厳密に維持する。動作：画像1よりさらに腰と両膝を低く落とし、画面右の肩からつながる左機械腕を膝より低い画面右前へ伸ばす。金属の左拳が地面近くへ届く低いパンチの決め。画面左の生身右拳は胸前でガード。両足は地面についている。\n同じ部位の実寸を保つ。頭と髪とブーツと機械拳を拡大しない。1189×1323の透明キャンバス、低姿勢や空中の余白を埋めようとしない。髪と両手と両靴に最低20px余白を残し、全身を切らない。腕2本、脚2本、各手5指、一人一姿勢だけ。普通のアニメ塗り、薄い白縁、完全透過。背景・床・影・相手・効果・文字・関節分割・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "7477f73d607591f882f325bcb05dc27a1d1f79a3c61e590fed45251992c3a92f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 63,
+          "top": 101,
+          "right": 1169,
+          "bottom": 1213
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "頭・靴が拡大され、義手拳が靴底より下に出てしまうため不採用。採用済みしゃがみ原画を直接編集し、低い前方へ左機械拳を伸ばす。"
+    },
+    {
+      "id": "down_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "down",
+      "phase": "impact",
+      "label": "下攻撃・低い義手パンチ",
+      "version": 2,
+      "source": "art_source/paper_roster_action/minato/generated/down_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_core/minato/generated/minato_crouch_v1.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "すでに採用済みの正しいしゃがみ全身。頭・靴・腰と脚をそのまま使う直接編集対象",
+        "本人の顔と義手装備の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の採用済みの湊のしゃがみ原画を編集する。顔・髪・頭の実寸、腰の高さ、両脚とブーツ、衣装と身体の配置はそのまま厳密に維持し、変更は機械の左腕の低い前方パンチだけ。画面右の肩につながる左機械腕を、肩と肘から画面右前の膝の高さへ突き出す。金属の左拳は靴底より上にあり、拳を地面へ置かない。左前腕を真下に向けない、斜め右前へ伸ばす。前へ出す左機械拳の先に最低25px透明余白を残す。画面左の生身右手は元の膝前の軽い握りのまま。両腕の所属と機械の左眼は元のまま。\n画像1のしゃがんだ体の高さと同じ、空いている頭上の大きな透明余白も維持。全身を大きくしない、靴や頭を大きくしない。画像1と同じ1189×1323の透明キャンバス。髪・両手・両靴まで切らず白縁を一周維持。普通のアニメ塗り、一人、腕2本、脚2本、各手5指。背景・床・影・効果・文字・他人の要素なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "753c800ff1097d4cc6d4ae8801737d67526da5984c8655b92614f43aa2bc1047",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 301,
+          "top": 297,
+          "right": 1110,
+          "bottom": 1278
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/down_impact.png",
+      "preparedSha256": "fe54e331eb1c952633e7ade7328382e9e237d0c3d23e5fb8025f59ede8fe1659",
+      "offsetX": 58,
+      "offsetY": 50,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "air_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "air",
+      "phase": "impact",
+      "label": "空中ニュートラル・義手パンチ",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/air_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal3_impact_v1.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "機械左腕と生身右腕の所属、顔と装備と部位実寸が正しい直接編集対象",
+        "本人の採用待機"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の全身原画を編集する。同じ人物、同じ黒茶の髪、自然の右眼と機械の左眼、白巻き袖と黒ベスト、黒パンツと茶黒ブーツ。画像1の画面右の肩につながる左機械腕、画面左の肩につながる生身の右腕を厳密に維持する。動作：画像1の画面右の肩から伸びる左機械拳の前方パンチを保ち、両脚を浮かせた空中攻撃へ変える。後ろ脚と前脚を膝で曲げ、両ブーツとも宙にある。地面の影は描かず、浮いた打撃と分かるシルエット。画面左の生身の右拳は胸前でガード。\n同じ部位の実寸を保つ。頭と髪とブーツと機械拳を拡大しない。1189×1323の透明キャンバス、低姿勢や空中の余白を埋めようとしない。髪と両手と両靴に最低20px余白を残し、全身を切らない。腕2本、脚2本、各手5指、一人一姿勢だけ。普通のアニメ塗り、薄い白縁、完全透過。背景・床・影・相手・効果・文字・関節分割・ピクセルなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "c498fb430e524c4a64acd2dbba0635df6271c95c7a48e4bbf4cd0a2bf8e35894",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 80,
+          "top": 41,
+          "right": 1173,
+          "bottom": 1270
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/air_impact.png",
+      "preparedSha256": "02638a7d50d06eab724e814a65af096f094eb693a5cbd6ad3a43be0e87411f57",
+      "offsetX": 57,
+      "offsetY": 58,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "special",
+      "phase": "impact",
+      "label": "特殊・意識接続と瞬間移動",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/normal1_impact_v4.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal1_impact_v3.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "腕の所属と背中のひねりが正しい編集対象。右拳の切れとブーツ寸法だけを修正",
+        "本人の頭・義手・ブーツの実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の右ストレートの全身原画を編集する。背中と右脇が見え、近い生身の右腕でパンチし、遠い機械の左腕を後ろへ引く所属は正しいので厳密に維持。自然の右眼だけが見える横顔、顔と髪、黒ベストの背中、白巻き袖、黒パンツ、機械の左腕を変えない。修正は原画の右端で切れている右拳とブーツの大きさ。右肘を軽く曲げて右拳全体を少し左へ引き、拳の先をx1110以内、右端に最低35pxの透明余白を残す。拳を切らない。パンチの方向と勢いは維持する。左右のブーツは画像2の採用待機と同じ靴の実寸へ戻し、それぞれ横幅約220〜230px、靴の細部と靴底の厚みも画像2へ一致。巨大な靴を維持しない。脚の開きを少し狭めてもよいが頭と身体の倍率は変えない。全身をまとめて縮小しない。1189×1323の同じ透明キャンバス。全身一人だけ、腕2本、脚2本、各手5指。薄い白縁を全身と拳の外周へ連続。背景、地面、影、効果、文字なし。普通のアニメ塗りを維持。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "19cfc9ffd06e2ebd827d93d5c49b6bdf74e57e40b866383a28d4dc275cd2ecd2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 103,
+          "top": 19,
+          "right": 1167,
+          "bottom": 1281
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "normal1_impact",
+        "version": 4,
+        "source": "art_source/paper_roster_action/minato/generated/normal1_impact_v4.png",
+        "sha256": "19cfc9ffd06e2ebd827d93d5c49b6bdf74e57e40b866383a28d4dc275cd2ecd2",
+        "promptFile": "art_source/paper_roster_action/minato/prompts/normal1_impact_v4.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "瞬間移動直後は同じ生身右拳の打撃。実際の移動と新しい接続効果で特殊を示し、適切な原寸打撃を再利用する。",
+      "prepared": "art_source/paper_roster_action/minato/prepared/special_impact.png",
+      "preparedSha256": "a9a01a07340c0ff3e4c57f5974ec45a7f9ebe09c156345b2095ba522456ae894",
+      "offsetX": 104,
+      "offsetY": 47,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_prepare",
+      "key": "minato",
+      "character": "湊",
+      "pose": "special",
+      "phase": "prepare",
+      "label": "特殊・意識接続と瞬間移動",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/special_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "両腕の所属が正しい構えと部位実寸の編集対象",
+        "本人の顔・機械眼と衣装の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の全身原画を、意識フィールドへ接続する集中の構えへ編集する。顔と髪、服装、両脚とブーツ、身体の倍率は画像1のまま。変えるのは腕と手の構え。画面左の生身右腕の肘を曲げ、生身の右手の人差し指と中指をそろえて、本人右のこめかみ（画面左の自然の右眼の横）へ軽く添える。他の指3本は自然に曲げ、親指の所属を正しく。画面右の肩につながる左機械腕は肘を曲げて胸の横へ構える。生身右腕と左機械腕を入れ替えない。顔と目を隠さない。冷静に集中する表情、両足接地。\n1189×1323透明キャンバス、頭と靴と義手を拡大しない、全身を枠に合わせて拡大縮小しない。薄い白縁は指先も一周。全身一人、左右腕と脚は各一本、各手5指。普通のアニメ塗り。ポータル・霧・光・効果・文字は別素材なので描かない。背景・床・影なし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "930efcaf8971f77e00353b015fc14907cd083787559423f6fb8cbd43a1f1f281",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 318,
+          "top": 29,
+          "right": 1053,
+          "bottom": 1266
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/special_prepare.png",
+      "preparedSha256": "0020c277610140673cf43f935e8b45f9736c24a3113c37e7f4c85025d1660386",
+      "offsetX": 15,
+      "offsetY": 62,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "super_prepare",
+      "key": "minato",
+      "character": "湊",
+      "pose": "super",
+      "phase": "prepare",
+      "label": "超必殺・意識解放",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/super_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象、両腕の正しい所属と顔・髪・靴の同じ実寸",
+        "本人の衣装・義手装備の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の湊の全身を、意識の力を解放する最大の構えへ編集する。顔・髪・服装と機械眼、頭・義手・ブーツの大きさは同じ。胸側が斜めから見える右向き。両足を少し広く開いて膝を曲げ、胸を張る。画面左側の生身の右拳を右腰（画面左）へ引き、画面右側の機械の左拳を左腰（画面右）へ引く。両拳を腰の横へ強く引きつけ、肩と胴体に力を込める、超必殺の解放直前の力強いポーズ。左機械腕と右生身の肩の所属を入れ替えない。冷静で鋭い目線は前方。まだ意識状態にならず、本人の通常色。\n画像1の部位の実寸を保ち、低姿勢でも頭と靴を大きくしない。1189×1323の透明キャンバス、全身の倍率を変えない。髪と拳と靴を最低20px余白付きで収める。腕2本脚2本、各手5指の自然な握り。薄い白い切り抜き縁を一周。普通のアニメ塗り、背景・床・影・霧・光・効果・文字は描かない。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "01c908980446a7c025d8ba659fea612375ecc10ff5d6411034ce6941b3f11ee2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 232,
+          "top": 59,
+          "right": 1107,
+          "bottom": 1271
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/super_prepare.png",
+      "preparedSha256": "b0e4f7892da3ad1bb4718cde07c536d1ec02efd4820a3cee84d748a0e2803e50",
+      "offsetX": 35,
+      "offsetY": 57,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "super_impact",
+      "key": "minato",
+      "character": "湊",
+      "pose": "super",
+      "phase": "impact",
+      "label": "超必殺・意識解放",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/super_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/super_prepare_v1.png",
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象：完成した最大の構え、顔髪・義手・ブーツの同じ実寸",
+        "本人の容姿・左義手と左機械眼の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の全身の湊を、意識状態へ解放した超必殺の決めポーズへ編集。顔、髪型、衣装、頭とブーツのサイズと全身の倍率、両足の位置を維持する。胸が斜めから見える右向きの本人1人。画面右側の左肩から伸びる機械の左前腕を画面右前方の肩の高さへ出し、機械の左の手のひらを斜め正面へ向けて開く。機械の左手は親指1本と長い指4本の合計5本。各指が独立し、手首から自然につながる。画面左側の生身の右腕は肘を曲げて右拳を胸へ引く。機械の左手と裸の右手を入れ替えない。\n全身の塗りを淡い青白い寒色へ変え、意識状態の分身のように見せる。ただし本人は1体だけで、輪郭と顔と義手の仕組みと衣服は明快に見える。淡い青い色のアニメセル塗り、透けすぎない。霧、ブラックホール、輪、光、効果線、残像は別素材なのでこの人物原画へ描かない。\n1189×1323の真の透明キャンバス、薄いクリーム白の切り抜き縁を指の周りも含め一周。髪、両手、ブーツを20px以上の余白で収める。画像1から頭と靴を拡大・縮小しない。各手5指、腕2本、脚2本。背景、床、影、文字、紙の質感、ピクセル、関節分割、3Dなし。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "37098f509a03d960aeedda4d4ddca7326aecfc9eef766cd52e0e65e5e2db735d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 130,
+          "top": 41,
+          "right": 1173,
+          "bottom": 1293
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/minato/prepared/super_impact.png",
+      "preparedSha256": "416e8c077f18a6485b2cc1ab148588d2387dde1aec218dd6109ed60de39bcd7d",
+      "offsetX": 97,
+      "offsetY": 35,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "rework_r4_minato_2"
+}

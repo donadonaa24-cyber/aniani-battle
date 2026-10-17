@@ -1,0 +1,21 @@
+{
+  "id": "special_prepare",
+  "key": "minato",
+  "character": "湊",
+  "pose": "special",
+  "phase": "prepare",
+  "label": "特殊・意識接続と瞬間移動",
+  "version": 1,
+  "source": "art_source/paper_roster_action/minato/generated/special_prepare_v1.png",
+  "references": [
+    "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png",
+    "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "両腕の所属が正しい構えと部位実寸の編集対象",
+    "本人の顔・機械眼と衣装の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の湊の全身原画を、意識フィールドへ接続する集中の構えへ編集する。顔と髪、服装、両脚とブーツ、身体の倍率は画像1のまま。変えるのは腕と手の構え。画面左の生身右腕の肘を曲げ、生身の右手の人差し指と中指をそろえて、本人右のこめかみ（画面左の自然の右眼の横）へ軽く添える。他の指3本は自然に曲げ、親指の所属を正しく。画面右の肩につながる左機械腕は肘を曲げて胸の横へ構える。生身右腕と左機械腕を入れ替えない。顔と目を隠さない。冷静に集中する表情、両足接地。\n1189×1323透明キャンバス、頭と靴と義手を拡大しない、全身を枠に合わせて拡大縮小しない。薄い白縁は指先も一周。全身一人、左右腕と脚は各一本、各手5指。普通のアニメ塗り。ポータル・霧・光・効果・文字は別素材なので描かない。背景・床・影なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

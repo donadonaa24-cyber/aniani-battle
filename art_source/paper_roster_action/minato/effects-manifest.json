@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "key": "minato",
+  "jobs": [
+    {
+      "id": "teleport",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/effect_teleport_v3.json"
+    },
+    {
+      "id": "mist",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/effect_mist_v1.json"
+    },
+    {
+      "id": "blackhole",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/minato/prompts/effect_blackhole_v2.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "teleport",
+      "look": "Teleport",
+      "kind": "ability",
+      "state": "SpecialNeutral",
+      "worldHeight": 2.7,
+      "duringStartup": true,
+      "duringRecovery": false,
+      "prompt": "オリジナル2D対戦ゲームの瞬間移動の接続エフェクトを1個だけ生成。人物の背後に置く、縦長の切り絵風の空間の裂け目。シアン、水色、白、濃紺の平たい画用紙を数枚重ねたような鋭い輪郭。縦向きの細い楕円の輪を左右のギザギザした三日月状の紙片が囲む。中央は完全に透明で、内側に人物を後で置いても顔と体を隠さない。青い短い紙片を少量だけ外周へ。輪郭は硬く、薄いクリーム白の切り抜き縁。全体は縦横比およそ幅0.6:高さ1、1024×1536の透明キャンバスの中央に30px以上の余白で収める。平面的なアニメセル塗り。人物、手、顔、文字、数字、機械、武器、背景、床、影、煙の写真、3D、ぼかし、グロー、ピクセル、シート、複数案なし。縁の外と中央は真の透明。",
+      "key": "minato",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/effect_teleport_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "94980c8018b5c5247ffe28473857001694e9e35941fc24740a571f80006bd6d2",
+      "native": {
+        "width": 1024,
+        "height": 1536,
+        "bounds": {
+          "left": 82,
+          "top": 18,
+          "right": 953,
+          "bottom": 1503
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "未採用の旧候補。プレビューの透明RGBを光彩と見誤ったため保留した。選定v3は背景合成で輪郭とalphaを確認。旧候補を光彩不良と確定しない。"
+    },
+    {
+      "id": "teleport",
+      "look": "Teleport",
+      "kind": "ability",
+      "state": "SpecialNeutral",
+      "worldHeight": 2.7,
+      "duringStartup": true,
+      "duringRecovery": false,
+      "prompt": "Use case: precise-object-edit. この切り絵の輪の形とシアン・紺・白の色と白縁はそのまま。修正は、輪の外側と内側に広がるぼやけた光彩・霧・グローを完全に削除すること。輪と紙片の硬い形だけを残した平坦な切り抜きPNGにする。紙片の中は完全不透明、外側と中央の空洞はalpha0の完全透明。境界は数pxのアンチエイリアスのみ。半透明の雲やぼかしを残さない。発光しない厚紙の舞台小道具である。1024×1536の透過キャンバス、形と位置を維持。背景なし、黒背景も白背景も灰色背景も描かない。人物や文字を追加しない。",
+      "key": "minato",
+      "version": 2,
+      "source": "art_source/paper_roster_action/minato/generated/effect_teleport_v2.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/effect_teleport_v1.png"
+      ],
+      "referenceRoles": [
+        "直接編集対象。輪の切り絵の形と色だけを保持し、光彩と霧を除去"
+      ],
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "8d62677c47e1450363ed7bb1a9d62026bfcd96fcc7b4a5cd4e99e2d6a09708b7",
+      "native": {
+        "width": 1024,
+        "height": 1536,
+        "bounds": {
+          "left": 82,
+          "top": 18,
+          "right": 952,
+          "bottom": 1505
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "未採用の旧候補。プレビューの透明RGBを光彩と見誤ったため保留した。選定v3は背景合成で輪郭とalphaを確認。旧候補を光彩不良と確定しない。"
+    },
+    {
+      "id": "teleport",
+      "look": "Teleport",
+      "kind": "ability",
+      "state": "SpecialNeutral",
+      "worldHeight": 2.7,
+      "duringStartup": true,
+      "duringRecovery": false,
+      "prompt": "A flat cel-shaded 2D game prop, made of opaque solid-color paper cutouts. Two tall narrow crescent-shaped blue paper pieces with jagged inner edges, facing one another as an incomplete oval ring. Four small cyan diamond-shaped paper fragments outside the ring. Each solid blue shape has a thin hard cream-white outline. Colors: navy, cyan, white, flat solid fills. This is unlit matte cardstock, without any emission or shading outside the shapes. Transparent PNG with alpha zero throughout the large empty center and surrounding empty canvas. Crisp clean sticker shapes, no glow or aura, no gradient, no haze, no blur, no semitransparent cloud, no drop shadow. Single centered whole prop in a portrait 1024x1536 canvas, wide transparent margins. No character, no scenery, no letters, no diagrams, no 3D. The entire image consists only of the two opaque crescent paper shapes and four opaque diamond fragments. Edges crisp.",
+      "key": "minato",
+      "version": 3,
+      "source": "art_source/paper_roster_action/minato/generated/effect_teleport_v3.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "f56923a34af8cb9958954f07a5e6e3870012a12d1e2ae86dffc93a6ac04bcc16",
+      "native": {
+        "width": 1024,
+        "height": 1536,
+        "bounds": {
+          "left": 105,
+          "top": 145,
+          "right": 919,
+          "bottom": 1290
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "mist",
+      "look": "BlackHole",
+      "kind": "ability",
+      "state": "Ultimate",
+      "worldHeight": 2.8,
+      "duringStartup": false,
+      "duringRecovery": true,
+      "prompt": "オリジナル2D対戦ゲームで人物の背後に表示する意識状態の霧のオーラ1個。白、水色、淡い青紫、紺の平たい切り絵の雲を重ねる。人物そのものは描かず、縦長の大きな空洞の周りを細い三日月状の霧の紙片6〜9枚が囲む。上と左右にふわりと立つ形、下側も細く巻くが床は描かない。全体は幅0.75:高さ1程度の縦長、中心60パーセントは完全に透明で、後で重ねる人物の顔や四肢を隠さない。霧は写真ではなく明快な輪郭と2〜3段階のセル塗りで、画用紙の雲のようにカタカタ動かせる形。薄いクリーム白の切り抜き縁。1024×1536の透明キャンバス、全体を40px以上余白で収める。人物、顔、手、眼、文字、背景、床、影、黒い球、光線、写実的煙、ぼかし、グロー、3D、ピクセル、複数案なし。外周と空洞は真の透明。",
+      "key": "minato",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/effect_mist_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "e5a2d23b2f65330be357bca467f818bbe7ac4390d6fad413e4dc517e545aee4f",
+      "native": {
+        "width": 1024,
+        "height": 1536,
+        "bounds": {
+          "left": 37,
+          "top": 43,
+          "right": 994,
+          "bottom": 1480
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "blackhole",
+      "look": "BlackHole",
+      "kind": "projectile",
+      "fitAttackHitbox": true,
+      "prompt": "オリジナル2Dペープサート対戦ゲームの、触れると危険なブラックホール状の空間エフェクト1個。横長の楕円、幅:高さが5:4ほど。濃紺と黒紫の深い中心、青紫とシアンと白の鋭い切り絵の渦の輪を3層ほど重ねる。紙を切って重ねた平面的な楕円の渦、左右に短いギザギザの紙片を少し。中心は不透明な深い濃紺、外側は真の透明、薄いクリーム白の切り抜き縁で輪郭が読みやすい。全体を1536×1024の透明キャンバスに十分な余白で収め、紙片を切らない。暗い色でも青い縁で舞台の上で見分けられる。普通のアニメセル塗り、2D舞台用の危険地帯。人物、手、顔、星空、銀河、背景、床、文字、数字、ロゴ、光線、写実、グロー、ぼかし、3D、ピクセル、複数案なし。",
+      "key": "minato",
+      "version": 1,
+      "source": "art_source/paper_roster_action/minato/generated/effect_blackhole_v1.png",
+      "references": [],
+      "referenceRoles": [],
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "6bf6fe44eaa905462a4695ce9878a336708763bad28b2b89c68a606443154d7c",
+      "native": {
+        "width": 1536,
+        "height": 1024,
+        "bounds": {
+          "left": 36,
+          "top": 179,
+          "right": 1494,
+          "bottom": 846
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "床面の細い楕円に見え、持続場の高さに合わないため正面へ起こす。"
+    },
+    {
+      "id": "blackhole",
+      "look": "BlackHole",
+      "kind": "projectile",
+      "fitAttackHitbox": true,
+      "prompt": "Use case: precise-object-edit. Edit this paper-cut vortex into an UPRIGHT front-facing portal: the aperture faces the viewer directly. It is almost circular, width only 1.25 times its height. Do not show an oblique ellipse lying on a floor. Increase the aperture vertical height and reduce its width. Keep the same indigo center and sharp cyan / blue / purple / cream paper rings. Canvas 1536x1024, portal visible width about1100px and height about880px, all pieces inside with margins. Flat anime cardstock illustration, solid opaque dark indigo center, actual alpha-zero transparent exterior, thin hard cream cutout outline. No ground, no character, no background, no glow, no photo, no text, no diagram. One large nearly round frontal standing portal only.",
+      "key": "minato",
+      "version": 2,
+      "source": "art_source/paper_roster_action/minato/generated/effect_blackhole_v2.png",
+      "references": [
+        "art_source/paper_roster_action/minato/generated/effect_blackhole_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：渦の色・切り絵の輪郭を維持し、正面へ起こす"
+      ],
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "636cdec1ac3e5224a4ec90d5785454eceb94c2340f76fb3d6c981447fbbf6362",
+      "native": {
+        "width": 1536,
+        "height": 1024,
+        "bounds": {
+          "left": 157,
+          "top": 7,
+          "right": 1373,
+          "bottom": 1010
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "sortingOrder": 3
+    }
+  ],
+  "gameConnected": true,
+  "verifiedTag": "rework_r4_minato_2"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "up_impact",
+  "key": "minato",
+  "character": "湊",
+  "pose": "up",
+  "phase": "impact",
+  "label": "地上上攻撃・義手アッパー",
+  "version": 1,
+  "source": "art_source/paper_roster_action/minato/generated/up_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/minato/generated/normal3_prepare_v2.png",
+    "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "機械左拳を腰へ引いた構え、腕の所属と部位実寸",
+    "本人の採用待機"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の湊の構えから、左の機械拳を上へ突き上げるアッパーの決めへ。画面右の肩につながる機械の左腕を、肩と肘から頭の斜め右上へ突き上げる。裸の右手は画面左の肩につながったまま胸前でガード。機械の肩と裸の肩を入れ替えない。両足を接地して膝を伸ばし、腰と肩を上へ起こす強い上攻撃。胸側が斜めから見え、自然の右眼と機械の左眼は元の所属のまま。\n顔・髪・義手とブーツの実寸は画像1と画像2から維持する。拳を上へ伸ばしても全身を拡大縮小しない。左肘を適度に曲げ、拳の先を原画の上端から最低30px内へ収める。1189×1323透明キャンバス、頭と手とブーツを切らない。髪横幅約450px、ブーツ約220〜230px、一人一姿勢、腕2本脚2本、各手5指。普通のアニメ塗りと薄い白縁、完全透過、背景・床・影・効果・文字なし。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

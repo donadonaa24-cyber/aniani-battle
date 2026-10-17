@@ -21,6 +21,7 @@ namespace AniBato.Game
                 sprites[i].enabled = i < projectiles.Count;
                 if (i >= projectiles.Count) continue;
                 var projectile = projectiles[i];
+                sprites[i].sortingOrder = 7;
                 var look = projectile.Attack.Definition.Ability.Look;
                 bool placeholder = look != AbilityLook.Default && look != AbilityLook.RiceBall;
                 var character = runner.Character(projectile.Owner.PlayerIndex);
@@ -52,6 +53,7 @@ namespace AniBato.Game
                 if (art != null)
                 {
                     sprites[i].sprite = art.Sprite; sprites[i].color = Color.white;
+                    sprites[i].sortingOrder = art.SortingOrder;
                     sprites[i].flipX = art.FlipWithFacing && projectile.Facing < 0;
                     float angle = art.RotateWithVelocity ? Mathf.Atan2(projectile.Velocity.Y, projectile.Velocity.X) * Mathf.Rad2Deg : 0;
                     sprites[i].transform.localRotation = Quaternion.Euler(0, 0, angle + art.RotationOffsetDegrees);

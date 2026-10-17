@@ -14,17 +14,17 @@
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "paper_single_title_3",
+    "tag": "rework_r4_minato_2",
     "buildAll": "success",
     "edit": {
-      "total": 543,
-      "passed": 543,
+      "total": 547,
+      "passed": 547,
       "failed": 0,
       "skipped": 0
     },
     "play": {
-      "total": 68,
-      "passed": 68,
+      "total": 69,
+      "passed": 69,
       "failed": 0,
       "skipped": 0
     },
@@ -37,10 +37,10 @@
     "completedDedicatedCharacters": [
       "toma",
       "ren",
-      "chizuru"
+      "chizuru",
+      "minato"
     ],
     "remainingDedicatedCharacters": [
-      "minato",
       "shiro",
       "yui",
       "king",
@@ -49,8 +49,8 @@
     ],
     "reviewFolder": "イラスト確認/現在ゲームで採用中",
     "ensembleVersion": 5,
-    "screenshots": "docs/screenshots/paper_single_title_3/",
-    "screenshotCount": 144
+    "screenshots": "docs/screenshots/rework_r4_minato_2/",
+    "screenshotCount": 220
   },
   "activeVerification": null,
   "attempts": [
@@ -519,29 +519,68 @@
       "ensembleVersion": 5,
       "screenshots": "docs/screenshots/paper_single_title_3/",
       "screenshotCount": 144
+    },
+    {
+      "tag": "rework_r4_minato_1",
+      "buildAll": "success",
+      "edit": {
+        "total": 547,
+        "passed": 547,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 69,
+        "passed": 69,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "reason": "初回全4合格後、持続場を人物の背面へ置き、近接撮影を追加。"
+    },
+    {
+      "tag": "rework_r4_minato_2",
+      "buildAll": "success",
+      "edit": {
+        "total": 547,
+        "passed": 547,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 69,
+        "passed": 69,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "reason": "最終版で全4工程に合格。左右と実入力、重力、瞬間移動1回、180tickの場を検証。"
     }
   ],
   "currentArtwork": {
-    "character": "chizuru",
-    "requiredFrames": 12,
+    "character": "minato",
+    "requiredSlots": 12,
+    "uniqueBodyImages": 10,
+    "generatedEffects": 3,
     "gameConnected": true,
-    "verifiedTag": "paper_single_title_3",
-    "reviewFolder": "イラスト確認/現在ゲームで採用中",
-    "nextCharacter": "minato",
-    "generatedStatus": "current adoption is authoritative; down/air preparation candidates retained but unused"
+    "verifiedTag": "rework_r4_minato_2",
+    "reviewFolder": "イラスト確認/現在ゲームで採用中/湊",
+    "nextCharacter": "shiro",
+    "generatedStatus": "current adoption is authoritative; explicit native-key reuse is recorded"
   },
-  "nextTask": "docs/codex_tasks/PAPER_MINATO_TWELVE_KEYS.md",
+  "nextTask": "docs/codex_tasks/PAPER_SHIRO_TWELVE_KEYS.md",
   "webGL": {
     "result": "success",
-    "bytes": 49415100,
-    "seconds": 133.4772428,
+    "bytes": 53484495,
+    "seconds": 142.86543,
     "files": 6,
-    "tag": "paper_single_title_web",
+    "tag": "rework_r4_minato_web",
+    "nativeTag": "rework_r4_minato_2",
     "browser": "Codex in-app Chromium",
     "runtime": "passed",
     "ensembleVersion": 5,
-    "screenshots": "docs/screenshots/paper_single_title_web/",
-    "screenshotCount": 5,
+    "screenshots": "docs/screenshots/rework_r4_minato_web/",
+    "screenshotCount": 8,
     "consoleErrors": 0,
     "physicalGamepad": "not_retested",
     "nativeChromeEdge": "not_retested"

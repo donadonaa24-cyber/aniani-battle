@@ -1,0 +1,21 @@
+{
+  "id": "super_prepare",
+  "key": "minato",
+  "character": "湊",
+  "pose": "super",
+  "phase": "prepare",
+  "label": "超必殺・意識解放",
+  "version": 1,
+  "source": "art_source/paper_roster_action/minato/generated/super_prepare_v1.png",
+  "references": [
+    "art_source/paper_roster_action/minato/generated/normal1_prepare_v2.png",
+    "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "直接編集対象、両腕の正しい所属と顔・髪・靴の同じ実寸",
+    "本人の衣装・義手装備の基準"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の湊の全身を、意識の力を解放する最大の構えへ編集する。顔・髪・服装と機械眼、頭・義手・ブーツの大きさは同じ。胸側が斜めから見える右向き。両足を少し広く開いて膝を曲げ、胸を張る。画面左側の生身の右拳を右腰（画面左）へ引き、画面右側の機械の左拳を左腰（画面右）へ引く。両拳を腰の横へ強く引きつけ、肩と胴体に力を込める、超必殺の解放直前の力強いポーズ。左機械腕と右生身の肩の所属を入れ替えない。冷静で鋭い目線は前方。まだ意識状態にならず、本人の通常色。\n画像1の部位の実寸を保ち、低姿勢でも頭と靴を大きくしない。1189×1323の透明キャンバス、全身の倍率を変えない。髪と拳と靴を最低20px余白付きで収める。腕2本脚2本、各手5指の自然な握り。薄い白い切り抜き縁を一周。普通のアニメ塗り、背景・床・影・霧・光・効果・文字は描かない。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "teleport",
+  "look": "Teleport",
+  "kind": "ability",
+  "state": "SpecialNeutral",
+  "worldHeight": 2.7,
+  "duringStartup": true,
+  "duringRecovery": false,
+  "prompt": "オリジナル2D対戦ゲームの瞬間移動の接続エフェクトを1個だけ生成。人物の背後に置く、縦長の切り絵風の空間の裂け目。シアン、水色、白、濃紺の平たい画用紙を数枚重ねたような鋭い輪郭。縦向きの細い楕円の輪を左右のギザギザした三日月状の紙片が囲む。中央は完全に透明で、内側に人物を後で置いても顔と体を隠さない。青い短い紙片を少量だけ外周へ。輪郭は硬く、薄いクリーム白の切り抜き縁。全体は縦横比およそ幅0.6:高さ1、1024×1536の透明キャンバスの中央に30px以上の余白で収める。平面的なアニメセル塗り。人物、手、顔、文字、数字、機械、武器、背景、床、影、煙の写真、3D、ぼかし、グロー、ピクセル、シート、複数案なし。縁の外と中央は真の透明。",
+  "key": "minato",
+  "version": 1,
+  "source": "art_source/paper_roster_action/minato/generated/effect_teleport_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

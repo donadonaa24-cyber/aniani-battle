@@ -1,0 +1,17 @@
+{
+  "id": "teleport",
+  "look": "Teleport",
+  "kind": "ability",
+  "state": "SpecialNeutral",
+  "worldHeight": 2.7,
+  "duringStartup": true,
+  "duringRecovery": false,
+  "prompt": "A flat cel-shaded 2D game prop, made of opaque solid-color paper cutouts. Two tall narrow crescent-shaped blue paper pieces with jagged inner edges, facing one another as an incomplete oval ring. Four small cyan diamond-shaped paper fragments outside the ring. Each solid blue shape has a thin hard cream-white outline. Colors: navy, cyan, white, flat solid fills. This is unlit matte cardstock, without any emission or shading outside the shapes. Transparent PNG with alpha zero throughout the large empty center and surrounding empty canvas. Crisp clean sticker shapes, no glow or aura, no gradient, no haze, no blur, no semitransparent cloud, no drop shadow. Single centered whole prop in a portrait 1024x1536 canvas, wide transparent margins. No character, no scenery, no letters, no diagrams, no 3D. The entire image consists only of the two opaque crescent paper shapes and four opaque diamond fragments. Edges crisp.",
+  "key": "minato",
+  "version": 3,
+  "source": "art_source/paper_roster_action/minato/generated/effect_teleport_v3.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

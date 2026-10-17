@@ -1,5 +1,6 @@
 using AniBato.Battle;
 using UnityEngine;
+using AniBato.Presentation;
 
 namespace AniBato.Game
 {
@@ -7,6 +8,7 @@ namespace AniBato.Game
     public sealed class AbilityCueView
     {
         private readonly TextMesh label;
+        private readonly SpriteRenderer artwork;
         public AbilityCueView(Transform parent)
         {
             var go = new GameObject("Ability Cue", typeof(TextMesh)); go.transform.SetParent(parent, false);
@@ -14,11 +16,25 @@ namespace AniBato.Game
             label.anchor = TextAnchor.MiddleCenter; label.alignment = TextAlignment.Center;
             go.GetComponent<MeshRenderer>().material = label.font.material;
             go.GetComponent<MeshRenderer>().sortingOrder = 4; go.SetActive(false);
+            var effect=new GameObject("Paper Ability",typeof(SpriteRenderer));effect.transform.SetParent(parent,false);
+            artwork=effect.GetComponent<SpriteRenderer>();artwork.enabled=false;
         }
-        public void Apply(FighterState fighter, SpriteRenderer body, bool finished, bool generatedTransformation=false)
+        public void Apply(FighterState fighter, SpriteRenderer body, bool finished, PaperCharacterMotion paper,
+            in AnimationSample sample, bool generatedTransformation=false)
         {
+            var art=paper?paper.AbilityEffect(sample.State):null;
+            artwork.enabled=!finished&&art!=null&&art.Visible(sample);
+            if(art!=null)
+            {
+                artwork.sprite=art.Sprite;artwork.color=Color.white;artwork.flipX=sample.FlipX;
+                artwork.sortingOrder=body.sortingOrder-1;
+                artwork.transform.position=body.bounds.center+new Vector3((sample.FlipX?-1:1)*art.Offset.x,art.Offset.y,0);
+                artwork.transform.localScale=Vector3.one*art.Scale;
+                float turn=sample.AttackFrame/Mathf.Max(1,art.StepTicks)%2==0?-art.RockDegrees:art.RockDegrees;
+                artwork.transform.localRotation=Quaternion.Euler(0,0,turn);
+            }
             var attack = finished ? null : fighter.Attack; string text = "";
-            if (attack != null)
+            if (attack != null && art == null)
             {
                 switch (attack.Definition.Ability.Look)
                 {

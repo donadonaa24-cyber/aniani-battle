@@ -89,6 +89,7 @@ namespace AniBato.EditorTools
                 if(c.HeavyDamage?.Frames!=null)c.HeavyDamage.Frames=c.HeavyDamage.Frames.Select(s=>(Sprite)Copy(s)).ToArray();
                 c.Sprite=(Sprite)Copy(c.Sprite);c.RiceBall=(Sprite)Copy(c.RiceBall);c.Mogu=(Sprite)Copy(c.Mogu);c.CurryWave=(Sprite)Copy(c.CurryWave);
                 if(c.Projectiles!=null)foreach(var art in c.Projectiles)art.Sprite=(Sprite)Copy(art.Sprite);
+                if(c.AbilityEffects!=null)foreach(var art in c.AbilityEffects)art.Sprite=(Sprite)Copy(art.Sprite);
                 // Current normal attacks do not throw a bag. The backup remains in the project.
                 c.Bag=null;return c;
             }
