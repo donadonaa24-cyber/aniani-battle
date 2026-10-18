@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "tag": "rework_r4_akatsuki_3",
+  "bodyFrames": 12,
+  "uniqueBodyImages": 9,
+  "effectBindings": 6,
+  "uniqueEffectImages": 4,
+  "artApproved": false,
+  "buildAll": "success",
+  "edit": {
+    "total": 570,
+    "passed": 570,
+    "failed": 0,
+    "skipped": 0
+  },
+  "play": {
+    "total": 77,
+    "passed": 77,
+    "failed": 0,
+    "skipped": 0
+  },
+  "windowsBuild": "success",
+  "screenshots": "docs/screenshots/rework_r4_akatsuki_3/rework_r4_akatsuki/",
+  "screenshotCount": 60,
+  "body": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_prepare.png",
+      "sha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常1・2段共通_予備.png"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_impact.png",
+      "sha256": "3ab23dad61e17b9af7bc76b937c692497340385b1e988385db9c815a82b7ef47",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常1・2段共通_当てる.png"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_prepare.png",
+      "sha256": "0165a6e93837839b81ae49a9583f32f5bfa0246b5ce88a82bccf8768edeada52",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常3段_予備.png"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_impact.png",
+      "sha256": "a9df68461a8855c036130fc00ac495ca8319d72b4223848d664d8fc0ddca32f6",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常3段_当てる.png"
+    },
+    {
+      "id": "up_prepare",
+      "title": "上攻撃_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_prepare.png",
+      "sha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/上攻撃_予備.png"
+    },
+    {
+      "id": "up_impact",
+      "title": "上攻撃_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_up_impact.png",
+      "sha256": "b365f81867dd3bae0406495814b0aa6ee78af8bd89258fb4bb7a1b1b87ef9443",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/上攻撃_当てる.png"
+    },
+    {
+      "id": "down_single",
+      "title": "下攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_down_impact.png",
+      "sha256": "b96759214a7b3ba26d1d2b350e1ecebd0453c8f1c1ecc8a6b3492d8285e6d93a",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/下攻撃_1枚採用.png"
+    },
+    {
+      "id": "air_single",
+      "title": "空中攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_air_impact.png",
+      "sha256": "f7949da01f504b87757829973e6837528adbc24b6db0fbd8a34603fc06aa9d35",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/空中攻撃_1枚採用.png"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_prepare.png",
+      "sha256": "0165a6e93837839b81ae49a9583f32f5bfa0246b5ce88a82bccf8768edeada52",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/特殊技_予備.png"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_impact.png",
+      "sha256": "a9df68461a8855c036130fc00ac495ca8319d72b4223848d664d8fc0ddca32f6",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/特殊技_当てる.png"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_super_prepare.png",
+      "sha256": "4afb946f16019462d1ecfdd011181d725357e7d688ad6c067b1d805bef8413e8",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/超必殺技_予備.png"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_super_impact.png",
+      "sha256": "89712f3e240d81fbf3eb702efdc818093b36d214e33242c280c8b7266ae601b2",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/超必殺技_当てる.png"
+    }
+  ],
+  "effectEntries": [
+    {
+      "id": "card",
+      "version": 2,
+      "title": "特殊・通常3段_飛翔カード_正式背面",
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_card.png",
+      "sha256": "f822696b87a4e1fedcf70fdcb010d4cf811e6f9d65d21291d197cf093d49d43b",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/特殊・通常3段_飛翔カード_正式背面.png",
+      "reuseOf": null
+    },
+    {
+      "id": "pyramid",
+      "version": 1,
+      "title": "超必殺技_落下ピラミッド",
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_pyramid_v1.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_pyramid.png",
+      "sha256": "8bf6517a868034977da46a99f87fcf7534362af59ada0432cf6903a2f51d1387",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/超必殺技_落下ピラミッド.png",
+      "reuseOf": null
+    },
+    {
+      "id": "slash",
+      "version": 1,
+      "title": "通常1・2段_カードの斬撃",
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_slash.png",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常1・2段_カードの斬撃.png",
+      "reuseOf": null
+    },
+    {
+      "id": "sand",
+      "version": 1,
+      "title": "超必殺技_砂粒",
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_sand_v1.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_sand.png",
+      "sha256": "b06ca0d4cfeaf8aab25a303ff24d6826c0303785858251be0851bb0f0e7ad944",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/超必殺技_砂粒.png",
+      "reuseOf": null
+    },
+    {
+      "id": "slash_second",
+      "version": 1,
+      "title": "通常1・2段_カードの斬撃",
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_slash.png",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常1・2段_カードの斬撃.png",
+      "reuseOf": {
+        "id": "slash",
+        "version": 1,
+        "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924"
+      }
+    },
+    {
+      "id": "slash_back",
+      "version": 1,
+      "title": "通常1・2段_カードの斬撃",
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_slash.png",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常1・2段_カードの斬撃.png",
+      "reuseOf": {
+        "id": "slash",
+        "version": 1,
+        "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924"
+      }
+    }
+  ],
+  "normal3": "実投射・元の自分側端と最遠端、発生7／有効3／硬直12、前進.18、通常被弾1回を維持",
+  "remaining": "専用攻撃は龍太が残り。追加差分は追加指示後。",
+  "webVerification": {
+    "nativeTag": "rework_r4_akatsuki_3",
+    "tag": "rework_r4_akatsuki_web",
+    "build": {
+      "result": "success",
+      "bytes": 91466220,
+      "seconds": 85.3883699,
+      "files": 6
+    },
+    "screenshots": "docs/screenshots/rework_r4_akatsuki_web/",
+    "consoleErrors": 0,
+    "mipmaps": true,
+    "paddingAudit": 356
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "jobs": [
+    {
+      "id": "card",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/effect_card_v2.json"
+    },
+    {
+      "id": "pyramid",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/effect_pyramid_v1.json"
+    },
+    {
+      "id": "slash",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/effect_slash_v1.json"
+    },
+    {
+      "id": "sand",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/effect_sand_v1.json"
+    },
+    {
+      "id": "slash_second",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/effect_slash_second_v1.json"
+    },
+    {
+      "id": "slash_back",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/effect_slash_back_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "card",
+      "kind": "projectile",
+      "look": "Card",
+      "fitAttackHitbox": true,
+      "sortingOrder": 7,
+      "references": [
+        "art_source/title_paper/references/battle_a_la_carte_card_back_user_20261017.png"
+      ],
+      "referenceRoles": [
+        "正式なカード背面の意匠"
+      ],
+      "prompt": "Use case: background-extraction. 参照画像はユーザー本人のゲーム『Battle à la carte』の正式なカード背面。この一枚をゲーム中で投げるカードの透過スプライトへ描き直す。正面向き、上向きにまっすぐ立てた一枚の縦長の長方形、角だけ小さく丸い。濃紺の市松、クリーム金の装飾枠、料理帽、赤黒のハート・スペード・クラブ・ダイヤ、ナイフとフォーク、中央の金色の正確な「Battle à la Carte」を参照どおり保つ。余分な赤い外枠や別の模様を加えない。細い硬いクリーム白の切り抜き縁を外周へ。カードの印刷面は不透明、外だけ完全透明。カードの紙そのものは光らせず普通のアニメのセル塗り。1024×1536の真の透明PNG一枚、上下左右80px以上の透明余白を設けカードを切らない。手・指・人物・影・背景・斜めの厚み・速度線・グロー・ぼかし・3D・複数案なし。",
+      "key": "akatsuki",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_card_v1.png",
+      "tool": "built-in image_gen",
+      "status": "rejected",
+      "sha256": "8a95aa4b444f01c4c32a5375c093b377266f55663b2671eeb246b5921351f2f7",
+      "native": {
+        "width": 1024,
+        "height": 1536,
+        "bounds": {
+          "left": 119,
+          "top": 153,
+          "right": 906,
+          "bottom": 1380
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "rejectionReason": "プレビューでは外周に光彩が見えたため版2を生成。後のRGBA確認で外側の色はalpha0のRGBと判明。v1は版比較で未採用、背景不透明と断定しない。"
+    },
+    {
+      "id": "card",
+      "kind": "projectile",
+      "look": "Card",
+      "fitAttackHitbox": true,
+      "sortingOrder": 7,
+      "references": [
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v1.png",
+        "art_source/title_paper/references/battle_a_la_carte_card_back_user_20261017.png"
+      ],
+      "referenceRoles": [
+        "編集対象の候補。指定箇所だけを変更",
+        "正式なカード背面の意匠"
+      ],
+      "prompt": "Use case: background-extraction. 画像1のカードの外側にある灰色と黒の背景と光彩を全て消して、外側は完全透明のPNGにする。カードの固い長方形の外周の境界のすぐ外側から、画像の端まで全てalpha0。影もふんわりした縁も一切残さない。画像1のカードの印刷面、形、色、意匠、正確なBattle à la Carteの文字を変えない。画像2は元のカード意匠。カード自体は完全に不透明、外周は硬い切り抜き。カードの外に物体や色や背景を追加しない。カード1枚の背景除去だけ。",
+      "key": "akatsuki",
+      "version": 2,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "revisionReason": "カードの周囲に灰色の光彩とぼかした背景がある。",
+      "sha256": "f822696b87a4e1fedcf70fdcb010d4cf811e6f9d65d21291d197cf093d49d43b",
+      "native": {
+        "width": 1024,
+        "height": 1536,
+        "bounds": {
+          "left": 110,
+          "top": 114,
+          "right": 914,
+          "bottom": 1357
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "artNote": "外側の灰色RGBはalpha0。白背景への診断合成で硬い透明境界を確認。原画そのものは加工しない。"
+    },
+    {
+      "id": "pyramid",
+      "kind": "projectile",
+      "look": "Pyramid",
+      "fitAttackHitbox": true,
+      "sortingOrder": 7,
+      "references": [],
+      "referenceRoles": [],
+      "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲームで頭上から落とす砂のピラミッド一個。幅の広い正三角形に近い明快な全体シルエット、上端は一つの頂点、下辺は水平。明るい黄土色と砂色の大きな石積みを、太いアニメ線と少数の平らなセル塗りで描く。中央の少し右に一本の稜線、左面は明るい砂色、右面は濃い黄土色。平面のアニメ小道具として、シンプルなピラミッドの絵一つ。細い硬いクリーム白の切り抜き縁を外周へ。1024×1024の真の透明PNG、中央に一個、全周80px以上の透明余白で底と頂点を切らない。背景・床・影・人物・顔・手足・文字・文字状の壁画・宝石・光彩・グロー・ぼかし・写実・3Dモデル・ピクセル・複数案はなし。",
+      "key": "akatsuki",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_pyramid_v1.png",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "8bf6517a868034977da46a99f87fcf7534362af59ada0432cf6903a2f51d1387",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 26,
+          "top": 227,
+          "right": 1227,
+          "bottom": 1045
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "slash",
+      "kind": "ability",
+      "look": "Default",
+      "state": "Attack1",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "worldWidth": 1.45,
+      "worldHeight": 1.2,
+      "offsetX": 0.85,
+      "offsetY": 0.15,
+      "references": [],
+      "referenceRoles": [],
+      "prompt": "Use case: stylized-concept. 真の透明PNGのゲーム用図形一枚。右へ振り抜くカードの切り絵の斬撃。濃紺・金・クリーム白の短い尖った三日月の帯を2本、互いの間に広い完全透明の隙間を残し斜めに平行に並べる。周囲へ小さな赤と金の三角の紙片を4つ。太い硬いアニメ線と平らなベタ色、細い硬いクリーム白の切り抜き縁だけ。1024×1024、中央に効果一個、全周80px以上透明余白。紙片同士の隙間も完全透明。不透明な背景・光彩・グロー・ぼかし・グラデーション・人物・手・カード本体・文字・床・影・写実・3Dなし。",
+      "key": "akatsuki",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 142,
+          "top": 192,
+          "right": 1220,
+          "bottom": 1005
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "sand",
+      "kind": "ability",
+      "look": "Pyramid",
+      "state": "Ultimate",
+      "worldWidth": 1.1,
+      "worldHeight": 0.6,
+      "offsetX": 0.25,
+      "offsetY": -0.05,
+      "references": [],
+      "referenceRoles": [],
+      "prompt": "Use case: stylized-concept. 真の透明PNGのゲーム用図形一枚。砂をこねる手の間から立ち上がる小さい切り絵の砂粒の輪。黄土色と淡い砂色の角ばった小さな紙片を8個ほど、低い横長の半円にまばらに並べる。中央と紙片の間は広く完全透明、顔や手や器は描かない。アニメ線と平らなベタ色、薄い硬い白縁。1024×1024中央、80px以上透明余白。砂煙・不透明な雲・背景・発光・グロー・グラデーション・ぼかし・影・文字・人物・ピラミッド本体なし。",
+      "key": "akatsuki",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_sand_v1.png",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "duringStartup": true,
+      "duringRecovery": false,
+      "sha256": "b06ca0d4cfeaf8aab25a303ff24d6826c0303785858251be0851bb0f0e7ad944",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 140,
+          "top": 524,
+          "right": 1151,
+          "bottom": 869
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true
+    },
+    {
+      "id": "slash_second",
+      "kind": "ability",
+      "look": "Default",
+      "state": "Attack2",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "worldWidth": 1.45,
+      "worldHeight": 1.2,
+      "offsetX": 0.85,
+      "offsetY": 0.15,
+      "references": [],
+      "referenceRoles": [],
+      "prompt": "Use case: stylized-concept. 真の透明PNGのゲーム用図形一枚。右へ振り抜くカードの切り絵の斬撃。濃紺・金・クリーム白の短い尖った三日月の帯を2本、互いの間に広い完全透明の隙間を残し斜めに平行に並べる。周囲へ小さな赤と金の三角の紙片を4つ。太い硬いアニメ線と平らなベタ色、細い硬いクリーム白の切り抜き縁だけ。1024×1024、中央に効果一個、全周80px以上透明余白。紙片同士の隙間も完全透明。不透明な背景・光彩・グロー・ぼかし・グラデーション・人物・手・カード本体・文字・床・影・写実・3Dなし。",
+      "key": "akatsuki",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 142,
+          "top": 192,
+          "right": 1220,
+          "bottom": 1005
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "slash",
+        "version": 1,
+        "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924"
+      },
+      "newlyGenerated": false,
+      "reason": "通常1・2段と背後に同じ切り絵斬撃を原寸共有。"
+    },
+    {
+      "id": "slash_back",
+      "kind": "ability",
+      "look": "Default",
+      "state": "BackAttack",
+      "duringStartup": false,
+      "duringRecovery": true,
+      "worldWidth": 1.45,
+      "worldHeight": 1.2,
+      "offsetX": 0.85,
+      "offsetY": 0.15,
+      "references": [],
+      "referenceRoles": [],
+      "prompt": "Use case: stylized-concept. 真の透明PNGのゲーム用図形一枚。右へ振り抜くカードの切り絵の斬撃。濃紺・金・クリーム白の短い尖った三日月の帯を2本、互いの間に広い完全透明の隙間を残し斜めに平行に並べる。周囲へ小さな赤と金の三角の紙片を4つ。太い硬いアニメ線と平らなベタ色、細い硬いクリーム白の切り抜き縁だけ。1024×1024、中央に効果一個、全周80px以上透明余白。紙片同士の隙間も完全透明。不透明な背景・光彩・グロー・ぼかし・グラデーション・人物・手・カード本体・文字・床・影・写実・3Dなし。",
+      "key": "akatsuki",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 142,
+          "top": 192,
+          "right": 1220,
+          "bottom": 1005
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "slash",
+        "version": 1,
+        "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924"
+      },
+      "newlyGenerated": false,
+      "reason": "通常1・2段と背後に同じ切り絵斬撃を原寸共有。"
+    }
+  ],
+  "gameConnected": true,
+  "verifiedTag": "rework_r4_akatsuki_3"
+}

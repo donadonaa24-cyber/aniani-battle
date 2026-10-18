@@ -1,0 +1,20 @@
+{
+  "id": "sand",
+  "kind": "ability",
+  "look": "Pyramid",
+  "state": "Ultimate",
+  "worldWidth": 1.1,
+  "worldHeight": 0.6,
+  "offsetX": 0.25,
+  "offsetY": -0.05,
+  "references": [],
+  "referenceRoles": [],
+  "prompt": "Use case: stylized-concept. 真の透明PNGのゲーム用図形一枚。砂をこねる手の間から立ち上がる小さい切り絵の砂粒の輪。黄土色と淡い砂色の角ばった小さな紙片を8個ほど、低い横長の半円にまばらに並べる。中央と紙片の間は広く完全透明、顔や手や器は描かない。アニメ線と平らなベタ色、薄い硬い白縁。1024×1024中央、80px以上透明余白。砂煙・不透明な雲・背景・発光・グロー・グラデーション・ぼかし・影・文字・人物・ピラミッド本体なし。",
+  "key": "akatsuki",
+  "version": 1,
+  "source": "art_source/paper_roster_action/akatsuki/generated/effect_sand_v1.png",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "duringStartup": true,
+  "duringRecovery": false
+}

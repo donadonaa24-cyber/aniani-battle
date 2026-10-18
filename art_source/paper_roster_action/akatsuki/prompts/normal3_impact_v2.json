@@ -1,0 +1,19 @@
+{
+  "id": "normal3_impact",
+  "key": "akatsuki",
+  "character": "暁",
+  "pose": "normal3",
+  "phase": "impact",
+  "label": "通常3段の大きいカード投げ",
+  "version": 2,
+  "source": "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v1.png"
+  ],
+  "referenceRoles": [
+    "全身の編集対象。左手の小指のみ追加"
+  ],
+  "prompt": "Use case: precise-object-edit. 画像1の全身原画の、画面右へ伸びている本人左手だけを修正する。現状は長い指3本と下側の親指1本の計4本しかない。下に広がる薬指と親指の間に、短く曲げた小指1本を追加する。これで人差し指・中指・薬指・小指の4本と親指1本、指先は合計5つ。小指は薬指より短く、薬指の根元の隣から生え、掌へ軽く曲がる。現状の掌側、下側の親指と3本の長い指、肩から肘と手首のつながりを維持。手を丸ごと反転しない。左手以外の顔、髪、眼鏡、右手、全身ポーズと衣装と靴の倍率は変えない。カードを追加しない。同じ1189×1323の真の透明PNG、同じ白縁とアニメ塗り。小指だけの修正。",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

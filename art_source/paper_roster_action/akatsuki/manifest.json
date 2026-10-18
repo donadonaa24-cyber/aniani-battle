@@ -1,0 +1,701 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "name": "暁",
+  "characterIndex": 7,
+  "canvas": {
+    "width": 1304,
+    "height": 1450
+  },
+  "sole": 1328,
+  "pixelsPerUnit": 532.5893,
+  "baseIdle": "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+  "jobs": [
+    {
+      "id": "normal1_prepare",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal1_prepare_v2.json"
+    },
+    {
+      "id": "normal1_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal1_impact_v1.json"
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal3_prepare_v1.json"
+    },
+    {
+      "id": "normal3_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal3_impact_v2.json"
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/up_prepare_v1.json"
+    },
+    {
+      "id": "up_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/up_impact_v1.json"
+    },
+    {
+      "id": "down_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/down_impact_v1.json"
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/air_impact_v1.json"
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/special_prepare_v1.json"
+    },
+    {
+      "id": "special_impact",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/special_impact_v2.json"
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/super_prepare_v1.json"
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/super_impact_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通カード斬り",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal1_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+        "art_source/title_paper/references/akatsuki_left_card_grip_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠",
+        "本人左手のカード下端のつまみ方だけ"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像3は本人左手の薄いカードのつまみ持ちの手元参考。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常1・2段共通カード斬りの予備、まだ当てない。両足を接地し、両膝と腰を曲げて体を少し後ろへ引く。本人左手でカード1枚の下端の角を親指と人差し指でつまみ、胸の右寄りの本人左肩近くへ引いて、斬る直前の構え。本人左肩は画面右、左上腕はそこから左肘・手首へ一続きで、左手の掌側とカード背面がこちらへ見える。本人右手は画面左の腰の前に軽く握って置く。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約350px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "5daf12a7e4325e3883971f2038de3f03fb0ee92936e9fa6996130017edb7730d",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 109,
+          "top": 7,
+          "right": 1017,
+          "bottom": 1397
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "原画1103×1426、足元1397と髪上7のため共通枠へ原寸梱包できず、採用待機より頭が大きい。画像1の待機の335pxの頭髪と靴の実寸へ戻す。キャンバス1189×1323、髪を上端から離し、両膝を深く曲げて余白を確保する。"
+    },
+    {
+      "id": "normal1_prepare",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通カード斬り",
+      "version": 2,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal1_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常1・2段共通カード斬りの予備、まだ当てない。両足を接地し、両膝と腰を曲げて体を少し後ろへ引く。本人左手でカード1枚の下端の角を親指と人差し指でつまみ、胸の右寄りの本人左肩近くへ引いて、斬る直前の構え。本人左肩は画面右、左上腕はそこから左肘・手首へ一続きで、左手の掌側とカード背面がこちらへ見える。本人右手は画面左の腰の前に軽く握って置く。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n修正条件：原画1103×1426、足元1397と髪上7のため共通枠へ原寸梱包できず、採用待機より頭が大きい。画像1の待機の335pxの頭髪と靴の実寸へ戻す。キャンバス1189×1323、髪を上端から離し、両膝を深く曲げて余白を確保する。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "32d65174f1199eb8cee8aeba6d1268251d434f91fb657a2d9c4d798490b0ece4",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 288,
+          "top": 43,
+          "right": 991,
+          "bottom": 1281
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal1_prepare.png",
+      "preparedSha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "offsetX": 57,
+      "offsetY": 47,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "up_prepare",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "up",
+      "phase": "prepare",
+      "label": "地上上のカード斬り",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal1_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常1・2段共通カード斬りの予備、まだ当てない。両足を接地し、両膝と腰を曲げて体を少し後ろへ引く。本人左手でカード1枚の下端の角を親指と人差し指でつまみ、胸の右寄りの本人左肩近くへ引いて、斬る直前の構え。本人左肩は画面右、左上腕はそこから左肘・手首へ一続きで、左手の掌側とカード背面がこちらへ見える。本人右手は画面左の腰の前に軽く握って置く。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n修正条件：原画1103×1426、足元1397と髪上7のため共通枠へ原寸梱包できず、採用待機より頭が大きい。画像1の待機の335pxの頭髪と靴の実寸へ戻す。キャンバス1189×1323、髪を上端から離し、両膝を深く曲げて余白を確保する。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "32d65174f1199eb8cee8aeba6d1268251d434f91fb657a2d9c4d798490b0ece4",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 288,
+          "top": 43,
+          "right": 991,
+          "bottom": 1281
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "normal1_prepare",
+        "version": 2,
+        "source": "art_source/paper_roster_action/akatsuki/generated/normal1_prepare_v2.png",
+        "sha256": "32d65174f1199eb8cee8aeba6d1268251d434f91fb657a2d9c4d798490b0ece4",
+        "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal1_prepare_v2.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "上への斬り上げ前にも同じ左手の構えを使う。追加生成しない。",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/up_prepare.png",
+      "preparedSha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "offsetX": 57,
+      "offsetY": 47,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal1_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通カード斬り",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal1_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常1・2段共通カード斬りの当てる決め。腰と胸を右前方へひねって一歩踏み込み、本人左腕を画面右へ伸ばして、同じカードの縁で右前を斬る決め。左肩→左肘→左手首→本人左手を一続きにし、左の親指はカード背面の下端を押さえ、人差し指はカードの裏側へ回し、残る3本は下へ軽く曲げる。カードは手から離さない。右手は胸の横へ引いてバランスを取る。両脚を接地し、体軸の切り返しを明快にする。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "6d00729dc9b98f4bd7d5e84440c12ccaa27e2752cff661c4a291d681143286f8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 51,
+          "top": 47,
+          "right": 1171,
+          "bottom": 1277
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal1_impact.png",
+      "preparedSha256": "3ab23dad61e17b9af7bc76b937c692497340385b1e988385db9c815a82b7ef47",
+      "offsetX": 115,
+      "offsetY": 51,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "normal3",
+      "phase": "prepare",
+      "label": "通常3段の大きいカード投げ",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常3段の大きいカード投げの予備、まだ当てない。通常3段の最大の溜め。両膝を深く曲げ、体を大きく後ろへひねり、本人左肘を本人左肩の後ろへ高く引き、左手のカード1枚を頭の画面右側へ構える。左腕が頭の後ろへねじ切れず肩・肘・手首が自然につながる。右手は胸の前で軽く握る。カードの同じ下端を左の親指と人差し指で保持。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "b665f1b1865351dc62399fe8bd4c3b88156644ed680171f905c9a909c512e556",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 190,
+          "top": 24,
+          "right": 1049,
+          "bottom": 1276
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal3_prepare.png",
+      "preparedSha256": "0165a6e93837839b81ae49a9583f32f5bfa0246b5ce88a82bccf8768edeada52",
+      "offsetX": 92,
+      "offsetY": 52,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段の大きいカード投げ",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、空手の投げ終わりの編集対象"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常3段の大きいカード投げの当てる決め。大きく右前へ踏み込み体をひねり戻し、本人左腕を画面右前へ一気に伸ばしてカードを投げ終えた決め。本人左手は空手で、カードは別の飛翔素材なので人物絵には一枚も描かない。左の親指・人差し指・中指を自然に少し離し薬指と小指をゆるく曲げ、投げた直後の左手と分かる。右腕は胸元へ引く。両足は接地し後ろ脚のかかとだけ少し上げる。\n右向きの斜め横で胸と両腕両脚が見える。左右の腕2本と手2個、脚2本、各手は親指1本と4指。投げた後なので両手は空手、カードを描かない。1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "a175b11689c2cdfdf2fc3a2b956b36af9350d4f236dd142ecb412bea9ccb057f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 144,
+          "top": 44,
+          "right": 1143,
+          "bottom": 1268
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "artNote": "左手が長い3指と下の親指の計4指に見える。下の薬指と親指の間に、掌へ軽く曲げた短い小指を1本追加して、親指1本＋他4指の計5指へする。既存の3本の長い指と下側の親指は維持。人物全体、身体と左腕のつながり、顔、髪、服、両脚、靴と原画1189×1323の倍率は変えない。カードは描かない。"
+    },
+    {
+      "id": "special_prepare",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "special",
+      "phase": "prepare",
+      "label": "特殊のカード投げ",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常3段の大きいカード投げの予備、まだ当てない。通常3段の最大の溜め。両膝を深く曲げ、体を大きく後ろへひねり、本人左肘を本人左肩の後ろへ高く引き、左手のカード1枚を頭の画面右側へ構える。左腕が頭の後ろへねじ切れず肩・肘・手首が自然につながる。右手は胸の前で軽く握る。カードの同じ下端を左の親指と人差し指で保持。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "b665f1b1865351dc62399fe8bd4c3b88156644ed680171f905c9a909c512e556",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 190,
+          "top": 24,
+          "right": 1049,
+          "bottom": 1276
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "normal3_prepare",
+        "version": 1,
+        "source": "art_source/paper_roster_action/akatsuki/generated/normal3_prepare_v1.png",
+        "sha256": "b665f1b1865351dc62399fe8bd4c3b88156644ed680171f905c9a909c512e556",
+        "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal3_prepare_v1.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "同じ左手のカード投げの構えを特殊でも原寸再利用。",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/special_prepare.png",
+      "preparedSha256": "0165a6e93837839b81ae49a9583f32f5bfa0246b5ce88a82bccf8768edeada52",
+      "offsetX": 92,
+      "offsetY": 52,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "special",
+      "phase": "impact",
+      "label": "特殊のカード投げ",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、空手の投げ終わりの編集対象"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常3段の大きいカード投げの当てる決め。大きく右前へ踏み込み体をひねり戻し、本人左腕を画面右前へ一気に伸ばしてカードを投げ終えた決め。本人左手は空手で、カードは別の飛翔素材なので人物絵には一枚も描かない。左の親指・人差し指・中指を自然に少し離し薬指と小指をゆるく曲げ、投げた直後の左手と分かる。右腕は胸元へ引く。両足は接地し後ろ脚のかかとだけ少し上げる。\n右向きの斜め横で胸と両腕両脚が見える。左右の腕2本と手2個、脚2本、各手は親指1本と4指。投げた後なので両手は空手、カードを描かない。1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "revision_required",
+      "sha256": "a175b11689c2cdfdf2fc3a2b956b36af9350d4f236dd142ecb412bea9ccb057f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 144,
+          "top": 44,
+          "right": 1143,
+          "bottom": 1268
+        }
+      },
+      "artApproved": false,
+      "gameConnected": false,
+      "reuseOf": {
+        "id": "normal3_impact",
+        "version": 1,
+        "source": "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v1.png",
+        "sha256": "a175b11689c2cdfdf2fc3a2b956b36af9350d4f236dd142ecb412bea9ccb057f",
+        "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal3_impact_v1.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "同じ左手の投げ終わりは小指を修正した通常3段v2へ更新する。"
+    },
+    {
+      "id": "up_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "up",
+      "phase": "impact",
+      "label": "地上上のカード斬り",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/up_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：地上上のカード斬りの当てる決め。両足を地面に残し、左腕と左手のカードを頭の右上へ上げて斬り上げる。左肘を曲げてカード全体が画像内に収まる。カードは同じ下端を左の親指と人差し指でつまみ掌とカード背面を見せる。右手は胸の横へ引く。髪と眼鏡と顔を腕で隠さない。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "8a2fc79641c0be17186cedd0ee6a07dfab063e93f8af38ac5ed3eaa62e68d3c6",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 230,
+          "top": 43,
+          "right": 1041,
+          "bottom": 1282
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/up_impact.png",
+      "preparedSha256": "b365f81867dd3bae0406495814b0aa6ee78af8bd89258fb4bb7a1b1b87ef9443",
+      "offsetX": 61,
+      "offsetY": 46,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "down_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "down",
+      "phase": "impact",
+      "label": "地上下の低いカード斬り",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/down_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v3.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用しゃがみ。頭・眼鏡・靴と低姿勢の部位実寸の基準",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用しゃがみと同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：地上下の低いカード斬りの当てる決め。採用しゃがみと同じ低い腰で、両足は接地。左腕を前の膝の横から右下へ出し、同じカードの縁で低く斬る。左肩から肘と手首が自然につながり、本人左の親指と人差し指で同じカード下端をつまむ。左の掌側とカード背面が見える。右手は腰の横へ。頭や靴を大きくしない。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用しゃがみの頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "14dbe28378c06511ed595544bf1a787231315fae4403981ce4705a5f03314693",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 176,
+          "top": 328,
+          "right": 1144,
+          "bottom": 1245
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/down_impact.png",
+      "preparedSha256": "b96759214a7b3ba26d1d2b350e1ecebd0453c8f1c1ecc8a6b3492d8285e6d93a",
+      "offsetX": 46,
+      "offsetY": 83,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "air_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "air",
+      "phase": "impact",
+      "label": "空中Nのカード斬り",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/air_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：空中Nのカード斬りの当てる決め。両膝を曲げて両足を宙へ浮かせ、左のカードを右前方へ出して斬る空中の決め。右手は胸の横へ引く。本人左肩から左肘・左手首が一続きで、本人左手の掌側が見え、親指と人差し指で同じカード下端をつまむ。カードは手に残す。地面や影なし、浮いた全身と分かる。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "c618690759994e96010af1c2e000d088ec2effa7bb2b33ec7d910fa8fa88ec6c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 131,
+          "top": 31,
+          "right": 1168,
+          "bottom": 1277
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/air_impact.png",
+      "preparedSha256": "f7949da01f504b87757829973e6837528adbc24b6db0fbd8a34603fc06aa9d35",
+      "offsetX": 57,
+      "offsetY": 51,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "super_prepare",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "super",
+      "phase": "prepare",
+      "label": "超必殺の砂錬成とピラミッド指令",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/super_prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、容姿・部位実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：超必殺の砂錬成とピラミッド指令の予備、まだ当てない。両足で接地して深く腰を落とし、両手を腹の前に寄せて小さい砂の塊をこねる。両肩から左右の肘・手首・掌へそれぞれつながり、二つの手で一つの小さな砂の塊を包む。砂は明るい黄土色の平たい小塊、本人の顔と眼鏡は見せる。カードは持たない。\n右向きの斜め横で胸と両腕両脚が見える。左右の腕2本と手2個、脚2本、各手は親指1本と4指。カードは持たない。1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "501cb5f427aa31b7cc52d02bcc6d3b266bbc3421ec5859109757aec2c512e12f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 195,
+          "top": 66,
+          "right": 1090,
+          "bottom": 1278
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/super_prepare.png",
+      "preparedSha256": "4afb946f16019462d1ecfdd011181d725357e7d688ad6c067b1d805bef8413e8",
+      "offsetX": 54,
+      "offsetY": 50,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "super_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "super",
+      "phase": "impact",
+      "label": "超必殺の砂錬成とピラミッド指令",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/super_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、容姿・部位実寸の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：超必殺の砂錬成とピラミッド指令の当てる決め。胸と腰を力強く起こし、本人左腕を右前上方へ大きく出して、頭上に作ったピラミッドを落とす指令の決め。左手の人差し指1本だけを右前下方へ向け、他の3指を自然に曲げ親指を添える。右手は掌を腹の横へ引く。両手は空手で、砂とピラミッドは別素材なので人物には描かない。両足は接地。\n右向きの斜め横で胸と両腕両脚が見える。左右の腕2本と手2個、脚2本、各手は親指1本と4指。カードは持たない。1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "afc4e81fae38286b3d4af138058d4950f74d200ee6f932937b841d126e6e9d87",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 232,
+          "top": 53,
+          "right": 1108,
+          "bottom": 1280
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/super_impact.png",
+      "preparedSha256": "89712f3e240d81fbf3eb702efdc818093b36d214e33242c280c8b7266ae601b2",
+      "offsetX": 0,
+      "offsetY": 48,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal3_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段の大きいカード投げ",
+      "version": 2,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v1.png"
+      ],
+      "referenceRoles": [
+        "全身の編集対象。左手の小指のみ追加"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の全身原画の、画面右へ伸びている本人左手だけを修正する。現状は長い指3本と下側の親指1本の計4本しかない。下に広がる薬指と親指の間に、短く曲げた小指1本を追加する。これで人差し指・中指・薬指・小指の4本と親指1本、指先は合計5つ。小指は薬指より短く、薬指の根元の隣から生え、掌へ軽く曲がる。現状の掌側、下側の親指と3本の長い指、肩から肘と手首のつながりを維持。手を丸ごと反転しない。左手以外の顔、髪、眼鏡、右手、全身ポーズと衣装と靴の倍率は変えない。カードを追加しない。同じ1189×1323の真の透明PNG、同じ白縁とアニメ塗り。小指だけの修正。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "3a31ac89fb879054113ca9a96ae18e3c389f0b304e576c3572388eed8bd80d2e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 142,
+          "top": 43,
+          "right": 1146,
+          "bottom": 1270
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal3_impact.png",
+      "preparedSha256": "a9df68461a8855c036130fc00ac495ca8319d72b4223848d664d8fc0ddca32f6",
+      "offsetX": 82,
+      "offsetY": 58,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "special_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "special",
+      "phase": "impact",
+      "label": "特殊のカード投げ",
+      "version": 2,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v2.png",
+      "references": [
+        "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v1.png"
+      ],
+      "referenceRoles": [
+        "全身の編集対象。左手の小指のみ追加"
+      ],
+      "prompt": "Use case: precise-object-edit. 画像1の全身原画の、画面右へ伸びている本人左手だけを修正する。現状は長い指3本と下側の親指1本の計4本しかない。下に広がる薬指と親指の間に、短く曲げた小指1本を追加する。これで人差し指・中指・薬指・小指の4本と親指1本、指先は合計5つ。小指は薬指より短く、薬指の根元の隣から生え、掌へ軽く曲がる。現状の掌側、下側の親指と3本の長い指、肩から肘と手首のつながりを維持。手を丸ごと反転しない。左手以外の顔、髪、眼鏡、右手、全身ポーズと衣装と靴の倍率は変えない。カードを追加しない。同じ1189×1323の真の透明PNG、同じ白縁とアニメ塗り。小指だけの修正。",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "3a31ac89fb879054113ca9a96ae18e3c389f0b304e576c3572388eed8bd80d2e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 142,
+          "top": 43,
+          "right": 1146,
+          "bottom": 1270
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "reuseOf": {
+        "id": "normal3_impact",
+        "version": 2,
+        "source": "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v2.png",
+        "sha256": "3a31ac89fb879054113ca9a96ae18e3c389f0b304e576c3572388eed8bd80d2e",
+        "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal3_impact_v2.json"
+      },
+      "newlyGenerated": false,
+      "artNote": "5指へ修正した通常3段v2を特殊にも原寸再利用。",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/special_impact.png",
+      "preparedSha256": "a9df68461a8855c036130fc00ac495ca8319d72b4223848d664d8fc0ddca32f6",
+      "offsetX": 82,
+      "offsetY": 58,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "rework_r4_akatsuki_3"
+}

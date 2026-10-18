@@ -1,0 +1,22 @@
+{
+  "id": "card",
+  "kind": "projectile",
+  "look": "Card",
+  "fitAttackHitbox": true,
+  "sortingOrder": 7,
+  "references": [
+    "art_source/paper_roster_action/akatsuki/generated/effect_card_v1.png",
+    "art_source/title_paper/references/battle_a_la_carte_card_back_user_20261017.png"
+  ],
+  "referenceRoles": [
+    "編集対象の候補。指定箇所だけを変更",
+    "正式なカード背面の意匠"
+  ],
+  "prompt": "Use case: background-extraction. 画像1のカードの外側にある灰色と黒の背景と光彩を全て消して、外側は完全透明のPNGにする。カードの固い長方形の外周の境界のすぐ外側から、画像の端まで全てalpha0。影もふんわりした縁も一切残さない。画像1のカードの印刷面、形、色、意匠、正確なBattle à la Carteの文字を変えない。画像2は元のカード意匠。カード自体は完全に不透明、外周は硬い切り抜き。カードの外に物体や色や背景を追加しない。カード1枚の背景除去だけ。",
+  "key": "akatsuki",
+  "version": 2,
+  "source": "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "revisionReason": "カードの周囲に灰色の光彩とぼかした背景がある。"
+}

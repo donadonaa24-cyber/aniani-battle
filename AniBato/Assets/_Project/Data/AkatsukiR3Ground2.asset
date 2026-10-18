@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AkatsukiR3Ground2
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
-    Name: "\u30AB\u30FC\u30C9\u65AC\u308A 2"
+    Name: "\u30AB\u30FC\u30C9\u6295\u3052 3"
     Ability:
       Motion: 0
       ChangeFrame: 0
@@ -30,11 +30,12 @@ MonoBehaviour:
       ProjectileCount: 0
       ProjectileSpacing: 0
       AllowZeroProjectileSpeed: 0
-      ReplaceOwnProjectiles: 0
-      ProjectileAtDamageFrame: 0
-      Look: 0
+      ReplaceOwnProjectiles: 1
+      ProjectileAtDamageFrame: 1
+      IndependentNormalProjectile: 1
+      Look: 10
     Kind: 0
-    IsCloseRange: 1
+    IsCloseRange: 0
     NormalDirection: 0
     BreaksGuard: 0
     LandingRecoveryFrames: 0
@@ -44,10 +45,10 @@ MonoBehaviour:
     RecoveryFrames: 12
     Hitbox:
       Center:
-        X: 1.05
+        X: 0.79999995
         Y: 0.1
       Size:
-        X: 1.5
+        X: 1
         Y: 1.8
     HitstopFrames: 4
     HitstunFrames: 8
@@ -55,9 +56,9 @@ MonoBehaviour:
       X: 2
       Y: 0
     PiercesNormalDodge: 0
-    SpawnProjectile: 0
-    ProjectileSpeed: 0
-    ProjectileLifetimeFrames: 0
+    SpawnProjectile: 1
+    ProjectileSpeed: 16.08
+    ProjectileLifetimeFrames: 3
     ActiveVelocity:
       X: 0
       Y: 0

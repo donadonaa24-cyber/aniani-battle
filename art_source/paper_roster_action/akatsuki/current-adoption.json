@@ -1,12 +1,97 @@
 {
   "key": "akatsuki",
   "name": "暁",
-  "unityVerifiedTag": "rework_r4_king_2",
+  "unityVerifiedTag": "rework_r4_akatsuki_3",
   "motionAsset": "AniBato/Assets/_Project/Data/akatsukiCorePaperMotion.asset",
-  "completeAttackArtwork": false,
-  "bodyFrames": 0,
-  "uniqueBodyImages": 0,
-  "entries": [],
+  "completeAttackArtwork": true,
+  "bodyFrames": 12,
+  "uniqueBodyImages": 9,
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_prepare.png",
+      "sha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常1・2段共通_予備.png"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_impact.png",
+      "sha256": "3ab23dad61e17b9af7bc76b937c692497340385b1e988385db9c815a82b7ef47",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常1・2段共通_当てる.png"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_prepare.png",
+      "sha256": "0165a6e93837839b81ae49a9583f32f5bfa0246b5ce88a82bccf8768edeada52",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常3段_予備.png"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_impact.png",
+      "sha256": "a9df68461a8855c036130fc00ac495ca8319d72b4223848d664d8fc0ddca32f6",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常3段_当てる.png"
+    },
+    {
+      "id": "up_prepare",
+      "title": "上攻撃_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_prepare.png",
+      "sha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/上攻撃_予備.png"
+    },
+    {
+      "id": "up_impact",
+      "title": "上攻撃_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_up_impact.png",
+      "sha256": "b365f81867dd3bae0406495814b0aa6ee78af8bd89258fb4bb7a1b1b87ef9443",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/上攻撃_当てる.png"
+    },
+    {
+      "id": "down_single",
+      "title": "下攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_down_impact.png",
+      "sha256": "b96759214a7b3ba26d1d2b350e1ecebd0453c8f1c1ecc8a6b3492d8285e6d93a",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/下攻撃_1枚採用.png"
+    },
+    {
+      "id": "air_single",
+      "title": "空中攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_air_impact.png",
+      "sha256": "f7949da01f504b87757829973e6837528adbc24b6db0fbd8a34603fc06aa9d35",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/空中攻撃_1枚採用.png"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_prepare.png",
+      "sha256": "0165a6e93837839b81ae49a9583f32f5bfa0246b5ce88a82bccf8768edeada52",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/特殊技_予備.png"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_impact.png",
+      "sha256": "a9df68461a8855c036130fc00ac495ca8319d72b4223848d664d8fc0ddca32f6",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/特殊技_当てる.png"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_super_prepare.png",
+      "sha256": "4afb946f16019462d1ecfdd011181d725357e7d688ad6c067b1d805bef8413e8",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/超必殺技_予備.png"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_super_impact.png",
+      "sha256": "89712f3e240d81fbf3eb702efdc818093b36d214e33242c280c8b7266ae601b2",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/暁/超必殺技_当てる.png"
+    }
+  ],
   "extraVariants": "追加指示後",
   "artApproved": false
 }

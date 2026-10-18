@@ -43,6 +43,7 @@ namespace AniBato.EditorTools
                     var pose=new PaperPose{Key=Actions[action],States=new[]{States[action]},HoldTicks=8,
                         RotateWithRush=Keys[index]=="yui"&&(action==5||action==6),
                         UnmirroredImpact=Keys[index]=="king"&&(action==5||action==6),
+                        SwitchOnProjectileRelease=Keys[index]=="akatsuki"&&(action==1||action==5),
                         Frames=frames.Select(Import).ToArray(),
                         FrameHeadHeights=frames.Select(f=>(1328-f.headTopY)/PaperActionArtworkBuilder.PixelsPerUnit).ToArray(),
                         FrameFootMinXs=frames.Select(f=>(f.footMinX-652)/PaperActionArtworkBuilder.PixelsPerUnit).ToArray(),
@@ -62,6 +63,7 @@ namespace AniBato.EditorTools
                 poses.RemoveAll(p=>p.States.Length==0);poses.AddRange(additions);paper.Poses=poses.ToArray();
                 data.ActionArtworkSchemaVersion=m.complete?1:data.ActionArtworkSchemaVersion;
                 if(Keys[index]=="yui"&&m.complete)NameYuiMoves(data);
+                if(Keys[index]=="akatsuki"&&m.complete)AkatsukiCardThrowBuilder.Apply(data);
                 PaperRosterEffectArtworkBuilder.Apply(Keys[index],data);
                 data.ActionArtworkPending=true;EditorUtility.SetDirty(paper);EditorUtility.SetDirty(data);
             }

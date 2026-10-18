@@ -14,17 +14,17 @@
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "rework_r4_king_2",
+    "tag": "rework_r4_akatsuki_3",
     "buildAll": "success",
     "edit": {
-      "total": 563,
-      "passed": 563,
+      "total": 570,
+      "passed": 570,
       "failed": 0,
       "skipped": 0
     },
     "play": {
-      "total": 75,
-      "passed": 75,
+      "total": 77,
+      "passed": 77,
       "failed": 0,
       "skipped": 0
     },
@@ -41,16 +41,16 @@
       "minato",
       "shiro",
       "yui",
-      "king"
+      "king",
+      "akatsuki"
     ],
     "remainingDedicatedCharacters": [
-      "akatsuki",
       "ryuta"
     ],
     "reviewFolder": "イラスト確認/現在ゲームで採用中",
     "ensembleVersion": 5,
-    "screenshots": "docs/screenshots/rework_r4_king_2/",
-    "screenshotCount": 464
+    "screenshots": "docs/screenshots/rework_r4_akatsuki_3/",
+    "screenshotCount": 542
   },
   "activeVerification": null,
   "attempts": [
@@ -609,14 +609,73 @@
       },
       "windowsBuild": "success",
       "note": "位置の回帰2件と実描画間隔検査を追加して全4合格。"
+    },
+    {
+      "tag": "rework_r4_akatsuki_1",
+      "buildAll": "success",
+      "edit": {
+        "total": 570,
+        "passed": 568,
+        "failed": 2,
+        "skipped": 0
+      },
+      "play": {
+        "total": 77,
+        "passed": 77,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "reason": "継承済みの旧移行フラグを2へ区別"
+    },
+    {
+      "tag": "rework_r4_akatsuki_2",
+      "buildAll": "success",
+      "edit": {
+        "total": 570,
+        "passed": 568,
+        "failed": 2,
+        "skipped": 0
+      },
+      "play": {
+        "total": 77,
+        "passed": 77,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "reason": "射程検査の相手を場外30から場内15へ修正し、試合継続のアサーションを追加"
+    },
+    {
+      "tag": "rework_r4_akatsuki_3",
+      "buildAll": "success",
+      "edit": {
+        "total": 570,
+        "passed": 570,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 77,
+        "passed": 77,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "reason": "全4合格、専用撮影先、実投射の最遠端・相殺・単発被弾を確認"
     }
   ],
   "currentArtwork": {
     "character": "akatsuki",
-    "status": "next_not_started",
-    "previousCharacter": "king",
-    "previousAdoption": "art_source/paper_roster_action/king/adoption.json",
-    "nextCharacter": "ryuta"
+    "bodySlots": 12,
+    "uniqueBodyImages": 9,
+    "effectBindings": 6,
+    "uniqueEffects": 4,
+    "gameConnected": true,
+    "verifiedTag": "rework_r4_akatsuki_3",
+    "webVerifiedTag": "rework_r4_akatsuki_web",
+    "next": "ryuta",
+    "extraVariants": "追加指示後"
   },
   "nextTask": "docs/codex_tasks/PAPER_AKATSUKI_TWELVE_KEYS.md",
   "webGL": {
@@ -699,17 +758,17 @@
     "allOtherPropsComplete": false
   },
   "latestWebVerification": {
-    "nativeTag": "rework_r4_king_2",
-    "tag": "rework_r4_king_fixed_web",
+    "nativeTag": "rework_r4_akatsuki_3",
+    "tag": "rework_r4_akatsuki_web",
     "build": {
       "result": "success",
-      "bytes": 87174424,
-      "seconds": 203.33505209999998,
+      "bytes": 91466220,
+      "seconds": 85.3883699,
       "files": 6
     },
-    "screenshots": "docs/screenshots/rework_r4_king_web/",
+    "screenshots": "docs/screenshots/rework_r4_akatsuki_web/",
     "consoleErrors": 0,
     "mipmaps": true,
-    "paddingAudit": 343
+    "paddingAudit": 356
   }
 }

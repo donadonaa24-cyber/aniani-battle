@@ -1,0 +1,19 @@
+{
+  "id": "card",
+  "kind": "projectile",
+  "look": "Card",
+  "fitAttackHitbox": true,
+  "sortingOrder": 7,
+  "references": [
+    "art_source/title_paper/references/battle_a_la_carte_card_back_user_20261017.png"
+  ],
+  "referenceRoles": [
+    "正式なカード背面の意匠"
+  ],
+  "prompt": "Use case: background-extraction. 参照画像はユーザー本人のゲーム『Battle à la carte』の正式なカード背面。この一枚をゲーム中で投げるカードの透過スプライトへ描き直す。正面向き、上向きにまっすぐ立てた一枚の縦長の長方形、角だけ小さく丸い。濃紺の市松、クリーム金の装飾枠、料理帽、赤黒のハート・スペード・クラブ・ダイヤ、ナイフとフォーク、中央の金色の正確な「Battle à la Carte」を参照どおり保つ。余分な赤い外枠や別の模様を加えない。細い硬いクリーム白の切り抜き縁を外周へ。カードの印刷面は不透明、外だけ完全透明。カードの紙そのものは光らせず普通のアニメのセル塗り。1024×1536の真の透明PNG一枚、上下左右80px以上の透明余白を設けカードを切らない。手・指・人物・影・背景・斜めの厚み・速度線・グロー・ぼかし・3D・複数案なし。",
+  "key": "akatsuki",
+  "version": 1,
+  "source": "art_source/paper_roster_action/akatsuki/generated/effect_card_v1.png",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

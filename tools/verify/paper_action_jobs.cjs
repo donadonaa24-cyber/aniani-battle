@@ -14,3 +14,4 @@ module.exports.minato=require('./paper_action_minato.cjs');
 module.exports.shiro=require('./paper_action_shiro.cjs');
 module.exports.yui=require('./paper_action_yui.cjs');
 module.exports.king=require('./paper_action_king.cjs');
+module.exports.akatsuki=require('./paper_action_akatsuki.cjs');

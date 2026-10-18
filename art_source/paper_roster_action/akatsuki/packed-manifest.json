@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "frames": [
+    {
+      "id": "normal1_prepare",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal1_prepare.png",
+      "sha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "headTopY": 90,
+      "footMinX": 345,
+      "footMaxX": 1048,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal1_impact",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal1_impact.png",
+      "sha256": "3ab23dad61e17b9af7bc76b937c692497340385b1e988385db9c815a82b7ef47",
+      "headTopY": 98,
+      "footMinX": 166,
+      "footMaxX": 1219,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal3_prepare.png",
+      "sha256": "0165a6e93837839b81ae49a9583f32f5bfa0246b5ce88a82bccf8768edeada52",
+      "headTopY": 76,
+      "footMinX": 282,
+      "footMaxX": 1111,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_impact",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal3_impact.png",
+      "sha256": "a9df68461a8855c036130fc00ac495ca8319d72b4223848d664d8fc0ddca32f6",
+      "headTopY": 101,
+      "footMinX": 224,
+      "footMaxX": 1170,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_prepare",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/up_prepare.png",
+      "sha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "headTopY": 90,
+      "footMinX": 345,
+      "footMaxX": 1048,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_impact",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/up_impact.png",
+      "sha256": "b365f81867dd3bae0406495814b0aa6ee78af8bd89258fb4bb7a1b1b87ef9443",
+      "headTopY": 89,
+      "footMinX": 291,
+      "footMaxX": 1102,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "down_impact",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/down_impact.png",
+      "sha256": "b96759214a7b3ba26d1d2b350e1ecebd0453c8f1c1ecc8a6b3492d8285e6d93a",
+      "headTopY": 411,
+      "footMinX": 245,
+      "footMaxX": 1149,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "air_impact",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/air_impact.png",
+      "sha256": "f7949da01f504b87757829973e6837528adbc24b6db0fbd8a34603fc06aa9d35",
+      "headTopY": 82,
+      "footMinX": 246,
+      "footMaxX": 393,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0.050695723703048486
+    },
+    {
+      "id": "special_prepare",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/special_prepare.png",
+      "sha256": "0165a6e93837839b81ae49a9583f32f5bfa0246b5ce88a82bccf8768edeada52",
+      "headTopY": 76,
+      "footMinX": 282,
+      "footMaxX": 1111,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "special_impact",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/special_impact.png",
+      "sha256": "a9df68461a8855c036130fc00ac495ca8319d72b4223848d664d8fc0ddca32f6",
+      "headTopY": 101,
+      "footMinX": 224,
+      "footMaxX": 1170,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_prepare",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/super_prepare.png",
+      "sha256": "4afb946f16019462d1ecfdd011181d725357e7d688ad6c067b1d805bef8413e8",
+      "headTopY": 116,
+      "footMinX": 249,
+      "footMaxX": 1144,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_impact",
+      "prepared": "art_source/paper_roster_action/akatsuki/prepared/super_impact.png",
+      "sha256": "89712f3e240d81fbf3eb702efdc818093b36d214e33242c280c8b7266ae601b2",
+      "headTopY": 101,
+      "footMinX": 870,
+      "footMaxX": 1085,
+      "groundFootAnchor": 696.5,
+      "originOffsetY": 0
+    }
+  ],
+  "complete": true,
+  "reviewed": true,
+  "gameConnected": true,
+  "verifiedTag": "rework_r4_akatsuki_3"
+}

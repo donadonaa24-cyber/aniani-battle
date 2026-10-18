@@ -35,7 +35,12 @@ namespace AniBato.Tests
             Assert.That(roster.Select(c => c.Specials[0]).Distinct().Count(), Is.EqualTo(9));
             Assert.That(roster.Select(c => c.Ultimate).Distinct().Count(), Is.EqualTo(9));
             Assert.That(roster[0].GroundNormals.All(a => a.Definition.SpawnProjectile && !a.Definition.IsCloseRange && a.Definition.Ability.Look == AbilityLook.Bullet), Is.True);
-            Assert.That(roster.Skip(1).SelectMany(c => c.GroundNormals).All(a => !a.Definition.SpawnProjectile), Is.True);
+            for(int i=1;i<roster.Length;i++)for(int stage=0;stage<3;stage++)
+            {
+                var normal=roster[i].GroundNormals[stage].Definition;
+                Assert.That(normal.SpawnProjectile,Is.EqualTo(i==7&&stage==2),roster[i].name+" normal "+stage);
+                if(i==7&&stage==2){Assert.That(normal.Ability.Look,Is.EqualTo(AbilityLook.Card));Assert.That(normal.IsCloseRange,Is.False);}
+            }
             AbilityLook[] special = { AbilityLook.Drone, AbilityLook.Rook, AbilityLook.RiceBall, AbilityLook.Teleport, AbilityLook.Emp, AbilityLook.Bishop, AbilityLook.King, AbilityLook.Card, AbilityLook.Bat };
             AbilityLook[] supers = { AbilityLook.Rocket, AbilityLook.Rook, AbilityLook.Curry, AbilityLook.BlackHole, AbilityLook.Alma, AbilityLook.Bishop, AbilityLook.King, AbilityLook.Pyramid, AbilityLook.Spell };
             for (int i = 0; i < 9; i++)

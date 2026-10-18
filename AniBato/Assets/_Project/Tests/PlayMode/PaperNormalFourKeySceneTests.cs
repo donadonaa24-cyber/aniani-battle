@@ -17,7 +17,7 @@ namespace AniBato.Tests
         public IEnumerator CompletedRosterUsesSharedFirstTwoKeysAndLargeThirdThroughActualComboInputs()
         {
             var keys=controller.Bindings.P1;
-            foreach(int index in new[]{1,2,3,4,5,6})foreach(int facing in new[]{1,-1})
+            foreach(int index in new[]{1,2,3,4,5,6,7})foreach(int facing in new[]{1,-1})
             {
                 var data=runner.Setup.Character(index);runner.BeginMatch(data,runner.Setup.Character(0),runner.CurrentStage,false);
                 var sim=runner.Simulation;Set(sim.P1,"Facing",facing);Set(sim.P2,"Position",new BattleVector(sim.Stage[0].Bounds.Right-1,sim.P2.Position.Y));

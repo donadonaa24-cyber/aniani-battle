@@ -1,3 +1,5 @@
+2026-10-18現在：暁12枠／9原画と4効果を接続。rework_r4_akatsuki_3全4合格（Edit570／Play77）、542実描画。WebGLも実ビルド／内蔵ブラウザ確認済み。8人完成、次はPAPER_RYUTA_TWELVE_KEYS。追加差分は追加指示後。詳細はRESUME冒頭。
+
 2026-10-18現在：黒獅子王12枠／9人物原画と爪・咆哮・既存部下レイラ／シオン／ノアの5効果を接続。rework_r4_king_2全4合格（Edit563／Play75）、464実描画・専用62PNG。召喚物が重なる描画不具合を各Projectileの位置保持へ修正し、戦闘値は不変。WebGL rework_r4_king_fixed_webも実ビルド・ブラウザ確認・console error 0。次はPAPER_AKATSUKI_TWELVE_KEYS→龍太。追加差分は追加指示後。詳細はRESUME冒頭。
 
 2026-10-17現在：結衣12枠／9原画と打撃・魔法2効果を接続。rework_r4_yui_2全4合格（Edit557／Play73）、384実描画。WebGL rework_r4_yui_mip_webは78.9MB・実ブラウザ19PNG・console error 0。小さい表示の人物のざらつきはWeb用ミップマップで軽減、329画像の元RGBA保存を照合。集合絵v5の透真5指と暁本人左のカードつまみを維持。次はPAPER_KING_TWELVE_KEYS。追加差分は追加指示後。詳細はRESUME冒頭。

@@ -267,3 +267,7 @@ EMPの切り絵の輪、ALMA接続の空枠、六角形の核と左右へ広が�
 ユーザー指定の部下は **豹妬レイラ・銀狼シオン・鹿角ノア**。既存ポータルの trial-gacha-data.js の紹介と images/gacha/oshikoma/shade1.webp・shade2.webp・shade3.webp を読み取り、参照コピーを docs/art_reference/king_supports/ に保存。出典の相対位置とSHAは同 sources.json。元の別プロジェクトは変更していない。汎用「歩」の未生成ジョブは中止し、採用しない。
 
 3人の落下攻撃1枚ずつと、黒獅子王の12表示枠／9ユニーク原画、爪・咆哮の別効果は内蔵image_genで生成。原画・全文条件・参照の役割・各版・SHA・不採用理由は art_source/paper_roster_action/king/。頭上からの召喚攻撃は本作のクロスオーバー演出であり、原作設定の追加確定ではない。ノアの6指候補とシオンの不明瞭な脚の候補は不採用とし、手／脚を修正してから選定。透明梱包は原画RGBAと倍率を保つ。美術最終承認とゲーム検証は別に記録する。
+
+## 暁の攻撃原画とカード／砂の小道具（2026-10-18）
+
+本人の採用待機・基本姿勢と、ユーザー提供のBattle à la Carte正式背面を参照し、内蔵image_genで9人物原画とカード・ピラミッド・斬撃・砂粒の4効果を生成。全文条件と参照役割・SHAはart_source/paper_roster_action/akatsuki/。上予備と特殊2枠、斬撃3接続は原画共有。人物は原寸透明梱包、効果も元PNGをコピー。参照の正式背面はart_source/title_paper/references/battle_a_la_carte_card_back_user_20261017.png。新たな第三者アセットなし。技と砂の演出は本作独自。

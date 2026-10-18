@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "bodySlotsCompleted": 12,
+  "uniqueBodyImages": 9,
+  "artApproved": false,
+  "selected": [
+    {
+      "id": "normal1_prepare",
+      "version": 2,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal1_prepare_v2.png",
+      "sha256": "32d65174f1199eb8cee8aeba6d1268251d434f91fb657a2d9c4d798490b0ece4",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 288,
+          "top": 43,
+          "right": 991,
+          "bottom": 1281
+        }
+      }
+    },
+    {
+      "id": "normal1_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal1_impact_v1.png",
+      "sha256": "6d00729dc9b98f4bd7d5e84440c12ccaa27e2752cff661c4a291d681143286f8",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 51,
+          "top": 47,
+          "right": 1171,
+          "bottom": 1277
+        }
+      }
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_prepare_v1.png",
+      "sha256": "b665f1b1865351dc62399fe8bd4c3b88156644ed680171f905c9a909c512e556",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 190,
+          "top": 24,
+          "right": 1049,
+          "bottom": 1276
+        }
+      }
+    },
+    {
+      "id": "normal3_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v2.png",
+      "sha256": "3a31ac89fb879054113ca9a96ae18e3c389f0b304e576c3572388eed8bd80d2e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 142,
+          "top": 43,
+          "right": 1146,
+          "bottom": 1270
+        }
+      }
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal1_prepare_v2.png",
+      "sha256": "32d65174f1199eb8cee8aeba6d1268251d434f91fb657a2d9c4d798490b0ece4",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 288,
+          "top": 43,
+          "right": 991,
+          "bottom": 1281
+        }
+      }
+    },
+    {
+      "id": "up_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/up_impact_v1.png",
+      "sha256": "8a2fc79641c0be17186cedd0ee6a07dfab063e93f8af38ac5ed3eaa62e68d3c6",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 230,
+          "top": 43,
+          "right": 1041,
+          "bottom": 1282
+        }
+      }
+    },
+    {
+      "id": "down_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/down_impact_v1.png",
+      "sha256": "14dbe28378c06511ed595544bf1a787231315fae4403981ce4705a5f03314693",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 176,
+          "top": 328,
+          "right": 1144,
+          "bottom": 1245
+        }
+      }
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/air_impact_v1.png",
+      "sha256": "c618690759994e96010af1c2e000d088ec2effa7bb2b33ec7d910fa8fa88ec6c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 131,
+          "top": 31,
+          "right": 1168,
+          "bottom": 1277
+        }
+      }
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_prepare_v1.png",
+      "sha256": "b665f1b1865351dc62399fe8bd4c3b88156644ed680171f905c9a909c512e556",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 190,
+          "top": 24,
+          "right": 1049,
+          "bottom": 1276
+        }
+      }
+    },
+    {
+      "id": "special_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/akatsuki/generated/normal3_impact_v2.png",
+      "sha256": "3a31ac89fb879054113ca9a96ae18e3c389f0b304e576c3572388eed8bd80d2e",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 142,
+          "top": 43,
+          "right": 1146,
+          "bottom": 1270
+        }
+      }
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/super_prepare_v1.png",
+      "sha256": "501cb5f427aa31b7cc52d02bcc6d3b266bbc3421ec5859109757aec2c512e12f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 195,
+          "top": 66,
+          "right": 1090,
+          "bottom": 1278
+        }
+      }
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/super_impact_v1.png",
+      "sha256": "afc4e81fae38286b3d4af138058d4950f74d200ee6f932937b841d126e6e9d87",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 232,
+          "top": 53,
+          "right": 1108,
+          "bottom": 1280
+        }
+      }
+    }
+  ],
+  "effects": [
+    {
+      "id": "card",
+      "version": 2,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+      "sha256": "f822696b87a4e1fedcf70fdcb010d4cf811e6f9d65d21291d197cf093d49d43b",
+      "native": {
+        "width": 1024,
+        "height": 1536,
+        "bounds": {
+          "left": 110,
+          "top": 114,
+          "right": 914,
+          "bottom": 1357
+        }
+      }
+    },
+    {
+      "id": "pyramid",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_pyramid_v1.png",
+      "sha256": "8bf6517a868034977da46a99f87fcf7534362af59ada0432cf6903a2f51d1387",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 26,
+          "top": 227,
+          "right": 1227,
+          "bottom": 1045
+        }
+      }
+    },
+    {
+      "id": "slash",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 142,
+          "top": 192,
+          "right": 1220,
+          "bottom": 1005
+        }
+      }
+    },
+    {
+      "id": "sand",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_sand_v1.png",
+      "sha256": "b06ca0d4cfeaf8aab25a303ff24d6826c0303785858251be0851bb0f0e7ad944",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 140,
+          "top": 524,
+          "right": 1151,
+          "bottom": 869
+        }
+      }
+    },
+    {
+      "id": "slash_second",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 142,
+          "top": 192,
+          "right": 1220,
+          "bottom": 1005
+        }
+      }
+    },
+    {
+      "id": "slash_back",
+      "version": 1,
+      "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 142,
+          "top": 192,
+          "right": 1220,
+          "bottom": 1005
+        }
+      }
+    }
+  ],
+  "findings": [
+    "本人の左肩から画面右の肘・手首へつながる左腕でカードを保持。単純な全身反転で手を修正していない。",
+    "通常予備v1の頭身過大は不採用、v2を選定。通常3投げ終わりv1は小指不足で不採用、v2は親指と4指の掌側。特殊の投げ終わりも同じv2を再利用。",
+    "左の甲が見える保持と掌側の保持が姿勢で変わる。握りで隠れる指を5本すべて見えるとは主張しない。上決めは左の甲、左の親指は画像左側。",
+    "待機の髪約335pxと靴を原寸で比較。投影・姿勢で見かけの幅は変わるため全姿勢で全く同寸とは扱わない。原画は一切再サンプルせず1304×1450へ透明梱包。",
+    "上予備は通常予備、特殊2枠は通常3段を共有し12表示枠／9原画。下・空中Nは決め1枚のみ。",
+    "超必殺は両手で砂をこねる予備と、空手の左人差し指で前方上へ指令する決め。指令の向きを下向きと誤記しない。ピラミッドは別描画で相手頭上から落下。",
+    "正式背面を参照したカードv2を選定。身体の小さい印刷は省略や文字差が残り、正式背面と全画素同一と扱わない。",
+    "原画プレビューの透明画素にあるRGBは不透明な灰色背景ではない。白背景診断とalphaを区別し、透明原本を保持。",
+    "ピラミッドは左右26px、斬撃は右33pxなど要求80pxより狭い透明余白があるが可視輪郭は切れていない。美術最終承認と実装上の選定を区別。",
+    "通常3段の実投射は明示された技指定による移行。元の発生／硬直・前進・1通常被弾と半減後の最遠端を維持し別途テストする。"
+  ],
+  "gameConnected": true,
+  "unityVerifiedTag": "rework_r4_akatsuki_3"
+}

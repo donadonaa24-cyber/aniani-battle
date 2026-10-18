@@ -1,0 +1,20 @@
+{
+  "id": "slash",
+  "kind": "ability",
+  "look": "Default",
+  "state": "Attack1",
+  "duringStartup": false,
+  "duringRecovery": true,
+  "worldWidth": 1.45,
+  "worldHeight": 1.2,
+  "offsetX": 0.85,
+  "offsetY": 0.15,
+  "references": [],
+  "referenceRoles": [],
+  "prompt": "Use case: stylized-concept. 真の透明PNGのゲーム用図形一枚。右へ振り抜くカードの切り絵の斬撃。濃紺・金・クリーム白の短い尖った三日月の帯を2本、互いの間に広い完全透明の隙間を残し斜めに平行に並べる。周囲へ小さな赤と金の三角の紙片を4つ。太い硬いアニメ線と平らなベタ色、細い硬いクリーム白の切り抜き縁だけ。1024×1024、中央に効果一個、全周80px以上透明余白。紙片同士の隙間も完全透明。不透明な背景・光彩・グロー・ぼかし・グラデーション・人物・手・カード本体・文字・床・影・写実・3Dなし。",
+  "key": "akatsuki",
+  "version": 1,
+  "source": "art_source/paper_roster_action/akatsuki/generated/effect_slash_v1.png",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}
