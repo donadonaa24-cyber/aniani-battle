@@ -1,0 +1,14 @@
+{
+  "id": "hit_light",
+  "label": "通常被弾",
+  "version": 6,
+  "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v6.png",
+  "prompt": "Use case: precise-object-edit. Change ONLY the hand at the far RIGHT of this image, which belongs to the character's anatomical LEFT arm. Replace the fist with an OPEN LEFT HAND, palm facing the viewer, fingers pointing UP. The THUMB MUST BE ON THE IMAGE-RIGHT edge of the palm, the LITTLE FINGER on the IMAGE-LEFT edge. Four long fingers pointing up, one short thumb extending to the RIGHT. Exactly five digits. Do not draw the thumb on the left. Do not show the back of this hand. Natural left forearm and wrist, no bent-back joint. Keep the hand modest, approximately 120px wide and 140px tall, with a slightly relaxed spread as he recoils. This is a LEFT PALM, thumb on the RIGHT, pinky on the LEFT. Keep EVERYTHING else unchanged: right fist at the chest, face, blond hair, red eyes, uniform, tie, backward recoil pose, two legs, two shoes, body proportions and the square transparent canvas margins. Same anime linework, cel shading and continuous cream white cutout border. No background, floor, shadow, effects, words or other figures. 全身は画像1のまま。画面右の手だけ、親指が画面右に来る左の掌へ描き直す。",
+  "references": [
+    "art_source/paper_roster_motion/ryuta/generated/hit_light_v4.png"
+  ],
+  "referenceRoles": [
+    "画像1：編集対象。画面右の本人左手を開いた左の掌へ"
+  ],
+  "tool": "built-in image_gen"
+}

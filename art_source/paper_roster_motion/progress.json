@@ -4,7 +4,7 @@
   "requiredCharacters": 8,
   "requiredPosesPerCharacter": 7,
   "requiredTotal": 56,
-  "currentCharacter": "ryuta",
+  "currentCharacter": null,
   "characters": [
     {
       "key": "toma",
@@ -58,9 +58,10 @@
     {
       "key": "ryuta",
       "name": "龍太",
-      "generated": 4,
-      "integrated": false
+      "generated": 7,
+      "integrated": true,
+      "verification": "motion_ryuta_1"
     }
   ],
-  "status": "in_progress"
+  "status": "native_complete_web_pending"
 }

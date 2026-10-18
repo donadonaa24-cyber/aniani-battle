@@ -1,0 +1,16 @@
+{
+  "id": "hit_light",
+  "label": "通常被弾",
+  "version": 3,
+  "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v3.png",
+  "prompt": "Use case: precise-object-edit. 画像1の龍太の通常被弾を直接編集。変更するのは画面右の本人左拳の面だけ。画像2のように自然に回内した左の甲側をこちらへ見せ、4指の丸い腹や掌線を見せない。こちらには滑らかな甲と握った指の関節、自然に添えた親指。親指1本と4指。画像2の全身の大きさは使わない。画像1の頭髪約335px、左右の靴約155pxと250px、顔、首、身体、衣装、2脚2靴と後ろへ反る姿勢をそのまま維持。画像1は全身が画像内へ収まっているので同じ透明余白を保つ。1103×1426の透明キャンバス。全周40px以上の余白、靴先や白縁を切らない。全身の拡大縮小禁止、枠へ埋めない。薄いクリーム白の全外周縁、同じアニメ線とセル塗り。背景・床・効果・文字なし。",
+  "references": [
+    "art_source/paper_roster_motion/ryuta/generated/hit_light_v1.png",
+    "art_source/paper_roster_motion/ryuta/generated/hit_light_v2.png"
+  ],
+  "referenceRoles": [
+    "画像1：直接編集対象。顔・身体・脚・靴の大きさと余白を維持",
+    "画像2：修正した本人左拳の甲側だけ参考。大きくなった全身や切れた靴はコピーしない"
+  ],
+  "tool": "built-in image_gen"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "hit_light",
+  "label": "通常被弾",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の龍太の被弾全身を維持し、画面右にある本人左の拳だけを画像2と同じ甲側の自然な左手へ描き直す。左の前腕を自然に回内し、握った4指の丸い腹や掌の線をこちらへ見せない。滑らかな手の甲と握った指の関節をこちらへ見せる。左の親指は4指の外に自然に添えて握り、指が重なる部分は自然に隠す。親指1本と4指、余分な指や手首の逆折れなし。反対の右拳、両肩と肘の位置、顔・髪・衣装・涙の有無・2脚2靴・部位実寸と被弾姿勢は維持。画像2の走り姿勢をコピーしない。透明PNG、同じアニメ線とセル塗り、全外周の薄いクリーム白の縁、背景・効果・文字なし。",
+  "references": [
+    "art_source/paper_roster_motion/ryuta/generated/hit_light_v1.png",
+    "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+  ],
+  "referenceRoles": [
+    "画像1：被弾の直接編集対象、本人左拳だけ修正",
+    "画像2：本人左の甲側の正しい握りの参考のみ"
+  ],
+  "tool": "built-in image_gen"
+}

@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "key": "ryuta",
+  "artApproved": false,
+  "selected": [
+    {
+      "id": "run",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ryuta/generated/run_v2.png",
+      "sha256": "f96d10a737542b8ae9c1a6fa4d437058bb29ad2fa2c1c5a8c51914d8b14fdf4d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 124,
+          "top": 48,
+          "right": 1152,
+          "bottom": 1203
+        }
+      }
+    },
+    {
+      "id": "jump",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ryuta/generated/jump_v2.png",
+      "sha256": "64a8dbc450a2c3c3db2dbeb0ac4dcd1fbe2d523e269d160a0043bcaf921aa07a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 212,
+          "top": 42,
+          "right": 1004,
+          "bottom": 1242
+        }
+      }
+    },
+    {
+      "id": "fall",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ryuta/generated/fall_v1.png",
+      "sha256": "83601a02ca143b64a9eaed99e75ef302a03423dab384580473f8b89dae0674cc",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 86,
+          "top": 181,
+          "right": 1028,
+          "bottom": 1297
+        }
+      }
+    },
+    {
+      "id": "dodge",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ryuta/generated/dodge_v1.png",
+      "sha256": "3e3efd00db4dc7e6460edfe0a4174c0dd3f9d9b50208794191f09134622377ac",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 97,
+          "top": 412,
+          "right": 1149,
+          "bottom": 1224
+        }
+      }
+    },
+    {
+      "id": "counter_success",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ryuta/generated/counter_success_v2.png",
+      "sha256": "dd105c8edb152f70fb82ac60b8d81a2b855d5985e1ccc67daaf4911a21d5f80f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 113,
+          "top": 75,
+          "right": 1163,
+          "bottom": 1269
+        }
+      }
+    },
+    {
+      "id": "hit_light",
+      "version": 6,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v6.png",
+      "sha256": "fa184ad9bff33778436ecdb8d451449bae6c5911614e2e93d2bc5fca85720226",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 249,
+          "top": 65,
+          "right": 1092,
+          "bottom": 1194
+        }
+      }
+    },
+    {
+      "id": "hit_heavy",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_heavy_v2.png",
+      "sha256": "7d3b124c158c7af83b9fc1f8ea2b5064802a21986fdfcd569dd3017326e321bc",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 169,
+          "top": 50,
+          "right": 1168,
+          "bottom": 1242
+        }
+      }
+    }
+  ],
+  "canvasPolicy": "原画RGBAの整数移動と透明余白のみ。個別拡縮0。頭髪と靴の投影差は原画で目視し、美術の最終承認と実装検証を区別。",
+  "anatomyReview": "肩・肘・手首のつながり、左右の手の親指と折った指、全身の外周白縁を確認。低姿勢を埋める拡大なし。",
+  "rgbaAudit": [
+    {
+      "id": "run",
+      "preserved": true,
+      "sha256": "2637eba45d1b6a94366796f44439731bbfd65ec060d50ba8b2b75e7ea6352214"
+    },
+    {
+      "id": "jump",
+      "preserved": true,
+      "sha256": "cb1e91e6122f89b5b0c832e206d2c2c30b6ba838ddfa3416da6f7c6b40471c6a"
+    },
+    {
+      "id": "fall",
+      "preserved": true,
+      "sha256": "4e5c704c0553ec4f5e6dc63696221aad0c64dfea8f75815cbca99dcfe3c3b308"
+    },
+    {
+      "id": "dodge",
+      "preserved": true,
+      "sha256": "c09c9ab6960f0a07e89039c75023cf0f8f4a3ee4fd0f46348ad1165e8f43df94"
+    },
+    {
+      "id": "counter_success",
+      "preserved": true,
+      "sha256": "86ec993f50f2af93e6ee39354cb138a9e8bc50f6c7c25ef407d8a1a7dea202d7"
+    },
+    {
+      "id": "hit_light",
+      "preserved": true,
+      "sha256": "a7f3b54a757696d630247ea611c145bf7d1b280a1cfd10ff4f3541af55b914c8"
+    },
+    {
+      "id": "hit_heavy",
+      "preserved": true,
+      "sha256": "86f2693e763c8a2f73856d8bee09db6b68fe34773f15ae638bd21ff774b5cf59"
+    }
+  ],
+  "knownDifferences": [
+    "走りv1・上昇v1は本人左拳が右手状に見え不採用。各v2で甲側の自然な左拳を描き直した。落下・回避はv1。回避は採用しゃがみv2の頭と靴の実寸を参照。",
+    "反撃v1は甲側の左拳の親指が逆側に見えるため不採用。v2は拳と手首だけを描き直し、直線の左腕は維持。握りで隠れる親指と指を全部見えて5本と主張しない。",
+    "通常被弾v2/v3は左拳修正時に全身が大きくなり右靴の端が切れたため不採用。v4は正方形1254×1254へ透明余白を確保。ユーザー指摘でv3/v4の左手が右の甲状と確認し、v5の右拳状も不採用。",
+    "通常被弾v6は開いた本人左の掌をこちらへ見せる。上向きの4長指と画面右の短い親指、5指を確認。胸前の右拳、顔、身体、2脚2靴と余白はv4を維持。",
+    "強被弾v2は本人左拳を甲側へ描き直し、涙と大きいのけぞりを維持。通常被弾との表情差を確認。両脚の股関節・膝・足首・靴を追い、3脚状の分岐なし。",
+    "原画は上昇/走り/回避/反撃/強被弾が1189×1323、落下1103×1426、通常被弾1254正方形。頭髪と靴は投影差が残るが、個別拡縮や共通枠へ埋める拡大なし。全7画像のRGBA保持を照合。指定より狭い余白はあるが可視輪郭の切断は0。美術最終承認とは区別。"
+  ]
+}

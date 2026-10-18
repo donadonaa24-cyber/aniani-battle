@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "key": "ryuta",
+  "characterIndex": 8,
+  "name": "龍太",
+  "complete": true,
+  "frames": [
+    {
+      "id": "run",
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/run.png",
+      "sha256": "2637eba45d1b6a94366796f44439731bbfd65ec060d50ba8b2b75e7ea6352214",
+      "headTopY": 173,
+      "footMinX": 841,
+      "footMaxX": 1152,
+      "originOffsetY": 0
+    },
+    {
+      "id": "jump",
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/jump.png",
+      "sha256": "cb1e91e6122f89b5b0c832e206d2c2c30b6ba838ddfa3416da6f7c6b40471c6a",
+      "headTopY": 128,
+      "footMinX": 647,
+      "footMaxX": 769,
+      "originOffsetY": 0.10139144740609697
+    },
+    {
+      "id": "fall",
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/fall.png",
+      "sha256": "4e5c704c0553ec4f5e6dc63696221aad0c64dfea8f75815cbca99dcfe3c3b308",
+      "headTopY": 212,
+      "footMinX": 765,
+      "footMaxX": 1016,
+      "originOffsetY": 0.25911147670447005
+    },
+    {
+      "id": "dodge",
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/dodge.png",
+      "sha256": "c09c9ab6960f0a07e89039c75023cf0f8f4a3ee4fd0f46348ad1165e8f43df94",
+      "headTopY": 516,
+      "footMinX": 182,
+      "footMaxX": 1234,
+      "originOffsetY": 0
+    },
+    {
+      "id": "counter_success",
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/counter_success.png",
+      "sha256": "86ec993f50f2af93e6ee39354cb138a9e8bc50f6c7c25ef407d8a1a7dea202d7",
+      "headTopY": 134,
+      "footMinX": 204,
+      "footMaxX": 1212,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_light",
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_light.png",
+      "sha256": "a7f3b54a757696d630247ea611c145bf7d1b280a1cfd10ff4f3541af55b914c8",
+      "headTopY": 199,
+      "footMinX": 287,
+      "footMaxX": 1130,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_heavy",
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_heavy.png",
+      "sha256": "86f2693e763c8a2f73856d8bee09db6b68fe34773f15ae638bd21ff774b5cf59",
+      "headTopY": 136,
+      "footMinX": 352,
+      "footMaxX": 1168,
+      "originOffsetY": 0
+    }
+  ]
+}

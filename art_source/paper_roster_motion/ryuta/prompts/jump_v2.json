@@ -1,0 +1,16 @@
+{
+  "id": "jump",
+  "label": "ジャンプ上昇",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/ryuta/generated/jump_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の龍太のジャンプ全身を維持し、画面右の本人左拳だけを画像2と同じ甲側の握りへ描き直す。握った4本の指の腹の線や掌の線をこちらへ見せない。左前腕を自然に回内し、こちらには滑らかな手の甲と握った指の付け根の関節、拳の上の親指の輪郭だけ見せる。左肩から肘、手首まで自然にし、逆折れや余分な指なし。右拳・顔・髪・衣装・浮いた両脚・ローファー2個・部位実寸は維持。透明PNG、クリーム白の全外周縁、背景・効果・文字なし。",
+  "references": [
+    "art_source/paper_roster_motion/ryuta/generated/jump_v1.png",
+    "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+  ],
+  "referenceRoles": [
+    "画像1：ジャンプの直接編集対象。左拳だけ修正",
+    "画像2：正しい本人左拳の甲側の参考のみ"
+  ],
+  "tool": "built-in image_gen"
+}

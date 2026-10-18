@@ -1,3 +1,11 @@
+## 最新（2026-10-19）：全8人56動作のUnity実装完了、Web最終更新へ
+
+龍太の走りv2・上昇v2・落下v1・回避v1・反撃成功v2・通常被弾v6・強被弾v2を接続。motion_ryuta_1はBuildAll成功／Edit582/582／Play81/81／Windows成功、失敗・スキップ0。最終Playは全8人の左右と7動作・通常/強被弾・反撃・解除を検査。18PNGはdocs/screenshots/motion_ryuta_1/paper_motion_ryuta/。通常被弾のユーザー指摘の左手は、右の甲状のv3/v4と右拳状のv5を不採用にし、開いた左の掌を見せるv6へ変更。画面右に親指、上へ4長指の計5指。靴の端切れも正方形1254×1254の余白で解消。採用はイラスト確認/現在ゲームで採用中/龍太/。
+
+暁2624717まで保存済み。全56枚の原画・全文条件・参照役割・版・SHA・整数梱包とRGBA保持が揃い、8人の全4検証完了。docs/codex_logs/motion_roster_native_verification.jsonに各タグの実件数・ログSHAと採用画像SHAを集計。美術最終承認とは区別。最新2つのWindowsはmotion_akatsuki_1とmotion_ryuta_1。現在8799は旧Web版なので完了扱いにしない。
+
+次はbuild_webgl.ps1 -Tag motion_roster_web -RestoreWindows→426画像（実件数を監査）→ローカル8799で実ブラウザの表示・音・エラー確認→Web証跡と全体進行表をcompleteへ→通常commit/push。Cuaでブラウザ2の検証タブ1を作成済み、?verify=1の未起動の読み込み画面。新Web完成後にreloadして確認する。千鶴・通常4原画・下/空中N各1枚・戦闘値・半減判定・保護カバン維持。
+
 ## 最新（2026-10-18）：暁まで49動作を接続、龍太を制作中
 
 暁の7動作を接続。motion_akatsuki_1はBuildAll成功／Edit582/582／Play81/81／Windows成功、失敗・スキップ0。18PNGはdocs/screenshots/motion_akatsuki_1/paper_motion_akatsuki/。採用はイラスト確認/現在ゲームで採用中/暁/。ユーザー指摘3件は旧候補を不採用：反撃v2は左の掌と親指を正しい握りへ、通常被弾v3は3脚状の膝をなくして2脚2靴・靴寸法も修正、強被弾v3は空の右手を甲側の5指へ。強被弾v2は5指だが掌の向きが逆のため不採用。カードで隠れる指を全部見えると扱わない。小さいカードの題字には簡略化・字形差があることをpart-reviewへ記録。

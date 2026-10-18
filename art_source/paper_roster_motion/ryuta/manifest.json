@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "key": "ryuta",
+  "name": "龍太",
+  "characterIndex": 8,
+  "baseIdle": "art_source/paper_roster_idle/generated/ryuta_idle_v1.png",
+  "canvasWidth": 1304,
+  "canvasHeight": 1450,
+  "pixelsPerUnit": 532.5893,
+  "sole": 1328,
+  "jobs": [
+    {
+      "id": "run",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/run_v2.json"
+    },
+    {
+      "id": "jump",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/jump_v2.json"
+    },
+    {
+      "id": "fall",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/fall_v1.json"
+    },
+    {
+      "id": "dodge",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/dodge_v1.json"
+    },
+    {
+      "id": "counter_success",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/counter_success_v2.json"
+    },
+    {
+      "id": "hit_light",
+      "version": 6,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/hit_light_v6.json"
+    },
+    {
+      "id": "hit_heavy",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/hit_heavy_v2.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "run",
+      "label": "走り",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ryuta/generated/run_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。金髪を後ろへ流し首元で短く結んだ髪、赤い瞳、耳の金色のフープピアスと小さいピアス。黒い詰め襟の制服を前開きにし、金ボタン、白シャツ、緩い赤地に白い斜め縞のネクタイ、黒スラックスと黒いローファー。人間の少年本人。同じ顔と頭身を維持。\n新しい動作「走り」：走る瞬間の強い決め姿。右へ進む両腕の振り、前脚を大きく出し後ろ脚の膝を曲げる。胸と腰の軸はほぼ直立〜前傾10度まで。ゲーム内で絵全体を45度傾けるので、絵に45度の前傾を重ねない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n龍太の両手は待機と同じ自然な握り拳。指を開く一般指定より軽く握る形を優先し、余分な指の突起を足さない。左右の手首を逆に折らない。頭髪の横幅約335px、近い右靴約155px、遠い左靴約250pxを基準に部位の実寸を維持。屈む姿勢で頭と足だけを巨大化させない。股関節は左右二つ、太腿は2本、膝2個、脛2本、足首2個、ローファー2個だけ。脚を前後に交差させず両膝と足首のつながりを見分けやすく描く。全周30px以上の透明余白。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "f59eae2150c9afb9e4a05c60a0d7bf30e88f5e592a5af8e73e31fd6bb7aaf165",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 125,
+          "top": 85,
+          "right": 1113,
+          "bottom": 1225
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "run",
+      "label": "走り",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ryuta/generated/run_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の龍太の走り全身を維持し、画面右に前へ構えている本人左の拳だけを修正。本人左前腕を自然に回内し、左手の甲をこちらへ見せる。握った4本の指の腹が正面へ並ぶ線を消す。代わりに滑らかな手の甲と握った指の付け根の関節を見せる。左拳の親指は画面左側に添え、4指を自然に握り込む。親指1本と4指、手首の逆折れなし。右の拳、顔、髪、衣装、走り姿勢、2脚2靴、頭と靴の実寸を維持。アニメ線とセル塗り、クリーム白の全外周縁、透明PNG、背景・効果・文字なし。",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/run_v1.png"
+      ],
+      "referenceRoles": [
+        "画像1：走りの直接編集対象。画面右の本人左拳だけ甲側へ"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "f96d10a737542b8ae9c1a6fa4d437058bb29ad2fa2c1c5a8c51914d8b14fdf4d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 124,
+          "top": 48,
+          "right": 1152,
+          "bottom": 1203
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/run.png",
+      "preparedSha256": "2637eba45d1b6a94366796f44439731bbfd65ec060d50ba8b2b75e7ea6352214",
+      "offsetX": 0,
+      "offsetY": 125,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ryuta/generated/jump_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。金髪を後ろへ流し首元で短く結んだ髪、赤い瞳、耳の金色のフープピアスと小さいピアス。黒い詰め襟の制服を前開きにし、金ボタン、白シャツ、緩い赤地に白い斜め縞のネクタイ、黒スラックスと黒いローファー。人間の少年本人。同じ顔と頭身を維持。\n新しい動作「ジャンプ上昇」：ジャンプの上昇中。両膝を曲げて両足を浮かせ、両肘も曲げて身体の横へ。上を見た集中した顔。空中攻撃ではなく上昇の明快な全身シルエット。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n龍太の両手は待機と同じ自然な握り拳。指を開く一般指定より軽く握る形を優先し、余分な指の突起を足さない。左右の手首を逆に折らない。頭髪の横幅約335px、近い右靴約155px、遠い左靴約250pxを基準に部位の実寸を維持。屈む姿勢で頭と足だけを巨大化させない。股関節は左右二つ、太腿は2本、膝2個、脛2本、足首2個、ローファー2個だけ。脚を前後に交差させず両膝と足首のつながりを見分けやすく描く。全周30px以上の透明余白。\n拳の面の注意：握った本人左手の掌側をこちらへ向け、指先が上なら親指は画面右。甲側をこちらへ見せるなら親指は画面左となる。親指と指の腹の面を左右取り違えない。前に出す本人左の拳は甲側を見せる形を優先し、握った4指の腹の線を正面へ描き込まない。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "47ecb0d440ea0b2ab92c9e2601b7919a5e175d97cf3b802b571ef5175c2cdf6d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 232,
+          "top": 66,
+          "right": 984,
+          "bottom": 1219
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ryuta/generated/jump_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の龍太のジャンプ全身を維持し、画面右の本人左拳だけを画像2と同じ甲側の握りへ描き直す。握った4本の指の腹の線や掌の線をこちらへ見せない。左前腕を自然に回内し、こちらには滑らかな手の甲と握った指の付け根の関節、拳の上の親指の輪郭だけ見せる。左肩から肘、手首まで自然にし、逆折れや余分な指なし。右拳・顔・髪・衣装・浮いた両脚・ローファー2個・部位実寸は維持。透明PNG、クリーム白の全外周縁、背景・効果・文字なし。",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/jump_v1.png",
+        "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+      ],
+      "referenceRoles": [
+        "画像1：ジャンプの直接編集対象。左拳だけ修正",
+        "画像2：正しい本人左拳の甲側の参考のみ"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "64a8dbc450a2c3c3db2dbeb0ac4dcd1fbe2d523e269d160a0043bcaf921aa07a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 212,
+          "top": 42,
+          "right": 1004,
+          "bottom": 1242
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/jump.png",
+      "preparedSha256": "cb1e91e6122f89b5b0c832e206d2c2c30b6ba838ddfa3416da6f7c6b40471c6a",
+      "offsetX": 115,
+      "offsetY": 86,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "fall",
+      "label": "落下",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ryuta/generated/fall_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。金髪を後ろへ流し首元で短く結んだ髪、赤い瞳、耳の金色のフープピアスと小さいピアス。黒い詰め襟の制服を前開きにし、金ボタン、白シャツ、緩い赤地に白い斜め縞のネクタイ、黒スラックスと黒いローファー。人間の少年本人。同じ顔と頭身を維持。\n新しい動作「落下」：ジャンプから落下中。足を下へ伸ばし膝を柔らかく曲げ、両腕を横へ少し開き着地に備える。両手は待機と同じ軽い握り拳。目線は斜め下前方、ジャンプ上昇と異なる姿。両足は浮いている。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n龍太の両手は待機と同じ自然な握り拳。指を開く一般指定より軽く握る形を優先し、余分な指の突起を足さない。左右の手首を逆に折らない。頭髪の横幅約335px、近い右靴約155px、遠い左靴約250pxを基準に部位の実寸を維持。屈む姿勢で頭と足だけを巨大化させない。股関節は左右二つ、太腿は2本、膝2個、脛2本、足首2個、ローファー2個だけ。脚を前後に交差させず両膝と足首のつながりを見分けやすく描く。全周30px以上の透明余白。\n拳の面の注意：握った本人左手の掌側をこちらへ向け、指先が上なら親指は画面右。甲側をこちらへ見せるなら親指は画面左となる。親指と指の腹の面を左右取り違えない。前に出す本人左の拳は甲側を見せる形を優先し、握った4指の腹の線を正面へ描き込まない。\n画像2は本人左拳の甲側の形の修正例。左拳の形のみこの参照に合わせ、こちらには滑らかな甲と関節を見せる。握った4本の指の腹がこちらへ並ぶ形に戻さない。姿勢は今回指定を優先。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png",
+        "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：修正した本人左拳の甲側の形だけ参考。走り姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "83601a02ca143b64a9eaed99e75ef302a03423dab384580473f8b89dae0674cc",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 86,
+          "top": 181,
+          "right": 1028,
+          "bottom": 1297
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/fall.png",
+      "preparedSha256": "4e5c704c0553ec4f5e6dc63696221aad0c64dfea8f75815cbca99dcfe3c3b308",
+      "offsetX": 0,
+      "offsetY": 31,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ryuta/generated/dodge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。金髪を後ろへ流し首元で短く結んだ髪、赤い瞳、耳の金色のフープピアスと小さいピアス。黒い詰め襟の制服を前開きにし、金ボタン、白シャツ、緩い赤地に白い斜め縞のネクタイ、黒スラックスと黒いローファー。人間の少年本人。同じ顔と頭身を維持。\n新しい動作「回避」：攻撃をくぐる回避。膝と腰を深く落とし、上体を右前へ少し倒す低い姿勢。両腕は身体の横へ引き、両手は待機と同じ軽い握り拳。顔は前を見て警戒。立ち絵や攻撃と区別できる低いシルエット。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n龍太の両手は待機と同じ自然な握り拳。指を開く一般指定より軽く握る形を優先し、余分な指の突起を足さない。左右の手首を逆に折らない。頭髪の横幅約335px、近い右靴約155px、遠い左靴約250pxを基準に部位の実寸を維持。屈む姿勢で頭と足だけを巨大化させない。股関節は左右二つ、太腿は2本、膝2個、脛2本、足首2個、ローファー2個だけ。脚を前後に交差させず両膝と足首のつながりを見分けやすく描く。全周30px以上の透明余白。\n拳の面の注意：握った本人左手の掌側をこちらへ向け、指先が上なら親指は画面右。甲側をこちらへ見せるなら親指は画面左となる。親指と指の腹の面を左右取り違えない。前に出す本人左の拳は甲側を見せる形を優先し、握った4指の腹の線を正面へ描き込まない。\n画像2のしゃがみと同じ頭髪・顔・靴の実寸を維持し、そこから上体を前に低くずらす回避。前の靴を巨大にする遠近の誇張なし。上に透明余白を残す。\n画像3は本人左拳の甲側の形の修正例。左拳の形のみこの参照に合わせ、こちらには滑らかな甲と関節を見せる。握った4本の指の腹がこちらへ並ぶ形に戻さない。姿勢は今回指定を優先。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png",
+        "art_source/paper_roster_core/ryuta/generated/ryuta_crouch_v2.png",
+        "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：採用しゃがみ、低姿勢での頭と靴の実寸基準のみ",
+        "画像3：修正した本人左拳の甲側の形だけ参考。走り姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "3e3efd00db4dc7e6460edfe0a4174c0dd3f9d9b50208794191f09134622377ac",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 97,
+          "top": 412,
+          "right": 1149,
+          "bottom": 1224
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/dodge.png",
+      "preparedSha256": "c09c9ab6960f0a07e89039c75023cf0f8f4a3ee4fd0f46348ad1165e8f43df94",
+      "offsetX": 85,
+      "offsetY": 104,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "counter_success",
+      "label": "カウンター成功",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ryuta/generated/counter_success_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。金髪を後ろへ流し首元で短く結んだ髪、赤い瞳、耳の金色のフープピアスと小さいピアス。黒い詰め襟の制服を前開きにし、金ボタン、白シャツ、緩い赤地に白い斜め縞のネクタイ、黒スラックスと黒いローファー。人間の少年本人。同じ顔と頭身を維持。\n新しい動作「カウンター成功」：防御から反撃が成功した短い左の正拳突き。本人左肩から上腕・肘・前腕・左拳まで自然なほぼ一直線で右前方へ伸ばす。本人右拳は胸前に構える。両腕はそれぞれの肩から追えるようにつなぎ、逆に折れた肘や顔の前を不自然に横切る腕を描かない。両足で踏み込む鋭い決め。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n龍太の両手は待機と同じ自然な握り拳。指を開く一般指定より軽く握る形を優先し、余分な指の突起を足さない。左右の手首を逆に折らない。頭髪の横幅約335px、近い右靴約155px、遠い左靴約250pxを基準に部位の実寸を維持。屈む姿勢で頭と足だけを巨大化させない。股関節は左右二つ、太腿は2本、膝2個、脛2本、足首2個、ローファー2個だけ。脚を前後に交差させず両膝と足首のつながりを見分けやすく描く。全周30px以上の透明余白。\n拳の面の注意：握った本人左手の掌側をこちらへ向け、指先が上なら親指は画面右。甲側をこちらへ見せるなら親指は画面左となる。親指と指の腹の面を左右取り違えない。前に出す本人左の拳は甲側を見せる形を優先し、握った4指の腹の線を正面へ描き込まない。\n画像2は本人左拳の甲側の形の修正例。左拳の形のみこの参照に合わせ、こちらには滑らかな甲と関節を見せる。握った4本の指の腹がこちらへ並ぶ形に戻さない。姿勢は今回指定を優先。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png",
+        "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：修正した本人左拳の甲側の形だけ参考。走り姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "8f9937c81f1ec7ba12a3a2bfe1605d9b1f8a96324bd9de7506070b030a7fda51",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 114,
+          "top": 77,
+          "right": 1160,
+          "bottom": 1269
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "counter_success",
+      "label": "カウンター成功",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ryuta/generated/counter_success_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の龍太の反撃ポーズ全身は維持し、画面右へ伸ばした本人左の拳と手首だけを解剖学的に正しい左手へ描き直す。左手の甲をこちらへ見せる、握った指先は画面右、親指は拳の上側に添えて握り込む。現在の下側の親指の突起は削除し、上側へ付け直す。滑らかな左の甲、4本の指の関節、上側の左親指1本。掌の線や折った4指の腹をこちらへ向けない。手首から左拳まで自然で逆折れなし。左肩から肘まで真っ直ぐ前へ伸ばす腕、右拳を胸に引く腕、顔・金髪・目・服・ネクタイ・2脚2靴・部位実寸は維持。アニメの線とセル塗り、薄いクリーム白の全外周縁、透明PNG。全身拡縮・背景・効果・文字なし。",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/counter_success_v1.png"
+      ],
+      "referenceRoles": [
+        "画像1：反撃の編集対象。伸ばした本人左拳の親指が下側の誤りだけ修正"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "dd105c8edb152f70fb82ac60b8d81a2b855d5985e1ccc67daaf4911a21d5f80f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 113,
+          "top": 75,
+          "right": 1163,
+          "bottom": 1269
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/counter_success.png",
+      "preparedSha256": "86ec993f50f2af93e6ee39354cb138a9e8bc50f6c7c25ef407d8a1a7dea202d7",
+      "offsetX": 71,
+      "offsetY": 59,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。金髪を後ろへ流し首元で短く結んだ髪、赤い瞳、耳の金色のフープピアスと小さいピアス。黒い詰め襟の制服を前開きにし、金ボタン、白シャツ、緩い赤地に白い斜め縞のネクタイ、黒スラックスと黒いローファー。人間の少年本人。同じ顔と頭身を維持。\n新しい動作「通常被弾」：通常攻撃を受けた瞬間。右前方から打撃を受けて胸と顔が少し左後ろへ傾き、片足を後ろへ踏み出す。両膝は曲がり、拳を胸前へ引き、歯を食いしばって何とか踏ん張る。まだ立って耐えている。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n龍太の両手は待機と同じ自然な握り拳。指を開く一般指定より軽く握る形を優先し、余分な指の突起を足さない。左右の手首を逆に折らない。頭髪の横幅約335px、近い右靴約155px、遠い左靴約250pxを基準に部位の実寸を維持。屈む姿勢で頭と足だけを巨大化させない。股関節は左右二つ、太腿は2本、膝2個、脛2本、足首2個、ローファー2個だけ。脚を前後に交差させず両膝と足首のつながりを見分けやすく描く。全周30px以上の透明余白。\n衝撃の方向は画面右前から。頭と胸は腰より画面左後ろへ移り、上体が後ろへ反ったことが分かる。右前へ突っ込む姿にしない。\n拳の面の注意：握った本人左手の掌側をこちらへ向け、指先が上なら親指は画面右。甲側をこちらへ見せるなら親指は画面左となる。親指と指の腹の面を左右取り違えない。前に出す本人左の拳は甲側を見せる形を優先し、握った4指の腹の線を正面へ描き込まない。\n画像2は本人左拳の甲側の形の修正例。左拳の形のみこの参照に合わせ、こちらには滑らかな甲と関節を見せる。握った4本の指の腹がこちらへ並ぶ形に戻さない。姿勢は今回指定を優先。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png",
+        "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：修正した本人左拳の甲側の形だけ参考。走り姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "2ddc35e2768c15434ead971f3d8e91d4e2cfe306c2794855481c653224dbc9c6",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 178,
+          "top": 124,
+          "right": 1071,
+          "bottom": 1338
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "hit_heavy",
+      "label": "強被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_heavy_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。金髪を後ろへ流し首元で短く結んだ髪、赤い瞳、耳の金色のフープピアスと小さいピアス。黒い詰め襟の制服を前開きにし、金ボタン、白シャツ、緩い赤地に白い斜め縞のネクタイ、黒スラックスと黒いローファー。人間の少年本人。同じ顔と頭身を維持。\n新しい動作「強被弾」：ハートが減る強い被弾。右前方の衝撃に胸と頭が大きく左後ろへのけぞる。両膝を曲げ一方の足は後ずさり、両腕を胸の前へ引き、両手は自然に軽く握る。目をぎゅっとつむり口を大きく開け、目尻に涙粒。いかにも痛そうなコミカルな顔。血・傷・破れなし。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n龍太の両手は待機と同じ自然な握り拳。指を開く一般指定より軽く握る形を優先し、余分な指の突起を足さない。左右の手首を逆に折らない。頭髪の横幅約335px、近い右靴約155px、遠い左靴約250pxを基準に部位の実寸を維持。屈む姿勢で頭と足だけを巨大化させない。股関節は左右二つ、太腿は2本、膝2個、脛2本、足首2個、ローファー2個だけ。脚を前後に交差させず両膝と足首のつながりを見分けやすく描く。全周30px以上の透明余白。\n衝撃の方向は画面右前から。頭と胸は腰より画面左後ろへ移り、上体が後ろへ反ったことが分かる。右前へ突っ込む姿にしない。\n拳の面の注意：握った本人左手の掌側をこちらへ向け、指先が上なら親指は画面右。甲側をこちらへ見せるなら親指は画面左となる。親指と指の腹の面を左右取り違えない。前に出す本人左の拳は甲側を見せる形を優先し、握った4指の腹の線を正面へ描き込まない。\n画像2は本人左拳の甲側の形の修正例。左拳の形のみこの参照に合わせ、こちらには滑らかな甲と関節を見せる。握った4本の指の腹がこちらへ並ぶ形に戻さない。姿勢は今回指定を優先。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png",
+        "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：修正した本人左拳の甲側の形だけ参考。走り姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "3f6aa6ef4095f8281286f368190620c5a86756f0effd859ad651737f986ed323",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 171,
+          "top": 67,
+          "right": 1157,
+          "bottom": 1244
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の龍太の被弾全身を維持し、画面右にある本人左の拳だけを画像2と同じ甲側の自然な左手へ描き直す。左の前腕を自然に回内し、握った4指の丸い腹や掌の線をこちらへ見せない。滑らかな手の甲と握った指の関節をこちらへ見せる。左の親指は4指の外に自然に添えて握り、指が重なる部分は自然に隠す。親指1本と4指、余分な指や手首の逆折れなし。反対の右拳、両肩と肘の位置、顔・髪・衣装・涙の有無・2脚2靴・部位実寸と被弾姿勢は維持。画像2の走り姿勢をコピーしない。透明PNG、同じアニメ線とセル塗り、全外周の薄いクリーム白の縁、背景・効果・文字なし。",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/hit_light_v1.png",
+        "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+      ],
+      "referenceRoles": [
+        "画像1：被弾の直接編集対象、本人左拳だけ修正",
+        "画像2：本人左の甲側の正しい握りの参考のみ"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "bf8108f5e18d428d51091192c0d75ef5abe7263da89d3d955a0c5016b064ab50",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 117,
+          "top": 27,
+          "right": 1102,
+          "bottom": 1388
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "hit_heavy",
+      "label": "強被弾",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_heavy_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の龍太の被弾全身を維持し、画面右にある本人左の拳だけを画像2と同じ甲側の自然な左手へ描き直す。左の前腕を自然に回内し、握った4指の丸い腹や掌の線をこちらへ見せない。滑らかな手の甲と握った指の関節をこちらへ見せる。左の親指は4指の外に自然に添えて握り、指が重なる部分は自然に隠す。親指1本と4指、余分な指や手首の逆折れなし。反対の右拳、両肩と肘の位置、顔・髪・衣装・涙の有無・2脚2靴・部位実寸と被弾姿勢は維持。画像2の走り姿勢をコピーしない。透明PNG、同じアニメ線とセル塗り、全外周の薄いクリーム白の縁、背景・効果・文字なし。",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/hit_heavy_v1.png",
+        "art_source/paper_roster_motion/ryuta/generated/run_v2.png"
+      ],
+      "referenceRoles": [
+        "画像1：被弾の直接編集対象、本人左拳だけ修正",
+        "画像2：本人左の甲側の正しい握りの参考のみ"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "7d3b124c158c7af83b9fc1f8ea2b5064802a21986fdfcd569dd3017326e321bc",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 169,
+          "top": 50,
+          "right": 1168,
+          "bottom": 1242
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_heavy.png",
+      "preparedSha256": "86f2693e763c8a2f73856d8bee09db6b68fe34773f15ae638bd21ff774b5cf59",
+      "offsetX": 0,
+      "offsetY": 86,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v3.png",
+      "prompt": "Use case: precise-object-edit. 画像1の龍太の通常被弾を直接編集。変更するのは画面右の本人左拳の面だけ。画像2のように自然に回内した左の甲側をこちらへ見せ、4指の丸い腹や掌線を見せない。こちらには滑らかな甲と握った指の関節、自然に添えた親指。親指1本と4指。画像2の全身の大きさは使わない。画像1の頭髪約335px、左右の靴約155pxと250px、顔、首、身体、衣装、2脚2靴と後ろへ反る姿勢をそのまま維持。画像1は全身が画像内へ収まっているので同じ透明余白を保つ。1103×1426の透明キャンバス。全周40px以上の余白、靴先や白縁を切らない。全身の拡大縮小禁止、枠へ埋めない。薄いクリーム白の全外周縁、同じアニメ線とセル塗り。背景・床・効果・文字なし。",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/hit_light_v1.png",
+        "art_source/paper_roster_motion/ryuta/generated/hit_light_v2.png"
+      ],
+      "referenceRoles": [
+        "画像1：直接編集対象。顔・身体・脚・靴の大きさと余白を維持",
+        "画像2：修正した本人左拳の甲側だけ参考。大きくなった全身や切れた靴はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "91091a808fd30409cb9c576a6315c34facdecf936a98c6da34c42112fbecabd5",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 117,
+          "top": 59,
+          "right": 1102,
+          "bottom": 1397
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 4,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v4.png",
+      "prompt": "Use case: precise-object-edit. ゲームの全身スプライト1体。出力は正方形1536×1536の真の透明キャンバスに変更し、上下左右に大きい透明余白を追加する。画像1の龍太の通常被弾ポーズ、修正済みの甲側の左拳と胸前の右拳、歯を食いしばる顔、金髪、赤い目、制服、ネクタイ、2脚2靴を維持。現在右端へ接する靴先と白縁を完全に描き切り、右側60px以上の透明余白を残す。画像2を頭髪約335px・近い右靴約155px・遠い左靴約250pxの実寸基準にし、枠に合わせて人物を巨大化しない。足元や頭を画像端へ近づけず全周60px以上の余白。通常被弾の頭と胸が腰より左後ろにある後ずさり姿勢。白い切り抜き縁を全外周へ連続。1人の全身だけ、背景・影・床・効果・文字なし。",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/hit_light_v3.png",
+        "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "画像1：通常被弾の編集対象。右靴の端が切れたため余白と先端を補う",
+        "画像2：頭髪と両靴の部位実寸の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "798a68319c34e41723634cee9bc8343e0ceb53374e003150616facf83f530afe",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 249,
+          "top": 66,
+          "right": 1092,
+          "bottom": 1193
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_light.png",
+      "preparedSha256": "e2ae61d42e77a0e9c3b68d4686fd236ce231203a5233590d811febffd1a5d91f",
+      "offsetX": 38,
+      "offsetY": 135,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 5,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v5.png",
+      "prompt": "Use case: precise-object-edit. 画像1の龍太の全身を維持し、画面右に出している本人左手と手首だけを描き直す。現在は右手の甲になっているので、この手をコピーしない。左の拳を少し上向きに立て、手の内側、握り込んだ4本の指の腹と左親指がこちらに見える正しい左の握り拳にする。手の甲をこちらへ見せない。指を上へ向けた左の拳なので、親指の付け根は画面右側、左の親指は画面右から4本の曲げた指の上へ自然にかぶさる。中指・薬指・小指・人差し指は掌の画面左寄りへ握り込む。親指が画面左から出る右拳は不可。親指1本+4指、余分な指なし。左手首を自然にひねり、左肩→上腕→肘→前腕とつなぐ。腕を逆に折らない。胸に引いた右拳、頭・金髪・顔・赤目・制服・ネクタイ・2脚2靴・被弾姿勢・全身の部位実寸と透明余白は画像1のまま。正方形透明PNG一体、全外周クリーム白の縁、同じアニメの線とセル塗り。全身拡縮・背景・床・影・効果・文字追加なし。",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/hit_light_v4.png"
+      ],
+      "referenceRoles": [
+        "画像1：通常被弾の編集対象。画面右へ出す本人左拳だけを正しい掌側の左拳へ"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "4fe28dd32c99d485fe7205a33a6abaafd51b49b0364bca1e18f7224236a93015",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 249,
+          "top": 65,
+          "right": 1093,
+          "bottom": 1194
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 6,
+      "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v6.png",
+      "prompt": "Use case: precise-object-edit. Change ONLY the hand at the far RIGHT of this image, which belongs to the character's anatomical LEFT arm. Replace the fist with an OPEN LEFT HAND, palm facing the viewer, fingers pointing UP. The THUMB MUST BE ON THE IMAGE-RIGHT edge of the palm, the LITTLE FINGER on the IMAGE-LEFT edge. Four long fingers pointing up, one short thumb extending to the RIGHT. Exactly five digits. Do not draw the thumb on the left. Do not show the back of this hand. Natural left forearm and wrist, no bent-back joint. Keep the hand modest, approximately 120px wide and 140px tall, with a slightly relaxed spread as he recoils. This is a LEFT PALM, thumb on the RIGHT, pinky on the LEFT. Keep EVERYTHING else unchanged: right fist at the chest, face, blond hair, red eyes, uniform, tie, backward recoil pose, two legs, two shoes, body proportions and the square transparent canvas margins. Same anime linework, cel shading and continuous cream white cutout border. No background, floor, shadow, effects, words or other figures. 全身は画像1のまま。画面右の手だけ、親指が画面右に来る左の掌へ描き直す。",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/hit_light_v4.png"
+      ],
+      "referenceRoles": [
+        "画像1：編集対象。画面右の本人左手を開いた左の掌へ"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "fa184ad9bff33778436ecdb8d451449bae6c5911614e2e93d2bc5fca85720226",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 249,
+          "top": 65,
+          "right": 1092,
+          "bottom": 1194
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_light.png",
+      "preparedSha256": "a7f3b54a757696d630247ea611c145bf7d1b280a1cfd10ff4f3541af55b914c8",
+      "offsetX": 38,
+      "offsetY": 134,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "motion_ryuta_1"
+}

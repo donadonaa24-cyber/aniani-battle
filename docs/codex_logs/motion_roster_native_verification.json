@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "task": "docs/codex_tasks/PAPER_ROSTER_SEVEN_MOTION_KEYS.md",
+  "expectedCharacters": 8,
+  "expectedImages": 56,
+  "verifiedCharacters": 8,
+  "verifiedImages": 56,
+  "complete": true,
+  "retentionNote": "元XML・ログの実件数とSHAを保存。容量管理で古いTestResultsを削除した後はこの集計と人物別18PNGを参照。",
+  "characters": [
+    {
+      "key": "toma",
+      "name": "透真",
+      "tag": "motion_toma_3",
+      "BuildAll": {
+        "success": true,
+        "log": "TestResults/motion_toma_3_buildall.log",
+        "sha256": "45887037d134e1360f94a77163fe257057562239fc502a47b4e0776e3538b877"
+      },
+      "EditMode": {
+        "total": 582,
+        "passed": 582,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_toma_3_EditMode.xml",
+        "sha256": "72ea6a102c73985aeb3102ec256c8fea8907e9c03511843bf630b83c4ba9a442"
+      },
+      "PlayMode": {
+        "total": 81,
+        "passed": 81,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_toma_3_PlayMode.xml",
+        "sha256": "22c77f7e752dacd95b60ed871c5a1a0f1cd8b3a8cf3460de0ca324abf938806c"
+      },
+      "Windows": {
+        "success": true,
+        "log": "TestResults/motion_toma_3_build.log",
+        "sha256": "de2a487d29b14a362d8bf246d2b7ff706b733126bfcbcd5b57d319a1ba0f4969"
+      },
+      "images": 7,
+      "selected": [
+        {
+          "id": "run",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/toma/generated/run_v1.png",
+          "prepared": "art_source/paper_roster_motion/toma/prepared/run.png",
+          "sha256": "4ef392e82c2151ae2924fd460c3e990594a2e286d903976c89a04b4ece07041d"
+        },
+        {
+          "id": "jump",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/toma/generated/jump_v1.png",
+          "prepared": "art_source/paper_roster_motion/toma/prepared/jump.png",
+          "sha256": "22302bf00c01bcf60e01c6a31e406ffafb5710871d6a05c161eddaa360e866d1"
+        },
+        {
+          "id": "fall",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/toma/generated/fall_v2.png",
+          "prepared": "art_source/paper_roster_motion/toma/prepared/fall.png",
+          "sha256": "72a2852686934ac45b6f5ab6986b8543baf7f78cadaa8777c5d2e75297234679"
+        },
+        {
+          "id": "dodge",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/toma/generated/dodge_v2.png",
+          "prepared": "art_source/paper_roster_motion/toma/prepared/dodge.png",
+          "sha256": "8f1721a8aa8420fcdac55a147b36f25019d03435a7674d2b11e56ebb3ce49c3e"
+        },
+        {
+          "id": "counter_success",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/toma/generated/counter_success_v2.png",
+          "prepared": "art_source/paper_roster_motion/toma/prepared/counter_success.png",
+          "sha256": "45addb32eb0ea603e3773d50a0c0e3393c755f6c747741f7c12511155800c621"
+        },
+        {
+          "id": "hit_light",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/toma/generated/hit_light_v1.png",
+          "prepared": "art_source/paper_roster_motion/toma/prepared/hit_light.png",
+          "sha256": "3e2e9dd282b4fa1eb8e4d4d73b3bd07294a174f7e849ae9fb9a9d6084fa6206b"
+        },
+        {
+          "id": "hit_heavy",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/toma/generated/hit_heavy_v1.png",
+          "prepared": "art_source/paper_roster_motion/toma/prepared/hit_heavy.png",
+          "sha256": "2d4ff1e5bc3cca1e6048ab527311d721fde832b51713e138faf865cee51ace37"
+        }
+      ]
+    },
+    {
+      "key": "ren",
+      "name": "蓮",
+      "tag": "motion_ren_2",
+      "BuildAll": {
+        "success": true,
+        "log": "TestResults/motion_ren_2_buildall.log",
+        "sha256": "21eef464eae525464c6e30a8c653cf5b7552e5bc26ace91951d2168a1bc5cf8d"
+      },
+      "EditMode": {
+        "total": 582,
+        "passed": 582,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_ren_2_EditMode.xml",
+        "sha256": "b374857f7fcb664e91453e019cd7382dd8367423792c869b04df829aff05c296"
+      },
+      "PlayMode": {
+        "total": 81,
+        "passed": 81,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_ren_2_PlayMode.xml",
+        "sha256": "974c9de8eff057da4e561320f7c0149f82f00a714a73fcb29ecaa3565b5d139d"
+      },
+      "Windows": {
+        "success": true,
+        "log": "TestResults/motion_ren_2_build.log",
+        "sha256": "3cf5f2163738fe7b5fb67afceb7d2b81dd764579bd525c47fb8f29d8ec73a98c"
+      },
+      "images": 7,
+      "selected": [
+        {
+          "id": "run",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/ren/generated/run_v1.png",
+          "prepared": "art_source/paper_roster_motion/ren/prepared/run.png",
+          "sha256": "aebca4dbd56bc9f84e8831570978e06f32a732008d82e1c166e5ce997d329167"
+        },
+        {
+          "id": "jump",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/ren/generated/jump_v1.png",
+          "prepared": "art_source/paper_roster_motion/ren/prepared/jump.png",
+          "sha256": "3366d53887e161b2ade139fefdb3581eda9be1eb6c93be9b4342b3cb8eb6bb53"
+        },
+        {
+          "id": "fall",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/ren/generated/fall_v1.png",
+          "prepared": "art_source/paper_roster_motion/ren/prepared/fall.png",
+          "sha256": "aade3a56ff3aeddb59ef24b0df0e9718fb6ecf13b2c4b6f12e25e567c7d5fa39"
+        },
+        {
+          "id": "dodge",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/ren/generated/dodge_v2.png",
+          "prepared": "art_source/paper_roster_motion/ren/prepared/dodge.png",
+          "sha256": "3bea13370ba90f6b6f6358d9911a25f8678d472e58180094c33279dfacaa9ffb"
+        },
+        {
+          "id": "counter_success",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/ren/generated/counter_success_v1.png",
+          "prepared": "art_source/paper_roster_motion/ren/prepared/counter_success.png",
+          "sha256": "3321b5d1302b090c638a27d3f1d7eb36a6260073002e2034dc30d725b3a64894"
+        },
+        {
+          "id": "hit_light",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/ren/generated/hit_light_v1.png",
+          "prepared": "art_source/paper_roster_motion/ren/prepared/hit_light.png",
+          "sha256": "ec7ce9f97408203cdbc6bd5c2e671d9afcebab64033beff0801e7a2223149bcc"
+        },
+        {
+          "id": "hit_heavy",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/ren/generated/hit_heavy_v1.png",
+          "prepared": "art_source/paper_roster_motion/ren/prepared/hit_heavy.png",
+          "sha256": "173a207542cac93f0fb5f25d7888f804dda00e6f5a87ce482ddaaede24df4be4"
+        }
+      ]
+    },
+    {
+      "key": "minato",
+      "name": "湊",
+      "tag": "motion_minato_1",
+      "BuildAll": {
+        "success": true,
+        "log": "TestResults/motion_minato_1_buildall.log",
+        "sha256": "a7bf9ab5545ba5650e4690437b8d5e9c67d41a3f1c0162940aa6017ad10e70fe"
+      },
+      "EditMode": {
+        "total": 582,
+        "passed": 582,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_minato_1_EditMode.xml",
+        "sha256": "7683ba4b33c5914325c48f1a6dcd57f1cf8ae85b6ebba388161b5963d77aed3b"
+      },
+      "PlayMode": {
+        "total": 81,
+        "passed": 81,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_minato_1_PlayMode.xml",
+        "sha256": "df46d724b64b85d0f13f44e844a7ff674cf759b429feee2a0d9705fb6e7fdc71"
+      },
+      "Windows": {
+        "success": true,
+        "log": "TestResults/motion_minato_1_build.log",
+        "sha256": "8096af19e4d01c34dd286e64546a5d1f0b6a36724aea23451bdce4c7f0514989"
+      },
+      "images": 7,
+      "selected": [
+        {
+          "id": "run",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/minato/generated/run_v1.png",
+          "prepared": "art_source/paper_roster_motion/minato/prepared/run.png",
+          "sha256": "763d4af3d17923f05153f1c2e390f965f65553f2a15a5dc201d0b94c08f80de6"
+        },
+        {
+          "id": "jump",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/minato/generated/jump_v1.png",
+          "prepared": "art_source/paper_roster_motion/minato/prepared/jump.png",
+          "sha256": "62b8ec502c27e24f88550827311ff6dbec07af6d412a922dd22a0297f6f61972"
+        },
+        {
+          "id": "fall",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/minato/generated/fall_v1.png",
+          "prepared": "art_source/paper_roster_motion/minato/prepared/fall.png",
+          "sha256": "188a7a2509ff379e437eb5d6aeab6f0cc60ae235256ea6bde540dbf354fe9084"
+        },
+        {
+          "id": "dodge",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/minato/generated/dodge_v1.png",
+          "prepared": "art_source/paper_roster_motion/minato/prepared/dodge.png",
+          "sha256": "2437c914f11249b8cb6f32fda0a45ce1cf0b5e5793fddffdd00462c6895ea37d"
+        },
+        {
+          "id": "counter_success",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/minato/generated/counter_success_v1.png",
+          "prepared": "art_source/paper_roster_motion/minato/prepared/counter_success.png",
+          "sha256": "d0ea2b33831b0361a821b00ff7cf408a712c733e520841896b0fcc9ea3da47f3"
+        },
+        {
+          "id": "hit_light",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/minato/generated/hit_light_v1.png",
+          "prepared": "art_source/paper_roster_motion/minato/prepared/hit_light.png",
+          "sha256": "39cd657a269facc47a4f0335ced460948844dc13e23db19e29c0684806c8c01f"
+        },
+        {
+          "id": "hit_heavy",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/minato/generated/hit_heavy_v1.png",
+          "prepared": "art_source/paper_roster_motion/minato/prepared/hit_heavy.png",
+          "sha256": "63eff74136cee4e7c0aba214ce42186936e73bc68172e6594dfd7455c62c0761"
+        }
+      ]
+    },
+    {
+      "key": "shiro",
+      "name": "シロ",
+      "tag": "motion_shiro_1",
+      "BuildAll": {
+        "success": true,
+        "log": "TestResults/motion_shiro_1_buildall.log",
+        "sha256": "d44c10b1add9f1c34d5435b00ec3779f8b712672fd466c93a3dea4d08b849f91"
+      },
+      "EditMode": {
+        "total": 582,
+        "passed": 582,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_shiro_1_EditMode.xml",
+        "sha256": "24666da55078c0075b89e3a259f0ac4996fe2eedbfcbc886203d9692d117221e"
+      },
+      "PlayMode": {
+        "total": 81,
+        "passed": 81,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_shiro_1_PlayMode.xml",
+        "sha256": "5c30ecb0746ab560ad3a3caeab56b99beac3f65fd322f5464c24347206aab0b4"
+      },
+      "Windows": {
+        "success": true,
+        "log": "TestResults/motion_shiro_1_build.log",
+        "sha256": "85d980da4d3a2d2a9c3dffa83ca4402cae147361df8fa8903af99687d0468847"
+      },
+      "images": 7,
+      "selected": [
+        {
+          "id": "run",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/shiro/generated/run_v1.png",
+          "prepared": "art_source/paper_roster_motion/shiro/prepared/run.png",
+          "sha256": "cf2f0f549221f89658b535340db3fb04a62afcc2bbe3e443e4be68f1314c172f"
+        },
+        {
+          "id": "jump",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/shiro/generated/jump_v1.png",
+          "prepared": "art_source/paper_roster_motion/shiro/prepared/jump.png",
+          "sha256": "cbcdb37e450996cce4ad3d6ef668a5efbc59118e8f798073cd06285663316aa0"
+        },
+        {
+          "id": "fall",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/shiro/generated/fall_v2.png",
+          "prepared": "art_source/paper_roster_motion/shiro/prepared/fall.png",
+          "sha256": "369b249bc9a7b3ccc786c70a644f2b42fc4d32f549ecaa6ac8344d8e1aadb865"
+        },
+        {
+          "id": "dodge",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/shiro/generated/dodge_v2.png",
+          "prepared": "art_source/paper_roster_motion/shiro/prepared/dodge.png",
+          "sha256": "05a84d1431db8d173d7806f4be30bfc7c67d3742e86843f2d18e3e96ec7a6bab"
+        },
+        {
+          "id": "counter_success",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/shiro/generated/counter_success_v1.png",
+          "prepared": "art_source/paper_roster_motion/shiro/prepared/counter_success.png",
+          "sha256": "4bd7b85fcdf915ddeed3b2f9734d69e64528a34927c05f8884079d42e015374a"
+        },
+        {
+          "id": "hit_light",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/shiro/generated/hit_light_v1.png",
+          "prepared": "art_source/paper_roster_motion/shiro/prepared/hit_light.png",
+          "sha256": "24ebe98bd356f78f0a5b0faa26edb7e692ea1c5fbcdad81c186de1c9f91992d8"
+        },
+        {
+          "id": "hit_heavy",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/shiro/generated/hit_heavy_v1.png",
+          "prepared": "art_source/paper_roster_motion/shiro/prepared/hit_heavy.png",
+          "sha256": "1ad83d644dbca1aa9351ec630915fe3676144ec563a8616212f2c997cfac3dda"
+        }
+      ]
+    },
+    {
+      "key": "yui",
+      "name": "結衣",
+      "tag": "motion_yui_1",
+      "BuildAll": {
+        "success": true,
+        "log": "TestResults/motion_yui_1_buildall.log",
+        "sha256": "83b5237d03fdc2f91a6fc5f3fcf4d375067cf96410c0593abd90ded9835620b9"
+      },
+      "EditMode": {
+        "total": 582,
+        "passed": 582,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_yui_1_EditMode.xml",
+        "sha256": "1bb1da9241282dd9318540261019af9b28b8edba081d3f10ed5be16073e67348"
+      },
+      "PlayMode": {
+        "total": 81,
+        "passed": 81,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_yui_1_PlayMode.xml",
+        "sha256": "a7d87596c23e63bb7433f3ad56c7a0e3a4dada14f719c08c5c4f03121d45fe35"
+      },
+      "Windows": {
+        "success": true,
+        "log": "TestResults/motion_yui_1_build.log",
+        "sha256": "f0603c1b60fc06d927601e6ca45ecb83651b03d4a4ab8efe59e55ee46a7c15a4"
+      },
+      "images": 7,
+      "selected": [
+        {
+          "id": "run",
+          "version": 3,
+          "source": "art_source/paper_roster_motion/yui/generated/run_v3.png",
+          "prepared": "art_source/paper_roster_motion/yui/prepared/run.png",
+          "sha256": "375a2c8f4f4e8ff22af3a3b412297bd0564e31f82cff8a62008c628b3f737d55"
+        },
+        {
+          "id": "jump",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/yui/generated/jump_v1.png",
+          "prepared": "art_source/paper_roster_motion/yui/prepared/jump.png",
+          "sha256": "198e26575ba3fde4f5b65c3992f8ab1563ac45099eabe90acc7b90c31825781d"
+        },
+        {
+          "id": "fall",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/yui/generated/fall_v1.png",
+          "prepared": "art_source/paper_roster_motion/yui/prepared/fall.png",
+          "sha256": "3411551d54cc5dacba1ba1ee66edd128bc5d04be59892c2265a2cba12f2c19b6"
+        },
+        {
+          "id": "dodge",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/yui/generated/dodge_v1.png",
+          "prepared": "art_source/paper_roster_motion/yui/prepared/dodge.png",
+          "sha256": "5fd5739f6bd47c100563f48252eb5f82edac24496dc8825740858f07459b2e5a"
+        },
+        {
+          "id": "counter_success",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/yui/generated/counter_success_v2.png",
+          "prepared": "art_source/paper_roster_motion/yui/prepared/counter_success.png",
+          "sha256": "2cc208c1267073fcfcf44ec5f38718aceb34ed8ebf49fd21bbe9b9f42d168aa8"
+        },
+        {
+          "id": "hit_light",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/yui/generated/hit_light_v1.png",
+          "prepared": "art_source/paper_roster_motion/yui/prepared/hit_light.png",
+          "sha256": "d9434199510020336068fda25f5126952aa1c12ef41f1c5460ab983df56af7d9"
+        },
+        {
+          "id": "hit_heavy",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/yui/generated/hit_heavy_v1.png",
+          "prepared": "art_source/paper_roster_motion/yui/prepared/hit_heavy.png",
+          "sha256": "674dd9a9d417c9a2172efd0880492cbdedb967872a3968a083ba4c1111d8777b"
+        }
+      ]
+    },
+    {
+      "key": "king",
+      "name": "黒獅子王",
+      "tag": "motion_king_1",
+      "BuildAll": {
+        "success": true,
+        "log": "TestResults/motion_king_1_buildall.log",
+        "sha256": "72f76ca9a45296f35c683e5e78def9ee2041e845e8f59de8d7dc80d56c9c59d7"
+      },
+      "EditMode": {
+        "total": 582,
+        "passed": 582,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_king_1_EditMode.xml",
+        "sha256": "8a505c27c2ac1b88dd6ab4d503b919dc588c95948754728913172dd7d6fd5e76"
+      },
+      "PlayMode": {
+        "total": 81,
+        "passed": 81,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_king_1_PlayMode.xml",
+        "sha256": "8fb79aabba1da12dda31fc47e4420194084e8e3aef424df0634dc711b3a7de23"
+      },
+      "Windows": {
+        "success": true,
+        "log": "TestResults/motion_king_1_build.log",
+        "sha256": "7f3bb9d14d574476503b5d2dc29a9392f6f5e930f42ee0b1f8cee4a48d47e651"
+      },
+      "images": 7,
+      "selected": [
+        {
+          "id": "run",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/king/generated/run_v1.png",
+          "prepared": "art_source/paper_roster_motion/king/prepared/run.png",
+          "sha256": "a12cd56a260728e75792dd6b102fbf0f1b95ad09a0de2f31ea10a76eec91303d"
+        },
+        {
+          "id": "jump",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/king/generated/jump_v1.png",
+          "prepared": "art_source/paper_roster_motion/king/prepared/jump.png",
+          "sha256": "6c3f3f0cf58a46055b6dfcf2d3dbf4a8ef522138de3e55722da0ccc51c4bc250"
+        },
+        {
+          "id": "fall",
+          "version": 3,
+          "source": "art_source/paper_roster_motion/king/generated/fall_v3.png",
+          "prepared": "art_source/paper_roster_motion/king/prepared/fall.png",
+          "sha256": "87ddce9a6213c16769ff6e3deec589fe7a06925e9c97fb0871c3ef2832ac1e9a"
+        },
+        {
+          "id": "dodge",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/king/generated/dodge_v1.png",
+          "prepared": "art_source/paper_roster_motion/king/prepared/dodge.png",
+          "sha256": "00d092d96c78b6dbe7daa18906838813a115c9db08fe37dc4853504d042c829e"
+        },
+        {
+          "id": "counter_success",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/king/generated/counter_success_v2.png",
+          "prepared": "art_source/paper_roster_motion/king/prepared/counter_success.png",
+          "sha256": "7f79629b9fb4dbb90e72646129cb810b2050bf3f55b16e03b3fc43e1fb9abe86"
+        },
+        {
+          "id": "hit_light",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/king/generated/hit_light_v1.png",
+          "prepared": "art_source/paper_roster_motion/king/prepared/hit_light.png",
+          "sha256": "d639ebcf9f3bf7216726be2d1517ac18c9f5d77d90cb4774d7877f276465e6a3"
+        },
+        {
+          "id": "hit_heavy",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/king/generated/hit_heavy_v2.png",
+          "prepared": "art_source/paper_roster_motion/king/prepared/hit_heavy.png",
+          "sha256": "043c2600e7db5695d900d2e2f77c6e665d5e6aaef395a8497c65d0b1db2404c8"
+        }
+      ]
+    },
+    {
+      "key": "akatsuki",
+      "name": "暁",
+      "tag": "motion_akatsuki_1",
+      "BuildAll": {
+        "success": true,
+        "log": "TestResults/motion_akatsuki_1_buildall.log",
+        "sha256": "b6143c523701214e9f210843d108f5a30832cd55171c1db0c2089b6855e03440"
+      },
+      "EditMode": {
+        "total": 582,
+        "passed": 582,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_akatsuki_1_EditMode.xml",
+        "sha256": "c133e43be31d95bdac7d5d35bff91fe5ef16a234c78c2c1b8da0ada299c2024d"
+      },
+      "PlayMode": {
+        "total": 81,
+        "passed": 81,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_akatsuki_1_PlayMode.xml",
+        "sha256": "816de09a8d377b31dd7df72425ffb849561aa1fe93b7c537f5217b5e4cb392e6"
+      },
+      "Windows": {
+        "success": true,
+        "log": "TestResults/motion_akatsuki_1_build.log",
+        "sha256": "5d4c5f15d5fb6f86b73569ac01651683fa33ce9f1269eadcd8c44ce1a45baac0"
+      },
+      "images": 7,
+      "selected": [
+        {
+          "id": "run",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/akatsuki/generated/run_v2.png",
+          "prepared": "art_source/paper_roster_motion/akatsuki/prepared/run.png",
+          "sha256": "8fed37a7fc0ccdd8978718b1b7881261ee80bdf85ed3f33b1f704f665e5cbca8"
+        },
+        {
+          "id": "jump",
+          "version": 3,
+          "source": "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png",
+          "prepared": "art_source/paper_roster_motion/akatsuki/prepared/jump.png",
+          "sha256": "1d16745742937434edfd28d3e05af8cc53449cd3c4a3e1e8e7ab08263576cf32"
+        },
+        {
+          "id": "fall",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/akatsuki/generated/fall_v1.png",
+          "prepared": "art_source/paper_roster_motion/akatsuki/prepared/fall.png",
+          "sha256": "5e7dfc6152ba0c64377381d6d400e3e9db370a91078f5575a5202c8879b65a6b"
+        },
+        {
+          "id": "dodge",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/akatsuki/generated/dodge_v2.png",
+          "prepared": "art_source/paper_roster_motion/akatsuki/prepared/dodge.png",
+          "sha256": "0440400f869b0214f35b1c8b7529fd3c57168c36a55b454adaeb281da3a48336"
+        },
+        {
+          "id": "counter_success",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/akatsuki/generated/counter_success_v2.png",
+          "prepared": "art_source/paper_roster_motion/akatsuki/prepared/counter_success.png",
+          "sha256": "2722c3be89a09c332bc0588faabeb6d56c66fea85ecb0909a6feb02906576a2e"
+        },
+        {
+          "id": "hit_light",
+          "version": 3,
+          "source": "art_source/paper_roster_motion/akatsuki/generated/hit_light_v3.png",
+          "prepared": "art_source/paper_roster_motion/akatsuki/prepared/hit_light.png",
+          "sha256": "d77944752827916848c79b6f7ba456a46069b766edef3d9fb461e4772720793a"
+        },
+        {
+          "id": "hit_heavy",
+          "version": 3,
+          "source": "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v3.png",
+          "prepared": "art_source/paper_roster_motion/akatsuki/prepared/hit_heavy.png",
+          "sha256": "125b2bffafdc3c0e678c6ba8c2cb071f08728630857c78fef0a841a365ad3719"
+        }
+      ]
+    },
+    {
+      "key": "ryuta",
+      "name": "龍太",
+      "tag": "motion_ryuta_1",
+      "BuildAll": {
+        "success": true,
+        "log": "TestResults/motion_ryuta_1_buildall.log",
+        "sha256": "b0bea17bebc53c8edda340569d837edfc12faa4d26712b46f2539deeeed2e4e1"
+      },
+      "EditMode": {
+        "total": 582,
+        "passed": 582,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_ryuta_1_EditMode.xml",
+        "sha256": "d18b1600aee399f8268b1270934c6d6febde75089217637a2802c62746a7d0d7"
+      },
+      "PlayMode": {
+        "total": 81,
+        "passed": 81,
+        "failed": 0,
+        "skipped": 0,
+        "source": "TestResults/motion_ryuta_1_PlayMode.xml",
+        "sha256": "f933be39ff33243e5c746011946ba42f3fa24a9477c617e8d9904f6a3a759a38"
+      },
+      "Windows": {
+        "success": true,
+        "log": "TestResults/motion_ryuta_1_build.log",
+        "sha256": "c3f53db6f68ec29ab803244251e1ad8153141eeaaee037224c598061cb4af692"
+      },
+      "images": 7,
+      "selected": [
+        {
+          "id": "run",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/ryuta/generated/run_v2.png",
+          "prepared": "art_source/paper_roster_motion/ryuta/prepared/run.png",
+          "sha256": "2637eba45d1b6a94366796f44439731bbfd65ec060d50ba8b2b75e7ea6352214"
+        },
+        {
+          "id": "jump",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/ryuta/generated/jump_v2.png",
+          "prepared": "art_source/paper_roster_motion/ryuta/prepared/jump.png",
+          "sha256": "cb1e91e6122f89b5b0c832e206d2c2c30b6ba838ddfa3416da6f7c6b40471c6a"
+        },
+        {
+          "id": "fall",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/ryuta/generated/fall_v1.png",
+          "prepared": "art_source/paper_roster_motion/ryuta/prepared/fall.png",
+          "sha256": "4e5c704c0553ec4f5e6dc63696221aad0c64dfea8f75815cbca99dcfe3c3b308"
+        },
+        {
+          "id": "dodge",
+          "version": 1,
+          "source": "art_source/paper_roster_motion/ryuta/generated/dodge_v1.png",
+          "prepared": "art_source/paper_roster_motion/ryuta/prepared/dodge.png",
+          "sha256": "c09c9ab6960f0a07e89039c75023cf0f8f4a3ee4fd0f46348ad1165e8f43df94"
+        },
+        {
+          "id": "counter_success",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/ryuta/generated/counter_success_v2.png",
+          "prepared": "art_source/paper_roster_motion/ryuta/prepared/counter_success.png",
+          "sha256": "86ec993f50f2af93e6ee39354cb138a9e8bc50f6c7c25ef407d8a1a7dea202d7"
+        },
+        {
+          "id": "hit_light",
+          "version": 6,
+          "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v6.png",
+          "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_light.png",
+          "sha256": "a7f3b54a757696d630247ea611c145bf7d1b280a1cfd10ff4f3541af55b914c8"
+        },
+        {
+          "id": "hit_heavy",
+          "version": 2,
+          "source": "art_source/paper_roster_motion/ryuta/generated/hit_heavy_v2.png",
+          "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_heavy.png",
+          "sha256": "86f2693e763c8a2f73856d8bee09db6b68fe34773f15ae638bd21ff774b5cf59"
+        }
+      ]
+    }
+  ]
+}

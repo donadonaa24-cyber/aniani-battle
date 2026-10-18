@@ -1,0 +1,14 @@
+{
+  "id": "counter_success",
+  "label": "カウンター成功",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/ryuta/generated/counter_success_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の龍太の反撃ポーズ全身は維持し、画面右へ伸ばした本人左の拳と手首だけを解剖学的に正しい左手へ描き直す。左手の甲をこちらへ見せる、握った指先は画面右、親指は拳の上側に添えて握り込む。現在の下側の親指の突起は削除し、上側へ付け直す。滑らかな左の甲、4本の指の関節、上側の左親指1本。掌の線や折った4指の腹をこちらへ向けない。手首から左拳まで自然で逆折れなし。左肩から肘まで真っ直ぐ前へ伸ばす腕、右拳を胸に引く腕、顔・金髪・目・服・ネクタイ・2脚2靴・部位実寸は維持。アニメの線とセル塗り、薄いクリーム白の全外周縁、透明PNG。全身拡縮・背景・効果・文字なし。",
+  "references": [
+    "art_source/paper_roster_motion/ryuta/generated/counter_success_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：反撃の編集対象。伸ばした本人左拳の親指が下側の誤りだけ修正"
+  ],
+  "tool": "built-in image_gen"
+}

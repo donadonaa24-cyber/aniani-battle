@@ -1,0 +1,16 @@
+{
+  "id": "hit_light",
+  "label": "通常被弾",
+  "version": 4,
+  "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v4.png",
+  "prompt": "Use case: precise-object-edit. ゲームの全身スプライト1体。出力は正方形1536×1536の真の透明キャンバスに変更し、上下左右に大きい透明余白を追加する。画像1の龍太の通常被弾ポーズ、修正済みの甲側の左拳と胸前の右拳、歯を食いしばる顔、金髪、赤い目、制服、ネクタイ、2脚2靴を維持。現在右端へ接する靴先と白縁を完全に描き切り、右側60px以上の透明余白を残す。画像2を頭髪約335px・近い右靴約155px・遠い左靴約250pxの実寸基準にし、枠に合わせて人物を巨大化しない。足元や頭を画像端へ近づけず全周60px以上の余白。通常被弾の頭と胸が腰より左後ろにある後ずさり姿勢。白い切り抜き縁を全外周へ連続。1人の全身だけ、背景・影・床・効果・文字なし。",
+  "references": [
+    "art_source/paper_roster_motion/ryuta/generated/hit_light_v3.png",
+    "art_source/paper_roster_idle/generated/ryuta_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：通常被弾の編集対象。右靴の端が切れたため余白と先端を補う",
+    "画像2：頭髪と両靴の部位実寸の基準"
+  ],
+  "tool": "built-in image_gen"
+}

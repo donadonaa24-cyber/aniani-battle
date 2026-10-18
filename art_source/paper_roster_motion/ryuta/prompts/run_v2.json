@@ -1,0 +1,14 @@
+{
+  "id": "run",
+  "label": "走り",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/ryuta/generated/run_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の龍太の走り全身を維持し、画面右に前へ構えている本人左の拳だけを修正。本人左前腕を自然に回内し、左手の甲をこちらへ見せる。握った4本の指の腹が正面へ並ぶ線を消す。代わりに滑らかな手の甲と握った指の付け根の関節を見せる。左拳の親指は画面左側に添え、4指を自然に握り込む。親指1本と4指、手首の逆折れなし。右の拳、顔、髪、衣装、走り姿勢、2脚2靴、頭と靴の実寸を維持。アニメ線とセル塗り、クリーム白の全外周縁、透明PNG、背景・効果・文字なし。",
+  "references": [
+    "art_source/paper_roster_motion/ryuta/generated/run_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：走りの直接編集対象。画面右の本人左拳だけ甲側へ"
+  ],
+  "tool": "built-in image_gen"
+}
