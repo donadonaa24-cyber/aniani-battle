@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "key": "ryuta",
+  "bodySlotsCompleted": 12,
+  "uniqueBodyImages": 10,
+  "artApproved": false,
+  "selected": [
+    {
+      "id": "normal1_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ryuta/generated/normal1_prepare_v1.png",
+      "sha256": "62d31b77a87e1cac394802d3fb86a5ae3cbb9040af8e8f0f49d4b372a946808b",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 256,
+          "top": 39,
+          "right": 995,
+          "bottom": 1281
+        }
+      }
+    },
+    {
+      "id": "normal1_impact",
+      "version": 3,
+      "source": "art_source/paper_roster_action/ryuta/generated/normal1_impact_v3.png",
+      "sha256": "1abc4bf368a865e8f747274935a55745eab0f095823c7a6fa23e6e64c35c2fe5",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 73,
+          "top": 35,
+          "right": 1150,
+          "bottom": 1291
+        }
+      }
+    },
+    {
+      "id": "normal3_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ryuta/generated/normal3_prepare_v1.png",
+      "sha256": "c65438b0cda411636c05c615d05a4b0ee57ad13923c0ff2983985edae05065ae",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 80,
+          "top": 122,
+          "right": 1126,
+          "bottom": 1272
+        }
+      }
+    },
+    {
+      "id": "normal3_impact",
+      "version": 3,
+      "source": "art_source/paper_roster_action/ryuta/generated/normal3_impact_v3.png",
+      "sha256": "c334b398ffa28de6701ee904887f31e11469f23209c7ad87051a3493378eeb3c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 76,
+          "top": 7,
+          "right": 1117,
+          "bottom": 1284
+        }
+      }
+    },
+    {
+      "id": "up_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ryuta/generated/normal3_prepare_v1.png",
+      "sha256": "c65438b0cda411636c05c615d05a4b0ee57ad13923c0ff2983985edae05065ae",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 80,
+          "top": 122,
+          "right": 1126,
+          "bottom": 1272
+        }
+      }
+    },
+    {
+      "id": "up_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ryuta/generated/normal3_impact_v3.png",
+      "sha256": "c334b398ffa28de6701ee904887f31e11469f23209c7ad87051a3493378eeb3c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 76,
+          "top": 7,
+          "right": 1117,
+          "bottom": 1284
+        }
+      }
+    },
+    {
+      "id": "down_impact",
+      "version": 2,
+      "source": "art_source/paper_roster_action/ryuta/generated/down_impact_v2.png",
+      "sha256": "a4278eae086cc22910c183045743ca66a6663555a79504e45e5e8ab4d938d253",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 82,
+          "top": 249,
+          "right": 1174,
+          "bottom": 1198
+        }
+      }
+    },
+    {
+      "id": "air_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ryuta/generated/air_impact_v1.png",
+      "sha256": "54bce88406372c0c987f6548924f1ccac4dd3ba8dcbfd4719db842ce51f17bce",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 73,
+          "top": 35,
+          "right": 1154,
+          "bottom": 1153
+        }
+      }
+    },
+    {
+      "id": "special_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ryuta/generated/special_prepare_v1.png",
+      "sha256": "04a85680a037b3121f039c4e5fd85fb123346025f055cfe4d1c3da9d8cbdce06",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 80,
+          "top": 9,
+          "right": 1129,
+          "bottom": 1291
+        }
+      }
+    },
+    {
+      "id": "special_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ryuta/generated/special_impact_v1.png",
+      "sha256": "2b41ea5f3b72bca7954ae5c3a58ae5bb4de4019900161c252ce4894db04d70f2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 63,
+          "top": 62,
+          "right": 1179,
+          "bottom": 1283
+        }
+      }
+    },
+    {
+      "id": "super_prepare",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ryuta/generated/super_prepare_v1.png",
+      "sha256": "7038b6d159051c34a701c44ec3ff57fe6e2320132000757582fe5cf9d2fe5b6d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 290,
+          "top": 42,
+          "right": 1000,
+          "bottom": 1291
+        }
+      }
+    },
+    {
+      "id": "super_impact",
+      "version": 1,
+      "source": "art_source/paper_roster_action/ryuta/generated/super_impact_v1.png",
+      "sha256": "09b7183a39626f59e0eb1c0e6e34863face86fd71eb7c6facb5f1d535be4fb7a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 195,
+          "top": 38,
+          "right": 1080,
+          "bottom": 1295
+        }
+      }
+    }
+  ],
+  "effects": [
+    {
+      "id": "punch",
+      "source": "art_source/paper_roster_action/ryuta/generated/effect_punch_v1.png",
+      "sha256": "21e1a55f12db3b63c842d4b1519b54f52a7c3049b26db7a847f52ca66585b4b7",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 395,
+          "top": 145,
+          "right": 1205,
+          "bottom": 1065
+        }
+      }
+    },
+    {
+      "id": "bat",
+      "source": "art_source/paper_roster_action/ryuta/generated/effect_bat_v1.png",
+      "sha256": "72522c7803efd73e026d73283c1451e7a60f160e9610109f5ca29f4262181932",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 37,
+          "top": 95,
+          "right": 1228,
+          "bottom": 1167
+        }
+      }
+    },
+    {
+      "id": "spell_prepare",
+      "source": "art_source/paper_roster_action/ryuta/generated/effect_spell_prepare_v1.png",
+      "sha256": "0e9f54fed947c23f500c39ea1dd2002d434bf6ccb87649a92f3a6c4a4b0802ba",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 205,
+          "top": 334,
+          "right": 1072,
+          "bottom": 923
+        }
+      }
+    },
+    {
+      "id": "spell_impact",
+      "source": "art_source/paper_roster_action/ryuta/generated/effect_spell_impact_v1.png",
+      "sha256": "69735d52527cb6d1511047ef868afa2aef5fa009a6584b0062ff6f81b8a5347e",
+      "native": {
+        "width": 1774,
+        "height": 887,
+        "bounds": {
+          "left": 9,
+          "top": 14,
+          "right": 1758,
+          "bottom": 861
+        }
+      }
+    },
+    {
+      "id": "punch_second",
+      "source": "art_source/paper_roster_action/ryuta/generated/effect_punch_v1.png",
+      "sha256": "21e1a55f12db3b63c842d4b1519b54f52a7c3049b26db7a847f52ca66585b4b7",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 395,
+          "top": 145,
+          "right": 1205,
+          "bottom": 1065
+        }
+      }
+    },
+    {
+      "id": "punch_third",
+      "source": "art_source/paper_roster_action/ryuta/generated/effect_punch_v1.png",
+      "sha256": "21e1a55f12db3b63c842d4b1519b54f52a7c3049b26db7a847f52ca66585b4b7",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 395,
+          "top": 145,
+          "right": 1205,
+          "bottom": 1065
+        }
+      }
+    },
+    {
+      "id": "punch_back",
+      "source": "art_source/paper_roster_action/ryuta/generated/effect_punch_v1.png",
+      "sha256": "21e1a55f12db3b63c842d4b1519b54f52a7c3049b26db7a847f52ca66585b4b7",
+      "native": {
+        "width": 1254,
+        "height": 1254,
+        "bounds": {
+          "left": 395,
+          "top": 145,
+          "right": 1205,
+          "bottom": 1065
+        }
+      }
+    }
+  ],
+  "findings": [
+    "通常1・2段は左ジャブの予備v1と決めv3。甲側左拳の親指は上、旧v1/v2の下側親指を修正。下決めv2も同じ基準へ修正し、握りで隠れる指を表へ増やしていない。",
+    "通常3予備v1で画像左の腰へ引いた右腕を、決めv3では同じ手前右肩から画像左上へ突き上げる。旧決めv1/v2は奥の左肩が上がっていたため不採用。上2枠はこの2原画を原寸共有。",
+    "バットは左手がノブ側、右手が先端側の順を維持。英語本は同じ紺と金の開いた本。決めは左手で本、右手は人差し指と上の親指と握る3指。これは本作独自の演出。",
+    "採用待機の頭髪上部335px、靴158/252pxを参照。姿勢の投影と生成の微差が残り、全ての部位が完全同寸とは扱わない。低姿勢を梱包時に拡大せず原画画素を保持。",
+    "アッパーの上余白7px、バット予備9px／決め右9px、下右14pxなど要求40px未満がある。可視輪郭は切れていない。FXも余白80pxに満たない箇所がある。",
+    "原画の透明RGBと可視alphaを区別し、白背景診断を別保存。透明原本を編集しない。絵の最終承認はユーザー確認と区別する。",
+    "呪文の予備効果は本の近く、決めは前方の別位置に表示。文字効果は左右反転せず位置だけ向きに合わせる。人物全体の左右反転とは別。"
+  ],
+  "gameConnected": true,
+  "unityVerifiedTag": "rework_r4_ryuta_2"
+}

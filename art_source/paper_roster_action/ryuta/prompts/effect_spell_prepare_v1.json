@@ -1,0 +1,23 @@
+{
+  "id": "spell_prepare",
+  "kind": "ability",
+  "look": "Spell",
+  "state": "Ultimate",
+  "phase": "prepare",
+  "duringStartup": true,
+  "duringRecovery": false,
+  "worldWidth": 1.2,
+  "worldHeight": 0.8,
+  "offsetX": 0.4,
+  "offsetY": 0.5,
+  "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲーム用の切り絵エフェクト一個。太く硬いアニメ線、平らなセル塗り、細いクリーム白の切り抜き縁。真の透明PNG1024×1024、全周80px透明余白、切れなし。図形の隙間は完全透明。人物・手・武器・本体の本・背景・床・影・グロー・ぼかし・グラデーション・写真・3D・複数案なし。英語の本から浮く小さい切り紙の文字A B Cの3個だけ。濃紺のA、金のB、赤のC、白い縁。それぞれ別々の角度で低い半円に並べ、間は完全透明。小さい四角紙片を3個。大きい爆発は描かない。",
+  "key": "ryuta",
+  "version": 1,
+  "source": "art_source/paper_roster_action/ryuta/generated/effect_spell_prepare_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned",
+  "unmirroredArtwork": true,
+  "separateAnticipationOffset": true
+}

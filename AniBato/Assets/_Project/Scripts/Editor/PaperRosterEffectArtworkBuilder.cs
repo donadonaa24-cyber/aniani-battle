@@ -23,6 +23,7 @@ namespace AniBato.EditorTools
             public float worldHeight,worldWidth,offsetX,offsetY;
             public float anticipationTextSize = .08f;
             public bool duringStartup,duringRecovery,fitAttackHitbox,fitEachProjectileHitbox;
+            public bool separateAnticipationOffset,unmirroredArtwork;
             public PaperActionArtworkBuilder.Native native;
         }
         public static void Apply(string key,CharacterData data)
@@ -52,6 +53,9 @@ namespace AniBato.EditorTools
                 return new PaperAbilityArt { State=state,Look=look,Sprite=sprite,Scale=Scale(e),
                     Offset=new Vector2(e.offsetX,e.offsetY),
                     AnticipationSprite=prepare==null?null:ImportEntry(prepare),AnticipationScale=prepare==null?1:Scale(prepare),
+                    UseAnticipationOffset=prepare!=null&&prepare.separateAnticipationOffset,
+                    AnticipationOffset=prepare==null?Vector2.zero:new Vector2(prepare.offsetX,prepare.offsetY),
+                    UnmirroredArtwork=e.unmirroredArtwork,
                     AnticipationText=prepare?.anticipationText,AlternateAnticipationText=prepare?.alternateAnticipationText,
                     AnticipationTextSize=prepare == null ? .08f : prepare.anticipationTextSize,
                     DuringStartup=prepare!=null||e.duringStartup,DuringRecovery=e.duringRecovery };

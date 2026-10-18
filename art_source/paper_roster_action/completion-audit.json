@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "tag": "rework_r4_ryuta_2",
+  "completeLatestRequestedScope": true,
+  "roster": [
+    {
+      "key": "toma",
+      "bodyFrames": 12,
+      "normalUniqueImages": 4,
+      "air": 1,
+      "down": 1,
+      "sourceAndReviewMatch": true,
+      "verifiedTag": "rework_r4_ryuta_2"
+    },
+    {
+      "key": "ren",
+      "bodyFrames": 12,
+      "normalUniqueImages": 4,
+      "air": 1,
+      "down": 1,
+      "sourceAndReviewMatch": true,
+      "verifiedTag": "rework_r4_ryuta_2"
+    },
+    {
+      "key": "chizuru",
+      "bodyFrames": 12,
+      "normalUniqueImages": 4,
+      "air": 1,
+      "down": 1,
+      "sourceAndReviewMatch": true,
+      "verifiedTag": "rework_r4_ryuta_2"
+    },
+    {
+      "key": "minato",
+      "bodyFrames": 12,
+      "normalUniqueImages": 4,
+      "air": 1,
+      "down": 1,
+      "sourceAndReviewMatch": true,
+      "verifiedTag": "rework_r4_ryuta_2"
+    },
+    {
+      "key": "shiro",
+      "bodyFrames": 12,
+      "normalUniqueImages": 4,
+      "air": 1,
+      "down": 1,
+      "sourceAndReviewMatch": true,
+      "verifiedTag": "rework_r4_ryuta_2"
+    },
+    {
+      "key": "yui",
+      "bodyFrames": 12,
+      "normalUniqueImages": 4,
+      "air": 1,
+      "down": 1,
+      "sourceAndReviewMatch": true,
+      "verifiedTag": "rework_r4_ryuta_2"
+    },
+    {
+      "key": "king",
+      "bodyFrames": 12,
+      "normalUniqueImages": 4,
+      "air": 1,
+      "down": 1,
+      "sourceAndReviewMatch": true,
+      "verifiedTag": "rework_r4_ryuta_2"
+    },
+    {
+      "key": "akatsuki",
+      "bodyFrames": 12,
+      "normalUniqueImages": 4,
+      "air": 1,
+      "down": 1,
+      "sourceAndReviewMatch": true,
+      "verifiedTag": "rework_r4_ryuta_2"
+    },
+    {
+      "key": "ryuta",
+      "bodyFrames": 12,
+      "normalUniqueImages": 4,
+      "air": 1,
+      "down": 1,
+      "sourceAndReviewMatch": true,
+      "verifiedTag": "rework_r4_ryuta_2"
+    }
+  ],
+  "existingKingSupports": [
+    {
+      "id": "leila",
+      "name": "豹妬レイラ",
+      "source": "art_source/paper_roster_action/king/generated/effect_leila_v1.png",
+      "version": 1,
+      "sha256": "0458a9a3aa9f3c70fea00aac28c6b432837e7b8ebfb3b254d8abe2ccdb7e7c3e"
+    },
+    {
+      "id": "shion",
+      "name": "銀狼シオン",
+      "source": "art_source/paper_roster_action/king/generated/effect_shion_v3.png",
+      "version": 3,
+      "sha256": "ae8b7ca86ea495dbf15639b2dd48a09a2f9dba6cc85c8d3c38faaeda082485cf"
+    },
+    {
+      "id": "noa",
+      "name": "鹿角ノア",
+      "source": "art_source/paper_roster_action/king/generated/effect_noa_v3.png",
+      "version": 3,
+      "sha256": "30334d0a3429bc56dc3b264f4c4c049e26c6592f4321ece52977652f43f849ad"
+    }
+  ],
+  "sourcePolicy": "通常1・2段共有、3段を含め4原画。下と空中N各1枚。透真・蓮の未生成姿勢の紙待機置換は今回の実Unityで既存検査を再実行。",
+  "additionalVariants": "2026-10-17最新指定に従いユーザー追加指示後。溜め／被弾を自動生成しない。",
+  "artApproved": false
+}

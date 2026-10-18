@@ -1,0 +1,19 @@
+{
+  "id": "air_impact",
+  "key": "ryuta",
+  "character": "龍太",
+  "pose": "air",
+  "phase": "impact",
+  "label": "空中ニュートラルのパンチ",
+  "version": 1,
+  "source": "art_source/paper_roster_action/ryuta/generated/air_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/ryuta/generated/normal1_impact_v3.png"
+  ],
+  "referenceRoles": [
+    "編集対象。腕と拳はそのまま保持、両脚を空中へ曲げる"
+  ],
+  "prompt": "Use case: identity-preserve. Edit this exact full-body character into an airborne jumping jab by changing the LEGS ONLY: lift both feet, bend one knee forwards and the other knee backwards, leave a clear gap between both shoes and no implied ground line. Preserve the upper-body LEFT punching arm extended on image right and its correct fist with THUMB ON THE TOP EDGE, unchanged from the reference. Other fist stays at chest. Keep the same face, golden hair, red eyes, black uniform, loose red tie, exact native head/hair and shoe scale. Do not enlarge parts when bending the legs. Output1189x1323 true transparent PNG, entire body intact with margins, continuous thin cream white border, anime cel shading. No floor, no shadow, no effect, no extra arms, no lettering, no glow.",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

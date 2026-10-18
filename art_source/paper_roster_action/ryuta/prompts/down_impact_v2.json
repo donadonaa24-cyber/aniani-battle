@@ -1,0 +1,21 @@
+{
+  "id": "down_impact",
+  "key": "ryuta",
+  "character": "龍太",
+  "pose": "down",
+  "phase": "impact",
+  "label": "地上下の低いパンチ",
+  "version": 2,
+  "source": "art_source/paper_roster_action/ryuta/generated/down_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/ryuta/generated/down_impact_v1.png",
+    "art_source/paper_roster_action/ryuta/generated/normal1_impact_v3.png"
+  ],
+  "referenceRoles": [
+    "編集対象。伸ばした拳の親指だけ直す",
+    "画像右に伸ばした左拳の形をそのまま使う基準"
+  ],
+  "prompt": "Precise object edit. Image1 is the exact edit target. Image2 is ONLY the anatomical reference for the extended fist on image RIGHT. Repair only the extended fist in image1 to exactly match the hand structure of the extended fist in image2: the THUMB must form the UPPER edge of the clenched fist, wrapping over the top side, and the FOUR curled fingers below it form the knuckles on the right. Remove the erroneous protruding thumb from the lower edge of the hand. This is a LEFT fist with its BACK facing viewer. Do not show finger pads on the back of the hand. Preserve image1 character, pose, all limbs, head, clothes, shoes, full canvas, native sizes, wrist position and thin white border unchanged. Output1189x1323 true transparent PNG. No glow, no extra hands, no new pose.",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

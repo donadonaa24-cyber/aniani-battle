@@ -1,30 +1,30 @@
 {
   "date": "2026-10-18",
   "spec": "docs/SPEC_REVISION_20261016.md",
-  "current": "R4_four_key_actions",
+  "current": "latest_requested_scope_complete",
   "baseCommit": "a169ee3",
   "stages": {
     "R0": "complete",
     "R1": "complete",
     "R2": "complete",
     "R3": "complete",
-    "R4": "art_in_progress",
+    "R4": "complete_latest_scope",
     "R5": "complete",
     "R6": "complete"
   },
   "teamRule": "selection-order, first-to-two-wins",
   "latestVerification": {
-    "tag": "rework_r4_akatsuki_3",
+    "tag": "rework_r4_ryuta_2",
     "buildAll": "success",
     "edit": {
-      "total": 570,
-      "passed": 570,
+      "total": 574,
+      "passed": 574,
       "failed": 0,
       "skipped": 0
     },
     "play": {
-      "total": 77,
-      "passed": 77,
+      "total": 79,
+      "passed": 79,
       "failed": 0,
       "skipped": 0
     },
@@ -42,15 +42,14 @@
       "shiro",
       "yui",
       "king",
-      "akatsuki"
-    ],
-    "remainingDedicatedCharacters": [
+      "akatsuki",
       "ryuta"
     ],
+    "remainingDedicatedCharacters": [],
     "reviewFolder": "イラスト確認/現在ゲームで採用中",
     "ensembleVersion": 5,
-    "screenshots": "docs/screenshots/rework_r4_akatsuki_3/",
-    "screenshotCount": 542
+    "screenshots": "docs/screenshots/rework_r4_ryuta_2/",
+    "screenshotCount": 622
   },
   "activeVerification": null,
   "attempts": [
@@ -663,34 +662,97 @@
       },
       "windowsBuild": "success",
       "reason": "全4合格、専用撮影先、実投射の最遠端・相殺・単発被弾を確認"
+    },
+    {
+      "tag": "rework_r4_ryuta_1",
+      "buildAll": "success",
+      "edit": {
+        "total": 574,
+        "passed": 574,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 79,
+        "passed": 78,
+        "failed": 1,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "reason": "超必殺の96tick決め絵保持に対し24tick後の表示解除を期待した検査を修正。保持の上限まで毎tick被弾値を検査し、最終非表示のアサーションは維持。"
+    },
+    {
+      "tag": "rework_r4_ryuta_2",
+      "buildAll": "success",
+      "edit": {
+        "total": 574,
+        "passed": 574,
+        "failed": 0,
+        "skipped": 0
+      },
+      "play": {
+        "total": 79,
+        "passed": 79,
+        "failed": 0,
+        "skipped": 0
+      },
+      "windowsBuild": "success",
+      "singleActions": [
+        "down",
+        "air"
+      ],
+      "normalUniqueFrames": 4,
+      "completedDedicatedCharacters": [
+        "toma",
+        "ren",
+        "chizuru",
+        "minato",
+        "shiro",
+        "yui",
+        "king",
+        "akatsuki",
+        "ryuta"
+      ],
+      "remainingDedicatedCharacters": [],
+      "reviewFolder": "イラスト確認/現在ゲームで採用中",
+      "ensembleVersion": 5,
+      "screenshots": "docs/screenshots/rework_r4_ryuta_2/",
+      "screenshotCount": 622,
+      "reason": "龍太と呪文の位相別位置・非反転文字を含め全4合格。9人の最新原画仕様が接続済み。"
     }
   ],
   "currentArtwork": {
-    "character": "akatsuki",
+    "character": "ryuta",
     "bodySlots": 12,
-    "uniqueBodyImages": 9,
-    "effectBindings": 6,
+    "uniqueBodyImages": 10,
+    "effectBindings": 7,
     "uniqueEffects": 4,
     "gameConnected": true,
-    "verifiedTag": "rework_r4_akatsuki_3",
-    "webVerifiedTag": "rework_r4_akatsuki_web",
-    "next": "ryuta",
+    "verifiedTag": "rework_r4_ryuta_2",
+    "webVerifiedTag": "rework_r4_ryuta_web",
+    "next": null,
     "extraVariants": "追加指示後"
   },
-  "nextTask": "docs/codex_tasks/PAPER_AKATSUKI_TWELVE_KEYS.md",
+  "nextTask": null,
   "webGL": {
     "result": "success",
-    "bytes": 78922689,
-    "seconds": 111.3637112,
+    "bytes": 96309775,
+    "seconds": 185.907341,
     "files": 6,
-    "tag": "rework_r4_yui_mip_web",
-    "nativeTag": "rework_r4_yui_2",
-    "browser": "Codex in-app Chromium",
-    "runtime": "passed",
-    "screenshots": "docs/screenshots/rework_r4_yui_web/",
+    "nativeTag": "rework_r4_ryuta_2",
+    "tag": "rework_r4_ryuta_web",
+    "build": {
+      "result": "success",
+      "bytes": 96309775,
+      "seconds": 185.907341,
+      "files": 6
+    },
+    "screenshots": "docs/screenshots/rework_r4_ryuta_web/",
     "consoleErrors": 0,
     "mipmaps": true,
-    "paddingAudit": 329
+    "paddingAudit": 370,
+    "browser": "Codex in-app Chromium",
+    "runtime": "passed"
   },
   "currentObjective": {
     "normalUniqueFrames": 4,
@@ -710,7 +772,7 @@
       "ryuta"
     ],
     "afterAllAttacks": [],
-    "status": "active",
+    "status": "complete_latest_scope",
     "instruction": "docs/codex_tasks/PAPER_SINGLE_KEY_AIR_AND_DOWN.md",
     "characterNormals": {
       "toma": "1・2段ピストル、3段二丁拳銃（上左手は掌側）",
@@ -755,20 +817,20 @@
         8
       ]
     ],
-    "allOtherPropsComplete": false
+    "allOtherPropsComplete": true
   },
   "latestWebVerification": {
-    "nativeTag": "rework_r4_akatsuki_3",
-    "tag": "rework_r4_akatsuki_web",
+    "nativeTag": "rework_r4_ryuta_2",
+    "tag": "rework_r4_ryuta_web",
     "build": {
       "result": "success",
-      "bytes": 91466220,
-      "seconds": 85.3883699,
+      "bytes": 96309775,
+      "seconds": 185.907341,
       "files": 6
     },
-    "screenshots": "docs/screenshots/rework_r4_akatsuki_web/",
+    "screenshots": "docs/screenshots/rework_r4_ryuta_web/",
     "consoleErrors": 0,
     "mipmaps": true,
-    "paddingAudit": 356
+    "paddingAudit": 370
   }
 }

@@ -17,7 +17,7 @@ namespace AniBato.Tests
         public IEnumerator CompletedRosterUsesSharedFirstTwoKeysAndLargeThirdThroughActualComboInputs()
         {
             var keys=controller.Bindings.P1;
-            foreach(int index in new[]{1,2,3,4,5,6,7})foreach(int facing in new[]{1,-1})
+            foreach(int index in new[]{1,2,3,4,5,6,7,8})foreach(int facing in new[]{1,-1})
             {
                 var data=runner.Setup.Character(index);runner.BeginMatch(data,runner.Setup.Character(0),runner.CurrentStage,false);
                 var sim=runner.Simulation;Set(sim.P1,"Facing",facing);Set(sim.P2,"Position",new BattleVector(sim.Stage[0].Bounds.Right-1,sim.P2.Position.Y));
@@ -32,7 +32,7 @@ namespace AniBato.Tests
                         Assert.That(sim.Match.IsFinished,Is.False);Assert.That(view.RenderedSample.State,Is.EqualTo(state));Assert.That(view.UsesPaperSprite,Is.True);
                         bool anticipation=attack.Frame<attack.Definition.StartupFrames+attack.Definition.DamageDelayFrames;
                         Assert.That(body.sprite,Is.SameAs(pose.Frames[anticipation?0:1]));Assert.That(body.flipX,Is.EqualTo(facing<0));
-                        if(index==5||index==6)
+                        if(index==5||index==6||index==8)
                         {
                             var art=data.PaperMotion.AbilityEffect(state);var effect=view.transform.Find("Paper Ability").GetComponent<SpriteRenderer>();
                             Assert.That(effect.enabled,Is.EqualTo(!anticipation));if(effect.enabled)Assert.That(effect.sprite,Is.SameAs(art.Sprite));

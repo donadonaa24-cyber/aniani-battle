@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "key": "ryuta",
+  "frames": [
+    {
+      "id": "normal1_prepare",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/normal1_prepare.png",
+      "sha256": "45f7a143b0292b9251e3e961b0c46e43ecc2b6b8a532f849fe4b9f1b7ffba661",
+      "headTopY": 86,
+      "footMinX": 339,
+      "footMaxX": 1078,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal1_impact",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/normal1_impact.png",
+      "sha256": "119e7b6ac845ff9798b76194ce76ba4a4d515bd54b3dbb65cb96b6d13844fb41",
+      "headTopY": 72,
+      "footMinX": 188,
+      "footMaxX": 1161,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_prepare",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/normal3_prepare.png",
+      "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
+      "headTopY": 178,
+      "footMinX": 185,
+      "footMaxX": 1231,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "normal3_impact",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/normal3_impact.png",
+      "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
+      "headTopY": 51,
+      "footMinX": 188,
+      "footMaxX": 1229,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_prepare",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/up_prepare.png",
+      "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
+      "headTopY": 178,
+      "footMinX": 185,
+      "footMaxX": 1231,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "up_impact",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/up_impact.png",
+      "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
+      "headTopY": 51,
+      "footMinX": 188,
+      "footMaxX": 1229,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "down_impact",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/down_impact.png",
+      "sha256": "a34719e1deee5fe29b460178449b7ce018b37f70719047f9a25fe32b6cb7c071",
+      "headTopY": 379,
+      "footMinX": 162,
+      "footMaxX": 1254,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "air_impact",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/air_impact.png",
+      "sha256": "7fd72f712da7b24a6d01502b4970dcbb71ddf67843c499ed243221e3c4f20db5",
+      "headTopY": 210,
+      "footMinX": 410,
+      "footMaxX": 1049,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0.25535623791165163
+    },
+    {
+      "id": "special_prepare",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/special_prepare.png",
+      "sha256": "5a1992b22fe590b5a4b5b110482ea729b3422e8a44256ece066c8bec3ba576d4",
+      "headTopY": 46,
+      "footMinX": 274,
+      "footMaxX": 1142,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "special_impact",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/special_impact.png",
+      "sha256": "44bb0d478ec298e0a944bdff10591d08b9b24f9d079101494690f2de537ff70e",
+      "headTopY": 107,
+      "footMinX": 215,
+      "footMaxX": 1181,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_prepare",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/super_prepare.png",
+      "sha256": "404e2424088194977873eafb39904c8b58aa550048a91ff8d2dc6bf428825947",
+      "headTopY": 79,
+      "footMinX": 353,
+      "footMaxX": 1063,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    },
+    {
+      "id": "super_impact",
+      "prepared": "art_source/paper_roster_action/ryuta/prepared/super_impact.png",
+      "sha256": "1c67d92cf3f501285c3cf7f8b2c55c28393c01945eb62d55f36b89fa1eb7e07f",
+      "headTopY": 71,
+      "footMinX": 292,
+      "footMaxX": 1125,
+      "groundFootAnchor": 708,
+      "originOffsetY": 0
+    }
+  ],
+  "complete": true,
+  "reviewed": true,
+  "gameConnected": true,
+  "verifiedTag": "rework_r4_ryuta_2"
+}

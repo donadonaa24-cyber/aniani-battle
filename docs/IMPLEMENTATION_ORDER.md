@@ -1,3 +1,5 @@
+2026-10-18現在：9人の通常4原画・上2枠・下と空中N各1枚・特殊／超必殺まで接続済み。rework_r4_ryuta_2全4合格（Edit574／Play79）、Web実動確認済み。追加の溜め／被弾／他差分は追加指示後。詳細はRESUME冒頭。
+
 2026-10-18現在：暁12枠／9原画と4効果を接続。rework_r4_akatsuki_3全4合格（Edit570／Play77）、542実描画。WebGLも実ビルド／内蔵ブラウザ確認済み。8人完成、次はPAPER_RYUTA_TWELVE_KEYS。追加差分は追加指示後。詳細はRESUME冒頭。
 
 2026-10-18現在：黒獅子王12枠／9人物原画と爪・咆哮・既存部下レイラ／シオン／ノアの5効果を接続。rework_r4_king_2全4合格（Edit563／Play75）、464実描画・専用62PNG。召喚物が重なる描画不具合を各Projectileの位置保持へ修正し、戦闘値は不変。WebGL rework_r4_king_fixed_webも実ビルド・ブラウザ確認・console error 0。次はPAPER_AKATSUKI_TWELVE_KEYS→龍太。追加差分は追加指示後。詳細はRESUME冒頭。
@@ -32,7 +34,7 @@
 | R1 | 地上上下・空中Nのみ・滞空廃止・通常相殺・特殊1種・練習超必殺無制限 | 完了。rework_r1_3でEdit499／Play52・全4工程合格、実描画44PNG |
 | R2 | 3人ずつ選択し順番に最大3ラウンド・先に2勝、設定整理 | 完了。rework_r2_2でEdit505／Play55・全4工程合格、実描画6PNG |
 | R3 | 最新の9人の通常武器・特殊・超必殺 | 完了。rework_r3_3でEdit521／Play57・全4工程合格、37実描画。専用原画はR4 |
-| R4 | 人物単位の攻撃・小物、後に溜め／被弾原画 | 透真は通常4枚を含む14ユニーク姿勢、3段は二丁拳銃の掌側v3。蓮も14原画を接続・検証済み。千鶴の投げ終わりも接続。残りはPAPER_ACTION_FOUR_KEYS_AND_REMAININGとPAPER_PROP_ART_INVENTORY |
+| R4 | 9人の攻撃・小物原画（追加差分は指示後） | 完了。rework_r4_ryuta_2でEdit574／Play79・全4合格。通常4原画／下と空中N各1枚、Web更新・9人採用監査済み |
 | R5 | 生成した紙舞台・足場・ギミック、3作品別9人集合と同絵の選択 | 完了。21生成レイヤーと9人集合を接続、rework_r5_4でEdit527／Play61・全4工程合格、16実描画 |
 | R6 | WebGL実装・ローカルブラウザ実動 | 完了。webgl_5成功・約47.4MB、内蔵Chromium実動。Windows全4工程webgl_native_3でEdit533／Play61合格。実機パッドと通常Chrome／Edge個別は未確認 |
 

@@ -1,0 +1,19 @@
+{
+  "id": "special_impact",
+  "key": "ryuta",
+  "character": "龍太",
+  "pose": "special",
+  "phase": "impact",
+  "label": "特殊バット一閃",
+  "version": 1,
+  "source": "art_source/paper_roster_action/ryuta/generated/special_impact_v1.png",
+  "references": [
+    "art_source/paper_roster_action/ryuta/generated/special_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：同じバットと握る順序、本人の部位実寸を維持"
+  ],
+  "prompt": "Use case: identity-preserve. 画像1は龍太本人の採用待機の編集対象。別人にせず同じ通常のアニメ全身イラスト一枚として、容姿・頭身・顔・頭髪と靴の画素寸法を保つ。金髪を後ろへ流し首元で短く結んだ髪、赤い瞳、耳の金色のフープピアスと小さいピアス。黒い詰め襟の制服を前開きにし、金ボタン、白シャツ、緩い赤地に白い斜め縞のネクタイ、黒スラックスと黒いローファー。人間の少年本人。同じ顔と頭身を維持。\n動作：特殊バット一閃の当てる決めポーズ。同じ茶色の野球バット一本を両手で握ったまま、腰と胸を右前へ大きく回し、バットの太い先端を画面右へ水平に振り抜いて当てる決め。左手は柄のノブ寄り、右手は先端寄りで予備と握る順を保つ。両手首と両肘を肩につなぎ、両腕を余分に増やさない。前脚へ強く踏み込み両靴は接地。バット全体を枠内へ収める。\n正面ではなく胸側の見える画面右向き3/4。頭1個、胴体1個、腕は左右1本ずつ、脚は左右1本ずつ、靴2個。肩→肘→手首→手を解剖的に自然につなぎ、各手は親指1本＋4指。握りで隠れる指を無理に表へ増やさない。左右反転加工で手の間違いを誤魔化さない。\n透明キャンバス1189×1323。人物を画面いっぱいに再拡大しない。立ち待機の頭髪上部の横幅約335px、画像左の靴約158px／画像右の靴約252pxを基準として、ポーズの投影の変化を除き同じ部位実寸に保つ。接地の靴底はy1292付近。低姿勢は上へ大きい透明余白を残す。腕やバットを収めるために頭や靴を縮小せず、膝と肘を曲げて構図を収める。全身・髪・手・装備・靴を切らず透明余白40px以上を残す。細い硬いクリーム白の切り抜き縁を全外周、手や装備にも連続させ、外は本当の透明。背景・床・影・相手・効果線・グロー・発光・ぼかし・紙の繊維・関節分割・3D・ピクセル・複数案・複数ポーズはなし。本のページのABC以外に文字なし。 Preserve the same single wooden bat, with LEFT hand near the knob and RIGHT hand towards the barrel. Rotate the torso and swing the barrel forward to image RIGHT at chest height, an impactful baseball swing, bent knees. Keep both hands separately wrapped around the same handle.",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

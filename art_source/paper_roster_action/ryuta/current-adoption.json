@@ -1,12 +1,97 @@
 {
   "key": "ryuta",
   "name": "龍太",
-  "unityVerifiedTag": "rework_r4_akatsuki_3",
+  "unityVerifiedTag": "rework_r4_ryuta_2",
   "motionAsset": "AniBato/Assets/_Project/Data/ryutaCorePaperMotion.asset",
-  "completeAttackArtwork": false,
-  "bodyFrames": 0,
-  "uniqueBodyImages": 0,
-  "entries": [],
+  "completeAttackArtwork": true,
+  "bodyFrames": 12,
+  "uniqueBodyImages": 10,
+  "entries": [
+    {
+      "id": "normal1_prepare",
+      "title": "通常1・2段共通_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal1_prepare.png",
+      "sha256": "45f7a143b0292b9251e3e961b0c46e43ecc2b6b8a532f849fe4b9f1b7ffba661",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/通常1・2段共通_予備.png"
+    },
+    {
+      "id": "normal1_impact",
+      "title": "通常1・2段共通_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal1_impact.png",
+      "sha256": "119e7b6ac845ff9798b76194ce76ba4a4d515bd54b3dbb65cb96b6d13844fb41",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/通常1・2段共通_当てる.png"
+    },
+    {
+      "id": "normal3_prepare",
+      "title": "通常3段_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_prepare.png",
+      "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/通常3段_予備.png"
+    },
+    {
+      "id": "normal3_impact",
+      "title": "通常3段_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_impact.png",
+      "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/通常3段_当てる.png"
+    },
+    {
+      "id": "up_prepare",
+      "title": "上攻撃_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_prepare.png",
+      "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/上攻撃_予備.png"
+    },
+    {
+      "id": "up_impact",
+      "title": "上攻撃_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_impact.png",
+      "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/上攻撃_当てる.png"
+    },
+    {
+      "id": "down_single",
+      "title": "下攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_down_impact.png",
+      "sha256": "a34719e1deee5fe29b460178449b7ce018b37f70719047f9a25fe32b6cb7c071",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/下攻撃_1枚採用.png"
+    },
+    {
+      "id": "air_single",
+      "title": "空中攻撃_1枚採用",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_air_impact.png",
+      "sha256": "7fd72f712da7b24a6d01502b4970dcbb71ddf67843c499ed243221e3c4f20db5",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/空中攻撃_1枚採用.png"
+    },
+    {
+      "id": "special_prepare",
+      "title": "特殊技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_special_prepare.png",
+      "sha256": "5a1992b22fe590b5a4b5b110482ea729b3422e8a44256ece066c8bec3ba576d4",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/特殊技_予備.png"
+    },
+    {
+      "id": "special_impact",
+      "title": "特殊技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_special_impact.png",
+      "sha256": "44bb0d478ec298e0a944bdff10591d08b9b24f9d079101494690f2de537ff70e",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/特殊技_当てる.png"
+    },
+    {
+      "id": "super_prepare",
+      "title": "超必殺技_予備",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_super_prepare.png",
+      "sha256": "404e2424088194977873eafb39904c8b58aa550048a91ff8d2dc6bf428825947",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/超必殺技_予備.png"
+    },
+    {
+      "id": "super_impact",
+      "title": "超必殺技_当てる",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_super_impact.png",
+      "sha256": "1c67d92cf3f501285c3cf7f8b2c55c28393c01945eb62d55f36b89fa1eb7e07f",
+      "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/超必殺技_当てる.png"
+    }
+  ],
   "extraVariants": "追加指示後",
   "artApproved": false
 }

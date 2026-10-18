@@ -27,9 +27,10 @@ namespace AniBato.Game
             artwork.enabled=!finished&&art!=null&&art.Visible(sample);
             if(art!=null)
             {
-                artwork.sprite=art.SpriteFor(sample);artwork.color=Color.white;artwork.flipX=body.flipX;
+                artwork.sprite=art.SpriteFor(sample);artwork.color=Color.white;artwork.flipX=body.flipX&&!art.UnmirroredArtwork;
                 artwork.sortingOrder=body.sortingOrder-1;
-                artwork.transform.position=body.bounds.center+new Vector3((body.flipX?-1:1)*art.Offset.x,art.Offset.y,0);
+                var offset=art.OffsetFor(sample);
+                artwork.transform.position=body.bounds.center+new Vector3((body.flipX?-1:1)*offset.x,offset.y,0);
                 artwork.transform.localScale=Vector3.one*art.ScaleFor(sample);
                 float turn=sample.AttackFrame/Mathf.Max(1,art.StepTicks)%2==0?-art.RockDegrees:art.RockDegrees;
                 artwork.transform.localRotation=Quaternion.Euler(0,0,turn);

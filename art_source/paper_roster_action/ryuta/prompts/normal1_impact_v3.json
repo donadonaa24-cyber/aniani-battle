@@ -1,0 +1,21 @@
+{
+  "id": "normal1_impact",
+  "key": "ryuta",
+  "character": "龍太",
+  "pose": "normal1",
+  "phase": "impact",
+  "label": "通常1・2段共通ジャブ",
+  "version": 3,
+  "source": "art_source/paper_roster_action/ryuta/generated/normal1_impact_v3.png",
+  "references": [
+    "art_source/paper_roster_action/ryuta/generated/normal1_impact_v2.png",
+    "art_source/paper_roster_action/ryuta/generated/left_fist_study_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：画面右の伸ばした左拳だけを修正する全身",
+    "甲側の左拳の形だけの基準。画像1の大きさで描く。全身用原画ではない"
+  ],
+  "prompt": "画像1の全身イラストの右端、伸ばした本人左拳だけを、画像2の左拳の輪郭・親指の位置へ描き直す編集。画像2は拡大された手元参考であり、手の大きさを移さず画像1の元の拳と同じ幅約130pxへ描く。甲の面が手前で、親指は拳の上側を走り、指4本は右端へ曲がった4つの関節として見える。下側には親指を残さない。指の本数と手首とのつながりは画像2のまま。画像1の顔・髪・胴体・両腕の位置・胸元の右拳・両脚・両靴・服・ネクタイ・構図・1189×1323の透明キャンバス・白縁は維持し、全身を反転も拡縮もしない。特に画像2の巨大な手を全身へそのサイズで描かない。普通のアニメ塗り、透明背景。Correct anatomical LEFT fist on the FAR RIGHT of the full body image; use the second reference fist shape, thumb ABOVE the four curled fingers, broad BACK of the left hand facing viewer. Only replace this hand at its original scale.",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

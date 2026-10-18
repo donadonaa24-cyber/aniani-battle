@@ -1,0 +1,20 @@
+{
+  "id": "bat",
+  "kind": "ability",
+  "look": "Bat",
+  "state": "SpecialNeutral",
+  "duringStartup": false,
+  "duringRecovery": true,
+  "worldWidth": 2.7,
+  "worldHeight": 1.8,
+  "offsetX": 1.3,
+  "offsetY": 0.2,
+  "prompt": "Use case: stylized-concept. オリジナル2Dペープサート格闘ゲーム用の切り絵エフェクト一個。太く硬いアニメ線、平らなセル塗り、細いクリーム白の切り抜き縁。真の透明PNG1024×1024、全周80px透明余白、切れなし。図形の隙間は完全透明。人物・手・武器・本体の本・背景・床・影・グロー・ぼかし・グラデーション・写真・3D・複数案なし。バットの水平スイングを示す横長の三日月の切り紙の帯を2本。白と黄土色と金、左下から右上へ振り抜く弧、帯同士の間と中央は広い完全透明。小さな星2個と三角紙片4個。バットそのものや手は描かない。文字なし。",
+  "key": "ryuta",
+  "version": 1,
+  "source": "art_source/paper_roster_action/ryuta/generated/effect_bat_v1.png",
+  "references": [],
+  "referenceRoles": [],
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

@@ -1,15 +1,15 @@
 {
-  "tag": "rework_r4_akatsuki_3",
+  "tag": "rework_r4_ryuta_2",
   "buildAll": "success",
   "edit": {
-    "total": 570,
-    "passed": 570,
+    "total": 574,
+    "passed": 574,
     "failed": 0,
     "skipped": 0
   },
   "play": {
-    "total": 77,
-    "passed": 77,
+    "total": 79,
+    "passed": 79,
     "failed": 0,
     "skipped": 0
   },
@@ -27,13 +27,12 @@
     "shiro",
     "yui",
     "king",
-    "akatsuki"
-  ],
-  "remainingDedicatedCharacters": [
+    "akatsuki",
     "ryuta"
   ],
+  "remainingDedicatedCharacters": [],
   "reviewFolder": "イラスト確認/現在ゲームで採用中",
   "ensembleVersion": 5,
-  "screenshots": "docs/screenshots/rework_r4_akatsuki_3/",
-  "screenshotCount": 542
+  "screenshots": "docs/screenshots/rework_r4_ryuta_2/",
+  "screenshotCount": 622
 }

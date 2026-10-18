@@ -1,0 +1,19 @@
+{
+  "id": "normal3_impact",
+  "key": "ryuta",
+  "character": "龍太",
+  "pose": "normal3",
+  "phase": "impact",
+  "label": "通常3段の大きいアッパー",
+  "version": 3,
+  "source": "art_source/paper_roster_action/ryuta/generated/normal3_impact_v3.png",
+  "references": [
+    "art_source/paper_roster_action/ryuta/generated/normal3_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象。画像左の腰へ引いた右拳を同じ右肩から上げる。画像右の左拳は胸のガード"
+  ],
+  "prompt": "Use case: identity-preserve. Edit image 1 into the impact of a RIGHT uppercut. Keep the character, outfit, face, native head and shoe scale, 1189x1323 transparent canvas. Crucial arm path: the LOW fist on the LEFT SIDE OF THE IMAGE belongs to his RIGHT ARM. Raise THIS arm upwards ON THE LEFT SIDE OF HIS HEAD. Right shoulder, upper arm, elbow, wrist and raised fist all remain on the IMAGE LEFT side. Right fist is ABOVE AND TO THE LEFT OF HIS HAIR, NOT on image right. This creates an upward punch with the close arm, while his other LEFT fist stays guarding his chest on IMAGE RIGHT. Do not raise the far arm on image right. Clearly show two different shoulders connected to just two arms. Bend both knees deeply to keep raised fist, hair and feet within canvas; keep both shoes grounded. Rotate hips and torso strongly into the uppercut. Each fist has one thumb and four curled fingers, anatomy matching its own arm. Native head width approx335px, shoe widths158/252px with natural projection differences, do not scale up to fill frame. Complete full body, no cropping. Thin continuous cream white cutout border. True transparent background, no glow, no effects, no text, no floor, no shadows, no extra limbs. Japanese anime cel shading matching reference.",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

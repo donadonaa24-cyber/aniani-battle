@@ -1,0 +1,19 @@
+{
+  "id": "normal3_impact",
+  "key": "ryuta",
+  "character": "龍太",
+  "pose": "normal3",
+  "phase": "impact",
+  "label": "通常3段の大きいアッパー",
+  "version": 2,
+  "source": "art_source/paper_roster_action/ryuta/generated/normal3_impact_v2.png",
+  "references": [
+    "art_source/paper_roster_action/ryuta/generated/normal3_prepare_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：右腰へ引いた拳と同じ右腕でアッパーを放つ。本人と実寸の基準"
+  ],
+  "prompt": "参照の龍太の全身を、右アッパーの当てる決めポーズへ編集。参照では画像左の腰へ引いている腕が本人の右腕。この同じ右肩（画像左、手前側）から右上腕・右肘・右前腕・右拳を一続きにして、右拳を画面右上へ大きく突き上げる。参照の画像右で顎を守る本人左腕は胸元へ残す。上げるのは画像左の肩から出た右腕であり、画像右の肩から腕を上げない。右上腕は胸前を右前上へ通り、肘を曲げて右前腕を顔の画像右外側へ通し、右拳を髪より高い右上へ。頭はやや画像左に残し顔を腕で隠さない。腰と胸を大きく右前へひねり、両膝は深く曲げたまま両靴を接地して踏ん張る。右拳は自然な本人右手の握りで、親指一本と握る4指だけ。右肩→右肘→右手首が途中で別の肩へ入れ替わらない。金髪の結び目・赤い瞳・耳ピアス・黒い制服と金ボタン・白シャツ・赤の斜め縞ネクタイ・黒ズボン・黒ローファーは同じ。参照と同じ1189×1323の透明キャンバス、頭髪335px基準と両靴の大きさを維持。姿勢を縮めて収め、人物や頭を拡縮しない。拳・髪・両靴を切らず余白40px以上。硬いクリーム白の切り抜き縁、普通のアニメ塗り。背景・効果・床・影・文字・グローなし。An anatomical RIGHT uppercut: the raised punching arm must originate at the shoulder on the LEFT side of the image (near shoulder), cross forward in front of the chest, then bend upward with the fist above and to the right of the head. The far arm on the RIGHT shoulder stays bent beside the chest. Maintain exactly two arms and natural shoulder attachment.",
+  "tool": "built-in image_gen",
+  "status": "planned"
+}

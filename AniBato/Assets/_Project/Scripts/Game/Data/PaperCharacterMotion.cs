@@ -61,6 +61,8 @@ namespace AniBato.Game
         public Vector2 Offset;
         public Sprite AnticipationSprite;
         public float AnticipationScale = 1;
+        public bool UseAnticipationOffset, UnmirroredArtwork;
+        public Vector2 AnticipationOffset;
         public string AnticipationText, AlternateAnticipationText;
         public float AnticipationTextSize = .08f;
         public bool DuringStartup, DuringRecovery;
@@ -69,6 +71,7 @@ namespace AniBato.Game
         public bool Anticipating(in AnimationSample sample) => sample.IsAttack && sample.State == State && sample.AttackFrame < sample.Startup + sample.DamageDelay;
         public Sprite SpriteFor(in AnimationSample sample) => AnticipationSprite && Anticipating(sample) ? AnticipationSprite : Sprite;
         public float ScaleFor(in AnimationSample sample) => AnticipationSprite && Anticipating(sample) ? AnticipationScale : Scale;
+        public Vector2 OffsetFor(in AnimationSample sample) => UseAnticipationOffset && AnticipationSprite && Anticipating(sample) ? AnticipationOffset : Offset;
         public bool Visible(in AnimationSample sample) => sample.IsAttack && sample.State == State &&
             (sample.AttackFrame < sample.Startup + sample.DamageDelay ? DuringStartup :
              sample.AttackFrame < sample.Startup + sample.Active || DuringRecovery);
