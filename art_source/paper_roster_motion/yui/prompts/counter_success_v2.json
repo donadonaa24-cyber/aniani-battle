@@ -1,0 +1,16 @@
+{
+  "id": "counter_success",
+  "label": "カウンター成功",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/yui/generated/counter_success_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の結衣の反撃イラストを直接編集。左手が握るステッキと左の前腕だけを少し左へ収め、杖の金枠・星まで右端40px以上の余白を作る。自然な左肩→肘→左手のつながり。杖のサイズは変えない。猫耳フード、顔、身体、脚、両ブーツ、マント、右の肉球ミトン、反撃ポーズ、線・塗り・全外周のクリーム白縁、1189×1323の透明画像は維持。全身の拡大縮小なし。画像2は容姿と部位寸法基準のみ。新たな背景、文字、効果、別ポーズを追加しない。",
+  "references": [
+    "art_source/paper_roster_motion/yui/generated/counter_success_v1.png",
+    "art_source/paper_roster_idle/generated/yui_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：編集対象。反撃ポーズは維持し、左手と杖を内側へ小さく配置し直す",
+    "画像2：容姿と頭・靴・道具の部位寸法の基準"
+  ],
+  "tool": "built-in image_gen"
+}

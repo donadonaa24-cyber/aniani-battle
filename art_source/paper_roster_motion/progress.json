@@ -4,7 +4,7 @@
   "requiredCharacters": 8,
   "requiredPosesPerCharacter": 7,
   "requiredTotal": 56,
-  "currentCharacter": "yui",
+  "currentCharacter": "king",
   "characters": [
     {
       "key": "toma",
@@ -37,13 +37,14 @@
     {
       "key": "yui",
       "name": "結衣",
-      "generated": 1,
-      "integrated": false
+      "generated": 7,
+      "integrated": true,
+      "verification": "motion_yui_1"
     },
     {
       "key": "king",
       "name": "黒獅子王",
-      "generated": 0,
+      "generated": 4,
       "integrated": false
     },
     {

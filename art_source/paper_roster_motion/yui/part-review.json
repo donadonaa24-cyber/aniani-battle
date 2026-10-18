@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "key": "yui",
+  "artApproved": false,
+  "selected": [
+    {
+      "id": "run",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/yui/generated/run_v3.png",
+      "sha256": "1326952b6d3da7852230cdbf08e4ebe392c43d3ff630a72b5e2914f2be560d74",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 48,
+          "top": 63,
+          "right": 1162,
+          "bottom": 1212
+        }
+      }
+    },
+    {
+      "id": "jump",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/yui/generated/jump_v1.png",
+      "sha256": "56ad9f808adf69ba74a8202c6938a6586fa2a6dda97c0381558e31cb8278b6d1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 52,
+          "top": 44,
+          "right": 1160,
+          "bottom": 1194
+        }
+      }
+    },
+    {
+      "id": "fall",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/yui/generated/fall_v1.png",
+      "sha256": "de420c7e2f100a14bdf54941d4fc5cafe100efbcd119af3fc6ea6ae002ca625c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 52,
+          "top": 80,
+          "right": 1169,
+          "bottom": 1212
+        }
+      }
+    },
+    {
+      "id": "dodge",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/yui/generated/dodge_v1.png",
+      "sha256": "56e3363f2ae9b32da452aca0e2e97ce7ea1e8bb01a34c7cc84049a97bd752197",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 34,
+          "top": 412,
+          "right": 1093,
+          "bottom": 1317
+        }
+      }
+    },
+    {
+      "id": "counter_success",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/yui/generated/counter_success_v2.png",
+      "sha256": "63858e7880f541046fc01d91e11f9c9b9245f52ee3cc0ace0c43d240511ea2fa",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 22,
+          "top": 79,
+          "right": 1128,
+          "bottom": 1270
+        }
+      }
+    },
+    {
+      "id": "hit_light",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/yui/generated/hit_light_v1.png",
+      "sha256": "38d505a1984866261bd5060b4c9baef3755eb0723f91f6b518a72a89eeaa929b",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 55,
+          "top": 79,
+          "right": 1175,
+          "bottom": 1271
+        }
+      }
+    },
+    {
+      "id": "hit_heavy",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/yui/generated/hit_heavy_v1.png",
+      "sha256": "06a33617a4fe74294dfcf94637520718530e01d9851bcfb72fa122e44e1c87bf",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 62,
+          "top": 88,
+          "right": 1169,
+          "bottom": 1262
+        }
+      }
+    }
+  ],
+  "canvasPolicy": "原画RGBAの整数移動と透明余白のみ。個別拡縮0。頭髪と靴の投影差は原画で目視し、美術の最終承認と実装検証を区別。",
+  "anatomyReview": "肩・肘・手首のつながり、左右の手の親指と折った指、全身の外周白縁を確認。低姿勢を埋める拡大なし。",
+  "rgbaAudit": [
+    {
+      "id": "run",
+      "preserved": true,
+      "sha256": "375a2c8f4f4e8ff22af3a3b412297bd0564e31f82cff8a62008c628b3f737d55"
+    },
+    {
+      "id": "jump",
+      "preserved": true,
+      "sha256": "198e26575ba3fde4f5b65c3992f8ab1563ac45099eabe90acc7b90c31825781d"
+    },
+    {
+      "id": "fall",
+      "preserved": true,
+      "sha256": "3411551d54cc5dacba1ba1ee66edd128bc5d04be59892c2265a2cba12f2c19b6"
+    },
+    {
+      "id": "dodge",
+      "preserved": true,
+      "sha256": "5fd5739f6bd47c100563f48252eb5f82edac24496dc8825740858f07459b2e5a"
+    },
+    {
+      "id": "counter_success",
+      "preserved": true,
+      "sha256": "2cc208c1267073fcfcf44ec5f38718aceb34ed8ebf49fd21bbe9b9f42d168aa8"
+    },
+    {
+      "id": "hit_light",
+      "preserved": true,
+      "sha256": "d9434199510020336068fda25f5126952aa1c12ef41f1c5460ab983df56af7d9"
+    },
+    {
+      "id": "hit_heavy",
+      "preserved": true,
+      "sha256": "674dd9a9d417c9a2172efd0880492cbdedb967872a3968a083ba4c1111d8777b"
+    }
+  ],
+  "knownDifferences": [
+    "走りv1/2は前ブーツの過大な遠近と杖の右端近さで不採用。v3はv2の直接編集で前ブーツを小さくし、杖を立てて内側へ収めた。",
+    "反撃v1は杖の金枠が右端1pxへ寄ったため不採用。v2は左手と前腕、杖を内側へ収め、自然な肩・肘・手首の接続を確認。",
+    "本人右は肉球ミトン、左は杖を保持する人間の手。右脚のみ紫縞、左脚は淡い素肌と紫リボン。ミトンの肉球を人の指として数えない。",
+    "回避原画は1103×1426、他の採用6枚は1189×1323。頭と靴の投影差は残るが低姿勢を枠へ埋める拡大なし。原画RGBAの整数移動のみ。",
+    "上昇と落下は両膝・足先と目線を分けた浮遊姿勢、通常被弾は立って耐え、強被弾は涙と開いた口でのけぞる。",
+    "回避の杖先の右余白9px等、40px指定より狭い箇所がある。測定上は可視輪郭の切断なし。最終美術承認とは区別する。"
+  ]
+}

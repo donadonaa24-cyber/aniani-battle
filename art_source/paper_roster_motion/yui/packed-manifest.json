@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "key": "yui",
+  "characterIndex": 5,
+  "name": "結衣",
+  "complete": true,
+  "frames": [
+    {
+      "id": "run",
+      "prepared": "art_source/paper_roster_motion/yui/prepared/run.png",
+      "sha256": "375a2c8f4f4e8ff22af3a3b412297bd0564e31f82cff8a62008c628b3f737d55",
+      "headTopY": 179,
+      "footMinX": 330,
+      "footMaxX": 1067,
+      "originOffsetY": 0
+    },
+    {
+      "id": "jump",
+      "prepared": "art_source/paper_roster_motion/yui/prepared/jump.png",
+      "sha256": "198e26575ba3fde4f5b65c3992f8ab1563ac45099eabe90acc7b90c31825781d",
+      "headTopY": 178,
+      "footMinX": 522,
+      "footMaxX": 874,
+      "originOffsetY": 0.14269907412709945
+    },
+    {
+      "id": "fall",
+      "prepared": "art_source/paper_roster_motion/yui/prepared/fall.png",
+      "sha256": "3411551d54cc5dacba1ba1ee66edd128bc5d04be59892c2265a2cba12f2c19b6",
+      "headTopY": 196,
+      "footMinX": 399,
+      "footMaxX": 998,
+      "originOffsetY": 0.1764962232624651
+    },
+    {
+      "id": "dodge",
+      "prepared": "art_source/paper_roster_motion/yui/prepared/dodge.png",
+      "sha256": "5fd5739f6bd47c100563f48252eb5f82edac24496dc8825740858f07459b2e5a",
+      "headTopY": 423,
+      "footMinX": 345,
+      "footMaxX": 1051,
+      "originOffsetY": 0
+    },
+    {
+      "id": "counter_success",
+      "prepared": "art_source/paper_roster_motion/yui/prepared/counter_success.png",
+      "sha256": "2cc208c1267073fcfcf44ec5f38718aceb34ed8ebf49fd21bbe9b9f42d168aa8",
+      "headTopY": 137,
+      "footMinX": 354,
+      "footMaxX": 1042,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_light",
+      "prepared": "art_source/paper_roster_motion/yui/prepared/hit_light.png",
+      "sha256": "d9434199510020336068fda25f5126952aa1c12ef41f1c5460ab983df56af7d9",
+      "headTopY": 136,
+      "footMinX": 388,
+      "footMaxX": 1008,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_heavy",
+      "prepared": "art_source/paper_roster_motion/yui/prepared/hit_heavy.png",
+      "sha256": "674dd9a9d417c9a2172efd0880492cbdedb967872a3968a083ba4c1111d8777b",
+      "headTopY": 154,
+      "footMinX": 414,
+      "footMaxX": 1044,
+      "originOffsetY": 0
+    }
+  ]
+}
