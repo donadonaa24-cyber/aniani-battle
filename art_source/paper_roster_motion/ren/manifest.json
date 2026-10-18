@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "key": "ren",
+  "name": "蓮",
+  "characterIndex": 1,
+  "baseIdle": "art_source/paper_roster_idle/generated/ren_idle_v1.png",
+  "canvasWidth": 1304,
+  "canvasHeight": 1450,
+  "pixelsPerUnit": 532.5893,
+  "sole": 1328,
+  "jobs": [
+    {
+      "id": "run",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/ren/prompts/run_v1.json"
+    },
+    {
+      "id": "jump",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/ren/prompts/jump_v1.json"
+    },
+    {
+      "id": "fall",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/ren/prompts/fall_v1.json"
+    },
+    {
+      "id": "dodge",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/ren/prompts/dodge_v2.json"
+    },
+    {
+      "id": "counter_success",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/ren/prompts/counter_success_v1.json"
+    },
+    {
+      "id": "hit_light",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/ren/prompts/hit_light_v1.json"
+    },
+    {
+      "id": "hit_heavy",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/ren/prompts/hit_heavy_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "run",
+      "label": "走り",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ren/generated/run_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n新しい動作「走り」：走る瞬間の強い決め姿。右へ進む両腕の振り、前脚を大きく出し後ろ脚の膝を曲げる。胸と腰の軸はほぼ直立〜前傾10度まで。ゲーム内で絵全体を45度傾けるので、絵に45度の前傾を重ねない。 両手は採用待機と同じ白い肉球ミトン。人間の裸の指や手を描かない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "6f68a7e62638a32229541aa3632b4684ec4f9a68755ef06f8c8fe5222726a00c",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 77,
+          "top": 58,
+          "right": 1137,
+          "bottom": 1246
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ren/prepared/run.png",
+      "preparedSha256": "aebca4dbd56bc9f84e8831570978e06f32a732008d82e1c166e5ce997d329167",
+      "offsetX": 0,
+      "offsetY": 82,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ren/generated/jump_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n新しい動作「ジャンプ上昇」：ジャンプの上昇中。両膝を曲げて両足を浮かせ、両肘も曲げて身体の横へ。上を見た集中した顔。空中攻撃ではなく上昇の明快な全身シルエット。 両手は採用待機と同じ白い肉球ミトン。人間の裸の指や手を描かない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "dc2b6eccdbefa749b4ef12540ed2131b672bc7c042236e222e2fe82637579abc",
+      "native": {
+        "width": 1190,
+        "height": 1322,
+        "bounds": {
+          "left": 154,
+          "top": 70,
+          "right": 1059,
+          "bottom": 1218
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ren/prepared/jump.png",
+      "preparedSha256": "3366d53887e161b2ade139fefdb3581eda9be1eb6c93be9b4342b3cb8eb6bb53",
+      "offsetX": 0,
+      "offsetY": 110,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "fall",
+      "label": "落下",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ren/generated/fall_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n新しい動作「落下」：ジャンプから落下中。足を下へ伸ばし膝を柔らかく曲げ、両腕を横へ少し開き着地に備える。両手は待機と同じ軽い握り拳。目線は斜め下前方、ジャンプ上昇と異なる姿。両足は浮いている。 両手は採用待機と同じ白い肉球ミトン。人間の裸の指や手を描かない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "8c2e651c5df8d8831aa7d82423196832b938732141e57b0aeedfa614a7793ee2",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 99,
+          "top": 271,
+          "right": 1004,
+          "bottom": 1331
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ren/prepared/fall.png",
+      "preparedSha256": "aade3a56ff3aeddb59ef24b0df0e9718fb6ecf13b2c4b6f12e25e567c7d5fa39",
+      "offsetX": 0,
+      "offsetY": -3,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ren/generated/dodge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n新しい動作「回避」：攻撃をくぐる回避。膝と腰を深く落とし、上体を右前へ少し倒す低い姿勢。両腕は身体の横へ引き、両手は待機と同じ軽い握り拳。顔は前を見て警戒。立ち絵や攻撃と区別できる低いシルエット。 両手は採用待機と同じ白い肉球ミトン。人間の裸の指や手を描かない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "be78a380898ef4c75dba46e24e0977d405b54123397f031b9a429e7f0fe0107d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 54,
+          "top": 265,
+          "right": 1155,
+          "bottom": 1285
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/ren/generated/dodge_v2.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n新しい動作「回避」：攻撃をくぐる回避。膝と腰を深く落とし、上体を右前へ少し倒す低い姿勢。両腕は身体の横へ引き、両手は待機と同じ軽い握り拳。顔は前を見て警戒。立ち絵や攻撃と区別できる低いシルエット。 両手は採用待機と同じ白い肉球ミトン。人間の裸の指や手を描かない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n修正条件：頭巾と顔が大きすぎた候補を修正。採用待機と同じ部位実寸を厳守。犬頭巾の両耳を含む横幅約610px、人間の茶髪の横幅約345px、顔の横幅約250px。低い姿勢の余白を埋めるため頭を大きくしない。スニーカーの長辺も待機と同じ約235px。低く膝を曲げる回避で、頭や靴を拡大せず上に大きな透明余白を残す。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "f39fee1483cba43a3c06107b31890775ad376c3e543ed1ac86f9e0ba17ac7cfb",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 123,
+          "top": 342,
+          "right": 1147,
+          "bottom": 1272
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ren/prepared/dodge.png",
+      "preparedSha256": "3bea13370ba90f6b6f6358d9911a25f8678d472e58180094c33279dfacaa9ffb",
+      "offsetX": 74,
+      "offsetY": 56,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "counter_success",
+      "label": "カウンター成功",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ren/generated/counter_success_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n新しい動作「カウンター成功」：反撃成功の決め。片足で踏み込み、反対の膝を上げ、両方の白い肉球ミトンを前へ強く出す可愛い体当たり。顔と犬頭巾が明快、頭とミトンの大きさを変えない。 両手は採用待機と同じ白い肉球ミトン。人間の裸の指や手を描かない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "eed8b3258b0f2b8f07c094762df809eedbf82fca7c5d1d513815d509ff15596a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 43,
+          "top": 48,
+          "right": 1165,
+          "bottom": 1272
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ren/prepared/counter_success.png",
+      "preparedSha256": "3321b5d1302b090c638a27d3f1d7eb36a6260073002e2034dc30d725b3a64894",
+      "offsetX": 115,
+      "offsetY": 56,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ren/generated/hit_light_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n新しい動作「通常被弾」：通常攻撃を受けた瞬間。右前方から打撃を受けて胸と顔が少し左後ろへ傾き、片足を後ろへ踏み出す。両膝は曲がり、拳を胸前へ引き、歯を食いしばって何とか踏ん張る。まだ立って耐えている。 両手は採用待機と同じ白い肉球ミトン。人間の裸の指や手を描かない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "bf8b08b7cefa4274d4344b172f6af1bf81bafe86ffa306ab452525d0c5a1aff0",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 123,
+          "top": 58,
+          "right": 1114,
+          "bottom": 1263
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ren/prepared/hit_light.png",
+      "preparedSha256": "ec7ce9f97408203cdbc6bd5c2e671d9afcebab64033beff0801e7a2223149bcc",
+      "offsetX": 63,
+      "offsetY": 65,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_heavy",
+      "label": "強被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/ren/generated/hit_heavy_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n新しい動作「強被弾」：ハートが減る強い被弾。右前方の衝撃に胸と頭が大きく左後ろへのけぞる。両膝を曲げ一方の足は後ずさり、両手を胸の前に広げる。目をぎゅっとつむり口を大きく開け、目尻に涙粒。いかにも痛そうなコミカルな顔。血・傷・破れなし。 両手は採用待機と同じ白い肉球ミトン。人間の裸の指や手を描かない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "cf0ceda84a0ab36cf5acea44dbf54122e3bfcb35697802cc6510158d47a95436",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 89,
+          "top": 103,
+          "right": 1120,
+          "bottom": 1248
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ren/prepared/hit_heavy.png",
+      "preparedSha256": "173a207542cac93f0fb5f25d7888f804dda00e6f5a87ce482ddaaede24df4be4",
+      "offsetX": 0,
+      "offsetY": 80,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "motion_ren_2"
+}

@@ -4,7 +4,7 @@
   "requiredCharacters": 8,
   "requiredPosesPerCharacter": 7,
   "requiredTotal": 56,
-  "currentCharacter": "ren",
+  "currentCharacter": "minato",
   "characters": [
     {
       "key": "toma",
@@ -17,18 +17,19 @@
       "key": "ren",
       "name": "蓮",
       "generated": 7,
-      "integrated": false
+      "integrated": true,
+      "verification": "motion_ren_2"
     },
     {
       "key": "minato",
       "name": "湊",
-      "generated": 1,
+      "generated": 7,
       "integrated": false
     },
     {
       "key": "shiro",
       "name": "シロ",
-      "generated": 0,
+      "generated": 4,
       "integrated": false
     },
     {

@@ -37,8 +37,9 @@ namespace AniBato.Tests
             Assert.That(paper.Find(AnimationState.BackAttack).ReverseFacing,Is.True);
             foreach(var state in new[]{AnimationState.Guard,AnimationState.Crouch,AnimationState.Counter,AnimationState.Win,AnimationState.Lose})
                 Assert.That(paper.Find(state).Frames.Single(),Is.Not.SameAs(paper.Sprite));
+            bool dedicated=PaperRosterMotionBuilder.Completed().Any(m=>m.characterIndex==1);
             foreach(var state in new[]{AnimationState.Jump,AnimationState.Dash,AnimationState.Hitstun,AnimationState.Knockback})
-                Assert.That(paper.Find(state).Frames.Single(),Is.SameAs(paper.Sprite));
+                Assert.That(paper.Find(state).Frames.Single(),dedicated?Is.Not.SameAs(paper.Sprite):Is.SameAs(paper.Sprite));
         }
         [Test]
         public void RenRuntimePngsMatchAllSelectedPackedSourcesWithoutImportResampling()

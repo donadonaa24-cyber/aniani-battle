@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "key": "ren",
+  "characterIndex": 1,
+  "name": "蓮",
+  "complete": true,
+  "frames": [
+    {
+      "id": "run",
+      "prepared": "art_source/paper_roster_motion/ren/prepared/run.png",
+      "sha256": "aebca4dbd56bc9f84e8831570978e06f32a732008d82e1c166e5ce997d329167",
+      "headTopY": 140,
+      "footMinX": 770,
+      "footMaxX": 1073,
+      "originOffsetY": 0
+    },
+    {
+      "id": "jump",
+      "prepared": "art_source/paper_roster_motion/ren/prepared/jump.png",
+      "sha256": "3366d53887e161b2ade139fefdb3581eda9be1eb6c93be9b4342b3cb8eb6bb53",
+      "headTopY": 180,
+      "footMinX": 644,
+      "footMaxX": 791,
+      "originOffsetY": 0.12955573835223502
+    },
+    {
+      "id": "fall",
+      "prepared": "art_source/paper_roster_motion/ren/prepared/fall.png",
+      "sha256": "aade3a56ff3aeddb59ef24b0df0e9718fb6ecf13b2c4b6f12e25e567c7d5fa39",
+      "headTopY": 268,
+      "footMinX": 488,
+      "footMaxX": 936,
+      "originOffsetY": 0.2947862452362449
+    },
+    {
+      "id": "dodge",
+      "prepared": "art_source/paper_roster_motion/ren/prepared/dodge.png",
+      "sha256": "3bea13370ba90f6b6f6358d9911a25f8678d472e58180094c33279dfacaa9ffb",
+      "headTopY": 398,
+      "footMinX": 314,
+      "footMaxX": 1080,
+      "originOffsetY": 0
+    },
+    {
+      "id": "counter_success",
+      "prepared": "art_source/paper_roster_motion/ren/prepared/counter_success.png",
+      "sha256": "3321b5d1302b090c638a27d3f1d7eb36a6260073002e2034dc30d725b3a64894",
+      "headTopY": 104,
+      "footMinX": 437,
+      "footMaxX": 646,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_light",
+      "prepared": "art_source/paper_roster_motion/ren/prepared/hit_light.png",
+      "sha256": "ec7ce9f97408203cdbc6bd5c2e671d9afcebab64033beff0801e7a2223149bcc",
+      "headTopY": 123,
+      "footMinX": 350,
+      "footMaxX": 1045,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_heavy",
+      "prepared": "art_source/paper_roster_motion/ren/prepared/hit_heavy.png",
+      "sha256": "173a207542cac93f0fb5f25d7888f804dda00e6f5a87ce482ddaaede24df4be4",
+      "headTopY": 183,
+      "footMinX": 455,
+      "footMaxX": 1120,
+      "originOffsetY": 0
+    }
+  ]
+}
