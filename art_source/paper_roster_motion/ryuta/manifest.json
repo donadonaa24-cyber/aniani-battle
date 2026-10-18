@@ -36,8 +36,8 @@
     },
     {
       "id": "hit_light",
-      "version": 6,
-      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/hit_light_v6.json"
+      "version": 5,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/hit_light_v5.json"
     },
     {
       "id": "hit_heavy",
@@ -334,7 +334,8 @@
         }
       },
       "status": "revision_required",
-      "artApproved": false
+      "artApproved": false,
+      "gameConnected": false
     },
     {
       "id": "hit_heavy",
@@ -392,7 +393,8 @@
         }
       },
       "status": "revision_required",
-      "artApproved": false
+      "artApproved": false,
+      "gameConnected": false
     },
     {
       "id": "hit_heavy",
@@ -457,7 +459,8 @@
         }
       },
       "status": "revision_required",
-      "artApproved": false
+      "artApproved": false,
+      "gameConnected": false
     },
     {
       "id": "hit_light",
@@ -492,7 +495,8 @@
       "offsetX": 38,
       "offsetY": 135,
       "rgbaWithinCanvasPreserved": true,
-      "croppedOutsideAlphaOnePixels": 0
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": false
     },
     {
       "id": "hit_light",
@@ -518,8 +522,18 @@
           "bottom": 1194
         }
       },
-      "status": "revision_required",
-      "artApproved": false
+      "status": "adopted_for_runtime",
+      "artApproved": true,
+      "gameConnected": true,
+      "selectionReason": "2026-10-19 ユーザー添付「これでいい」の握り拳版。同じ透明形状のv5を採用。",
+      "approvalReference": "art_source/paper_roster_motion/ryuta/user_approved_hit_light.png",
+      "approvalSha256": "04c130aee0c279628dc2221334d87d7a6afd5ef1e68bd2218bcf776e8ca9c4a8",
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_light.png",
+      "preparedSha256": "601a7557c2aaa9b66665f9f106642f5327277331e90c1c05640360795fbff276",
+      "offsetX": 37,
+      "offsetY": 134,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
     },
     {
       "id": "hit_light",
@@ -545,7 +559,7 @@
           "bottom": 1194
         }
       },
-      "status": "adopted_for_runtime",
+      "status": "rejected_by_user",
       "artApproved": false,
       "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_light.png",
       "preparedSha256": "a7f3b54a757696d630247ea611c145bf7d1b280a1cfd10ff4f3541af55b914c8",
@@ -553,9 +567,11 @@
       "offsetY": 134,
       "rgbaWithinCanvasPreserved": true,
       "croppedOutsideAlphaOnePixels": 0,
-      "gameConnected": true
+      "gameConnected": false,
+      "rejectionReason": "ユーザーが開いた掌を不採用とし、握り拳版を添付して承認した。"
     }
   ],
   "integrated": true,
-  "verifiedTag": "motion_ryuta_1"
+  "verifiedTag": "motion_ryuta_2",
+  "previousVerifiedTag": "motion_ryuta_1"
 }

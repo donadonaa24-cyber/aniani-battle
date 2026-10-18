@@ -1,3 +1,21 @@
+## 最新（2026-10-19）：全8人56動作をUnity/Webへ実装・検証・完了
+
+龍太の通常被弾はユーザーが「これでいい」と添付した握り拳v5で確定。開いた掌v6は不採用、v4への推測復帰や追加生成なし。承認参照・選択理由・SHA・個別承認はart_source/paper_roster_motion/ryuta/。採用の日本語画像はイラスト確認/現在ゲームで採用中/龍太/通常被弾.png。透真の反撃の腕と暁の手・脚・5指の修正版も維持。
+
+全8人の走り・上昇・落下・回避・反撃成功・通常被弾・強被弾を各1原画、計56枚で接続。通常4原画、下/空中N各1枚、千鶴・保護カバン、戦闘値・半減判定・ゲージ14/10は維持。原画の個別拡縮なし。進行表art_source/paper_roster_motion/progress.jsonはcomplete。人物別採用SHAと保存済み検証はmotion_roster_native_verification.json、今回の最終全4結果とWeb証跡はmotion_roster_final_verification.json。
+
+今回の最終motion_web_memory_1はBuildAll成功／Edit582/582／Play81/81／Windows成功、失敗・スキップ0。全8人の左右・7動作・反撃・通常/強被弾・回転・解除・重力・ヒットストップ・描画非干渉を確認。龍太の承認版を最初に検証したmotion_ryuta_2も全4合格で、18PNGはdocs/screenshots/motion_ryuta_2/paper_motion_ryuta/。最新WindowsはBuild/motion_web_memory_1/AniBato.exe、予備はmotion_ryuta_2。
+
+Web2は実起動OOMで不採用。原画やミップを縮小・削除せず、WebGLBuilderのみ初期512MB／動的拡張上限4096MBに修正。motion_roster_web_3は実ビルド成功（119,935,208bytes／6ファイル／190.338秒）、Windows復帰成功、426/426画像RGBA保持監査合格。内蔵Chromiumで起動・トップ・9人2段選択・透真の走り/上昇・龍太の通常被弾v5と1/3を確認、音声running、Web3起動以降console error/warn 0。docs/screenshots/motion_roster_web_3/に実画面と状態記録。原画保存と非可逆のWeb DXT表示を区別。実機パッド・通常Chrome/Edge個別・低メモリ端末は今回未再検査。
+
+未実装の追加モーションは今回範囲にない。新規原画はユーザーの追加指示後。完了済み56枚を重複生成しない。古いTestResultsは実件数/SHA集計と人物別18PNGを残して整理。通常commit/pushして終了する。以後の再開は新しい指示を確認し、この完了済み作業を繰り返さない。
+
+## 最新（2026-10-19）：龍太は添付承認の握り拳v5、56動作の全4検証完了、Web最終確認中
+
+ユーザーの「これでいい」の画像は龍太の通常被弾v5として確定。開いた掌v6は不採用、追加生成・手の再解釈なし。承認参照はart_source/paper_roster_motion/ryuta/user_approved_hit_light.png、選択理由・SHA・個別承認をmanifestに保存。motion_ryuta_2でBuildAll成功／Edit582/582／Play81/81／Windows成功、失敗・スキップ0。18PNGはdocs/screenshots/motion_ryuta_2/paper_motion_ryuta/。現在採用の日本語画像も更新済み。全8人56原画の検証集計はdocs/codex_logs/motion_roster_native_verification.json。
+
+motion_roster_web_2を実ビルド中、Windows復帰後に426画像のRGBA保持を実件数で監査し、8799の検証タブ1をreloadして実ブラウザ確認する。先行motion_roster_webとmotion_ryuta_1は不採用v6を含むため現在採用の証跡ではない。戦闘値、通常4原画、下/空中N各1原画、千鶴の保護カバンは維持。通常commit/pushはWeb復帰と最終記録後。
+
 ## 最新（2026-10-19）：全8人56動作のUnity実装完了、Web最終更新へ
 
 龍太の走りv2・上昇v2・落下v1・回避v1・反撃成功v2・通常被弾v6・強被弾v2を接続。motion_ryuta_1はBuildAll成功／Edit582/582／Play81/81／Windows成功、失敗・スキップ0。最終Playは全8人の左右と7動作・通常/強被弾・反撃・解除を検査。18PNGはdocs/screenshots/motion_ryuta_1/paper_motion_ryuta/。通常被弾のユーザー指摘の左手は、右の甲状のv3/v4と右拳状のv5を不採用にし、開いた左の掌を見せるv6へ変更。画面右に親指、上へ4長指の計5指。靴の端切れも正方形1254×1254の余白で解消。採用はイラスト確認/現在ゲームで採用中/龍太/。

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "complete": true,
+  "characters": 8,
+  "motionImages": 56,
+  "approvedRyutaLightVersion": 5,
+  "regression": {
+    "tag": "motion_web_memory_1",
+    "EditMode": {
+      "total": 582,
+      "passed": 582,
+      "failed": 0,
+      "skipped": 0,
+      "source": "TestResults/motion_web_memory_1_EditMode.xml",
+      "sha256": "4cd15a74727af39a08b15d7620d585a1e617d53106bc19d1ffeeb673814e9b65"
+    },
+    "PlayMode": {
+      "total": 81,
+      "passed": 81,
+      "failed": 0,
+      "skipped": 0,
+      "source": "TestResults/motion_web_memory_1_PlayMode.xml",
+      "sha256": "eb288ab52c9e69a5afeeebe3b491111bf2afa4d3556e25d054c8a3132e04b66c"
+    },
+    "BuildAll": {
+      "success": true,
+      "source": "TestResults/motion_web_memory_1_buildall.log",
+      "sha256": "276d4465faf7afdde23645f823fd18595bb507ae095856f0c271d29f3bd3a262"
+    },
+    "Windows": {
+      "success": true,
+      "source": "TestResults/motion_web_memory_1_build.log",
+      "sha256": "de88c811849a8f919bba8bf2820b982403de73fa2074225ddbbc3034144e70f6"
+    }
+  },
+  "web": {
+    "tag": "motion_roster_web_3",
+    "result": "success",
+    "bytes": 119935208,
+    "seconds": 190.3380025,
+    "files": 6,
+    "sourceRgbaImages": 426,
+    "failed": 0,
+    "audit": "docs/screenshots/motion_roster_web_3/webgl-pixel-audit.json",
+    "browserProof": "docs/screenshots/motion_roster_web_3/browser-verification.json",
+    "startupErrors": 0,
+    "audio": "running"
+  },
+  "limitations": "全56動作の左右・通常/強被弾・反撃は実Unity PlayModeで検証。ブラウザは起動・選択・走り・上昇・通常被弾の標本確認。実機パッドと通常Chrome/Edge個別は未再検査。"
+}

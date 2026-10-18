@@ -60,8 +60,18 @@
       "name": "龍太",
       "generated": 7,
       "integrated": true,
-      "verification": "motion_ryuta_1"
+      "verification": "motion_ryuta_2",
+      "previousVerification": "motion_ryuta_1",
+      "note": "通常被弾v5はユーザー添付承認。motion_ryuta_2で全4合格。"
     }
   ],
-  "status": "native_complete_web_pending"
+  "status": "complete",
+  "finalRegression": "motion_web_memory_1",
+  "web": {
+    "tag": "motion_roster_web_3",
+    "verified": true,
+    "artImages": 426,
+    "browser": "Codex in-app Chromium",
+    "proof": "docs/screenshots/motion_roster_web_3"
+  }
 }

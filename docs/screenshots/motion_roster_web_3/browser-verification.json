@@ -1,0 +1,22 @@
+{
+  "buildTag": "motion_roster_web_3",
+  "verifiedIn": "Codex in-app Chromium",
+  "samples": [
+    {
+      "name": "toma_dash",
+      "status": "{\"screen\":\"Battle\",\"picks1\":\"0\",\"picks2\":\"8\",\"p1mode\":\"Dash\",\"p2mode\":\"Idle\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":0,\"player2\":8,\"selectionPlayer\":1,\"stage\":0,\"tick\":1867,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":-4.683333396911621,\"p2x\":5.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":141.1251220703125,\"practice\":true,\"practicePaused\":true}\n音声: running"
+    },
+    {
+      "name": "toma_jump",
+      "status": "{\"screen\":\"Battle\",\"picks1\":\"0\",\"picks2\":\"8\",\"p1mode\":\"Jump\",\"p2mode\":\"Idle\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":0,\"player2\":8,\"selectionPlayer\":1,\"stage\":0,\"tick\":1875,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":-4.683333396911621,\"p2x\":5.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":141.4039764404297,\"practice\":true,\"practicePaused\":true}\n音声: running"
+    },
+    {
+      "name": "ryuta_hit_light_approved",
+      "status": "{\"screen\":\"Battle\",\"picks1\":\"0\",\"picks2\":\"8\",\"p1mode\":\"Attack\",\"p2mode\":\"Hitstun\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":0,\"player2\":8,\"selectionPlayer\":1,\"stage\":0,\"tick\":1964,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":4.103334903717041,\"p2x\":5.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":141.888427734375,\"practice\":true,\"practicePaused\":true}\n音声: running"
+    }
+  ],
+  "logs": [],
+  "artwork": "ryuta hit_light v5 approved by user",
+  "audio": "running",
+  "notes": "全56動作の左右・通常/強被弾・反撃は実Unity PlayModeで検証。ブラウザは起動・選択・走り・上昇・通常被弾の標本確認。実機パッドと通常Chrome/Edge個別は未再検査。"
+}

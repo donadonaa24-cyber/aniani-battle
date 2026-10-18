@@ -12,6 +12,7 @@
       "key": "toma",
       "name": "透真",
       "tag": "motion_toma_3",
+      "evidenceSource": "retained_summary",
       "BuildAll": {
         "success": true,
         "log": "TestResults/motion_toma_3_buildall.log",
@@ -95,6 +96,7 @@
       "key": "ren",
       "name": "蓮",
       "tag": "motion_ren_2",
+      "evidenceSource": "retained_summary",
       "BuildAll": {
         "success": true,
         "log": "TestResults/motion_ren_2_buildall.log",
@@ -178,6 +180,7 @@
       "key": "minato",
       "name": "湊",
       "tag": "motion_minato_1",
+      "evidenceSource": "retained_summary",
       "BuildAll": {
         "success": true,
         "log": "TestResults/motion_minato_1_buildall.log",
@@ -261,6 +264,7 @@
       "key": "shiro",
       "name": "シロ",
       "tag": "motion_shiro_1",
+      "evidenceSource": "retained_summary",
       "BuildAll": {
         "success": true,
         "log": "TestResults/motion_shiro_1_buildall.log",
@@ -344,6 +348,7 @@
       "key": "yui",
       "name": "結衣",
       "tag": "motion_yui_1",
+      "evidenceSource": "retained_summary",
       "BuildAll": {
         "success": true,
         "log": "TestResults/motion_yui_1_buildall.log",
@@ -427,6 +432,7 @@
       "key": "king",
       "name": "黒獅子王",
       "tag": "motion_king_1",
+      "evidenceSource": "retained_summary",
       "BuildAll": {
         "success": true,
         "log": "TestResults/motion_king_1_buildall.log",
@@ -510,6 +516,7 @@
       "key": "akatsuki",
       "name": "暁",
       "tag": "motion_akatsuki_1",
+      "evidenceSource": "result_files",
       "BuildAll": {
         "success": true,
         "log": "TestResults/motion_akatsuki_1_buildall.log",
@@ -592,32 +599,33 @@
     {
       "key": "ryuta",
       "name": "龍太",
-      "tag": "motion_ryuta_1",
+      "tag": "motion_ryuta_2",
+      "evidenceSource": "result_files",
       "BuildAll": {
         "success": true,
-        "log": "TestResults/motion_ryuta_1_buildall.log",
-        "sha256": "b0bea17bebc53c8edda340569d837edfc12faa4d26712b46f2539deeeed2e4e1"
+        "log": "TestResults/motion_ryuta_2_buildall.log",
+        "sha256": "fca941998af34a6b10e8a166a1dfd0e591f907c2b0be1a1f0814801a8cc286cf"
       },
       "EditMode": {
         "total": 582,
         "passed": 582,
         "failed": 0,
         "skipped": 0,
-        "source": "TestResults/motion_ryuta_1_EditMode.xml",
-        "sha256": "d18b1600aee399f8268b1270934c6d6febde75089217637a2802c62746a7d0d7"
+        "source": "TestResults/motion_ryuta_2_EditMode.xml",
+        "sha256": "4082af394ea02e070784e20ad8e7b22c85a2c04d7fe40bf3008d3e3cc8768fe8"
       },
       "PlayMode": {
         "total": 81,
         "passed": 81,
         "failed": 0,
         "skipped": 0,
-        "source": "TestResults/motion_ryuta_1_PlayMode.xml",
-        "sha256": "f933be39ff33243e5c746011946ba42f3fa24a9477c617e8d9904f6a3a759a38"
+        "source": "TestResults/motion_ryuta_2_PlayMode.xml",
+        "sha256": "76223865982610c8e44dc431ca3a3820e350184b2a8b9db62d4ca63f022819e4"
       },
       "Windows": {
         "success": true,
-        "log": "TestResults/motion_ryuta_1_build.log",
-        "sha256": "c3f53db6f68ec29ab803244251e1ad8153141eeaaee037224c598061cb4af692"
+        "log": "TestResults/motion_ryuta_2_build.log",
+        "sha256": "bd0011610fcd967c643454cbf71c6c9b1da3bce06f0a5e4b12694f5a052ae80c"
       },
       "images": 7,
       "selected": [
@@ -658,10 +666,10 @@
         },
         {
           "id": "hit_light",
-          "version": 6,
-          "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v6.png",
+          "version": 5,
+          "source": "art_source/paper_roster_motion/ryuta/generated/hit_light_v5.png",
           "prepared": "art_source/paper_roster_motion/ryuta/prepared/hit_light.png",
-          "sha256": "a7f3b54a757696d630247ea611c145bf7d1b280a1cfd10ff4f3541af55b914c8"
+          "sha256": "601a7557c2aaa9b66665f9f106642f5327277331e90c1c05640360795fbff276"
         },
         {
           "id": "hit_heavy",

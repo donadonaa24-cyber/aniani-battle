@@ -21,7 +21,9 @@ namespace AniBato.EditorTools
             PlayerSettings.WebGL.template="PROJECT:AniBato";
             PlayerSettings.WebGL.compressionFormat=WebGLCompressionFormat.Gzip;
             PlayerSettings.WebGL.decompressionFallback=true;PlayerSettings.WebGL.dataCaching=true;
-            PlayerSettings.WebGL.initialMemorySize=256;PlayerSettings.WebGL.maximumMemorySize=2048;
+            // Full-resolution roster artwork must fit alongside the startup data archive.
+            // Grow on demand instead of reserving the maximum at startup.
+            PlayerSettings.WebGL.initialMemorySize=512;PlayerSettings.WebGL.maximumMemorySize=4096;
             PlayerSettings.WebGL.memoryGrowthMode=WebGLMemoryGrowthMode.Geometric;
             PlayerSettings.WebGL.nameFilesAsHashes=true;
             PlayerSettings.SetScriptingBackend(UnityEditor.Build.NamedBuildTarget.WebGL,ScriptingImplementation.IL2CPP);

@@ -1,0 +1,17 @@
+{
+  "status": "OOM during startup",
+  "logs": [
+    {
+      "level": "error",
+      "message": "OOM",
+      "timestamp": "2026-10-18T16:35:14.853Z",
+      "url": "http://127.0.0.1:8799/Build/3402462a7657da693b40eaea2d979289.loader.js"
+    },
+    {
+      "level": "error",
+      "message": "RuntimeError: memory access out of bounds\n    at wasm://wasm/0700fca6:wasm-function[462]:0x8c7c8\n    at wasm://wasm/0700fca6:wasm-function[465]:0x8ddf9\n    at wasm://wasm/0700fca6:wasm-function[1664]:0xcaea1\n    at wasm://wasm/0700fca6:wasm-function[1535]:0xc1ed9\n    at wasm://wasm/0700fca6:wasm-function[1600]:0xc8100\n    at wasm://wasm/0700fca6:wasm-function[1240]:0xacfec\n    at wasm://wasm/0700fca6:wasm-function[1241]:0xad212\n    at wasm://wasm/0700fca6:wasm-function[1270]:0xafa25\n    at wasm://wasm/0700fca6:wasm-function[1268]:0xaf607\n    at wasm://wasm/0700fca6:wasm-function[1273]:0xb0052\n    at wasm://wasm/0700fca6:wasm-function[1271]:0xafc00\n    at wasm://wasm/0700fca6:wasm-function[1303]:0xb32c7\n    at wasm://wasm/0700fca6:wasm-function[1302]:0xb311f\n    at wasm://wasm/0700fca6:wasm-function[1312]:0xb4106\n    at wasm://wasm/0700fca6:wasm-function[1265]:0xaf21a\n    at wasm://wasm/0700fca6:wasm-function[1551]:0xc44c6\n    at wasm://wasm/0700fca6:wasm-function[1496]:0xbfb0a\n    at wasm://wasm/0700fca6:wasm-function[1497]:0xc0092\n    at wasm://wasm/0700fca6:wasm-function[58922]:0xe79309\n    at wasm://wasm/0700fca6:wasm-function[60391]:0xf41fc0\n    at wasm://wasm/0700fca6:wasm-function[78208]:0x18de823\n    at wasm://wasm/0700fca6:wasm-function[78223]:0x18e104d\n    at wasm://wasm/0700fca6:wasm-function[78222]:0x18e0913\n    at wasm://wasm/0700fca6:wasm-function[59433]:0xec95f9\n    at wasm://wasm/0700fca6:wasm-function[59432]:0xec8ba2\n    at wasm://wasm/0700fca6:wasm-function[78676]:0x19260a0\n    at wasm://wasm/0700fca6:wasm-function[78684]:0x192737d\n    at wasm://wasm/0700fca6:wasm-function[60703]:0xf6dea3\n    at wasm://wasm/0700fca6:wasm-function[72226]:0x16c6364\n    at wasm://wasm/0700fca6:wasm-function[72227]:0x16c6586\n    at wasm://wasm/0700fca6:wasm-function[78988]:0x195b922\n    at wasm://wasm/0700fca6:wasm-function[78990]:0x196caf0\n    at wasm://wasm/0700fca6:wasm-function[78997]:0x196d8be\n    at callMain (blob:http://127.0.0.1:8799/0f97dea0-79a3-469a-b6d5-6e0ae153e666:2:329809)\n    at doRun (blob:http://127.0.0.1:8799/0f97dea0-79a3-469a-b6d5-6e0ae153e666:2:330258)\n    at run (blob:http://127.0.0.1:8799/0f97dea0-79a3-469a-b6d5-6e0ae153e666:2:330416)\n    at Object.removeRunDependency (blob:http://127.0.0.1:8799/0f97dea0-79a3-469a-b6d5-6e0ae153e666:2:110759)\n    at http://127.0.0.1:8799/Build/3402462a7657da693b40eaea2d979289.loader.js:1:45233",
+      "timestamp": "2026-10-18T16:35:14.868Z",
+      "url": "wasm://wasm/0700fca6"
+    }
+  ]
+}
