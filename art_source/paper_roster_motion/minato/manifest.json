@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "key": "minato",
+  "name": "湊",
+  "characterIndex": 3,
+  "baseIdle": "art_source/paper_roster_idle/generated/minato_idle_v1.png",
+  "canvasWidth": 1304,
+  "canvasHeight": 1450,
+  "pixelsPerUnit": 532.5893,
+  "sole": 1328,
+  "jobs": [
+    {
+      "id": "run",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/minato/prompts/run_v1.json"
+    },
+    {
+      "id": "jump",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/minato/prompts/jump_v1.json"
+    },
+    {
+      "id": "fall",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/minato/prompts/fall_v1.json"
+    },
+    {
+      "id": "dodge",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/minato/prompts/dodge_v1.json"
+    },
+    {
+      "id": "counter_success",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/minato/prompts/counter_success_v1.json"
+    },
+    {
+      "id": "hit_light",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/minato/prompts/hit_light_v1.json"
+    },
+    {
+      "id": "hit_heavy",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/minato/prompts/hit_heavy_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "run",
+      "label": "走り",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/run_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n新しい動作「走り」：走る瞬間の強い決め姿。右へ進む両腕の振り、前脚を大きく出し後ろ脚の膝を曲げる。胸と腰の軸はほぼ直立〜前傾10度まで。ゲーム内で絵全体を45度傾けるので、絵に45度の前傾を重ねない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "b163ee29a32db1235acd2bb737919cf0f0f7b62b5487648e8d4766383391b5d7",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 126,
+          "top": 162,
+          "right": 1091,
+          "bottom": 1264
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/minato/prepared/run.png",
+      "preparedSha256": "763d4af3d17923f05153f1c2e390f965f65553f2a15a5dc201d0b94c08f80de6",
+      "offsetX": 0,
+      "offsetY": 64,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/jump_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n新しい動作「ジャンプ上昇」：ジャンプの上昇中。両膝を曲げて両足を浮かせ、両肘も曲げて身体の横へ。上を見た集中した顔。空中攻撃ではなく上昇の明快な全身シルエット。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "bce878574c08624839349fbaef8b361077efe35da9e7afbd69384c8ea29214ba",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 283,
+          "top": 51,
+          "right": 1017,
+          "bottom": 1264
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/minato/prepared/jump.png",
+      "preparedSha256": "62b8ec502c27e24f88550827311ff6dbec07af6d412a922dd22a0297f6f61972",
+      "offsetX": 82,
+      "offsetY": 64,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "fall",
+      "label": "落下",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/fall_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n新しい動作「落下」：ジャンプから落下中。足を下へ伸ばし膝を柔らかく曲げ、両腕を横へ少し開き着地に備える。両手は待機と同じ軽い握り拳。目線は斜め下前方、ジャンプ上昇と異なる姿。両足は浮いている。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "bd847639ba9a86ec30cba8665ba42b7c4db1bb1590630373667451232119287b",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 112,
+          "top": 97,
+          "right": 1093,
+          "bottom": 1253
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/minato/prepared/fall.png",
+      "preparedSha256": "188a7a2509ff379e437eb5d6aeab6f0cc60ae235256ea6bde540dbf354fe9084",
+      "offsetX": 0,
+      "offsetY": 75,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/dodge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n新しい動作「回避」：攻撃をくぐる回避。膝と腰を深く落とし、上体を右前へ少し倒す低い姿勢。両腕は身体の横へ引き、両手は待機と同じ軽い握り拳。顔は前を見て警戒。立ち絵や攻撃と区別できる低いシルエット。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n部位実寸の数値基準：採用待機の頭髪の横幅は約450px、ブーツは各210〜230px。回避でもこれらを拡大しない。髪の上端は低い姿勢に伴ってキャンバス中段へ下げ、大きい上の透明余白を残す。低い腰・膝・肘のつながりを明快にし、腕を逆に曲げない。",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "c5d1b9c0873ad22a6348070e26d69099d232af77e30ad648cb7e99ed25de2255",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 110,
+          "top": 338,
+          "right": 1101,
+          "bottom": 1242
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/minato/prepared/dodge.png",
+      "preparedSha256": "2437c914f11249b8cb6f32fda0a45ce1cf0b5e5793fddffdd00462c6895ea37d",
+      "offsetX": 115,
+      "offsetY": 86,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "counter_success",
+      "label": "カウンター成功",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/counter_success_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n新しい動作「カウンター成功」：反撃成功の決め。本人左の機械拳を右前へ伸ばして短い反撃パンチ、本人右の生身拳は胸前へ。両足で踏み込み冷静な表情。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "f46d993638b3246796f1f03c6ca5defde760194176a87eb9cd29c8441ae81168",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 150,
+          "top": 84,
+          "right": 1142,
+          "bottom": 1273
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/minato/prepared/counter_success.png",
+      "preparedSha256": "d0ea2b33831b0361a821b00ff7cf408a712c733e520841896b0fcc9ea3da47f3",
+      "offsetX": 67,
+      "offsetY": 55,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/hit_light_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n新しい動作「通常被弾」：通常攻撃を受けた瞬間。右前方から打撃を受けて胸と顔が少し左後ろへ傾き、片足を後ろへ踏み出す。両膝は曲がり、拳を胸前へ引き、歯を食いしばって何とか踏ん張る。まだ立って耐えている。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "1fb8bf832066825274678080370b54ffd26d495aa5eb9a4d76e278f13a332806",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 183,
+          "top": 138,
+          "right": 1039,
+          "bottom": 1356
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/minato/prepared/hit_light.png",
+      "preparedSha256": "39cd657a269facc47a4f0335ced460948844dc13e23db19e29c0684806c8c01f",
+      "offsetX": 86,
+      "offsetY": -28,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_heavy",
+      "label": "強被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/hit_heavy_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒茶の跳ね髪、自然の青緑の右眼、青い機械の左眼、白い巻き袖シャツ、黒い戦術ベストとパンツ、茶黒のブーツ。生身の右腕と機械の左前腕・左手を一本ずつ。\n新しい動作「強被弾」：ハートが減る強い被弾。右前方の衝撃に胸と頭が大きく左後ろへのけぞる。両膝を曲げ一方の足は後ずさり、両手を胸の前に広げる。目をぎゅっとつむり口を大きく開け、目尻に涙粒。いかにも痛そうなコミカルな顔。血・傷・破れなし。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/minato_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "f0cb1e0fbbafe81f9370dfe1df30a77fbdc8142e882ee3ee5edc1237b95695c6",
+      "native": {
+        "width": 1190,
+        "height": 1322,
+        "bounds": {
+          "left": 138,
+          "top": 129,
+          "right": 1122,
+          "bottom": 1241
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/minato/prepared/hit_heavy.png",
+      "preparedSha256": "63eff74136cee4e7c0aba214ce42186936e73bc68172e6594dfd7455c62c0761",
+      "offsetX": 0,
+      "offsetY": 87,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "motion_minato_1"
+}

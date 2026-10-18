@@ -8,7 +8,7 @@ const poses={
  jump:'ジャンプの上昇中。両膝を曲げて両足を浮かせ、両肘も曲げて身体の横へ。上を見た集中した顔。空中攻撃ではなく上昇の明快な全身シルエット。',
  fall:'ジャンプから落下中。足を下へ伸ばし膝を柔らかく曲げ、両腕を横へ少し開き着地に備える。両手は待機と同じ軽い握り拳。目線は斜め下前方、ジャンプ上昇と異なる姿。両足は浮いている。',
  dodge:'攻撃をくぐる回避。膝と腰を深く落とし、上体を右前へ少し倒す低い姿勢。両腕は身体の横へ引き、両手は待機と同じ軽い握り拳。顔は前を見て警戒。立ち絵や攻撃と区別できる低いシルエット。',
- counter_success:'防御から反撃が成功した強い決め。両足を開いて踏み込み、右の前腕を顔の前の受けから前方へ振り出す短い肘打ち、反対の左拳は腰へ引く。顔が見え、勝ち誇りすぎない鋭い表情。',
+ counter_success:'防御から反撃が成功した短い左の正拳突き。本人左肩から上腕・肘・前腕・左拳まで自然なほぼ一直線で右前方へ伸ばす。本人右拳は胸前に構える。両腕はそれぞれの肩から追えるようにつなぎ、逆に折れた肘や顔の前を不自然に横切る腕を描かない。両足で踏み込む鋭い決め。',
  hit_light:'通常攻撃を受けた瞬間。右前方から打撃を受けて胸と顔が少し左後ろへ傾き、片足を後ろへ踏み出す。両膝は曲がり、拳を胸前へ引き、歯を食いしばって何とか踏ん張る。まだ立って耐えている。',
  hit_heavy:'ハートが減る強い被弾。右前方の衝撃に胸と頭が大きく左後ろへのけぞる。両膝を曲げ一方の足は後ずさり、両手を胸の前に広げる。目をぎゅっとつむり口を大きく開け、目尻に涙粒。いかにも痛そうなコミカルな顔。血・傷・破れなし。'
 };
@@ -76,7 +76,7 @@ async function adopt(key,tag){
  if(fs.existsSync(captured)){fs.mkdirSync(proof,{recursive:true});for(const name of fs.readdirSync(captured))fs.copyFileSync(`${captured}/${name}`,`${proof}/${name}`);}
  const progress=read(`${root}/progress.json`),row=progress.characters.find(c=>c.key===key);
  Object.assign(row,{generated:7,integrated:true,verification:tag});progress.currentCharacter=progress.characters.find(c=>!c.integrated)?.key??null;
- progress.status=progress.currentCharacter?'in_progress':'complete';write(`${root}/progress.json`,progress);
+ progress.status=progress.currentCharacter?'in_progress':'native_complete_web_pending';write(`${root}/progress.json`,progress);
  fs.writeFileSync(`イラスト確認/${m.name}/追加7動作_確認中/必ず読んでください.txt`,'この7動作はUnity検証後にゲームへ接続済みです。現在の採用画像は「現在ゲームで採用中/'+m.name+'」にも同じSHAで保存しています。原画の最終美術承認とは別です。\n');
  console.log(JSON.stringify({key,adopted:p.frames.length,verifiedTag:tag}));
 }

@@ -1,0 +1,70 @@
+{
+  "key": "minato",
+  "verifiedTag": "motion_minato_1",
+  "artApproved": false,
+  "frames": [
+    {
+      "id": "run",
+      "prepared": "art_source/paper_roster_motion/minato/prepared/run.png",
+      "sha256": "763d4af3d17923f05153f1c2e390f965f65553f2a15a5dc201d0b94c08f80de6",
+      "headTopY": 226,
+      "footMinX": 831,
+      "footMaxX": 1091,
+      "originOffsetY": 0
+    },
+    {
+      "id": "jump",
+      "prepared": "art_source/paper_roster_motion/minato/prepared/jump.png",
+      "sha256": "62b8ec502c27e24f88550827311ff6dbec07af6d412a922dd22a0297f6f61972",
+      "headTopY": 115,
+      "footMinX": 636,
+      "footMaxX": 772,
+      "originOffsetY": 0.031919529738956454
+    },
+    {
+      "id": "fall",
+      "prepared": "art_source/paper_roster_motion/minato/prepared/fall.png",
+      "sha256": "188a7a2509ff379e437eb5d6aeab6f0cc60ae235256ea6bde540dbf354fe9084",
+      "headTopY": 172,
+      "footMinX": 611,
+      "footMaxX": 1060,
+      "originOffsetY": 0.13894383533428104
+    },
+    {
+      "id": "dodge",
+      "prepared": "art_source/paper_roster_motion/minato/prepared/dodge.png",
+      "sha256": "2437c914f11249b8cb6f32fda0a45ce1cf0b5e5793fddffdd00462c6895ea37d",
+      "headTopY": 424,
+      "footMinX": 225,
+      "footMaxX": 1115,
+      "originOffsetY": 0
+    },
+    {
+      "id": "counter_success",
+      "prepared": "art_source/paper_roster_motion/minato/prepared/counter_success.png",
+      "sha256": "d0ea2b33831b0361a821b00ff7cf408a712c733e520841896b0fcc9ea3da47f3",
+      "headTopY": 139,
+      "footMinX": 217,
+      "footMaxX": 1191,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_light",
+      "prepared": "art_source/paper_roster_motion/minato/prepared/hit_light.png",
+      "sha256": "39cd657a269facc47a4f0335ced460948844dc13e23db19e29c0684806c8c01f",
+      "headTopY": 110,
+      "footMinX": 284,
+      "footMaxX": 1125,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_heavy",
+      "prepared": "art_source/paper_roster_motion/minato/prepared/hit_heavy.png",
+      "sha256": "63eff74136cee4e7c0aba214ce42186936e73bc68172e6594dfd7455c62c0761",
+      "headTopY": 216,
+      "footMinX": 425,
+      "footMaxX": 1122,
+      "originOffsetY": 0
+    }
+  ]
+}

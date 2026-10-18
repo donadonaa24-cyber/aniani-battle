@@ -4,7 +4,7 @@
   "requiredCharacters": 8,
   "requiredPosesPerCharacter": 7,
   "requiredTotal": 56,
-  "currentCharacter": "minato",
+  "currentCharacter": "shiro",
   "characters": [
     {
       "key": "toma",
@@ -24,12 +24,13 @@
       "key": "minato",
       "name": "湊",
       "generated": 7,
-      "integrated": false
+      "integrated": true,
+      "verification": "motion_minato_1"
     },
     {
       "key": "shiro",
       "name": "シロ",
-      "generated": 4,
+      "generated": 7,
       "integrated": false
     },
     {

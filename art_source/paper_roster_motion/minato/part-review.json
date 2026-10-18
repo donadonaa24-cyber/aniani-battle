@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "key": "minato",
+  "artApproved": false,
+  "selected": [
+    {
+      "id": "run",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/run_v1.png",
+      "sha256": "b163ee29a32db1235acd2bb737919cf0f0f7b62b5487648e8d4766383391b5d7",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 126,
+          "top": 162,
+          "right": 1091,
+          "bottom": 1264
+        }
+      }
+    },
+    {
+      "id": "jump",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/jump_v1.png",
+      "sha256": "bce878574c08624839349fbaef8b361077efe35da9e7afbd69384c8ea29214ba",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 283,
+          "top": 51,
+          "right": 1017,
+          "bottom": 1264
+        }
+      }
+    },
+    {
+      "id": "fall",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/fall_v1.png",
+      "sha256": "bd847639ba9a86ec30cba8665ba42b7c4db1bb1590630373667451232119287b",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 112,
+          "top": 97,
+          "right": 1093,
+          "bottom": 1253
+        }
+      }
+    },
+    {
+      "id": "dodge",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/dodge_v1.png",
+      "sha256": "c5d1b9c0873ad22a6348070e26d69099d232af77e30ad648cb7e99ed25de2255",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 110,
+          "top": 338,
+          "right": 1101,
+          "bottom": 1242
+        }
+      }
+    },
+    {
+      "id": "counter_success",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/counter_success_v1.png",
+      "sha256": "f46d993638b3246796f1f03c6ca5defde760194176a87eb9cd29c8441ae81168",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 150,
+          "top": 84,
+          "right": 1142,
+          "bottom": 1273
+        }
+      }
+    },
+    {
+      "id": "hit_light",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/hit_light_v1.png",
+      "sha256": "1fb8bf832066825274678080370b54ffd26d495aa5eb9a4d76e278f13a332806",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 183,
+          "top": 138,
+          "right": 1039,
+          "bottom": 1356
+        }
+      }
+    },
+    {
+      "id": "hit_heavy",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/minato/generated/hit_heavy_v1.png",
+      "sha256": "f0cb1e0fbbafe81f9370dfe1df30a77fbdc8142e882ee3ee5edc1237b95695c6",
+      "native": {
+        "width": 1190,
+        "height": 1322,
+        "bounds": {
+          "left": 138,
+          "top": 129,
+          "right": 1122,
+          "bottom": 1241
+        }
+      }
+    }
+  ],
+  "canvasPolicy": "原画RGBAの整数移動と透明余白のみ。個別拡縮0。頭髪と靴の投影差は原画で目視し、美術の最終承認と実装検証を区別。",
+  "anatomyReview": "肩・肘・手首のつながり、左右の手の親指と折った指、全身の外周白縁を確認。低姿勢を埋める拡大なし。",
+  "rgbaAudit": [
+    {
+      "id": "run",
+      "preserved": true,
+      "sha256": "763d4af3d17923f05153f1c2e390f965f65553f2a15a5dc201d0b94c08f80de6"
+    },
+    {
+      "id": "jump",
+      "preserved": true,
+      "sha256": "62b8ec502c27e24f88550827311ff6dbec07af6d412a922dd22a0297f6f61972"
+    },
+    {
+      "id": "fall",
+      "preserved": true,
+      "sha256": "188a7a2509ff379e437eb5d6aeab6f0cc60ae235256ea6bde540dbf354fe9084"
+    },
+    {
+      "id": "dodge",
+      "preserved": true,
+      "sha256": "2437c914f11249b8cb6f32fda0a45ce1cf0b5e5793fddffdd00462c6895ea37d"
+    },
+    {
+      "id": "counter_success",
+      "preserved": true,
+      "sha256": "d0ea2b33831b0361a821b00ff7cf408a712c733e520841896b0fcc9ea3da47f3"
+    },
+    {
+      "id": "hit_light",
+      "preserved": true,
+      "sha256": "39cd657a269facc47a4f0335ced460948844dc13e23db19e29c0684806c8c01f"
+    },
+    {
+      "id": "hit_heavy",
+      "preserved": true,
+      "sha256": "63eff74136cee4e7c0aba214ce42186936e73bc68172e6594dfd7455c62c0761"
+    }
+  ],
+  "knownDifferences": [
+    "頭髪・自然の右眼と機械の左眼、生身の右腕と金属の左腕を採用待機から維持。左右の肩・肘・拳の接続を目視。",
+    "頭髪は姿勢の投影で約440〜480px、待機約450px。ブーツは横向きや前後の投影で長辺が変わる。個別拡縮は行っていない。",
+    "低い回避は頭髪約450pxとブーツ210〜230pxの数値基準を追記して生成。上の透明余白を残し、低姿勢を埋める拡大はしていない。",
+    "一部の生成キャンバスは参照1189×1323と異なるが、原画画素を保つ透明余白と整数移動だけで共通枠へ収めた。原本寸法とSHAは各selectedに記録。",
+    "最終的な美術承認と、実入力での接続検証・元画素の保持は別。"
+  ]
+}
