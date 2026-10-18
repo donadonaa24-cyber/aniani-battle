@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "key": "shiro",
+  "name": "シロ",
+  "characterIndex": 4,
+  "baseIdle": "art_source/paper_roster_idle/prepared/shiro_idle.png",
+  "selectedVersion": 1,
+  "entries": [
+    {
+      "schemaVersion": 1,
+      "key": "shiro",
+      "name": "シロ",
+      "characterIndex": 4,
+      "id": "charge",
+      "version": 1,
+      "source": "art_source/paper_charge/shiro/generated/charge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用「溜め中」の全身アニメ原画を1枚だけ作る。画像1は本人の採用待機：編集対象、顔・頭髪・衣装・頭身・靴の画素実寸の基準。容姿と部位の実寸は画像1のみを基準とする。\n人物：白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい姿勢：四足で跳びかかる直前の溜め。前脚2本は肘を曲げて胸を少し下げ、後脚2本も膝を曲げて踏ん張る。首と頭を少し後ろへ引き、右前をにらんで口を少し開ける。人の拳や腕は追加しない。四肢4本、耳2つ、尾1本。\n少ない原画で明快に読める力を溜めた強い構え。身体の軸はほぼ直立～前傾10度以内。ゲーム内で全身を追加10度傾けて少し沈める。完成した攻撃やジャンプではなく、接地したまま力を引き付けている。胸元が斜めに見える右向き。顔と手を重ねて隠さず、肩から肘・手首・手を自然につなぐ。本人の左右と画面の左右を混同しない。人間は2腕2脚・各手5指、犬は4脚。ミトンや爪手甲を素手に変更しない。\n参照1と同じ1189×1323の透明キャンバス。髪と顔、靴、道具の実寸と人物倍率を保ち、低姿勢の上には大きい透明余白を残す。頭や靴を大きくして余白を埋めない。全身と全ての装備を枠の内側へ、切断しない。参照と同じ線・セル塗り、薄いクリーム白の切り抜き縁を全外周へ。紙の繊維・背景・床・影・オーラ・発光・速度線・文字・相手・複数ポーズ・連続コマは禁止。完全透明の背景。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：本人の容姿・部位実寸・倍率の基準、編集対象"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "d0121be41a86aa39942260bfe03df8836561675d28678474a0f8623367702d5f",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 45,
+          "top": 348,
+          "right": 1187,
+          "bottom": 1268
+        }
+      },
+      "artApproved": false,
+      "status": "adopted_for_runtime",
+      "prepared": "art_source/paper_charge/shiro/prepared/charge.png",
+      "preparedSha256": "10a5271cb27d3061e8016276c3d18cb0f32885aca6bf1062799814b67bfafff3",
+      "offsetX": 59,
+      "offsetY": 60,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "charge_art_2"
+}

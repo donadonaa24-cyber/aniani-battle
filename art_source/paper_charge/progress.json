@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "task": "PAPER_CHARGE_ARTWORK",
+  "expectedImages": 9,
+  "status": "complete",
+  "characters": [
+    {
+      "key": "toma",
+      "name": "透真",
+      "characterIndex": 0,
+      "generated": true,
+      "integrated": true,
+      "verifiedTag": "charge_art_2"
+    },
+    {
+      "key": "ren",
+      "name": "蓮",
+      "characterIndex": 1,
+      "generated": true,
+      "integrated": true,
+      "verifiedTag": "charge_art_2"
+    },
+    {
+      "key": "chizuru",
+      "name": "千鶴",
+      "characterIndex": 2,
+      "generated": true,
+      "integrated": true,
+      "verifiedTag": "charge_art_2"
+    },
+    {
+      "key": "minato",
+      "name": "湊",
+      "characterIndex": 3,
+      "generated": true,
+      "integrated": true,
+      "verifiedTag": "charge_art_2"
+    },
+    {
+      "key": "shiro",
+      "name": "シロ",
+      "characterIndex": 4,
+      "generated": true,
+      "integrated": true,
+      "verifiedTag": "charge_art_2"
+    },
+    {
+      "key": "yui",
+      "name": "結衣",
+      "characterIndex": 5,
+      "generated": true,
+      "integrated": true,
+      "verifiedTag": "charge_art_2"
+    },
+    {
+      "key": "king",
+      "name": "黒獅子王",
+      "characterIndex": 6,
+      "generated": true,
+      "integrated": true,
+      "verifiedTag": "charge_art_2"
+    },
+    {
+      "key": "akatsuki",
+      "name": "暁",
+      "characterIndex": 7,
+      "generated": true,
+      "integrated": true,
+      "verifiedTag": "charge_art_2"
+    },
+    {
+      "key": "ryuta",
+      "name": "龍太",
+      "characterIndex": 8,
+      "generated": true,
+      "integrated": true,
+      "verifiedTag": "charge_art_2"
+    }
+  ],
+  "finalNativeTag": "charge_art_2",
+  "finalWebTag": "charge_art_web",
+  "finalVerification": "docs/codex_logs/charge_artwork_verification.json"
+}

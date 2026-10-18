@@ -1,0 +1,1819 @@
+{
+  "schemaVersion": 1,
+  "reason": "AGENTS容量指定：TestResultsは最新3回を保持。旧XML実件数とログ・一時撮影のSHAを保存して整理。原画・採用済みdocs/screenshots・カバンは対象外。",
+  "retainedNativeTags": [
+    "motion_web_memory_1",
+    "charge_ryuta_hands_1",
+    "charge_art_2"
+  ],
+  "activeWebTag": "charge_art_web",
+  "prunedEntries": 17392,
+  "prunedBytes": 5101973261,
+  "entries": [
+    {
+      "path": "TestResults/charge_art_1_buildall.log",
+      "bytes": 77602,
+      "sha256": "325ba289cc84e331e66a83e6494b33a140aa2933ad2a7fcf0f462701a1b187fd"
+    },
+    {
+      "path": "TestResults/motion_akatsuki_1_build.log",
+      "bytes": 363273,
+      "sha256": "5d4c5f15d5fb6f86b73569ac01651683fa33ce9f1269eadcd8c44ce1a45baac0"
+    },
+    {
+      "path": "TestResults/motion_akatsuki_1_buildall.log",
+      "bytes": 583485,
+      "sha256": "b6143c523701214e9f210843d108f5a30832cd55171c1db0c2089b6855e03440"
+    },
+    {
+      "path": "TestResults/motion_akatsuki_1_EditMode.log",
+      "bytes": 254144,
+      "sha256": "247c35539d12d179191cb50327847950f5c98abde8fe490f3df352f24db9ea1a"
+    },
+    {
+      "path": "TestResults/motion_akatsuki_1_EditMode.xml",
+      "bytes": 474661,
+      "sha256": "c133e43be31d95bdac7d5d35bff91fe5ef16a234c78c2c1b8da0ada299c2024d",
+      "testRun": {
+        "result": "Passed",
+        "total": "582",
+        "passed": "582",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "314.0997815"
+      }
+    },
+    {
+      "path": "TestResults/motion_akatsuki_1_PlayMode.log",
+      "bytes": 92633,
+      "sha256": "fd7df0a9ef10d963923ffdd4fef490c5a9ace28e3134947be8f334d00e396b77"
+    },
+    {
+      "path": "TestResults/motion_akatsuki_1_PlayMode.xml",
+      "bytes": 65885,
+      "sha256": "816de09a8d377b31dd7df72425ffb849561aa1fe93b7c537f5217b5e4cb392e6",
+      "testRun": {
+        "result": "Passed",
+        "total": "81",
+        "passed": "81",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "158.9211516"
+      }
+    },
+    {
+      "path": "TestResults/motion_akatsuki_1_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/motion_roster_web_2_RestoreWindows.log",
+      "bytes": 31212,
+      "sha256": "a44ca7421438561e822ea2b575d619df35092d7dbca5df3c07c3ddd2983b7505"
+    },
+    {
+      "path": "TestResults/motion_roster_web_2_WebGL.log",
+      "bytes": 479095,
+      "sha256": "9c0795c4646cce9d4a5c9c917c04748021c8eb58e19c0122edb963d34b802de5"
+    },
+    {
+      "path": "TestResults/motion_roster_web_3_RestoreWindows.log",
+      "bytes": 31502,
+      "sha256": "0627681ef1976895474a900ff81246357037c0fc541e5781b2be01bc7352f751"
+    },
+    {
+      "path": "TestResults/motion_roster_web_3_WebGL.log",
+      "bytes": 480009,
+      "sha256": "ae5b0271850a1f3790a831e6f099e1fd9b0d2a828d3ba564c7fbf071cec22db9"
+    },
+    {
+      "path": "TestResults/motion_roster_web_RestoreWindows.log",
+      "bytes": 58704,
+      "sha256": "f91b5969d3733ed9748b60322b997d25ef8107cf8d114cb3a2407781097c4295"
+    },
+    {
+      "path": "TestResults/motion_roster_web_WebGL.log",
+      "bytes": 599479,
+      "sha256": "90072512498e1e6fcd095c9edffd88b46ac580877ff45434084ab12ab38a51df"
+    },
+    {
+      "path": "TestResults/motion_ryuta_2_build.log",
+      "bytes": 371738,
+      "sha256": "bd0011610fcd967c643454cbf71c6c9b1da3bce06f0a5e4b12694f5a052ae80c"
+    },
+    {
+      "path": "TestResults/motion_ryuta_2_buildall.log",
+      "bytes": 581424,
+      "sha256": "fca941998af34a6b10e8a166a1dfd0e591f907c2b0be1a1f0814801a8cc286cf"
+    },
+    {
+      "path": "TestResults/motion_ryuta_2_EditMode.log",
+      "bytes": 254913,
+      "sha256": "12471e5b14e0e90d332bce046bd2513a6d7d16837af13524c3f76eae75163c6e"
+    },
+    {
+      "path": "TestResults/motion_ryuta_2_EditMode.xml",
+      "bytes": 474664,
+      "sha256": "4082af394ea02e070784e20ad8e7b22c85a2c04d7fe40bf3008d3e3cc8768fe8",
+      "testRun": {
+        "result": "Passed",
+        "total": "582",
+        "passed": "582",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "307.3911406"
+      }
+    },
+    {
+      "path": "TestResults/motion_ryuta_2_PlayMode.log",
+      "bytes": 98042,
+      "sha256": "e221624d08c45ba3abe9f1f736a7f42948b8442fda41cdc0a7e6331949089ad2"
+    },
+    {
+      "path": "TestResults/motion_ryuta_2_PlayMode.xml",
+      "bytes": 65890,
+      "sha256": "76223865982610c8e44dc431ca3a3820e350184b2a8b9db62d4ca63f022819e4",
+      "testRun": {
+        "result": "Passed",
+        "total": "81",
+        "passed": "81",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "159.0256063"
+      }
+    },
+    {
+      "path": "TestResults/motion_ryuta_2_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_1_buildall.log",
+      "bytes": 76714,
+      "sha256": "9dd02034434ce8a9fc0798a070b5f32b8ae0622d4fc966073f61c09191692e9b"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_2_build.log",
+      "bytes": 344443,
+      "sha256": "ad4f4848835250e71d0d9e498e5a56153b3d248c121dbc0fc1bfc641cdc31437"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_2_buildall.log",
+      "bytes": 399903,
+      "sha256": "a42ed3ee5f439ec160d3a9a074b825c8f0c9af1a9c8e19cb6ef3f4d2b82e8749"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_2_EditMode.log",
+      "bytes": 168304,
+      "sha256": "e4414049d252919f5019062f5cc779d7b1e7092df554b6bc0fc9de0e8de309d3"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_2_EditMode.xml",
+      "bytes": 436007,
+      "sha256": "d81a0272ef3be6345b1d11c582de0774c5922e9ca1d92e3285788ed725bbc7f0",
+      "testRun": {
+        "result": "Failed(Child)",
+        "total": "535",
+        "passed": "533",
+        "failed": "2",
+        "skipped": "0",
+        "duration": "150.1509598"
+      }
+    },
+    {
+      "path": "TestResults/paper_fourkeys_2_PlayMode.log",
+      "bytes": 79840,
+      "sha256": "1ab008209dd01290efed15b1aa23c18a331a92ea54d0b05d77ba7e77de4b6db7"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_2_PlayMode.xml",
+      "bytes": 52796,
+      "sha256": "1238189ff343e57c1c8979955bb1b2eff900a8adf860f9ff2d492cfa7efbb087",
+      "testRun": {
+        "result": "Failed(Child)",
+        "total": "63",
+        "passed": "62",
+        "failed": "1",
+        "skipped": "0",
+        "duration": "135.4737092"
+      }
+    },
+    {
+      "path": "TestResults/paper_fourkeys_3_build.log",
+      "bytes": 344044,
+      "sha256": "cd2ebb1b8149fad215b9dde9a19ddc8356f62762aea15fc8f579735aa29d267b"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_3_buildall.log",
+      "bytes": 394718,
+      "sha256": "fe30f091ae8881379974a712a04dbb3504e9ef9f7e7a129a37c3d48f69c7b547"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_3_EditMode.log",
+      "bytes": 168553,
+      "sha256": "129426951ae845e0dd03019fd1d7b09b0d4f5c433b53ffce2793c5567071fdd6"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_3_EditMode.xml",
+      "bytes": 434316,
+      "sha256": "08452839ca7ddd30341ab71e14ea0698a1776fd0463a39169dc49fd11607a872",
+      "testRun": {
+        "result": "Passed",
+        "total": "535",
+        "passed": "535",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "152.669169"
+      }
+    },
+    {
+      "path": "TestResults/paper_fourkeys_3_PlayMode.log",
+      "bytes": 79854,
+      "sha256": "9ea552aba9ab561024b72a9244e9ea3c3d675b7621124e7fa8c3cf88a5889403"
+    },
+    {
+      "path": "TestResults/paper_fourkeys_3_PlayMode.xml",
+      "bytes": 51430,
+      "sha256": "a0fc41a5aeb58a83e9f72ddcd7b02052f31c1c12ea462e0bb024191db09ea8d0",
+      "testRun": {
+        "result": "Passed",
+        "total": "63",
+        "passed": "63",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "135.4247574"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_1_build.log",
+      "bytes": 346134,
+      "sha256": "54f6408bfe39f934e47dac4ada3d2ba3c5bfc74754d02ab99d1933bfccd8ed25"
+    },
+    {
+      "path": "TestResults/paper_release_1_buildall.log",
+      "bytes": 399829,
+      "sha256": "04b23947f1125b91752fe41d1516a687bd980890808e9966768a6d1286f4d7df"
+    },
+    {
+      "path": "TestResults/paper_release_1_EditMode.log",
+      "bytes": 182825,
+      "sha256": "f250b1fba6e15d80fdb203de4c1953bbbc5d804adcfd1c02225c2fb7d080947f"
+    },
+    {
+      "path": "TestResults/paper_release_1_EditMode.xml",
+      "bytes": 437448,
+      "sha256": "4416f883aaaecb389fdcfef63cf6c112ce761f13f21c660fad87e68ef880d513",
+      "testRun": {
+        "result": "Failed(Child)",
+        "total": "537",
+        "passed": "536",
+        "failed": "1",
+        "skipped": "0",
+        "duration": "160.8457259"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_1_PlayMode.log",
+      "bytes": 80940,
+      "sha256": "98275378d0e9e35d83ea68f6d92ee2bc34fdbcce83b316307b7d0c353a5be9b5"
+    },
+    {
+      "path": "TestResults/paper_release_1_PlayMode.xml",
+      "bytes": 53052,
+      "sha256": "15c12929db843b8e7e90f4a769b5409f127cad9ae18bcd190927be3256e9e8e6",
+      "testRun": {
+        "result": "Passed",
+        "total": "65",
+        "passed": "65",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "135.678303"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_2_build.log",
+      "bytes": 347050,
+      "sha256": "218f130fd691e7bb6f1263afeb616a1ff3378ff0472cc5ee40158356b75b8a4d"
+    },
+    {
+      "path": "TestResults/paper_release_2_buildall.log",
+      "bytes": 403640,
+      "sha256": "470a04278b651e203a60d87f923b0df8e73c6aae87b87e6b989192ed4064d739"
+    },
+    {
+      "path": "TestResults/paper_release_2_EditMode.log",
+      "bytes": 182322,
+      "sha256": "4be8f629ce75b15542b2fc0033b4cdc5f915aca67f95371aef9c25baa2479835"
+    },
+    {
+      "path": "TestResults/paper_release_2_EditMode.xml",
+      "bytes": 436321,
+      "sha256": "0bb56564262338152b2d123559e3778e4826985eb3a627f1e817d2aa48bfd11d",
+      "testRun": {
+        "result": "Passed",
+        "total": "537",
+        "passed": "537",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "155.1990115"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_2_PlayMode.log",
+      "bytes": 80000,
+      "sha256": "60050257c64a30067899b097fb774a55bca44bf5c9dc0fe968da34825d39d6aa"
+    },
+    {
+      "path": "TestResults/paper_release_2_PlayMode.xml",
+      "bytes": 53851,
+      "sha256": "229b1ecea86bdd72eccf94808b5475a0d0c693ca3bcf6a5a567ff9f6ea8a8439",
+      "testRun": {
+        "result": "Passed",
+        "total": "66",
+        "passed": "66",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "136.6079897"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_3_build.log",
+      "bytes": 341982,
+      "sha256": "743fd1059c290b540a3d660851da82cdafd9c46f2583dfdfc644f952a0f9911e"
+    },
+    {
+      "path": "TestResults/paper_release_3_buildall.log",
+      "bytes": 390738,
+      "sha256": "a6494a019174068023dc723ae8c77dd62eda5d7ba8027ba867566998a60ab077"
+    },
+    {
+      "path": "TestResults/paper_release_3_EditMode.log",
+      "bytes": 182898,
+      "sha256": "cbe9f5a300496b720e98b793a57f87ffa2f9fdbfb6fdbcf53e11211634d7fcf0"
+    },
+    {
+      "path": "TestResults/paper_release_3_EditMode.xml",
+      "bytes": 436299,
+      "sha256": "3aa93c76bc1d3ca86934adddb64297a253f3967902033400c3f535e667ce2f71",
+      "testRun": {
+        "result": "Passed",
+        "total": "537",
+        "passed": "537",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "159.2815416"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_3_PlayMode.log",
+      "bytes": 81547,
+      "sha256": "13c8a9156f93a1c0802a0bde70f7bd5a851eab9710c12d9ac7510729c047b2c6"
+    },
+    {
+      "path": "TestResults/paper_release_3_PlayMode.xml",
+      "bytes": 53849,
+      "sha256": "6a18c10610972a30ee6faff48b31564a719995f3678635823698a5e6d77f9078",
+      "testRun": {
+        "result": "Passed",
+        "total": "66",
+        "passed": "66",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "136.8642562"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_4_buildall.log",
+      "bytes": 355295,
+      "sha256": "6bde960d1025d40eef7a99cf1c467f76514faf623ffe9108c76672c6ad4b2940"
+    },
+    {
+      "path": "TestResults/paper_release_5_build.log",
+      "bytes": 341754,
+      "sha256": "06f617f36af91726ff6ab7a19700d8954df2dfa657daad4191c3697969051d64"
+    },
+    {
+      "path": "TestResults/paper_release_5_buildall.log",
+      "bytes": 393063,
+      "sha256": "37874293af305431a1bac8089fad21650ce0c94e12707c700e8b82227600fb90"
+    },
+    {
+      "path": "TestResults/paper_release_5_EditMode.log",
+      "bytes": 196727,
+      "sha256": "c4bf11500ade3932ea87888b9822ade5a3b8d3a8bd8a229c173ef3780722f495"
+    },
+    {
+      "path": "TestResults/paper_release_5_EditMode.xml",
+      "bytes": 436307,
+      "sha256": "e1efaa21a9535fc7775007c75b49987be4c2566d10a44a72967c9661c51f2301",
+      "testRun": {
+        "result": "Passed",
+        "total": "537",
+        "passed": "537",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "157.9555624"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_5_hitbox_review.md",
+      "bytes": 6176,
+      "sha256": "cd53d26daa6f0e524978ceb1016e4c87eeb4caa4c874cd6b3f99ab7aa5606beb"
+    },
+    {
+      "path": "TestResults/paper_release_5_PlayMode.log",
+      "bytes": 79931,
+      "sha256": "fb2338285bac2dc5c4169eeeb0f7484bccdeade99ad34db93ef25e0cd9776be3"
+    },
+    {
+      "path": "TestResults/paper_release_5_PlayMode.xml",
+      "bytes": 53845,
+      "sha256": "221facd944d51c90f83823d768470ea3b6f4c68f1c955776a58bd2bc5ac3d6b1",
+      "testRun": {
+        "result": "Passed",
+        "total": "66",
+        "passed": "66",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "136.3918065"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_capture_PlayMode.log",
+      "bytes": 46587,
+      "sha256": "e43c88c707d39a241bb64be4070a0ad0e0afb60bbc340c66dc5bc91654b7a611"
+    },
+    {
+      "path": "TestResults/paper_release_capture_PlayMode.xml",
+      "bytes": 3599,
+      "sha256": "7258227bfd011e0ef83dd556005e49a1759e8ba986a821d7b29048aac5a02d7f",
+      "testRun": {
+        "result": "Passed",
+        "total": "1",
+        "passed": "1",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "3.5221548"
+      }
+    },
+    {
+      "path": "TestResults/paper_release_web_RestoreWindows.log",
+      "bytes": 35658,
+      "sha256": "52849b8d9dc72cafc489e7a0c6a0eb62f43429d32424397ca8507ebb12477132"
+    },
+    {
+      "path": "TestResults/paper_release_web_WebGL.log",
+      "bytes": 399046,
+      "sha256": "e61bdb1824ca649ff43dde3d7071753d8e0120b2cda715ba629c65f643fff5fa"
+    },
+    {
+      "path": "TestResults/paper_single_title_1_build.log",
+      "bytes": 348802,
+      "sha256": "f94dbc5d37cfb0ac5accd51a7d36e68a28666f0fac6d1e0507949eb4d4695d91"
+    },
+    {
+      "path": "TestResults/paper_single_title_1_buildall.log",
+      "bytes": 406644,
+      "sha256": "e30c35a549b46689cd9b8aa87c45faf04e83420cc98a65cd18a84b58dfe4064f"
+    },
+    {
+      "path": "TestResults/paper_single_title_1_EditMode.log",
+      "bytes": 169056,
+      "sha256": "22e44c58ae1095a805c8cab94cffdc0a884c62b133f06562c3bd51ee8a777e37"
+    },
+    {
+      "path": "TestResults/paper_single_title_1_EditMode.xml",
+      "bytes": 443504,
+      "sha256": "f569d6317e935d82043548792018de0d57e0a4b1613f4c591d6dbd64f81131d7",
+      "testRun": {
+        "result": "Failed(Child)",
+        "total": "543",
+        "passed": "541",
+        "failed": "2",
+        "skipped": "0",
+        "duration": "161.6391786"
+      }
+    },
+    {
+      "path": "TestResults/paper_single_title_1_PlayMode.log",
+      "bytes": 483707,
+      "sha256": "a4e2260392da6b2ea10da09e8a39fdf142195084f0e56b9f6167657a0ee75ed7"
+    },
+    {
+      "path": "TestResults/paper_single_title_1_PlayMode.xml",
+      "bytes": 74331,
+      "sha256": "d58ebf3797f9fcf7cbf69db588be47a843430b4b7be0a4bd18769d0fec9fd645",
+      "testRun": {
+        "result": "Failed(Child)",
+        "total": "68",
+        "passed": "42",
+        "failed": "26",
+        "skipped": "0",
+        "duration": "77.7938409"
+      }
+    },
+    {
+      "path": "TestResults/paper_single_title_1_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/paper_single_title_2_build.log",
+      "bytes": 349170,
+      "sha256": "ad555051d9e9148bce64c8410cc4a09d51c02276a77e1312578f7241e84e6657"
+    },
+    {
+      "path": "TestResults/paper_single_title_2_buildall.log",
+      "bytes": 402360,
+      "sha256": "dfa0d8a8b0c038d19bfe5cb871f80e9215c813d4a9a9137100cde5e5353121de"
+    },
+    {
+      "path": "TestResults/paper_single_title_2_EditMode.log",
+      "bytes": 198127,
+      "sha256": "8eca875124ebc1c504fff0a9ebeeb59c704f5aa1beb84f6f522319b98ad40951"
+    },
+    {
+      "path": "TestResults/paper_single_title_2_EditMode.xml",
+      "bytes": 441754,
+      "sha256": "cfc43993e28662f4d81e4096189eedd799e631653cdf8c1e00c51df1f2907235",
+      "testRun": {
+        "result": "Passed",
+        "total": "543",
+        "passed": "543",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "167.5101085"
+      }
+    },
+    {
+      "path": "TestResults/paper_single_title_2_PlayMode.log",
+      "bytes": 84670,
+      "sha256": "a0fd1aab1190b8b9af77f86692423849e8f418292b60dbd89b0b990ab89bb4c7"
+    },
+    {
+      "path": "TestResults/paper_single_title_2_PlayMode.xml",
+      "bytes": 55470,
+      "sha256": "59558c72a6e8048920869bd7be9a9033219ee5ecb3a7977bed36bca77206689d",
+      "testRun": {
+        "result": "Passed",
+        "total": "68",
+        "passed": "68",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "137.8584259"
+      }
+    },
+    {
+      "path": "TestResults/paper_single_title_2_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/paper_single_title_3_build.log",
+      "bytes": 353122,
+      "sha256": "d5c689fe6b2987cc97d72aac352f2a283fa6a8fa1bae5b282bd3ca07bf8209a7"
+    },
+    {
+      "path": "TestResults/paper_single_title_3_buildall.log",
+      "bytes": 401475,
+      "sha256": "5de93b3fa94c07a3d03748efe419f33c42f1cf6f76539c50e1d072346eef832f"
+    },
+    {
+      "path": "TestResults/paper_single_title_3_EditMode.log",
+      "bytes": 184641,
+      "sha256": "7241dbd2320bc93a2b1036097882e9e7bf1725a7cc1d3d521f6ce92498839701"
+    },
+    {
+      "path": "TestResults/paper_single_title_3_EditMode.xml",
+      "bytes": 441803,
+      "sha256": "73763140f346d0792ae2c208e65ab1a1067222b99fd880472f0d9f6b637f7d17",
+      "testRun": {
+        "result": "Passed",
+        "total": "543",
+        "passed": "543",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "166.8448395"
+      }
+    },
+    {
+      "path": "TestResults/paper_single_title_3_PlayMode.log",
+      "bytes": 81180,
+      "sha256": "6f577b51913e8c8c1832201b93dbc1ae70eaaa1b3a2fa1a1723a0cebe0408021"
+    },
+    {
+      "path": "TestResults/paper_single_title_3_PlayMode.xml",
+      "bytes": 55468,
+      "sha256": "48db52824a5c8288ff21d94deb9020d268b10b83de93ffe8715ffc9e52fc7e70",
+      "testRun": {
+        "result": "Passed",
+        "total": "68",
+        "passed": "68",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "137.6013635"
+      }
+    },
+    {
+      "path": "TestResults/paper_single_title_3_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/paper_single_title_web_RestoreWindows.log",
+      "bytes": 40561,
+      "sha256": "5f8bc8410f2c9f7620812903bf6f022b74f96f5eb665a7dacbfefcd3a4cef207"
+    },
+    {
+      "path": "TestResults/paper_single_title_web_WebGL.log",
+      "bytes": 425400,
+      "sha256": "ab2df07bc92d4bddd685596e1750e672dfde0968bd39f7a9a08c8a4a9e5cf505"
+    },
+    {
+      "path": "TestResults/rework_r1_cpu.csv",
+      "bytes": 17090,
+      "sha256": "06302d9e975d3da51308c52905b38c05d6c709e1c925ed0d26ec17cee0dd2a84"
+    },
+    {
+      "path": "TestResults/rework_r3_roster_cpu.csv",
+      "bytes": 15115,
+      "sha256": "cca349ef1cf4e1ec38c8c6119aed4189d8fca3b4b856e150159c3e0c6f1e825d"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_1_build.log",
+      "bytes": 361977,
+      "sha256": "483b2da7653b63efa9ede3358410100be7e625348b0d37b0b52379482c93f550"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_1_buildall.log",
+      "bytes": 497065,
+      "sha256": "a01e04597a6238075e44d1c8188ed1c0c6137479ef460aef9391d7cbfecf704f"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_1_EditMode.log",
+      "bytes": 189563,
+      "sha256": "334451e6f4274d8f5cc38fa3eb58f8728df1109d11f2999efa0211fd9c3b7155"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_1_EditMode.xml",
+      "bytes": 466153,
+      "sha256": "2ee3307931d42b1408e515befd91c185a22a12d1055f1e2100660f662041228d",
+      "testRun": {
+        "result": "Failed(Child)",
+        "total": "570",
+        "passed": "568",
+        "failed": "2",
+        "skipped": "0",
+        "duration": "247.6769006"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_1_PlayMode.log",
+      "bytes": 91441,
+      "sha256": "b04c14d4be036d04f75515448da9d9be5551fd287b483d2f73f81dc2bcdcb9a9"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_1_PlayMode.xml",
+      "bytes": 62724,
+      "sha256": "0e4ed9ba44e4fe61631179cb0f21befe948abcc71e0e2a78c3291c84f97f84fc",
+      "testRun": {
+        "result": "Passed",
+        "total": "77",
+        "passed": "77",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "150.252681"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_2_build.log",
+      "bytes": 356106,
+      "sha256": "6fae4101610bb23b50f2515020bd6c12eaf2c559177740f9fa38e9084b8b50e7"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_2_buildall.log",
+      "bytes": 490627,
+      "sha256": "9df7e357d01a4a48649eacca75d9b383b641ae0c55e0d05cea3f4d5e45318a4a"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_2_EditMode.log",
+      "bytes": 207286,
+      "sha256": "27f3a4e34b352074268f7f46c4ce7e8732ce6986cbfc264555e3d9543f636319"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_2_EditMode.xml",
+      "bytes": 466115,
+      "sha256": "a9be940d1691bd85428e7b3572c7d45c37e42596f3ce9ae3fee4e4c702abc487",
+      "testRun": {
+        "result": "Failed(Child)",
+        "total": "570",
+        "passed": "568",
+        "failed": "2",
+        "skipped": "0",
+        "duration": "250.4518982"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_2_misrouted_captures/docs/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5913,
+      "sha256": "4c7b82d3d8941b90fe632042d6dbccf9e6cf7b4aacba79f5aa700e4855c9db1b"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_2_misrouted_captures/preservation.json",
+      "bytes": 77613,
+      "sha256": "e6519f4afe8d61b811c54aeb2d89c9ca9328a666718f40af1269e22f0f9e8ea3"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_2_PlayMode.log",
+      "bytes": 89340,
+      "sha256": "a247f0342cf34cd243af6181ad4c4975ee71acd56a2e73f2caf68ec54a490655"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_2_PlayMode.xml",
+      "bytes": 62723,
+      "sha256": "8f98721be3d3d1a23aeeb7e3395a393cf08f073d298d94051256e8c65eac992c",
+      "testRun": {
+        "result": "Passed",
+        "total": "77",
+        "passed": "77",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "150.0179924"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_3_build.log",
+      "bytes": 361964,
+      "sha256": "18e31b172006fb275c16f737c9b8995001c52d8bba95778fb19c260a1c998b71"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_3_buildall.log",
+      "bytes": 494536,
+      "sha256": "85db3f3e0b3cf18f2e28501ef7200b1184eeb71d39cf4b3dbaef7b18ae3c1b80"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_3_EditMode.log",
+      "bytes": 189469,
+      "sha256": "3087c2a23c9996302e09cebeae84bd3e07a6abd57ee08f6ecab201b705c2f259"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_3_EditMode.xml",
+      "bytes": 464369,
+      "sha256": "54848a52bcde5e5bf08550ff371f5250b7255cdec3b73282e8ddda59fc583cd0",
+      "testRun": {
+        "result": "Passed",
+        "total": "570",
+        "passed": "570",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "245.2356145"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_3_PlayMode.log",
+      "bytes": 89338,
+      "sha256": "bb5a3f1ad0047ef1b8b28299cba5aadf340897fe180683549508c28e8af23150"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_3_PlayMode.xml",
+      "bytes": 62720,
+      "sha256": "d23ddfe30543bdca475be66925646ce322a5c4f9ab23ca05464cf5d3c173a374",
+      "testRun": {
+        "result": "Passed",
+        "total": "77",
+        "passed": "77",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "149.5201615"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_3_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_web_RestoreWindows.log",
+      "bytes": 37199,
+      "sha256": "079e41e571c3476da37644d2a5678aa44f193000d7fa315497001be4dadecade"
+    },
+    {
+      "path": "TestResults/rework_r4_akatsuki_web_WebGL.log",
+      "bytes": 461403,
+      "sha256": "04f85f61170620026c88c15f89d29646ce156a6834c277db8d0783d5a9d667a0"
+    },
+    {
+      "path": "TestResults/rework_r4_chizuru_1_build.log",
+      "bytes": 346276,
+      "sha256": "166135f907e83ccaaad098debfefa397ea5b287eaa6403421c2a214777d96261"
+    },
+    {
+      "path": "TestResults/rework_r4_chizuru_1_buildall.log",
+      "bytes": 411860,
+      "sha256": "e224fbf0657e85a62e7f2c7705d5b3c187342eebd13ac8a8005cc529901737e7"
+    },
+    {
+      "path": "TestResults/rework_r4_chizuru_1_EditMode.log",
+      "bytes": 183144,
+      "sha256": "f3f9b64f09798220eb2661de0e0753bf9ee6d773b0f428fb13283b6399921d7c"
+    },
+    {
+      "path": "TestResults/rework_r4_chizuru_1_EditMode.xml",
+      "bytes": 439350,
+      "sha256": "3cb03ed062b057ef090b781125c5812cdb5fe97be7c884865115538437b061cb",
+      "testRun": {
+        "result": "Passed",
+        "total": "540",
+        "passed": "540",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "168.949724"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_chizuru_1_PlayMode.log",
+      "bytes": 81250,
+      "sha256": "e4466f9c6974445d43ed04f4a87911e35a1fc457836c7103f042a3e1e41b82fe"
+    },
+    {
+      "path": "TestResults/rework_r4_chizuru_1_PlayMode.xml",
+      "bytes": 55483,
+      "sha256": "b6a18c75c838796545a7962d87782190fdb84e6d11cf531ddfd62021e724bf00",
+      "testRun": {
+        "result": "Passed",
+        "total": "68",
+        "passed": "68",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "137.9859135"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_chizuru_1_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5672,
+      "sha256": "1d70e42a0f90a3d0a7bd232c92fa6151f3beda1d46d790fea02edc52b828cc82"
+    },
+    {
+      "path": "TestResults/rework_r4_king_1_build.log",
+      "bytes": 359043,
+      "sha256": "c90c4cbbe6bf698e4a1a3e2c8606082da171d6ef4e9c792cb4824efee55a67ec"
+    },
+    {
+      "path": "TestResults/rework_r4_king_1_buildall.log",
+      "bytes": 475274,
+      "sha256": "9c953f24ce713a33aa3bbd0579bef6b4ad5cec8cb2763a71ec81b2469bab1532"
+    },
+    {
+      "path": "TestResults/rework_r4_king_1_EditMode.log",
+      "bytes": 186896,
+      "sha256": "c7506287165b5c51ffe6e0a95b15cb3f3d9ee4490fb550fb4af454163a8233bd"
+    },
+    {
+      "path": "TestResults/rework_r4_king_1_EditMode.xml",
+      "bytes": 456216,
+      "sha256": "6e88b41f756fe5dc478b7066a97a8d6b1078543222761b827135ff5c800914f1",
+      "testRun": {
+        "result": "Passed",
+        "total": "561",
+        "passed": "561",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "233.1433434"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_king_1_PlayMode.log",
+      "bytes": 86284,
+      "sha256": "94d6deccf9a8c3dc76b42cf92e66562a44a57de626edaa70e530ab1730c19de7"
+    },
+    {
+      "path": "TestResults/rework_r4_king_1_PlayMode.xml",
+      "bytes": 61094,
+      "sha256": "3bd8ec15f1144ef9a31a0fa08233889cc5023971fed3a9e961c77e142e39ef4a",
+      "testRun": {
+        "result": "Passed",
+        "total": "75",
+        "passed": "75",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "147.2387349"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_king_1_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_king_2_build.log",
+      "bytes": 351552,
+      "sha256": "5fabc0e41be1a3a00009cebb9883204da5fbd599e4df5626d7af3766c2b6d547"
+    },
+    {
+      "path": "TestResults/rework_r4_king_2_buildall.log",
+      "bytes": 477176,
+      "sha256": "0c769ef844e9b50ad4338cc3f7f92d418799b91c49a74ece661c7ea008abc0fe"
+    },
+    {
+      "path": "TestResults/rework_r4_king_2_EditMode.log",
+      "bytes": 184728,
+      "sha256": "c803d9bc50ff70796f0e1c56b8fe621db24b270a61641a67d141308e6017bdf2"
+    },
+    {
+      "path": "TestResults/rework_r4_king_2_EditMode.xml",
+      "bytes": 458326,
+      "sha256": "cb4cc956e1937c6e860f1e8719153631b248e39c149feae8aea802693717bbdd",
+      "testRun": {
+        "result": "Passed",
+        "total": "563",
+        "passed": "563",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "234.927426"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_king_2_PlayMode.log",
+      "bytes": 86238,
+      "sha256": "e8c3c00e996de2f078a7a8873f8ffd76146db552aac593940460a85d422e3e59"
+    },
+    {
+      "path": "TestResults/rework_r4_king_2_PlayMode.xml",
+      "bytes": 61095,
+      "sha256": "d83b12a6e7ba4f333bda62a723fde57a9af80601919ad9b6b401b9d1eab5ca8e",
+      "testRun": {
+        "result": "Passed",
+        "total": "75",
+        "passed": "75",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "147.0345583"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_king_2_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_king_fixed_web_RestoreWindows.log",
+      "bytes": 30724,
+      "sha256": "231232ad75316b222c769a7519008bbf9419ddfff37e72c05be57015c82dede4"
+    },
+    {
+      "path": "TestResults/rework_r4_king_fixed_web_WebGL.log",
+      "bytes": 422372,
+      "sha256": "74cbb447a1f146eccf7eadba554b44b8827b332dee11fdec2333fd52c79826e2"
+    },
+    {
+      "path": "TestResults/rework_r4_king_web_build-report.json",
+      "bytes": 94,
+      "sha256": "48589a4b767d5a06683bf9f217aeba0f83a3aef704957c2f70f3a7529f1f21fb"
+    },
+    {
+      "path": "TestResults/rework_r4_king_web_RestoreWindows.log",
+      "bytes": 37688,
+      "sha256": "826d9475d983461780a66b3c23a7071f95ba70fc7d2b1f855b38f71482d89ff1"
+    },
+    {
+      "path": "TestResults/rework_r4_king_web_WebGL.log",
+      "bytes": 454840,
+      "sha256": "028df555f254b19882249c331dc813eee45a0db7aabd2091fe7d7d6f42471305"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_1_build.log",
+      "bytes": 348992,
+      "sha256": "3722e51bc451b349e3d2d5f30b9653f774e0884bb41cf711e23a1928db82688c"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_1_buildall.log",
+      "bytes": 424050,
+      "sha256": "98c2faf75c48e51fbef5517dd61f5ce162f4cf8544ea473c7904a2f380ad9179"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_1_EditMode.log",
+      "bytes": 211126,
+      "sha256": "9ccbc2826a7ff8db0b54a0d362b686cfbdfae65ced1311d9f7723999417d10f0"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_1_EditMode.xml",
+      "bytes": 445030,
+      "sha256": "ff4b11d2b35b14e3aee156eb682a0762e0f7c9311ce913237914922716c1bfe7",
+      "testRun": {
+        "result": "Passed",
+        "total": "547",
+        "passed": "547",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "175.8815604"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_minato_1_PlayMode.log",
+      "bytes": 81976,
+      "sha256": "78f21734a8e14e357ecce5b2d54ab28440b911bf132b4894828b86b235855326"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_1_PlayMode.xml",
+      "bytes": 56339,
+      "sha256": "1ea03028b788e729b1a33d522d38c1adf4692b88392e39f9d4ea29c15a0d8360",
+      "testRun": {
+        "result": "Passed",
+        "total": "69",
+        "passed": "69",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "138.9047188"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_minato_1_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_2_build.log",
+      "bytes": 348989,
+      "sha256": "9f3b77cda49ed24844502aac783928bfd8f500aa0cc064c7b054922ae01fc96c"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_2_buildall.log",
+      "bytes": 425883,
+      "sha256": "f3b2e42c7393fa3f801467d4b7eca2131d751c8ab609f4647be9a3cf979b28ae"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_2_EditMode.log",
+      "bytes": 183030,
+      "sha256": "63c64bb2aac26fc840d36329d57498278ae371fb687916616dc883cc1b8c435c"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_2_EditMode.xml",
+      "bytes": 444995,
+      "sha256": "e1f45ae570ba82552773c1890420018a9011d66225d613b7c1a78be585db9375",
+      "testRun": {
+        "result": "Passed",
+        "total": "547",
+        "passed": "547",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "194.652305"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_minato_2_PlayMode.log",
+      "bytes": 81901,
+      "sha256": "5ea3d356d56abd3d570d2885a3603d7580344a71bb21e9cefcc05d4f1950c7e2"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_2_PlayMode.xml",
+      "bytes": 56335,
+      "sha256": "ce294b137f0c5305f1f2db586d957f491635237b64c4c70f1f3341c953b5f6c8",
+      "testRun": {
+        "result": "Passed",
+        "total": "69",
+        "passed": "69",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "141.3711432"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_minato_2_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_web_RestoreWindows.log",
+      "bytes": 37130,
+      "sha256": "657216cb2d5cc35e8f6da2ff9db9012e9522bd55b51c69e642237aa12783115c"
+    },
+    {
+      "path": "TestResults/rework_r4_minato_web_WebGL.log",
+      "bytes": 420023,
+      "sha256": "c3b88408430d19f9cc315ce94d4d92c42f60fbbf1fad826b8023386a43ecb3aa"
+    },
+    {
+      "path": "TestResults/rework_r4_ren_1_buildall.log",
+      "bytes": 123743,
+      "sha256": "5413ec71825884dc83e0b67223afde6b804cc08a6a35664da1b8585ac8fab2b1"
+    },
+    {
+      "path": "TestResults/rework_r4_ren_2_build.log",
+      "bytes": 347735,
+      "sha256": "12359496ed5572fd1e627ed26e23a9842b32b8a97f3c0633debb9cc351276b71"
+    },
+    {
+      "path": "TestResults/rework_r4_ren_2_buildall.log",
+      "bytes": 408704,
+      "sha256": "431c17f84892a6083795d162c0addf834d2ccd74b2ab9a2822e1c32b18ab08a6"
+    },
+    {
+      "path": "TestResults/rework_r4_ren_2_EditMode.log",
+      "bytes": 184497,
+      "sha256": "8be96bb1fc32271f1a0f294b449cd838c25bafa83d39d91129e6ae2153b5db3a"
+    },
+    {
+      "path": "TestResults/rework_r4_ren_2_EditMode.xml",
+      "bytes": 438142,
+      "sha256": "7751d952d74a19b9efd282606c67925c4e1ec67ae47890df7c2001e00f04b09a",
+      "testRun": {
+        "result": "Passed",
+        "total": "539",
+        "passed": "539",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "164.2447925"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_ren_2_PlayMode.log",
+      "bytes": 80733,
+      "sha256": "fba31df71ccf805d31648cd6aa3abfdce043f6868253ed3da315cf492b50597e"
+    },
+    {
+      "path": "TestResults/rework_r4_ren_2_PlayMode.xml",
+      "bytes": 54654,
+      "sha256": "036374fb2e628463b2d5945219deff9239784a4cdff17e46950f30f4d3e04f60",
+      "testRun": {
+        "result": "Passed",
+        "total": "67",
+        "passed": "67",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "136.9880646"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_ren_2_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5616,
+      "sha256": "1ee719f196188b783548d911373ccdbcc12553b43f4e639b0591003fb12f13d7"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_1_build.log",
+      "bytes": 362608,
+      "sha256": "d81bb91e9e1137c1b0a890ee7c2712be0d4be4712e9e56d29801b351c6183c7d"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_1_buildall.log",
+      "bytes": 522164,
+      "sha256": "bff353904b8594fc6cde86395fad438a9df84b71e6da2f8b67175044f562145d"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_1_EditMode.log",
+      "bytes": 205642,
+      "sha256": "7aaa49ddea1f2625923ac110e0725cbe74ffc977d0f09e341733d6fdba200351"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_1_EditMode.xml",
+      "bytes": 467479,
+      "sha256": "298fe90376b6b5b3038a6854ddcdd17570d70927684e747fc4461ce0cf4cf88d",
+      "testRun": {
+        "result": "Passed",
+        "total": "574",
+        "passed": "574",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "247.4498563"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_1_PlayMode.log",
+      "bytes": 89098,
+      "sha256": "75cb1ceaae9ce2f9df78e690c7f4bb7453e394178501fcdd59bdf9236b889538"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_1_PlayMode.xml",
+      "bytes": 65597,
+      "sha256": "faec17e04cb47133c7905188320934a38451072c5292539f23b19084b66bc316",
+      "testRun": {
+        "result": "Failed(Child)",
+        "total": "79",
+        "passed": "78",
+        "failed": "1",
+        "skipped": "0",
+        "duration": "151.0737517"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_1_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_2_build.log",
+      "bytes": 355394,
+      "sha256": "57f255f13cf7f58528e8d32cad16590823357b317988925fdfeb484be471d6bf"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_2_buildall.log",
+      "bytes": 509978,
+      "sha256": "c0d29c28b8fd45b232c940340489cdb1b716bd7b3d92cb729009e25b7088c412"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_2_EditMode.log",
+      "bytes": 219801,
+      "sha256": "0ad98347d5b770dfd1573bd41a3d8750a3a1b11a3671fda9afd4b0132b19c26c"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_2_EditMode.xml",
+      "bytes": 467482,
+      "sha256": "c27d6acd53608960564929e7d4e73a4fed369a5581e7677926507f6bbc2751d6",
+      "testRun": {
+        "result": "Passed",
+        "total": "574",
+        "passed": "574",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "255.6097378"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_2_PlayMode.log",
+      "bytes": 89057,
+      "sha256": "085e9312c5906878db3b0da275565421c1b5628be602834a7937b57baa5dd96a"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_2_PlayMode.xml",
+      "bytes": 64261,
+      "sha256": "92acb98f65bfa4d8a02dad6be94ece50c9944551c6929a81889f04eb84c99ad7",
+      "testRun": {
+        "result": "Passed",
+        "total": "79",
+        "passed": "79",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "151.305338"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_2_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_web_RestoreWindows.log",
+      "bytes": 37690,
+      "sha256": "64830621bb3fdbe6eaa3312d199bdd911eb778d98284033b2b6e810af1f678d8"
+    },
+    {
+      "path": "TestResults/rework_r4_ryuta_web_WebGL.log",
+      "bytes": 473254,
+      "sha256": "8c072bc4faab223b049fb638d32589deed148bc651cd81aaec4af374f19768dd"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_1_build.log",
+      "bytes": 351559,
+      "sha256": "dbddeeffabfb6238c858d009c427b79ec7842b3c98bd0a18fe085c4be3a822fd"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_1_buildall.log",
+      "bytes": 440687,
+      "sha256": "3b9f00b8f186c94677be15063d895e39c08176c37011ba0a4a5d6696ac88a184"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_1_EditMode.log",
+      "bytes": 183625,
+      "sha256": "be764f60c2c1c2dede2c0854a7d8c8d0d0da7577dd13146210757dfd9fe6c901"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_1_EditMode.xml",
+      "bytes": 449329,
+      "sha256": "f92a3230e561da1583e34073ec108e6f7a11bb602c77d672dcbacd28f62eac79",
+      "testRun": {
+        "result": "Failed(Child)",
+        "total": "551",
+        "passed": "550",
+        "failed": "1",
+        "skipped": "0",
+        "duration": "191.2631075"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_1_PlayMode.log",
+      "bytes": 83299,
+      "sha256": "ada96857b69d34db6c8d9719f41b1c3680b97d32262caa8337dceebb4f9c1146"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_1_PlayMode.xml",
+      "bytes": 57893,
+      "sha256": "bcb520b4b3acf1ca276248821862a39ba14c30482162cd66bc5a7e061c6bc964",
+      "testRun": {
+        "result": "Passed",
+        "total": "71",
+        "passed": "71",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "141.2435226"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_1_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_2_build.log",
+      "bytes": 345596,
+      "sha256": "7167de3994256dfee55df37713977cde52a4986acbf6dbc346636dd2b329bd77"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_2_buildall.log",
+      "bytes": 442593,
+      "sha256": "83e4c67bc27bee17f92042f446fc3f54da5733c5098f4800107658e418acdb73"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_2_EditMode.log",
+      "bytes": 169743,
+      "sha256": "7dda42d48b2bff54d4712ab2580ad37d7774f65636c762d6642533bdd5b97ec4"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_2_EditMode.xml",
+      "bytes": 448244,
+      "sha256": "457e272301d86b2b16075a74ddba85287e96b05d6d5c15d1e7cddb07eb6d6133",
+      "testRun": {
+        "result": "Passed",
+        "total": "551",
+        "passed": "551",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "193.8428988"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_2_PlayMode.log",
+      "bytes": 83290,
+      "sha256": "a6de4708591df5cc8224bfe5317b5dee1b2bd4aa622673119f026bd2cfe901e2"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_2_PlayMode.xml",
+      "bytes": 57900,
+      "sha256": "40fb8223bea53b068ac16fd72b174e0bc6efe89b4306429e1fd57dfb5c8f82fb",
+      "testRun": {
+        "result": "Passed",
+        "total": "71",
+        "passed": "71",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "141.2550084"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_2_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_web_RestoreWindows.log",
+      "bytes": 37096,
+      "sha256": "4ee9d0c9b5a7d92c2de4c5e7df140bdb0b79cf36e9e949af2fd822820b0918a7"
+    },
+    {
+      "path": "TestResults/rework_r4_shiro_web_WebGL.log",
+      "bytes": 430416,
+      "sha256": "eb44895d7c89a44e09371dfee78d73a278924b77f62ccfd1df774c6c1ac2b2b5"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_1_build.log",
+      "bytes": 354923,
+      "sha256": "145d76a09d160ed5de99f71e5b185c99931155e1fec0b97ebdd462e6457f4cb8"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_1_buildall.log",
+      "bytes": 462387,
+      "sha256": "02a10b3ff377c8bfe6657aa15ed5c8140bbcbbe960241cea5de4390c567a478a"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_1_EditMode.log",
+      "bytes": 184821,
+      "sha256": "b8c8b4e90c510bab64dbd37aa4f07d940bffefba95250b16245b19638f253eb7"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_1_EditMode.xml",
+      "bytes": 451498,
+      "sha256": "9d1b64b32b40411cb4ba58a49326209fdb83d1aa8612131a3c26e8ffef015710",
+      "testRun": {
+        "result": "Passed",
+        "total": "555",
+        "passed": "555",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "216.4766675"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_yui_1_PlayMode.log",
+      "bytes": 84797,
+      "sha256": "6a1f3cd2a553db52ebc92460d7810ccbd857d372e4f4875d34f60247698c977d"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_1_PlayMode.xml",
+      "bytes": 59484,
+      "sha256": "cda3b30b7408403840f410f0524e8f13dfab86d41f9844d4fb20694cdc381013",
+      "testRun": {
+        "result": "Passed",
+        "total": "73",
+        "passed": "73",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "144.5985972"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_yui_1_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_2_build.log",
+      "bytes": 352692,
+      "sha256": "59a4fe5c995d767a17ef0818dddd59aab20052926eddec416ef6ea90534d2a33"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_2_buildall.log",
+      "bytes": 453315,
+      "sha256": "786e792bc8bf0fe99b5ebc9e1a33aab3b8dbe54c2011ea407bbf2a6a79fd87f9"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_2_EditMode.log",
+      "bytes": 200534,
+      "sha256": "19cd0d006d8ef6e2d0ce3a9e219592ccf5ffaeb690eccd43a911f72f3344def6"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_2_EditMode.xml",
+      "bytes": 452898,
+      "sha256": "1aabdce52387f811014d17400f3b5dc3caaa5b07497aaccb3cf2f1bb7f2fee54",
+      "testRun": {
+        "result": "Passed",
+        "total": "557",
+        "passed": "557",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "221.188869"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_yui_2_PlayMode.log",
+      "bytes": 86595,
+      "sha256": "d2c4a50162f9dc95d6c7bc55fd00e4e0c0cbc4fa0c7f929d22ba03b1cd1ac698"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_2_PlayMode.xml",
+      "bytes": 59483,
+      "sha256": "9103fb6577f6a41055c85e8158554aaa8ffa2055b59e39239dc66f8ddc6d79b7",
+      "testRun": {
+        "result": "Passed",
+        "total": "73",
+        "passed": "73",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "144.420227"
+      }
+    },
+    {
+      "path": "TestResults/rework_r4_yui_2_screenshots/HITBOX_REVIEW_CHIZURU.md",
+      "bytes": 5673,
+      "sha256": "b750f51eb1aeb70f439e50e563a43a9257f63a4ba3e5d1d4c43b455f8c20545d"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_mip_web_RestoreWindows.log",
+      "bytes": 122133,
+      "sha256": "c5b41fc244a5899ce9a1d0049329a4cd803a2eb0bcdc911bb14b6c3fb10768c5"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_mip_web_WebGL.log",
+      "bytes": 613235,
+      "sha256": "f05bd35c9c4b49b79ea95cdc51cfe46bc9f36333c08ade6a570c0d5c88806b75"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_web_RestoreWindows.log",
+      "bytes": 36147,
+      "sha256": "a3898fdc1af2fcb74a5549198acb8973cc5374b833c49bdc70433a11cb8d86b7"
+    },
+    {
+      "path": "TestResults/rework_r4_yui_web_WebGL.log",
+      "bytes": 433025,
+      "sha256": "f37d15f973e4dcf717a8f7b36a815cf3bc19b401375c36a76627f77bbb81321a"
+    },
+    {
+      "path": "TestResults/rework_r5_4_build.log",
+      "bytes": 342724,
+      "sha256": "8eb1c816610ba33502357c8b3f9b5657a707fa00781795042b1a883fda49fa1b"
+    },
+    {
+      "path": "TestResults/rework_r5_4_buildall.log",
+      "bytes": 386534,
+      "sha256": "24d21043c4165997e32ed0b24169d429ae870158ea9051841b0804567784f143"
+    },
+    {
+      "path": "TestResults/rework_r5_4_EditMode.log",
+      "bytes": 181600,
+      "sha256": "0e2bd5453dacb3d9ed5d3afce71f7079fb042698dddc07f3baad95cdee52afb4"
+    },
+    {
+      "path": "TestResults/rework_r5_4_EditMode.xml",
+      "bytes": 427732,
+      "sha256": "8d23290aed94edd3c3e454721750f9c396851f783f697a60f98ae93658aa20dc",
+      "testRun": {
+        "result": "Passed",
+        "total": "527",
+        "passed": "527",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "146.018691"
+      }
+    },
+    {
+      "path": "TestResults/rework_r5_4_PlayMode.log",
+      "bytes": 76883,
+      "sha256": "6b355226be099f64c0410ee8f57911420a03866089830d9e50019995979c2c02"
+    },
+    {
+      "path": "TestResults/rework_r5_4_PlayMode.xml",
+      "bytes": 49778,
+      "sha256": "bcbe6a5238d5f793c7552c1e2df1563c321eaf9dcb81c8c263de35dfe9ef73ba",
+      "testRun": {
+        "result": "Passed",
+        "total": "61",
+        "passed": "61",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "134.9441711"
+      }
+    },
+    {
+      "path": "TestResults/webgl_native_2_build.log",
+      "bytes": 349503,
+      "sha256": "41a46153dc1a803192fea285ac9f2657c4356c5c307b0669cff2ccdfaa50231e"
+    },
+    {
+      "path": "TestResults/webgl_native_2_buildall.log",
+      "bytes": 391341,
+      "sha256": "3dbc6fdc61d92630d79658517b71aabb6247aa35109a8f00c339552db82e377e"
+    },
+    {
+      "path": "TestResults/webgl_native_2_EditMode.log",
+      "bytes": 167927,
+      "sha256": "118e2e188cce14175ce8c4bd7c1f80ba4a15bdf8f3ff611d622543c4fe75563d"
+    },
+    {
+      "path": "TestResults/webgl_native_2_EditMode.xml",
+      "bytes": 430239,
+      "sha256": "4921248b1db1a31cc746215860b47852196c50d73f2a8f430f3b159f25e739ab",
+      "testRun": {
+        "result": "Passed",
+        "total": "530",
+        "passed": "530",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "148.6887416"
+      }
+    },
+    {
+      "path": "TestResults/webgl_native_2_PlayMode.log",
+      "bytes": 76842,
+      "sha256": "c21db17a33973d24d437996d05f656d0e51f238c04bfc238909fe73dfc7f75fc"
+    },
+    {
+      "path": "TestResults/webgl_native_2_PlayMode.xml",
+      "bytes": 49778,
+      "sha256": "763a49ce328879bd385b0e2997cea53ae18bd75af337436d404835a73af76e5d",
+      "testRun": {
+        "result": "Passed",
+        "total": "61",
+        "passed": "61",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "133.454949"
+      }
+    },
+    {
+      "path": "TestResults/webgl_native_3_build.log",
+      "bytes": 348521,
+      "sha256": "17c535b352b167b59718581b35f2218b16f9f05f79a43f6d6942af43eab4fc20"
+    },
+    {
+      "path": "TestResults/webgl_native_3_buildall.log",
+      "bytes": 409739,
+      "sha256": "c215d720a20f3bc13feea019ae40478d889e6f96a2ca036bf098a2f4409435f9"
+    },
+    {
+      "path": "TestResults/webgl_native_3_EditMode.log",
+      "bytes": 167709,
+      "sha256": "c000ea4535d8f4bfda90a3f11ef9ad89a3fd8011914360dd417d8b7170f70eb3"
+    },
+    {
+      "path": "TestResults/webgl_native_3_EditMode.xml",
+      "bytes": 432316,
+      "sha256": "05c2a1970453a650482bd7f539bb41d435dfe2c903b43b61e06679ceef3917cb",
+      "testRun": {
+        "result": "Passed",
+        "total": "533",
+        "passed": "533",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "152.7994468"
+      }
+    },
+    {
+      "path": "TestResults/webgl_native_3_PlayMode.log",
+      "bytes": 77011,
+      "sha256": "6d89d7ee80de9d2d0d745eb26834a8d762b12863547ae42506c65f462e67fd57"
+    },
+    {
+      "path": "TestResults/webgl_native_3_PlayMode.xml",
+      "bytes": 49774,
+      "sha256": "4769fc43965144ecaf6e6366a0db810ef8fab3b6b4ac26f7d94711a42974325e",
+      "testRun": {
+        "result": "Passed",
+        "total": "61",
+        "passed": "61",
+        "failed": "0",
+        "skipped": "0",
+        "duration": "133.184557"
+      }
+    }
+  ],
+  "captureDirectories": [
+    {
+      "directory": "TestResults/motion_akatsuki_1_screenshots",
+      "files": 1098,
+      "bytes": 291856086,
+      "inventorySha256": "f406364a4f9ea3980bd21e86a3309e62b9e7a2f982ca42982198531b8abec5c4"
+    },
+    {
+      "directory": "TestResults/motion_ryuta_2_screenshots",
+      "files": 1116,
+      "bytes": 295352002,
+      "inventorySha256": "53f0fe8b68f7742d733f7985bf9ebc9007b098b18aff544ac8cc1d6440e7f071"
+    },
+    {
+      "directory": "TestResults/paper_fourkeys_2_screenshots",
+      "files": 377,
+      "bytes": 144073532,
+      "inventorySha256": "0685753b38bae7d7e3ffdeddc23d47375fce3cb51ed7f99fdcd32448a3336e94"
+    },
+    {
+      "directory": "TestResults/paper_fourkeys_3_screenshots",
+      "files": 386,
+      "bytes": 145242494,
+      "inventorySha256": "8ae51e0f7dda5e9b3648520e93ecea3be9fd230c8442b5765a2dd7f6ee2f8042"
+    },
+    {
+      "directory": "TestResults/paper_release_1_screenshots",
+      "files": 413,
+      "bytes": 150958680,
+      "inventorySha256": "e8c44d2620e9d2e9b029690939c47ac3c67ddd3003cc70527682f5997e06a6ee"
+    },
+    {
+      "directory": "TestResults/paper_release_2_screenshots",
+      "files": 414,
+      "bytes": 151336644,
+      "inventorySha256": "8f607a446af7a366349a946425c5211e6384dd78f85a2c19de9447ea62703860"
+    },
+    {
+      "directory": "TestResults/paper_release_3_screenshots",
+      "files": 414,
+      "bytes": 151178992,
+      "inventorySha256": "262702d91afd5deeb956439f77fcf1d5539dbd4740fe94a79f2db63c1818c4a8"
+    },
+    {
+      "directory": "TestResults/paper_release_5_screenshots",
+      "files": 414,
+      "bytes": 151233062,
+      "inventorySha256": "5217d1f2a6e685cf025c4a465338847b5a40d025c45580e0d030b5b1b0f6db4b"
+    },
+    {
+      "directory": "TestResults/paper_release_capture_screenshots",
+      "files": 48,
+      "bytes": 3633288,
+      "inventorySha256": "61db2fbbd0b13d543c3d5625c7720e4935f355df0e282287bc354503e9a14e45"
+    },
+    {
+      "directory": "TestResults/paper_single_title_1_screenshots",
+      "files": 457,
+      "bytes": 105640901,
+      "inventorySha256": "4536326d396937000f2e47f668c80abea70fe611b7fe99555b7d5e7be3a044e4"
+    },
+    {
+      "directory": "TestResults/paper_single_title_2_screenshots",
+      "files": 494,
+      "bytes": 158520168,
+      "inventorySha256": "c083bf665c7ccdfaea8b37fe9982e005da3b6482d48815adf1b6488ac038ccb0"
+    },
+    {
+      "directory": "TestResults/paper_single_title_3_screenshots",
+      "files": 494,
+      "bytes": 158640218,
+      "inventorySha256": "b4dd05d2a5ff72f2ab4e4a199b6a5d26fb7f568b6d91715297e5d22bbccf98b1"
+    },
+    {
+      "directory": "TestResults/rework_r4_akatsuki_2_default_captures",
+      "files": 478,
+      "bytes": 86666553,
+      "inventorySha256": "0f293b1105b4bfa890c4ff1f05242eaf3d40cdf856d988f5a0cbf4299ef504c4"
+    },
+    {
+      "directory": "TestResults/rework_r4_akatsuki_2_misrouted_captures",
+      "files": 194,
+      "bytes": 123072797,
+      "inventorySha256": "c0ffd69567d4e392d083b88502c97c6f2cba11e87bdf57cfd59ad5c3cf2d56cc"
+    },
+    {
+      "directory": "TestResults/rework_r4_akatsuki_3_screenshots",
+      "files": 892,
+      "bytes": 236534202,
+      "inventorySha256": "e088da874aeb34cb67a626a902eeae805003ab4e9ad86cb659a355aca8584710"
+    },
+    {
+      "directory": "TestResults/rework_r4_chizuru_1_screenshots",
+      "files": 494,
+      "bytes": 159181776,
+      "inventorySha256": "f564bff5630d655b65963da9d5fd1a60c1c1272735bcd6c7f118d85d17b2e7ff"
+    },
+    {
+      "directory": "TestResults/rework_r4_king_1_screenshots",
+      "files": 814,
+      "bytes": 216487477,
+      "inventorySha256": "28460ba2cc5fcab6d104a4e76b194386baae4f8b4fced91deb771713e590dbe5"
+    },
+    {
+      "directory": "TestResults/rework_r4_king_2_screenshots",
+      "files": 814,
+      "bytes": 214369767,
+      "inventorySha256": "0f7bf12d9341f4cf57731860abaca0330a177eab154e65ce08282a98f4244ce6"
+    },
+    {
+      "directory": "TestResults/rework_r4_minato_1_screenshots",
+      "files": 564,
+      "bytes": 173259371,
+      "inventorySha256": "93187ae4b97e54b9c73290fd7c02e90bd665ab27cffdaa47a40f58934c5b93bc"
+    },
+    {
+      "directory": "TestResults/rework_r4_minato_2_screenshots",
+      "files": 570,
+      "bytes": 168878730,
+      "inventorySha256": "403f4ae044f88ca4e013a3229cdff0a374db9295ab586876d2367c1737b162d4"
+    },
+    {
+      "directory": "TestResults/rework_r4_ren_2_screenshots",
+      "files": 462,
+      "bytes": 155862622,
+      "inventorySha256": "3f7963ba95bb04f9aa7d774c4ba2deb21845f5a0e4e102bcc332cba90eca5ee0"
+    },
+    {
+      "directory": "TestResults/rework_r4_ryuta_1_screenshots",
+      "files": 971,
+      "bytes": 253433701,
+      "inventorySha256": "16475f13ebe09bab1bb761443c9bd9a9298f438cf4188a46fd02a223bc22e4ab"
+    },
+    {
+      "directory": "TestResults/rework_r4_ryuta_2_screenshots",
+      "files": 972,
+      "bytes": 255367957,
+      "inventorySha256": "3e08dc8bfa8d329ea268ff9c0223d63789367e3fc158bbeda89fa04be4eb7812"
+    },
+    {
+      "directory": "TestResults/rework_r4_shiro_1_screenshots",
+      "files": 642,
+      "bytes": 177534018,
+      "inventorySha256": "c885d4990791b37afb689763554e857e51770a0edd269d01abfc8f8bf5854384"
+    },
+    {
+      "directory": "TestResults/rework_r4_shiro_2_screenshots",
+      "files": 642,
+      "bytes": 177806673,
+      "inventorySha256": "98f80639b614b317038296bb5514f6f7e12431c2068b4909348016549e34428f"
+    },
+    {
+      "directory": "TestResults/rework_r4_yui_1_public_archive",
+      "files": 384,
+      "bytes": 78702600,
+      "inventorySha256": "c64fada7da6b0d35a0a683eccfacbb8ddb9b986c8155cd3c470a242d65a0a6b2"
+    },
+    {
+      "directory": "TestResults/rework_r4_yui_1_screenshots",
+      "files": 734,
+      "bytes": 192646371,
+      "inventorySha256": "ebe3726f3959211b32d7c2538ff33e9659ae92ac5a4fab535cced55e024c13b8"
+    },
+    {
+      "directory": "TestResults/rework_r4_yui_2_screenshots",
+      "files": 734,
+      "bytes": 192661400,
+      "inventorySha256": "72a898b880f5268b6dee0f04db88ec01e327b24e37598d9675ad08259719502b"
+    },
+    {
+      "directory": "TestResults/webgl_native_2_screenshots",
+      "files": 338,
+      "bytes": 139063518,
+      "inventorySha256": "ab380afe1f9fb6d6463fa87684ee9d360e2597dc248343a54c5dd03639abdf9b"
+    },
+    {
+      "directory": "TestResults/webgl_native_3_screenshots",
+      "files": 338,
+      "bytes": 139062818,
+      "inventorySha256": "417a193a8c8b2273fedd3832c5ecdf2ad00c8de93d017ef43e74013c13f09a0c"
+    }
+  ],
+  "hashPolicy": "旧XML・ログ等は個別SHAと実件数を保存。旧一時PNGはディレクトリ単位で、相対パスと個別SHAをソートして連結した目録SHAを保存。採用済みdocs/screenshotsの実画像は保持。"
+}

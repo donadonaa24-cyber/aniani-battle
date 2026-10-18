@@ -5,33 +5,33 @@
   "selected": [
     {
       "id": "run",
-      "version": 2,
-      "source": "art_source/paper_roster_motion/ryuta/generated/run_v2.png",
-      "sha256": "f96d10a737542b8ae9c1a6fa4d437058bb29ad2fa2c1c5a8c51914d8b14fdf4d",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/ryuta/generated/run_v3.png",
+      "sha256": "2a04cb14233a112b536927b4323352be192bdcb2b162e65352825a750a65d6d2",
       "native": {
         "width": 1189,
         "height": 1323,
         "bounds": {
-          "left": 124,
+          "left": 122,
           "top": 48,
-          "right": 1152,
-          "bottom": 1203
+          "right": 1154,
+          "bottom": 1205
         }
       }
     },
     {
       "id": "jump",
-      "version": 2,
-      "source": "art_source/paper_roster_motion/ryuta/generated/jump_v2.png",
-      "sha256": "64a8dbc450a2c3c3db2dbeb0ac4dcd1fbe2d523e269d160a0043bcaf921aa07a",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/ryuta/generated/jump_v3.png",
+      "sha256": "06eb8e8260f725002bf62e06c0e395f0b8638764d3b97d3feb6b836b13659d12",
       "native": {
         "width": 1189,
         "height": 1323,
         "bounds": {
-          "left": 212,
-          "top": 42,
-          "right": 1004,
-          "bottom": 1242
+          "left": 210,
+          "top": 40,
+          "right": 1018,
+          "bottom": 1246
         }
       }
     },
@@ -117,17 +117,17 @@
     }
   ],
   "canvasPolicy": "原画RGBAの整数移動と透明余白のみ。個別拡縮0。頭髪と靴の投影差は原画で目視し、美術の最終承認と実装検証を区別。",
-  "anatomyReview": "最新の通常被弾はユーザーが添付して承認した握り拳版v5。手の甲・掌の再解釈による変更をしない。ほか6動作は既存採用を維持。",
+  "anatomyReview": "最新指示に従いrun_v3とjump_v3の画面右側の本人左拳を、閉じたまま握った指の内側が見える形へ直接編集。甲側へ統一する前回の解釈を撤回。もう一方の拳・身体・両靴とポーズは維持。",
   "rgbaAudit": [
     {
       "id": "run",
       "preserved": true,
-      "sha256": "2637eba45d1b6a94366796f44439731bbfd65ec060d50ba8b2b75e7ea6352214"
+      "sha256": "c3c56dffabaca06a7c436e64023d3e7b778382e7f78f8984880da7dbbbe8815a"
     },
     {
       "id": "jump",
       "preserved": true,
-      "sha256": "cb1e91e6122f89b5b0c832e206d2c2c30b6ba838ddfa3416da6f7c6b40471c6a"
+      "sha256": "5ac953381676582c126fd13dcd8d42b77b12dc68c93db54e4144cc5ce7ffe9a9"
     },
     {
       "id": "fall",
@@ -156,9 +156,9 @@
     }
   ],
   "knownDifferences": [
-    "通常被弾の開いた掌v6はユーザーが不採用と指定。2026-10-19の「これでいい」添付（user_approved_hit_light.png）と同じ握り拳v5を選択。添付と原画は透明形状が完全一致、可視RGB平均差0.0084/255。",
-    "通常被弾v2/v3の右靴端切れをv4以降の正方形余白で解消。頭髪と靴の投影差は原画のまま保持し、個別拡縮しない。",
-    "閉じた拳で隠れる指を全本可視とは扱わない。7動作全体の美術最終承認と特定画像のユーザー承認を区別。"
+    "通常被弾はユーザー承認の握り拳v5を維持。開いた掌v6は不採用。",
+    "走りと上昇のv2は手の向きをユーザーが不採用と指定。v3は承認済み通常被弾v5の左拳を形の参考として内側と折った指を描き直した。",
+    "握った拳で隠れる指を全本可視とは扱わない。頭髪と靴の投影差は原画のまま、個別拡縮なし。"
   ],
   "userApprovedActions": [
     "hit_light"

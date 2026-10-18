@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "task": "PAPER_CHARGE_ARTWORK",
+  "nativeComplete": true,
+  "chargeCharacters": 9,
+  "chargeImages": 9,
+  "ryutaCorrectedMotionVersions": {
+    "run": 3,
+    "jump": 3,
+    "approvedLightDamageUnchanged": 5
+  },
+  "regression": {
+    "tag": "charge_art_2",
+    "EditMode": {
+      "total": 593,
+      "passed": 593,
+      "failed": 0,
+      "skipped": 0,
+      "source": "TestResults/charge_art_2_EditMode.xml",
+      "sha256": "d44be0517e229f92b8ab270167878e7892a97e3b449f752a54b467793fad1271"
+    },
+    "PlayMode": {
+      "total": 83,
+      "passed": 83,
+      "failed": 0,
+      "skipped": 0,
+      "source": "TestResults/charge_art_2_PlayMode.xml",
+      "sha256": "55800b90c37d7dab2cf7927588dd9f2791580fcdbb499a7a74385e7e1601695a"
+    },
+    "BuildAll": {
+      "success": true,
+      "source": "TestResults/charge_art_2_buildall.log",
+      "sha256": "dd379b947e8a07c850b8c53a341cf93ddf6d878f2dffcff00b256e581521016e"
+    },
+    "Windows": {
+      "success": true,
+      "source": "TestResults/charge_art_2_build.log",
+      "sha256": "162220a13963831683626f6be6290283cac2a0cfb66741d95c7810214e3b4811"
+    }
+  },
+  "nativeScreenshots": {
+    "captured": 36,
+    "retained": 19,
+    "folder": "docs/screenshots/charge_art_2/paper_charge",
+    "overview": "docs/screenshots/charge_art_2/charge_native_overview.png"
+  },
+  "coverage": "全9人・左右・60/120/180tick・最大維持・短押し・方向別解除・被弾/接地喪失・描画非干渉。既存56動作と龍太走り/上昇v3を含む全体回帰。",
+  "web": {
+    "tag": "charge_art_web",
+    "result": "success",
+    "bytes": 123660075,
+    "seconds": 218.7301422,
+    "files": 6,
+    "windowsRestored": true,
+    "sourceRgbaImages": 435,
+    "failed": 0,
+    "audit": "docs/screenshots/charge_art_web/webgl-pixel-audit.json",
+    "browserProof": "docs/screenshots/charge_art_web/browser-verification.json",
+    "startupErrors": 0,
+    "audio": "running",
+    "chargeHeldTicks": 180
+  },
+  "complete": true,
+  "limitations": "全9人・左右・溜め境界・中断・既存56動作は実Unityで検証。ブラウザは龍太の溜め180tick・解除・走り・上昇を実キーで確認。通常Chrome/Edge個別、実機パッド、低メモリ端末は今回未再検査。"
+}

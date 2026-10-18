@@ -11,13 +11,13 @@
   "jobs": [
     {
       "id": "run",
-      "version": 2,
-      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/run_v2.json"
+      "version": 3,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/run_v3.json"
     },
     {
       "id": "jump",
-      "version": 2,
-      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/jump_v2.json"
+      "version": 3,
+      "promptFile": "art_source/paper_roster_motion/ryuta/prompts/jump_v3.json"
     },
     {
       "id": "fall",
@@ -71,7 +71,8 @@
         }
       },
       "status": "revision_required",
-      "artApproved": false
+      "artApproved": false,
+      "gameConnected": false
     },
     {
       "id": "run",
@@ -97,7 +98,7 @@
           "bottom": 1203
         }
       },
-      "status": "adopted_for_runtime",
+      "status": "rejected_by_user",
       "artApproved": false,
       "prepared": "art_source/paper_roster_motion/ryuta/prepared/run.png",
       "preparedSha256": "2637eba45d1b6a94366796f44439731bbfd65ec060d50ba8b2b75e7ea6352214",
@@ -105,7 +106,8 @@
       "offsetY": 125,
       "rgbaWithinCanvasPreserved": true,
       "croppedOutsideAlphaOnePixels": 0,
-      "gameConnected": true
+      "gameConnected": false,
+      "rejectionReason": "甲側ではなく手の内側が見える左拳へ修正指定"
     },
     {
       "id": "jump",
@@ -132,7 +134,8 @@
         }
       },
       "status": "revision_required",
-      "artApproved": false
+      "artApproved": false,
+      "gameConnected": false
     },
     {
       "id": "jump",
@@ -160,7 +163,7 @@
           "bottom": 1242
         }
       },
-      "status": "adopted_for_runtime",
+      "status": "rejected_by_user",
       "artApproved": false,
       "prepared": "art_source/paper_roster_motion/ryuta/prepared/jump.png",
       "preparedSha256": "cb1e91e6122f89b5b0c832e206d2c2c30b6ba838ddfa3416da6f7c6b40471c6a",
@@ -168,7 +171,8 @@
       "offsetY": 86,
       "rgbaWithinCanvasPreserved": true,
       "croppedOutsideAlphaOnePixels": 0,
-      "gameConnected": true
+      "gameConnected": false,
+      "rejectionReason": "甲側ではなく手の内側が見える左拳へ修正指定"
     },
     {
       "id": "fall",
@@ -569,9 +573,81 @@
       "croppedOutsideAlphaOnePixels": 0,
       "gameConnected": false,
       "rejectionReason": "ユーザーが開いた掌を不採用とし、握り拳版を添付して承認した。"
+    },
+    {
+      "id": "run",
+      "label": "走り",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/ryuta/generated/run_v3.png",
+      "prompt": "Use case: precise-object-edit. Edit Image 1, the full-body running anime boy Ryuta. Image 2 is only the approved clenched LEFT hand reference, NOT a pose or body reference.\nChange ONLY his anatomical LEFT fist, on the RIGHT SIDE OF IMAGE 1. The current image incorrectly shows the broad back of a right-looking hand. Redraw a believable clenched LEFT hand rotated so its PALMAR/INNER side faces the viewer: show the curved folded finger pads of four fingers, the palm heel and a distinct left thumb folded naturally across the curled fingers. Keep the fist CLOSED, five digits total; do not make an open palm or raised stop gesture. Follow Image 2's approved inner-fist drawing, adapted naturally to Image 1's existing forearm angle and wrist. Trace the LEFT shoulder through elbow and wrist correctly. The wrist must not be twisted backwards.\nPreserve the OTHER hand on image-left unchanged. Preserve the entire existing running/jump pose, face, hair, body proportions, clothing, red striped necktie, belt, earrings, shoes, every limb position, line art, cel shading and the cream-white cutout border. Do not mirror/flip the entire image. Do not enlarge or move the character or fist. Canvas must remain 1189 x 1323 with the exact original composition and transparent margins. Keep the full figure and shoes complete. Thin consistent white border must wrap the edited fist too. Real transparent background; no shadows, ground, symbols, effects, text, extra fingers or extra limbs. One full-body sprite only.",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/run_v2.png",
+        "art_source/paper_roster_motion/ryuta/generated/hit_light_v5.png"
+      ],
+      "referenceRoles": [
+        "画像1：直接編集する対象。手以外の全ピクセル構図・容姿・倍率の基準。",
+        "画像2：ユーザー承認済みの本人左の握り拳。手の内側と握った4指の見せ方のみ参照、全身ポーズはコピーしない。"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "2a04cb14233a112b536927b4323352be192bdcb2b162e65352825a750a65d6d2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 122,
+          "top": 48,
+          "right": 1154,
+          "bottom": 1205
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/run.png",
+      "preparedSha256": "c3c56dffabaca06a7c436e64023d3e7b778382e7f78f8984880da7dbbbe8815a",
+      "offsetX": 0,
+      "offsetY": 123,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/ryuta/generated/jump_v3.png",
+      "prompt": "Use case: precise-object-edit. Edit Image 1, the full-body jumping upward anime boy Ryuta. Image 2 is only the approved clenched LEFT hand reference, NOT a pose or body reference.\nChange ONLY his anatomical LEFT fist, on the RIGHT SIDE OF IMAGE 1. The current image incorrectly shows the broad back of a right-looking hand. Redraw a believable clenched LEFT hand rotated so its PALMAR/INNER side faces the viewer: show the curved folded finger pads of four fingers, the palm heel and a distinct left thumb folded naturally across the curled fingers. Keep the fist CLOSED, five digits total; do not make an open palm or raised stop gesture. Follow Image 2's approved inner-fist drawing, adapted naturally to Image 1's existing forearm angle and wrist. Trace the LEFT shoulder through elbow and wrist correctly. The wrist must not be twisted backwards.\nPreserve the OTHER hand on image-left unchanged. Preserve the entire existing running/jump pose, face, hair, body proportions, clothing, red striped necktie, belt, earrings, shoes, every limb position, line art, cel shading and the cream-white cutout border. Do not mirror/flip the entire image. Do not enlarge or move the character or fist. Canvas must remain 1189 x 1323 with the exact original composition and transparent margins. Keep the full figure and shoes complete. Thin consistent white border must wrap the edited fist too. Real transparent background; no shadows, ground, symbols, effects, text, extra fingers or extra limbs. One full-body sprite only.",
+      "references": [
+        "art_source/paper_roster_motion/ryuta/generated/jump_v2.png",
+        "art_source/paper_roster_motion/ryuta/generated/hit_light_v5.png"
+      ],
+      "referenceRoles": [
+        "画像1：直接編集する対象。手以外の全ピクセル構図・容姿・倍率の基準。",
+        "画像2：ユーザー承認済みの本人左の握り拳。手の内側と握った4指の見せ方のみ参照、全身ポーズはコピーしない。"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "06eb8e8260f725002bf62e06c0e395f0b8638764d3b97d3feb6b836b13659d12",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 210,
+          "top": 40,
+          "right": 1018,
+          "bottom": 1246
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/ryuta/prepared/jump.png",
+      "preparedSha256": "5ac953381676582c126fd13dcd8d42b77b12dc68c93db54e4144cc5ce7ffe9a9",
+      "offsetX": 114,
+      "offsetY": 82,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
     }
   ],
   "integrated": true,
-  "verifiedTag": "motion_ryuta_2",
-  "previousVerifiedTag": "motion_ryuta_1"
+  "verifiedTag": "charge_ryuta_hands_1",
+  "previousVerifiedTag": "motion_ryuta_2"
 }

@@ -24,6 +24,7 @@ namespace AniBato.Presentation
         public int Age;
         public bool FlipX;
         public bool IsAttack;
+        public bool IsCharging;
         public int AttackFrame, Startup, Active, Recovery, DamageDelay, ProjectileReleaseFrame;
         public int FrameIndex(int count, int fps, bool loop, int activeFrame)
         {
@@ -78,6 +79,7 @@ namespace AniBato.Presentation
             else if (landingRemaining > 0 && (state == AnimationState.Idle || state == AnimationState.Move)) state = AnimationState.Land;
             long attackId = fighter.Attack == null ? 0 : fighter.Attack.Id;
             var sample = new AnimationSample { State = state, FlipX = fighter.Facing < 0,
+                IsCharging = !match.IsFinished && fighter.Grounded && fighter.Mode == FighterMode.Charging,
                 Age = initialized && Sample.State == state && previousAttack == attackId ? Sample.Age + 1 : 0 };
             if (!match.IsFinished && fighter.Attack != null)
             {

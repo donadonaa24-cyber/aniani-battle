@@ -1,0 +1,22 @@
+{
+  "key": "king",
+  "selected": 1,
+  "artApproved": false,
+  "source": "art_source/paper_charge/king/generated/charge_v1.png",
+  "native": {
+    "width": 1190,
+    "height": 1322,
+    "bounds": {
+      "left": 33,
+      "top": 100,
+      "right": 1175,
+      "bottom": 1262
+    }
+  },
+  "canvasPolicy": "原画RGBAの整数移動と透明余白のみ、個別拡縮なし",
+  "anatomyReview": "本人の左右の手と5指、肩・肘・手首、脚と靴、道具の持ち手を目視。隠れる指を可視と扱わない。",
+  "knownDifferences": [
+    "爪手甲2つ・2脚・尾1本。毛皮の垂れた飾りは腕ではない。低姿勢の近い靴に遠近差。"
+  ],
+  "reviewComparison": "review_overview.pngで採用待機と同じ共通枠・同倍率を比較。原画は整数移動のみ。"
+}

@@ -87,7 +87,7 @@ namespace AniBato.Game
                 body.sprite = sprite; body.flipX = !turnWithRush&&!unmirroredImpact&&visualSample.FlipX;
                 body.transform.localScale = Vector3.one;
                 var rock = UsesPaperSprite ? character.PaperMotion.Transform(visualSample, paperPose) : default;
-                var performance = UsesPaperSprite ? AniBato.Presentation.PaperPerformance.Evaluate(character.PaperMotion.Performance, visualSample, fighter.LastDamageLostHeart) : default;
+                var performance = UsesPaperSprite && !visualSample.IsCharging ? AniBato.Presentation.PaperPerformance.Evaluate(character.PaperMotion.Performance, visualSample, fighter.LastDamageLostHeart) : default;
                 float angle = rock.Degrees + performance.Degrees + (paperPose==null?0:paperPose.TiltDegrees*(visualSample.FlipX?-1:1));
                 if(turnWithRush&&fighter.Attack!=null&&fighter.Attack.IsActive&&
                     fighter.Attack.Definition.Ability.Motion==AniBato.Battle.AbilityMotion.TwoPhaseRush&&

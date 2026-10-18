@@ -1,0 +1,16 @@
+{
+  "id": "jump",
+  "label": "ジャンプ上昇",
+  "version": 3,
+  "source": "art_source/paper_roster_motion/ryuta/generated/jump_v3.png",
+  "prompt": "Use case: precise-object-edit. Edit Image 1, the full-body jumping upward anime boy Ryuta. Image 2 is only the approved clenched LEFT hand reference, NOT a pose or body reference.\nChange ONLY his anatomical LEFT fist, on the RIGHT SIDE OF IMAGE 1. The current image incorrectly shows the broad back of a right-looking hand. Redraw a believable clenched LEFT hand rotated so its PALMAR/INNER side faces the viewer: show the curved folded finger pads of four fingers, the palm heel and a distinct left thumb folded naturally across the curled fingers. Keep the fist CLOSED, five digits total; do not make an open palm or raised stop gesture. Follow Image 2's approved inner-fist drawing, adapted naturally to Image 1's existing forearm angle and wrist. Trace the LEFT shoulder through elbow and wrist correctly. The wrist must not be twisted backwards.\nPreserve the OTHER hand on image-left unchanged. Preserve the entire existing running/jump pose, face, hair, body proportions, clothing, red striped necktie, belt, earrings, shoes, every limb position, line art, cel shading and the cream-white cutout border. Do not mirror/flip the entire image. Do not enlarge or move the character or fist. Canvas must remain 1189 x 1323 with the exact original composition and transparent margins. Keep the full figure and shoes complete. Thin consistent white border must wrap the edited fist too. Real transparent background; no shadows, ground, symbols, effects, text, extra fingers or extra limbs. One full-body sprite only.",
+  "references": [
+    "art_source/paper_roster_motion/ryuta/generated/jump_v2.png",
+    "art_source/paper_roster_motion/ryuta/generated/hit_light_v5.png"
+  ],
+  "referenceRoles": [
+    "画像1：直接編集する対象。手以外の全ピクセル構図・容姿・倍率の基準。",
+    "画像2：ユーザー承認済みの本人左の握り拳。手の内側と握った4指の見せ方のみ参照、全身ポーズはコピーしない。"
+  ],
+  "tool": "built-in image_gen"
+}

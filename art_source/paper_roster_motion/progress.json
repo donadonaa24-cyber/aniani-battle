@@ -60,7 +60,7 @@
       "name": "龍太",
       "generated": 7,
       "integrated": true,
-      "verification": "motion_ryuta_2",
+      "verification": "charge_ryuta_hands_1",
       "previousVerification": "motion_ryuta_1",
       "note": "通常被弾v5はユーザー添付承認。motion_ryuta_2で全4合格。"
     }
@@ -73,5 +73,8 @@
     "artImages": 426,
     "browser": "Codex in-app Chromium",
     "proof": "docs/screenshots/motion_roster_web_3"
-  }
+  },
+  "finalRegressionTag": "charge_art_2",
+  "finalWebTag": "charge_art_web",
+  "finalVerification": "docs/codex_logs/motion_roster_final_verification.json"
 }

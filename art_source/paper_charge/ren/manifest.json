@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "key": "ren",
+  "name": "蓮",
+  "characterIndex": 1,
+  "baseIdle": "art_source/paper_roster_idle/prepared/ren_idle.png",
+  "selectedVersion": 2,
+  "entries": [
+    {
+      "schemaVersion": 1,
+      "key": "ren",
+      "name": "蓮",
+      "characterIndex": 1,
+      "id": "charge",
+      "version": 1,
+      "source": "art_source/paper_charge/ren/generated/charge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用「溜め中」の全身アニメ原画を1枚だけ作る。画像1は本人の採用待機：編集対象、顔・頭髪・衣装・頭身・靴の画素実寸の基準。画像2は本人の採用攻撃：装備の形と左右の持ち手の参考（龍太はユーザー承認の左拳の形の参考のみ）。\n人物：茶色の跳ねた髪、青緑の瞳、ベージュの犬の顔と垂れた茶色い犬耳の頭巾、赤い首元とマント、白い上着、青緑の縁、黒い短パン、白ソックス、赤黒白のスニーカー、両手の白い肉球ミトン、ふさふさのベージュの尻尾。獣そのものではなく犬頭巾を着た人間の少年。犬の頭巾と人間の頭は一つながり。\n新しい姿勢：両脚で低く踏ん張り、腰と胸を後ろへ引き、犬頭巾の額を右前へ低く向けた頭突き前の溜め。両方の白い肉球ミトンは身体の横へ引き、顔を隠さない。獣の四足や逆立ちにしない。\n少ない原画で明快に読める力を溜めた強い構え。身体の軸はほぼ直立～前傾10度以内。ゲーム内で全身を追加10度傾けて少し沈める。完成した攻撃やジャンプではなく、接地したまま力を引き付けている。胸元が斜めに見える右向き。顔と手を重ねて隠さず、肩から肘・手首・手を自然につなぐ。本人の左右と画面の左右を混同しない。人間は2腕2脚・各手5指、犬は4脚。ミトンや爪手甲を素手に変更しない。\n参照1と同じ1189×1323の透明キャンバス。髪と顔、靴、道具の実寸と人物倍率を保ち、低姿勢の上には大きい透明余白を残す。頭や靴を大きくして余白を埋めない。全身と全ての装備を枠の内側へ、切断しない。参照と同じ線・セル塗り、薄いクリーム白の切り抜き縁を全外周へ。紙の繊維・背景・床・影・オーラ・発光・速度線・文字・相手・複数ポーズ・連続コマは禁止。完全透明の背景。",
+      "references": [
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png",
+        "AniBato/Assets/_Project/Art/PaperAction/ren_normal1_prepare.png"
+      ],
+      "referenceRoles": [
+        "採用待機：本人の容姿・部位実寸・倍率の基準、編集対象",
+        "採用攻撃：持ち手と装備の参考。龍太のみ承認された左の握り拳の形だけを参照"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "af38053c04485de07e6b5df189703b0dd33801eccbc58d132ca00b6322ceffdf",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 47,
+          "top": 248,
+          "right": 1148,
+          "bottom": 1270
+        }
+      },
+      "artApproved": false,
+      "status": "revision_required"
+    },
+    {
+      "schemaVersion": 1,
+      "key": "ren",
+      "name": "蓮",
+      "characterIndex": 1,
+      "id": "charge",
+      "version": 2,
+      "source": "art_source/paper_charge/ren/generated/charge_v2.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the charge pose to edit. Image 2 is the adopted idle size reference. Preserve Image 1 pose, body scale, red cape, shorts, two white paw mittens, tail, 2 arms and 2 legs. Correct ONLY the oversized head/hood and shoes: redraw the combined head with dog hood about 15% smaller and BOTH sneakers about 20% smaller, matching the native pixel sizes in Image 2. Do not shrink or enlarge the whole body. Keep the neck attached naturally and each ankle inside its shoe. Retain the low braced charge-before-headbutt stance and focused face, both feet grounded. Image 2 is NOT a replacement pose. 1189 x 1323 transparent canvas, original composition with large empty space above, full intact cutout white border, no floor, shadows, text, effects, extra limbs or characters.",
+      "references": [
+        "art_source/paper_charge/ren/generated/charge_v1.png",
+        "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：溜め姿勢を維持して頭/頭巾と靴の部位実寸だけを修正",
+        "待機：頭髪・頭巾・靴の正しい画素実寸の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "83ec086650854e44336b1315e9ca8a3884540982d3763bf8d6e5ecf6707c2142",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 107,
+          "top": 288,
+          "right": 1127,
+          "bottom": 1217
+        }
+      },
+      "artApproved": false,
+      "status": "adopted_for_runtime",
+      "prepared": "art_source/paper_charge/ren/prepared/charge.png",
+      "preparedSha256": "6aec6641b27de8288808e3b97054904dd72a884c9fe362dbe97790a8373d77f9",
+      "offsetX": 0,
+      "offsetY": 111,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "charge_art_2"
+}

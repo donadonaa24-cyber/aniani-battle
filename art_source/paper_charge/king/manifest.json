@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "key": "king",
+  "name": "黒獅子王",
+  "characterIndex": 6,
+  "baseIdle": "art_source/paper_roster_idle/prepared/king_idle.png",
+  "selectedVersion": 1,
+  "entries": [
+    {
+      "schemaVersion": 1,
+      "key": "king",
+      "name": "黒獅子王",
+      "characterIndex": 6,
+      "id": "charge",
+      "version": 1,
+      "source": "art_source/paper_charge/king/generated/charge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用「溜め中」の全身アニメ原画を1枚だけ作る。画像1は本人の採用待機：編集対象、顔・頭髪・衣装・頭身・靴の画素実寸の基準。容姿と部位の実寸は画像1のみを基準とする。\n人物：黒髪に赤い筋、赤い瞳、額の小さい金の菱形。人間の少年が、赤い宝石の金の冠が付いた黄金色の獅子の頭巾をかぶる。獅子の飾りの口から人間の顔が一つだけ見える。黒と金の鎧、赤い宝石、金の鎖と腰の獅子の留め具、深紅のマント、左右の黒い爪手甲、金の爪が3つの黒金ブーツ。獅子の尾1本。マントの左右の獅子の毛皮の垂れた飾りを、本人の余分な腕にしない。\n新しい姿勢：両脚で低く強く踏ん張り、本人右の爪手甲を右肩横の後ろへ引いて大きくひっかく前の溜め。左手甲は胸前で構える。獅子頭巾の中の人間の顔を見せ、鋭い笑み。毛皮の垂れた飾りを余分な腕にしない。尾は1本、マントと尾は両靴の底より下へ伸ばさない。\n少ない原画で明快に読める力を溜めた強い構え。身体の軸はほぼ直立～前傾10度以内。ゲーム内で全身を追加10度傾けて少し沈める。完成した攻撃やジャンプではなく、接地したまま力を引き付けている。胸元が斜めに見える右向き。顔と手を重ねて隠さず、肩から肘・手首・手を自然につなぐ。本人の左右と画面の左右を混同しない。人間は2腕2脚・各手5指、犬は4脚。ミトンや爪手甲を素手に変更しない。\n参照1と同じ1190×1322の透明キャンバス。髪と顔、靴、道具の実寸と人物倍率を保ち、低姿勢の上には大きい透明余白を残す。頭や靴を大きくして余白を埋めない。全身と全ての装備を枠の内側へ、切断しない。参照と同じ線・セル塗り、薄いクリーム白の切り抜き縁を全外周へ。紙の繊維・背景・床・影・オーラ・発光・速度線・文字・相手・複数ポーズ・連続コマは禁止。完全透明の背景。",
+      "references": [
+        "art_source/paper_roster_idle/generated/king_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：本人の容姿・部位実寸・倍率の基準、編集対象"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "b2a2ee4369c9e5fe6de5f4f1bc0b5299f78952d456fde9dfd17a3d8869843072",
+      "native": {
+        "width": 1190,
+        "height": 1322,
+        "bounds": {
+          "left": 33,
+          "top": 100,
+          "right": 1175,
+          "bottom": 1262
+        }
+      },
+      "artApproved": false,
+      "status": "adopted_for_runtime",
+      "prepared": "art_source/paper_charge/king/prepared/charge.png",
+      "preparedSha256": "f6213121ec954cc76ba34e79bb41a9bb98153434450e685e21d4b5871d7141f3",
+      "offsetX": 47,
+      "offsetY": 66,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "charge_art_2"
+}

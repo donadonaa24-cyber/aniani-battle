@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "key": "chizuru",
+  "name": "千鶴",
+  "characterIndex": 2,
+  "id": "charge",
+  "version": 2,
+  "source": "art_source/paper_charge/chizuru/generated/charge_v2.png",
+  "prompt": "Use case: precise-object-edit. Edit ONLY the raised hand gripping the frying pan on the upper RIGHT of this full-body image. It is her ANATOMICAL LEFT hand. Show a natural left-hand PALMAR grip: the distinct left THUMB must be on the IMAGE-RIGHT side of the black handle, curling across it toward image-left. The FOUR curled fingers must wrap from the IMAGE-LEFT side of the handle, with compact finger pads/creases, one thumb plus four fingers total. The current grip has the thumb and fingers reversed like a right hand; redraw it, do not merely label it left. Keep this hand closed around the same vertical/slanted pan handle. Keep the existing wrist and forearm anatomically connected. Preserve every other part of the image: full-body low charging stance, chest-facing torso, empty right fist near chest, face, hair, orange sleeves, navy skirt, two shoes, pan, canvas dimensions and exact composition. No whole-image mirroring, no open palm, no extra limb, no large hand. Keep the same thin cream cutout border around the repaired hand and fully transparent background. One full-body sprite.",
+  "references": [
+    "art_source/paper_charge/chizuru/generated/charge_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：画面右上のフライパンを持つ左手の指だけ修正する"
+  ],
+  "tool": "built-in image_gen"
+}

@@ -453,10 +453,10 @@ MonoBehaviour:
     FrameFootMaxXs: []
     FrameOriginYs:
     - 0
-    HeadHeight: 2.1686504
+    HeadHeight: 2.1724057
     FootBaseY: 0
     FootMinX: 0.35487008
-    FootMaxX: 0.9388097
+    FootMaxX: 0.94256496
   - Key: jump
     States: 03000000i
     Frames:
@@ -473,11 +473,11 @@ MonoBehaviour:
     FrameFootMinXs: []
     FrameFootMaxXs: []
     FrameOriginYs:
-    - 0.10139145
-    HeadHeight: 2.2531433
+    - 0.09012573
+    HeadHeight: 2.264409
     FootBaseY: 0
-    FootMinX: -0.009388097
-    FootMaxX: 0.21968147
+    FootMinX: -0.0131433355
+    FootMaxX: 0.22531433
   - Key: fall
     States: 04000000i
     Frames:
@@ -584,6 +584,28 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.5632858
     FootMaxX: 0.9688516
+  Charging:
+    Key: charge
+    States: 
+    Frames:
+    - {fileID: 21300000, guid: 8138a235b779d804b8a6aab660961ce5, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs:
+    - 0
+    HeadHeight: 2.1442413
+    FootBaseY: 0
+    FootMinX: -0.90501255
+    FootMaxX: 1.1171836
   Bag: {fileID: 0}
   RiceBall: {fileID: 0}
   Mogu: {fileID: 0}

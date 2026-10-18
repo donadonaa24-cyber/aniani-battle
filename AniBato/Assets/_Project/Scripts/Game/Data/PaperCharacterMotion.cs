@@ -91,6 +91,7 @@ namespace AniBato.Game
         public int UltimateImpactMinimumTicks=96, CurryAfterglowTicks=24;
         public PaperPose[] Poses;
         public PaperPose HeavyDamage;
+        public PaperPose Charging;
         public Sprite Bag, RiceBall, Mogu, CurryWave;
         public PaperProjectileArt[] Projectiles;
         public PaperAbilityArt[] AbilityEffects;
@@ -109,6 +110,8 @@ namespace AniBato.Game
         public bool Supports(AnimationState state) => Enabled && ((Sprite && (state == AnimationState.Idle || state == AnimationState.Move)) || Find(state) != null);
         public bool TrySprite(in AnimationSample sample, bool lostHeart, out Sprite sprite, out PaperPose pose)
         {
+            if (Enabled && sample.IsCharging && Charging != null && Charging.Valid)
+            { pose = Charging; sprite = pose.Frame(sample); return true; }
             pose = Find(sample.State, lostHeart); sprite = null;
             if (!Supports(sample.State)) return false;
             sprite = pose != null ? pose.Frame(sample) : Sprite;
@@ -116,6 +119,7 @@ namespace AniBato.Game
         }
         public PaperRockingSample Transform(in AnimationSample sample, PaperPose pose)
         {
+            if (sample.IsCharging) return default;
             if (sample.State == AnimationState.Idle) return PaperRockingMotion.Evaluate(Motion, sample.Age, false, sample.FlipX);
             float lean = sample.State == AnimationState.Move ? WalkLeanDegrees : sample.State == AnimationState.Dash ? DashLeanDegrees : 0;
             // Idle and walking share the original standing image and its measured whole-sole span.

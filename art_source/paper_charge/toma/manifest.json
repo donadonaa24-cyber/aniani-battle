@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "key": "toma",
+  "name": "透真",
+  "characterIndex": 0,
+  "baseIdle": "art_source/paper_roster_idle/prepared/toma_idle.png",
+  "selectedVersion": 1,
+  "entries": [
+    {
+      "schemaVersion": 1,
+      "key": "toma",
+      "name": "透真",
+      "characterIndex": 0,
+      "id": "charge",
+      "version": 1,
+      "source": "art_source/paper_charge/toma/generated/charge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用「溜め中」の全身アニメ原画を1枚だけ作る。画像1は本人の採用待機：編集対象、顔・頭髪・衣装・頭身・靴の画素実寸の基準。画像2は本人の採用攻撃：装備の形と左右の持ち手の参考（龍太はユーザー承認の左拳の形の参考のみ）。\n人物：黒い大きい跳ね髪、青い瞳、黒いスーツと黒いネクタイ、白シャツ、黒い革靴。生身の両腕。\n新しい姿勢：両膝と腰を落として両足を踏ん張る、右前へ射撃する前の強い溜め。黒い拳銃1丁を右手で握り、左手を下から支えにして両肘を曲げ、胸の右側へしっかり引き付ける。参照2と同じ左右の握り。銃口は顔に向けず右斜め前。身体の後ろへ反らず、視線は前。\n少ない原画で明快に読める力を溜めた強い構え。身体の軸はほぼ直立～前傾10度以内。ゲーム内で全身を追加10度傾けて少し沈める。完成した攻撃やジャンプではなく、接地したまま力を引き付けている。胸元が斜めに見える右向き。顔と手を重ねて隠さず、肩から肘・手首・手を自然につなぐ。本人の左右と画面の左右を混同しない。人間は2腕2脚・各手5指、犬は4脚。ミトンや爪手甲を素手に変更しない。\n参照1と同じ1189×1323の透明キャンバス。髪と顔、靴、道具の実寸と人物倍率を保ち、低姿勢の上には大きい透明余白を残す。頭や靴を大きくして余白を埋めない。全身と全ての装備を枠の内側へ、切断しない。参照と同じ線・セル塗り、薄いクリーム白の切り抜き縁を全外周へ。紙の繊維・背景・床・影・オーラ・発光・速度線・文字・相手・複数ポーズ・連続コマは禁止。完全透明の背景。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png",
+        "AniBato/Assets/_Project/Art/PaperAction/toma_normal1_prepare.png"
+      ],
+      "referenceRoles": [
+        "採用待機：本人の容姿・部位実寸・倍率の基準、編集対象",
+        "採用攻撃：持ち手と装備の参考。龍太のみ承認された左の握り拳の形だけを参照"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "437fb37140359096d6fc3c4a009620f7b87a5c06119f4e9dcdb54495ddd586bf",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 210,
+          "top": 101,
+          "right": 1072,
+          "bottom": 1269
+        }
+      },
+      "artApproved": false,
+      "status": "adopted_for_runtime",
+      "prepared": "art_source/paper_charge/toma/prepared/charge.png",
+      "preparedSha256": "d503dc333c0f00b4be457b0c1f33962e42dae447beb770285b39db241e56f9b0",
+      "offsetX": 74,
+      "offsetY": 59,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "charge_art_2"
+}

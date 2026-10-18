@@ -1,0 +1,22 @@
+{
+  "key": "ren",
+  "selected": 2,
+  "artApproved": false,
+  "source": "art_source/paper_charge/ren/generated/charge_v2.png",
+  "native": {
+    "width": 1189,
+    "height": 1323,
+    "bounds": {
+      "left": 107,
+      "top": 288,
+      "right": 1127,
+      "bottom": 1217
+    }
+  },
+  "canvasPolicy": "原画RGBAの整数移動と透明余白のみ、個別拡縮なし",
+  "anatomyReview": "本人の左右の手と5指、肩・肘・手首、脚と靴、道具の持ち手を目視。隠れる指を可視と扱わない。",
+  "knownDifferences": [
+    "初稿は頭巾と靴が大きくv2で部位を生成修正。原画梱包時の拡縮なし。両ミトン・二脚・尾1本。"
+  ],
+  "reviewComparison": "review_overview.pngで採用待機と同じ共通枠・同倍率を比較。原画は整数移動のみ。"
+}

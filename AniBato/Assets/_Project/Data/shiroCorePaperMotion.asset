@@ -584,6 +584,28 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.61210394
     FootMaxX: 0.79047775
+  Charging:
+    Key: charge
+    States: 
+    Frames:
+    - {fileID: 21300000, guid: 754f49d9a0b98604eba42635db10ac55, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs:
+    - 0
+    HeadHeight: 1.7274098
+    FootBaseY: 0
+    FootMinX: -0.9369321
+    FootMaxX: 1.1153059
   Bag: {fileID: 0}
   RiceBall: {fileID: 0}
   Mogu: {fileID: 0}

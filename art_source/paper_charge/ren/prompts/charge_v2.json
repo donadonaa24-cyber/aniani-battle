@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "key": "ren",
+  "name": "蓮",
+  "characterIndex": 1,
+  "id": "charge",
+  "version": 2,
+  "source": "art_source/paper_charge/ren/generated/charge_v2.png",
+  "prompt": "Use case: precise-object-edit. Image 1 is the charge pose to edit. Image 2 is the adopted idle size reference. Preserve Image 1 pose, body scale, red cape, shorts, two white paw mittens, tail, 2 arms and 2 legs. Correct ONLY the oversized head/hood and shoes: redraw the combined head with dog hood about 15% smaller and BOTH sneakers about 20% smaller, matching the native pixel sizes in Image 2. Do not shrink or enlarge the whole body. Keep the neck attached naturally and each ankle inside its shoe. Retain the low braced charge-before-headbutt stance and focused face, both feet grounded. Image 2 is NOT a replacement pose. 1189 x 1323 transparent canvas, original composition with large empty space above, full intact cutout white border, no floor, shadows, text, effects, extra limbs or characters.",
+  "references": [
+    "art_source/paper_charge/ren/generated/charge_v1.png",
+    "art_source/paper_roster_idle/generated/ren_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "編集対象：溜め姿勢を維持して頭/頭巾と靴の部位実寸だけを修正",
+    "待機：頭髪・頭巾・靴の正しい画素実寸の基準"
+  ],
+  "tool": "built-in image_gen"
+}

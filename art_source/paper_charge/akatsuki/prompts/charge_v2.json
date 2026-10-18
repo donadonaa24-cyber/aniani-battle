@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "name": "暁",
+  "characterIndex": 7,
+  "id": "charge",
+  "version": 2,
+  "source": "art_source/paper_charge/akatsuki/generated/charge_v2.png",
+  "prompt": "Use case: identity-preserve. Edit image 1 locally ONLY the visible printed face of the single card held near his left shoulder. Replace the invented crown-and-crossed-cutlery card printing with the adopted Battle à la Carte card back in reference 2: navy blue checked ground, ornate cream/gold cooking border, red and black suit marks, chef hat corners, centered gold Battle à la Carte title. Fit that design in perspective into the existing card outline. Keep his left hand pinching the bottom edge exactly, including thumb and curled fingers; do not add fingers or change hand/arm anatomy. Preserve every other part: face, glasses, hair, full body pose, clothing, shoes, relative size, white cutout border, transparent background, native canvas. No new effects, shadows, text outside the card, or extra cards.",
+  "references": [
+    "art_source/paper_charge/akatsuki/generated/charge_v1.png",
+    "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+  ],
+  "referenceRoles": [
+    "編集対象：溜め原画、カードの面以外は保持",
+    "採用済みカード背面：紺の料理カードと金のタイトル・枠・トランプの記号"
+  ],
+  "tool": "built-in image_gen"
+}

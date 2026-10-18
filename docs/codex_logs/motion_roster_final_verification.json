@@ -5,46 +5,52 @@
   "motionImages": 56,
   "approvedRyutaLightVersion": 5,
   "regression": {
-    "tag": "motion_web_memory_1",
+    "tag": "charge_art_2",
     "EditMode": {
-      "total": 582,
-      "passed": 582,
+      "total": 593,
+      "passed": 593,
       "failed": 0,
       "skipped": 0,
-      "source": "TestResults/motion_web_memory_1_EditMode.xml",
-      "sha256": "4cd15a74727af39a08b15d7620d585a1e617d53106bc19d1ffeeb673814e9b65"
+      "source": "TestResults/charge_art_2_EditMode.xml",
+      "sha256": "d44be0517e229f92b8ab270167878e7892a97e3b449f752a54b467793fad1271"
     },
     "PlayMode": {
-      "total": 81,
-      "passed": 81,
+      "total": 83,
+      "passed": 83,
       "failed": 0,
       "skipped": 0,
-      "source": "TestResults/motion_web_memory_1_PlayMode.xml",
-      "sha256": "eb288ab52c9e69a5afeeebe3b491111bf2afa4d3556e25d054c8a3132e04b66c"
+      "source": "TestResults/charge_art_2_PlayMode.xml",
+      "sha256": "55800b90c37d7dab2cf7927588dd9f2791580fcdbb499a7a74385e7e1601695a"
     },
     "BuildAll": {
       "success": true,
-      "source": "TestResults/motion_web_memory_1_buildall.log",
-      "sha256": "276d4465faf7afdde23645f823fd18595bb507ae095856f0c271d29f3bd3a262"
+      "source": "TestResults/charge_art_2_buildall.log",
+      "sha256": "dd379b947e8a07c850b8c53a341cf93ddf6d878f2dffcff00b256e581521016e"
     },
     "Windows": {
       "success": true,
-      "source": "TestResults/motion_web_memory_1_build.log",
-      "sha256": "de88c811849a8f919bba8bf2820b982403de73fa2074225ddbbc3034144e70f6"
+      "source": "TestResults/charge_art_2_build.log",
+      "sha256": "162220a13963831683626f6be6290283cac2a0cfb66741d95c7810214e3b4811"
     }
   },
   "web": {
-    "tag": "motion_roster_web_3",
+    "tag": "charge_art_web",
     "result": "success",
-    "bytes": 119935208,
-    "seconds": 190.3380025,
+    "bytes": 123660075,
+    "seconds": 218.7301422,
     "files": 6,
-    "sourceRgbaImages": 426,
+    "windowsRestored": true,
+    "sourceRgbaImages": 435,
     "failed": 0,
-    "audit": "docs/screenshots/motion_roster_web_3/webgl-pixel-audit.json",
-    "browserProof": "docs/screenshots/motion_roster_web_3/browser-verification.json",
+    "audit": "docs/screenshots/charge_art_web/webgl-pixel-audit.json",
+    "browserProof": "docs/screenshots/charge_art_web/browser-verification.json",
     "startupErrors": 0,
-    "audio": "running"
+    "audio": "running",
+    "chargeHeldTicks": 180
   },
-  "limitations": "全56動作の左右・通常/強被弾・反撃は実Unity PlayModeで検証。ブラウザは起動・選択・走り・上昇・通常被弾の標本確認。実機パッドと通常Chrome/Edge個別は未再検査。"
+  "limitations": "全9人・左右・溜め境界・中断・既存56動作は実Unityで検証。ブラウザは龍太の溜め180tick・解除・走り・上昇を実キーで確認。通常Chrome/Edge個別、実機パッド、低メモリ端末は今回未再検査。",
+  "ryutaCorrectedVersions": {
+    "run": 3,
+    "jump": 3
+  }
 }

@@ -1,0 +1,22 @@
+{
+  "key": "shiro",
+  "selected": 1,
+  "artApproved": false,
+  "source": "art_source/paper_charge/shiro/generated/charge_v1.png",
+  "native": {
+    "width": 1189,
+    "height": 1323,
+    "bounds": {
+      "left": 45,
+      "top": 348,
+      "right": 1187,
+      "bottom": 1268
+    }
+  },
+  "canvasPolicy": "原画RGBAの整数移動と透明余白のみ、個別拡縮なし",
+  "anatomyReview": "本人の左右の手と5指、肩・肘・手首、脚と靴、道具の持ち手を目視。隠れる指を可視と扱わない。",
+  "knownDifferences": [
+    "四肢4本、両前脚と両後脚のつながりを目視。画面右端の余白は原画で1px、梱包枠では余白を増す整数移動。装甲と白縁の切断なし。"
+  ],
+  "reviewComparison": "review_overview.pngで採用待機と同じ共通枠・同倍率を比較。原画は整数移動のみ。"
+}

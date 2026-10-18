@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "complete": true,
+  "characters": [
+    {
+      "key": "toma",
+      "name": "透真",
+      "characterIndex": 0,
+      "frames": [
+        {
+          "id": "charge",
+          "prepared": "art_source/paper_charge/toma/prepared/charge.png",
+          "sha256": "d503dc333c0f00b4be457b0c1f33962e42dae447beb770285b39db241e56f9b0",
+          "headTopY": 160,
+          "footMinX": 284,
+          "footMaxX": 1146,
+          "originOffsetY": 0
+        }
+      ]
+    },
+    {
+      "key": "ren",
+      "name": "蓮",
+      "characterIndex": 1,
+      "frames": [
+        {
+          "id": "charge",
+          "prepared": "art_source/paper_charge/ren/prepared/charge.png",
+          "sha256": "6aec6641b27de8288808e3b97054904dd72a884c9fe362dbe97790a8373d77f9",
+          "headTopY": 399,
+          "footMinX": 343,
+          "footMaxX": 1084,
+          "originOffsetY": 0
+        }
+      ]
+    },
+    {
+      "key": "chizuru",
+      "name": "千鶴",
+      "characterIndex": 2,
+      "frames": [
+        {
+          "id": "charge",
+          "prepared": "art_source/paper_charge/chizuru/prepared/charge.png",
+          "sha256": "65c0b1297579518a6cad2e743427fa290fd6f36567ebe82ecacd7189011278fb",
+          "headTopY": 133,
+          "footMinX": 196,
+          "footMaxX": 1175,
+          "originOffsetY": 0
+        }
+      ]
+    },
+    {
+      "key": "minato",
+      "name": "湊",
+      "characterIndex": 3,
+      "frames": [
+        {
+          "id": "charge",
+          "prepared": "art_source/paper_charge/minato/prepared/charge.png",
+          "sha256": "446c845e88459131f80e97baedc62e48426a243279240a5530d9d24ce053889e",
+          "headTopY": 89,
+          "footMinX": 206,
+          "footMaxX": 1203,
+          "originOffsetY": 0
+        }
+      ]
+    },
+    {
+      "key": "shiro",
+      "name": "シロ",
+      "characterIndex": 4,
+      "frames": [
+        {
+          "id": "charge",
+          "prepared": "art_source/paper_charge/shiro/prepared/charge.png",
+          "sha256": "10a5271cb27d3061e8016276c3d18cb0f32885aca6bf1062799814b67bfafff3",
+          "headTopY": 408,
+          "footMinX": 153,
+          "footMaxX": 1246,
+          "originOffsetY": 0
+        }
+      ]
+    },
+    {
+      "key": "yui",
+      "name": "結衣",
+      "characterIndex": 5,
+      "frames": [
+        {
+          "id": "charge",
+          "prepared": "art_source/paper_charge/yui/prepared/charge.png",
+          "sha256": "4c6188ff80dc5b68704fd7aaf20b19c1c8698eab6ad1ea464442c7c467ffdaab",
+          "headTopY": 176,
+          "footMinX": 366,
+          "footMaxX": 1031,
+          "originOffsetY": 0
+        }
+      ]
+    },
+    {
+      "key": "king",
+      "name": "黒獅子王",
+      "characterIndex": 6,
+      "frames": [
+        {
+          "id": "charge",
+          "prepared": "art_source/paper_charge/king/prepared/charge.png",
+          "sha256": "f6213121ec954cc76ba34e79bb41a9bb98153434450e685e21d4b5871d7141f3",
+          "headTopY": 166,
+          "footMinX": 297,
+          "footMaxX": 1149,
+          "originOffsetY": 0
+        }
+      ]
+    },
+    {
+      "key": "akatsuki",
+      "name": "暁",
+      "characterIndex": 7,
+      "frames": [
+        {
+          "id": "charge",
+          "prepared": "art_source/paper_charge/akatsuki/prepared/charge.png",
+          "sha256": "f9c807b9004d97769bd40e440e9bea872e74cffabfe8ed2270a75cf558cb082d",
+          "headTopY": 143,
+          "footMinX": 288,
+          "footMaxX": 1150,
+          "originOffsetY": 0
+        }
+      ]
+    },
+    {
+      "key": "ryuta",
+      "name": "龍太",
+      "characterIndex": 8,
+      "frames": [
+        {
+          "id": "charge",
+          "prepared": "art_source/paper_charge/ryuta/prepared/charge.png",
+          "sha256": "c55ca2d9902c80c486509f6f9fadc392390ea8430999316fb72ec1e1822a7628",
+          "headTopY": 186,
+          "footMinX": 170,
+          "footMaxX": 1247,
+          "originOffsetY": 0
+        }
+      ]
+    }
+  ]
+}

@@ -599,49 +599,49 @@
     {
       "key": "ryuta",
       "name": "龍太",
-      "tag": "motion_ryuta_2",
+      "tag": "charge_ryuta_hands_1",
       "evidenceSource": "result_files",
       "BuildAll": {
         "success": true,
-        "log": "TestResults/motion_ryuta_2_buildall.log",
-        "sha256": "fca941998af34a6b10e8a166a1dfd0e591f907c2b0be1a1f0814801a8cc286cf"
+        "log": "TestResults/charge_ryuta_hands_1_buildall.log",
+        "sha256": "b16b7d4c69bb8003fdd8548b1eebb4cdd745af2dc5311eb790ca5f46a4c03319"
       },
       "EditMode": {
         "total": 582,
         "passed": 582,
         "failed": 0,
         "skipped": 0,
-        "source": "TestResults/motion_ryuta_2_EditMode.xml",
-        "sha256": "4082af394ea02e070784e20ad8e7b22c85a2c04d7fe40bf3008d3e3cc8768fe8"
+        "source": "TestResults/charge_ryuta_hands_1_EditMode.xml",
+        "sha256": "a941da38ec2e96b601cd62b56e6c053ba76364cbf08fcf8f375097733872d2d6"
       },
       "PlayMode": {
         "total": 81,
         "passed": 81,
         "failed": 0,
         "skipped": 0,
-        "source": "TestResults/motion_ryuta_2_PlayMode.xml",
-        "sha256": "76223865982610c8e44dc431ca3a3820e350184b2a8b9db62d4ca63f022819e4"
+        "source": "TestResults/charge_ryuta_hands_1_PlayMode.xml",
+        "sha256": "97abebde3ca9e7c37236d650120454a4fd19f7da4c2de5f0a17abdb33cf57f80"
       },
       "Windows": {
         "success": true,
-        "log": "TestResults/motion_ryuta_2_build.log",
-        "sha256": "bd0011610fcd967c643454cbf71c6c9b1da3bce06f0a5e4b12694f5a052ae80c"
+        "log": "TestResults/charge_ryuta_hands_1_build.log",
+        "sha256": "cf8bf0b76720127d578a1a2df814b1364938b4223ed65dd25a589d5e3a36cfad"
       },
       "images": 7,
       "selected": [
         {
           "id": "run",
-          "version": 2,
-          "source": "art_source/paper_roster_motion/ryuta/generated/run_v2.png",
+          "version": 3,
+          "source": "art_source/paper_roster_motion/ryuta/generated/run_v3.png",
           "prepared": "art_source/paper_roster_motion/ryuta/prepared/run.png",
-          "sha256": "2637eba45d1b6a94366796f44439731bbfd65ec060d50ba8b2b75e7ea6352214"
+          "sha256": "c3c56dffabaca06a7c436e64023d3e7b778382e7f78f8984880da7dbbbe8815a"
         },
         {
           "id": "jump",
-          "version": 2,
-          "source": "art_source/paper_roster_motion/ryuta/generated/jump_v2.png",
+          "version": 3,
+          "source": "art_source/paper_roster_motion/ryuta/generated/jump_v3.png",
           "prepared": "art_source/paper_roster_motion/ryuta/prepared/jump.png",
-          "sha256": "cb1e91e6122f89b5b0c832e206d2c2c30b6ba838ddfa3416da6f7c6b40471c6a"
+          "sha256": "5ac953381676582c126fd13dcd8d42b77b12dc68c93db54e4144cc5ce7ffe9a9"
         },
         {
           "id": "fall",

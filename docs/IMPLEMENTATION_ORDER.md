@@ -1,3 +1,15 @@
+## 最新（2026-10-19）：溜め原画9人分・龍太の左拳2件、Unity/Webへ実装完了
+
+全9人の溜め中専用1原画を生成して接続。溜め中だけ専用絵を保持し、既存の傾き・沈み・色変化・紙片を併用。解除後は既存の方向別攻撃原画へ。art_source/paper_charge/に原画・全文条件・参照・SHA・部位比較・現在採用を保存し、progress.jsonはcomplete。日本語の現採用画像はイラスト確認/現在ゲームで採用中/各人物/溜め中.png。採用後のゲーム接続とユーザーの美術最終承認は区別する。
+
+龍太の走りv3・ジャンプ上昇v3は、画面右の本人左拳を閉じたまま内側と握った指を見せる形へ修正。確認中フォルダと現採用の両方を更新。通常被弾の承認v5は変更しない。先行charge_ryuta_hands_1も全4合格（Edit582/582・Play81/81）、18PNGはdocs/screenshots/charge_ryuta_hands_1/paper_motion_ryuta/。
+
+今回の最終charge_art_2はBuildAll成功／Edit593/593／Play83/83／Windows成功、失敗・スキップ0。全9人・左右・60/120/180tick・最大維持・短押し・上下解除・被弾/接地喪失・描画非干渉と既存56動作を確認。36PNG中19PNGと一覧はdocs/screenshots/charge_art_2/。実件数とSHAはdocs/codex_logs/charge_artwork_verification.json。初回charge_art_1はNUnit構文エラーのみで停止、修正して全工程を再実行済み。
+
+charge_art_webは実ビルド成功（123,660,075bytes／6ファイル／218.730秒）、Windows設定へ復帰成功。435/435画像の原画RGBA保持を監査。内蔵Chromiumで新ビルド起動、9人選択、龍太の溜め180tick保持・解除してAttackへ・走り・上昇を実キーで確認。音声running、今回起動以降console error/warn 0。docs/screenshots/charge_art_web/に実画面・状態・監査。WebのDXT表示と原画の無損失保持は区別。通常Chrome/Edge個別、実機パッド、低メモリ端末は今回未再検査。
+
+指示書docs/codex_tasks/PAPER_CHARGE_ARTWORK.mdの今回範囲に残課題なし。通常commit/pushの保存区切り。次はユーザーの追加指示のみで進め、新しいポーズや方向別溜め差分を自動生成しない。既存56動作、通常4原画、下/空中N各1枚、保護カバン、半減判定、ゲージ14/10、Webメモリ512/4096を維持。Windowsは最新charge_art_2と予備charge_ryuta_hands_1。旧TestResults約5.10GBは実件数とSHAをdocs/codex_logs/test_result_retention_20261019.jsonへ残して整理、直近3回とdotnet類は保持。Claudeへ：この完了済み生成を繰り返さず、現在採用一覧と新しい追加指示を確認する。
+
 ## 最新（2026-10-19）：全8人56動作をUnity/Webへ実装・検証・完了
 
 龍太の通常被弾はユーザーが「これでいい」と添付した握り拳v5で確定。開いた掌v6は不採用、v4への推測復帰や追加生成なし。承認参照・選択理由・SHA・個別承認はart_source/paper_roster_motion/ryuta/。採用の日本語画像はイラスト確認/現在ゲームで採用中/龍太/通常被弾.png。透真の反撃の腕と暁の手・脚・5指の修正版も維持。

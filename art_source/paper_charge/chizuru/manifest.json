@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "key": "chizuru",
+  "name": "千鶴",
+  "characterIndex": 2,
+  "baseIdle": "art_source/paper_roster_idle/prepared/chizuru_idle.png",
+  "selectedVersion": 2,
+  "entries": [
+    {
+      "schemaVersion": 1,
+      "key": "chizuru",
+      "name": "千鶴",
+      "characterIndex": 2,
+      "id": "charge",
+      "version": 1,
+      "source": "art_source/paper_charge/chizuru/generated/charge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用「溜め中」の全身アニメ原画を1枚だけ作る。画像1は本人の採用待機：編集対象、顔・頭髪・衣装・頭身・靴の画素実寸の基準。画像2は本人の採用攻撃：装備の形と左右の持ち手の参考（龍太はユーザー承認の左拳の形の参考のみ）。\n人物：茶色の肩までの髪、茶色い瞳、オレンジの長袖、紺のプリーツスカート、白いスニーカー。本人左手に灰色のフライパン、右手は空。カバンを追加しない。\n新しい姿勢：両脚で低く踏ん張り、本人左手に握ったフライパンを左肩の斜め後ろへ引いて振りかぶる溜め。左肩・肘・前腕・手首・左手が自然につながる。左の親指と4指が正しく柄を包む。空の右拳は胸元。胸元側が見える。フライパンは参照2の同じ大きさ・形、顔を隠さない。\n少ない原画で明快に読める力を溜めた強い構え。身体の軸はほぼ直立～前傾10度以内。ゲーム内で全身を追加10度傾けて少し沈める。完成した攻撃やジャンプではなく、接地したまま力を引き付けている。胸元が斜めに見える右向き。顔と手を重ねて隠さず、肩から肘・手首・手を自然につなぐ。本人の左右と画面の左右を混同しない。人間は2腕2脚・各手5指、犬は4脚。ミトンや爪手甲を素手に変更しない。\n参照1と同じ1246×1263の透明キャンバス。髪と顔、靴、道具の実寸と人物倍率を保ち、低姿勢の上には大きい透明余白を残す。頭や靴を大きくして余白を埋めない。全身と全ての装備を枠の内側へ、切断しない。参照と同じ線・セル塗り、薄いクリーム白の切り抜き縁を全外周へ。紙の繊維・背景・床・影・オーラ・発光・速度線・文字・相手・複数ポーズ・連続コマは禁止。完全透明の背景。\n持ち手の明確化：胸元が見える構図なので、本人左肩は画面右側。そこから左上腕・曲げた左肘・左手へつなぎ、フライパンを頭の画面右上へ引き上げる。背中向きの画像2の胴体や腕配置をコピーせず、画像2はフライパンと左手の握りだけ参考。",
+      "references": [
+        "art_source/paper_cutout/generated/chizuru_paper_idle_v1.png",
+        "AniBato/Assets/_Project/Art/Paper/pose_attack1_anticipation_paper_chizuru.png"
+      ],
+      "referenceRoles": [
+        "採用待機：本人の容姿・部位実寸・倍率の基準、編集対象",
+        "採用攻撃：持ち手と装備の参考。龍太のみ承認された左の握り拳の形だけを参照"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "d2ae6ff787f17e3a55cd93c380c121d566b03a55abe1d4a3d342a86277f15ac0",
+      "native": {
+        "width": 1244,
+        "height": 1265,
+        "bounds": {
+          "left": 174,
+          "top": 36,
+          "right": 1167,
+          "bottom": 1227
+        }
+      },
+      "artApproved": false,
+      "status": "revision_required"
+    },
+    {
+      "schemaVersion": 1,
+      "key": "chizuru",
+      "name": "千鶴",
+      "characterIndex": 2,
+      "id": "charge",
+      "version": 2,
+      "source": "art_source/paper_charge/chizuru/generated/charge_v2.png",
+      "prompt": "Use case: precise-object-edit. Edit ONLY the raised hand gripping the frying pan on the upper RIGHT of this full-body image. It is her ANATOMICAL LEFT hand. Show a natural left-hand PALMAR grip: the distinct left THUMB must be on the IMAGE-RIGHT side of the black handle, curling across it toward image-left. The FOUR curled fingers must wrap from the IMAGE-LEFT side of the handle, with compact finger pads/creases, one thumb plus four fingers total. The current grip has the thumb and fingers reversed like a right hand; redraw it, do not merely label it left. Keep this hand closed around the same vertical/slanted pan handle. Keep the existing wrist and forearm anatomically connected. Preserve every other part of the image: full-body low charging stance, chest-facing torso, empty right fist near chest, face, hair, orange sleeves, navy skirt, two shoes, pan, canvas dimensions and exact composition. No whole-image mirroring, no open palm, no extra limb, no large hand. Keep the same thin cream cutout border around the repaired hand and fully transparent background. One full-body sprite.",
+      "references": [
+        "art_source/paper_charge/chizuru/generated/charge_v1.png"
+      ],
+      "referenceRoles": [
+        "編集対象：画面右上のフライパンを持つ左手の指だけ修正する"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "ae52143b63f677863dd6a61f7276518750b485bb9629ab8c73054eda6075b8e2",
+      "native": {
+        "width": 1243,
+        "height": 1265,
+        "bounds": {
+          "left": 171,
+          "top": 34,
+          "right": 1168,
+          "bottom": 1229
+        }
+      },
+      "artApproved": false,
+      "status": "adopted_for_runtime",
+      "prepared": "art_source/paper_charge/chizuru/prepared/charge.png",
+      "preparedSha256": "65c0b1297579518a6cad2e743427fa290fd6f36567ebe82ecacd7189011278fb",
+      "offsetX": 25,
+      "offsetY": 99,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "charge_art_2"
+}
