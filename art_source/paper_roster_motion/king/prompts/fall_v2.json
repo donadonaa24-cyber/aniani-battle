@@ -1,0 +1,16 @@
+{
+  "id": "fall",
+  "label": "落下",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/king/generated/fall_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の黒獅子王の落下ポーズを直接修正。尾が誤って2本ある。腰の左下（画面x350y1000付近）から出る下側の尾1本だけ残す。左上の腕の手首近く（画面x120y750付近）に増えた丸い金の輪と尾の房の一式を削除し、透明に戻す。マントの右端の垂れた毛皮だけ少し内側へ曲げ、外周に透明余白20px以上を作る。人間の腕2本脚2本、冠付き獅子フード、人間の顔、手甲、爪3つずつのブーツ、落下姿勢、頭と靴の実寸は変えない。画像2は正しい装備と容姿の参考。全身を拡縮せず、普通のアニメ線とセル塗り、クリーム白の切り抜き縁を維持。透明PNG一体のみ、背景や効果や文字なし。",
+  "references": [
+    "art_source/paper_roster_motion/king/generated/fall_v1.png",
+    "art_source/paper_roster_idle/generated/king_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：直接の編集対象。余分な上側の尾を削除",
+    "画像2：容姿と装備・部位実寸の基準"
+  ],
+  "tool": "built-in image_gen"
+}

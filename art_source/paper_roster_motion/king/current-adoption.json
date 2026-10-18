@@ -1,0 +1,70 @@
+{
+  "key": "king",
+  "verifiedTag": "motion_king_1",
+  "artApproved": false,
+  "frames": [
+    {
+      "id": "run",
+      "prepared": "art_source/paper_roster_motion/king/prepared/run.png",
+      "sha256": "a12cd56a260728e75792dd6b102fbf0f1b95ad09a0de2f31ea10a76eec91303d",
+      "headTopY": 166,
+      "footMinX": 850,
+      "footMaxX": 1131,
+      "originOffsetY": 0
+    },
+    {
+      "id": "jump",
+      "prepared": "art_source/paper_roster_motion/king/prepared/jump.png",
+      "sha256": "6c3f3f0cf58a46055b6dfcf2d3dbf4a8ef522138de3e55722da0ccc51c4bc250",
+      "headTopY": 118,
+      "footMinX": 667,
+      "footMaxX": 796,
+      "originOffsetY": 0.1164124025773706
+    },
+    {
+      "id": "fall",
+      "prepared": "art_source/paper_roster_motion/king/prepared/fall.png",
+      "sha256": "87ddce9a6213c16769ff6e3deec589fe7a06925e9c97fb0871c3ef2832ac1e9a",
+      "headTopY": 187,
+      "footMinX": 527,
+      "footMaxX": 1106,
+      "originOffsetY": 0.24596814092960562
+    },
+    {
+      "id": "dodge",
+      "prepared": "art_source/paper_roster_motion/king/prepared/dodge.png",
+      "sha256": "00d092d96c78b6dbe7daa18906838813a115c9db08fe37dc4853504d042c829e",
+      "headTopY": 432,
+      "footMinX": 237,
+      "footMaxX": 1284,
+      "originOffsetY": 0
+    },
+    {
+      "id": "counter_success",
+      "prepared": "art_source/paper_roster_motion/king/prepared/counter_success.png",
+      "sha256": "7f79629b9fb4dbb90e72646129cb810b2050bf3f55b16e03b3fc43e1fb9abe86",
+      "headTopY": 135,
+      "footMinX": 175,
+      "footMaxX": 1271,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_light",
+      "prepared": "art_source/paper_roster_motion/king/prepared/hit_light.png",
+      "sha256": "d639ebcf9f3bf7216726be2d1517ac18c9f5d77d90cb4774d7877f276465e6a3",
+      "headTopY": 162,
+      "footMinX": 327,
+      "footMaxX": 1119,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_heavy",
+      "prepared": "art_source/paper_roster_motion/king/prepared/hit_heavy.png",
+      "sha256": "043c2600e7db5695d900d2e2f77c6e665d5e6aaef395a8497c65d0b1db2404c8",
+      "headTopY": 100,
+      "footMinX": 420,
+      "footMaxX": 1069,
+      "originOffsetY": 0
+    }
+  ]
+}

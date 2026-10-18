@@ -1,0 +1,16 @@
+{
+  "id": "fall",
+  "label": "落下",
+  "version": 3,
+  "source": "art_source/paper_roster_motion/king/generated/fall_v3.png",
+  "prompt": "Use case: precise-object-edit. 画像1の黒獅子王の落下イラストは、右のマントの先端が画像端で切れている。この部分だけ修正。画面右の黒金の縁付きマントと毛皮の垂れた先端二つを、身体の内側へ折り畳む形に描き直し、全外周を右端から60px以上離す。必要なら本人左の前腕と閉じた手甲も少し内へ自然に引く。右の透明余白は必須。画像全体や頭や靴を縮小する方法は禁止。落下姿勢、本人の顔、冠、獅子頭巾の実寸、鎧、爪ブーツ二個、尾は腰から出る1本、本人の腕二本脚二本は維持。画像2は容姿と衣装の参考。全身アニメ線とセル塗り、全外周の薄いクリーム白縁を維持。透明PNG、影・床・効果・文字なし。",
+  "references": [
+    "art_source/paper_roster_motion/king/generated/fall_v2.png",
+    "art_source/paper_roster_idle/generated/king_idle_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：直接編集する落下v2。尾は正しい1本で、右端マントの切断だけ修正",
+    "画像2：容姿と装備・部位実寸の基準"
+  ],
+  "tool": "built-in image_gen"
+}

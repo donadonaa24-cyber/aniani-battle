@@ -1,0 +1,14 @@
+{
+  "id": "hit_heavy",
+  "label": "強被弾",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/king/generated/hit_heavy_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の黒獅子王の強被弾イラストを直接編集。右下の黒金の縁と毛皮が付いたマントが画像端で切れているので、この部分だけ身体の内側へ折りたたむように描き直す。右端から60px以上の透明余白を作り、毛皮の先端と白縁をすべて描き切る。全身を縮小する方法は禁止。人物の両腕と爪手甲5指、涙の痛そうな顔、獅子頭巾、冠、鎧、後ろへのけぞる姿勢、脚2本、爪3つずつのブーツ2個、尾1本、左側のマントは維持。全身の部位実寸を変えない。普通のアニメ線とセル塗りと薄いクリーム白の外周縁。1190×1322透明PNG、影・床・背景・文字・効果なし。",
+  "references": [
+    "art_source/paper_roster_motion/king/generated/hit_heavy_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：強被弾の編集対象。右下マントの切断だけ修正"
+  ],
+  "tool": "built-in image_gen"
+}
