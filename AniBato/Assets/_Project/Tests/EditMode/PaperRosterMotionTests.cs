@@ -20,6 +20,8 @@ namespace AniBato.Tests
             if (entry == null) { Assert.That(File.Exists(PaperRosterMotionBuilder.PathFor(key)), Is.False); return; }
             var setup = AssetDatabase.LoadAssetAtPath<BattleSetup>("Assets/_Project/Data/BattleSetup.asset");
             var paper = setup.Character(entry.characterIndex).PaperMotion;
+            Assert.That(paper.WalkLeanDegrees, Is.EqualTo(15));
+            Assert.That(paper.DashLeanDegrees, Is.EqualTo(key == "shiro" ? 10 : 45));
             var states = new[] { AnimationState.Dash, AnimationState.Jump, AnimationState.Fall, AnimationState.Dodge,
                 AnimationState.CounterSuccess, AnimationState.Hitstun };
             string[] ids = { "run", "jump", "fall", "dodge", "counter_success", "hit_light" };

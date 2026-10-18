@@ -1,0 +1,70 @@
+{
+  "key": "shiro",
+  "verifiedTag": "motion_shiro_1",
+  "artApproved": false,
+  "frames": [
+    {
+      "id": "run",
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/run.png",
+      "sha256": "cf2f0f549221f89658b535340db3fb04a62afcc2bbe3e443e4be68f1314c172f",
+      "headTopY": 478,
+      "footMinX": 91,
+      "footMaxX": 1295,
+      "originOffsetY": 0
+    },
+    {
+      "id": "jump",
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/jump.png",
+      "sha256": "cbcdb37e450996cce4ad3d6ef668a5efbc59118e8f798073cd06285663316aa0",
+      "headTopY": 134,
+      "footMinX": 293,
+      "footMaxX": 610,
+      "originOffsetY": -0.15020955171273626
+    },
+    {
+      "id": "fall",
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/fall.png",
+      "sha256": "369b249bc9a7b3ccc786c70a644f2b42fc4d32f549ecaa6ac8344d8e1aadb865",
+      "headTopY": 258,
+      "footMinX": 750,
+      "footMaxX": 1139,
+      "originOffsetY": 0.08261525344200495
+    },
+    {
+      "id": "dodge",
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/dodge.png",
+      "sha256": "05a84d1431db8d173d7806f4be30bfc7c67d3742e86843f2d18e3e96ec7a6bab",
+      "headTopY": 564,
+      "footMinX": 188,
+      "footMaxX": 1211,
+      "originOffsetY": 0
+    },
+    {
+      "id": "counter_success",
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/counter_success.png",
+      "sha256": "4bd7b85fcdf915ddeed3b2f9734d69e64528a34927c05f8884079d42e015374a",
+      "headTopY": 418,
+      "footMinX": 675,
+      "footMaxX": 1169,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_light",
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/hit_light.png",
+      "sha256": "24ebe98bd356f78f0a5b0faa26edb7e692ea1c5fbcdad81c186de1c9f91992d8",
+      "headTopY": 326,
+      "footMinX": 200,
+      "footMaxX": 1199,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_heavy",
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/hit_heavy.png",
+      "sha256": "1ad83d644dbca1aa9351ec630915fe3676144ec563a8616212f2c997cfac3dda",
+      "headTopY": 159,
+      "footMinX": 326,
+      "footMaxX": 1073,
+      "originOffsetY": 0
+    }
+  ]
+}

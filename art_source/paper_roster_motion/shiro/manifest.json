@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "key": "shiro",
+  "name": "シロ",
+  "characterIndex": 4,
+  "baseIdle": "art_source/paper_roster_idle/generated/shiro_idle_v1.png",
+  "canvasWidth": 1304,
+  "canvasHeight": 1450,
+  "pixelsPerUnit": 532.5893,
+  "sole": 1328,
+  "jobs": [
+    {
+      "id": "run",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/shiro/prompts/run_v1.json"
+    },
+    {
+      "id": "jump",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/shiro/prompts/jump_v1.json"
+    },
+    {
+      "id": "fall",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/shiro/prompts/fall_v2.json"
+    },
+    {
+      "id": "dodge",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/shiro/prompts/dodge_v2.json"
+    },
+    {
+      "id": "counter_success",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/shiro/prompts/counter_success_v1.json"
+    },
+    {
+      "id": "hit_light",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/shiro/prompts/hit_light_v1.json"
+    },
+    {
+      "id": "hit_heavy",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/shiro/prompts/hit_heavy_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "run",
+      "label": "走り",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/shiro/generated/run_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい動作「走り」：右へ駆ける四足走行。前脚と後脚の一組を前へ、もう一組を後ろへ、全4脚を別々に明快に描く。胴体は水平で顔は右へ。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で四脚の所属を見せる。前脚2本と後脚2本だけ。前脚は肩から、後脚は骨盤から自然な関節と犬の足先へつなぐ。人間の手・腕・指を描かない。耳2つ、頭1つ、尾1本。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\nシロの部位実寸：採用待機の頭と耳の横幅約360px、近い前足先約160px、遠い前足先約130px、近い後足先約143px。低く伏せても顔や足先を巨大化しない。四脚の金属関節は犬の脚に沿った構造とし、余分な脚や人の拳を描かない。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "0f43b737786fa3ab083bd66a708d6a3744712cc85070d9ba131210f9b46d7498",
+      "native": {
+        "width": 1351,
+        "height": 1164,
+        "bounds": {
+          "left": 43,
+          "top": 230,
+          "right": 1311,
+          "bottom": 1080
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/run.png",
+      "preparedSha256": "cf2f0f549221f89658b535340db3fb04a62afcc2bbe3e443e4be68f1314c172f",
+      "offsetX": -16,
+      "offsetY": 248,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 4,
+      "gameConnected": true
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/shiro/generated/jump_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい動作「ジャンプ上昇」：四足で右斜め上へ跳ぶ。前脚2本と後脚2本の膝を曲げて浮かせる。顔は右上を見る。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で四脚の所属を見せる。前脚2本と後脚2本だけ。前脚は肩から、後脚は骨盤から自然な関節と犬の足先へつなぐ。人間の手・腕・指を描かない。耳2つ、頭1つ、尾1本。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\nシロの部位実寸：採用待機の頭と耳の横幅約360px、近い前足先約160px、遠い前足先約130px、近い後足先約143px。低く伏せても顔や足先を巨大化しない。四脚の金属関節は犬の脚に沿った構造とし、余分な脚や人の拳を描かない。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "1b335be112d04e7c5b856cee6de28b9148c557f0809f1921982b2609f98db2b1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 28,
+          "top": 64,
+          "right": 1177,
+          "bottom": 1258
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/jump.png",
+      "preparedSha256": "cbcdb37e450996cce4ad3d6ef668a5efbc59118e8f798073cd06285663316aa0",
+      "offsetX": 115,
+      "offsetY": 70,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "fall",
+      "label": "落下",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/shiro/generated/fall_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい動作「落下」：四足で着地へ備える落下中。前脚2本を下へ伸ばし、後脚2本は軽く曲げる。顔は右下、胴は水平。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で四脚の所属を見せる。前脚2本と後脚2本だけ。前脚は肩から、後脚は骨盤から自然な関節と犬の足先へつなぐ。人間の手・腕・指を描かない。耳2つ、頭1つ、尾1本。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\nシロの部位実寸：採用待機の頭と耳の横幅約360px、近い前足先約160px、遠い前足先約130px、近い後足先約143px。低く伏せても顔や足先を巨大化しない。四脚の金属関節は犬の脚に沿った構造とし、余分な脚や人の拳を描かない。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "515495d5c1ed332de802e6cdda8cb85374c9eb9bf5aaa8ae3863c113453ae378",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 10,
+          "top": 209,
+          "right": 1181,
+          "bottom": 1217
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "fall",
+      "label": "落下",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/shiro/generated/fall_v2.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい動作「落下」：四足で着地へ備える落下中。前脚2本を下へ伸ばし、後脚2本は軽く曲げる。顔は右下、胴は水平。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で四脚の所属を見せる。前脚2本と後脚2本だけ。前脚は肩から、後脚は骨盤から自然な関節と犬の足先へつなぐ。人間の手・腕・指を描かない。耳2つ、頭1つ、尾1本。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\nシロの部位実寸：採用待機の頭と耳の横幅約360px、近い前足先約160px、遠い前足先約130px、近い後足先約143px。低く伏せても顔や足先を巨大化しない。四脚の金属関節は犬の脚に沿った構造とし、余分な脚や人の拳を描かない。\n修正条件：尾の左端と前足の右端がキャンバス端に近すぎるv1は不採用。頭と足先の大きさは変えず、尾は背中の上へ丸く巻いて内側へ収め、前脚2本も肘で軽く曲げて足先を身体の真下付近へ下ろす。全身の外周から画像端まで40px以上の本物の透明余白を残す。全身を小さくして収めず、関節の曲げと尾のカーブだけで収める。四脚を明快に見せた落下姿勢。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "13d00c9cb7a4fa3d47d81c14905f51820334a450899c2d1fd3ddc8b593985d81",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 83,
+          "top": 169,
+          "right": 1139,
+          "bottom": 1239
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/fall.png",
+      "preparedSha256": "369b249bc9a7b3ccc786c70a644f2b42fc4d32f549ecaa6ac8344d8e1aadb865",
+      "offsetX": 0,
+      "offsetY": 89,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/shiro/generated/dodge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい動作「回避」：攻撃をくぐるよう四足を曲げ、胸を低く伏せ、頭と耳を低く保ち右を見る。尾は1本だけ。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で四脚の所属を見せる。前脚2本と後脚2本だけ。前脚は肩から、後脚は骨盤から自然な関節と犬の足先へつなぐ。人間の手・腕・指を描かない。耳2つ、頭1つ、尾1本。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\nシロの部位実寸：採用待機の頭と耳の横幅約360px、近い前足先約160px、遠い前足先約130px、近い後足先約143px。低く伏せても顔や足先を巨大化しない。四脚の金属関節は犬の脚に沿った構造とし、余分な脚や人の拳を描かない。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "c500979b7bce9fdd47ffd87f6ff5e626c22878d27ecdffc69deeba0c5c501d8a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 37,
+          "top": 370,
+          "right": 1184,
+          "bottom": 1218
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/shiro/generated/dodge_v2.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい動作「回避」：攻撃をくぐるよう四足を曲げ、胸を低く伏せ、頭と耳を低く保ち右を見る。尾は1本だけ。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で四脚の所属を見せる。前脚2本と後脚2本だけ。前脚は肩から、後脚は骨盤から自然な関節と犬の足先へつなぐ。人間の手・腕・指を描かない。耳2つ、頭1つ、尾1本。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\nシロの部位実寸：採用待機の頭と耳の横幅約360px、近い前足先約160px、遠い前足先約130px、近い後足先約143px。低く伏せても顔や足先を巨大化しない。四脚の金属関節は犬の脚に沿った構造とし、余分な脚や人の拳を描かない。\n修正条件：前足が画像の右端に寄りすぎたv1を修正。頭や足先の実寸は変えない。前脚2本を肘と手首で自然に曲げて胸の下へ寄せ、後脚2本も低く曲げる。尾を背中側へ内向きにカーブさせる。身体を低く伏せる回避で、四つの足先まで40px以上の透明余白を残し、どの端でも切らない。全身を小さくして収めるのは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "7e781288d00d116268ef2457b64af24cd1e6f668d38bf96b92d04331fdbfd526",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 48,
+          "top": 479,
+          "right": 1079,
+          "bottom": 1243
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/dodge.png",
+      "preparedSha256": "05a84d1431db8d173d7806f4be30bfc7c67d3742e86843f2d18e3e96ec7a6bab",
+      "offsetX": 133,
+      "offsetY": 85,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "counter_success",
+      "label": "カウンター成功",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/shiro/generated/counter_success_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい動作「カウンター成功」：受けた直後に右前へ鋭く噛み返す全身の決め。前脚2本で支え、後脚2本を踏ん張り、口を開く。牙は自然、顔を巨大化しない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で四脚の所属を見せる。前脚2本と後脚2本だけ。前脚は肩から、後脚は骨盤から自然な関節と犬の足先へつなぐ。人間の手・腕・指を描かない。耳2つ、頭1つ、尾1本。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\nシロの部位実寸：採用待機の頭と耳の横幅約360px、近い前足先約160px、遠い前足先約130px、近い後足先約143px。低く伏せても顔や足先を巨大化しない。四脚の金属関節は犬の脚に沿った構造とし、余分な脚や人の拳を描かない。\n全身の外周から各画像端まで40px以上の透明余白を確保。尾を内向きにカーブさせ、前後の四脚を自然に曲げて収める。全身の縮小や頭・足先の独立拡縮は禁止。開いた口の鼻先も切らない。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "96d92c7a4ade93b4fa31b7ecfca04042f0e3279108490b69da5b4ac8744c6204",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 51,
+          "top": 328,
+          "right": 1170,
+          "bottom": 1238
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/counter_success.png",
+      "preparedSha256": "4bd7b85fcdf915ddeed3b2f9734d69e64528a34927c05f8884079d42e015374a",
+      "offsetX": 0,
+      "offsetY": 90,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/shiro/generated/hit_light_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい動作「通常被弾」：右前方の打撃に頭と胸を少し後ろへ引き、四脚で耐える。耳を少し伏せ、目を細めて痛みをこらえる。4本の足先が全部見える。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で四脚の所属を見せる。前脚2本と後脚2本だけ。前脚は肩から、後脚は骨盤から自然な関節と犬の足先へつなぐ。人間の手・腕・指を描かない。耳2つ、頭1つ、尾1本。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\nシロの部位実寸：採用待機の頭と耳の横幅約360px、近い前足先約160px、遠い前足先約130px、近い後足先約143px。低く伏せても顔や足先を巨大化しない。四脚の金属関節は犬の脚に沿った構造とし、余分な脚や人の拳を描かない。\n尾は内側へ自然にカーブ、足先を含む四脚を曲げて各画像端から40px以上の透明余白を確保。頭や足先を縮小して収めない。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "a99830afdf42e73ae6509deb2a1bd29c8e25e5e1d6edbae67805fdda5dddbdfd",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 74,
+          "top": 271,
+          "right": 1181,
+          "bottom": 1273
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/hit_light.png",
+      "preparedSha256": "24ebe98bd356f78f0a5b0faa26edb7e692ea1c5fbcdad81c186de1c9f91992d8",
+      "offsetX": 21,
+      "offsetY": 55,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_heavy",
+      "label": "強被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/shiro/generated/hit_heavy_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。白くふさふさした毛、青い瞳、立った三角の耳2つ、黒い犬の鼻、耳元と頬と喉と四脚の白銀と黒の機械装甲、琥珀色の小さいランプ、ふさふさの尾1本。四足の犬型AIで、人間ではない。\n新しい動作「強被弾」：右前方の強打に頭と胸が大きく後ろへのけぞり、前脚2本が浮き、後脚2本を曲げて後ずさる。耳を伏せ目を閉じ、口を大きく開け目尻に涙。血や傷なし、4脚と尾1本を守る。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で四脚の所属を見せる。前脚2本と後脚2本だけ。前脚は肩から、後脚は骨盤から自然な関節と犬の足先へつなぐ。人間の手・腕・指を描かない。耳2つ、頭1つ、尾1本。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\nシロの部位実寸：採用待機の頭と耳の横幅約360px、近い前足先約160px、遠い前足先約130px、近い後足先約143px。低く伏せても顔や足先を巨大化しない。四脚の金属関節は犬の脚に沿った構造とし、余分な脚や人の拳を描かない。\n尾を内側へ丸くカーブさせ、全身のどこも画像端で切らない。前脚2本と後脚2本だけを別々に見せ、前脚2本は胸前へ曲げる。頭や四脚の足先の実寸を変えず、各画像端から40px以上の透明余白を確保する。",
+      "references": [
+        "art_source/paper_roster_idle/generated/shiro_idle_v1.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "33a8cc50d06ee492f3b44855fd95f86abebd311648eca67a1a90fbfa0d8959cb",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 36,
+          "top": 194,
+          "right": 1087,
+          "bottom": 1363
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/shiro/prepared/hit_heavy.png",
+      "preparedSha256": "1ad83d644dbca1aa9351ec630915fe3676144ec563a8616212f2c997cfac3dda",
+      "offsetX": 145,
+      "offsetY": -35,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "motion_shiro_1"
+}

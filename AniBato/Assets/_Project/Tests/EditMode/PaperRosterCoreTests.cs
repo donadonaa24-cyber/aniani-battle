@@ -36,7 +36,8 @@ namespace AniBato.Tests
                 Assert.That(paper.Find(AnimationState.Guard).Frame(10000), Is.SameAs(paper.Find(AnimationState.Guard).Frame(0)));
                 bool dedicated = PaperRosterMotionBuilder.Completed().Any(m => m.characterIndex == entry.characterIndex);
                 Assert.That(paper.Find(AnimationState.CounterSuccess), dedicated ? Is.Not.SameAs(paper.Find(AnimationState.Counter)) : Is.SameAs(paper.Find(AnimationState.Counter)));
-                Assert.That(paper.WalkLeanDegrees, Is.EqualTo(15)); Assert.That(paper.DashLeanDegrees, Is.EqualTo(45));
+                Assert.That(paper.WalkLeanDegrees, Is.EqualTo(15));
+                Assert.That(paper.DashLeanDegrees, Is.EqualTo(dedicated && entry.key == "shiro" ? 10 : 45));
                 if (entry.characterIndex == 0)
                 {
                     Assert.That(data.ActionArtworkSchemaVersion, Is.EqualTo(1));

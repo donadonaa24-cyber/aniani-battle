@@ -71,6 +71,9 @@ namespace AniBato.EditorTools
                 var poses = paper.Poses.ToList();
                 foreach (var pose in poses) pose.States = pose.States.Where(s => !replaced.Contains(s)).ToArray();
                 poses.RemoveAll(p => p.States.Length == 0); poses.AddRange(additions); paper.Poses = poses.ToArray();
+                // A quadruped already has a horizontal running body; 45 degrees points its nose into the floor.
+                // This is a whole-illustration display angle only, independent of movement/physics.
+                paper.DashLeanDegrees = entry.key == "shiro" ? 10 : 45;
                 EditorUtility.SetDirty(paper);
             }
         }

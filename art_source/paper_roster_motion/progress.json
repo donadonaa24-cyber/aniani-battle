@@ -4,7 +4,7 @@
   "requiredCharacters": 8,
   "requiredPosesPerCharacter": 7,
   "requiredTotal": 56,
-  "currentCharacter": "shiro",
+  "currentCharacter": "yui",
   "characters": [
     {
       "key": "toma",
@@ -31,12 +31,13 @@
       "key": "shiro",
       "name": "シロ",
       "generated": 7,
-      "integrated": false
+      "integrated": true,
+      "verification": "motion_shiro_1"
     },
     {
       "key": "yui",
       "name": "結衣",
-      "generated": 0,
+      "generated": 1,
       "integrated": false
     },
     {

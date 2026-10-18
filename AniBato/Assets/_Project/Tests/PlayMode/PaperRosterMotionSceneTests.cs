@@ -40,10 +40,11 @@ namespace AniBato.Tests
                 runner.BeginMatch(data, runner.Setup.Character(8), runner.CurrentStage, false); var sim = runner.Simulation;
                 Set(sim.P1, "Position", new BattleVector(0, sim.P1.Position.Y)); Set(sim.P2, "Position", new BattleVector(8, sim.P2.Position.Y));
                 var travel = facing > 0 ? keys.Right : keys.Left;
+                int dashDegrees = data.Movement.Name == "シロ" ? 10 : 45;
                 yield return Key(travel, true); yield return Key(keys.Dash, true); Tick();
                 AssertMotionFrame(AnimationState.Dash, facing);
-                Assert.That(Angle(body), Is.EqualTo(-45 * facing).Within(.001)); CaptureActionEffects(directory, "run_" + facing, body);
-                for (int i = 0; i < 4; i++) { Tick(); AssertMotionFrame(AnimationState.Dash, facing); Assert.That(Angle(body), Is.EqualTo(-45 * facing).Within(.001)); }
+                Assert.That(Angle(body), Is.EqualTo(-dashDegrees * facing).Within(.001)); CaptureActionEffects(directory, "run_" + facing, body);
+                for (int i = 0; i < 4; i++) { Tick(); AssertMotionFrame(AnimationState.Dash, facing); Assert.That(Angle(body), Is.EqualTo(-dashDegrees * facing).Within(.001)); }
                 yield return Key(keys.Dash, false); yield return Key(travel, false);
                 runner.RestartMatch(); sim = runner.Simulation; Set(sim.P1, "Facing", facing);
                 yield return Key(keys.Jump, true); Tick(); yield return Key(keys.Jump, false);
