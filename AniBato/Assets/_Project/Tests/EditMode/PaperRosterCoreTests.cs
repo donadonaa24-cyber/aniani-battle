@@ -34,7 +34,8 @@ namespace AniBato.Tests
                 }
                 Assert.That(paper.Find(AnimationState.Crouch).HeadHeight, Is.LessThan(paper.StandingHeight * .85f));
                 Assert.That(paper.Find(AnimationState.Guard).Frame(10000), Is.SameAs(paper.Find(AnimationState.Guard).Frame(0)));
-                Assert.That(paper.Find(AnimationState.CounterSuccess), Is.SameAs(paper.Find(AnimationState.Counter)));
+                bool dedicated = PaperRosterMotionBuilder.Completed().Any(m => m.characterIndex == entry.characterIndex);
+                Assert.That(paper.Find(AnimationState.CounterSuccess), dedicated ? Is.Not.SameAs(paper.Find(AnimationState.Counter)) : Is.SameAs(paper.Find(AnimationState.Counter)));
                 Assert.That(paper.WalkLeanDegrees, Is.EqualTo(15)); Assert.That(paper.DashLeanDegrees, Is.EqualTo(45));
                 if (entry.characterIndex == 0)
                 {

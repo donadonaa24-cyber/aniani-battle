@@ -36,8 +36,9 @@ namespace AniBato.Tests
                     Assert.That(paper.Supports(state),Is.True,state.ToString());
                     Assert.That(paper.Poses.Count(p=>p.States.Contains(state)),Is.EqualTo(1));
                 }
+                bool dedicated = AniBato.EditorTools.PaperRosterMotionBuilder.Completed().Any(m=>m.characterIndex==index);
                 foreach(var state in new[]{AnimationState.Dash,AnimationState.Dodge,AnimationState.Jump,AnimationState.Fall,AnimationState.Hitstun,AnimationState.Knockback})
-                    Assert.That(paper.Find(state).Frames.Single(),Is.SameAs(paper.Sprite),state.ToString());
+                    Assert.That(paper.Find(state).Frames.Single(),dedicated?Is.Not.SameAs(paper.Sprite):Is.SameAs(paper.Sprite),state.ToString());
                 Assert.That(paper.Find(AnimationState.Guard).Frames.Single(),Is.Not.SameAs(paper.Sprite));
             }
         }

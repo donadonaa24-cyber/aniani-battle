@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "task": "docs/codex_tasks/PAPER_ROSTER_SEVEN_MOTION_KEYS.md",
+  "requiredCharacters": 8,
+  "requiredPosesPerCharacter": 7,
+  "requiredTotal": 56,
+  "currentCharacter": "ren",
+  "characters": [
+    {
+      "key": "toma",
+      "name": "透真",
+      "generated": 7,
+      "integrated": true,
+      "verification": "motion_toma_3"
+    },
+    {
+      "key": "ren",
+      "name": "蓮",
+      "generated": 7,
+      "integrated": false
+    },
+    {
+      "key": "minato",
+      "name": "湊",
+      "generated": 1,
+      "integrated": false
+    },
+    {
+      "key": "shiro",
+      "name": "シロ",
+      "generated": 0,
+      "integrated": false
+    },
+    {
+      "key": "yui",
+      "name": "結衣",
+      "generated": 0,
+      "integrated": false
+    },
+    {
+      "key": "king",
+      "name": "黒獅子王",
+      "generated": 0,
+      "integrated": false
+    },
+    {
+      "key": "akatsuki",
+      "name": "暁",
+      "generated": 0,
+      "integrated": false
+    },
+    {
+      "key": "ryuta",
+      "name": "龍太",
+      "generated": 0,
+      "integrated": false
+    }
+  ],
+  "status": "in_progress"
+}

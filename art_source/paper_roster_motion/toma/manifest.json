@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "key": "toma",
+  "name": "透真",
+  "characterIndex": 0,
+  "baseIdle": "art_source/paper_roster_idle/generated/toma_idle_v2.png",
+  "canvasWidth": 1304,
+  "canvasHeight": 1450,
+  "pixelsPerUnit": 532.5893,
+  "sole": 1328,
+  "jobs": [
+    {
+      "id": "run",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/toma/prompts/run_v1.json"
+    },
+    {
+      "id": "jump",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/toma/prompts/jump_v1.json"
+    },
+    {
+      "id": "fall",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/toma/prompts/fall_v2.json"
+    },
+    {
+      "id": "dodge",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/toma/prompts/dodge_v2.json"
+    },
+    {
+      "id": "counter_success",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/toma/prompts/counter_success_v2.json"
+    },
+    {
+      "id": "hit_light",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/toma/prompts/hit_light_v1.json"
+    },
+    {
+      "id": "hit_heavy",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/toma/prompts/hit_heavy_v1.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "run",
+      "label": "走り",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/run_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「走り」：走る瞬間の強い決め姿。右へ進む両腕の振り、前脚を大きく出し後ろ脚の膝を曲げる。胸と腰の軸はほぼ直立〜前傾10度まで。ゲーム内で絵全体を45度傾けるので、絵に45度の前傾を重ねない。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "a573ebc88d0180cf9386d022b2c85c91d3d11f780f68358b4627cb649bf49830",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 202,
+          "top": 87,
+          "right": 1074,
+          "bottom": 1243
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/toma/prepared/run.png",
+      "preparedSha256": "4ef392e82c2151ae2924fd460c3e990594a2e286d903976c89a04b4ece07041d",
+      "offsetX": 65,
+      "offsetY": 85,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/jump_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「ジャンプ上昇」：ジャンプの上昇中。両膝を曲げて両足を浮かせ、両肘も曲げて身体の横へ。上を見た集中した顔。空中攻撃ではなく上昇の明快な全身シルエット。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "89da31e1380ab9bf474eae3f6b24a8b885c5d29bbd377aaaad9fa79c7c4bbc53",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 313,
+          "top": 90,
+          "right": 967,
+          "bottom": 1265
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/toma/prepared/jump.png",
+      "preparedSha256": "22302bf00c01bcf60e01c6a31e406ffafb5710871d6a05c161eddaa360e866d1",
+      "offsetX": 101,
+      "offsetY": 63,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "fall",
+      "label": "落下",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/fall_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「落下」：ジャンプから落下中。足を下へ伸ばし膝を柔らかく曲げ、両腕を横へ少し開き着地に備える。目線は斜め下前方、ジャンプ上昇と異なる姿。両足は浮いている。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "d6ab9a3e6069bd07d1927e669112705b0376d588f011685c3183dca95e7e5507",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 115,
+          "top": 143,
+          "right": 1054,
+          "bottom": 1283
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/dodge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「回避」：攻撃をくぐる回避。膝と腰を深く落とし、上体を右前へ少し倒す低い姿勢。両腕は身体の横へ引き、顔は前を見て警戒。立ち絵や攻撃と区別できる低いシルエット。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "8a5f251b956910e4684dbe7545828cb652a9178ee9eb2b2863d30d87b4845f53",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 165,
+          "top": 307,
+          "right": 1143,
+          "bottom": 1250
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/toma/generated/dodge_v2.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「回避」：攻撃をくぐる回避。膝と腰を深く落とし、上体を右前へ少し倒す低い姿勢。両腕は身体の横へ引き、顔は前を見て警戒。立ち絵や攻撃と区別できる低いシルエット。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n修正条件：低い姿勢と部位寸法はそのまま。両手を開かず自然な軽い握り拳にする。4本の指を掌に折り、親指は外側から人差し指と中指の上へ添える。余分な指や省略した3指の手にしない。左右の肩からつながる右拳と左拳を一本ずつ。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "cfac51041a840262b871ef7d44f45f4d8111c4157dc7576f2f10e56a303223c1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 144,
+          "top": 348,
+          "right": 1157,
+          "bottom": 1293
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/toma/prepared/dodge.png",
+      "preparedSha256": "8f1721a8aa8420fcdac55a147b36f25019d03435a7674d2b11e56ebb3ce49c3e",
+      "offsetX": 115,
+      "offsetY": 35,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "fall",
+      "label": "落下",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/toma/generated/fall_v2.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「落下」：ジャンプから落下中。足を下へ伸ばし膝を柔らかく曲げ、両腕を横へ少し開き着地に備える。目線は斜め下前方、ジャンプ上昇と異なる姿。両足は浮いている。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n修正条件：落下姿勢と全身倍率は維持。開いた手の指が省略される問題を修正するため両手は軽い握り拳に変える。4本の指を掌へ自然に折り親指を外から添える。指の省略で3指に見える開いた手を描かない。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "01da8bac5867069dfaa0fef79c0ae5715c14f4eeac2912a6fc064efea6ec2974",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 84,
+          "top": 114,
+          "right": 989,
+          "bottom": 1341
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/toma/prepared/fall.png",
+      "preparedSha256": "72a2852686934ac45b6f5ab6986b8543baf7f78cadaa8777c5d2e75297234679",
+      "offsetX": 0,
+      "offsetY": -13,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "counter_success",
+      "label": "カウンター成功",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/counter_success_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「カウンター成功」：防御から反撃が成功した強い決め。両足を開いて踏み込み、右の前腕を顔の前の受けから前方へ振り出す短い肘打ち、反対の左拳は腰へ引く。顔が見え、勝ち誇りすぎない鋭い表情。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "0af30655429c7f12d1e27052c39cd1e56b8d03f0f160060d09d5c510d52fa03d",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 139,
+          "top": 155,
+          "right": 1115,
+          "bottom": 1291
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/toma/prepared/counter_success.png",
+      "preparedSha256": "4e2075c651601970b464759cf2ae3ff0605a67f470aa7c50869399cd44e2c52d",
+      "offsetX": 88,
+      "offsetY": 37,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/hit_light_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「通常被弾」：通常攻撃を受けた瞬間。右前方から打撃を受けて胸と顔が少し左後ろへ傾き、片足を後ろへ踏み出す。両膝は曲がり、拳を胸前へ引き、歯を食いしばって何とか踏ん張る。まだ立って耐えている。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "9f3700480d987b7b6d2b8f5b4baad97e9d7eada8b822696bde53a63793a165f1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 273,
+          "top": 93,
+          "right": 1061,
+          "bottom": 1281
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/toma/prepared/hit_light.png",
+      "preparedSha256": "3e2e9dd282b4fa1eb8e4d4d73b3bd07294a174f7e849ae9fb9a9d6084fa6206b",
+      "offsetX": 48,
+      "offsetY": 47,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_heavy",
+      "label": "強被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/hit_heavy_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「強被弾」：ハートが減る強い被弾。右前方の衝撃に胸と頭が大きく左後ろへのけぞる。両膝を曲げ一方の足は後ずさり、両手を胸の前に広げる。目をぎゅっとつむり口を大きく開け、目尻に涙粒。いかにも痛そうなコミカルな顔。血・傷・破れなし。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "92c1a29cc5c348dc6ee44a655c2fd6a785416f66e9e8a0f329aad9aac4d1f18a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 81,
+          "top": 172,
+          "right": 1132,
+          "bottom": 1255
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/toma/prepared/hit_heavy.png",
+      "preparedSha256": "2d4ff1e5bc3cca1e6048ab527311d721fde832b51713e138faf865cee51ace37",
+      "offsetX": 0,
+      "offsetY": 73,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "counter_success",
+      "label": "カウンター成功",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/toma/generated/counter_success_v2.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。黒い大きな跳ね髪、青い瞳、黒いスーツ、白シャツ、緩めた黒ネクタイ、黒革靴。生身の両腕、装備や義手なし。\n新しい動作「カウンター成功」：防御からの反撃が成功した正拳突きの決め。胸元側が斜めに見える右向き。本人右肩（画面左側）から上腕・肘・前腕・右拳までを自然なほぼ一直線にして画面右前方へ伸ばす。本人左腕は左肩から自然に曲げ、左拳を胸の横で構える。腕は2本だけ、拳2つ。肘を逆へ折らない。顔を腕で隠さない。両足を開いて踏み込む。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n修正条件：ユーザー指摘：前腕と上腕のつながりが異常。旧肘打ちは不採用。予備条件の肘打ち指定を撤回し、右拳を肩の高さで右前へまっすぐ突く正拳突きへ変更。右肩から右肘、右手首、右拳を一本の腕として明快に描き、逆向きに折れた肘や顔の前を不自然に横切る腕を描かない。左拳は左の胸元に自然に構える。",
+      "references": [
+        "art_source/paper_roster_idle/generated/toma_idle_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "8c625024264cea2850be831afb5a6f60ba198abef8c9a1d28a732138cb5d6ea3",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 125,
+          "top": 47,
+          "right": 1167,
+          "bottom": 1288
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/toma/prepared/counter_success.png",
+      "preparedSha256": "45addb32eb0ea603e3773d50a0c0e3393c755f6c747741f7c12511155800c621",
+      "offsetX": 105,
+      "offsetY": 40,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "motion_toma_3"
+}

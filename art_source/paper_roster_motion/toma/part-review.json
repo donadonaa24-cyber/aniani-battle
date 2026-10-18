@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "key": "toma",
+  "artApproved": false,
+  "selected": [
+    {
+      "id": "run",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/run_v1.png",
+      "sha256": "a573ebc88d0180cf9386d022b2c85c91d3d11f780f68358b4627cb649bf49830",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 202,
+          "top": 87,
+          "right": 1074,
+          "bottom": 1243
+        }
+      }
+    },
+    {
+      "id": "jump",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/jump_v1.png",
+      "sha256": "89da31e1380ab9bf474eae3f6b24a8b885c5d29bbd377aaaad9fa79c7c4bbc53",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 313,
+          "top": 90,
+          "right": 967,
+          "bottom": 1265
+        }
+      }
+    },
+    {
+      "id": "fall",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/toma/generated/fall_v2.png",
+      "sha256": "01da8bac5867069dfaa0fef79c0ae5715c14f4eeac2912a6fc064efea6ec2974",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 84,
+          "top": 114,
+          "right": 989,
+          "bottom": 1341
+        }
+      }
+    },
+    {
+      "id": "dodge",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/toma/generated/dodge_v2.png",
+      "sha256": "cfac51041a840262b871ef7d44f45f4d8111c4157dc7576f2f10e56a303223c1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 144,
+          "top": 348,
+          "right": 1157,
+          "bottom": 1293
+        }
+      }
+    },
+    {
+      "id": "counter_success",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/toma/generated/counter_success_v2.png",
+      "sha256": "8c625024264cea2850be831afb5a6f60ba198abef8c9a1d28a732138cb5d6ea3",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 125,
+          "top": 47,
+          "right": 1167,
+          "bottom": 1288
+        }
+      }
+    },
+    {
+      "id": "hit_light",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/hit_light_v1.png",
+      "sha256": "9f3700480d987b7b6d2b8f5b4baad97e9d7eada8b822696bde53a63793a165f1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 273,
+          "top": 93,
+          "right": 1061,
+          "bottom": 1281
+        }
+      }
+    },
+    {
+      "id": "hit_heavy",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/toma/generated/hit_heavy_v1.png",
+      "sha256": "92c1a29cc5c348dc6ee44a655c2fd6a785416f66e9e8a0f329aad9aac4d1f18a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 81,
+          "top": 172,
+          "right": 1132,
+          "bottom": 1255
+        }
+      }
+    }
+  ],
+  "canvasPolicy": "原画RGBAの整数移動と透明余白のみ。個別拡縮0。頭髪と靴の投影差は原画で目視し、美術の最終承認と実装検証を区別。",
+  "anatomyReview": "肩・肘・手首のつながり、左右の手の親指と折った指、全身の外周白縁を確認。低姿勢を埋める拡大なし。",
+  "rgbaAudit": [
+    {
+      "id": "run",
+      "preserved": true,
+      "sha256": "4ef392e82c2151ae2924fd460c3e990594a2e286d903976c89a04b4ece07041d"
+    },
+    {
+      "id": "jump",
+      "preserved": true,
+      "sha256": "22302bf00c01bcf60e01c6a31e406ffafb5710871d6a05c161eddaa360e866d1"
+    },
+    {
+      "id": "fall",
+      "preserved": true,
+      "sha256": "72a2852686934ac45b6f5ab6986b8543baf7f78cadaa8777c5d2e75297234679"
+    },
+    {
+      "id": "dodge",
+      "preserved": true,
+      "sha256": "8f1721a8aa8420fcdac55a147b36f25019d03435a7674d2b11e56ebb3ce49c3e"
+    },
+    {
+      "id": "counter_success",
+      "preserved": true,
+      "sha256": "45addb32eb0ea603e3773d50a0c0e3393c755f6c747741f7c12511155800c621"
+    },
+    {
+      "id": "hit_light",
+      "preserved": true,
+      "sha256": "3e2e9dd282b4fa1eb8e4d4d73b3bd07294a174f7e849ae9fb9a9d6084fa6206b"
+    },
+    {
+      "id": "hit_heavy",
+      "preserved": true,
+      "sha256": "2d4ff1e5bc3cca1e6048ab527311d721fde832b51713e138faf865cee51ace37"
+    }
+  ],
+  "knownDifferences": [
+    "開いた手が省略されていた落下v1と回避v1は不採用。どちらも自然な握りのv2に変更。",
+    "反撃v1の異常な腕の折れ方をユーザーが指摘。不採用とし、腕をまっすぐ前へ伸ばすv2へ差し替えた。v2でUnity全4工程と左右描画を再確認。",
+    "新しい反撃の絵は本人左の肩から前へ拳を伸ばし、右拳を胸に引く自然な姿。通常攻撃の銃の設定・戦闘値は変更しない。",
+    "頭髪の横幅は姿勢の投影により約506〜575px。採用待機は約544px。靴は横向き・縦向きの投影で幅が変わる。個別の拡縮は行わない。",
+    "落下v2の元キャンバス1103×1426は指定寸法と異なるが、人物の倍率を変えず透明梱包で共通枠に収めた。"
+  ]
+}

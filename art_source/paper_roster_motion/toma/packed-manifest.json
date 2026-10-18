@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "key": "toma",
+  "characterIndex": 0,
+  "name": "透真",
+  "complete": true,
+  "frames": [
+    {
+      "id": "run",
+      "prepared": "art_source/paper_roster_motion/toma/prepared/run.png",
+      "sha256": "4ef392e82c2151ae2924fd460c3e990594a2e286d903976c89a04b4ece07041d",
+      "headTopY": 172,
+      "footMinX": 291,
+      "footMaxX": 1139,
+      "originOffsetY": 0
+    },
+    {
+      "id": "jump",
+      "prepared": "art_source/paper_roster_motion/toma/prepared/jump.png",
+      "sha256": "22302bf00c01bcf60e01c6a31e406ffafb5710871d6a05c161eddaa360e866d1",
+      "headTopY": 153,
+      "footMinX": 651,
+      "footMaxX": 778,
+      "originOffsetY": 0.1258004995594166
+    },
+    {
+      "id": "fall",
+      "prepared": "art_source/paper_roster_motion/toma/prepared/fall.png",
+      "sha256": "72a2852686934ac45b6f5ab6986b8543baf7f78cadaa8777c5d2e75297234679",
+      "headTopY": 101,
+      "footMinX": 507,
+      "footMaxX": 989,
+      "originOffsetY": 0.028164290946138048
+    },
+    {
+      "id": "dodge",
+      "prepared": "art_source/paper_roster_motion/toma/prepared/dodge.png",
+      "sha256": "8f1721a8aa8420fcdac55a147b36f25019d03435a7674d2b11e56ebb3ce49c3e",
+      "headTopY": 383,
+      "footMinX": 259,
+      "footMaxX": 1106,
+      "originOffsetY": 0
+    },
+    {
+      "id": "counter_success",
+      "prepared": "art_source/paper_roster_motion/toma/prepared/counter_success.png",
+      "sha256": "45addb32eb0ea603e3773d50a0c0e3393c755f6c747741f7c12511155800c621",
+      "headTopY": 87,
+      "footMinX": 230,
+      "footMaxX": 1200,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_light",
+      "prepared": "art_source/paper_roster_motion/toma/prepared/hit_light.png",
+      "sha256": "3e2e9dd282b4fa1eb8e4d4d73b3bd07294a174f7e849ae9fb9a9d6084fa6206b",
+      "headTopY": 140,
+      "footMinX": 321,
+      "footMaxX": 1109,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_heavy",
+      "prepared": "art_source/paper_roster_motion/toma/prepared/hit_heavy.png",
+      "sha256": "2d4ff1e5bc3cca1e6048ab527311d721fde832b51713e138faf865cee51ace37",
+      "headTopY": 245,
+      "footMinX": 426,
+      "footMaxX": 1132,
+      "originOffsetY": 0
+    }
+  ]
+}

@@ -78,6 +78,7 @@ namespace AniBato.EditorTools
             PaperNormalFourKeyBuilder.Apply(setup.Characters);
             PaperSingleAttackKeyBuilder.Apply(setup.Characters);
             PaperDisplayTimingBuilder.Apply(setup.Characters);
+            PaperRosterMotionBuilder.Apply(setup.Characters);
             if (setup.Stages == null || setup.Stages.Length == 0) setup.Stages = stages;
             if (setup.CpuDifficulties == null || setup.CpuDifficulties.Length == 0) setup.CpuDifficulties = cpuDifficulties;
             if (setup.CpuDifficulties.Length != 3) throw new InvalidOperationException("CPU difficulty assets must have three entries.");

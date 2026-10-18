@@ -41,7 +41,8 @@ namespace AniBato.Tests
             Assert.That(paper.Find(AnimationState.BackAttack).ReverseFacing,Is.True);
             Assert.That(paper.Find(AnimationState.BackAttack).Frames,Is.EqualTo(paper.Find(AnimationState.Attack1).Frames));
             Assert.That(paper.Supports(AnimationState.Dodge),Is.True);
-            Assert.That(paper.Find(AnimationState.Dodge).Frames.Single(),Is.SameAs(paper.Sprite),"未生成姿勢は本人の紙待機、完成した専用原画とは区別");
+            bool dedicated = PaperRosterMotionBuilder.Completed().Any(m=>m.characterIndex==0);
+            Assert.That(paper.Find(AnimationState.Dodge).Frames.Single(),dedicated?Is.Not.SameAs(paper.Sprite):Is.SameAs(paper.Sprite),"専用7動作の完成人物だけ待機代用を置き換える");
         }
         [Test]
         public void TomaImportedBodiesAndProjectilesAreByteIdenticalToSelectedSources()
