@@ -1,0 +1,14 @@
+{
+  "id": "hit_light",
+  "label": "通常被弾",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/akatsuki/generated/hit_light_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1は暁の通常被弾の全身。下半身だけを描き直す。現在は股の下から3本目の脚のような余分な紺の膝が見え、不採用。人間の脚を正確に2本だけにする。左右の脚は交差させず、本人右の脚を画面左後ろへ、本人左の脚を画面右前へ置いて後ずさりを耐える。どちらも股関節から太腿1本→膝1個→脛1本→足首1個→黒革靴1個まで連続した自然な脚。余分な膝・ズボンの筒・足首を描かない。両脚の間には自然な透明の隙間を作り、3本目を紺色の布で隠して残さない。右脚と左脚は各1本、靴は2個。頭・顔・髪・眼鏡・歯を食いしばる表情・両腕・カードと左の握り・制服上半身は維持。靴と頭の実寸は変えない。全身アニメ線とセル塗り、全外周の薄いクリーム白縁、透明PNG、背景・床・影・効果・文字の追加なし。",
+  "references": [
+    "art_source/paper_roster_motion/akatsuki/generated/hit_light_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：通常被弾の編集対象。余分な膝を除いて2脚へ描き直す"
+  ],
+  "tool": "built-in image_gen"
+}

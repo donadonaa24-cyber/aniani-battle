@@ -1,0 +1,18 @@
+{
+  "id": "run",
+  "label": "走り",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/akatsuki/generated/run_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の走り全身は維持し、カードを持つ左手だけを画像2と同じ甲側の握りへ描き直す。左前腕を自然に回内し、左手の甲をこちらへ見せる。掌の線、丸く折った指の腹は見せない。こちらには滑らかな左手の甲と関節が見える。親指は画面左にあり、カード下端を人差し指とつまみ、指先はカードの裏へ回る。残る3指は自然に曲げる。左肩→肘→手首を逆折れさせない。カードは画像3の「Battle à la Carte」の料理モチーフの背面を維持。顔、髪、眼鏡、制服、右拳、脚、靴、走りの姿勢と全身の部位実寸は変更しない。透明PNGで全外周白縁。全身拡縮・背景・文字追加・効果なし。",
+  "references": [
+    "art_source/paper_roster_motion/akatsuki/generated/run_v1.png",
+    "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png",
+    "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+  ],
+  "referenceRoles": [
+    "画像1：走りの直接編集対象。左の握りだけ変更",
+    "画像2：自然な甲側の左手のつまみ握りの参考",
+    "画像3：正式な料理カード背面"
+  ],
+  "tool": "built-in image_gen"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "dodge",
+  "label": "回避",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/akatsuki/generated/dodge_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の暁の低い回避ポーズを維持して、過大な部位だけ描き直す。頭髪と顔は画像2のしゃがみと同じ約340pxの幅へ戻し、画像1より約20%小さく。画面左の近い靴は横幅約155px、画像1の大きい前靴より約35%小さくする。画面右の遠い靴は約220px幅。足や頭だけを巨大化する遠近の誇張なし。顔、眼鏡、制服のデザインは維持。低姿勢は上に広い透明余白を残し、キャンバスを埋めない。右手は空の自然な拳、左手は甲側を見せて同じ料理カード1枚を持ち続ける。頭・首・腕・脚は自然につなぐ。全身を一括縮小する方法は禁止、部位のサイズを正しく描き直す。透明PNG、クリーム白の切り抜き縁、背景・効果・文字の追加なし。",
+  "references": [
+    "art_source/paper_roster_motion/akatsuki/generated/dodge_v1.png",
+    "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：回避の編集対象。頭と靴の過大化を修正",
+    "画像2：採用しゃがみの頭髪・靴の実寸の参考"
+  ],
+  "tool": "built-in image_gen"
+}

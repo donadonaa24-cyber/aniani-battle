@@ -1,0 +1,14 @@
+{
+  "id": "hit_heavy",
+  "label": "強被弾",
+  "version": 3,
+  "source": "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v3.png",
+  "prompt": "Use case: precise-object-edit. 画像1のカードを持っていない本人右手だけを修正。5本の指の数と輪郭の位置は維持。右の前腕を自然に回内して、手の甲をこちらに見せる。掌のしわ・生命線を完全に消し、甲の滑らかな面と指の関節・爪側を描く。手のひらをこちらへ向けない。親指は画面右側、4本の長い指は上向きのまま。これは右の手の甲が見える正しい右手。親指1本と4本の指の計5本は厳守。手を左右反転して掌のままにせず、描かれている面を甲へ直す。手首を逆折れにしない。右手以外の顔・髪・眼鏡・涙・左の料理カードと左腕・制服・2脚2靴・部位実寸・のけぞり姿勢は変更しない。普通のアニメの線とセル塗り、白縁、透明PNGを維持。背景・効果・文字追加なし。",
+  "references": [
+    "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v2.png"
+  ],
+  "referenceRoles": [
+    "画像1：5指の強被弾v2を直接編集。右手の甲側へ変更"
+  ],
+  "tool": "built-in image_gen"
+}

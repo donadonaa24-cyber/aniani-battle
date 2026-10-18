@@ -1,0 +1,16 @@
+{
+  "id": "jump",
+  "label": "ジャンプ上昇",
+  "version": 3,
+  "source": "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png",
+  "prompt": "Use case: precise-object-edit. 画像1のジャンプの全身はそのまま、カードを持つ本人左手を全く新しく描き直す。左の前腕を自然に回内して、左手の甲をこちらへ向ける。掌を見せない。今見える手のひらの線と丸く折った指の腹は削除する。こちらには滑らかな左手の甲、付け根の関節と爪側だけが見える。左手の親指は画面左、残る指の関節は画面右側。親指と人差し指でカードの下端を挟み、カードの裏側へ指を回して握る。左肩から上腕、肘、手首の接続は自然。画像2の紺金の料理カード背面を同じ小さいカードに使い中央の「Battle à la Carte」も維持。顔、髪、眼鏡、服、右拳、浮いた両脚、頭と靴の実寸、透明キャンバス、クリーム白の外周縁は変えない。全身拡縮、背景、効果、別人物の追加なし。",
+  "references": [
+    "art_source/paper_roster_motion/akatsuki/generated/jump_v1.png",
+    "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+  ],
+  "referenceRoles": [
+    "画像1：ジャンプの全身編集対象。左手だけ甲側へ修正",
+    "画像2：正式なカード背面。題字と料理モチーフを維持"
+  ],
+  "tool": "built-in image_gen"
+}

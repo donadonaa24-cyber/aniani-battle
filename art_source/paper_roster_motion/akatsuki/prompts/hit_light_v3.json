@@ -1,0 +1,14 @@
+{
+  "id": "hit_light",
+  "label": "通常被弾",
+  "version": 3,
+  "source": "art_source/paper_roster_motion/akatsuki/generated/hit_light_v3.png",
+  "prompt": "Use case: precise-object-edit. 画像1の暁の通常被弾イラストを直接編集。脚はすでに2本なので維持する。画面右前の大きい黒革靴だけを、待機と同じ横幅約220pxへ約30%小さく描き直す。靴先・甲・踵と靴底の形を同じ比率で保ち、足首とズボンの裾を自然につなぐ。画面左の後ろの靴、2本の脚と膝、股関節のつながり、上半身、頭、顔、眼鏡、髪、両腕とカードの左手握りは変更しない。全身の拡縮なし。頭と左靴の実寸を維持。普通のアニメ線と塗り、クリーム白外周縁、透明PNG。床・影・効果・文字追加なし。",
+  "references": [
+    "art_source/paper_roster_motion/akatsuki/generated/hit_light_v2.png"
+  ],
+  "referenceRoles": [
+    "画像1：2脚へ修正した通常被弾v2を直接編集。前靴のみ寸法修正"
+  ],
+  "tool": "built-in image_gen"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "hit_heavy",
+  "label": "強被弾",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の胸前に開いている、カードを持っていない本人右手だけを正しく描き直す。現在は指が6本なので不採用。右手は親指1本と、人差し指・中指・薬指・小指の4本、合計ちょうど5本。右の掌をこちらへ向け、4本の長い指は上へ向けて適度に開き、短い親指は画面左の低い位置へ伸ばす。親指は1本のみ。5本それぞれが掌の正しい付け根へつながる。指の間を明確に分け、指の分岐や余分な突起を作らない。手首から指先までの手は自然な大きさ、甲へ裏返さない。右手以外の顔、涙、眼鏡、左手と料理カード、のけぞり姿勢、制服、2本の脚と2個の靴、部位実寸は維持。アニメの線とセル塗り、全外周クリーム白の縁を維持、透明PNG、背景・効果・文字追加なし。",
+  "references": [
+    "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：強被弾の直接編集対象。空の右手を5指にする"
+  ],
+  "tool": "built-in image_gen"
+}

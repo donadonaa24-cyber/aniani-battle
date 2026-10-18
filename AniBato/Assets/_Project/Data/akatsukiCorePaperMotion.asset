@@ -104,7 +104,7 @@ MonoBehaviour:
     FootMinX: -0.5219782
     FootMaxX: 0.53699917
   - Key: counter
-    States: 1100000012000000i
+    States: 11000000i
     Frames:
     - {fileID: 21300000, guid: f4f89b56cb0e6cf43a985561ce7b6ca5, type: 3}
     HoldTicks: 8
@@ -164,7 +164,7 @@ MonoBehaviour:
     FootMinX: -0.44311818
     FootMaxX: 0.60834867
   - Key: prototype_whole_illustration
-    States: 020000000300000004000000090000000b0000000c0000000d0000001000000013000000140000001c0000001d0000001f0000002000000021000000i
+    States: 090000000b0000000c0000000d0000001c0000001d0000001f0000002000000021000000i
     Frames:
     - {fileID: 21300000, guid: 620481199cb04244d8e47fee2ba8e2f4, type: 3}
     HoldTicks: 8
@@ -436,10 +436,10 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.7623135
     FootMaxX: -0.48630342
-  HeavyDamage:
-    Key: 
-    States: 
-    Frames: []
+  - Key: run
+    States: 02000000i
+    Frames:
+    - {fileID: 21300000, guid: bb00b27e9b0ddf1498f4d2c3d29df991, type: 3}
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
@@ -451,11 +451,139 @@ MonoBehaviour:
     FrameFootBaseYs: []
     FrameFootMinXs: []
     FrameFootMaxXs: []
-    FrameOriginYs: []
-    HeadHeight: 0
+    FrameOriginYs:
+    - 0
+    HeadHeight: 2.3545349
     FootBaseY: 0
-    FootMinX: 0
-    FootMaxX: 0
+    FootMinX: 0.31356245
+    FootMaxX: 0.8768483
+  - Key: jump
+    States: 03000000i
+    Frames:
+    - {fileID: 21300000, guid: 006503f36652d214ca5ddd14f8d16259, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs:
+    - 0.291031
+    HeadHeight: 2.0991786
+    FootBaseY: 0
+    FootMinX: -0.12955575
+    FootMaxX: 0.14082146
+  - Key: fall
+    States: 04000000i
+    Frames:
+    - {fileID: 21300000, guid: a0a77678156aec143ba951d7f095e516, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs:
+    - 0.23094718
+    HeadHeight: 2.1592624
+    FootBaseY: 0
+    FootMinX: -0.0131433355
+    FootMaxX: 0.29666388
+  - Key: dodge
+    States: 10000000i
+    Frames:
+    - {fileID: 21300000, guid: c7751c180db95a641b6394b787f6de68, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs:
+    - 0
+    HeadHeight: 1.5208718
+    FootBaseY: 0
+    FootMinX: -0.76794636
+    FootMaxX: 0.9350545
+  - Key: counter_success
+    States: 12000000i
+    Frames:
+    - {fileID: 21300000, guid: 51050c0e37794dd469050eb4eccadf6f, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs:
+    - 0
+    HeadHeight: 2.3263705
+    FootBaseY: 0
+    FootMinX: -0.9350545
+    FootMaxX: 1.1021626
+  - Key: hit_light
+    States: 1300000014000000i
+    Frames:
+    - {fileID: 21300000, guid: fef4882abd756fd48a74ee3813d691d0, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs:
+    - 0
+    HeadHeight: 2.1292205
+    FootBaseY: 0
+    FootMinX: -0.6271249
+    FootMaxX: 0.79611063
+  HeavyDamage:
+    Key: hit_heavy
+    States: 
+    Frames:
+    - {fileID: 21300000, guid: 4422caff0784b194eb94571765894853, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs:
+    - 0
+    HeadHeight: 2.343269
+    FootBaseY: 0
+    FootMinX: -0.503202
+    FootMaxX: 0.67031014
   Bag: {fileID: 0}
   RiceBall: {fileID: 0}
   Mogu: {fileID: 0}

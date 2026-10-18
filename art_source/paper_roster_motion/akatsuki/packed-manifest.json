@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "characterIndex": 7,
+  "name": "暁",
+  "complete": true,
+  "frames": [
+    {
+      "id": "run",
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/run.png",
+      "sha256": "8fed37a7fc0ccdd8978718b1b7881261ee80bdf85ed3f33b1f704f665e5cbca8",
+      "headTopY": 74,
+      "footMinX": 819,
+      "footMaxX": 1119,
+      "originOffsetY": 0
+    },
+    {
+      "id": "jump",
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/jump.png",
+      "sha256": "1d16745742937434edfd28d3e05af8cc53449cd3c4a3e1e8e7ab08263576cf32",
+      "headTopY": 210,
+      "footMinX": 583,
+      "footMaxX": 727,
+      "originOffsetY": 0.2910310064434265
+    },
+    {
+      "id": "fall",
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/fall.png",
+      "sha256": "5e7dfc6152ba0c64377381d6d400e3e9db370a91078f5575a5202c8879b65a6b",
+      "headTopY": 178,
+      "footMinX": 645,
+      "footMaxX": 810,
+      "originOffsetY": 0.23094718575833198
+    },
+    {
+      "id": "dodge",
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/dodge.png",
+      "sha256": "0440400f869b0214f35b1c8b7529fd3c57168c36a55b454adaeb281da3a48336",
+      "headTopY": 518,
+      "footMinX": 243,
+      "footMaxX": 1150,
+      "originOffsetY": 0
+    },
+    {
+      "id": "counter_success",
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/counter_success.png",
+      "sha256": "2722c3be89a09c332bc0588faabeb6d56c66fea85ecb0909a6feb02906576a2e",
+      "headTopY": 89,
+      "footMinX": 154,
+      "footMaxX": 1239,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_light",
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/hit_light.png",
+      "sha256": "d77944752827916848c79b6f7ba456a46069b766edef3d9fb461e4772720793a",
+      "headTopY": 194,
+      "footMinX": 318,
+      "footMaxX": 1076,
+      "originOffsetY": 0
+    },
+    {
+      "id": "hit_heavy",
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/hit_heavy.png",
+      "sha256": "125b2bffafdc3c0e678c6ba8c2cb071f08728630857c78fef0a841a365ad3719",
+      "headTopY": 80,
+      "footMinX": 384,
+      "footMaxX": 1009,
+      "originOffsetY": 0
+    }
+  ]
+}

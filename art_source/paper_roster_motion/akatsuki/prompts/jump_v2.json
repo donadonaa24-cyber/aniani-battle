@@ -1,0 +1,14 @@
+{
+  "id": "jump",
+  "label": "ジャンプ上昇",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/akatsuki/generated/jump_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の暁のジャンプイラストを直接編集。画面右上にカードを持つ手だけを、正しい本人左手へ描き直す。左手の掌をこちらへ向ける。左親指は画面右側から出てカードの右下角を押さえ、人差し指はカードの裏側へ。残りの中指・薬指・小指の3本は掌の画面左側に自然に曲げる。手の右側が親指、小指側は左。現在の親指が左から出る右手の形は不採用。左肩・肘・手首は自然につなぐ。手首を反対へ折らない。カードは同じ料理モチーフの背面で、右下角が親指の位置へ来るよう僅かに左へ配置してよい。顔、髪、眼鏡、ジャンプ姿勢、右手の拳、衣装、頭と靴の実寸、塗り・線・白縁は維持。全身拡縮なし。透明PNG、文字や効果の追加なし。",
+  "references": [
+    "art_source/paper_roster_motion/akatsuki/generated/jump_v1.png"
+  ],
+  "referenceRoles": [
+    "画像1：直接編集対象。カードを持つ本人左手だけ修正"
+  ],
+  "tool": "built-in image_gen"
+}

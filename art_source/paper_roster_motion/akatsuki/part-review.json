@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "artApproved": false,
+  "selected": [
+    {
+      "id": "run",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/run_v2.png",
+      "sha256": "f2a1a4ab377897b7c2d07b76d049c6c98a14cfecdb088b484601218b92b67583",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 101,
+          "top": 25,
+          "right": 1130,
+          "bottom": 1279
+        }
+      }
+    },
+    {
+      "id": "jump",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png",
+      "sha256": "2490d235fae21648e7888668d7758faf6949153e5f4f2012bcf6b4d7349faf45",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 204,
+          "top": 100,
+          "right": 1089,
+          "bottom": 1218
+        }
+      }
+    },
+    {
+      "id": "fall",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/fall_v1.png",
+      "sha256": "f534251b943717ee21a262f599e129e0ced7f38549b73d3a58c521b14764d778",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 59,
+          "top": 78,
+          "right": 1162,
+          "bottom": 1228
+        }
+      }
+    },
+    {
+      "id": "dodge",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/dodge_v2.png",
+      "sha256": "227e8d966abc88480abc3e9a6c45fa7fbd9f9dedfee1c27ee5c748f075f30cd9",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 165,
+          "top": 415,
+          "right": 1148,
+          "bottom": 1225
+        }
+      }
+    },
+    {
+      "id": "counter_success",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/counter_success_v2.png",
+      "sha256": "ce8a19e53c4ab6414329bf4cdd1e22fb2c8b0786cbbf853e6887ff7b4e57c48a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 76,
+          "top": 35,
+          "right": 1166,
+          "bottom": 1274
+        }
+      }
+    },
+    {
+      "id": "hit_light",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/hit_light_v3.png",
+      "sha256": "15da37b286b3c55a5394949be55dd03a2989d266c74603d3357273d75b3c9c31",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 223,
+          "top": 104,
+          "right": 1138,
+          "bottom": 1238
+        }
+      }
+    },
+    {
+      "id": "hit_heavy",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v3.png",
+      "sha256": "b15fe91f95b63f7be34bd3b742a754e135684eab6830c468fb9c560e047d6c18",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 68,
+          "top": 120,
+          "right": 1045,
+          "bottom": 1368
+        }
+      }
+    }
+  ],
+  "canvasPolicy": "原画RGBAの整数移動と透明余白のみ。個別拡縮0。頭髪と靴の投影差は原画で目視し、美術の最終承認と実装検証を区別。",
+  "anatomyReview": "肩・肘・手首のつながり、左右の手の親指と折った指、全身の外周白縁を確認。低姿勢を埋める拡大なし。",
+  "rgbaAudit": [
+    {
+      "id": "run",
+      "preserved": true,
+      "sha256": "8fed37a7fc0ccdd8978718b1b7881261ee80bdf85ed3f33b1f704f665e5cbca8"
+    },
+    {
+      "id": "jump",
+      "preserved": true,
+      "sha256": "1d16745742937434edfd28d3e05af8cc53449cd3c4a3e1e8e7ab08263576cf32"
+    },
+    {
+      "id": "fall",
+      "preserved": true,
+      "sha256": "5e7dfc6152ba0c64377381d6d400e3e9db370a91078f5575a5202c8879b65a6b"
+    },
+    {
+      "id": "dodge",
+      "preserved": true,
+      "sha256": "0440400f869b0214f35b1c8b7529fd3c57168c36a55b454adaeb281da3a48336"
+    },
+    {
+      "id": "counter_success",
+      "preserved": true,
+      "sha256": "2722c3be89a09c332bc0588faabeb6d56c66fea85ecb0909a6feb02906576a2e"
+    },
+    {
+      "id": "hit_light",
+      "preserved": true,
+      "sha256": "d77944752827916848c79b6f7ba456a46069b766edef3d9fb461e4772720793a"
+    },
+    {
+      "id": "hit_heavy",
+      "preserved": true,
+      "sha256": "125b2bffafdc3c0e678c6ba8c2cb071f08728630857c78fef0a841a365ad3719"
+    }
+  ],
+  "knownDifferences": [
+    "全7動作で本人左手に料理カード、右は空手。カード単独の正式素材v2を参照し、待機の人物と役割を分けた。手に描かれる小さい題字は原画で簡略化や字形差があり、正式単独カードと画素一致ではない。",
+    "上昇v1/2の掌の親指が曖昧な候補とv2の題字消失を不採用。v3は甲側の左握り。走りv2もその握りを参照。回避v1は頭と前靴の過大化、v2は採用しゃがみの寸法へ修正。",
+    "ユーザー指摘の反撃v1は右手に見える左の握りで不採用。v2は左手の掌側を見せ、親指は画面右からカード右下へ、ほかの指はカードの裏へ回す。隠れる指をすべて見えて5本と主張しない。",
+    "ユーザー指摘の通常被弾v1は余分な膝が3脚状。v2で余分な脚をなくし、v3は大きくなった画面右前の靴を修正。股関節から各1膝・1足首・1靴まで追い、2脚2靴を確認。",
+    "ユーザー指摘の強被弾v1の空の右手は6指で不採用。v2は5指だが掌と親指の向きが左手状のため不採用。v3は前腕を自然に回内し甲側を描き、親指1本+4長指の5本と爪側を確認。",
+    "頭と靴は姿勢・投影差が残る。原画は採用待機と原寸比較し、共通枠を埋める拡縮なし。RGBAの整数移動のみ、全7画像を照合。全周30pxより狭い余白はあるが可視輪郭の切断は0。最終美術承認は別。"
+  ]
+}

@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "key": "akatsuki",
+  "name": "暁",
+  "characterIndex": 7,
+  "baseIdle": "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+  "canvasWidth": 1304,
+  "canvasHeight": 1450,
+  "pixelsPerUnit": 532.5893,
+  "sole": 1328,
+  "jobs": [
+    {
+      "id": "run",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/akatsuki/prompts/run_v2.json"
+    },
+    {
+      "id": "jump",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_motion/akatsuki/prompts/jump_v3.json"
+    },
+    {
+      "id": "fall",
+      "version": 1,
+      "promptFile": "art_source/paper_roster_motion/akatsuki/prompts/fall_v1.json"
+    },
+    {
+      "id": "dodge",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/akatsuki/prompts/dodge_v2.json"
+    },
+    {
+      "id": "counter_success",
+      "version": 2,
+      "promptFile": "art_source/paper_roster_motion/akatsuki/prompts/counter_success_v2.json"
+    },
+    {
+      "id": "hit_light",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_motion/akatsuki/prompts/hit_light_v3.json"
+    },
+    {
+      "id": "hit_heavy",
+      "version": 3,
+      "promptFile": "art_source/paper_roster_motion/akatsuki/prompts/hit_heavy_v3.json"
+    }
+  ],
+  "entries": [
+    {
+      "id": "run",
+      "label": "走り",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/run_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n新しい動作「走り」：走る瞬間の強い決め姿。右へ進む両腕の振り、前脚を大きく出し後ろ脚の膝を曲げる。胸と腰の軸はほぼ直立〜前傾10度まで。ゲーム内で絵全体を45度傾けるので、絵に45度の前傾を重ねない。 本人左手には画像2の料理カードを1枚保持。左の親指と人差し指でカード下角を挟み、他の3指は自然に曲げる。手を開く一般指定よりカードの左手つまみを優先。本人右手は空手。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n画像1の待機にカードはないが、今回の動作では左手に画像2のカード1枚を持たせる。紺と金の背面に料理帽・ナイフ・フォーク・トランプのスート、中央は「Battle à la Carte」。幾何学の魔法陣にしない。画像2の透明な周囲の灰色RGBや光彩は描かない。カードは自然に扱える横幅90px・高さ145px程度、巨大化しない。左肩は画面右の奥、左の肘→手首→つまみ握りまで自然に追え、親指と人差し指で下端を挟み、残る中指・薬指・小指の3本は軽く曲げる。右手は空の自然な軽い握り拳。頭髪の横幅約330px、革靴の幅は待機の近い右約140px・遠い左約220pxを基準に投影の変化のみ、屈む姿勢で巨大化しない。全周30px以上の透明余白。",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：採用済みカード背面の料理モチーフ、紺・金の枠と料理道具、文字の参考。人物には使わない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "4aa0bfca0d22920e6e1d5f10fb0694cc40d4a96346d093b7731cf6eead2ace64",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 103,
+          "top": 27,
+          "right": 1128,
+          "bottom": 1277
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/jump_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n新しい動作「ジャンプ上昇」：ジャンプの上昇中。両膝を曲げて両足を浮かせ、両肘も曲げて身体の横へ。上を見た集中した顔。空中攻撃ではなく上昇の明快な全身シルエット。 本人左手には画像2の料理カードを1枚保持。左の親指と人差し指でカード下角を挟み、他の3指は自然に曲げる。手を開く一般指定よりカードの左手つまみを優先。本人右手は空手。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n画像1の待機にカードはないが、今回の動作では左手に画像2のカード1枚を持たせる。紺と金の背面に料理帽・ナイフ・フォーク・トランプのスート、中央は「Battle à la Carte」。幾何学の魔法陣にしない。画像2の透明な周囲の灰色RGBや光彩は描かない。カードは自然に扱える横幅90px・高さ145px程度、巨大化しない。左肩は画面右の奥、左の肘→手首→つまみ握りまで自然に追え、親指と人差し指で下端を挟み、残る中指・薬指・小指の3本は軽く曲げる。右手は空の自然な軽い握り拳。頭髪の横幅約330px、革靴の幅は待機の近い右約140px・遠い左約220pxを基準に投影の変化のみ、屈む姿勢で巨大化しない。全周30px以上の透明余白。",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：採用済みカード背面の料理モチーフ、紺・金の枠と料理道具、文字の参考。人物には使わない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "2c04a86b3bb01404981281fa7dae38ffc8afa01f89d1a07ef4734d5db503826a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 205,
+          "top": 102,
+          "right": 1070,
+          "bottom": 1216
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/jump_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の暁のジャンプイラストを直接編集。画面右上にカードを持つ手だけを、正しい本人左手へ描き直す。左手の掌をこちらへ向ける。左親指は画面右側から出てカードの右下角を押さえ、人差し指はカードの裏側へ。残りの中指・薬指・小指の3本は掌の画面左側に自然に曲げる。手の右側が親指、小指側は左。現在の親指が左から出る右手の形は不採用。左肩・肘・手首は自然につなぐ。手首を反対へ折らない。カードは同じ料理モチーフの背面で、右下角が親指の位置へ来るよう僅かに左へ配置してよい。顔、髪、眼鏡、ジャンプ姿勢、右手の拳、衣装、頭と靴の実寸、塗り・線・白縁は維持。全身拡縮なし。透明PNG、文字や効果の追加なし。",
+      "references": [
+        "art_source/paper_roster_motion/akatsuki/generated/jump_v1.png"
+      ],
+      "referenceRoles": [
+        "画像1：直接編集対象。カードを持つ本人左手だけ修正"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "71ec852c8bb3af18fb6fac269d6640695e86833530e172463371e69d890b07db",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 203,
+          "top": 100,
+          "right": 1089,
+          "bottom": 1219
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "jump",
+      "label": "ジャンプ上昇",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png",
+      "prompt": "Use case: precise-object-edit. 画像1のジャンプの全身はそのまま、カードを持つ本人左手を全く新しく描き直す。左の前腕を自然に回内して、左手の甲をこちらへ向ける。掌を見せない。今見える手のひらの線と丸く折った指の腹は削除する。こちらには滑らかな左手の甲、付け根の関節と爪側だけが見える。左手の親指は画面左、残る指の関節は画面右側。親指と人差し指でカードの下端を挟み、カードの裏側へ指を回して握る。左肩から上腕、肘、手首の接続は自然。画像2の紺金の料理カード背面を同じ小さいカードに使い中央の「Battle à la Carte」も維持。顔、髪、眼鏡、服、右拳、浮いた両脚、頭と靴の実寸、透明キャンバス、クリーム白の外周縁は変えない。全身拡縮、背景、効果、別人物の追加なし。",
+      "references": [
+        "art_source/paper_roster_motion/akatsuki/generated/jump_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "画像1：ジャンプの全身編集対象。左手だけ甲側へ修正",
+        "画像2：正式なカード背面。題字と料理モチーフを維持"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "2490d235fae21648e7888668d7758faf6949153e5f4f2012bcf6b4d7349faf45",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 204,
+          "top": 100,
+          "right": 1089,
+          "bottom": 1218
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/jump.png",
+      "preparedSha256": "1d16745742937434edfd28d3e05af8cc53449cd3c4a3e1e8e7ab08263576cf32",
+      "offsetX": 115,
+      "offsetY": 110,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "run",
+      "label": "走り",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/run_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の走り全身は維持し、カードを持つ左手だけを画像2と同じ甲側の握りへ描き直す。左前腕を自然に回内し、左手の甲をこちらへ見せる。掌の線、丸く折った指の腹は見せない。こちらには滑らかな左手の甲と関節が見える。親指は画面左にあり、カード下端を人差し指とつまみ、指先はカードの裏へ回る。残る3指は自然に曲げる。左肩→肘→手首を逆折れさせない。カードは画像3の「Battle à la Carte」の料理モチーフの背面を維持。顔、髪、眼鏡、制服、右拳、脚、靴、走りの姿勢と全身の部位実寸は変更しない。透明PNGで全外周白縁。全身拡縮・背景・文字追加・効果なし。",
+      "references": [
+        "art_source/paper_roster_motion/akatsuki/generated/run_v1.png",
+        "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "画像1：走りの直接編集対象。左の握りだけ変更",
+        "画像2：自然な甲側の左手のつまみ握りの参考",
+        "画像3：正式な料理カード背面"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "f2a1a4ab377897b7c2d07b76d049c6c98a14cfecdb088b484601218b92b67583",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 101,
+          "top": 25,
+          "right": 1130,
+          "bottom": 1279
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/run.png",
+      "preparedSha256": "8fed37a7fc0ccdd8978718b1b7881261ee80bdf85ed3f33b1f704f665e5cbca8",
+      "offsetX": 0,
+      "offsetY": 49,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "fall",
+      "label": "落下",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/fall_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n新しい動作「落下」：ジャンプから落下中。足を下へ伸ばし膝を柔らかく曲げ、両腕を横へ少し開き着地に備える。両手は待機と同じ軽い握り拳。目線は斜め下前方、ジャンプ上昇と異なる姿。両足は浮いている。 本人左手には画像2の料理カードを1枚保持。左の親指と人差し指でカード下角を挟み、他の3指は自然に曲げる。手を開く一般指定よりカードの左手つまみを優先。本人右手は空手。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n画像1の待機にカードはないが、今回の動作では左手に画像2のカード1枚を持たせる。紺と金の背面に料理帽・ナイフ・フォーク・トランプのスート、中央は「Battle à la Carte」。幾何学の魔法陣にしない。画像2の透明な周囲の灰色RGBや光彩は描かない。カードは自然に扱える横幅90px・高さ145px程度、巨大化しない。左肩は画面右の奥、左の肘→手首→つまみ握りまで自然に追え、親指と人差し指で下端を挟み、残る中指・薬指・小指の3本は軽く曲げる。右手は空の自然な軽い握り拳。頭髪の横幅約330px、革靴の幅は待機の近い右約140px・遠い左約220pxを基準に投影の変化のみ、屈む姿勢で巨大化しない。全周30px以上の透明余白。\n左手は画像3のように前腕を自然に回内し、左手の甲をこちらへ見せてカードを保持。掌の線と丸い指の腹を描かない。滑らかな甲と曲げた指の関節を見せ、親指は画面左、小指側は画面右。親指と人差し指でカードの下端を挟み指先はカードの裏へ。3本は自然に曲げる。腕を逆に折らない。画像3の左握りのみ参考、姿勢は今回の指定を描く。",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+        "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：採用済みカード背面の料理モチーフ、紺・金の枠と料理道具、文字の参考。人物には使わない",
+        "画像3：左手の甲側を見せたカード握りの参考だけ。ジャンプ姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "f534251b943717ee21a262f599e129e0ced7f38549b73d3a58c521b14764d778",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 59,
+          "top": 78,
+          "right": 1162,
+          "bottom": 1228
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/fall.png",
+      "preparedSha256": "5e7dfc6152ba0c64377381d6d400e3e9db370a91078f5575a5202c8879b65a6b",
+      "offsetX": 0,
+      "offsetY": 100,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/dodge_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n新しい動作「回避」：攻撃をくぐる回避。膝と腰を深く落とし、上体を右前へ少し倒す低い姿勢。両腕は身体の横へ引き、両手は待機と同じ軽い握り拳。顔は前を見て警戒。立ち絵や攻撃と区別できる低いシルエット。 本人左手には画像2の料理カードを1枚保持。左の親指と人差し指でカード下角を挟み、他の3指は自然に曲げる。手を開く一般指定よりカードの左手つまみを優先。本人右手は空手。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n画像1の待機にカードはないが、今回の動作では左手に画像2のカード1枚を持たせる。紺と金の背面に料理帽・ナイフ・フォーク・トランプのスート、中央は「Battle à la Carte」。幾何学の魔法陣にしない。画像2の透明な周囲の灰色RGBや光彩は描かない。カードは自然に扱える横幅90px・高さ145px程度、巨大化しない。左肩は画面右の奥、左の肘→手首→つまみ握りまで自然に追え、親指と人差し指で下端を挟み、残る中指・薬指・小指の3本は軽く曲げる。右手は空の自然な軽い握り拳。頭髪の横幅約330px、革靴の幅は待機の近い右約140px・遠い左約220pxを基準に投影の変化のみ、屈む姿勢で巨大化しない。全周30px以上の透明余白。\n左手は画像3のように前腕を自然に回内し、左手の甲をこちらへ見せてカードを保持。掌の線と丸い指の腹を描かない。滑らかな甲と曲げた指の関節を見せ、親指は画面左、小指側は画面右。親指と人差し指でカードの下端を挟み指先はカードの裏へ。3本は自然に曲げる。腕を逆に折らない。画像3の左握りのみ参考、姿勢は今回の指定を描く。",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+        "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：採用済みカード背面の料理モチーフ、紺・金の枠と料理道具、文字の参考。人物には使わない",
+        "画像3：左手の甲側を見せたカード握りの参考だけ。ジャンプ姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "1b16939217f310dda761e0f7a51a59e69381f3bea691a3c39cd9917c33d40be2",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 138,
+          "top": 300,
+          "right": 1158,
+          "bottom": 1229
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "dodge",
+      "label": "回避",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/dodge_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の暁の低い回避ポーズを維持して、過大な部位だけ描き直す。頭髪と顔は画像2のしゃがみと同じ約340pxの幅へ戻し、画像1より約20%小さく。画面左の近い靴は横幅約155px、画像1の大きい前靴より約35%小さくする。画面右の遠い靴は約220px幅。足や頭だけを巨大化する遠近の誇張なし。顔、眼鏡、制服のデザインは維持。低姿勢は上に広い透明余白を残し、キャンバスを埋めない。右手は空の自然な拳、左手は甲側を見せて同じ料理カード1枚を持ち続ける。頭・首・腕・脚は自然につなぐ。全身を一括縮小する方法は禁止、部位のサイズを正しく描き直す。透明PNG、クリーム白の切り抜き縁、背景・効果・文字の追加なし。",
+      "references": [
+        "art_source/paper_roster_motion/akatsuki/generated/dodge_v1.png",
+        "art_source/paper_roster_core/akatsuki/generated/akatsuki_crouch_v1.png"
+      ],
+      "referenceRoles": [
+        "画像1：回避の編集対象。頭と靴の過大化を修正",
+        "画像2：採用しゃがみの頭髪・靴の実寸の参考"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "227e8d966abc88480abc3e9a6c45fa7fbd9f9dedfee1c27ee5c748f075f30cd9",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 165,
+          "top": 415,
+          "right": 1148,
+          "bottom": 1225
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/dodge.png",
+      "preparedSha256": "0440400f869b0214f35b1c8b7529fd3c57168c36a55b454adaeb281da3a48336",
+      "offsetX": 15,
+      "offsetY": 103,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "counter_success",
+      "label": "カウンター成功",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/counter_success_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n新しい動作「カウンター成功」：反撃成功の決め。本人左手に持つ画像2と同じ料理カードを右前へ振り出し、本人右手は胸へ引く。左手の親指と人差し指でカードの下角を挟み残る3指は自然に曲げる。両足で踏み込み冷静な顔。カード背面は既存と同じ紺と金の料理モチーフ。 本人左手には画像2の料理カードを1枚保持。左の親指と人差し指でカード下角を挟み、他の3指は自然に曲げる。手を開く一般指定よりカードの左手つまみを優先。本人右手は空手。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n画像1の待機にカードはないが、今回の動作では左手に画像2のカード1枚を持たせる。紺と金の背面に料理帽・ナイフ・フォーク・トランプのスート、中央は「Battle à la Carte」。幾何学の魔法陣にしない。画像2の透明な周囲の灰色RGBや光彩は描かない。カードは自然に扱える横幅90px・高さ145px程度、巨大化しない。左肩は画面右の奥、左の肘→手首→つまみ握りまで自然に追え、親指と人差し指で下端を挟み、残る中指・薬指・小指の3本は軽く曲げる。右手は空の自然な軽い握り拳。頭髪の横幅約330px、革靴の幅は待機の近い右約140px・遠い左約220pxを基準に投影の変化のみ、屈む姿勢で巨大化しない。全周30px以上の透明余白。\n左手は画像3のように前腕を自然に回内し、左手の甲をこちらへ見せてカードを保持。掌の線と丸い指の腹を描かない。滑らかな甲と曲げた指の関節を見せ、親指は画面左、小指側は画面右。親指と人差し指でカードの下端を挟み指先はカードの裏へ。3本は自然に曲げる。腕を逆に折らない。画像3の左握りのみ参考、姿勢は今回の指定を描く。",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+        "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：採用済みカード背面の料理モチーフ、紺・金の枠と料理道具、文字の参考。人物には使わない",
+        "画像3：左手の甲側を見せたカード握りの参考だけ。ジャンプ姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "48fe51ea4d172276a918394dc096ce0cd9b51ac1f79150a6cfbb86901704c63b",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 129,
+          "top": 84,
+          "right": 1150,
+          "bottom": 1242
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/hit_light_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n新しい動作「通常被弾」：通常攻撃を受けた瞬間。右前方から打撃を受けて胸と顔が少し左後ろへ傾き、片足を後ろへ踏み出す。両膝は曲がり、拳を胸前へ引き、歯を食いしばって何とか踏ん張る。まだ立って耐えている。 本人左手には画像2の料理カードを1枚保持。左の親指と人差し指でカード下角を挟み、他の3指は自然に曲げる。手を開く一般指定よりカードの左手つまみを優先。本人右手は空手。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n画像1の待機にカードはないが、今回の動作では左手に画像2のカード1枚を持たせる。紺と金の背面に料理帽・ナイフ・フォーク・トランプのスート、中央は「Battle à la Carte」。幾何学の魔法陣にしない。画像2の透明な周囲の灰色RGBや光彩は描かない。カードは自然に扱える横幅90px・高さ145px程度、巨大化しない。左肩は画面右の奥、左の肘→手首→つまみ握りまで自然に追え、親指と人差し指で下端を挟み、残る中指・薬指・小指の3本は軽く曲げる。右手は空の自然な軽い握り拳。頭髪の横幅約330px、革靴の幅は待機の近い右約140px・遠い左約220pxを基準に投影の変化のみ、屈む姿勢で巨大化しない。全周30px以上の透明余白。\n左手は画像3のように前腕を自然に回内し、左手の甲をこちらへ見せてカードを保持。掌の線と丸い指の腹を描かない。滑らかな甲と曲げた指の関節を見せ、親指は画面左、小指側は画面右。親指と人差し指でカードの下端を挟み指先はカードの裏へ。3本は自然に曲げる。腕を逆に折らない。画像3の左握りのみ参考、姿勢は今回の指定を描く。",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+        "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：採用済みカード背面の料理モチーフ、紺・金の枠と料理道具、文字の参考。人物には使わない",
+        "画像3：左手の甲側を見せたカード握りの参考だけ。ジャンプ姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "9fbd374e9d47be61674832a10bc68f6f9cefe5d54518d5a0b99346d7271620ba",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 224,
+          "top": 106,
+          "right": 1136,
+          "bottom": 1254
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "hit_heavy",
+      "label": "強被弾",
+      "version": 1,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v1.png",
+      "prompt": "Use case: identity-preserve. ゲーム用全身原画1枚だけ。画像1は本人の採用待機、編集対象と容姿・頭身・部位の実寸基準。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n新しい動作「強被弾」：ハートが減る強い被弾。右前方の衝撃に胸と頭が大きく左後ろへのけぞる。両膝を曲げ一方の足は後ずさり、両手を胸の前に広げる。目をぎゅっとつむり口を大きく開け、目尻に涙粒。いかにも痛そうなコミカルな顔。血・傷・破れなし。 本人左手には画像2の料理カードを1枚保持。左の親指と人差し指でカード下角を挟み、他の3指は自然に曲げる。手を開く一般指定よりカードの左手つまみを優先。本人右手は空手。\n本人の髪・顔・衣装・左右の装備・靴や足先を厳密に維持。同じ普通のアニメの線とセル塗り、薄い硬いクリーム白の切り抜き縁を全外周へ。紙の繊維なし。右向きの斜め横で顔と両腕両脚を見せる。画面の左右と本人の左右を混同せず、肩→肘→手首→手を自然につなぐ。人間は各手5指、左右1本ずつ。ミトンを人の指へ変えない。\n参照と同じ透明キャンバス1189×1323。人物を枠へ合わせて拡縮しない。頭髪・顔・手・靴の実寸は採用待機を維持し、低姿勢は上に大きな透明余白を残す。頭・手先・靴・装備を切らず余白付きの全身。顔や手だけを巨大化しない。道具を動作と無関係に増やさず、指定がない動作では待機と同じ持ち物。縁の外は本物の完全透明。背景、床、影、効果線、衝撃、文字、名前、相手、複数ポーズ、連続コマ、グロー、3D、ピクセルアートは禁止。\n画像1の待機にカードはないが、今回の動作では左手に画像2のカード1枚を持たせる。紺と金の背面に料理帽・ナイフ・フォーク・トランプのスート、中央は「Battle à la Carte」。幾何学の魔法陣にしない。画像2の透明な周囲の灰色RGBや光彩は描かない。カードは自然に扱える横幅90px・高さ145px程度、巨大化しない。左肩は画面右の奥、左の肘→手首→つまみ握りまで自然に追え、親指と人差し指で下端を挟み、残る中指・薬指・小指の3本は軽く曲げる。右手は空の自然な軽い握り拳。頭髪の横幅約330px、革靴の幅は待機の近い右約140px・遠い左約220pxを基準に投影の変化のみ、屈む姿勢で巨大化しない。全周30px以上の透明余白。\n左手は画像3のように前腕を自然に回内し、左手の甲をこちらへ見せてカードを保持。掌の線と丸い指の腹を描かない。滑らかな甲と曲げた指の関節を見せ、親指は画面左、小指側は画面右。親指と人差し指でカードの下端を挟み指先はカードの裏へ。3本は自然に曲げる。腕を逆に折らない。画像3の左握りのみ参考、姿勢は今回の指定を描く。",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png",
+        "art_source/paper_roster_motion/akatsuki/generated/jump_v3.png"
+      ],
+      "referenceRoles": [
+        "採用待機：編集対象、本人の容姿・部位実寸・倍率の基準",
+        "画像2：採用済みカード背面の料理モチーフ、紺・金の枠と料理道具、文字の参考。人物には使わない",
+        "画像3：左手の甲側を見せたカード握りの参考だけ。ジャンプ姿勢はコピーしない"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "c3d34484bfef34cba4ea277b45ac112ac9e6f97e4fa00cd1c798149a64e63f38",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 71,
+          "top": 123,
+          "right": 1041,
+          "bottom": 1363
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "counter_success",
+      "label": "カウンター成功",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/counter_success_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の暁の全身を維持して、画面右に伸ばした腕の先の手を本人の左手へ描き直す。現在は指の付き方が右手なので採用しない。今回は左の前腕を自然に回外し、左手の掌をこちらへ見せ、指は上を向く握りにする。手の甲をこちらへ見せない。左親指の付け根は画面右側、左親指は右側からカードの右下角のこちら面へ重なって押さえる。左人差し指はカード裏側。残りの中指・薬指・小指の3本は掌の画面左側に自然に曲げて収める。掌が見えるのに親指が左から出る右手の形は不可。カードを親指位置へわずかに左へずらしてよい。手首を逆に折らず、左肩・上腕・肘・手首の接続を自然に。カードは画像2の紺金の料理モチーフ「Battle à la Carte」を維持。右拳・顔・髪・眼鏡・制服・脚2本・靴・全身の部位実寸・ポーズを変えない。アニメの線とセル塗り、クリーム白の外周縁、透明PNG、背景・影・効果なし。",
+      "references": [
+        "art_source/paper_roster_motion/akatsuki/generated/counter_success_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "画像1：反撃の編集対象。伸ばした左手のみ描き直す",
+        "画像2：料理カード背面のデザイン基準"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "ce8a19e53c4ab6414329bf4cdd1e22fb2c8b0786cbbf853e6887ff7b4e57c48a",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 76,
+          "top": 35,
+          "right": 1166,
+          "bottom": 1274
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/counter_success.png",
+      "preparedSha256": "2722c3be89a09c332bc0588faabeb6d56c66fea85ecb0909a6feb02906576a2e",
+      "offsetX": 77,
+      "offsetY": 54,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/hit_light_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1は暁の通常被弾の全身。下半身だけを描き直す。現在は股の下から3本目の脚のような余分な紺の膝が見え、不採用。人間の脚を正確に2本だけにする。左右の脚は交差させず、本人右の脚を画面左後ろへ、本人左の脚を画面右前へ置いて後ずさりを耐える。どちらも股関節から太腿1本→膝1個→脛1本→足首1個→黒革靴1個まで連続した自然な脚。余分な膝・ズボンの筒・足首を描かない。両脚の間には自然な透明の隙間を作り、3本目を紺色の布で隠して残さない。右脚と左脚は各1本、靴は2個。頭・顔・髪・眼鏡・歯を食いしばる表情・両腕・カードと左の握り・制服上半身は維持。靴と頭の実寸は変えない。全身アニメ線とセル塗り、全外周の薄いクリーム白縁、透明PNG、背景・床・影・効果・文字の追加なし。",
+      "references": [
+        "art_source/paper_roster_motion/akatsuki/generated/hit_light_v1.png"
+      ],
+      "referenceRoles": [
+        "画像1：通常被弾の編集対象。余分な膝を除いて2脚へ描き直す"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "038fc4025dfabddc87702ce1100e1f42410b90e0b69f772157b623f1b6488958",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 224,
+          "top": 105,
+          "right": 1136,
+          "bottom": 1266
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "hit_heavy",
+      "label": "強被弾",
+      "version": 2,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v2.png",
+      "prompt": "Use case: precise-object-edit. 画像1の胸前に開いている、カードを持っていない本人右手だけを正しく描き直す。現在は指が6本なので不採用。右手は親指1本と、人差し指・中指・薬指・小指の4本、合計ちょうど5本。右の掌をこちらへ向け、4本の長い指は上へ向けて適度に開き、短い親指は画面左の低い位置へ伸ばす。親指は1本のみ。5本それぞれが掌の正しい付け根へつながる。指の間を明確に分け、指の分岐や余分な突起を作らない。手首から指先までの手は自然な大きさ、甲へ裏返さない。右手以外の顔、涙、眼鏡、左手と料理カード、のけぞり姿勢、制服、2本の脚と2個の靴、部位実寸は維持。アニメの線とセル塗り、全外周クリーム白の縁を維持、透明PNG、背景・効果・文字追加なし。",
+      "references": [
+        "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v1.png"
+      ],
+      "referenceRoles": [
+        "画像1：強被弾の直接編集対象。空の右手を5指にする"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "ceea0a796c2c834364be3cdc67f925a1be909d2cedc74345df9da770cab72483",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 70,
+          "top": 121,
+          "right": 1043,
+          "bottom": 1365
+        }
+      },
+      "status": "revision_required",
+      "artApproved": false
+    },
+    {
+      "id": "hit_heavy",
+      "label": "強被弾",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v3.png",
+      "prompt": "Use case: precise-object-edit. 画像1のカードを持っていない本人右手だけを修正。5本の指の数と輪郭の位置は維持。右の前腕を自然に回内して、手の甲をこちらに見せる。掌のしわ・生命線を完全に消し、甲の滑らかな面と指の関節・爪側を描く。手のひらをこちらへ向けない。親指は画面右側、4本の長い指は上向きのまま。これは右の手の甲が見える正しい右手。親指1本と4本の指の計5本は厳守。手を左右反転して掌のままにせず、描かれている面を甲へ直す。手首を逆折れにしない。右手以外の顔・髪・眼鏡・涙・左の料理カードと左腕・制服・2脚2靴・部位実寸・のけぞり姿勢は変更しない。普通のアニメの線とセル塗り、白縁、透明PNGを維持。背景・効果・文字追加なし。",
+      "references": [
+        "art_source/paper_roster_motion/akatsuki/generated/hit_heavy_v2.png"
+      ],
+      "referenceRoles": [
+        "画像1：5指の強被弾v2を直接編集。右手の甲側へ変更"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "b15fe91f95b63f7be34bd3b742a754e135684eab6830c468fb9c560e047d6c18",
+      "native": {
+        "width": 1103,
+        "height": 1426,
+        "bounds": {
+          "left": 68,
+          "top": 120,
+          "right": 1045,
+          "bottom": 1368
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/hit_heavy.png",
+      "preparedSha256": "125b2bffafdc3c0e678c6ba8c2cb071f08728630857c78fef0a841a365ad3719",
+      "offsetX": 37,
+      "offsetY": -40,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    },
+    {
+      "id": "hit_light",
+      "label": "通常被弾",
+      "version": 3,
+      "source": "art_source/paper_roster_motion/akatsuki/generated/hit_light_v3.png",
+      "prompt": "Use case: precise-object-edit. 画像1の暁の通常被弾イラストを直接編集。脚はすでに2本なので維持する。画面右前の大きい黒革靴だけを、待機と同じ横幅約220pxへ約30%小さく描き直す。靴先・甲・踵と靴底の形を同じ比率で保ち、足首とズボンの裾を自然につなぐ。画面左の後ろの靴、2本の脚と膝、股関節のつながり、上半身、頭、顔、眼鏡、髪、両腕とカードの左手握りは変更しない。全身の拡縮なし。頭と左靴の実寸を維持。普通のアニメ線と塗り、クリーム白外周縁、透明PNG。床・影・効果・文字追加なし。",
+      "references": [
+        "art_source/paper_roster_motion/akatsuki/generated/hit_light_v2.png"
+      ],
+      "referenceRoles": [
+        "画像1：2脚へ修正した通常被弾v2を直接編集。前靴のみ寸法修正"
+      ],
+      "tool": "built-in image_gen",
+      "sha256": "15da37b286b3c55a5394949be55dd03a2989d266c74603d3357273d75b3c9c31",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 223,
+          "top": 104,
+          "right": 1138,
+          "bottom": 1238
+        }
+      },
+      "status": "adopted_for_runtime",
+      "artApproved": false,
+      "prepared": "art_source/paper_roster_motion/akatsuki/prepared/hit_light.png",
+      "preparedSha256": "d77944752827916848c79b6f7ba456a46069b766edef3d9fb461e4772720793a",
+      "offsetX": 60,
+      "offsetY": 90,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "gameConnected": true
+    }
+  ],
+  "integrated": true,
+  "verifiedTag": "motion_akatsuki_1"
+}

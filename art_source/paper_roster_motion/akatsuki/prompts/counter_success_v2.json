@@ -1,0 +1,16 @@
+{
+  "id": "counter_success",
+  "label": "カウンター成功",
+  "version": 2,
+  "source": "art_source/paper_roster_motion/akatsuki/generated/counter_success_v2.png",
+  "prompt": "Use case: precise-object-edit. 画像1の暁の全身を維持して、画面右に伸ばした腕の先の手を本人の左手へ描き直す。現在は指の付き方が右手なので採用しない。今回は左の前腕を自然に回外し、左手の掌をこちらへ見せ、指は上を向く握りにする。手の甲をこちらへ見せない。左親指の付け根は画面右側、左親指は右側からカードの右下角のこちら面へ重なって押さえる。左人差し指はカード裏側。残りの中指・薬指・小指の3本は掌の画面左側に自然に曲げて収める。掌が見えるのに親指が左から出る右手の形は不可。カードを親指位置へわずかに左へずらしてよい。手首を逆に折らず、左肩・上腕・肘・手首の接続を自然に。カードは画像2の紺金の料理モチーフ「Battle à la Carte」を維持。右拳・顔・髪・眼鏡・制服・脚2本・靴・全身の部位実寸・ポーズを変えない。アニメの線とセル塗り、クリーム白の外周縁、透明PNG、背景・影・効果なし。",
+  "references": [
+    "art_source/paper_roster_motion/akatsuki/generated/counter_success_v1.png",
+    "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+  ],
+  "referenceRoles": [
+    "画像1：反撃の編集対象。伸ばした左手のみ描き直す",
+    "画像2：料理カード背面のデザイン基準"
+  ],
+  "tool": "built-in image_gen"
+}
