@@ -1,0 +1,26 @@
+[
+  {
+    "step": "nine_character_selection",
+    "visible": "{\"screen\":\"CharacterSelect\",\"picks1\":\"\",\"picks2\":\"\",\"p1mode\":\"\",\"p2mode\":\"\",\"result\":\"\",\"reason\":\"\",\"attackKey\":\"J\",\"menu\":0,\"player1\":7,\"player2\":1,\"selectionPlayer\":0,\"stage\":0,\"tick\":0,\"shrinks\":0,\"hearts1\":0,\"hearts2\":0,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":0.0,\"p1x\":0.0,\"p2x\":0.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":138.013671875,\"practice\":true,\"practicePaused\":false}\n音声: running"
+  },
+  {
+    "step": "akatsuki_two_card_limit_paused",
+    "visible": "{\"screen\":\"Battle\",\"picks1\":\"7\",\"picks2\":\"1\",\"p1mode\":\"Idle\",\"p2mode\":\"Idle\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":7,\"player2\":1,\"selectionPlayer\":1,\"stage\":2,\"tick\":4562,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":-2.149998188018799,\"p2x\":5.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":141.3406219482422,\"practice\":true,\"practicePaused\":true}\n音声: running"
+  },
+  {
+    "step": "akatsuki_up_recovery_paused",
+    "visible": "{\"screen\":\"Battle\",\"picks1\":\"7\",\"picks2\":\"1\",\"p1mode\":\"Special\",\"p2mode\":\"Idle\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":7,\"player2\":1,\"selectionPlayer\":1,\"stage\":2,\"tick\":4584,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":-2.149998188018799,\"p2x\":5.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":141.73272705078125,\"practice\":true,\"practicePaused\":true}\n音声: running"
+  },
+  {
+    "step": "akatsuki_opponent_hit_card_consumed",
+    "visible": "{\"screen\":\"Battle\",\"picks1\":\"7\",\"picks2\":\"1\",\"p1mode\":\"Special\",\"p2mode\":\"Hitstun\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":7,\"player2\":1,\"selectionPlayer\":1,\"stage\":2,\"tick\":8003,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":3.8500025272369385,\"p2x\":5.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":142.47830200195313,\"practice\":true,\"practicePaused\":true}\n音声: running"
+  },
+  {
+    "step": "first_ultimate_input_during_recovery",
+    "visible": "{\"screen\":\"Battle\",\"picks1\":\"7\",\"picks2\":\"1\",\"p1mode\":\"Idle\",\"p2mode\":\"Idle\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":7,\"player2\":1,\"selectionPlayer\":1,\"stage\":2,\"tick\":8162,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":3.8500025272369385,\"p2x\":6.180000305175781,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":142.63754272460938,\"practice\":true,\"practicePaused\":true}\n音声: running"
+  },
+  {
+    "step": "akatsuki_pyramid_landed_wall_confirmed",
+    "visible": "{\"screen\":\"Battle\",\"picks1\":\"7\",\"picks2\":\"1\",\"p1mode\":\"Idle\",\"p2mode\":\"Idle\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":7,\"player2\":1,\"selectionPlayer\":1,\"stage\":2,\"tick\":8285,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":3.8500025272369385,\"p2x\":6.180000305175781,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":142.87721252441406,\"practice\":true,\"practicePaused\":true}\n音声: running"
+  }
+]

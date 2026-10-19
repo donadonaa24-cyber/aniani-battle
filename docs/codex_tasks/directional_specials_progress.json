@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "objective": "DIRECTIONAL_SPECIALS_AND_RECOVERY",
   "baseline": "20563ea",
-  "status": "in_progress",
+  "status": "complete",
   "requirements": [
     {
       "id": "input_and_cooldowns",
@@ -66,8 +66,8 @@
     },
     {
       "id": "webgl_browser_and_requirement_audit",
-      "status": "pending"
+      "status": "passed_build_RGBA_442_builtin_browser_and_requirement_audit"
     }
   ],
-  "nextTask": "DIRECTIONAL_SPECIALS_FINAL_WEB_AUDIT.md"
+  "nextTask": "User feedback or additional request"
 }

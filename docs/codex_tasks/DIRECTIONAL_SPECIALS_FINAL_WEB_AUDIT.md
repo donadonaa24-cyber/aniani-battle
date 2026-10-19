@@ -1,5 +1,7 @@
 # 方向特殊・固有技の最終Web確認（工程E）
 
+2026-10-20完了。NativeのBuildAll/Edit697/Windowsはspecial_refinement_3、ゲームコードを変えずテスト参照だけ修正した全Play91はspecial_refinement_5で合格。directional_specials_web実ビルド/Windows復帰/442RGBA監査/内蔵ブラウザ実キー・音・console0を合格。最終証跡directional_specials_final_verification.json、全要求対照directional_requirements_audit.md。次はユーザーの追加指示のみ。
+
 親指示書はDIRECTIONAL_SPECIALS_AND_RECOVERY.md。工程B/Cの保存済み検証と工程Dの最新証跡をRESUME冒頭から確認する。現在のAssetsが正本、TestResults/refinement_draftは旧草稿なので戻さない。ゲームコードを変えていないテスト修正は、その旨と工程ごとの実際のタグを分けて記録する。
 
 1. 工程Dの4工程の成功をXML/ログ/Windows実行ファイルで確認。暁カードは相手専用、命中で該当カード消滅、各自2枚、未命中20秒。ガードでは消費せず、N投射とは枠独立。

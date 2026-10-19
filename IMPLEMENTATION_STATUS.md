@@ -1,4 +1,12 @@
-## 最新（2026-10-20）：工程DのUnity全4合格、Web最終反映待ち
+## 最新（2026-10-20）：方向特殊・復帰・固有技、Windows/Webの全要求完了
+
+特殊下9人、上復帰9人、残りの固有技改修と9人スタミナをWindows/Webへ反映。暁罠の相手専用・命中消滅・各自2枚を両環境で確認。Unity全4工程はBuildAll/Edit697/697/Windows special_refinement_3、テスト参照だけ修正後の全Play91/91 special_refinement_5、ゲームコードは変更なし。WebGL directional_specials_web成功126,911,594bytes、Windows復帰成功、442/442PNG原画RGBA保持。内蔵ブラウザで実キー/新原画/CD/罠/巨大壁/音声running、console0を確認。
+
+詳細docs/codex_logs/directional_specials_final_verification.json、全要求対照directional_requirements_audit.md、実画面docs/screenshots/directional_specials_web。全9人左右は実Unity、Web確認は記載した暁/メニュー/選択のシナリオ。実機パッド/他ブラウザ個別/低メモリ端末と美術/対人バランス最終承認は今回の実装検証とは別。
+
+必須残作業なし、進行表complete。最新Windows Build/special_refinement_3、Web Build/WebGLと8799、検証タブは練習静止中。保護原画・半減45・14/10ゲージ・通常4枚/下空中N1枚を維持。次はユーザー追加指示のみ、RESUME冒頭を正とする。
+
+## 保存済み（2026-10-20）：工程DのUnity全4合格、Web最終反映待ちだった時点
 
 特殊下9人・上復帰9人に加え、透真追跡ドローン3秒/大ロケット/銃口、王3方向麻痺2秒/左→右→左、暁ピラミッド10秒壁/左手斬り、龍太20秒速度強化、千鶴カレー残留5秒と回復、9人スタミナを実装。暁罠は相手専用・命中カード消滅・各自2枚・未命中20秒。実キーと双方の所有者免疫/期限/割込/表示を検証。
 

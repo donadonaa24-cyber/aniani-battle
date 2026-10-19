@@ -1,0 +1,83 @@
+{
+  "goalComplete": true,
+  "sourceCommit": "66b5e0a",
+  "browser": {
+    "freezeHearts": true,
+    "url": "http://127.0.0.1:8799/?verify=1",
+    "audio": "running",
+    "errors": 0,
+    "volume": {
+      "bgm": 0.35,
+      "se": 0.65
+    },
+    "surface": "built-in browser",
+    "actualInput": [
+      "horizontal menu",
+      "nine-character two-row selection",
+      "player then CPU selection",
+      "Akatsuki two placed cards / own 0/3",
+      "upper recovery new native key and cooldown",
+      "opponent 1/3 and consumed card / placed 0/2",
+      "enlarged pyramid landed solid wall"
+    ],
+    "scopeNote": "All nine characters and both facings were checked in native Unity. Browser checks cover the listed actual-key smoke scenarios, not all nine characters.",
+    "warnings": 0,
+    "practicePaused": true
+  },
+  "remainingRequiredWork": [],
+  "schemaVersion": 1,
+  "evidence": [
+    {
+      "path": "docs/screenshots/directional_specials_web/akatsuki_card_hit_consumed.png",
+      "sha256": "9c5ef1d7ca676126846ad4d54dbf5c34154ed8b03632dce765466b24e89d29e8"
+    },
+    {
+      "path": "docs/screenshots/directional_specials_web/akatsuki_pyramid_wall.png",
+      "sha256": "b562bacd24f34aeb2eca6df92482b80f84abb08187cf3c76784d3e83a590fe4a"
+    },
+    {
+      "path": "docs/screenshots/directional_specials_web/akatsuki_two_card_limit.png",
+      "sha256": "c84c62fa5870078373065e36a6acb74328e5b74d7592e665f4e5562a9542ca31"
+    },
+    {
+      "path": "docs/screenshots/directional_specials_web/akatsuki_up_recovery.png",
+      "sha256": "78f4c939b1c1e94ec8e9c1b072c36af727c3a245f0363242a5a4209be345775a"
+    },
+    {
+      "path": "docs/screenshots/directional_specials_web/console_warnings_errors.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "docs/screenshots/directional_specials_web/nine_character_selection.png",
+      "sha256": "bb6ddbb4a845f730307c2693c9a431b7238bb3bf802065e85e1da379077b19c7"
+    },
+    {
+      "path": "docs/screenshots/directional_specials_web/visible_states.json",
+      "sha256": "2309c4b7aaa495c01304b59acd45681117e4159bd8d51426fdc6e96f22180a83"
+    }
+  ],
+  "pixels": {
+    "checked": 442,
+    "resampled": 0,
+    "failed": 0,
+    "report": "docs/codex_logs/directional_specials_web_pixel_audit.json"
+  },
+  "build": {
+    "logSha256": "535a9d090b2f9319c47616724afa5e22ab3574fa00eea187015286794be90aff",
+    "indexSha256": "59d5fa192fbc81c2bb3be9804662193a345e220a2a5cdfb2968f8d74245bbd5a",
+    "tag": "directional_specials_web",
+    "result": "success",
+    "bytes": 126911594,
+    "files": 6,
+    "seconds": 289.1559268
+  },
+  "retention": "docs/codex_logs/directional_refinement_retention_20261020.json",
+  "date": "2026-10-20",
+  "native": "docs/codex_logs/directional_refinement_verification.json",
+  "windowsRestored": true,
+  "limits": [
+    "Artwork and competitive balance human approval are separate.",
+    "Separate Chrome/Edge, physical gamepads and low-memory devices were not rerun this time.",
+    "Pyramid collision is a solid AABB, not a triangular slope."
+  ]
+}

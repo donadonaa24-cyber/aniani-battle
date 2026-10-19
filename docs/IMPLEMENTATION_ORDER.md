@@ -1,4 +1,10 @@
-## 最新（2026-10-20）：方向特殊のB/C/DがUnityで合格、次は最終Web監査
+## 最新（2026-10-20）：方向特殊のB/C/D/Eを実装・検証・完了
+
+特殊下9人→上復帰9人→固有技/スタミナ→最終Web監査の全工程を完了。UnityはBuildAll/Edit697/697/Windows special_refinement_3、旧テスト参照だけ直した全Play91/91 special_refinement_5で合格。WebGL directional_specials_web実ビルド/Windows復帰成功、442/442RGBA監査と内蔵ブラウザの実キー/音/console0を確認。実タグの区別と証跡はRESUME冒頭、directional_specials_final_verification.json、directional_requirements_audit.md。
+
+今回の必須残作業なし。進行表complete。次はユーザーの追加指示やフィードバックで新しい指示書を作り、完了済み原画/特殊下/復帰/固有技を繰り返さない。現Assetsが正本、旧草稿を戻さない。保護原画・半減45・ゲージ14/10・原画規則を維持。美術/対人バランス最終承認、他ブラウザ/実機パッド個別確認は別の範囲。
+
+## 保存済み（2026-10-20）：方向特殊のB/C/DがUnityで合格、次は最終Web監査だった時点
 
 特殊下B(a388ec6)、上復帰C(dc1cb77)、固有技Dまで実装。DはBuildAll/Edit697/697/Windows special_refinement_3成功、テスト参照だけ修正後の全Play91/91 special_refinement_5成功。ゲームコードとデータは3以降変更なし。各工程の実タグ・原画採用・画像・残課題はRESUME冒頭とdirectional_refinement_verification.json。暁の罠は相手専用・命中消滅・各自2枚で維持。
 

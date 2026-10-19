@@ -1,4 +1,18 @@
-## 最新（2026-10-20）：工程DのUnity全4工程合格、最終Webへ
+## 最新（2026-10-20）：方向特殊・復帰・固有技をWindows/Webへ実装・全要求完了
+
+コード66b5e0aを通常commit/push済み。特殊下9人、上復帰9人、透真/王/暁/龍太/千鶴の固有技改修、9人スタミナ、必要な原画と採用一覧、CD/HUDまで完了。暁の罠は相手だけに蓄積1、命中したカード消滅、各自2枚、未命中20秒。ガードでは消費しない。全要求対照はdocs/codex_logs/directional_requirements_audit.md、最終証跡はdirectional_specials_final_verification.json。
+
+今回の実UnityはBuildAll/Edit697/697/Windows special_refinement_3成功、旧投射物参照テストだけ修正後の全Play91/91 special_refinement_5成功。ゲームコード/データは3以降変更なし。実タグとSHAはdirectional_refinement_verification.json。WebGL directional_specials_webも実ビルド成功126,911,594bytes/289.156秒、Windows設定復帰成功。442/442PNGの原画RGBAと透明余白を保持、原画リサイズなし。Web用UpRecoveryの梱包も接続。
+
+内蔵ブラウザの実キーで横メニュー/9人2段/プレイヤー後にCPU/暁の設置2/2と本人0/3/相手1/3でカード消滅し設置0/2/上復帰の新原画とCD/拡大ピラミッドの着地壁を確認。音声running、音量.35/.65を維持、console warn/error0。実画面・可視状態はdocs/screenshots/directional_specials_web。通常Chrome/Edge個別、実機パッド、低メモリ端末は今回未再検査。全9人左右の全技は実Unityで確認し、Webの確認範囲と分けて記録。
+
+Windows最新Build/special_refinement_3/AniBato.exe、予備directional_up_4。WebはBuild/WebGL、ループバック8799で更新済み、検証タブは練習の静止中（2で再開）で残す。暁の新しい斬り2枚と千鶴残留カレーは日本語現採用へ同期、通常4枚/下空中N1枚、45半減判定/14・10ゲージ、承認龍太v5、保護カバン、全身1枚方式とWeb512/4096を維持。ピラミッドは斜面ではなく全AABB壁。美術/対人バランスのユーザー最終承認は実装完了と別。
+
+必須残作業なし。進行表はcomplete。次はユーザーの追加指示・フィードバックに応じて調整し、完了済みB/C/D/Eや原画を重複生成しない。refinement_draftは旧草稿、現Assetsが正本。既知の旧検証39件/874,035,831bytesをSHA付き整理、D3/D5とdotnet類を保持。詳細directional_refinement_retention_20261020.json。
+
+## 保存済み（2026-10-20）：工程DのUnity全4工程合格、最終Webへ進んだ時点
+
+追記：66b5e0aで通常commit/push済み。directional_specials_webの実WebGLビルドを実行中（完了時にWindowsへ復帰する指定）。442/442PNGの原画RGBA・透明余白保持を監査済み。まだビルド成功と実ブラウザ確認は確定していない。TestResults/directional_specials_web_WebGL.logと_RestoreWindows.logから継続し、既に動いている同じビルドを重複起動しない。既知の旧B/C/失敗/重点結果39件・874,035,831bytesを木構造SHA付きで整理、D3/D5は保持。記録directional_refinement_retention_20261020.json。
 
 特殊下B・上復帰Cに続き工程Dを実装。透真の弾表示y-.55/ロケット表示1.6倍/低速追跡180tick、王の3方向・無HP損失120tick麻痺と左→右→左の時差突撃、暁の巨大ピラミッド着地後600tick固体壁と左手カード斬り、龍太の詠唱完了後1200tick1.5倍、千鶴の初期攻撃後300tick残留カレー/60tick周期1/3/自己回復、9人の役割別スタミナを接続。暁の罠は相手だけ、命中した1枚消滅、各自2枚、未命中20秒。ガードで消費しない。通常45半減判定・14/10ゲージ・通常4枚と下/空中N1枚・承認龍太v5・保護カバンを維持。
 
