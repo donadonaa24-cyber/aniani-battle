@@ -51,10 +51,16 @@ namespace AniBato.Battle
         internal static void OnActive(FighterState fighter)
         {
             var attack = fighter.Attack;
-            if (attack == null || !attack.IsActive || attack.SelfEffectApplied) return;
+            if (attack == null || !attack.IsActive || attack.SelfEffectApplied || attack.Definition.SelfEffectsOnComplete) return;
             attack.SelfEffectApplied = true;
             Heal(fighter, attack.Definition.SelfHealNormalHits);
             Buff(fighter, attack.Definition.SelfBuff);
+        }
+        internal static void OnComplete(FighterState fighter, AttackInstance attack)
+        {
+            if (!attack.Definition.SelfEffectsOnComplete || attack.SelfEffectApplied) return;
+            attack.SelfEffectApplied = true;
+            Heal(fighter, attack.Definition.SelfHealNormalHits); Buff(fighter, attack.Definition.SelfBuff);
         }
         internal static void OnHit(FighterState target, in AttackDefinition definition)
         {

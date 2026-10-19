@@ -23,6 +23,7 @@ namespace AniBato.Battle
         public bool IsComplete => Frame >= Definition.TotalFrames;
         public bool HasHit(int playerIndex) => hitTargets.Contains(playerIndex);
         internal bool MarkHit(int playerIndex) => hitTargets.Add(playerIndex);
+        internal void ForgetHit(int playerIndex) => hitTargets.Remove(playerIndex);
         public BattleRect WorldHitbox(FighterState owner) => Definition.Hitbox.At(owner.Position, owner.Facing);
         public bool Overlaps(FighterState owner, in BattleRect target) => WorldHitbox(owner).Overlaps(target) ||
             (Definition.HasSecondaryHitbox && Definition.SecondaryHitbox.At(owner.Position, owner.Facing).Overlaps(target));

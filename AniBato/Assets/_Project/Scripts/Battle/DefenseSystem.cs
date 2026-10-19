@@ -26,6 +26,10 @@ namespace AniBato.Battle
         {
             var target = contact.Target; var attack = contact.Attack.Definition;
             bool just = target.DefenseAge < rules.Defense.JustWindowFrames && !target.JustExcludedAttacks.Contains(contact.Attack.Id);
+            bool superGuard = target.Attack != null && target.Attack.IsActive && target.Attack.Definition.Ability.SuperGuard;
+            if (superGuard)
+                return StaminaSystem.CanSpend(target, StaminaSystem.GuardCost(target, attack.Kind)) ? DefenseOutcome.Guard :
+                    attack.IsUltimate ? DefenseOutcome.Hit : DefenseOutcome.GuardBreak;
             if (target.Mode == FighterMode.Counter && attack.IsNormal && attack.IsCloseRange && !contact.IsProjectile)
                 return DefenseOutcome.Counter;
             if (target.Mode == FighterMode.Guard)

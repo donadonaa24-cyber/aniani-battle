@@ -4,12 +4,15 @@ namespace AniBato.Battle
 {
     public enum AttackKind { Normal, Special, Ultimate }
     public enum SpecialSlot { Neutral, Side, Up, Down }
+    public enum AttackDamageMode { Standard, NormalAccumulation, StatusOnly }
 
     [Serializable]
     public struct AttackDefinition
     {
         public string Name;
         public AttackAbility Ability;
+        public AttackDamageMode DamageMode;
+        public bool SelfEffectsOnComplete;
         public AttackKind Kind;
         public bool IsCloseRange;
         public NormalDirection NormalDirection;

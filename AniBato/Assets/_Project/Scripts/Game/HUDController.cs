@@ -95,7 +95,8 @@ namespace AniBato.Game
             hud.text = fighter.Definition.Name + "\n" + new string('♥', fighter.Hearts) + new string('♡', runner.Simulation.Rules.InitialHearts - fighter.Hearts) +
                 "   " + fighter.NormalHitCount + "/" + threshold + "\nSTAMINA " + Mathf.FloorToInt(fighter.Stamina) + "/" + fighter.Definition.Stamina.Maximum + "\nLINK " + fighter.Gauge + "/" + runner.Simulation.Rules.Gauge.Maximum +
                 (fighter.UnlimitedUltimates ? "  超必殺 無制限" : GaugeSystem.CanUseUltimate(fighter, runner.Simulation.Rules) ? "  超必殺 READY" : fighter.UltimateUses > 0 ? "  超必殺 使用済" : "");
-            if (fighter.BuffRemaining > 0) hud.text += "  機動強化";
+            hud.text += "\n特殊  " + SpecialCooldownDisplay.Text(fighter, runner.Simulation.Rules.CombatInput);
+            if (fighter.BuffRemaining > 0) hud.text += "  機動強化 " + Mathf.CeilToInt(fighter.BuffRemaining / 60f) + "秒";
             if (staminaBars != null)
             {
                 float fraction = fighter.Definition.Stamina.Maximum > 0 ? fighter.Stamina / fighter.Definition.Stamina.Maximum : 1;
@@ -103,7 +104,7 @@ namespace AniBato.Game
                 staminaBars[index].color = fighter.StaminaRejectedRemaining > 0 && fighter.StaminaRejectedRemaining % 8 < 4 ? Color.red : new Color(.3f, .85f, .65f);
             }
             if (fighter.MarkRemaining > 0) hud.text += "  解析マーク";
-            if (fighter.ParalysisRemaining > 0) hud.text += "  もぐもぐ";
+            if (fighter.ParalysisRemaining > 0) hud.text += "  麻痺";
             if (fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0)
                 hud.text += "  食事中";
             if (fighter.Attack != null && fighter.Attack.Definition.RequiresFollowup && !fighter.Attack.IsActive)

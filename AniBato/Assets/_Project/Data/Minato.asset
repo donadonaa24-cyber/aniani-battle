@@ -53,7 +53,16 @@ MonoBehaviour:
         ReplaceOwnProjectiles: 0
         ProjectileAtDamageFrame: 0
         IndependentNormalProjectile: 0
+        ProjectileChannel: 0
+        PlacementLimit: 0
+        GroundOnly: 0
+        PlaceOnGround: 0
+        ConsumePlacementOnHit: 0
+        SuperGuard: 0
+        Conscious: 0
         Look: 0
+      DamageMode: 0
+      SelfEffectsOnComplete: 0
       Kind: 0
       IsCloseRange: 0
       NormalDirection: 0
@@ -156,7 +165,16 @@ MonoBehaviour:
         ReplaceOwnProjectiles: 0
         ProjectileAtDamageFrame: 0
         IndependentNormalProjectile: 0
+        ProjectileChannel: 0
+        PlacementLimit: 0
+        GroundOnly: 0
+        PlaceOnGround: 0
+        ConsumePlacementOnHit: 0
+        SuperGuard: 0
+        Conscious: 0
         Look: 0
+      DamageMode: 0
+      SelfEffectsOnComplete: 0
       Kind: 0
       IsCloseRange: 0
       NormalDirection: 0
@@ -232,6 +250,7 @@ MonoBehaviour:
   NormalThrowSchemaVersion: 1
   NormalWeaponSchemaVersion: 0
   MoveSetSchemaVersion: 2
+  DirectionalSpecialSchemaVersion: 2
   ActionArtworkSchemaVersion: 1
   DirectionalNormals:
   - {fileID: 0}
@@ -257,7 +276,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 57c95fbadab9d964bac32159d8cfb1d3, type: 2}
   - {fileID: 11400000, guid: bca544369cf8c5740910600531a4dce2, type: 2}
   - {fileID: 11400000, guid: 65f0a1eccd200b0499dc037ca8284ead, type: 2}
-  - {fileID: 11400000, guid: a7db2a97120870a4d93f992c535ccef2, type: 2}
+  - {fileID: 11400000, guid: edd856a4148aab44e938fdeee3b61ea5, type: 2}
   Ultimate: {fileID: 11400000, guid: d08a0179de73c3a459d6cbb121491b3b, type: 2}
   Tint: {r: 0.1, g: 0.8, b: 1, a: 1}
   RoundShape: 0

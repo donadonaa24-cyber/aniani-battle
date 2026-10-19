@@ -79,7 +79,7 @@ namespace AniBato.Battle
                     if (a.AirborneAttack) DirectionMask |= 4;
                     advance = DirectionMask == 7;
                 }
-                if (Step == TutorialStep.Specials && a.Definition.IsSpecial) { SpecialMask |= 1 << (int)p.CurrentSpecial; advance = sim.Rules.CombatInput.SingleSpecial ? SpecialMask == 1 : SpecialMask == 15; }
+                if (Step == TutorialStep.Specials && a.Definition.IsSpecial) { SpecialMask |= 1 << (int)p.CurrentSpecial; advance = (SpecialMask & sim.Rules.CombatInput.RequiredSpecialMask) == sim.Rules.CombatInput.RequiredSpecialMask; }
             }
             foreach (var e in sim.Events)
             {

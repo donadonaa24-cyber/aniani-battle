@@ -1,3 +1,14 @@
+## 最新（2026-10-20）：特殊下9人を実装、全4工程合格。全体ゴールは継続中
+
+全体指示書docs/codex_tasks/DIRECTIONAL_SPECIALS_AND_RECOVERY.md、進行表directional_specials_progress.json。今回A/Bのみ：下+特殊の独立入力・CD表示、透真/シロの相手の向きに基づく背後転移、蓮/結衣/王の超ガード+1/3反撃、湊の床地雷、暁の罠カード、龍太の読書完了後5秒1.5倍、千鶴2.5秒食事後通常蓄積1回復・CD20秒を実装。暁は相手だけにダメージ、命中で消え、20秒期限・各自同時2枚、N投射と枠独立、枚数HUD。ガード時は消えず再接触を受付。湊地雷を内蔵imagegenで生成し原画RGBAのまま接続。通常/特殊/超必殺の標準ダメージは変更せず、1/3と状態効果専用の分類を追加。
+
+今回directional_down_2：BuildAll成功／Edit643/643／Play86/86／Windows成功、失敗・スキップ0。両向きの実キー・9人のCD・回復完了と割込・相手裏側・各自2枚と自分の罠免疫・命中消滅・期限・防御後再接触・既存技と別枠を検証。18枚はTestResults/directional_down_2/captures/directional_down/、代表3枚はdocs/screenshots/directional_down_2/。撮影は舞台全景でHUDオーバーレイを含まない。HUD文字は実PlayModeで検証済み。詳細docs/codex_logs/directional_down_verification.json。初回はEdit639/641、Play85/86。新技の共通反動設定と旧共有技/単一特殊前提の検証を新仕様へ更新して再実行。Unity内部の画像キャッシュ診断はログに残るが、今回テスト失敗なし。
+
+次は工程C docs/codex_tasks/DIRECTIONAL_RECOVERY_STAGE_C.md：全9人の上復帰・接触1/3・着地制限・CPU/練習/技表へ。art_source/directional_specials/に千鶴風船v2、透真ドローン、暁羽ばたき、龍太本キックの各1原画を生成済み、まだゲーム未接続。artwork-status.jsonの状態とSHAを確認し、接続と部位サイズ審査を行う。内蔵生成を使用、全文条件prompts/。未採用千鶴v1も工程記録として保管。
+
+全体に残るもの：上復帰、透真銃口/追尾ドローン/ロケット、王の3方向麻痺/時差横突撃、暁巨大ピラミッド10秒固体壁/カード斬り、龍太超必殺完了後20秒強化、千鶴カレー5秒残留/回復、9人スタミナ、最終Webと全要求監査。Webは20563eaの音版のまま、今回の特殊下は未反映。Windows最新Build/directional_down_2、予備directional_down_1（初回テスト失敗を含むため検証済み予備として扱わない）。半減45判定・14/10ゲージ・既存通常4枚・下/空中N1枚・56動作・承認済み龍太被弾v5・カバン保護・Web512/4096を維持。
+
+
 ## 最新（2026-10-19）：BGM4曲・SE19音の紙舞台版をUnity/Webへ反映完了
 
 指示書docs/codex_tasks/PAPER_THEATRE_AUDIO_REFRESH.md。旧180BPM試作を、メニュー144／SF156／推し駒164／料理172BPM・各16小節の新規オリジナル4曲へ変更。木琴・弦・鍵盤・リード・ベルと舞台ごとのリズム、紙の風切り／厚紙のヒット／木の防御／決着ジングル等19SEを自作PCM合成。24kHz、曲切替0.35秒クロスフェード、強いSEでBGMを滑らかに抑制。BGM/SE音量設定と戦闘・原画を維持。StyleVersion1で一度だけ移行し、以後の調整値は保持する。

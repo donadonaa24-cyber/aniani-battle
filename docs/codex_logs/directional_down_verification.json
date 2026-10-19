@@ -1,0 +1,43 @@
+{
+  "tests": [
+    {
+      "xmlSha256": "1f9e540cc162222089c77c43b574c36f5c1d9b4717d499a67dee271ef9d98959",
+      "platform": "EditMode",
+      "failed": 0,
+      "total": 643,
+      "passed": 643,
+      "skipped": 0
+    },
+    {
+      "xmlSha256": "305f650fef55d4297616cd46667422a5e2c1e42cbfd80a5cd699a94fbd336528",
+      "platform": "PlayMode",
+      "failed": 0,
+      "total": 86,
+      "passed": 86,
+      "skipped": 0
+    }
+  ],
+  "tag": "directional_down_2",
+  "buildAll": "passed",
+  "previousAttempt": {
+    "play": "85/86",
+    "edit": "639/641",
+    "fixes": [
+      "preserve common damage recoil .18/6",
+      "independent down assets instead of old shared slot assumption",
+      "real Down+K selects Down rather than legacy Neutral"
+    ],
+    "tag": "directional_down_1"
+  },
+  "windowsBuild": "passed",
+  "captures": "TestResults/directional_down_2/captures/directional_down",
+  "schemaVersion": 1,
+  "notes": [
+    "Native allocator cache diagnostics remain in Unity logs; test results all pass, no assertion ignored",
+    "Up recovery, remaining character move changes, stamina and final WebGL are still pending"
+  ],
+  "date": "2026-10-20",
+  "goalComplete": false,
+  "captureNote": "18 full-stage camera captures; HUD text asserted in PlayMode, overlay is not present in camera.Render screenshots",
+  "stage": "B_down_specials"
+}

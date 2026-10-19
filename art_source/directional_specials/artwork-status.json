@@ -1,0 +1,43 @@
+{
+  "artFinalHumanApproval": "pending",
+  "date": "2026-10-20",
+  "entries": [
+    {
+      "prompt": "minato_mine_v1.txt",
+      "sha256": "cf4693b31707c0c102978d2e3dc1d6db6c03765df870be1b2adb8a5af989d261",
+      "state": "connected_in_down_2",
+      "file": "minato_mine_v1.png",
+      "id": "minato_mine"
+    },
+    {
+      "prompt": "chizuru_balloon_recovery_v2.txt",
+      "sha256": "3d08557c814d5be2fa36cfd2993dfb3a241067e2b20d050c7c43bac4c63b5f05",
+      "state": "generated_not_connected",
+      "file": "chizuru_balloon_recovery_v2.png",
+      "id": "chizuru_recovery"
+    },
+    {
+      "prompt": "toma_drone_recovery_v1.txt",
+      "sha256": "1feac6f708c94170a3f1a2e89f565fb0e340e025c2d505463a6f531bb9881b3f",
+      "state": "generated_not_connected",
+      "file": "toma_drone_recovery_v1.png",
+      "id": "toma_recovery"
+    },
+    {
+      "prompt": "akatsuki_flap_recovery_v1.txt",
+      "sha256": "02e946160713892fff62ae999600677c6076bd9f63e6649c978bca031912314a",
+      "state": "generated_not_connected",
+      "file": "akatsuki_flap_recovery_v1.png",
+      "id": "akatsuki_recovery"
+    },
+    {
+      "prompt": "ryuta_book_recovery_v1.txt",
+      "sha256": "27b4ad374a8a4a6bb2e7b4b3644a6e7ac96979ac43cfe36431edc1185a960d08",
+      "state": "generated_not_connected",
+      "file": "ryuta_book_recovery_v1.png",
+      "id": "ryuta_recovery"
+    }
+  ],
+  "schemaVersion": 1,
+  "provider": "built-in imagegen"
+}

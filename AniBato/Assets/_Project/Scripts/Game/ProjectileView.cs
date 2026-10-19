@@ -36,6 +36,7 @@ namespace AniBato.Game
                 Sprite sprite = !placeholder && animations ? animations.Effect(clip, projectile.Attack.Definition.ProjectileLifetimeFrames - projectile.RemainingFrames) : null;
                 var paper = character.PaperMotion;
                 var art = paper ? paper.Projectile(look) : null;
+                if (look == AbilityLook.TrapCard && paper) art = paper.Projectile(AbilityLook.Card);
                 if (!placeholder && paper && paper.Enabled && (normal ? paper.Bag : paper.RiceBall)) sprite = normal ? paper.Bag : paper.RiceBall;
                 if (placeholder) sprite = null;
                 sprites[i].sprite = sprite ? sprite : ProceduralSprites.Shape(true);

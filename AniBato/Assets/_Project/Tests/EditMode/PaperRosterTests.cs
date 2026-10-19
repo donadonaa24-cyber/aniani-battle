@@ -27,7 +27,9 @@ namespace AniBato.Tests
                 foreach(int slot in new[]{1,2,3})Assert.That(data.DirectionalNormals[slot],Is.Not.SameAs(original.DirectionalNormals[slot]));
                 foreach(int slot in new[]{4,5,6,7,8,9})Assert.That(data.DirectionalNormals[slot],Is.SameAs(original.DirectionalNormals[slot]));
                 Assert.That(data.Specials[0],Is.Not.SameAs(original.Specials[0]));
-                foreach(int slot in new[]{1,2,3})Assert.That(data.Specials[slot],Is.SameAs(original.Specials[slot]));
+                foreach(int slot in new[]{1,2})Assert.That(data.Specials[slot],Is.SameAs(original.Specials[slot]));
+                Assert.That(data.Specials[3],Is.Not.SameAs(original.Specials[3]));
+                Assert.That(data.Specials[3].Definition.Name,Is.EqualTo(AniBato.EditorTools.DirectionalSpecialBuilder.Down(i).Name));
                 Assert.That(data.Ultimate,Is.Not.SameAs(original.Ultimate));Assert.That(data.PaperMotion.Sprite,Is.SameAs(data.SelectionSprite));
                 Assert.DoesNotThrow(()=>new BattleSimulation(data.ToDefinition(),original.ToDefinition(),PhaseOneDefaults.Rules(),Setup.Stages[0].ToGeometry()));
             }

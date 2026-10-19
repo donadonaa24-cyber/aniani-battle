@@ -16,12 +16,12 @@ namespace AniBato.Battle
                 !StaminaSystem.CanSpend(target, StaminaSystem.GuardCost(target, AttackKind.Ultimate))) StaminaSystem.Reject(target);
             combo.RegisterHit(tick, rules, attack.Definition.IsNormal);
             events.Add(new BattleEvent(BattleEventKind.Hit, tick, source.PlayerIndex, target.PlayerIndex, attack.Id, combo.HitCount, attack.Definition.Kind));
-            if (attack.Definition.IsNormal)
+            if (attack.Definition.IsNormal || attack.Definition.DamageMode == AttackDamageMode.NormalAccumulation)
             {
                 AccumulateNormal(target, combo, source.PlayerIndex, attack.Id, tick, rules, events);
             }
             // Damage hooks already preserve normal accumulation for future specials/ultimates.
-            else if (combo.TryLoseHeart(rules, attack.Definition.IsUltimate))
+            else if (attack.Definition.DamageMode != AttackDamageMode.StatusOnly && combo.TryLoseHeart(rules, attack.Definition.IsUltimate))
                 LoseHearts(target, attack.Definition.IsUltimate ? 2 : 1, source.PlayerIndex, attack.Id, tick, events);
             GaugeSystem.Add(source, rules.Gauge.OnHit, tick, rules, events);
             GaugeSystem.Add(target, rules.Gauge.OnDamaged, tick, rules, events);

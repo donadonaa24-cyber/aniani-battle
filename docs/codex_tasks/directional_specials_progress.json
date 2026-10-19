@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "objective": "DIRECTIONAL_SPECIALS_AND_RECOVERY",
+  "baseline": "20563ea",
+  "status": "in_progress",
+  "requirements": [
+    {
+      "id": "input_and_cooldowns",
+      "status": "partial_down_native_verified"
+    },
+    {
+      "id": "minato_mine",
+      "status": "native_verified"
+    },
+    {
+      "id": "touma_guns_drone_rocket",
+      "status": "pending"
+    },
+    {
+      "id": "touma_shiro_down_teleport",
+      "status": "native_verified"
+    },
+    {
+      "id": "shogi_super_guards",
+      "status": "native_verified"
+    },
+    {
+      "id": "king_three_supports_special_and_ultimate",
+      "status": "pending"
+    },
+    {
+      "id": "ryuta_reading_buffs",
+      "status": "partial_down_native_verified",
+      "downSeconds": 5,
+      "ultimateSeconds": 20,
+      "speedMultiplier": 1.5
+    },
+    {
+      "id": "akatsuki_pyramid_card_slash_and_trap",
+      "status": "partial_trap_native_verified",
+      "wallSecondsAfterLanding": 10,
+      "trapSeconds": 20
+    },
+    {
+      "id": "chizuru_curry_and_meal",
+      "status": "partial_meal_native_verified",
+      "currySeconds": 5,
+      "mealLockSeconds": 2.5,
+      "mealCooldownSeconds": 20
+    },
+    {
+      "id": "all_nine_stamina",
+      "status": "pending"
+    },
+    {
+      "id": "all_nine_recoveries",
+      "status": "pending"
+    },
+    {
+      "id": "artwork_and_visuals",
+      "status": "partial_mine_connected_four_recovery_keys_generated"
+    },
+    {
+      "id": "native_all_four",
+      "status": "stage_B_passed_643_86"
+    },
+    {
+      "id": "webgl_browser_and_requirement_audit",
+      "status": "pending"
+    }
+  ]
+}

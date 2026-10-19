@@ -35,7 +35,16 @@ MonoBehaviour:
       ReplaceOwnProjectiles: 0
       ProjectileAtDamageFrame: 0
       IndependentNormalProjectile: 0
+      ProjectileChannel: 0
+      PlacementLimit: 0
+      GroundOnly: 0
+      PlaceOnGround: 0
+      ConsumePlacementOnHit: 0
+      SuperGuard: 0
+      Conscious: 0
       Look: 0
+    DamageMode: 0
+    SelfEffectsOnComplete: 0
     Kind: 0
     IsCloseRange: 1
     NormalDirection: 10

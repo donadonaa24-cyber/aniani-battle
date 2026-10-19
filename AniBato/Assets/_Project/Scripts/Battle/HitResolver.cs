@@ -9,8 +9,9 @@ namespace AniBato.Battle
         public readonly AttackInstance Attack;
         public readonly int Facing;
         public readonly bool IsProjectile;
-        public HitContact(FighterState attacker, FighterState target, AttackInstance attack, bool projectile = false, int facing = 0)
-        { Attacker = attacker; Target = target; Attack = attack; Facing = facing == 0 ? attacker.Facing : facing; IsProjectile = projectile; }
+        public readonly Projectile Projectile;
+        public HitContact(FighterState attacker, FighterState target, AttackInstance attack, bool projectile = false, int facing = 0, Projectile projectileRef = null)
+        { Attacker = attacker; Target = target; Attack = attack; Facing = facing == 0 ? attacker.Facing : facing; IsProjectile = projectile; Projectile = projectileRef; }
     }
 
     public sealed class HitResolver
@@ -27,10 +28,10 @@ namespace AniBato.Battle
         }
         public void Gather(Projectile projectile, FighterState target, List<HitContact> contacts)
         {
-            if (projectile.Attack.Clashed || projectile.RemainingFrames <= 0 || projectile.Attack.HasHit(target.PlayerIndex) || target.Mode == FighterMode.KO ||
+            if (projectile.Owner == target || projectile.ContactCooldown > 0 || projectile.Attack.Clashed || projectile.RemainingFrames <= 0 || projectile.Attack.HasHit(target.PlayerIndex) || target.Mode == FighterMode.KO ||
                 target.ImmunityFrom(projectile.Owner.PlayerIndex) > 0 || target.HeartRecoveryRemaining > 0) return;
             if (projectile.Hitbox.Overlaps(target.Hurtbox) && projectile.Attack.MarkHit(target.PlayerIndex))
-                contacts.Add(new HitContact(projectile.Owner, target, projectile.Attack, true, projectile.Facing));
+                contacts.Add(new HitContact(projectile.Owner, target, projectile.Attack, true, projectile.Facing, projectile));
         }
     }
 }

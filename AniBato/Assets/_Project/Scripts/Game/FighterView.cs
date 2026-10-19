@@ -71,6 +71,14 @@ namespace AniBato.Game
             if(fighter.ChargeFrames>0)ultimatePoseHold.Reset();
             if(character.PaperMotion&&character.PaperMotion.Enabled)
                 sample=ultimatePoseHold.Evaluate(sample,runner.Simulation.Match.TickCount,character.PaperMotion.UltimateImpactMinimumTicks);
+            // Reuse an existing whole key illustration; keep the public motion sample truthful.
+            if (fighter.Attack != null && sample.State == AniBato.Presentation.AnimationState.SpecialDown)
+            {
+                var ability = fighter.Attack.Definition.Ability;
+                if (ability.SuperGuard) sample.State = fighter.Attack.IsActive ? AniBato.Presentation.AnimationState.SpecialNeutral : AniBato.Presentation.AnimationState.Guard;
+                else if (ability.Look == AbilityLook.Reading) { sample.State = AniBato.Presentation.AnimationState.Ultimate; sample.Startup = sample.DamageDelay = 0; }
+                else if (ability.Conscious) sample.State = AniBato.Presentation.AnimationState.Dodge;
+            }
             UsesAnimationSprites = character.Animations && character.Animations.TrySprite(sample, out sprite);
             PaperPose paperPose = null; Sprite paperSprite = null;
             UsesPaperSprite = character.PaperMotion && character.PaperMotion.TrySprite(sample, fighter.LastDamageLostHeart, out paperSprite, out paperPose);
@@ -132,6 +140,8 @@ namespace AniBato.Game
             if (UsesAnimationSprites && effects != null && sample.State == AniBato.Presentation.AnimationState.SpecialSide)
                 body.color = effects.SideSpecialTint;
             if (fighter.Mode == FighterMode.Guard) body.color = presentation.GuardTint;
+            if (fighter.Attack != null && fighter.Attack.IsActive && fighter.Attack.Definition.Ability.SuperGuard) body.color = presentation.GuardTint;
+            if (fighter.Attack != null && fighter.Attack.Definition.Ability.Conscious) body.color = new Color(.65f, .9f, 1, .7f);
             if (fighter.Mode == FighterMode.Dodge) body.color = presentation.DodgeTint;
             if (fighter.Mode == FighterMode.Counter) body.color = presentation.CounterTint;
             if (fighter.ParalysisRemaining > 0) body.color = Color.Lerp(baseColor, Color.yellow, 0.6f);

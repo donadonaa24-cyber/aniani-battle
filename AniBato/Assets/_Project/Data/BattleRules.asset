@@ -37,12 +37,14 @@ MonoBehaviour:
       FlowingAerialNormal: 1
       SingleSpecial: 1
       NormalClashes: 1
+      DownSpecialEnabled: 1
+      UpRecoveryEnabled: 0
       ClashStopFrames: 5
       ClashRecoveryFrames: 10
     DropThroughSpeed: 8
     DirectionThreshold: 0.5
     EnableRingOut: 1
-    SchemaVersion: 9
+    SchemaVersion: 10
     Defense:
       GuardReleaseFrames: 6
       GuardStunFrames: 10

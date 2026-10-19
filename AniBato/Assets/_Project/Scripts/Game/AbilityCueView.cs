@@ -24,6 +24,7 @@ namespace AniBato.Game
         {
             var attack = finished ? null : fighter.Attack;
             var art=paper?(paper.AbilityEffect(sample.State)??(attack==null?null:paper.AbilityEffect(attack.Definition.Ability.Look))):null;
+            if (attack != null && (attack.Definition.Ability.SuperGuard || attack.Definition.Ability.Look == AbilityLook.Reading)) art = null;
             artwork.enabled=!finished&&art!=null&&art.Visible(sample);
             if(art!=null)
             {
@@ -49,6 +50,7 @@ namespace AniBato.Game
                     case AbilityLook.Emp: text = "電磁パルス"; break;
                     case AbilityLook.Teleport: text = attack.IsActive ? "瞬移" : "接続…"; break;
                     case AbilityLook.Spell: text = "ABC…?!"; break;
+                    case AbilityLook.Reading: text = "読書中…"; break;
                     case AbilityLook.Bat: text = "バット！"; break;
                     case AbilityLook.BlackHole:
                         text = "意識空間"; var color = body.color; color.a *= .6f; body.color = color; break;

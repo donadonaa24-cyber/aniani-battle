@@ -69,6 +69,7 @@ namespace AniBato.Battle
                 if (fighter.Attack.IsComplete)
                 {
                     var previous = fighter.Attack;
+                    SkillSystem.OnComplete(fighter, previous);
                     fighter.Attack = null;
                     if (previous.NextQueued) StartNormal(fighter, previous.ChainIndex + 1, previous.AirborneAttack, previous.Definition.NormalDirection, rules);
                 }
@@ -113,9 +114,11 @@ namespace AniBato.Battle
                 fighter.InputBuffer.ClearActions(); return;
             }
             BattleVector specialDirection = fighter.InputBuffer.DirectionFor(InputButtons.Special);
-            SpecialSlot slot = rules.CombatInput.SingleSpecial ? SpecialSlot.Neutral : specialDirection.Y > rules.DirectionThreshold ? SpecialSlot.Up : specialDirection.Y < -rules.DirectionThreshold ? SpecialSlot.Down :
-                Math.Abs(specialDirection.X) > rules.DirectionThreshold ? SpecialSlot.Side : SpecialSlot.Neutral;
-            if (fighter.SpecialCooldown(slot) == 0 && (slot != SpecialSlot.Up || !fighter.UpSpecialUsed) && fighter.InputBuffer.Consume(InputButtons.Special, tick))
+            SpecialSlot slot = rules.CombatInput.SpecialDirection(specialDirection, rules.DirectionThreshold);
+            var special = fighter.Definition.Special(slot);
+            bool placementAvailable = special.Ability.PlacementLimit == 0 || fighter.PlacedCount < special.Ability.PlacementLimit;
+            if (fighter.SpecialCooldown(slot) == 0 && placementAvailable && (!special.Ability.GroundOnly || fighter.Grounded) &&
+                (slot != SpecialSlot.Up || !fighter.UpSpecialUsed) && fighter.InputBuffer.Consume(InputButtons.Special, tick))
             {
                 if (fighter.Grounded && Math.Abs(specialDirection.X) > rules.DirectionThreshold) fighter.Facing = specialDirection.X > 0 ? 1 : -1;
                 fighter.CurrentSpecial = slot;

@@ -2,9 +2,10 @@ using System;
 
 namespace AniBato.Battle
 {
-    public enum AbilityMotion { None, Teleport, TwoPhaseRush }
+    public enum AbilityMotion { None, Teleport, TwoPhaseRush, TeleportBehind }
+    public enum ProjectileChannel { Shared, Placed, Aftermath }
     public enum ShotOrigin { Owner, OpponentAbove, StageCenter }
-    public enum AbilityLook { Default, Bullet, Drone, Rocket, BlackHole, Emp, Alma, Rook, Bishop, King, Card, Pyramid, Spell, Curry, Teleport, RiceBall, Bat }
+    public enum AbilityLook { Default, Bullet, Drone, Rocket, BlackHole, Emp, Alma, Rook, Bishop, King, Card, Pyramid, Spell, Curry, Teleport, RiceBall, Bat, Mine, TrapCard, Meal, Reading }
     [Serializable]
     public struct AttackAbility
     {
@@ -18,15 +19,19 @@ namespace AniBato.Battle
         public float ProjectilePullRadius, ProjectilePullSpeed;
         public bool AllowZeroProjectileSpeed, ReplaceOwnProjectiles, ProjectileAtDamageFrame;
         public bool IndependentNormalProjectile;
+        public ProjectileChannel ProjectileChannel;
+        public int PlacementLimit;
+        public bool GroundOnly, PlaceOnGround, ConsumePlacementOnHit, SuperGuard, Conscious;
         public AbilityLook Look;
         public void Validate()
         {
-            if (ProjectileCount < 0 || ProjectileCount > 16 || ProjectileSpacing < 0 || !Finite(ProjectileSpacing) ||
+            if (PlacementLimit < 0 || PlacementLimit > 8 || PlaceOnGround && ProjectileChannel != ProjectileChannel.Placed ||
+                ProjectileCount < 0 || ProjectileCount > 16 || ProjectileSpacing < 0 || !Finite(ProjectileSpacing) ||
                 ProjectilePullRadius < 0 || ProjectilePullSpeed < 0 || !Finite(ProjectilePullRadius) || !Finite(ProjectilePullSpeed) ||
                 (ProjectilePullRadius > 0) != (ProjectilePullSpeed > 0) ||
                 TeleportRange < 0 || TargetGap < 0 || TargetRange < 0 || !Finite(TeleportRange) || !Finite(TargetGap) || !Finite(TargetRange) ||
                 !Finite(FirstVelocity.X) || !Finite(FirstVelocity.Y) || !Finite(SecondVelocity.X) || !Finite(SecondVelocity.Y) ||
-                Motion == AbilityMotion.Teleport && TeleportRange <= 0 || Motion == AbilityMotion.TwoPhaseRush && ChangeFrame < 1)
+                (Motion == AbilityMotion.Teleport || Motion == AbilityMotion.TeleportBehind) && TeleportRange <= 0 || Motion == AbilityMotion.TwoPhaseRush && ChangeFrame < 1)
                 throw new ArgumentException("固有技の移動・投射定義が不正です。");
         }
         private static bool Finite(float value) => !float.IsNaN(value) && !float.IsInfinity(value);
@@ -39,11 +44,13 @@ namespace AniBato.Battle
             var attack = self.Attack;
             if (attack == null || !attack.IsActive || self.IsFrozenThisTick) return;
             var ability = attack.Definition.Ability;
-            if (ability.Motion == AbilityMotion.Teleport && !attack.AbilityApplied)
+            if ((ability.Motion == AbilityMotion.Teleport || ability.Motion == AbilityMotion.TeleportBehind) && !attack.AbilityApplied)
             {
                 attack.AbilityApplied = true;
                 var floor = stage[0].Bounds; float half = self.Definition.HurtboxSize.X * .5f;
-                float desiredX = Math.Max(floor.Left + half, Math.Min(floor.Right - half, target.Position.X - self.Facing * ability.TargetGap));
+                int referenceFacing = ability.Motion == AbilityMotion.TeleportBehind ? target.Facing : self.Facing;
+                float requestedX = target.Position.X - referenceFacing * ability.TargetGap;
+                float desiredX = ability.Motion == AbilityMotion.TeleportBehind ? requestedX : Math.Max(floor.Left + half, Math.Min(floor.Right - half, requestedX));
                 var delta = new BattleVector(desiredX - self.Position.X, target.Position.Y - self.Position.Y);
                 float length = (float)Math.Sqrt(delta.X * delta.X + delta.Y * delta.Y);
                 if (length > ability.TeleportRange) delta *= ability.TeleportRange / length;
@@ -53,6 +60,7 @@ namespace AniBato.Battle
                 for (int i = 0; i < stage.PlatformCount; i++)
                     if (stage.IsActive(i) && !stage[i].OneWay && body.Overlaps(stage[i].Bounds)) return;
                 self.Position = destination;
+                if (ability.Motion == AbilityMotion.TeleportBehind) self.Facing = target.Position.X >= self.Position.X ? 1 : -1;
                 self.Velocity = default; self.Grounded = false; self.GroundPlatform = -1;
             }
             if (ability.Motion != AbilityMotion.TwoPhaseRush) return;

@@ -42,6 +42,7 @@
         public int ChargeFrames { get; internal set; }
         internal NormalDirection ChargeDirection;
         public bool UpSpecialUsed { get; internal set; }
+        public int PlacedCount { get; internal set; }
         public int ActionFrames { get; internal set; }
         public int DefenseAge { get; internal set; }
         public int GuardStunRemaining { get; internal set; }

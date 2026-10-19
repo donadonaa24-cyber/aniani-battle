@@ -622,6 +622,17 @@ MonoBehaviour:
     FlipWithFacing: 0
     RotationOffsetDegrees: 0
     SortingOrder: 3
+  - Look: 17
+    Sprite: {fileID: 21300000, guid: c5d1857ae7a46c6449f043ade99063a9, type: 3}
+    Variants: []
+    VariantVisibleSizes: []
+    Scale: 1
+    FitToHitbox: 1
+    VisibleSize: {x: 2.6774852, y: 1.3293545}
+    RotateWithVelocity: 0
+    FlipWithFacing: 0
+    RotationOffsetDegrees: 0
+    SortingOrder: 7
   AbilityEffects:
   - State: 10
     Look: 14

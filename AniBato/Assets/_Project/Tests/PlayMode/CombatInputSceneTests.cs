@@ -34,7 +34,7 @@ namespace AniBato.Tests
             Capture("normal_clash", false, "rework_r1");
         }
         [UnityTest]
-        public IEnumerator EveryCharacterUsesGroundUpAndDownAndOneSpecialThroughRealInput()
+        public IEnumerator EveryCharacterUsesGroundUpAndDownAndDirectionalSpecialsThroughRealInput()
         {
             var keys = controller.Bindings.P1;
             foreach (var character in runner.Setup.Characters)
@@ -58,9 +58,10 @@ namespace AniBato.Tests
                 {
                     runner.BeginMatch(character, runner.Setup.Character(2), runner.CurrentStage, false);
                     yield return Key(direction, true); yield return Key(keys.Special, true); Tick();
-                    Assert.That(runner.Simulation.P1.CurrentSpecial, Is.EqualTo(SpecialSlot.Neutral));
-                    Assert.That(runner.Simulation.P1.Attack.Definition.Name, Is.EqualTo(character.Specials[0].Definition.Name));
-                    Assert.That(view.RenderedSample.State, Is.EqualTo(AnimationState.SpecialNeutral));
+                    var slot = direction == keys.Down ? SpecialSlot.Down : SpecialSlot.Neutral;
+                    Assert.That(runner.Simulation.P1.CurrentSpecial, Is.EqualTo(slot));
+                    Assert.That(runner.Simulation.P1.Attack.Definition.Name, Is.EqualTo(character.Specials[(int)slot].Definition.Name));
+                    Assert.That(view.RenderedSample.State, Is.EqualTo(slot == SpecialSlot.Down ? AnimationState.SpecialDown : AnimationState.SpecialNeutral));
                     yield return Key(keys.Special, false); yield return Key(direction, false);
                 }
             }
