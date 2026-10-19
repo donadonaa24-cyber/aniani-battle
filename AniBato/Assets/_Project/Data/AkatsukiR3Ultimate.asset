@@ -29,10 +29,49 @@ MonoBehaviour:
       ShotOrigin: 1
       ProjectileCount: 1
       ProjectileSpacing: 0
+      ProjectilePullRadius: 0
+      ProjectilePullSpeed: 0
       AllowZeroProjectileSpeed: 1
       ReplaceOwnProjectiles: 1
       ProjectileAtDamageFrame: 1
+      IndependentNormalProjectile: 0
+      ProjectileChannel: 0
+      PlacementLimit: 0
+      GroundOnly: 0
+      PlaceOnGround: 0
+      ConsumePlacementOnHit: 0
+      SuperGuard: 0
+      Conscious: 0
       Look: 11
+    Recovery:
+      Style: 0
+      Speed: 0
+      Distance: 0
+      HorizontalSpeed: 0
+      BurstFrames: 0
+      SecondStartFrame: 0
+    ProjectileBehavior:
+      Homing: 0
+      ConsumeOnHit: 0
+      WallAfterLanding: 1
+      HomingSpeed: 0
+      FormationRadius: 0
+      VisualScale: 0
+      VisualOffset:
+        X: 0
+        Y: 0
+      StaggerFrames: 0
+      WallFrames: 600
+      RepeatIntervalFrames: 0
+      Formation: 0
+    Aftermath:
+      LifetimeFrames: 0
+      RepeatIntervalFrames: 0
+      Size:
+        X: 0
+        Y: 0
+    DamageMode: 0
+    SelfEffectsOnComplete: 0
     Kind: 2
     IsCloseRange: 0
     NormalDirection: 0
@@ -47,8 +86,8 @@ MonoBehaviour:
         X: 0
         Y: 13
       Size:
-        X: 2.8
-        Y: 3
+        X: 5
+        Y: 3.4
     HitstopFrames: 8
     HitstunFrames: 24
     Knockback:
@@ -82,6 +121,7 @@ MonoBehaviour:
     MarkFrames: 0
     SelfHealNormalHits: 0
     SelfBuff:
+      Channel: 0
       DurationFrames: 0
       MoveMultiplier: 0
       DashMultiplier: 0

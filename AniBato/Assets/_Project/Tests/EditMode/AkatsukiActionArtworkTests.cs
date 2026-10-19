@@ -17,14 +17,15 @@ namespace AniBato.Tests
         private static CharacterData Data=>Setup.Character(7);
         private static readonly AnimationState[] States={AnimationState.Attack1,AnimationState.Attack3,AnimationState.AirUp,
             AnimationState.CrouchAttack,AnimationState.AirNeutral,AnimationState.SpecialNeutral,AnimationState.Ultimate};
-        [Test] public void AkatsukiTwelveSlotsShareNineNativeKeysAndKeepFiveBasicPoses()
+        [Test] public void AkatsukiTwelveSlotsUseNewSlashKeysAndKeepExistingUpperAttackPreparation()
         {
             var paper=Data.PaperMotion;var poses=States.Select(s=>paper.Find(s)).ToArray();
             Assert.That(Data.ActionArtworkSchemaVersion,Is.EqualTo(1));Assert.That(poses.Sum(p=>p.Frames.Length),Is.EqualTo(12));
-            Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(9));
+            Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(10));
             Assert.That(paper.Find(AnimationState.Attack2).Frames,Is.EqualTo(poses[0].Frames));
             Assert.That(paper.Find(AnimationState.BackAttack).Frames,Is.EqualTo(poses[0].Frames));Assert.That(paper.Find(AnimationState.BackAttack).ReverseFacing,Is.True);
-            Assert.That(poses[2].Frames[0],Is.SameAs(poses[0].Frames[0]));Assert.That(poses[5].Frames,Is.EqualTo(poses[1].Frames));
+            Assert.That(poses[2].Frames[0],Is.Not.SameAs(poses[0].Frames[0]));
+            Assert.That(poses[2].Frames[0].name,Does.StartWith("akatsuki_up_prepare"));Assert.That(poses[5].Frames,Is.EqualTo(poses[1].Frames));
             foreach(var pose in poses)
             {
                 Assert.That(pose.Valid,Is.True);Assert.That(pose.Frames.Length,Is.EqualTo(pose.Key=="down"||pose.Key=="air"?1:2));
@@ -64,7 +65,8 @@ namespace AniBato.Tests
             Assert.That(card.FitToHitbox,Is.False);Assert.That(card.ScaleFor(Data.GroundNormals[2].Definition.Hitbox.Size),Is.EqualTo(card.ScaleFor(Data.Specials[0].Definition.Hitbox.Size)));
             Assert.That(card.VisibleSize.y*card.Scale,Is.EqualTo(.4f).Within(.0001f));
             Assert.That(card.FlipWithFacing||card.RotateWithVelocity,Is.False);Assert.That(pyramid.FlipWithFacing||pyramid.RotateWithVelocity,Is.False);
-            Assert.That(pyramid.VisibleSize.x*pyramid.Scale,Is.EqualTo(2.8f).Within(.0001f));
+            Assert.That(pyramid.VisibleSize.x*pyramid.Scale,Is.InRange(4.9f,5f));
+            Assert.That(pyramid.VisibleSize.y*pyramid.Scale,Is.EqualTo(3.4f).Within(.0001f));
             Assert.That(paper.AbilityEffect(AbilityLook.Default),Is.Null);
             foreach(var state in new[]{AnimationState.Attack1,AnimationState.Attack2,AnimationState.BackAttack})
             {var a=paper.AbilityEffect(state);Assert.That(a.Sprite,Is.SameAs(paper.AbilityEffect(AnimationState.Attack1).Sprite));Assert.That(a.DuringStartup,Is.False);Assert.That(a.DuringRecovery,Is.True);}

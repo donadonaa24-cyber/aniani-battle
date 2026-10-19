@@ -52,10 +52,15 @@
         public ICounterEffect CounterEffect { get; set; }
         public int ParalysisRemaining { get; internal set; }
         public int MarkRemaining { get; internal set; }
-        public int BuffRemaining { get; internal set; }
+        public int BuffRemaining { get => System.Math.Max(NormalBuffRemaining, SpeedBuffRemaining); internal set => NormalBuffRemaining = value; }
+        internal int NormalBuffRemaining, SpeedBuffRemaining;
+        internal BuffDefinition SpeedBuff;
         public BuffDefinition Buff { get; internal set; }
-        public float MoveMultiplier => BuffRemaining > 0 ? SkillSystem.Multiplier(Buff.MoveMultiplier) : 1;
-        public float DashMultiplier => BuffRemaining > 0 ? SkillSystem.Multiplier(Buff.DashMultiplier) : 1;
+        private float BaseMoveMultiplier => NormalBuffRemaining > 0 ? SkillSystem.Multiplier(Buff.MoveMultiplier) : 1;
+        private float BaseDashMultiplier => NormalBuffRemaining > 0 ? SkillSystem.Multiplier(Buff.DashMultiplier) : 1;
+        public float MoveMultiplier => SpeedBuffRemaining > 0 ? System.Math.Max(BaseMoveMultiplier, SkillSystem.Multiplier(SpeedBuff.MoveMultiplier)) : BaseMoveMultiplier;
+        public float DashMultiplier => SpeedBuffRemaining > 0 ? System.Math.Max(BaseDashMultiplier, SkillSystem.Multiplier(SpeedBuff.DashMultiplier)) : BaseDashMultiplier;
+        public float StartupMultiplier => NormalBuffRemaining > 0 ? SkillSystem.Multiplier(Buff.StartupMultiplier) : 1;
         public int SpecialCooldown(SpecialSlot slot) => SpecialCooldowns[(int)slot];
         internal readonly int[] SpecialCooldowns = new int[4];
         internal readonly int[] FollowupImmunity = new int[2];

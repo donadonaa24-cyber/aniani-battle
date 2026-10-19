@@ -857,5 +857,16 @@ MonoBehaviour:
   RiceBall: {fileID: 21300000, guid: 73d46bbeb0982b0449d12ea2443fd5a5, type: 3}
   Mogu: {fileID: 21300000, guid: be19666d910b9364cb41cca0bed66963, type: 3}
   CurryWave: {fileID: 21300000, guid: 7a857afe4dac8b4498b95e348e4a457b, type: 3}
-  Projectiles: []
+  Projectiles:
+  - Look: 21
+    Sprite: {fileID: 21300000, guid: cf7941ffcecff384fa6d5146fe824ef8, type: 3}
+    Variants: []
+    VariantVisibleSizes: []
+    Scale: 1
+    FitToHitbox: 1
+    VisibleSize: {x: 3.907326, y: 0.60647106}
+    RotateWithVelocity: 0
+    FlipWithFacing: 0
+    RotationOffsetDegrees: 0
+    SortingOrder: 3
   AbilityEffects: []

@@ -26,13 +26,52 @@ MonoBehaviour:
       TeleportRange: 0
       TargetGap: 0
       TargetRange: 14
-      ShotOrigin: 1
+      ShotOrigin: 0
       ProjectileCount: 3
       ProjectileSpacing: 2.6
+      ProjectilePullRadius: 0
+      ProjectilePullSpeed: 0
       AllowZeroProjectileSpeed: 1
       ReplaceOwnProjectiles: 1
       ProjectileAtDamageFrame: 1
+      IndependentNormalProjectile: 0
+      ProjectileChannel: 0
+      PlacementLimit: 0
+      GroundOnly: 0
+      PlaceOnGround: 0
+      ConsumePlacementOnHit: 0
+      SuperGuard: 0
+      Conscious: 0
       Look: 9
+    Recovery:
+      Style: 0
+      Speed: 0
+      Distance: 0
+      HorizontalSpeed: 0
+      BurstFrames: 0
+      SecondStartFrame: 0
+    ProjectileBehavior:
+      Homing: 0
+      ConsumeOnHit: 0
+      WallAfterLanding: 0
+      HomingSpeed: 0
+      FormationRadius: 7
+      VisualScale: 0
+      VisualOffset:
+        X: 0
+        Y: 0
+      StaggerFrames: 18
+      WallFrames: 0
+      RepeatIntervalFrames: 0
+      Formation: 2
+    Aftermath:
+      LifetimeFrames: 0
+      RepeatIntervalFrames: 0
+      Size:
+        X: 0
+        Y: 0
+    DamageMode: 0
+    SelfEffectsOnComplete: 0
     Kind: 2
     IsCloseRange: 0
     NormalDirection: 0
@@ -45,7 +84,7 @@ MonoBehaviour:
     Hitbox:
       Center:
         X: 0
-        Y: 12
+        Y: 0
       Size:
         X: 2.2
         Y: 2.8
@@ -56,8 +95,8 @@ MonoBehaviour:
       Y: 10
     PiercesNormalDodge: 0
     SpawnProjectile: 1
-    ProjectileSpeed: 0
-    ProjectileLifetimeFrames: 100
+    ProjectileSpeed: 24
+    ProjectileLifetimeFrames: 90
     ActiveVelocity:
       X: 0
       Y: 0
@@ -67,8 +106,8 @@ MonoBehaviour:
     VerticalMotionOnStartOnly: 0
     ProjectileLaunchVelocity:
       X: 0
-      Y: -20
-    ProjectileGravity: 12
+      Y: 0
+    ProjectileGravity: 0
     HasSecondaryHitbox: 0
     SecondaryHitbox:
       Center:
@@ -82,6 +121,7 @@ MonoBehaviour:
     MarkFrames: 0
     SelfHealNormalHits: 0
     SelfBuff:
+      Channel: 0
       DurationFrames: 0
       MoveMultiplier: 0
       DashMultiplier: 0

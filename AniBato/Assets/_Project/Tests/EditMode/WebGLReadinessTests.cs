@@ -99,6 +99,8 @@ namespace AniBato.Tests
                     Assert.That(copy.GroundNormals,Is.EqualTo(source.GroundNormals));Assert.That(copy.Specials,Is.EqualTo(source.Specials));Assert.That(copy.Ultimate,Is.SameAs(source.Ultimate));
                     foreach(var pose in copy.PaperMotion.Poses)foreach(var frame in pose.Frames)
                         Assert.That(source.PaperMotion.Poses.SelectMany(p=>p.Frames),Does.Contain(frame));
+                    Assert.That(copy.PaperMotion.UpRecovery.Frames,Is.EqualTo(source.PaperMotion.UpRecovery.Frames));
+                    Assert.That(copy.PaperMotion.UpRecovery,Is.Not.SameAs(source.PaperMotion.UpRecovery));
                     var a=new BattleSimulation(source.ToDefinition(),original.Character(0).ToDefinition(),PhaseOneDefaults.Rules(),original.Stages[0].ToGeometry());
                     var b=new BattleSimulation(copy.ToDefinition(),packed.Character(0).ToDefinition(),PhaseOneDefaults.Rules(),packed.Stages[0].ToGeometry());
                     for(int tick=0;tick<240;tick++)

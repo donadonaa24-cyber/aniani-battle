@@ -1,0 +1,11 @@
+# 方向特殊・固有技の最終Web確認（工程E）
+
+親指示書はDIRECTIONAL_SPECIALS_AND_RECOVERY.md。工程B/Cの保存済み検証と工程Dの最新証跡をRESUME冒頭から確認する。現在のAssetsが正本、TestResults/refinement_draftは旧草稿なので戻さない。ゲームコードを変えていないテスト修正は、その旨と工程ごとの実際のタグを分けて記録する。
+
+1. 工程Dの4工程の成功をXML/ログ/Windows実行ファイルで確認。暁カードは相手専用、命中で該当カード消滅、各自2枚、未命中20秒。ガードでは消費せず、N投射とは枠独立。
+2. 採用一覧と日本語の確認コピーを最新PNG/SHAへ同期。暁通常1/2は新しい左手の斬り予備v2/決めv1、通常3と上攻撃の既存絵は保持。12表示枠の原画数は旧9から10になったが、通常の4原画、下/空中N各1枚の規則は変えない。残留カレーの原画も追加。ユーザーの美術最終承認とは区別する。
+3. tools/verify/build_webgl.ps1 -Tag directional_specials_web -RestoreWindowsをサンドボックス外で実行。WebGLScenePackingのUpRecoveryと残留カレーを含める。tools/verify/audit_webgl_padding.cjsで実数の全PNGについてRGBA保持、余白、寸法を確認。512/4096MBと原画の個別リサイズ禁止を維持。
+4. tools/verify/start_webgl.ps1のループバック8799で新ビルドを実ブラウザ起動。メニュー/9人選択/特殊N/下/上/CD/HUD/設置/大きい道具を可能な範囲で実キー確認し、音声running・console error/warn・実画面・表示状態を保存。ブラウザの確認と実Unityの全技の検証範囲を分ける。OS全体への実機キー送信撮影をする場合だけ、事前にユーザーへPCに触らないでと声をかける。
+5. 全要求対照をdocs/codex_logsへ保存。RESUME、IMPLEMENTATION_STATUS、IMPLEMENTATION_ORDER、進行表を更新し、全体に必要な作業が残っていない場合だけゴールを完了にする。全4合格後の通常commit/pushは許可済み。強制push、他作品への書き込み/公開、旧カバンと承認龍太v5の削除をしない。
+
+ピラミッドは5×3.4uの全AABB壁（斜面ではない）、着地後600tick、絵の底辺と地面を一致。カレーは初期攻撃後300tick、周期60tick。王の超必殺は前2人がのけぞり、最後だけ2ハートで、3倍の損失にしない。これらは本作のゲーム演出で原作正史へ追加しない。

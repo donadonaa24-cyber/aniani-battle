@@ -112,10 +112,11 @@ namespace AniBato.Tests
             var art=runner.Character(0).PaperMotion.Projectile(attack.Definition.Ability.Look);
             Assert.That(sprite.enabled,Is.True);Assert.That(sprite.sprite,Is.SameAs(art.Sprite));Assert.That(sprite.color,Is.EqualTo(Color.white));
             Assert.That(sprite.flipX,Is.EqualTo(art.FlipWithFacing&&shot.Facing<0));
-            Assert.That(sprite.transform.localScale,Is.EqualTo(Vector3.one*art.Scale));
+            float visualScale=attack.Definition.ProjectileBehavior.VisualScale>0?attack.Definition.ProjectileBehavior.VisualScale:1;
+            Assert.That(sprite.transform.localScale,Is.EqualTo(Vector3.one*art.Scale*visualScale));
             float angle=(art.RotateWithVelocity?Mathf.Atan2(shot.Velocity.Y,shot.Velocity.X)*Mathf.Rad2Deg:0)+art.RotationOffsetDegrees;
             Assert.That(Mathf.DeltaAngle(sprite.transform.eulerAngles.z,angle),Is.EqualTo(0).Within(.001));
-            var position=runner.RenderPosition(shot);Assert.That(sprite.transform.position.x,Is.EqualTo(position.X).Within(.00001));
+            var position=runner.RenderPosition(shot)+new BattleVector(attack.Definition.ProjectileBehavior.VisualOffset.X*shot.Facing,attack.Definition.ProjectileBehavior.VisualOffset.Y);Assert.That(sprite.transform.position.x,Is.EqualTo(position.X).Within(.00001));
             Assert.That(sprite.transform.position.y,Is.EqualTo(position.Y).Within(.00001));
             if(attack.Frame==attack.Definition.StartupFrames+attack.Definition.DamageDelayFrames)
                 CaptureTomaProjectile(sprite,shot,art.Look+"_"+view.RenderedSample.State+"_"+shot.Facing);

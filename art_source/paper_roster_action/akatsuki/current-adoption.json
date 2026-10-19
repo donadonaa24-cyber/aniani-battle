@@ -1,24 +1,24 @@
 {
   "key": "akatsuki",
   "name": "暁",
-  "unityVerifiedTag": "rework_r4_ryuta_2",
+  "unityVerifiedTag": "special_refinement_3_5",
   "motionAsset": "AniBato/Assets/_Project/Data/akatsukiCorePaperMotion.asset",
   "completeAttackArtwork": true,
   "bodyFrames": 12,
-  "uniqueBodyImages": 9,
+  "uniqueBodyImages": 10,
   "entries": [
     {
       "id": "normal1_prepare",
       "title": "通常1・2段共通_予備",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_prepare.png",
-      "sha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "sha256": "03cab1a40ab5965325c75be655d610bfa48d8a7aee4bf160659418cfdf8e1388",
       "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常1・2段共通_予備.png"
     },
     {
       "id": "normal1_impact",
       "title": "通常1・2段共通_当てる",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_impact.png",
-      "sha256": "3ab23dad61e17b9af7bc76b937c692497340385b1e988385db9c815a82b7ef47",
+      "sha256": "d8ac3b8cb7015d5ce20ab683cd348e798868213f65f2cd09ed9bb16a82cac409",
       "reviewFile": "イラスト確認/現在ゲームで採用中/暁/通常1・2段共通_当てる.png"
     },
     {
@@ -38,7 +38,7 @@
     {
       "id": "up_prepare",
       "title": "上攻撃_予備",
-      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_up_prepare.png",
       "sha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
       "reviewFile": "イラスト確認/現在ゲームで採用中/暁/上攻撃_予備.png"
     },

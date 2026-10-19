@@ -37,7 +37,16 @@ namespace AniBato.Tests
                     while(sim.P1.Attack==attack&&!attack.IsDamageActive&&waited++<limit)Tick();
                     Assert.That(attack.IsDamageActive,Is.True,data.name);
                     var shots=Object.FindAnyObjectByType<ProjectileView>();shots.SendMessage("LateUpdate");view.RenderFrame();
-                    if(expected.SpawnProjectile)Assert.That(sim.Projectiles.Any(p=>p.Owner==sim.P1&&p.Attack==attack),Is.True);
+                    if(expected.SpawnProjectile)
+                    {
+                        var owned=sim.Projectiles.Where(p=>p.Owner==sim.P1&&p.Group==attack).ToArray();
+                        if(expected.ProjectileBehavior.ConsumeOnHit&&owned.Length==0)
+                        {
+                            Assert.That(sim.Events.Any(e=>e.Kind==BattleEventKind.Hit&&e.SourcePlayer==0&&e.TargetPlayer==1&&e.AttackId==attack.Id),Is.True,data.name);
+                            Assert.That(sim.P2.Hearts,Is.EqualTo(2));Assert.That(sim.P2.NormalHitCount,Is.Zero);
+                        }
+                        else Assert.That(owned.Any(p=>p.Visible),Is.True,data.name);
+                    }
                     Capture(data.name+(ultimate?"_super_active":"_special_active"),false,"rework_r3");
                 }
             }

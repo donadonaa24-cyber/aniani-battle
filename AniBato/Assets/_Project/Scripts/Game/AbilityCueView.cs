@@ -48,7 +48,7 @@ namespace AniBato.Game
                     case AbilityLook.Alma: text = attack.IsDamageActive ? "ALMA!" : attack.Frame / 6 % 2 == 0 ? "0101 1010\n1010 0101" : "1010 0101\n0101 1010"; break;
                     case AbilityLook.Rook: text = generatedTransformation ? "" : "飛"; break;
                     case AbilityLook.Bishop: text = generatedTransformation ? "" : "角"; break;
-                    case AbilityLook.King: text = generatedTransformation ? "" : "王"; break;
+                    case AbilityLook.King: text = generatedTransformation || attack.Definition.IsUltimate ? "" : "王"; break;
                     case AbilityLook.Emp: text = "電磁パルス"; break;
                     case AbilityLook.Teleport: text = attack.IsActive ? "瞬移" : "接続…"; break;
                     case AbilityLook.Spell: text = "ABC…?!"; break;

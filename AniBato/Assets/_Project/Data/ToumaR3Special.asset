@@ -29,10 +29,49 @@ MonoBehaviour:
       ShotOrigin: 0
       ProjectileCount: 0
       ProjectileSpacing: 0
+      ProjectilePullRadius: 0
+      ProjectilePullSpeed: 0
       AllowZeroProjectileSpeed: 0
-      ReplaceOwnProjectiles: 0
+      ReplaceOwnProjectiles: 1
       ProjectileAtDamageFrame: 1
+      IndependentNormalProjectile: 0
+      ProjectileChannel: 0
+      PlacementLimit: 0
+      GroundOnly: 0
+      PlaceOnGround: 0
+      ConsumePlacementOnHit: 0
+      SuperGuard: 0
+      Conscious: 0
       Look: 2
+    Recovery:
+      Style: 0
+      Speed: 0
+      Distance: 0
+      HorizontalSpeed: 0
+      BurstFrames: 0
+      SecondStartFrame: 0
+    ProjectileBehavior:
+      Homing: 1
+      ConsumeOnHit: 1
+      WallAfterLanding: 0
+      HomingSpeed: 6
+      FormationRadius: 0
+      VisualScale: 0
+      VisualOffset:
+        X: 0
+        Y: 0
+      StaggerFrames: 0
+      WallFrames: 0
+      RepeatIntervalFrames: 0
+      Formation: 0
+    Aftermath:
+      LifetimeFrames: 0
+      RepeatIntervalFrames: 0
+      Size:
+        X: 0
+        Y: 0
+    DamageMode: 0
+    SelfEffectsOnComplete: 0
     Kind: 1
     IsCloseRange: 0
     NormalDirection: 0
@@ -56,8 +95,8 @@ MonoBehaviour:
       Y: 4
     PiercesNormalDodge: 0
     SpawnProjectile: 1
-    ProjectileSpeed: 16
-    ProjectileLifetimeFrames: 80
+    ProjectileSpeed: 6
+    ProjectileLifetimeFrames: 180
     ActiveVelocity:
       X: 0
       Y: 0
@@ -82,12 +121,13 @@ MonoBehaviour:
     MarkFrames: 0
     SelfHealNormalHits: 0
     SelfBuff:
+      Channel: 0
       DurationFrames: 0
       MoveMultiplier: 0
       DashMultiplier: 0
       StartupMultiplier: 0
     KnockbackMultiplier: 0
-    CooldownFrames: 90
+    CooldownFrames: 180
     ProjectileEraseCount: 0
     GuardedRecoveryFrames: 0
     RequiresFollowup: 0

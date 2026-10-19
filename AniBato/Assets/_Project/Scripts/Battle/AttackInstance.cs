@@ -17,6 +17,7 @@ namespace AniBato.Battle
         internal bool SelfEffectApplied;
         internal bool AbilityApplied;
         internal bool RecoveryStarted;
+        internal bool AftermathSpawned;
         internal BattleVector RecoveryDirection;
         internal int ErasuresRemaining;
         internal int StanceRemaining;

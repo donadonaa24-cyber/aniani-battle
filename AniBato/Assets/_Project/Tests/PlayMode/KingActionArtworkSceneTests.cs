@@ -36,7 +36,7 @@ namespace AniBato.Tests
                     bool impact=attack.Frame>=attack.Definition.StartupFrames+attack.Definition.DamageDelayFrames;
                     Assert.That(body.sprite,Is.SameAs(pose.Frames[pose.Frames.Length==1?0:impact?1:0]));
                     Assert.That(body.flipX,Is.EqualTo(!(pose.UnmirroredImpact&&impact)&&(view.RenderedSample.FlipX^pose.ReverseFacing)));
-                    Assert.That(text.gameObject.activeSelf,Is.EqualTo((action==3||action==4)&&!impact));
+                    Assert.That(text.gameObject.activeSelf,Is.EqualTo(action==3&&!impact));
                     if(!impact){prep++;if(!p){Capture(name+"_prepare",true,"rework_r4_king");p=true;}}
                     else if(attack.IsActive){active++;if(!a){Capture(name+"_impact",true,"rework_r4_king");a=true;}}
                     else{recovery++;if(!r){Capture(name+"_recovery",true,"rework_r4_king");r=true;}}
@@ -52,7 +52,7 @@ namespace AniBato.Tests
                 Assert.That(body.sprite,Is.Not.SameAs(pose.Frames.Last()));Assert.That(text.gameObject.activeSelf,Is.False);Capture(name+"_released",true,"rework_r4_king");
             }
         }
-        [UnityTest] public IEnumerator KingSummonsLeilaShionNoaOnceEachWithStableIdentityAndOneSharedHit()
+        [UnityTest] public IEnumerator KingSummonsThreeNamedSupportsOnConvergingOrAlternatingPathsWithOneFinisher()
         {
             var data=runner.Setup.Character(6);var keys=controller.Bindings.P1;var projectiles=Object.FindAnyObjectByType<ProjectileView>();
             foreach(bool ultimate in new[]{false,true})foreach(int facing in new[]{1,-1})
@@ -62,30 +62,44 @@ namespace AniBato.Tests
                 Set(sim.P2,"Position",new BattleVector(facing*3,sim.P2.Position.Y));var button=ultimate?keys.Ultimate:keys.Special;
                 yield return Key(button,true);Tick();yield return Key(button,false);
                 int wait=0;while(sim.Projectiles.Count==0&&wait++<100)Tick();Assert.That(sim.Projectiles.Count,Is.EqualTo(3));
-                var shots=sim.Projectiles.ToArray();Assert.That(shots.Select(p=>p.Attack).Distinct().Count(),Is.EqualTo(1));
-                var attack=shots[0].Attack;var art=data.PaperMotion.Projectile(AbilityLook.King);float spacing=ultimate?2.6f:1.5f;
-                Assert.That(shots[1].Position.X-shots[0].Position.X,Is.EqualTo(spacing).Within(.0001f));
-                Assert.That(shots[2].Position.X-shots[1].Position.X,Is.EqualTo(spacing).Within(.0001f));
+                var shots=sim.Projectiles.ToArray();Assert.That(shots.Select(p=>p.Group).Distinct().Count(),Is.EqualTo(1));
+                Assert.That(shots.Select(p=>p.Attack).Distinct().Count(),Is.EqualTo(ultimate?3:1));
+                var group=shots[0].Group;var art=data.PaperMotion.Projectile(AbilityLook.King);
+                Assert.That(shots[0].Position.X,Is.LessThan(sim.P2.Position.X));Assert.That(shots[1].Position.X,Is.GreaterThan(sim.P2.Position.X));
+                if(ultimate)
+                {
+                    Assert.That(shots[2].Position.X,Is.LessThan(sim.P2.Position.X));
+                    Assert.That(shots.Select(p=>p.DelayRemaining),Is.EqualTo(new[]{0,18,36}));
+                }
+                else{Assert.That(shots[2].Position.Y,Is.GreaterThan(sim.P2.Position.Y));Assert.That(shots.All(p=>p.Visible),Is.True);}
                 var registry=new ProjectileArtworkSlots();registry.Refresh(shots);Assert.That(shots.Select(registry.Index),Is.EqualTo(new[]{0,1,2}));
                 registry.Refresh(new[]{shots[1],shots[2]});Assert.That(registry.Index(shots[1]),Is.EqualTo(1));Assert.That(registry.Index(shots[2]),Is.EqualTo(2));
-                int ticks=0;bool captured=false,hit=false;
-                while(sim.Projectiles.Count>0&&ticks++<130)
+                registry=new ProjectileArtworkSlots();registry.Refresh(shots);
+                int ticks=0;var visible=new System.Collections.Generic.HashSet<int>();var hits=new System.Collections.Generic.HashSet<long>();
+                while(sim.Projectiles.Count>0&&ticks++<240)
                 {
                     projectiles.SendMessage("LateUpdate");var renderers=projectiles.GetComponentsInChildren<SpriteRenderer>().Where(s=>s.enabled).ToArray();
-                    Assert.That(renderers.Length,Is.EqualTo(sim.Projectiles.Count));
-                    for(int i=0;i<renderers.Length;i++)
+                    Assert.That(renderers.Length,Is.EqualTo(sim.Projectiles.Count(p=>p.Visible)));
+                    for(int i=0;i<sim.Projectiles.Count;i++)
                     {
-                        Assert.That(renderers[i].sprite,Is.SameAs(art.SpriteFor(i)));Assert.That(renderers[i].flipX,Is.False);
-                        Assert.That(renderers[i].transform.localScale.x,Is.EqualTo(art.ScaleFor(sim.Projectiles[i].Hitbox.Size,i)).Within(.00001f));
-                        if(i>0)Assert.That(renderers[i].transform.position.x-renderers[i-1].transform.position.x,Is.EqualTo(spacing).Within(.0001f),"Each named support keeps the actual formation spacing when drawn");
+                        var shot=sim.Projectiles[i];var renderer=projectiles.transform.GetChild(i).GetComponent<SpriteRenderer>();int variant=registry.Index(shot);
+                        Assert.That(renderer.enabled,Is.EqualTo(shot.Visible));if(!shot.Visible)continue;
+                        Assert.That(renderer.sprite,Is.SameAs(art.SpriteFor(variant)));Assert.That(renderer.flipX,Is.EqualTo(shot.Facing<0));
+                        Assert.That(renderer.transform.localScale.x,Is.EqualTo(art.ScaleFor(shot.Hitbox.Size,variant)).Within(.00001f));
+                        var position=runner.RenderPosition(shot);Assert.That(renderer.transform.position.x,Is.EqualTo(position.X).Within(.0001f));
+                        Assert.That(renderer.transform.position.y,Is.EqualTo(position.Y).Within(.0001f));
+                        if(visible.Add(variant))
+                        {Capture((ultimate?"super":"special")+"_support_"+variant+"_"+facing,false,"rework_r4_king");CaptureActionEffects("rework_r4_king",(ultimate?"super":"special")+"_support_"+variant+"_"+facing,renderers);}
                     }
-                    if(!captured&&sim.Projectiles[0].Position.Y<sim.P2.Position.Y+4)
-                    {Capture((ultimate?"super":"special")+"_summons_"+facing,false,"rework_r4_king");CaptureActionEffects("rework_r4_king",(ultimate?"super":"special")+"_three_supports_"+facing,renderers);captured=true;}
-                    if(sim.P2.Hearts<3){hit=true;Assert.That(sim.P2.Hearts,Is.EqualTo(ultimate?1:2));Assert.That(sim.P2.NormalHitCount,Is.EqualTo(0));}
+                    foreach(var hit in sim.Events.Where(e=>e.Kind==BattleEventKind.Hit&&e.SourcePlayer==0))
+                    {hits.Add(hit.AttackId);if(!ultimate)Assert.That(sim.P2.ParalysisRemaining,Is.EqualTo(120));}
+                    Assert.That(sim.P2.NormalHitCount,Is.Zero);
+                    if(!ultimate)Assert.That(sim.P2.Hearts,Is.EqualTo(3));
+                    else Assert.That(sim.P2.Hearts,Is.EqualTo(hits.Contains(shots[2].Attack.Id)?1:3));
                     Tick();
                 }
-                Assert.That(ticks,Is.LessThan(130));Assert.That(captured,Is.True);Assert.That(hit,Is.True);
-                Assert.That(sim.P2.Hearts,Is.EqualTo(ultimate?1:2));Assert.That(shots.All(p=>p.Attack==attack),Is.True);
+                Assert.That(ticks,Is.LessThan(240));Assert.That(visible.OrderBy(i=>i),Is.EqualTo(new[]{0,1,2}));Assert.That(hits.Count,Is.EqualTo(ultimate?3:1));
+                Assert.That(sim.P2.Hearts,Is.EqualTo(ultimate?1:3));Assert.That(shots.All(p=>p.Group==group),Is.True);
                 projectiles.SendMessage("LateUpdate");Assert.That(projectiles.GetComponentsInChildren<SpriteRenderer>().Any(s=>s.enabled),Is.False);
             }
         }

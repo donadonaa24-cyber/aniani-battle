@@ -68,6 +68,26 @@ MonoBehaviour:
         HorizontalSpeed: 0
         BurstFrames: 0
         SecondStartFrame: 0
+      ProjectileBehavior:
+        Homing: 0
+        ConsumeOnHit: 0
+        WallAfterLanding: 0
+        HomingSpeed: 0
+        FormationRadius: 0
+        VisualScale: 0
+        VisualOffset:
+          X: 0
+          Y: 0
+        StaggerFrames: 0
+        WallFrames: 0
+        RepeatIntervalFrames: 0
+        Formation: 0
+      Aftermath:
+        LifetimeFrames: 0
+        RepeatIntervalFrames: 0
+        Size:
+          X: 0
+          Y: 0
       DamageMode: 0
       SelfEffectsOnComplete: 0
       Kind: 0
@@ -119,6 +139,7 @@ MonoBehaviour:
       MarkFrames: 0
       SelfHealNormalHits: 0
       SelfBuff:
+        Channel: 0
         DurationFrames: 0
         MoveMultiplier: 0
         DashMultiplier: 0
@@ -187,6 +208,26 @@ MonoBehaviour:
         HorizontalSpeed: 0
         BurstFrames: 0
         SecondStartFrame: 0
+      ProjectileBehavior:
+        Homing: 0
+        ConsumeOnHit: 0
+        WallAfterLanding: 0
+        HomingSpeed: 0
+        FormationRadius: 0
+        VisualScale: 0
+        VisualOffset:
+          X: 0
+          Y: 0
+        StaggerFrames: 0
+        WallFrames: 0
+        RepeatIntervalFrames: 0
+        Formation: 0
+      Aftermath:
+        LifetimeFrames: 0
+        RepeatIntervalFrames: 0
+        Size:
+          X: 0
+          Y: 0
       DamageMode: 0
       SelfEffectsOnComplete: 0
       Kind: 0
@@ -238,6 +279,7 @@ MonoBehaviour:
       MarkFrames: 0
       SelfHealNormalHits: 0
       SelfBuff:
+        Channel: 0
         DurationFrames: 0
         MoveMultiplier: 0
         DashMultiplier: 0
@@ -250,6 +292,7 @@ MonoBehaviour:
       StanceFrames: 0
     Counter:
       Buff:
+        Channel: 0
         DurationFrames: 0
         MoveMultiplier: 0
         DashMultiplier: 0
@@ -266,6 +309,7 @@ MonoBehaviour:
   MoveSetSchemaVersion: 0
   DirectionalSpecialSchemaVersion: 0
   RecoverySchemaVersion: 0
+  RefinementSchemaVersion: 0
   ActionArtworkSchemaVersion: 0
   DirectionalNormals: []
   UpNormal: {fileID: 0}

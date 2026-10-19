@@ -107,7 +107,14 @@ namespace AniBato.Tests
             Assert.That(shot.Velocity.Y, Is.LessThan(0)); Assert.That(sim.P2.Hearts, Is.EqualTo(3));
             int hits = 0;
             for (int i = 0; i < 110; i++) { sim.Tick(default, default); hits += sim.Events.Count(e => e.Kind == BattleEventKind.Hit && e.SourcePlayer == 0); }
-            Assert.That(hits, Is.EqualTo(1)); Assert.That(sim.P2.Hearts, Is.EqualTo(1)); Assert.That(sim.Projectiles, Is.Empty);
+            Assert.That(hits, Is.EqualTo(1)); Assert.That(sim.P2.Hearts, Is.EqualTo(1));
+            if (look == AbilityLook.Pyramid)
+            {
+                Assert.That(sim.Projectiles.Count, Is.EqualTo(1)); Assert.That(shot.Landed, Is.True);
+                Assert.That(sim.Stage.CollisionPlatformCount, Is.EqualTo(sim.Stage.PlatformCount+1));
+                Assert.That(shot.RemainingFrames, Is.GreaterThan(400));
+            }
+            else Assert.That(sim.Projectiles, Is.Empty);
         }
         [Test]
         public void ThreeKingSummonsShareOneDamageInstanceEvenWhenAllOverlap()
@@ -117,7 +124,8 @@ namespace AniBato.Tests
             var sim = new BattleSimulation(c, wide, Rules, PhaseOneDefaults.Stage()); Fire(sim, false);
             Assert.That(sim.Projectiles.Count, Is.EqualTo(3)); Assert.That(sim.Projectiles.Select(p => p.Attack).Distinct().Count(), Is.EqualTo(1));
             int hits = 0; for (int i = 0; i < 110; i++) { sim.Tick(default, default); hits += sim.Events.Count(e => e.Kind == BattleEventKind.Hit); }
-            Assert.That(hits, Is.EqualTo(1)); Assert.That(sim.P2.Hearts, Is.EqualTo(2));
+            Assert.That(hits, Is.EqualTo(1)); Assert.That(sim.P2.Hearts, Is.EqualTo(3));
+            Assert.That(sim.P2.NormalHitCount, Is.Zero); Assert.That(sim.P2.ParalysisRemaining, Is.GreaterThan(0));
         }
         [Test]
         public void ProjectileLimitCountsFormationsWithoutAllowingAnotherAttackToStack()
@@ -129,7 +137,8 @@ namespace AniBato.Tests
             sim.P1.Attack = new AttackInstance(81, definition, 0, false);
             shots.Step(sim.P1,sim.P2,1,sim.Stage);
             Assert.That(shots.Projectiles.Count, Is.EqualTo(3));
-            Assert.That(shots.Projectiles.All(p => p.Attack.Id == 80), Is.True);
+            Assert.That(shots.Projectiles.All(p => p.Group.Id == 81), Is.True);
+            Assert.That(shots.Projectiles.Select(p=>p.Group).Distinct().Count(), Is.EqualTo(1));
         }
         [Test]
         public void GunFiresAllThreeComboStepsWithoutCancellingItsDrone()

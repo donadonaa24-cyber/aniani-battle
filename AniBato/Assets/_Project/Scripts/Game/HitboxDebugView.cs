@@ -63,14 +63,14 @@ namespace AniBato.Game
             if(legend)
             {
                 legend.enabled=show;
-                legend.text="<color=#78ff8a>緑：やられ判定</color>　<color=#ff6868>赤：攻撃有効</color>　<color=#ffe265>黄：飛び道具</color>　<color=#ffaaaa>薄赤：予備範囲</color>　残像：命中時の位置（0.5秒）　F9 表示切替";
+                legend.text="<color=#78ff8a>緑：やられ判定</color>　<color=#ff6868>赤：攻撃有効</color>　<color=#ffe265>黄：飛び道具</color>　<color=#72d9ff>青：設置壁</color>　<color=#ffaaaa>薄赤：予備範囲</color>　残像：命中時の位置（0.5秒）　F9 表示切替";
                 if(runner.Practice!=null)legend.text+="\nF5 速度："+runner.PracticeRateLabel+"　F6 "+(runner.PracticePlaybackPaused?"静止中":"再生中")+"　F7 1コマ進める";
                 legend.text=WebInputPolicy.Text(legend.text);
             }
             if(show)
             {
                 DrawFighter(runner.Simulation.P1);DrawFighter(runner.Simulation.P2);
-                foreach(var shot in runner.Simulation.Projectiles)Draw(shot.Hitbox,Color.yellow);
+                foreach(var shot in runner.Simulation.Projectiles)if(shot.Visible)Draw(shot.Hitbox,shot.Landed?Color.cyan:Color.yellow);
                 foreach(var trace in traces){var color=trace.Color;color.a=.5f;Draw(trace.Rect,color);}
             }
             for(int i=used;i<lines.Count;i++)lines[i].enabled=false;

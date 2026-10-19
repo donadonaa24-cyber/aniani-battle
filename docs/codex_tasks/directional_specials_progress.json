@@ -14,7 +14,7 @@
     },
     {
       "id": "touma_guns_drone_rocket",
-      "status": "pending"
+      "status": "native_verified_special_refinement_3_5"
     },
     {
       "id": "touma_shiro_down_teleport",
@@ -26,31 +26,31 @@
     },
     {
       "id": "king_three_supports_special_and_ultimate",
-      "status": "pending"
+      "status": "native_verified_special_refinement_3_5"
     },
     {
       "id": "ryuta_reading_buffs",
-      "status": "partial_down_native_verified",
+      "status": "native_verified_special_refinement_3_5",
       "downSeconds": 5,
       "ultimateSeconds": 20,
       "speedMultiplier": 1.5
     },
     {
       "id": "akatsuki_pyramid_card_slash_and_trap",
-      "status": "partial_trap_native_verified",
+      "status": "native_verified_special_refinement_3_5",
       "wallSecondsAfterLanding": 10,
       "trapSeconds": 20
     },
     {
       "id": "chizuru_curry_and_meal",
-      "status": "partial_meal_native_verified",
+      "status": "native_verified_special_refinement_3_5",
       "currySeconds": 5,
       "mealLockSeconds": 2.5,
       "mealCooldownSeconds": 20
     },
     {
       "id": "all_nine_stamina",
-      "status": "pending"
+      "status": "native_verified_special_refinement_3_5"
     },
     {
       "id": "all_nine_recoveries",
@@ -58,15 +58,16 @@
     },
     {
       "id": "artwork_and_visuals",
-      "status": "partial_down_up_connected_stage_D_pending"
+      "status": "native_verified_special_refinement_3_5"
     },
     {
       "id": "native_all_four",
-      "status": "stage_C_passed_681_88"
+      "status": "native_verified_special_refinement_3_5"
     },
     {
       "id": "webgl_browser_and_requirement_audit",
       "status": "pending"
     }
-  ]
+  ],
+  "nextTask": "DIRECTIONAL_SPECIALS_FINAL_WEB_AUDIT.md"
 }

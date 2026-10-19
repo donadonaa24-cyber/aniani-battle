@@ -12,7 +12,7 @@ namespace AniBato.EditorTools
         {
             for (int i = 0; i < roster.Length; i++)
             {
-                var data = roster[i]; if (data.DirectionalSpecialSchemaVersion >= 2) continue;
+                var data = roster[i]; if (data.DirectionalSpecialSchemaVersion >= 3) continue;
                 string path = "Assets/_Project/Data/" + data.name + "DirectionalDown.asset";
                 var asset = AssetDatabase.LoadAssetAtPath<AttackData>(path);
                 if (!asset)
@@ -25,8 +25,10 @@ namespace AniBato.EditorTools
                     var definition = asset.Definition; definition.DamageRecoilDistance = .18f; definition.DamageRecoilFrames = 6;
                     asset.Definition = definition; EditorUtility.SetDirty(asset);
                 }
+                if (i == 8 && data.DirectionalSpecialSchemaVersion >= 1 && data.DirectionalSpecialSchemaVersion < 3)
+                { var definition = asset.Definition; definition.SelfBuff.Channel = BuffChannel.MovementBoost; asset.Definition = definition; EditorUtility.SetDirty(asset); }
                 var slots = (AttackData[])data.Specials.Clone(); slots[(int)SpecialSlot.Down] = asset; data.Specials = slots;
-                data.DirectionalSpecialSchemaVersion = 2; EditorUtility.SetDirty(data);
+                data.DirectionalSpecialSchemaVersion = 3; EditorUtility.SetDirty(data);
             }
         }
         public static AttackDefinition Down(int character)
@@ -60,7 +62,7 @@ namespace AniBato.EditorTools
                 case 8:
                     a.Name = "英語の本・集中読書"; a.NonDamaging = true; a.StartupFrames = 0; a.ActiveFrames = 45; a.RecoveryFrames = 0;
                     a.SelfEffectsOnComplete = true; a.CooldownFrames = 600;
-                    a.SelfBuff = new BuffDefinition { DurationFrames = 300, MoveMultiplier = 1.5f, DashMultiplier = 1.5f };
+                    a.SelfBuff = new BuffDefinition { Channel = BuffChannel.MovementBoost, DurationFrames = 300, MoveMultiplier = 1.5f, DashMultiplier = 1.5f };
                     a.Ability.Look = AbilityLook.Reading; break;
                 default: throw new System.ArgumentOutOfRangeException(nameof(character));
             }

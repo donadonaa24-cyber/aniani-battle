@@ -196,22 +196,22 @@ MonoBehaviour:
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
-    - 2.324493
-    - 2.3094718
+    - 2.3057168
+    - 2.333881
     FrameFootBaseYs: []
     FrameFootMinXs:
-    - -0.5764292
-    - -0.91252303
+    - -0.5726739
+    - 0.60647106
     FrameFootMaxXs:
-    - 0.7435373
-    - 1.0646102
+    - 0.9237887
+    - 1.036446
     FrameOriginYs:
     - 0
     - 0
-    HeadHeight: 2.324493
+    HeadHeight: 2.3057168
     FootBaseY: 0
-    FootMinX: -0.5764292
-    FootMaxX: 0.7435373
+    FootMinX: -0.5726739
+    FootMaxX: 0.9237887
   - Key: normal2
     States: 07000000i
     Frames:
@@ -225,22 +225,22 @@ MonoBehaviour:
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
-    - 2.324493
-    - 2.3094718
+    - 2.3057168
+    - 2.333881
     FrameFootBaseYs: []
     FrameFootMinXs:
-    - -0.5764292
-    - -0.91252303
+    - -0.5726739
+    - 0.60647106
     FrameFootMaxXs:
-    - 0.7435373
-    - 1.0646102
+    - 0.9237887
+    - 1.036446
     FrameOriginYs:
     - 0
     - 0
-    HeadHeight: 2.324493
+    HeadHeight: 2.3057168
     FootBaseY: 0
-    FootMinX: -0.5764292
-    FootMaxX: 0.7435373
+    FootMinX: -0.5726739
+    FootMaxX: 0.9237887
   - Key: back
     States: 1a000000i
     Frames:
@@ -254,22 +254,22 @@ MonoBehaviour:
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
-    - 2.324493
-    - 2.3094718
+    - 2.3057168
+    - 2.333881
     FrameFootBaseYs: []
     FrameFootMinXs:
-    - -0.5764292
-    - -0.91252303
+    - -0.5726739
+    - 0.60647106
     FrameFootMaxXs:
-    - 0.7435373
-    - 1.0646102
+    - 0.9237887
+    - 1.036446
     FrameOriginYs:
     - 0
     - 0
-    HeadHeight: 2.324493
+    HeadHeight: 2.3057168
     FootBaseY: 0
-    FootMinX: -0.5764292
-    FootMaxX: 0.7435373
+    FootMinX: -0.5726739
+    FootMaxX: 0.9237887
   - Key: normal3
     States: 08000000i
     Frames:
@@ -302,7 +302,7 @@ MonoBehaviour:
   - Key: up
     States: 1e000000i
     Frames:
-    - {fileID: 21300000, guid: 0ca45f6497f6f15459b4aed2c275a32a, type: 3}
+    - {fileID: 21300000, guid: 6853709c1d6a0064ea415651cadd6481, type: 3}
     - {fileID: 21300000, guid: 2088fa4acec82ad4f9b1289ff56ab8ed, type: 3}
     HoldTicks: 8
     Airborne: 0
@@ -647,7 +647,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: c717f12043692e342af88b5bc8ddaee7, type: 3}
     Variants: []
     VariantVisibleSizes: []
-    Scale: 1.2406405
+    Scale: 2.2109935
     FitToHitbox: 0
     VisibleSize: {x: 2.2568986, y: 1.5377703}
     RotateWithVelocity: 0

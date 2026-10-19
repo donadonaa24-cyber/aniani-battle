@@ -23,6 +23,8 @@ namespace AniBato.Game
                 sprites[i].enabled = i < projectiles.Count;
                 if (i >= projectiles.Count) continue;
                 var projectile = projectiles[i];
+                if (!projectile.Visible) { sprites[i].enabled = false; continue; }
+                var behavior = projectile.Attack.Definition.ProjectileBehavior;
                 sprites[i].sortingOrder = 7;
                 var look = projectile.Attack.Definition.Ability.Look;
                 bool placeholder = look != AbilityLook.Default && look != AbilityLook.RiceBall;
@@ -51,6 +53,7 @@ namespace AniBato.Game
                 int age = projectile.Attack.Definition.ProjectileLifetimeFrames - projectile.RemainingFrames;
                 sprites[i].transform.localRotation = Quaternion.Euler(0, 0, !placeholder && normal && paper && paper.Enabled && paper.Bag ? age / 8 * 45 * projectile.Facing : look == AbilityLook.Pyramid ? 45 : 0);
                 var position = runner.RenderPosition(projectile);
+                position += new BattleVector(behavior.VisualOffset.X * projectile.Facing, behavior.VisualOffset.Y);
                 sprites[i].transform.position = new Vector3(position.X, position.Y, 0);
                 sprites[i].transform.localScale = sprite ? Vector3.one * (normalEffects != null ? normalEffects.NormalProjectileScale : effects == null ? presentation.RiceBallScale : effects.ProjectileScale) : new Vector3(projectile.Hitbox.Size.X, projectile.Hitbox.Size.Y, 1);
                 if (art != null)
@@ -58,11 +61,12 @@ namespace AniBato.Game
                     int variant=artworkSlots.Index(projectile);
                     sprites[i].sprite = art.SpriteFor(variant); sprites[i].color = Color.white;
                     sprites[i].sortingOrder = art.SortingOrder;
-                    sprites[i].flipX = art.FlipWithFacing && projectile.Facing < 0;
+                    sprites[i].flipX = (art.FlipWithFacing || look == AbilityLook.King) && projectile.Facing < 0;
                     float angle = art.RotateWithVelocity ? Mathf.Atan2(projectile.Velocity.Y, projectile.Velocity.X) * Mathf.Rad2Deg : 0;
                     sprites[i].transform.localRotation = Quaternion.Euler(0, 0, angle + art.RotationOffsetDegrees);
                     sprites[i].transform.localScale = Vector3.one * art.ScaleFor(projectile.Hitbox.Size,variant);
                 }
+                if (behavior.VisualScale > 0) sprites[i].transform.localScale *= behavior.VisualScale;
             }
         }
     }

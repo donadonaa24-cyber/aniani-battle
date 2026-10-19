@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-20",
+  "bundle": "special_refinement_3_5",
+  "goalComplete": false,
+  "nativeComplete": true,
+  "tests": [
+    {
+      "tag": "special_refinement_3",
+      "platform": "EditMode",
+      "source": "TestResults/special_refinement_3_EditMode.xml",
+      "sha256": "156a535f55761d280237881ba1a351b88157be871162f876bb4f01c78d1b72fc",
+      "total": 697,
+      "passed": 697,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 330.2833917
+    },
+    {
+      "tag": "special_refinement_5",
+      "platform": "PlayMode",
+      "source": "TestResults/special_refinement_5_PlayMode.xml",
+      "sha256": "c00da9fc330e4e00f3b2221ebe5b4da9952247ae59e3cdac2fe36b0b2a038867",
+      "total": 91,
+      "passed": 91,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 248.5291316
+    }
+  ],
+  "buildAll": {
+    "tag": "special_refinement_3",
+    "source": "TestResults/special_refinement_3_buildall.log",
+    "sha256": "5cf9fb4094b01e2e36534b1ec6a322eac2648f320755baadc981926a2a9003a7",
+    "success": true
+  },
+  "windows": {
+    "tag": "special_refinement_3",
+    "source": "TestResults/special_refinement_3_build.log",
+    "sha256": "95d54545e2de8516ecd1576608c537d8c33f19eb4da418418d478a7a87acc3dd",
+    "executable": "Build/special_refinement_3/AniBato.exe",
+    "success": true
+  },
+  "productionScriptsSha256": "eb0fce47236aaa2f2be0507e3d0ef541aa7fe5c156312e8fc2eb7e2c67e3d361",
+  "productionScripts": 141,
+  "splitRunReason": "Only the PlayMode test changed after run 3: consumed drones are verified by their exact hit event and heart loss; independent summon members are verified through their parent group. Production scripts and assets were not changed.",
+  "cardRules": {
+    "opponentOnly": true,
+    "consumeOnHit": true,
+    "maximumPerOwner": 2,
+    "unhitSeconds": 20,
+    "guardConsumes": false
+  },
+  "captures": "TestResults/special_refinement_5/captures",
+  "durableCaptures": "docs/screenshots/special_refinement_3_5",
+  "captureCount": 1207,
+  "captureNote": "Camera stage captures omit the HUD overlay. Simulation and HUD state are asserted by real Unity tests. Art human approval is separate.",
+  "previousFindings": [
+    "run 1: vector subtraction compile error fixed, Edit 690/693; fixed wall push separation and old sprite/shot assumptions",
+    "focus 2: wall overlap asserted during hitstop; assert after thaw while retaining exact 600-tick lifetime",
+    "focus 3: Edit 48/48, Play 4/6; preserve formation identity and test an unobstructed falling path",
+    "focus 4: Play 6/6",
+    "run 2: cancelled during Edit to align pyramid bottom and collision height",
+    "run 3: Edit 697/697, Play 90/91, BuildAll and Windows pass; consumed drone was incorrectly expected to remain visible",
+    "run 4: cancelled to fix that test; consumption focus passes all 9 characters and 18 skills"
+  ],
+  "preserved": [
+    "45 halved normal hitboxes",
+    "14/10 gauge",
+    "four normal keys, one down and one aerial key",
+    "Ryuta approved hit v5",
+    "protected bag artwork",
+    "512/4096 Web memory"
+  ],
+  "remaining": [
+    "actual final WebGL build",
+    "RGBA audit",
+    "browser input/audio/display/console verification",
+    "whole-requirement audit"
+  ],
+  "removedOwnAbortedTestScenes": [
+    {
+      "path": "AniBato/Assets/InitTestScene6d335926-c839-4195-b3dc-fc3675d3bb3b.unity",
+      "sha256": "15efd73a4f32f754e1a2e96aaa54cea5c5614a60c1989650b98833b662619433"
+    },
+    {
+      "path": "AniBato/Assets/InitTestScene6d335926-c839-4195-b3dc-fc3675d3bb3b.unity.meta",
+      "sha256": "d0a61bb5530990042c3c62f0c6a035b3c7abe94673caee40f8461c53ad8c2c9a"
+    }
+  ]
+}

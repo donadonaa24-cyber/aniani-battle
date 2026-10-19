@@ -203,7 +203,7 @@ namespace AniBato.Battle
         {
             var adjusted = attack;
             if (fighter.BuffRemaining > 0)
-                adjusted.StartupFrames = (int)Math.Ceiling(attack.StartupFrames * SkillSystem.Multiplier(fighter.Buff.StartupMultiplier));
+                adjusted.StartupFrames = (int)Math.Ceiling(attack.StartupFrames * fighter.StartupMultiplier);
             if (adjusted.RequiresFollowup) adjusted.StartupFrames = Math.Max(1, adjusted.StartupFrames);
             fighter.Attack = new AttackInstance(nextAttackId++, adjusted, chain, air);
             if (!(air && attack.IsNormal && rules.CombatInput.FlowingAerialNormal)) fighter.Velocity = new BattleVector(0, fighter.Velocity.Y);

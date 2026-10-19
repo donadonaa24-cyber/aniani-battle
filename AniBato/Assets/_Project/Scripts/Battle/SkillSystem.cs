@@ -3,9 +3,11 @@ using System.Collections.Generic;
 
 namespace AniBato.Battle
 {
+    public enum BuffChannel { Default, MovementBoost }
     [Serializable]
     public struct BuffDefinition
     {
+        public BuffChannel Channel;
         public int DurationFrames;
         public float MoveMultiplier;
         public float DashMultiplier;
@@ -34,10 +36,12 @@ namespace AniBato.Battle
     public static class SkillSystem
     {
         public const int MaxParalysisFrames = 45;
+        public const int MaxStatusParalysisFrames = 120;
         internal static float Multiplier(float value) => value > 0 ? value : 1;
         internal static void Step(FighterState fighter)
         {
-            if (fighter.BuffRemaining > 0) fighter.BuffRemaining--;
+            if (fighter.NormalBuffRemaining > 0) fighter.NormalBuffRemaining--;
+            if (fighter.SpeedBuffRemaining > 0) fighter.SpeedBuffRemaining--;
             if (fighter.MarkRemaining > 0) fighter.MarkRemaining--;
             for (int i = 0; i < fighter.SpecialCooldowns.Length; i++)
                 if (fighter.SpecialCooldowns[i] > 0) fighter.SpecialCooldowns[i]--;
@@ -46,6 +50,12 @@ namespace AniBato.Battle
         public static void Buff(FighterState fighter, in BuffDefinition buff)
         {
             if (buff.DurationFrames == 0) return;
+            if (buff.Channel == BuffChannel.MovementBoost)
+            {
+                if (fighter.SpeedBuffRemaining >= buff.DurationFrames && fighter.SpeedBuffRemaining > 0 &&
+                    Multiplier(fighter.SpeedBuff.MoveMultiplier) >= Multiplier(buff.MoveMultiplier) && Multiplier(fighter.SpeedBuff.DashMultiplier) >= Multiplier(buff.DashMultiplier)) return;
+                fighter.SpeedBuff = buff; fighter.SpeedBuffRemaining = buff.DurationFrames; return;
+            }
             fighter.Buff = buff; fighter.BuffRemaining = buff.DurationFrames;
         }
         internal static void OnActive(FighterState fighter)
@@ -64,7 +74,8 @@ namespace AniBato.Battle
         }
         internal static void OnHit(FighterState target, in AttackDefinition definition)
         {
-            target.ParalysisRemaining = Math.Max(target.ParalysisRemaining, Math.Min(MaxParalysisFrames, definition.ParalysisFrames));
+            int limit = definition.DamageMode == AttackDamageMode.StatusOnly ? MaxStatusParalysisFrames : MaxParalysisFrames;
+            target.ParalysisRemaining = Math.Max(target.ParalysisRemaining, Math.Min(limit, definition.ParalysisFrames));
             target.MarkRemaining = Math.Max(target.MarkRemaining, definition.MarkFrames);
         }
     }

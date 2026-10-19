@@ -14,12 +14,12 @@ namespace AniBato.Game
         {
             var live=new HashSet<Projectile>(projectiles);
             foreach(var old in slots.Keys.Where(p=>!live.Contains(p)).ToArray())slots.Remove(old);
-            var attacks=new HashSet<AttackInstance>(projectiles.Select(p=>p.Attack));
+            var attacks=new HashSet<AttackInstance>(projectiles.Select(p=>p.Group));
             foreach(var old in next.Keys.Where(a=>!attacks.Contains(a)).ToArray())next.Remove(old);
             foreach(var projectile in projectiles)
             {
                 if(slots.ContainsKey(projectile))continue;
-                next.TryGetValue(projectile.Attack,out int index);slots.Add(projectile,index);next[projectile.Attack]=index+1;
+                next.TryGetValue(projectile.Group,out int index);slots.Add(projectile,index);next[projectile.Group]=index+1;
             }
         }
     }

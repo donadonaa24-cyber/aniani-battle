@@ -13,13 +13,13 @@
   "jobs": [
     {
       "id": "normal1_prepare",
-      "version": 2,
-      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal1_prepare_v2.json"
+      "version": 3,
+      "promptFile": "art_source/directional_specials/prompts/akatsuki_slash_prepare_v2.txt"
     },
     {
       "id": "normal1_impact",
-      "version": 1,
-      "promptFile": "art_source/paper_roster_action/akatsuki/prompts/normal1_impact_v1.json"
+      "version": 2,
+      "promptFile": "art_source/directional_specials/prompts/akatsuki_slash_impact_v1.txt"
     },
     {
       "id": "normal3_prepare",
@@ -129,7 +129,7 @@
       ],
       "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常1・2段共通カード斬りの予備、まだ当てない。両足を接地し、両膝と腰を曲げて体を少し後ろへ引く。本人左手でカード1枚の下端の角を親指と人差し指でつまみ、胸の右寄りの本人左肩近くへ引いて、斬る直前の構え。本人左肩は画面右、左上腕はそこから左肘・手首へ一続きで、左手の掌側とカード背面がこちらへ見える。本人右手は画面左の腰の前に軽く握って置く。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n修正条件：原画1103×1426、足元1397と髪上7のため共通枠へ原寸梱包できず、採用待機より頭が大きい。画像1の待機の335pxの頭髪と靴の実寸へ戻す。キャンバス1189×1323、髪を上端から離し、両膝を深く曲げて余白を確保する。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
       "tool": "built-in image_gen",
-      "status": "game_adopted_unapproved",
+      "status": "retained_before_card_slash_refinement",
       "sha256": "32d65174f1199eb8cee8aeba6d1268251d434f91fb657a2d9c4d798490b0ece4",
       "native": {
         "width": 1188,
@@ -142,7 +142,7 @@
         }
       },
       "artApproved": false,
-      "gameConnected": true,
+      "gameConnected": false,
       "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal1_prepare.png",
       "preparedSha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
       "offsetX": 57,
@@ -220,7 +220,7 @@
       ],
       "prompt": "Use case: precise-object-edit. Asset type: オリジナル2Dペープサート格闘ゲームの全身原画一枚。画像1は暁本人の採用待機と同じ容姿・絵柄・部位の実寸の基準。画像2は持つカードの正式な背面意匠。画像1の本人一人だけを新しい一姿勢へ編集する。跳ねた短い黒紺の髪、茶色の瞳、細い丸眼鏡、紺色ブレザーと金ボタン、白シャツ、クリーム色Vネックニット、緑の斜め縞のネクタイ、紺色長ズボン、黒い革靴。人間の少年本人で、採用待機の顔・頭身・髪・眼鏡と靴の実寸を保つ。\n動作：通常1・2段共通カード斬りの当てる決め。腰と胸を右前方へひねって一歩踏み込み、本人左腕を画面右へ伸ばして、同じカードの縁で右前を斬る決め。左肩→左肘→左手首→本人左手を一続きにし、左の親指はカード背面の下端を押さえ、人差し指はカードの裏側へ回し、残る3本は下へ軽く曲げる。カードは手から離さない。右手は胸の横へ引いてバランスを取る。両脚を接地し、体軸の切り返しを明快にする。\nカードを持つのは必ず本人左手、右手には持たせない。画面右向きの斜め横で胸側と両腕・両脚が見える。本人左肩は画面右の奥側、右肩は画面左の手前側、肩から肘・手首と手の所属を追えること。左手の親指一本をカード背面の下端へ押し、人差し指一本は裏へ回し、残り3指を下へ軽く曲げる。カードを拳や四本の平行な指で挟まない。両手は各5指で親指の対向と関節を正しく描く。\nカードは1枚だけ、現実的なトランプの縦長の長方形で幅約140px／長辺約210px。画像2の濃紺の市松・クリーム金の装飾枠・料理帽・赤黒のスート・金色の「Battle à la Carte」の意匠を保つ。3枚扇形や新しい無地のカードにしない。\n1189×1323の真の透明PNG一枚。髪の幅約335px、手前の靴幅約240px、奥の靴幅約140pxを採用待機の実寸と比較し、ポーズが低くても頭や靴を拡大しない。接地は靴底y1291を目安にし、髪・手・カード・靴まで切らず全周30px以上の透明余白。枠へ合わせて全身を縮小せず、肘や膝を自然に曲げて収める。薄い硬いクリーム白の切り抜き縁を全外周とカードへ。普通のアニメの線とセル塗り。背景・床・影・相手・説明文字・カード以外の文字・光彩・効果・グロー・紙の繊維・関節分割・複数人・複数案・3D・写実・ピクセルは禁止。\n最優先：画像1の採用待機の頭・髪・眼鏡・顔と左右の靴の実寸を厳守。全身を大きく描き直さない。1189×1323キャンバス、頭髪の幅335px、接地は靴底1291。両膝を曲げて身体の高さを下げ、頭や髪を大きくしない。上側には透明余白を残す。",
       "tool": "built-in image_gen",
-      "status": "game_adopted_unapproved",
+      "status": "retained_before_card_slash_refinement",
       "sha256": "6d00729dc9b98f4bd7d5e84440c12ccaa27e2752cff661c4a291d681143286f8",
       "native": {
         "width": 1189,
@@ -233,7 +233,7 @@
         }
       },
       "artApproved": false,
-      "gameConnected": true,
+      "gameConnected": false,
       "prepared": "art_source/paper_roster_action/akatsuki/prepared/normal1_impact.png",
       "preparedSha256": "3ab23dad61e17b9af7bc76b937c692497340385b1e988385db9c815a82b7ef47",
       "offsetX": 115,
@@ -694,8 +694,96 @@
       "sourceRgbaPreserved": true,
       "rgbaWithinCanvasPreserved": true,
       "croppedOutsideAlphaOnePixels": 0
+    },
+    {
+      "id": "normal1_prepare",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "normal1",
+      "phase": "prepare",
+      "label": "通常1・2段共通カード斬り",
+      "version": 3,
+      "source": "art_source/directional_specials/akatsuki_slash_prepare_v2.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "EDIT reference 1, preserving the same torso orientation and arm ownership. The CARD MUST STAY ON THE RIGHT SIDE OF THE IMAGE in the same anatomical LEFT hand as reference 1. Do NOT move the card to the image-left arm. The image-left arm remains the empty right arm. Create a clear wind-up for a downward-forward close-range card-edge slash: raise that IMAGE-RIGHT LEFT forearm above his left shoulder so the held card is near the TOP-RIGHT of the canvas, his left elbow still at IMAGE RIGHT, left shoulder visibly connected to that forearm. His left palm and curled inner finger surfaces should face the viewer naturally, with an opposed left thumb holding the lower corner of the card against the index finger; five digits anatomically, other fingers naturally curled. His empty image-left right hand stays near the waist. Keep glasses, head, navy uniform, cream vest, green tie, both legs, black shoes, proportions and anime style of reference 1. Reference 2 provides the blue-and-gold Battle à la Carte card back. Knees bent, slight backward torso lean, energetic concentrated face. Full body, two arms and two legs only, continuous ivory cutout border, same approximately 500-pixel hair width as reference. Transparent PNG, no backdrop, no effects, no extra cards, no sheet, generous margin. Pose is raised card at IMAGE TOP RIGHT, NOT the top left.\r\n",
+      "tool": "built-in imagegen",
+      "status": "native_verified_art_approval_pending",
+      "sha256": "dfe661e63ff2a906f0587a30111fed0536a383d7552f1478960de62099e826e9",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 272,
+          "top": 20,
+          "right": 1093,
+          "bottom": 1293
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/directional_specials/prepared/akatsuki_slash_prepare.png",
+      "preparedSha256": "03cab1a40ab5965325c75be655d610bfa48d8a7aee4bf160659418cfdf8e1388",
+      "offsetX": 58,
+      "offsetY": 35,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "promptFile": "art_source/directional_specials/prompts/akatsuki_slash_prepare_v2.txt",
+      "noResampling": true,
+      "unityVerifiedTag": "special_refinement_3_5"
+    },
+    {
+      "id": "normal1_impact",
+      "key": "akatsuki",
+      "character": "暁",
+      "pose": "normal1",
+      "phase": "impact",
+      "label": "通常1・2段共通カード斬り",
+      "version": 2,
+      "source": "art_source/directional_specials/akatsuki_slash_impact_v1.png",
+      "references": [
+        "art_source/paper_roster_idle/generated/akatsuki_idle_v1.png",
+        "art_source/paper_roster_action/akatsuki/generated/effect_card_v2.png"
+      ],
+      "referenceRoles": [
+        "本人の採用待機、直接の編集対象",
+        "正式背面を元に生成した本作の投射カード、保持中も同じ意匠"
+      ],
+      "prompt": "Create the IMPACT key to follow the anticipation in reference 1. This is Akatsuki's close-range downward-forward CARD EDGE SLASH, not a card presentation or throw. Keep exact character, head/hair and shoe size, costume, stance identity, ordinary anime cel shading and white cutout outline. Keep ownership of the card on his OWN LEFT ARM at the IMAGE RIGHT side; the image-left arm stays the empty right arm. Swing the image-right left arm from overhead to DOWN AND FORWARD at lower chest/waist height toward image right, left elbow nearly extended with a slight natural bend, and lean his torso forward with the front knee bent so the silhouette clearly communicates a forceful cut. The ONE blue-and-gold Battle à la Carte card from reference 2 remains pinched securely by its lower corner in the anatomically LEFT hand, between opposed left thumb and index finger, three other fingers naturally curled, palm/inner-finger side visible. Do not turn it into a right hand. The card should be tilted diagonally along the downward slash, its thin cutting edge leading; back design still visible at an oblique angle. Empty right hand pulled back near his chest for balance. Exactly two legs, two shoes and two arms, five digits anatomically per hand. One whole-body key illustration, no blur or slash effect painted into the body, no extra cards. Transparent background, no ground, no backdrop, no glow, no haze. Full figure with generous margins, same near-square aspect as reference, no sheet.\r\n",
+      "tool": "built-in imagegen",
+      "status": "native_verified_art_approval_pending",
+      "sha256": "8cfcd63b539bfbdb3947ef7fdcb654ba4e0e5ed03e7bb33cf218f6cd86db8740",
+      "native": {
+        "width": 1188,
+        "height": 1324,
+        "bounds": {
+          "left": 171,
+          "top": 45,
+          "right": 1181,
+          "bottom": 1297
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/directional_specials/prepared/akatsuki_slash_impact.png",
+      "preparedSha256": "d8ac3b8cb7015d5ce20ab683cd348e798868213f65f2cd09ed9bb16a82cac409",
+      "offsetX": 58,
+      "offsetY": 31,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "promptFile": "art_source/directional_specials/prompts/akatsuki_slash_impact_v1.txt",
+      "noResampling": true,
+      "unityVerifiedTag": "special_refinement_3_5"
     }
   ],
   "integrated": true,
-  "verifiedTag": "rework_r4_akatsuki_3"
+  "verifiedTag": "special_refinement_3_5"
 }

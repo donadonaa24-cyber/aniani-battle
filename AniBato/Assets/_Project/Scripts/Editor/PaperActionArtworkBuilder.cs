@@ -101,7 +101,7 @@ namespace AniBato.EditorTools
             importer.GetSourceTextureWidthAndHeight(out int w, out int h);
             if (w != width || h != height) throw new InvalidOperationException("攻撃原画の寸法不一致: " + source);
             importer.textureType = TextureImporterType.Sprite; importer.spriteImportMode = SpriteImportMode.Single;
-            importer.spritePixelsPerUnit = PixelsPerUnit; importer.npotScale = TextureImporterNPOTScale.None; importer.maxTextureSize = 2048;
+            importer.spritePixelsPerUnit = PixelsPerUnit; importer.npotScale = TextureImporterNPOTScale.None; importer.maxTextureSize = width > 2048 || height > 2048 ? 4096 : 2048;
             importer.mipmapEnabled = false; importer.filterMode = FilterMode.Bilinear; importer.alphaIsTransparency = true;
             importer.textureCompression = TextureImporterCompression.Uncompressed;
             var settings = new TextureImporterSettings(); importer.ReadTextureSettings(settings);

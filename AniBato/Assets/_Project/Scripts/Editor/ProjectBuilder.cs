@@ -73,6 +73,7 @@ namespace AniBato.EditorTools
             PaperRosterCoreBuilder.Apply(setup.Characters);
             CombatInputBuilder.Apply(setup.Characters);
             RosterMoveSetBuilder.Apply(setup.Characters);
+            RosterRefinementBuilder.Apply(setup.Characters);
             PaperActionArtworkBuilder.Apply(setup.Characters);
             PaperRosterActionArtworkBuilder.Apply(setup.Characters);
             PaperNormalFourKeyBuilder.Apply(setup.Characters);

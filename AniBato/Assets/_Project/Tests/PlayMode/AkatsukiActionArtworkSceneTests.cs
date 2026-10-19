@@ -59,24 +59,33 @@ namespace AniBato.Tests
             {
                 runner.BeginMatch(data,runner.Setup.Character(2),runner.CurrentStage,false);var sim=runner.Simulation;
                 Set(sim.P1,"Position",new BattleVector(-facing*4,sim.P1.Position.Y));Set(sim.P1,"Facing",facing);Set(sim.P1,"Gauge",sim.Rules.Gauge.Maximum);
-                Set(sim.P2,"Position",new BattleVector(facing*3,sim.P2.Position.Y));var button=ultimate?keys.Ultimate:keys.Special;
+                Set(sim.P2,"Position",new BattleVector(ultimate?0:facing*3,sim.P2.Position.Y));var button=ultimate?keys.Ultimate:keys.Special;
                 yield return Key(button,true);Tick();yield return Key(button,false);
                 int wait=0;while(sim.Projectiles.Count==0&&wait++<100)Tick();Assert.That(sim.Projectiles.Count,Is.EqualTo(1));
                 var shot=sim.Projectiles.Single();var art=data.PaperMotion.Projectile(ultimate?AbilityLook.Pyramid:AbilityLook.Card);
                 int ticks=0;bool captured=false,hit=false,afterAction=false;float oldY=shot.Position.Y;
-                while(sim.Projectiles.Count>0&&ticks++<130)
+                bool landedWall=false,groundedArtwork=false; int landingLife=0;
+                while(sim.Projectiles.Count>0&&ticks++<800)
                 {
                     projectiles.SendMessage("LateUpdate");var renderer=projectiles.GetComponentsInChildren<SpriteRenderer>().Single(s=>s.enabled);
                     Assert.That(renderer.sprite,Is.SameAs(art.Sprite));Assert.That(renderer.flipX,Is.False);
                     Assert.That(renderer.transform.localScale.x,Is.EqualTo(art.Scale).Within(.00001f));
                     if(ultimate){Assert.That(shot.Position.Y,Is.LessThanOrEqualTo(oldY));oldY=shot.Position.Y;}
+                    if(ultimate&&shot.Landed&&!landedWall){landedWall=true;landingLife=shot.RemainingFrames;Assert.That(sim.Stage.IsActive(sim.Stage.CollisionPlatformCount-1),Is.True);}
+                    if(ultimate&&shot.Landed&&shot.RemainingFrames<600&&!groundedArtwork)
+                    {
+                        float artBottom=renderer.transform.position.y-art.VisibleSize.y*renderer.transform.localScale.y*.5f;
+                        Assert.That(artBottom,Is.EqualTo(shot.Hitbox.Bottom).Within(.001f));groundedArtwork=true;
+                        Capture("pyramid_landed_wall_"+facing,false,"special_refinement");
+                    }
                     if(!captured&&(!ultimate||shot.Position.Y<sim.P2.Position.Y+4))
                     {Capture((ultimate?"super":"special")+"_projectile_"+facing,false,"rework_r4_akatsuki");CaptureActionEffects("rework_r4_akatsuki",(ultimate?"super":"special")+"_item_"+facing,renderer);captured=true;}
                     if(sim.P2.Hearts<3){if(!hit)Capture((ultimate?"super":"special")+"_hit_"+facing,false,"rework_r4_akatsuki");hit=true;Assert.That(sim.P2.Hearts,Is.EqualTo(ultimate?1:2));Assert.That(sim.P2.NormalHitCount,Is.Zero);}
                     if(sim.P1.Attack==null)afterAction=true;
                     Tick();
                 }
-                Assert.That(ticks,Is.LessThan(130));Assert.That(captured&&hit&&afterAction,Is.True);
+                Assert.That(ticks,Is.LessThan(800));Assert.That(captured&&hit&&afterAction,Is.True);
+                if(ultimate){Assert.That(landedWall&&groundedArtwork,Is.True);Assert.That(landingLife,Is.EqualTo(600));Assert.That(sim.Stage.IsActive(sim.Stage.CollisionPlatformCount-1),Is.False);}
                 Assert.That(sim.P2.Hearts,Is.EqualTo(ultimate?1:2));
                 projectiles.SendMessage("LateUpdate");Assert.That(projectiles.GetComponentsInChildren<SpriteRenderer>().Any(s=>s.enabled),Is.False);
             }

@@ -68,6 +68,26 @@ MonoBehaviour:
         HorizontalSpeed: 0
         BurstFrames: 0
         SecondStartFrame: 0
+      ProjectileBehavior:
+        Homing: 0
+        ConsumeOnHit: 0
+        WallAfterLanding: 0
+        HomingSpeed: 0
+        FormationRadius: 0
+        VisualScale: 0
+        VisualOffset:
+          X: 0
+          Y: 0
+        StaggerFrames: 0
+        WallFrames: 0
+        RepeatIntervalFrames: 0
+        Formation: 0
+      Aftermath:
+        LifetimeFrames: 0
+        RepeatIntervalFrames: 0
+        Size:
+          X: 0
+          Y: 0
       DamageMode: 0
       SelfEffectsOnComplete: 0
       Kind: 0
@@ -119,6 +139,7 @@ MonoBehaviour:
       MarkFrames: 0
       SelfHealNormalHits: 0
       SelfBuff:
+        Channel: 0
         DurationFrames: 0
         MoveMultiplier: 0
         DashMultiplier: 0
@@ -130,19 +151,19 @@ MonoBehaviour:
       RequiresFollowup: 0
       StanceFrames: 0
     Stamina:
-      Maximum: 100
-      GroundRecoveryPerSecond: 32
-      ActiveRecoveryPerSecond: 6
-      RecoveryDelayFrames: 30
-      JumpCost: 8
-      AirJumpCost: 12
-      GroundDashCost: 8
-      AirDashCost: 14
-      DodgeCost: 18
+      Maximum: 90
+      GroundRecoveryPerSecond: 34
+      ActiveRecoveryPerSecond: 7
+      RecoveryDelayFrames: 24
+      JumpCost: 6
+      AirJumpCost: 10
+      GroundDashCost: 7
+      AirDashCost: 13
+      DodgeCost: 12
       GuardDrainPerSecond: 6
-      NormalGuardCost: 8
-      SpecialGuardCost: 20
-      UltimateGuardCost: 65
+      NormalGuardCost: 10
+      SpecialGuardCost: 24
+      UltimateGuardCost: 70
       GuardBreakFrames: 18
       GuardLockFrames: 36
     CrouchHeightRatio: 0.55
@@ -187,6 +208,26 @@ MonoBehaviour:
         HorizontalSpeed: 0
         BurstFrames: 0
         SecondStartFrame: 0
+      ProjectileBehavior:
+        Homing: 0
+        ConsumeOnHit: 0
+        WallAfterLanding: 0
+        HomingSpeed: 0
+        FormationRadius: 0
+        VisualScale: 0
+        VisualOffset:
+          X: 0
+          Y: 0
+        StaggerFrames: 0
+        WallFrames: 0
+        RepeatIntervalFrames: 0
+        Formation: 0
+      Aftermath:
+        LifetimeFrames: 0
+        RepeatIntervalFrames: 0
+        Size:
+          X: 0
+          Y: 0
       DamageMode: 0
       SelfEffectsOnComplete: 0
       Kind: 0
@@ -238,6 +279,7 @@ MonoBehaviour:
       MarkFrames: 0
       SelfHealNormalHits: 0
       SelfBuff:
+        Channel: 0
         DurationFrames: 0
         MoveMultiplier: 0
         DashMultiplier: 0
@@ -250,6 +292,7 @@ MonoBehaviour:
       StanceFrames: 0
     Counter:
       Buff:
+        Channel: 0
         DurationFrames: 180
         MoveMultiplier: 1.25
         DashMultiplier: 1.3
@@ -264,8 +307,9 @@ MonoBehaviour:
   NormalThrowSchemaVersion: 1
   NormalWeaponSchemaVersion: 0
   MoveSetSchemaVersion: 1
-  DirectionalSpecialSchemaVersion: 2
+  DirectionalSpecialSchemaVersion: 3
   RecoverySchemaVersion: 3
+  RefinementSchemaVersion: 1
   ActionArtworkSchemaVersion: 1
   DirectionalNormals:
   - {fileID: 0}

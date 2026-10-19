@@ -76,7 +76,7 @@ namespace AniBato.Battle
                 var position = self.Position + delta * (step / (float)steps);
                 var body = new BattleRect(position, self.Definition.HurtboxSize);
                 bool blocked = false;
-                for (int i = 0; i < stage.PlatformCount; i++)
+                for (int i = 0; i < stage.CollisionPlatformCount; i++)
                     if (stage.IsActive(i) && !stage[i].OneWay && body.Overlaps(stage[i].Bounds)) { blocked = true; break; }
                 if (!blocked) return position;
             }

@@ -19,7 +19,7 @@ namespace AniBato.Battle
             if (attack != null && attack.IsDamageActive && !attack.Definition.SpawnProjectile && !attack.HasHit(target.PlayerIndex) &&
                 !attack.Definition.NonDamaging && attack.Overlaps(source, target.Hurtbox)) target.PreDefenseOverlaps.Add(attack.Id);
             foreach (var projectile in projectiles)
-                if (projectile.Owner != target && !projectile.Attack.HasHit(target.PlayerIndex) && projectile.Hitbox.Overlaps(target.Hurtbox))
+                if (projectile.CanDamage && projectile.ContactCooldown == 0 && projectile.Owner != target && !projectile.Attack.HasHit(target.PlayerIndex) && projectile.Hitbox.Overlaps(target.Hurtbox))
                     target.PreDefenseOverlaps.Add(projectile.Attack.Id);
         }
         public DefenseOutcome Evaluate(in HitContact contact, in BattleRuleDefinition rules)

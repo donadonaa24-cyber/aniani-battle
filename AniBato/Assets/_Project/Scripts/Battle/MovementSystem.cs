@@ -20,6 +20,7 @@ namespace AniBato.Battle
         {
             InvalidateGround(fighter, stage);
             if (fighter.FrozenThisTick || fighter.Mode == FighterMode.KO) return;
+            ResolveNewWalls(fighter, stage);
             bool canControl = fighter.CanControlMovement;
             bool flowing = rules.CombatInput.FlowingAerialNormal && fighter.Attack != null && fighter.Attack.AirborneAttack &&
                 fighter.Attack.Definition.IsNormal && fighter.HitstunRemaining == 0 && fighter.ParalysisRemaining == 0;
@@ -57,7 +58,7 @@ namespace AniBato.Battle
             float halfHeight = fighter.Definition.HurtboxSize.Y * 0.5f;
             float bestTop = float.NegativeInfinity;
             int landing = -1;
-            for (int i = 0; i < stage.PlatformCount; i++)
+            for (int i = 0; i < stage.CollisionPlatformCount; i++)
             {
                 if (!stage.IsActive(i)) continue;
                 StagePlatform platform = stage[i];
@@ -93,11 +94,27 @@ namespace AniBato.Battle
                     fighter.ActionFrames = fighter.Attack.Definition.LandingRecoveryFrames; fighter.Attack = null; fighter.Mode = FighterMode.Recovery;
                 }
                 // An up-special starting from the ground must launch before landing can restore it.
-                if (fighter.Attack == null || !fighter.Attack.Definition.IsSpecial || fighter.CurrentSpecial != SpecialSlot.Up)
+                if (justLanded || fighter.Attack == null || !fighter.Attack.Definition.IsSpecial || fighter.CurrentSpecial != SpecialSlot.Up)
                     fighter.UpSpecialUsed = false;
             }
             else if (fighter.JumpsUsed == 0) fighter.JumpsUsed = 1; // Walking off a ledge uses the ground jump.
             FighterStateMachine.RefreshLocomotion(fighter);
+        }
+        private static void ResolveNewWalls(FighterState fighter, StageGeometry stage)
+        {
+            for (int i = stage.PlatformCount; i < stage.CollisionPlatformCount; i++)
+            {
+                if (!stage.IsActive(i)) continue;
+                var wall = stage[i].Bounds; var body = new BattleRect(fighter.Position, fighter.Definition.HurtboxSize);
+                if (!body.Overlaps(wall)) continue;
+                float left = body.Right-wall.Left, right = wall.Right-body.Left, up = wall.Top-body.Bottom;
+                if (up < left && up < right)
+                {
+                    fighter.Position += new BattleVector(0,up+.0001f); fighter.Velocity = new BattleVector(fighter.Velocity.X,0);
+                    fighter.Grounded = true; fighter.GroundPlatform = i; fighter.UpSpecialUsed = false;
+                }
+                else fighter.Position += new BattleVector(left < right ? -left-.0001f : right+.0001f,0);
+            }
         }
     }
 }

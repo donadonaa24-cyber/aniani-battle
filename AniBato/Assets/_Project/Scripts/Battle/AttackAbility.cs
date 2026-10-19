@@ -5,7 +5,7 @@ namespace AniBato.Battle
     public enum AbilityMotion { None, Teleport, TwoPhaseRush, TeleportBehind }
     public enum ProjectileChannel { Shared, Placed, Aftermath }
     public enum ShotOrigin { Owner, OpponentAbove, StageCenter }
-    public enum AbilityLook { Default, Bullet, Drone, Rocket, BlackHole, Emp, Alma, Rook, Bishop, King, Card, Pyramid, Spell, Curry, Teleport, RiceBall, Bat, Mine, TrapCard, Meal, Reading }
+    public enum AbilityLook { Default, Bullet, Drone, Rocket, BlackHole, Emp, Alma, Rook, Bishop, King, Card, Pyramid, Spell, Curry, Teleport, RiceBall, Bat, Mine, TrapCard, Meal, Reading, CurryResidue }
     [Serializable]
     public struct AttackAbility
     {
@@ -57,7 +57,7 @@ namespace AniBato.Battle
                 var destination = self.Position + delta;
                 if (stage.IsOutside(destination)) return;
                 var body = new BattleRect(destination, self.Definition.HurtboxSize);
-                for (int i = 0; i < stage.PlatformCount; i++)
+                for (int i = 0; i < stage.CollisionPlatformCount; i++)
                     if (stage.IsActive(i) && !stage[i].OneWay && body.Overlaps(stage[i].Bounds)) return;
                 self.Position = destination;
                 if (ability.Motion == AbilityMotion.TeleportBehind) self.Facing = target.Position.X >= self.Position.X ? 1 : -1;
