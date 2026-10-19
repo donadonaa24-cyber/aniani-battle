@@ -606,6 +606,26 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.9369321
     FootMaxX: 1.1153059
+  UpRecovery:
+    Key: 
+    States: 
+    Frames: []
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs: []
+    HeadHeight: 0
+    FootBaseY: 0
+    FootMinX: 0
+    FootMaxX: 0
   Bag: {fileID: 0}
   RiceBall: {fileID: 0}
   Mogu: {fileID: 0}

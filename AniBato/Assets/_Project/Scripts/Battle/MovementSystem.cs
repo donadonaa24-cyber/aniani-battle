@@ -37,7 +37,8 @@ namespace AniBato.Battle
                 fighter.FastFalling = true;
             BattleVector oldPosition = fighter.Position;
             float vertical = fighter.Velocity.Y;
-            if (!fighter.Grounded && fighter.Mode != FighterMode.Dash && fighter.Mode != FighterMode.Dodge)
+            bool recoveryFloat = fighter.Attack != null && fighter.Attack.IsActive && fighter.Attack.Definition.Recovery.IgnoresGravity;
+            if (!fighter.Grounded && fighter.Mode != FighterMode.Dash && fighter.Mode != FighterMode.Dodge && !recoveryFloat)
             {
                 vertical = Math.Max(vertical - fighter.Definition.Gravity * BattleRuleDefinition.TickSeconds,
                     -(fighter.FastFalling ? fighter.Definition.FastFallSpeed : fighter.Definition.MaxFallSpeed));

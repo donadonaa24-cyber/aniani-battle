@@ -1,0 +1,40 @@
+{
+  "goalComplete": false,
+  "schemaVersion": 1,
+  "date": "2026-10-20",
+  "captureCount": 36,
+  "previousFindings": [
+    "up_1: test AnimationState type ambiguity fixed",
+    "up_2: bishop rise below intended height and test null/empty serialized pose distinction fixed",
+    "up_3: native 670/87 passed; broader below-ledge test found four could not return",
+    "edges_1: 5/9 passed; shorten rook/book recovery and transfer through intervening space with solid destination checks"
+  ],
+  "windowsBuild": "passed",
+  "tests": [
+    {
+      "sha256": "59933c3dbb3a632a895233b702337d5051c0554e1827c7400666a09582163f90",
+      "passed": 681,
+      "skipped": 0,
+      "total": 681,
+      "failed": 0,
+      "platform": "EditMode"
+    },
+    {
+      "sha256": "46f738b11e5377e0a87df420b2723a76623732f64f3e05b1d8607611a57dd208",
+      "passed": 88,
+      "skipped": 0,
+      "total": 88,
+      "failed": 0,
+      "platform": "PlayMode"
+    }
+  ],
+  "tag": "directional_up_4",
+  "buildAll": "passed",
+  "focused": {
+    "tag": "recovery_edges_2",
+    "passed": 38,
+    "total": 38
+  },
+  "stage": "C_up_recoveries",
+  "captures": "TestResults/directional_up_4/captures/directional_recovery"
+}

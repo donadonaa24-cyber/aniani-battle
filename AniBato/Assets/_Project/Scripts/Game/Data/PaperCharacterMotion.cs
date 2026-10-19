@@ -92,6 +92,7 @@ namespace AniBato.Game
         public PaperPose[] Poses;
         public PaperPose HeavyDamage;
         public PaperPose Charging;
+        public PaperPose UpRecovery;
         public Sprite Bag, RiceBall, Mogu, CurryWave;
         public PaperProjectileArt[] Projectiles;
         public PaperAbilityArt[] AbilityEffects;

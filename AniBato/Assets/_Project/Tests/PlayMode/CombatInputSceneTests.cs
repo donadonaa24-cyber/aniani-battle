@@ -58,10 +58,10 @@ namespace AniBato.Tests
                 {
                     runner.BeginMatch(character, runner.Setup.Character(2), runner.CurrentStage, false);
                     yield return Key(direction, true); yield return Key(keys.Special, true); Tick();
-                    var slot = direction == keys.Down ? SpecialSlot.Down : SpecialSlot.Neutral;
+                    var slot = direction == keys.Down ? SpecialSlot.Down : direction == keys.Up ? SpecialSlot.Up : SpecialSlot.Neutral;
                     Assert.That(runner.Simulation.P1.CurrentSpecial, Is.EqualTo(slot));
                     Assert.That(runner.Simulation.P1.Attack.Definition.Name, Is.EqualTo(character.Specials[(int)slot].Definition.Name));
-                    Assert.That(view.RenderedSample.State, Is.EqualTo(slot == SpecialSlot.Down ? AnimationState.SpecialDown : AnimationState.SpecialNeutral));
+                    Assert.That(view.RenderedSample.State, Is.EqualTo(slot == SpecialSlot.Down ? AnimationState.SpecialDown : slot == SpecialSlot.Up ? AnimationState.SpecialUp : AnimationState.SpecialNeutral));
                     yield return Key(keys.Special, false); yield return Key(direction, false);
                 }
             }

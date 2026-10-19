@@ -81,10 +81,11 @@ namespace AniBato.Battle
             if (self.Position.X < left || self.Position.X > right || self.Position.Y < floor.Top)
             {
                 guardRemaining = 0; cooldown = 0; movement = new FrameInput(inward);
+                if (self.Attack != null && self.Attack.Definition.Recovery.Style != RecoveryStyle.None) return new FrameInput(inward, 1);
                 if (!self.CanControlMovement) return movement;
                 bool falling = self.Velocity.Y <= 0;
                 if (!self.Grounded && falling && self.JumpsUsed < self.Definition.MaxJumps && StaminaSystem.CanSpend(self, self.Definition.Stamina.AirJumpCost)) return Action(inward, InputButtons.Jump);
-                if (!sim.Rules.CombatInput.SingleSpecial && !self.Grounded && !self.UpSpecialUsed && self.SpecialCooldown(SpecialSlot.Up) == 0 && falling)
+                if ((!sim.Rules.CombatInput.SingleSpecial || sim.Rules.CombatInput.UpRecoveryEnabled) && !self.Grounded && !self.UpSpecialUsed && self.SpecialCooldown(SpecialSlot.Up) == 0 && falling)
                     return Action(inward, InputButtons.Special, 1);
                 if (!self.Grounded && self.AirDashesUsed < self.Definition.MaxAirDashes && self.Position.Y > floor.Top + 1 &&
                     StaminaSystem.CanSpend(self, self.Definition.Stamina.AirDashCost) &&
@@ -107,6 +108,7 @@ namespace AniBato.Battle
                     if (distance <= Definition.CloseDistance + 1 && SafeNormalChain(self, safe, sim.Rules.MaxComboHits) && Chance(Definition.ComboChance))
                         return Action(toward, InputButtons.Attack);
                 }
+                if (self.Attack.Definition.Recovery.Style != RecoveryStyle.None) return new FrameInput(inward, self.Position.Y < floor.Top ? 1 : 0);
                 return sim.Rules.CombatInput.FlowingAerialNormal && self.Attack.AirborneAttack && self.Attack.Definition.IsNormal ? new FrameInput(toward) : default;
             }
             if (!self.CanControlMovement) return default;
@@ -114,6 +116,17 @@ namespace AniBato.Battle
             cooldown = Definition.DecisionFrames;
             movement = new FrameInput(toward);
             if (samples <= Definition.ReactionFrames) return default;
+            if (sim.Rules.CombatInput.DownSpecialEnabled && self.SpecialCooldown(SpecialSlot.Down) == 0)
+            {
+                var down = self.Definition.Special(SpecialSlot.Down);
+                bool legal = (!down.Ability.GroundOnly || self.Grounded) && (down.Ability.PlacementLimit == 0 || self.PlacedCount < down.Ability.PlacementLimit);
+                bool useful = down.SelfHealNormalHits > 0 && self.NormalHitCount > 0 && distance > Definition.MediumDistance ||
+                    down.SelfBuff.DurationFrames > 0 && self.BuffRemaining == 0 && distance > Definition.CloseDistance ||
+                    down.Ability.PlacementLimit > 0 && distance < Definition.MediumDistance ||
+                    down.Ability.SuperGuard && seen.Attacking && distance < Definition.CloseDistance + 1 ||
+                    down.Ability.Motion == AbilityMotion.TeleportBehind && distance > Definition.MediumDistance;
+                if (legal && useful && Chance(Definition.SpecialChance)) return Action(0, InputButtons.Special, -1);
+            }
             if (seen.Attacking && Threatens(seen, self, Definition.MediumDistance))
             {
                 int impact = seen.Attack.StartupFrames + seen.Attack.DamageDelayFrames - seen.AttackFrame;

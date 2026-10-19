@@ -16,6 +16,7 @@ namespace AniBato.Game
         public int NormalWeaponSchemaVersion;
         public int MoveSetSchemaVersion;
         public int DirectionalSpecialSchemaVersion;
+        public int RecoverySchemaVersion;
         public int ActionArtworkSchemaVersion;
         public AttackData[] DirectionalNormals;
         public AttackData UpNormal;

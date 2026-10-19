@@ -79,9 +79,18 @@ namespace AniBato.Game
                 else if (ability.Look == AbilityLook.Reading) { sample.State = AniBato.Presentation.AnimationState.Ultimate; sample.Startup = sample.DamageDelay = 0; }
                 else if (ability.Conscious) sample.State = AniBato.Presentation.AnimationState.Dodge;
             }
+            bool recovering = fighter.Attack != null && fighter.Attack.Definition.Recovery.Style != RecoveryStyle.None;
+            if (recovering && (fighter.Attack.Definition.Ability.Look == AbilityLook.Rook || fighter.Attack.Definition.Ability.Look == AbilityLook.Bishop || fighter.Attack.Definition.Ability.Look == AbilityLook.King))
+            {
+                sample.State = AniBato.Presentation.AnimationState.SpecialNeutral;
+                if (fighter.Attack.IsActive) sample.AttackFrame = Mathf.Max(sample.AttackFrame, sample.Startup + sample.DamageDelay);
+            }
+            else if (recovering && fighter.Attack.Definition.Ability.Conscious) sample.State = AniBato.Presentation.AnimationState.Dodge;
             UsesAnimationSprites = character.Animations && character.Animations.TrySprite(sample, out sprite);
             PaperPose paperPose = null; Sprite paperSprite = null;
             UsesPaperSprite = character.PaperMotion && character.PaperMotion.TrySprite(sample, fighter.LastDamageLostHeart, out paperSprite, out paperPose);
+            if (recovering && character.PaperMotion && character.PaperMotion.UpRecovery != null && character.PaperMotion.UpRecovery.Valid)
+            { paperPose = character.PaperMotion.UpRecovery; paperSprite = paperPose.Frames[0]; UsesPaperSprite = true; }
             if (UsesPaperSprite) { sprite = paperSprite; UsesAnimationSprites = true; }
             transform.localScale = UsesAnimationSprites ? Vector3.one : new Vector3(fighter.Facing, 1, 1);
             eye.enabled = !UsesAnimationSprites;

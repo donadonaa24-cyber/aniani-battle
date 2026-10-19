@@ -604,6 +604,27 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.6909639
     FootMaxX: 0.927544
+  UpRecovery:
+    Key: up_recovery
+    States: 0c000000i
+    Frames:
+    - {fileID: 21300000, guid: 0b64d7fbcd4080f4183271851dc81862, type: 3}
+    HoldTicks: 8
+    Airborne: 0
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs: []
+    HeadHeight: 1.9996647
+    FootBaseY: 0
+    FootMinX: -0.39430007
+    FootMaxX: 0.2816429
   Bag: {fileID: 0}
   RiceBall: {fileID: 0}
   Mogu: {fileID: 0}

@@ -61,6 +61,13 @@ MonoBehaviour:
         SuperGuard: 0
         Conscious: 0
         Look: 0
+      Recovery:
+        Style: 0
+        Speed: 0
+        Distance: 0
+        HorizontalSpeed: 0
+        BurstFrames: 0
+        SecondStartFrame: 0
       DamageMode: 0
       SelfEffectsOnComplete: 0
       Kind: 0
@@ -173,6 +180,13 @@ MonoBehaviour:
         SuperGuard: 0
         Conscious: 0
         Look: 0
+      Recovery:
+        Style: 0
+        Speed: 0
+        Distance: 0
+        HorizontalSpeed: 0
+        BurstFrames: 0
+        SecondStartFrame: 0
       DamageMode: 0
       SelfEffectsOnComplete: 0
       Kind: 0
@@ -251,6 +265,7 @@ MonoBehaviour:
   NormalWeaponSchemaVersion: 0
   MoveSetSchemaVersion: 1
   DirectionalSpecialSchemaVersion: 2
+  RecoverySchemaVersion: 3
   ActionArtworkSchemaVersion: 1
   DirectionalNormals:
   - {fileID: 0}
@@ -275,7 +290,7 @@ MonoBehaviour:
   Specials:
   - {fileID: 11400000, guid: 8f272138269929948af66f307be906a9, type: 2}
   - {fileID: 11400000, guid: bcafa49e4c3a3d9428410ffc99f5636e, type: 2}
-  - {fileID: 11400000, guid: c5d75d787c559e140ab553151bda1f4d, type: 2}
+  - {fileID: 11400000, guid: d8e69a49f7546334a8ab52ff6891f12a, type: 2}
   - {fileID: 11400000, guid: f7b98cfa8d2c5e74b96f546aa8646f22, type: 2}
   Ultimate: {fileID: 11400000, guid: c373a42bc2dbc1d498ff020d34a1dadc, type: 2}
   Tint: {r: 1, g: 0.38, b: 0.2, a: 1}

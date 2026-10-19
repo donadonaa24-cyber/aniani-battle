@@ -19,7 +19,7 @@ namespace AniBato.Game
                 case TutorialStep.DoubleJump: return "3 2段ジャンプ：空中でもう一度 " + j + "。";
                 case TutorialStep.NormalCombo: return "4 通常3段：" + a + " を3回押そう。押し続けるだけでは連打にならない。";
                 case TutorialStep.Directional: return "5 方向攻撃：" + input.Label(0, ControlAction.Down) + "＋" + a + "、" + input.Label(0, ControlAction.Up) + "＋" + a + "、空中で " + a + "。空中は方向によらず同じ技。";
-                case TutorialStep.Specials: return "6 特殊：" + s + "で固有技、↓＋" + s + "で特殊下。各1回試そう。";
+                case TutorialStep.Specials: return "6 特殊：" + s + "で固有技、↓＋" + s + "で特殊下、↑＋" + s + "で復帰。各1回試そう。復帰は着地まで1回。";
                 case TutorialStep.Guard: return "7 ガード：" + g + " を保持して防ごう。全種類を防ぐがスタミナ消費。超必殺は不足すると貫通。";
                 case TutorialStep.GuardBreak: return "8 ガード崩し：近づいて " + input.Label(0, ControlAction.Down) + "＋" + a + "。ガードを崩し、被弾カウント＋1。";
                 case TutorialStep.Dodge: return "9 回避：攻撃が来たら " + d + "。スタミナが必要。超必殺にはジャストのみ有効。";
@@ -42,6 +42,8 @@ namespace AniBato.Game
             string text = data.Specials[0].Definition.Name + "    " + s + "    ニュートラル／横\n";
             if (data.DirectionalSpecialSchemaVersion > 0) text += data.Specials[(int)SpecialSlot.Down].Definition.Name + "    ↓＋" + s +
                 "    CD " + (data.Specials[(int)SpecialSlot.Down].Definition.CooldownFrames / 60f).ToString("0.#") + "秒\n";
+            if (data.RecoverySchemaVersion > 0) text += data.Specials[(int)SpecialSlot.Up].Definition.Name + "    ↑＋" + s + "    着地まで1回・CD 1.5秒\n" +
+                (data.Specials[2].Definition.Recovery.Style == RecoveryStyle.DoubleBurst ? "王：溜めの間に方向を変えて2回目の突進。\n" : "復帰中の接触は被弾＋1。方向キーで向きを選択。\n");
             text += data.Ultimate.Definition.Name + "    " + input.Label(0, ControlAction.Ultimate) + "    LINK100、ハート−2、対戦1回／練習無制限\n";
             text += "カウンター    " + input.Label(0, ControlAction.Counter) + "    近距離通常を返す＋" + (data.Silhouette == 0 ? "移動強化" : data.Silhouette == 1 ? "吹っ飛ばし強化" : "蓄積1回復") + "\n";
             return text + "ガード " + input.Label(0, ControlAction.Guard) + " / 回避 " + input.Label(0, ControlAction.Dodge) + " / " + DashHelp(input);

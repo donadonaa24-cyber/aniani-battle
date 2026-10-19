@@ -16,6 +16,8 @@ namespace AniBato.Battle
         internal bool ProjectileSpawned;
         internal bool SelfEffectApplied;
         internal bool AbilityApplied;
+        internal bool RecoveryStarted;
+        internal BattleVector RecoveryDirection;
         internal int ErasuresRemaining;
         internal int StanceRemaining;
         public bool IsActive => !Clashed && Frame >= Definition.StartupFrames && Frame < Definition.StartupFrames + Definition.ActiveFrames;

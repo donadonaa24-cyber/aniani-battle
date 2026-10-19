@@ -81,6 +81,7 @@ namespace AniBato.EditorTools
             PaperRosterMotionBuilder.Apply(setup.Characters);
             PaperChargeArtworkBuilder.Apply(setup.Characters);
             DirectionalSpecialBuilder.Apply(setup.Characters);
+            DirectionalRecoveryBuilder.Apply(setup.Characters);
             DirectionalSpecialArtworkBuilder.Apply(setup.Characters);
             if (setup.Stages == null || setup.Stages.Length == 0) setup.Stages = stages;
             if (setup.CpuDifficulties == null || setup.CpuDifficulties.Length == 0) setup.CpuDifficulties = cpuDifficulties;
@@ -134,6 +135,7 @@ namespace AniBato.EditorTools
             if (definition.SchemaVersion < 8) { definition.Charge = ChargeAttackDefinition.Default; definition.SchemaVersion = 8; }
             if (definition.SchemaVersion < 9) { definition.CombatInput = CombatInputDefinition.Default; definition.SchemaVersion = 9; }
             if (definition.SchemaVersion < 10) { definition.CombatInput.DownSpecialEnabled = true; definition.SchemaVersion = 10; }
+            if (definition.SchemaVersion < 11) { definition.CombatInput.UpRecoveryEnabled = true; definition.SchemaVersion = 11; }
             asset.Definition = definition;
         }
         private static void UpgradeBindings(InputBindings asset)

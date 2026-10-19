@@ -38,13 +38,13 @@ MonoBehaviour:
       SingleSpecial: 1
       NormalClashes: 1
       DownSpecialEnabled: 1
-      UpRecoveryEnabled: 0
+      UpRecoveryEnabled: 1
       ClashStopFrames: 5
       ClashRecoveryFrames: 10
     DropThroughSpeed: 8
     DirectionThreshold: 0.5
     EnableRingOut: 1
-    SchemaVersion: 10
+    SchemaVersion: 11
     Defense:
       GuardReleaseFrames: 6
       GuardStunFrames: 10

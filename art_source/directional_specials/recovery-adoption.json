@@ -1,0 +1,83 @@
+{
+  "entries": [
+    {
+      "target": "イラスト確認/現在ゲームで採用中/透真/上復帰.png",
+      "sha256": "1feac6f708c94170a3f1a2e89f565fb0e340e025c2d505463a6f531bb9881b3f",
+      "source": "art_source/directional_specials/toma_drone_recovery_v1.png",
+      "name": "透真",
+      "kind": "new_single_key",
+      "characterIndex": 0
+    },
+    {
+      "target": "イラスト確認/現在ゲームで採用中/蓮/上復帰.png",
+      "sha256": "667101d8fff1282e191b734c1a8a4c6df9560d30a9d843f75226eda94ad3c0ec",
+      "source": "art_source/paper_roster_action/ren/prepared/special_impact.png",
+      "name": "蓮",
+      "kind": "existing_transformation_key",
+      "characterIndex": 1
+    },
+    {
+      "target": "イラスト確認/現在ゲームで採用中/千鶴/上復帰.png",
+      "sha256": "3d08557c814d5be2fa36cfd2993dfb3a241067e2b20d050c7c43bac4c63b5f05",
+      "source": "art_source/directional_specials/chizuru_balloon_recovery_v2.png",
+      "name": "千鶴",
+      "kind": "new_single_key",
+      "characterIndex": 2
+    },
+    {
+      "target": "イラスト確認/現在ゲームで採用中/湊/上復帰.png",
+      "sha256": "2437c914f11249b8cb6f32fda0a45ce1cf0b5e5793fddffdd00462c6895ea37d",
+      "source": "art_source/paper_roster_motion/minato/prepared/dodge.png",
+      "name": "湊",
+      "kind": "existing_dodge_with_conscious_tint",
+      "characterIndex": 3
+    },
+    {
+      "target": "イラスト確認/現在ゲームで採用中/シロ/上復帰.png",
+      "sha256": "05a84d1431db8d173d7806f4be30bfc7c67d3742e86843f2d18e3e96ec7a6bab",
+      "source": "art_source/paper_roster_motion/shiro/prepared/dodge.png",
+      "name": "シロ",
+      "kind": "existing_dodge_with_conscious_tint",
+      "characterIndex": 4
+    },
+    {
+      "target": "イラスト確認/現在ゲームで採用中/結衣/上復帰.png",
+      "sha256": "44f0b1af0ac70669389e1fc1948073962002127bf227d88abc7825d124922528",
+      "source": "art_source/paper_roster_action/yui/prepared/special_impact.png",
+      "name": "結衣",
+      "kind": "existing_transformation_key",
+      "characterIndex": 5
+    },
+    {
+      "target": "イラスト確認/現在ゲームで採用中/黒獅子王/上復帰.png",
+      "sha256": "f416a309696afb17586e785a373b2897779587545b3263571f365fecbd336a47",
+      "source": "art_source/paper_roster_action/king/prepared/special_impact.png",
+      "name": "黒獅子王",
+      "kind": "existing_transformation_key",
+      "characterIndex": 6
+    },
+    {
+      "target": "イラスト確認/現在ゲームで採用中/暁/上復帰.png",
+      "sha256": "02e946160713892fff62ae999600677c6076bd9f63e6649c978bca031912314a",
+      "source": "art_source/directional_specials/akatsuki_flap_recovery_v1.png",
+      "name": "暁",
+      "kind": "new_single_key",
+      "characterIndex": 7
+    },
+    {
+      "target": "イラスト確認/現在ゲームで採用中/龍太/上復帰.png",
+      "sha256": "27b4ad374a8a4a6bb2e7b4b3644a6e7ac96979ac43cfe36431edc1185a960d08",
+      "source": "art_source/directional_specials/ryuta_book_recovery_v1.png",
+      "name": "龍太",
+      "kind": "new_single_key",
+      "characterIndex": 8
+    }
+  ],
+  "schemaVersion": 1,
+  "nativePixelsPreserved": true,
+  "finalHumanArtApproval": false,
+  "partReview": "髪・顔・靴を待機と比較。腕を上げる/曲げ脚の投影差と新キャンバス寸法の違いを保持。元画を枠に合わせて拡縮せず、ピボットで身体と足元を配置。頭髪幅の投影差は美術の最終承認とは区別。",
+  "commonPixelsPerUnit": 532.5893,
+  "date": "2026-10-20",
+  "gameConnected": true
+}

@@ -78,6 +78,7 @@ namespace AniBato.Battle
                 return;
             }
             AbilityMotionSystem.Step(P1, P2, Stage); AbilityMotionSystem.Step(P2, P1, Stage);
+            RecoveryMotionSystem.Step(P1, p1, Stage); RecoveryMotionSystem.Step(P2, p2, Stage);
             // Sample both fields before moving either fighter, so player order cannot change the pull.
             var pullP1 = ProjectileAttractionSystem.Velocity(P1, Projectiles);
             var pullP2 = ProjectileAttractionSystem.Velocity(P2, Projectiles);

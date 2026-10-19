@@ -124,6 +124,7 @@ namespace AniBato.Battle
                 fighter.CurrentSpecial = slot;
                 if (slot == SpecialSlot.Up) { fighter.UpSpecialUsed = true; fighter.FastFalling = false; }
                 StartAttack(fighter, fighter.Definition.Special(slot), 0, !fighter.Grounded, rules);
+                fighter.Attack.RecoveryDirection = RecoveryMotionSystem.Direction(specialDirection.X, specialDirection.Y, new BattleVector(0, 1));
                 fighter.SpecialCooldowns[(int)slot] = fighter.Definition.Special(slot).CooldownFrames;
                 fighter.InputBuffer.ClearActions(); return;
             }
@@ -215,6 +216,7 @@ namespace AniBato.Battle
         {
             var attack = fighter.Attack;
             if (attack.AirborneAttack && attack.Definition.IsNormal && rules.CombatInput.FlowingAerialNormal) return;
+            if (attack.IsActive && attack.Definition.Recovery.Style != RecoveryStyle.None) return;
             if (attack.IsActive && attack.Definition.Ability.Motion != AbilityMotion.None) return;
             if (attack.IsActive && (attack.Definition.ActiveVelocity.X != 0 || attack.Definition.ActiveVelocity.Y != 0))
             {

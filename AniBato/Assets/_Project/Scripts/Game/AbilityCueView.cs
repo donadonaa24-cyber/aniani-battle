@@ -25,6 +25,8 @@ namespace AniBato.Game
             var attack = finished ? null : fighter.Attack;
             var art=paper?(paper.AbilityEffect(sample.State)??(attack==null?null:paper.AbilityEffect(attack.Definition.Ability.Look))):null;
             if (attack != null && (attack.Definition.Ability.SuperGuard || attack.Definition.Ability.Look == AbilityLook.Reading)) art = null;
+            bool recovering = attack != null && attack.Definition.Recovery.Style != RecoveryStyle.None;
+            if (recovering) art = null;
             artwork.enabled=!finished&&art!=null&&art.Visible(sample);
             if(art!=null)
             {
@@ -39,7 +41,7 @@ namespace AniBato.Game
             string text = "";
             bool binary=artwork.enabled&&art.Anticipating(sample)&&!string.IsNullOrEmpty(art.AnticipationText);
             if(binary)text=sample.AttackFrame/Mathf.Max(1,art.StepTicks)%2==0||string.IsNullOrEmpty(art.AlternateAnticipationText)?art.AnticipationText:art.AlternateAnticipationText;
-            if (attack != null && art == null)
+            if (attack != null && art == null && !recovering)
             {
                 switch (attack.Definition.Ability.Look)
                 {

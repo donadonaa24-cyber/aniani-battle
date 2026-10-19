@@ -155,7 +155,8 @@ namespace AniBato.Tests
         public void CurrentRulesAndTutorialRequireOnlyCurrentAvailableInputs()
         {
             var r = AssetDatabase.LoadAssetAtPath<BattleRules>("Assets/_Project/Data/BattleRules.asset").ToDefinition();
-            Assert.That(r.SchemaVersion, Is.EqualTo(10)); Assert.That(r.CombatInput.SingleAerialNormal && r.CombatInput.FlowingAerialNormal && r.CombatInput.SingleSpecial && r.CombatInput.NormalClashes, Is.True);
+            Assert.That(r.SchemaVersion, Is.EqualTo(11)); Assert.That(r.CombatInput.SingleAerialNormal && r.CombatInput.FlowingAerialNormal && r.CombatInput.SingleSpecial && r.CombatInput.NormalClashes, Is.True);
+            Assert.That(r.CombatInput.UpRecoveryEnabled, Is.True);
             Assert.That(r.CombatInput.DownSpecialEnabled, Is.True);
             var sim = BattleTestFactory.Create(false, r, Setup.Characters[0].ToDefinition()); var t = new TutorialSession { Step = TutorialStep.Directional };
             var definitions = new[] { sim.P1.Definition.DirectionalNormals[1], sim.P1.Definition.UpNormal, sim.P1.Definition.DirectionalNormals[3] };
@@ -164,7 +165,9 @@ namespace AniBato.Tests
             sim.P1.CurrentSpecial = SpecialSlot.Neutral; sim.P1.Attack = new AttackInstance(9, sim.P1.Definition.Special(SpecialSlot.Neutral), 0, false); t.Observe(sim, default);
             Assert.That(t.Step, Is.EqualTo(TutorialStep.Specials)); Assert.That(t.SpecialMask, Is.EqualTo(1));
             sim.P1.CurrentSpecial = SpecialSlot.Down; sim.P1.Attack = new AttackInstance(10, sim.P1.Definition.Special(SpecialSlot.Down), 0, false); t.Observe(sim, default);
-            Assert.That(t.Step, Is.EqualTo(TutorialStep.Guard)); Assert.That(t.SpecialMask, Is.EqualTo(9));
+            Assert.That(t.Step, Is.EqualTo(TutorialStep.Specials)); Assert.That(t.SpecialMask, Is.EqualTo(9));
+            sim.P1.CurrentSpecial = SpecialSlot.Up; sim.P1.Attack = new AttackInstance(11, sim.P1.Definition.Special(SpecialSlot.Up), 0, true); t.Observe(sim, default);
+            Assert.That(t.Step, Is.EqualTo(TutorialStep.Guard)); Assert.That(t.SpecialMask, Is.EqualTo(13));
         }
     }
 }

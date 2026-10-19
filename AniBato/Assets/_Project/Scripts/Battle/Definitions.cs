@@ -11,6 +11,7 @@ namespace AniBato.Battle
     {
         public string Name;
         public AttackAbility Ability;
+        public RecoveryDefinition Recovery;
         public AttackDamageMode DamageMode;
         public bool SelfEffectsOnComplete;
         public AttackKind Kind;
@@ -72,6 +73,7 @@ namespace AniBato.Battle
                 throw new ArgumentException("攻撃のフレーム数・判定サイズが不正です。");
             SelfBuff.Validate();
             Ability.Validate();
+            Recovery.Validate();
         }
     }
 
