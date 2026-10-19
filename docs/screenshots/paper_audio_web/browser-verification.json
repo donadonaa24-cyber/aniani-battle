@@ -1,0 +1,15 @@
+{
+  "build": "paper_audio_web",
+  "audioEnabledByUserGesture": true,
+  "observed": "menu and stage 2, special and ultimate inputs; all four clips and nineteen cues verified by native PlayMode",
+  "preferencesRetained": {
+    "bgm": 0.35,
+    "se": 0.65
+  },
+  "states": [
+    "{\"screen\":\"Title\",\"picks1\":\"\",\"picks2\":\"\",\"p1mode\":\"\",\"p2mode\":\"\",\"result\":\"\",\"reason\":\"\",\"attackKey\":\"J\",\"menu\":0,\"player1\":0,\"player2\":1,\"selectionPlayer\":0,\"stage\":0,\"tick\":0,\"shrinks\":0,\"hearts1\":0,\"hearts2\":0,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":0.0,\"p1x\":0.0,\"p2x\":0.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":0.8635578751564026,\"practice\":false,\"practicePaused\":false}\n音声: running",
+    "{\"screen\":\"Battle\",\"picks1\":\"0\",\"picks2\":\"1\",\"p1mode\":\"Idle\",\"p2mode\":\"Idle\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":0,\"player2\":1,\"selectionPlayer\":1,\"stage\":2,\"tick\":2112,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":-5.0,\"p2x\":5.0,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":51.614105224609375,\"practice\":true,\"practicePaused\":false}\n音声: running",
+    "{\"screen\":\"Battle\",\"picks1\":\"0\",\"picks2\":\"1\",\"p1mode\":\"Special\",\"p2mode\":\"Idle\",\"result\":\"Playing\",\"reason\":\"None\",\"attackKey\":\"J\",\"menu\":0,\"player1\":0,\"player2\":1,\"selectionPlayer\":1,\"stage\":2,\"tick\":3713,\"shrinks\":0,\"hearts1\":3,\"hearts2\":3,\"round\":0,\"score1\":0,\"score2\":0,\"pads\":0,\"remaining\":70.0,\"p1x\":-5.0,\"p2x\":7.979998588562012,\"bgm\":0.3499999940395355,\"se\":0.6499999761581421,\"fps\":62.235660552978516,\"practice\":true,\"practicePaused\":false}\n音声: running"
+  ],
+  "console": []
+}

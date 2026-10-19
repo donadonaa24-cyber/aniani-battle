@@ -50,7 +50,7 @@ namespace AniBato.EditorTools
                 presentation.TheatreSchemaVersion = 1;
             }
             EditorUtility.SetDirty(presentation);
-            var audioSettings = LoadOrCreate<AudioSettings>("AudioSettings"); EditorUtility.SetDirty(audioSettings);
+            var audioSettings = LoadOrCreate<AudioSettings>("AudioSettings"); audioSettings.UpgradePaperStyle(); EditorUtility.SetDirty(audioSettings);
             var cpuDifficulties = new CpuDifficultyData[3];
             for (int i = 0; i < 3; i++)
             {

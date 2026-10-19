@@ -6,7 +6,7 @@ namespace AniBato.Presentation
     public enum SoundCue { NormalHit, SpecialHit, Guard, Just, Counter, Break, ComboFinish, Ultimate, KO, RingOut, Countdown, Move, Confirm, Cancel, Shrink, Swing, Fight, TimeUp, Result }
     public static class ProceduralAudio
     {
-        public const int SampleRate = 16000;
+        public const int SampleRate = 24000;
         public static SoundCue? ForEvent(BattleEvent value)
         {
             switch (value.Kind)

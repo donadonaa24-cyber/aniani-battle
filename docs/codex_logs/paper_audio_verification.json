@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "task": "PAPER_THEATRE_AUDIO_REFRESH",
+  "nativeComplete": true,
+  "audio": {
+    "tracks": 4,
+    "effects": 19,
+    "sampleRate": 24000,
+    "loopBeats": 64,
+    "tempo": [
+      144,
+      156,
+      164,
+      172
+    ],
+    "crossfadeSeconds": 0.35,
+    "preview": "音声確認/現在ゲームで使用中/音声一覧.json",
+    "thirdPartyAudio": false
+  },
+  "regression": {
+    "tag": "paper_audio_1",
+    "EditMode": {
+      "total": 616,
+      "passed": 616,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 330.5993311,
+      "source": "TestResults/paper_audio_1_EditMode.xml",
+      "sha256": "9451d81adbdf26e0b1b07cadc03b60633d9cec746c6c6ebe9a8df5361807ad94"
+    },
+    "PlayMode": {
+      "total": 85,
+      "passed": 85,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 234.6286074,
+      "source": "TestResults/paper_audio_1_PlayMode.xml",
+      "sha256": "56dc50463083d5144663b2ae48e0cc8c1b30f79a724f1f4cf7d7cbfd9520cb76"
+    },
+    "BuildAll": {
+      "success": true,
+      "source": "TestResults/paper_audio_1_buildall.log",
+      "sha256": "8858075e3381ee9e8a596903e659dff3343436364d90ba223d3451e891c7bfa5"
+    },
+    "Windows": {
+      "success": true,
+      "source": "TestResults/paper_audio_1_build.log",
+      "sha256": "d4df37020d0c03fd52265651842a58aab7df052b5acc5d0d035c5f59a161f9ab"
+    }
+  },
+  "web": {
+    "status": "complete",
+    "buildTag": "paper_audio_web",
+    "bytes": 123667948,
+    "seconds": 241.1436077,
+    "restoreWindows": true,
+    "preservedImages": 435,
+    "browserAudioRunning": true,
+    "browserMenuAndStage": 2,
+    "browserConsoleErrors": 0,
+    "browserConsoleWarnings": 0,
+    "proof": "docs/screenshots/paper_audio_web/browser-verification.json",
+    "subjectiveListeningApproval": "not_requested_yet"
+  }
+}

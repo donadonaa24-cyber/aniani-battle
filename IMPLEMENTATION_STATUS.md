@@ -1,3 +1,15 @@
+## 最新（2026-10-19）：BGM4曲・SE19音の紙舞台版をUnity/Webへ反映完了
+
+指示書docs/codex_tasks/PAPER_THEATRE_AUDIO_REFRESH.md。旧180BPM試作を、メニュー144／SF156／推し駒164／料理172BPM・各16小節の新規オリジナル4曲へ変更。木琴・弦・鍵盤・リード・ベルと舞台ごとのリズム、紙の風切り／厚紙のヒット／木の防御／決着ジングル等19SEを自作PCM合成。24kHz、曲切替0.35秒クロスフェード、強いSEでBGMを滑らかに抑制。BGM/SE音量設定と戦闘・原画を維持。StyleVersion1で一度だけ移行し、以後の調整値は保持する。
+
+今回のpaper_audio_1：BuildAll成功／Edit616/616／Play85/85／Windows成功、失敗・スキップ0。実AudioClipの4曲ループ・切替・同じ曲の再要求・19SE・時間停止中のダッキングと復帰を合格。紙音のピーク/RMS・有限値・決定性・接ぎ目・全小節の発音も確認。音楽的な好みのユーザー最終確認は未実施。試聴WAVは音声確認/現在ゲームで使用中/（4曲＋19個別＋一覧）に保存。生成元SHAと波形の測定は音声一覧.json。
+
+paper_audio_webも実ビルド成功（123,667,948bytes／241.144秒）、Windows復帰成功。435/435画像の原画RGBA保持を監査。内蔵Chromiumで新ビルドの音声有効化、メニュー、料理の舞台、特殊と超必殺を実キー確認。音声running・既存音量0.35/0.65保持・今回起動以降console error/warn 0。4曲/19SEのClip個別検証は実Unity PlayModeで実施。通常Chrome/Edge別個・実機パッド・低メモリ端末は今回未再検査。証跡はdocs/codex_logs/paper_audio_verification.json、docs/screenshots/paper_audio_web/。
+
+Windowsは最新Build/paper_audio_1と予備minato_pull_2。直近TestResultsはpaper_audio_1・minato_pull_2・charge_art_2とdotnet類を保持。今回の自動撮影937ファイルをTestResults/paper_audio_1_auto_captureへ保存し、履歴付き194件は退避SHAが全て一致することを確認して元の履歴を保持。次回全体検証は -CaptureRoot TestResults/<タグ>/captures を付ける。整理のSHA証跡はdocs/codex_logs/paper_audio_*retention.jsonとpaper_audio_verified_capture_backups.json。
+
+湊引力は25a121cで全4工程/Web検証・push済み。この音工程の残作業なし。次はユーザーの試聴や追加指示に応じて調整する。半減45判定・ゲージ14/10・全原画・承認済み龍太被弾v5・保護カバン・Webメモリ512/4096を維持。Claudeへ：完了済みの原画生成や音の旧試作を再適用せず、この最新記録と音声一覧を確認する。
+
 ## 最新（2026-10-19）：湊のブラックホール引力、Unity/Web実装完了
 
 指示書docs/codex_tasks/MINATO_BLACK_HOLE_ATTRACTION.md。半径10u・26u/sで対戦相手を中心へ継続的に引く純C#外部移動成分を追加。通常の足場AABBへ通し、自分・範囲外・消滅後・接触済み・保護中・停止中へ作用しない。接触時2ハートと既存防御／多重ヒット防止、静止場の5×4u・位置・180tickは維持。湊のみMoveSetSchemaVersion1→2へ一度移行し、再生成後の調整値を保持。
@@ -844,4 +856,3 @@ Battle/Cpuの定義・判断・集計4ファイル、BattleEvent/BattleSimulatio
 Unityを閉じ、サンドボックス外で `powershell -ExecutionPolicy Bypass -File tools/verify/run_unity.ps1 -Tag phase5`。BuildAll→EditMode225想定→PlayMode20想定→Windowsビルド。次にCpuBalanceReportBuilder.Writeで実アセット810試合をTestResults/phase5-cpu-unity.*へ保存。確認順序・操作・注意は `docs/codex_logs/phase5_final.md`。Unity合格と画面／音の所見を本書・RESUMEへ追記してからフェーズ6へ。
 
 現在はworkspace-write／承認不可でUnityライセンスIPCへ接続できないため、HANDOFFのサンドボックス外Unity実行は行えません。権限変更の確認は求めず、AGENTS.mdに従ってUnity実行をClaudeへ引き継ぎました。
-

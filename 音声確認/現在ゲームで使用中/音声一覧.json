@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-19",
+  "implementation": "PAPER_THEATRE_AUDIO_REFRESH",
+  "thirdPartyAudio": false,
+  "tracks": [
+    {
+      "file": "01_紙の舞台、開幕！.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 26.666666666666668,
+      "peak": 0.619537353515625,
+      "rms": 0.08839338581106226,
+      "sha256": "948d2238d60711ab11003f96475ffb739f996147d5cdd4de9d767952ccb39ae4",
+      "bpm": 144,
+      "bars": 16
+    },
+    {
+      "file": "02_青い都市のパルス.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 24.61541666666667,
+      "peak": 0.637237548828125,
+      "rms": 0.09567120990057097,
+      "sha256": "b6f0070023ca3ac25fdd7eaf6671a3c471c3bfd731b32f69f8fd5900bacf6d41",
+      "bpm": 156,
+      "bars": 16
+    },
+    {
+      "file": "03_駒たちの大立ち回り.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 23.414666666666665,
+      "peak": 0.625701904296875,
+      "rms": 0.10205148685517863,
+      "sha256": "c02454dded91f298ad574e973f8a6267c277980b1a4dee333bd631b2b2e52f9e",
+      "bpm": 164,
+      "bars": 16
+    },
+    {
+      "file": "04_文化祭キッチン・ラッシュ.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 22.325583333333334,
+      "peak": 0.633941650390625,
+      "rms": 0.09557981345006862,
+      "sha256": "97e56f97db68e34544e99e8f30e6eec3d01360e5a0a0ebfeb3dfa14747051cee",
+      "bpm": 172,
+      "bars": 16
+    }
+  ],
+  "effects": [
+    {
+      "file": "効果音/01_通常ヒット.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.24,
+      "peak": 0.718536376953125,
+      "rms": 0.10615953710725942,
+      "sha256": "c51c1838246c3122ded26fad3db9066d29fbb7c873d78eefb54f136fb874753b",
+      "cue": "NormalHit"
+    },
+    {
+      "file": "効果音/02_特殊ヒット.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.38,
+      "peak": 0.75665283203125,
+      "rms": 0.12243072579160891,
+      "sha256": "ec92519e97f24950c8d00facd67a32c570b48495de487e57dff3bbad2a426b0e",
+      "cue": "SpecialHit"
+    },
+    {
+      "file": "効果音/03_ガード.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.22,
+      "peak": 0.557159423828125,
+      "rms": 0.08238574649134772,
+      "sha256": "6c8dfaaccb7849547c9176387a2e732f407f67bf359c52d8de0688c3ed176ae4",
+      "cue": "Guard"
+    },
+    {
+      "file": "効果音/04_ジャスト.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.5,
+      "peak": 0.532623291015625,
+      "rms": 0.12121999990621198,
+      "sha256": "0fb021b18d2595659512a9bb57113e6fb9c7fba7f439bacea931edd6cae2dba5",
+      "cue": "Just"
+    },
+    {
+      "file": "効果音/05_カウンター.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.48,
+      "peak": 0.801025390625,
+      "rms": 0.14990087106715333,
+      "sha256": "c96ca109ae74210a4e07c8d5e8f48bad2dc1538cc0756410696d51cf13e33c16",
+      "cue": "Counter"
+    },
+    {
+      "file": "効果音/06_ブレイク.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.48,
+      "peak": 0.410430908203125,
+      "rms": 0.09560587225385514,
+      "sha256": "de338c8a6fbafbc255055b304d8cba0cee18143bf8da3e3ce546aa7c199f1593",
+      "cue": "Break"
+    },
+    {
+      "file": "効果音/07_三段目ヒット.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.54,
+      "peak": 0.819976806640625,
+      "rms": 0.16179380012253036,
+      "sha256": "c6f324948a1a34bfa38799ad8c9e563cd3d6d50fd502490768c9f2e1bd414ddc",
+      "cue": "ComboFinish"
+    },
+    {
+      "file": "効果音/08_超必殺発動.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 1.15,
+      "peak": 0.69512939453125,
+      "rms": 0.12316475072346955,
+      "sha256": "98325632764f12689a10156359b3bc8f5a6e48882121398b079fb138c100561c",
+      "cue": "Ultimate"
+    },
+    {
+      "file": "効果音/09_KO.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 1.45,
+      "peak": 0.819976806640625,
+      "rms": 0.13921517127178454,
+      "sha256": "2adbf8a504993feebbd31dc3b45d59b30fecb1eaf4ea2e4d7dee309afb447e40",
+      "cue": "KO"
+    },
+    {
+      "file": "効果音/10_場外.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.85,
+      "peak": 0.42413330078125,
+      "rms": 0.10318510437062663,
+      "sha256": "e45298058d0b965ab85c96edbd0f11222afe3d6a6951bdcc98d35beadf6757d3",
+      "cue": "RingOut"
+    },
+    {
+      "file": "効果音/11_カウント.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.26,
+      "peak": 0.45440673828125,
+      "rms": 0.07440645126530439,
+      "sha256": "e410c4fbc265a88603779f18ebf5759a9664bcad12372d0982f9707bfd4b9257",
+      "cue": "Countdown"
+    },
+    {
+      "file": "効果音/12_メニュー移動.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.08504166666666667,
+      "peak": 0.16534423828125,
+      "rms": 0.02892424283358099,
+      "sha256": "6a28f6ff2c9913a720e68354237ba634e89378a262f94770a637762bbf03cc80",
+      "cue": "Move"
+    },
+    {
+      "file": "効果音/13_決定.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.24,
+      "peak": 0.34051513671875,
+      "rms": 0.07086552578874333,
+      "sha256": "f76658b9815aa4b9ee5afefc1ce2efb063a434544c8946e72f5e1f3fe02e55d1",
+      "cue": "Confirm"
+    },
+    {
+      "file": "効果音/14_戻る.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.18,
+      "peak": 0.205902099609375,
+      "rms": 0.05414583175329422,
+      "sha256": "2f51d88ed264783797121f9d39dc1acc62f8c4647e5af485dcb33272e62f751d",
+      "cue": "Cancel"
+    },
+    {
+      "file": "効果音/15_舞台縮小.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.6,
+      "peak": 0.331329345703125,
+      "rms": 0.05652018290960328,
+      "sha256": "885d4ec1f79953ff110950e7c53df5a812910431b01ea0951859433926d63a40",
+      "cue": "Shrink"
+    },
+    {
+      "file": "効果音/16_紙の風切り.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.19,
+      "peak": 0.37890625,
+      "rms": 0.08663627645409175,
+      "sha256": "22b70bf1da6f1476328f87945f6fd86ed6573e5c33409321446fac042786504d",
+      "cue": "Swing"
+    },
+    {
+      "file": "効果音/17_FIGHT.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 0.78,
+      "peak": 0.652557373046875,
+      "rms": 0.1670710325115741,
+      "sha256": "f2bf9d6d920bdeaefe92a649378b22a9e07538f8026bf598bd4745271b7b7fa8",
+      "cue": "Fight"
+    },
+    {
+      "file": "効果音/18_TIME_UP.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 1.05,
+      "peak": 0.442291259765625,
+      "rms": 0.08863656731054796,
+      "sha256": "2cd6e1d0f25dc26f0d08ff108a744505986d0326a73e15d251194b00ca82fcec",
+      "cue": "TimeUp"
+    },
+    {
+      "file": "効果音/19_リザルト.wav",
+      "sampleRate": 24000,
+      "channels": 1,
+      "seconds": 1.65,
+      "peak": 0.56494140625,
+      "rms": 0.13677327168159317,
+      "sha256": "7f5a4d31c02611ce652253b6e0fb0708a5f6efb6a031f190b5c1b7691c1e88b8",
+      "cue": "Result"
+    }
+  ],
+  "source": [
+    {
+      "file": "AniBato/Assets/_Project/Scripts/Presentation/PaperAudioSynth.cs",
+      "sha256": "b86b30df836c8e478e574ad203696e05c8981c5f1727d64e79bbef0c4aa1ef2d"
+    },
+    {
+      "file": "AniBato/Assets/_Project/Scripts/Presentation/PaperMusicComposer.cs",
+      "sha256": "c577f91f635319f8607cd29001e6420b92542e4db3eb6309cad1a2e1b862a07c"
+    },
+    {
+      "file": "AniBato/Assets/_Project/Scripts/Presentation/PaperSoundEffects.cs",
+      "sha256": "a1f4e784c0646c2c58020c4ad427cba5bd8041948eb8170011a48afb3c673e83"
+    },
+    {
+      "file": "AniBato/Assets/_Project/Scripts/Presentation/ArcadeAudio.cs",
+      "sha256": "a16cfa625eb4d68426a9d741b9cf8bc7ff1aa71d1815b3dfa46ef8ae46a41c72"
+    },
+    {
+      "file": "AniBato/Assets/_Project/Data/AudioSettings.asset",
+      "sha256": "37c0adc55223687904ce047ce47437bc250100a4e5abb407fce6d0c29717484e"
+    }
+  ],
+  "sampler": {
+    "file": "05_効果音一覧.wav",
+    "sampleRate": 24000,
+    "channels": 1,
+    "seconds": 15.125041666666666,
+    "peak": 0.819976806640625,
+    "rms": 0.10558638297261431,
+    "sha256": "95e518612d84d3fa9f88d95c2d8063067641ab0cc971e23f4ac4832859b5323b",
+    "order": [
+      "通常ヒット",
+      "特殊ヒット",
+      "ガード",
+      "ジャスト",
+      "カウンター",
+      "ブレイク",
+      "三段目ヒット",
+      "超必殺発動",
+      "KO",
+      "場外",
+      "カウント",
+      "メニュー移動",
+      "決定",
+      "戻る",
+      "舞台縮小",
+      "紙の風切り",
+      "FIGHT",
+      "TIME_UP",
+      "リザルト"
+    ]
+  }
+}

@@ -25,7 +25,11 @@ namespace AniBato.Tests
                 Assert.That(wave, Is.EqualTo(ProceduralAudio.Effect(cue))); Assert.That(wave.Any(x => x != 0), Is.True);
             }
             for (int i = 0; i < 4; i++)
-            { var music = ProceduralAudio.Music(i); Assert.That(music.Length, Is.EqualTo((int)(16000 * 32 * 60d / 180))); Assert.That(music.All(x => Math.Abs(x) < 1), Is.True); }
+            {
+                var music = ProceduralAudio.Music(i); var style = ArcadeAudioSettings.Default;
+                Assert.That(music.Length, Is.EqualTo((int)Math.Ceiling(ProceduralAudio.SampleRate * style.LoopBeats * 60d / ArcadeAudio.Tempo(i, style))));
+                Assert.That(music.All(x => Math.Abs(x) < 1), Is.True);
+            }
         }
         [Test]
         public void AudioEventConsumptionLeavesSimulationUnchanged()
