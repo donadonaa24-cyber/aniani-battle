@@ -77,7 +77,10 @@ namespace AniBato.Battle
                 return;
             }
             AbilityMotionSystem.Step(P1, P2, Stage); AbilityMotionSystem.Step(P2, P1, Stage);
-            movement.Step(P1, p1, Stage, Rules); movement.Step(P2, p2, Stage, Rules);
+            // Sample both fields before moving either fighter, so player order cannot change the pull.
+            var pullP1 = ProjectileAttractionSystem.Velocity(P1, Projectiles);
+            var pullP2 = ProjectileAttractionSystem.Velocity(P2, Projectiles);
+            movement.Step(P1, p1, Stage, Rules, pullP1); movement.Step(P2, p2, Stage, Rules, pullP2);
             projectileSystem.Step(P1, P2, Rules.ProjectileLimitPerOwner, Stage);
             if (Rules.CombatInput.NormalClashes)
             { clash.Resolve(P1, P2, Projectiles, Match.TickCount, Rules.CombatInput, events); projectileSystem.RemoveClashed(); }

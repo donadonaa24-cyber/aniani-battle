@@ -15,12 +15,15 @@ namespace AniBato.Battle
         public ShotOrigin ShotOrigin;
         public int ProjectileCount;
         public float ProjectileSpacing;
+        public float ProjectilePullRadius, ProjectilePullSpeed;
         public bool AllowZeroProjectileSpeed, ReplaceOwnProjectiles, ProjectileAtDamageFrame;
         public bool IndependentNormalProjectile;
         public AbilityLook Look;
         public void Validate()
         {
             if (ProjectileCount < 0 || ProjectileCount > 16 || ProjectileSpacing < 0 || !Finite(ProjectileSpacing) ||
+                ProjectilePullRadius < 0 || ProjectilePullSpeed < 0 || !Finite(ProjectilePullRadius) || !Finite(ProjectilePullSpeed) ||
+                (ProjectilePullRadius > 0) != (ProjectilePullSpeed > 0) ||
                 TeleportRange < 0 || TargetGap < 0 || TargetRange < 0 || !Finite(TeleportRange) || !Finite(TargetGap) || !Finite(TargetRange) ||
                 !Finite(FirstVelocity.X) || !Finite(FirstVelocity.Y) || !Finite(SecondVelocity.X) || !Finite(SecondVelocity.Y) ||
                 Motion == AbilityMotion.Teleport && TeleportRange <= 0 || Motion == AbilityMotion.TwoPhaseRush && ChangeFrame < 1)

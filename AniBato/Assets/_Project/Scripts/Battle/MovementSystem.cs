@@ -16,7 +16,7 @@ namespace AniBato.Battle
                 if (fighter.JumpsUsed == 0) fighter.JumpsUsed = 1;
             }
         }
-        public void Step(FighterState fighter, in FrameInput input, StageGeometry stage, in BattleRuleDefinition rules)
+        public void Step(FighterState fighter, in FrameInput input, StageGeometry stage, in BattleRuleDefinition rules, BattleVector externalVelocity = default)
         {
             InvalidateGround(fighter, stage);
             if (fighter.FrozenThisTick || fighter.Mode == FighterMode.KO) return;
@@ -44,9 +44,11 @@ namespace AniBato.Battle
                 if (fighter.FastFalling) vertical = -fighter.Definition.FastFallSpeed;
             }
             fighter.Velocity = new BattleVector(fighter.Velocity.X, vertical);
+            // Persistent fields add displacement through the same swept collisions, not stored momentum.
+            vertical += externalVelocity.Y;
             float recoil = fighter.DamageRecoilRemaining > 0 ? fighter.DamageRecoilSpeed : 0;
             if (fighter.DamageRecoilRemaining > 0) fighter.DamageRecoilRemaining--;
-            fighter.Position += new BattleVector(fighter.Velocity.X + recoil, fighter.Velocity.Y) * BattleRuleDefinition.TickSeconds;
+            fighter.Position += new BattleVector(fighter.Velocity.X + recoil + externalVelocity.X, vertical) * BattleRuleDefinition.TickSeconds;
             fighter.Grounded = false; fighter.GroundPlatform = -1;
 
             // Swept AABB against solid platforms; one-way platforms only catch descending feet.

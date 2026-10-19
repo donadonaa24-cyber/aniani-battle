@@ -1,0 +1,4357 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "source": "AniBato/Assets/_Project/Art/Characters/Awakening/chizuru-battle-mode-icon.png",
+      "sha256": "7828151f8eebe524f108c7fef5ca5c7661656564334b277cef4b6a8a57061c23",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 1536,
+      "packedHeight": 1024,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Characters/Awakening/chizuru-chef-future.png",
+      "sha256": "7828151f8eebe524f108c7fef5ca5c7661656564334b277cef4b6a8a57061c23",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 1536,
+      "packedHeight": 1024,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Characters/chizuru-casual-cutin.png",
+      "sha256": "cf50f405289cda50453b7f397a1d2f3bf7ad0a1bffa9386e74b903f284f264e9",
+      "width": 1312,
+      "height": 1199,
+      "packedWidth": 1312,
+      "packedHeight": 1200,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Characters/ren-dog-rook.png",
+      "sha256": "fe44d5d5fd75723153d7e65a9e252f2b0cf420b9b0528c9e7db765b70b7b0fa1",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 1256,
+      "packedHeight": 1256,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Characters/toma-keyvisual-cutin.png",
+      "sha256": "e9ed05dd907f9f61d5d681cb09bfbaea758deffeaa89b198c1c7c9a2d66091ba",
+      "width": 512,
+      "height": 768,
+      "packedWidth": 512,
+      "packedHeight": 768,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/board_far.png",
+      "sha256": "1dbaa4bd9b56d2109ac0ede92f8ba6b9b161238d65c7e2eae874d593d1d6e58e",
+      "width": 1942,
+      "height": 809,
+      "packedWidth": 1944,
+      "packedHeight": 812,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/board_frame.png",
+      "sha256": "468124cf2486b7402bd5d8bd8878d204474c7cae1678f15415553df07914f32b",
+      "width": 1672,
+      "height": 941,
+      "packedWidth": 1672,
+      "packedHeight": 944,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/board_main.png",
+      "sha256": "32926aaab80fdf64cc524ae1f71e7f5374a08046d8b678df4d4042b5e2076d22",
+      "width": 2056,
+      "height": 765,
+      "packedWidth": 2056,
+      "packedHeight": 768,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/board_mid.png",
+      "sha256": "dc468dbf55547aa40589a27e4ca83721642ba9a27ffc9d5c7fd2772ab2f70356",
+      "width": 1945,
+      "height": 808,
+      "packedWidth": 1948,
+      "packedHeight": 808,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/board_removal.png",
+      "sha256": "51b4085e3c12b3e9b778d783b2510440e5348e510a36c112cf3a3c4c0572f83b",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 1536,
+      "packedHeight": 1024,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/board_upper.png",
+      "sha256": "d49fd601a62b30e9a18f354f4b3caf5851e0869c5f5f5e613b2083531fe382ee",
+      "width": 1890,
+      "height": 832,
+      "packedWidth": 1892,
+      "packedHeight": 832,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/board_warning.png",
+      "sha256": "798ef2ce1ae8256cd9305c5094be0c610682f81f390ef944d1149702246ca23d",
+      "width": 1264,
+      "height": 1244,
+      "packedWidth": 1264,
+      "packedHeight": 1244,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/festival_far.png",
+      "sha256": "1a3c22db3c4173f811cc888b7bb3965fc8661f30ffd8c52438e9e3db145e17ea",
+      "width": 1942,
+      "height": 809,
+      "packedWidth": 1944,
+      "packedHeight": 812,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/festival_frame.png",
+      "sha256": "9576f862c562781092746016d93f34a59413b1c3a7df5eceb6c7ff23332bcb78",
+      "width": 1672,
+      "height": 941,
+      "packedWidth": 1672,
+      "packedHeight": 944,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/festival_main.png",
+      "sha256": "aad68dcbd66046146f026ebc8c7da0802057578a7f8ceb7de3a2d5e2024b3f26",
+      "width": 2172,
+      "height": 724,
+      "packedWidth": 2172,
+      "packedHeight": 724,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/festival_mid.png",
+      "sha256": "7e2d74dd9a2f613f64ccc92c801c46a45becfe45bfcd696446e41f1d04afec33",
+      "width": 1942,
+      "height": 809,
+      "packedWidth": 1944,
+      "packedHeight": 812,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/festival_removal.png",
+      "sha256": "a0e11048c2c93bd9050213d4f5057f79e2eac905b10eecc1e92443a78bb0590d",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 1536,
+      "packedHeight": 1024,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/festival_upper.png",
+      "sha256": "9021d34c6101f2266983b89844026bbe2903d88c8ef29db2809aa90265fef23f",
+      "width": 2172,
+      "height": 724,
+      "packedWidth": 2172,
+      "packedHeight": 724,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/festival_warning.png",
+      "sha256": "7f7b9e8cba0866e4d539538c715ad1c01b70e55bc77e9b8ce5323f266abb23f7",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 1536,
+      "packedHeight": 1024,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/future_far.png",
+      "sha256": "cd0869ffac1d880298284d778d17d359e09ccbcd11f9f578ea0a24c519ffa04b",
+      "width": 1942,
+      "height": 809,
+      "packedWidth": 1944,
+      "packedHeight": 812,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/future_frame.png",
+      "sha256": "07d3876850480cafeccf664453cc734567a21c4d0f765193eb10e463a0ddc305",
+      "width": 1672,
+      "height": 941,
+      "packedWidth": 1672,
+      "packedHeight": 944,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/future_main.png",
+      "sha256": "db04887e52b30392bbe51c2c678b12da52bab8830251797d275da65dafc9ba74",
+      "width": 2172,
+      "height": 724,
+      "packedWidth": 2172,
+      "packedHeight": 724,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/future_mid.png",
+      "sha256": "bcd29ce080637e36c56d201b8e2750fb9dbe688092c57a568f324eb61e6196b6",
+      "width": 1942,
+      "height": 809,
+      "packedWidth": 1944,
+      "packedHeight": 812,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/future_removal.png",
+      "sha256": "5b77a8d870e676bf1a0307455d7d6a4edafbad1f326e68752f920387df2851c4",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 1536,
+      "packedHeight": 1024,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/future_upper.png",
+      "sha256": "22e0a520ddfdf5c31493f616503116ed5a6f653523792de4b20bddf4ba0e4794",
+      "width": 2079,
+      "height": 756,
+      "packedWidth": 2080,
+      "packedHeight": 756,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/GeneratedStages/future_warning.png",
+      "sha256": "f5e55c28dd4d83f7376521d5f44524cf239a3275706ec16aa39623481035d913",
+      "width": 1267,
+      "height": 1241,
+      "packedWidth": 1268,
+      "packedHeight": 1244,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/effect_bag_throw_chizuru.png",
+      "sha256": "803e63a803bc7d27a3a8d2e8227e24f51a7764f9f3a79375a1901da4d7cac06d",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/effect_curry_wave_chizuru.png",
+      "sha256": "cdf23cfd3ef00ee4ae88daf5d7855f8e425c9e25e49297c18606b9dbe7044910",
+      "width": 1774,
+      "height": 887,
+      "packedWidth": 2048,
+      "packedHeight": 1024,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/effect_mogu_chizuru.png",
+      "sha256": "b82e69c20a498b831a7d22152ece243b3711d9a74efd67e9027483689cc338f3",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/effect_rice_ball_chizuru.png",
+      "sha256": "9811aff7e6b03e9c564cb41890280553eb697c79ccd09884cc8de1c366fa83ef",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/idle_paper_chizuru.png",
+      "sha256": "9c8195540e5e94189d5e35cf84e6ecaf844f9517979a7a3ed2b7d3ed067b0070",
+      "width": 1246,
+      "height": 1263,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_back_anticipation_paper_chizuru.png",
+      "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_back_impact_paper_chizuru.png",
+      "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_back_paper_chizuru.png",
+      "sha256": "4e54734a9e927c79e01b81a08d5d3649ecd84a550768732747ebbec1f20af70a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_down_anticipation_paper_chizuru.png",
+      "sha256": "17012b9f6f405939a34026b8412eb0e4990f60682833f95f197c8fda1f24a584",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_down_impact_paper_chizuru.png",
+      "sha256": "c5548d63a36a0d635ccd1b18de7ce5077c8f585f32dc4a8daa9da5a8a6062bad",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_down_paper_chizuru.png",
+      "sha256": "06ec2930c732a7d61bb261a846f537cca057dd7e85f935dcc3489bf2fadc260b",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_forward_anticipation_paper_chizuru.png",
+      "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_forward_down_anticipation_paper_chizuru.png",
+      "sha256": "17012b9f6f405939a34026b8412eb0e4990f60682833f95f197c8fda1f24a584",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_forward_down_impact_paper_chizuru.png",
+      "sha256": "c5548d63a36a0d635ccd1b18de7ce5077c8f585f32dc4a8daa9da5a8a6062bad",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_forward_down_paper_chizuru.png",
+      "sha256": "327a710a6254ea432cb6908feb4f24e7519b6e44c12d869d97c608cd6541bc81",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_forward_impact_paper_chizuru.png",
+      "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_forward_paper_chizuru.png",
+      "sha256": "3981c9734f107c9e3a597c8ffc314a21134a4ec1de2baa66fb195712ce52a28d",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_forward_up_anticipation_paper_chizuru.png",
+      "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_forward_up_impact_paper_chizuru.png",
+      "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_forward_up_paper_chizuru.png",
+      "sha256": "8555ff5a64f7a9509a1ec747660cc8114f0842a78a7a3eb3e8c5947b52fe6598",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_neutral_anticipation_paper_chizuru.png",
+      "sha256": "c497636aa8f4ffe7c95bb1a6349c9eedbec193b38c7653324135cd765665df6a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_neutral_impact_paper_chizuru.png",
+      "sha256": "f21c0c419b4d072aa35b53eda4d04193a9b9e52fb6a0c4a75281e374e93fd026",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_neutral_paper_chizuru.png",
+      "sha256": "4a0a970b6bbfb1c11de94611de2adb0614f1ac784bea41fb723f6172b1be09f4",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_up_anticipation_paper_chizuru.png",
+      "sha256": "e07f9cb5f77b361bacc1df8d4e6f133dd7aee6da54c232cc7192d958aa69b31c",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_up_impact_paper_chizuru.png",
+      "sha256": "92c9a4b94ebd01e7e44ef246f1937c7c44c899386ac619dcf02ae17e3bc7ed6f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_air_up_paper_chizuru.png",
+      "sha256": "8d60c5d67fa690c7eaf1d4c3a7d7e24eaf87d759ba5cebc9cfd464830aabe3d2",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_attack1_anticipation_paper_chizuru.png",
+      "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_attack1_impact_paper_chizuru.png",
+      "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_attack1_paper_chizuru.png",
+      "sha256": "93ce3792d082e477690cc7e290429132de392f47b6147e660a7a0f6f1830e524",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_attack2_anticipation_paper_chizuru.png",
+      "sha256": "0608aea7926a6864fcb83fd0aa6b8d9df216b225d1f4345a98c5e9b293be8bad",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_attack2_impact_paper_chizuru.png",
+      "sha256": "405c08fbf3c123383383dc17df8ec8af1cd733dd94724acda6725aed4094e849",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_attack2_paper_chizuru.png",
+      "sha256": "f0aa878d14c8c03a84808216e110649b8638343655a2cb7f289e936c7411db20",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_attack3_anticipation_paper_chizuru.png",
+      "sha256": "17012b9f6f405939a34026b8412eb0e4990f60682833f95f197c8fda1f24a584",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_attack3_impact_paper_chizuru.png",
+      "sha256": "ef65db086708b79ba4b366d1f37329f8c2aa8e1116977363d527cd79191672c4",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_attack3_paper_chizuru.png",
+      "sha256": "0088e5b9f4b2f9bb562dadf43fb2b05b39aaad9bf1a1e8f601b1c062be4167ff",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_back_attack_anticipation_paper_chizuru.png",
+      "sha256": "c342148ab80a105b7eeeb6286d9949bf8644c858e5f01979cdb67681f98d4e4a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_back_attack_impact_paper_chizuru.png",
+      "sha256": "1b8f3e8074bcf47a94114ddeb1226ae8c4929bfbf38d8d5e87252221beaf7ee5",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_back_attack_paper_chizuru.png",
+      "sha256": "b86decc9b39c8e2f37b03bd6e99280d99d231254db930ccab79a38c40db09bf9",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_counter_paper_chizuru.png",
+      "sha256": "c09834399d11f63d5d6d7ac5e1a0861759046b0a2318d63fbbcf07a6cf73b4aa",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_counter_success_paper_chizuru.png",
+      "sha256": "fc082e5898b62f9a955589df8089da8f10a88e3ff81770aac4fc7a031c0f1b5c",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_crouch_attack_anticipation_paper_chizuru.png",
+      "sha256": "1796dc625213d04d3fa39a679bf32f0dbdd374ebc49530055634bc9933bab9f1",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_crouch_attack_impact_paper_chizuru.png",
+      "sha256": "cbc707da7e6fe191fc4ede2774cb0d1b279ef02f43348747530e7b0cd01dc415",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_crouch_attack_paper_chizuru.png",
+      "sha256": "b0d47728e8a1fced1e314f5ba1d00477cad76ed4d2556d86f2571e84e214dc23",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_crouch_paper_chizuru.png",
+      "sha256": "7b82b6527acfb87c0cd99854438b412c61d0eed19d948b43623f4dfeede56e8b",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_dodge_paper_chizuru.png",
+      "sha256": "d57745b257580d24d7948b637cebb578cb3a162e51b77f30c38a2ae8f186f1f1",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_fall_paper_chizuru.png",
+      "sha256": "ce6bd7daa9d4f1fc03e34893210ba938d54505a4c7d12942e0488356e02b85e6",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_guard_paper_chizuru.png",
+      "sha256": "bd4ab92d09b6314b46a55687b1581254ac51ce458a4e279be757578044e85e56",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_hit_heavy_paper_chizuru.png",
+      "sha256": "6f94c5f283dcacb539fe512a815eef5494759a925a3046e1bdf2181a680015f0",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_hit_light_paper_chizuru.png",
+      "sha256": "5e6041d0297f2de25c34fffdc099407b5008f080b31906c2c237f4dbbe586a4e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_idle_paper_chizuru.png",
+      "sha256": "a170163e29adc338d87bfe6d4b010976d0f7b903796bd7fb339a54d5ce281894",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_jump_paper_chizuru.png",
+      "sha256": "6fad892d9605f2534ed57b911d5922001b632b06e308e5bbe8af7614259a6c28",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_ko_paper_chizuru.png",
+      "sha256": "19dfc1830e35ec715038801f7989a0301a3e24c84f026d40e469d323430a9cdc",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_run_paper_chizuru.png",
+      "sha256": "becef0f8eccff5f5a5bedafbc40b7393bfb3334351197ef80586070e8e725d75",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_special_down_paper_chizuru.png",
+      "sha256": "6e92739f6f8ddb800df349c62f0e840cdce2fc70b4bc436b7cd66ce40d6960da",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_special_neutral_anticipation_paper_chizuru.png",
+      "sha256": "3d885b801ccc145e6ff82ad4b0eb20a3ab41c0ee65513279027857d8e00a70ed",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_special_neutral_impact_paper_chizuru.png",
+      "sha256": "03932798730bafb92d9ebd5b9d573e2240b359eeca4adff7cc2f913170ce8ad7",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_special_neutral_paper_chizuru.png",
+      "sha256": "3d885b801ccc145e6ff82ad4b0eb20a3ab41c0ee65513279027857d8e00a70ed",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_special_side_paper_chizuru.png",
+      "sha256": "f59c73ed69fc6b6f6ca42cbbd1335f8d5412bbbc0cbd33600f9583759b6e9b46",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_special_up_paper_chizuru.png",
+      "sha256": "686f8c8fe056720960d01bd8a4702993215587025d9a751a5f09b2aa73051cca",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_ultimate_anticipation_paper_chizuru.png",
+      "sha256": "f15e86818c580ca15e97e8487c6658a6df52b589a25cfcfa5c34623f8c04eb1e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_ultimate_impact_paper_chizuru.png",
+      "sha256": "c2e626c068ab198ca4dcfaf6ba20c41bd00bfd7e6d4ddf7fd0d6cbb1846438d8",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_ultimate_paper_chizuru.png",
+      "sha256": "f15e86818c580ca15e97e8487c6658a6df52b589a25cfcfa5c34623f8c04eb1e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Paper/pose_win_paper_chizuru.png",
+      "sha256": "c7ad4c177fe647f185e638c4e9b9b6cc865eac317796045dac1f51d012b3a34a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_air_impact.png",
+      "sha256": "f7949da01f504b87757829973e6837528adbc24b6db0fbd8a34603fc06aa9d35",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_charge.png",
+      "sha256": "f9c807b9004d97769bd40e440e9bea872e74cffabfe8ed2270a75cf558cb082d",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_down_impact.png",
+      "sha256": "b96759214a7b3ba26d1d2b350e1ecebd0453c8f1c1ecc8a6b3492d8285e6d93a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_card.png",
+      "sha256": "f822696b87a4e1fedcf70fdcb010d4cf811e6f9d65d21291d197cf093d49d43b",
+      "width": 1024,
+      "height": 1536,
+      "packedWidth": 1024,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_pyramid.png",
+      "sha256": "8bf6517a868034977da46a99f87fcf7534362af59ada0432cf6903a2f51d1387",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_sand.png",
+      "sha256": "b06ca0d4cfeaf8aab25a303ff24d6826c0303785858251be0851bb0f0e7ad944",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_effect_slash.png",
+      "sha256": "b066f341b5c6c5d3c2712cb3e9308a67ab16bb8b14d581528930865667b10924",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_motion_counter_success.png",
+      "sha256": "2722c3be89a09c332bc0588faabeb6d56c66fea85ecb0909a6feb02906576a2e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_motion_dodge.png",
+      "sha256": "0440400f869b0214f35b1c8b7529fd3c57168c36a55b454adaeb281da3a48336",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_motion_fall.png",
+      "sha256": "5e7dfc6152ba0c64377381d6d400e3e9db370a91078f5575a5202c8879b65a6b",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_motion_hit_heavy.png",
+      "sha256": "125b2bffafdc3c0e678c6ba8c2cb071f08728630857c78fef0a841a365ad3719",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_motion_hit_light.png",
+      "sha256": "d77944752827916848c79b6f7ba456a46069b766edef3d9fb461e4772720793a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_motion_jump.png",
+      "sha256": "1d16745742937434edfd28d3e05af8cc53449cd3c4a3e1e8e7ab08263576cf32",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_motion_run.png",
+      "sha256": "8fed37a7fc0ccdd8978718b1b7881261ee80bdf85ed3f33b1f704f665e5cbca8",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_impact.png",
+      "sha256": "3ab23dad61e17b9af7bc76b937c692497340385b1e988385db9c815a82b7ef47",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal1_prepare.png",
+      "sha256": "6f9b6886b5eeda29f30637fa508c5d031584f8ddce5b359b4bd7953a50533a55",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_impact.png",
+      "sha256": "a9df68461a8855c036130fc00ac495ca8319d72b4223848d664d8fc0ddca32f6",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_normal3_prepare.png",
+      "sha256": "0165a6e93837839b81ae49a9583f32f5bfa0246b5ce88a82bccf8768edeada52",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_super_impact.png",
+      "sha256": "89712f3e240d81fbf3eb702efdc818093b36d214e33242c280c8b7266ae601b2",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_super_prepare.png",
+      "sha256": "4afb946f16019462d1ecfdd011181d725357e7d688ad6c067b1d805bef8413e8",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_up_impact.png",
+      "sha256": "b365f81867dd3bae0406495814b0aa6ee78af8bd89258fb4bb7a1b1b87ef9443",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/chizuru_charge.png",
+      "sha256": "65c0b1297579518a6cad2e743427fa290fd6f36567ebe82ecacd7189011278fb",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_air_impact.png",
+      "sha256": "e6f38659daad86d6240cb9752b2db8b2cb10cb1861e537208582ba4a7dd970d9",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_charge.png",
+      "sha256": "f6213121ec954cc76ba34e79bb41a9bb98153434450e685e21d4b5871d7141f3",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_down_impact.png",
+      "sha256": "55e19060dbaa2cbf3f496d17ba5f5772548347a19322c2cda44c289ddbb641b7",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_effect_claw.png",
+      "sha256": "1314e142ecbc7816c9fa435cbd58ee9cc2400cc3c02cf102797c5a493d93f854",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_effect_leila.png",
+      "sha256": "0458a9a3aa9f3c70fea00aac28c6b432837e7b8ebfb3b254d8abe2ccdb7e7c3e",
+      "width": 1189,
+      "height": 1323,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_effect_noa.png",
+      "sha256": "30334d0a3429bc56dc3b264f4c4c049e26c6592f4321ece52977652f43f849ad",
+      "width": 1189,
+      "height": 1323,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_effect_roar.png",
+      "sha256": "5247770d2ac2a7feb7534c4187a78f654b48e4780292fd20230f326873fd9ebe",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_effect_shion.png",
+      "sha256": "ae8b7ca86ea495dbf15639b2dd48a09a2f9dba6cc85c8d3c38faaeda082485cf",
+      "width": 1189,
+      "height": 1323,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_motion_counter_success.png",
+      "sha256": "7f79629b9fb4dbb90e72646129cb810b2050bf3f55b16e03b3fc43e1fb9abe86",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_motion_dodge.png",
+      "sha256": "00d092d96c78b6dbe7daa18906838813a115c9db08fe37dc4853504d042c829e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_motion_fall.png",
+      "sha256": "87ddce9a6213c16769ff6e3deec589fe7a06925e9c97fb0871c3ef2832ac1e9a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_motion_hit_heavy.png",
+      "sha256": "043c2600e7db5695d900d2e2f77c6e665d5e6aaef395a8497c65d0b1db2404c8",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_motion_hit_light.png",
+      "sha256": "d639ebcf9f3bf7216726be2d1517ac18c9f5d77d90cb4774d7877f276465e6a3",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_motion_jump.png",
+      "sha256": "6c3f3f0cf58a46055b6dfcf2d3dbf4a8ef522138de3e55722da0ccc51c4bc250",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_motion_run.png",
+      "sha256": "a12cd56a260728e75792dd6b102fbf0f1b95ad09a0de2f31ea10a76eec91303d",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_normal1_impact.png",
+      "sha256": "5bbc473a03d0308a993ab6fe937d07e31e0ee5611510506ca27bb888ae779690",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_normal1_prepare.png",
+      "sha256": "3abf89b8fd97c841098f69fbe673a98024b0707d58aededae0164d613a93d015",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_normal3_impact.png",
+      "sha256": "af6f57d77621ae5e598f21e5874fefa2f4d8d45786299b97e6b9952777b7fe6e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_normal3_prepare.png",
+      "sha256": "b4c71b5f85fe15f31b369405587e64948787b275e91c4e730938b2499ed4f773",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_special_impact.png",
+      "sha256": "f416a309696afb17586e785a373b2897779587545b3263571f365fecbd336a47",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_super_prepare.png",
+      "sha256": "2553714b267af5b6c7db8266c79a283861a052149ec9fd40460065b3504e2f7d",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/king_up_impact.png",
+      "sha256": "d8a94aabfcb648306980c40af64749e83ee4f483216fd780c80415cb286aaa4c",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_air_impact.png",
+      "sha256": "02638a7d50d06eab724e814a65af096f094eb693a5cbd6ad3a43be0e87411f57",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_charge.png",
+      "sha256": "446c845e88459131f80e97baedc62e48426a243279240a5530d9d24ce053889e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_down_impact.png",
+      "sha256": "fe54e331eb1c952633e7ade7328382e9e237d0c3d23e5fb8025f59ede8fe1659",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_effect_blackhole.png",
+      "sha256": "636cdec1ac3e5224a4ec90d5785454eceb94c2340f76fb3d6c981447fbbf6362",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 2048,
+      "packedHeight": 1024,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_effect_mist.png",
+      "sha256": "e5a2d23b2f65330be357bca467f818bbe7ac4390d6fad413e4dc517e545aee4f",
+      "width": 1024,
+      "height": 1536,
+      "packedWidth": 1024,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_effect_teleport.png",
+      "sha256": "f56923a34af8cb9958954f07a5e6e3870012a12d1e2ae86dffc93a6ac04bcc16",
+      "width": 1024,
+      "height": 1536,
+      "packedWidth": 1024,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_motion_counter_success.png",
+      "sha256": "d0ea2b33831b0361a821b00ff7cf408a712c733e520841896b0fcc9ea3da47f3",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_motion_dodge.png",
+      "sha256": "2437c914f11249b8cb6f32fda0a45ce1cf0b5e5793fddffdd00462c6895ea37d",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_motion_fall.png",
+      "sha256": "188a7a2509ff379e437eb5d6aeab6f0cc60ae235256ea6bde540dbf354fe9084",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_motion_hit_heavy.png",
+      "sha256": "63eff74136cee4e7c0aba214ce42186936e73bc68172e6594dfd7455c62c0761",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_motion_hit_light.png",
+      "sha256": "39cd657a269facc47a4f0335ced460948844dc13e23db19e29c0684806c8c01f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_motion_jump.png",
+      "sha256": "62b8ec502c27e24f88550827311ff6dbec07af6d412a922dd22a0297f6f61972",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_motion_run.png",
+      "sha256": "763d4af3d17923f05153f1c2e390f965f65553f2a15a5dc201d0b94c08f80de6",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_normal1_impact.png",
+      "sha256": "a9a01a07340c0ff3e4c57f5974ec45a7f9ebe09c156345b2095ba522456ae894",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_normal1_prepare.png",
+      "sha256": "a49499ceb9d7b4d158d62878f132f2217a011d01b2f7e87c7574b4023affdc3a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_normal3_impact.png",
+      "sha256": "afd98576d2101bef14348c10d6e4fe3a82ef0a9a8683124d472011bff7b54610",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_normal3_prepare.png",
+      "sha256": "71c6be50db52b62f509119caa2c2a82c217c7134e4fbcd57792cb91cf450902f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_special_prepare.png",
+      "sha256": "0020c277610140673cf43f935e8b45f9736c24a3113c37e7f4c85025d1660386",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_super_impact.png",
+      "sha256": "416e8c077f18a6485b2cc1ab148588d2387dde1aec218dd6109ed60de39bcd7d",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_super_prepare.png",
+      "sha256": "b0e4f7892da3ad1bb4718cde07c536d1ec02efd4820a3cee84d748a0e2803e50",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/minato_up_impact.png",
+      "sha256": "f64e0c8849d01838518ee0cddb4686baf7900ba124c7d43692a732f0a0c22c7b",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_air_impact.png",
+      "sha256": "d40078c5693a6253563908b47e5baa070517b0e88d3ad73ffc0d3860b6fb7c02",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_air_prepare.png",
+      "sha256": "5a980527676b9f70110681ee8df402b25cbd755c4e5cfd225f05ef41ead22764",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_charge.png",
+      "sha256": "6aec6641b27de8288808e3b97054904dd72a884c9fe362dbe97790a8373d77f9",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_down_impact.png",
+      "sha256": "ff7adab472ae8b50f9bd9e5a9195f2a8dbb951ddca441d62357a77cf970ddde2",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_down_prepare.png",
+      "sha256": "e83bbaf226c2dff2d2f7ad100e632c15487689acdb2ef8906be4f896a0de843e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_motion_counter_success.png",
+      "sha256": "3321b5d1302b090c638a27d3f1d7eb36a6260073002e2034dc30d725b3a64894",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_motion_dodge.png",
+      "sha256": "3bea13370ba90f6b6f6358d9911a25f8678d472e58180094c33279dfacaa9ffb",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_motion_fall.png",
+      "sha256": "aade3a56ff3aeddb59ef24b0df0e9718fb6ecf13b2c4b6f12e25e567c7d5fa39",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_motion_hit_heavy.png",
+      "sha256": "173a207542cac93f0fb5f25d7888f804dda00e6f5a87ce482ddaaede24df4be4",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_motion_hit_light.png",
+      "sha256": "ec7ce9f97408203cdbc6bd5c2e671d9afcebab64033beff0801e7a2223149bcc",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_motion_jump.png",
+      "sha256": "3366d53887e161b2ade139fefdb3581eda9be1eb6c93be9b4342b3cb8eb6bb53",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_motion_run.png",
+      "sha256": "aebca4dbd56bc9f84e8831570978e06f32a732008d82e1c166e5ce997d329167",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_normal1_impact.png",
+      "sha256": "9eb73926c0626233cff2e8853a9da58dd2add93ea315b2b1fbba1a089c4cd03e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_normal1_prepare.png",
+      "sha256": "de912fe2077ba7aa5ccff3f9ba05763bf27e0c6b54062f7fb22c64211344da02",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_normal3_impact.png",
+      "sha256": "584069f9713c8c4dedb36f24205d0e3a1fa430b175b0327d9b21a2b633a35f1e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_normal3_prepare.png",
+      "sha256": "858c620022083275e4e4c56ef4bdb51702c679db5e9974131b50844315888d77",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_special_impact.png",
+      "sha256": "667101d8fff1282e191b734c1a8a4c6df9560d30a9d843f75226eda94ad3c0ec",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_special_prepare.png",
+      "sha256": "417ec93df34c06d9f9d058b559374008eec6319b5fbbbfbf1dad82fa09d1e45f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_super_impact.png",
+      "sha256": "51e058a4a7c0248190ab2302e02a150020aed0cea50da7a961680c27beb52d15",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_super_prepare.png",
+      "sha256": "39dfe552d2ba1fcbfb818a7eb210fd3ae39f91a18d32e5b06549e6af719ad393",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_up_impact.png",
+      "sha256": "17c6c978d6a255de04f1bd6a5cd56290d65f6f0c4b85c01bd7d08ab5f06c50f5",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ren_up_prepare.png",
+      "sha256": "90bdfd20d6b33f35b3c2b98f07ee346c48f2bc14abb72f4e1baf92235ecc6a0e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_air_impact.png",
+      "sha256": "7fd72f712da7b24a6d01502b4970dcbb71ddf67843c499ed243221e3c4f20db5",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_charge.png",
+      "sha256": "c55ca2d9902c80c486509f6f9fadc392390ea8430999316fb72ec1e1822a7628",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_down_impact.png",
+      "sha256": "a34719e1deee5fe29b460178449b7ce018b37f70719047f9a25fe32b6cb7c071",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_effect_bat.png",
+      "sha256": "72522c7803efd73e026d73283c1451e7a60f160e9610109f5ca29f4262181932",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_effect_punch.png",
+      "sha256": "21e1a55f12db3b63c842d4b1519b54f52a7c3049b26db7a847f52ca66585b4b7",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_effect_spell_impact.png",
+      "sha256": "69735d52527cb6d1511047ef868afa2aef5fa009a6584b0062ff6f81b8a5347e",
+      "width": 1774,
+      "height": 887,
+      "packedWidth": 2048,
+      "packedHeight": 1024,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_effect_spell_prepare.png",
+      "sha256": "0e9f54fed947c23f500c39ea1dd2002d434bf6ccb87649a92f3a6c4a4b0802ba",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_motion_counter_success.png",
+      "sha256": "86ec993f50f2af93e6ee39354cb138a9e8bc50f6c7c25ef407d8a1a7dea202d7",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_motion_dodge.png",
+      "sha256": "c09c9ab6960f0a07e89039c75023cf0f8f4a3ee4fd0f46348ad1165e8f43df94",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_motion_fall.png",
+      "sha256": "4e5c704c0553ec4f5e6dc63696221aad0c64dfea8f75815cbca99dcfe3c3b308",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_motion_hit_heavy.png",
+      "sha256": "86f2693e763c8a2f73856d8bee09db6b68fe34773f15ae638bd21ff774b5cf59",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_motion_hit_light.png",
+      "sha256": "601a7557c2aaa9b66665f9f106642f5327277331e90c1c05640360795fbff276",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_motion_jump.png",
+      "sha256": "5ac953381676582c126fd13dcd8d42b77b12dc68c93db54e4144cc5ce7ffe9a9",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_motion_run.png",
+      "sha256": "c3c56dffabaca06a7c436e64023d3e7b778382e7f78f8984880da7dbbbe8815a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal1_impact.png",
+      "sha256": "119e7b6ac845ff9798b76194ce76ba4a4d515bd54b3dbb65cb96b6d13844fb41",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal1_prepare.png",
+      "sha256": "45f7a143b0292b9251e3e961b0c46e43ecc2b6b8a532f849fe4b9f1b7ffba661",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_impact.png",
+      "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_prepare.png",
+      "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_special_impact.png",
+      "sha256": "44bb0d478ec298e0a944bdff10591d08b9b24f9d079101494690f2de537ff70e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_special_prepare.png",
+      "sha256": "5a1992b22fe590b5a4b5b110482ea729b3422e8a44256ece066c8bec3ba576d4",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_super_impact.png",
+      "sha256": "1c67d92cf3f501285c3cf7f8b2c55c28393c01945eb62d55f36b89fa1eb7e07f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/ryuta_super_prepare.png",
+      "sha256": "404e2424088194977873eafb39904c8b58aa550048a91ff8d2dc6bf428825947",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_air_impact.png",
+      "sha256": "1677a7645cf66fafb5135ed680b44a463dac60ae9ba3bda3987894e9e1d6d820",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_charge.png",
+      "sha256": "10a5271cb27d3061e8016276c3d18cb0f32885aca6bf1062799814b67bfafff3",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_down_impact.png",
+      "sha256": "23a2af7b3106b45d5fe89835c95ad8ae5ef2cf7f9300a5e782f61fa648b1f9ca",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_effect_alma_impact.png",
+      "sha256": "61ec74cfb2077aa3ee1a0ec3c9a82ae38af61173e4c4d241de0eb2fc363ecf4f",
+      "width": 1672,
+      "height": 941,
+      "packedWidth": 2048,
+      "packedHeight": 1024,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_effect_alma_prepare.png",
+      "sha256": "f47bef39e9591f6f89ae522031c09728564d935b079b61359900a63751221b69",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 2048,
+      "packedHeight": 1024,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_effect_emp.png",
+      "sha256": "006db27c1b2a5e41dde4eb6be17ed694d267b842d5e20cb40fbe111ad8af5f6b",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 2048,
+      "packedHeight": 1024,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_motion_counter_success.png",
+      "sha256": "4bd7b85fcdf915ddeed3b2f9734d69e64528a34927c05f8884079d42e015374a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_motion_dodge.png",
+      "sha256": "05a84d1431db8d173d7806f4be30bfc7c67d3742e86843f2d18e3e96ec7a6bab",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_motion_fall.png",
+      "sha256": "369b249bc9a7b3ccc786c70a644f2b42fc4d32f549ecaa6ac8344d8e1aadb865",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_motion_hit_heavy.png",
+      "sha256": "1ad83d644dbca1aa9351ec630915fe3676144ec563a8616212f2c997cfac3dda",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_motion_hit_light.png",
+      "sha256": "24ebe98bd356f78f0a5b0faa26edb7e692ea1c5fbcdad81c186de1c9f91992d8",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_motion_jump.png",
+      "sha256": "cbcdb37e450996cce4ad3d6ef668a5efbc59118e8f798073cd06285663316aa0",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_motion_run.png",
+      "sha256": "cf2f0f549221f89658b535340db3fb04a62afcc2bbe3e443e4be68f1314c172f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_normal1_impact.png",
+      "sha256": "6f58f7cce79666f9f2dd9df8c6f376a9754706fb6c0bb19a19e9a6e51fe329c2",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_normal1_prepare.png",
+      "sha256": "2dffd7b6a2ff40c22aabc8ec4a289773caf25566513de4fb442a49dced87c16f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_normal3_impact.png",
+      "sha256": "3968b5d6038d88bc867e51095d8fa03ba92c78c6461cb8f5ddab017cde45eabf",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_normal3_prepare.png",
+      "sha256": "47aa9417624b312e7f994119731563f11ffc506df4faa4a7b3fb169f8d524c2c",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_special_impact.png",
+      "sha256": "c1c2fff4efd5c77044ac21dfc52e776d57b4cb2312b0fd9da158db4892789689",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_special_prepare.png",
+      "sha256": "903796de010cd59f2d37b6f5a5b80e20dceb25dd7cad9cb5d44f08b9cc8c7695",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_super_prepare.png",
+      "sha256": "d92662c9a054559727d08f0b62bfa89d9a7f96929a10a93c681acb5af5febc6f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/shiro_up_impact.png",
+      "sha256": "d1ffb81071412e61bfbc80f0bf16c7f7a70eb061c8effa6f91a899d1ca3ed133",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_air_impact.png",
+      "sha256": "64140223a2e0c1f62b97013009079de03aff634fe1a9c5ae7503d93ce8034441",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_air_prepare.png",
+      "sha256": "8fddf45aa1983c37a78ef1402852fd0e488fa7604247360d86541a5671b1345a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_charge.png",
+      "sha256": "d503dc333c0f00b4be457b0c1f33962e42dae447beb770285b39db241e56f9b0",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_down_impact.png",
+      "sha256": "989f7b438031f25605b8120e04bc16157ffcb1a9b93b962ccffc268befaa4ce4",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_down_prepare.png",
+      "sha256": "8f953c6d2c93ae5f62224d2d57b82e208383677abfbb0c626bd96bfc73417b80",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_effect_bullet.png",
+      "sha256": "d6fba72a74169be895898ff16f6fe374589a8bf8df5e8ecc3da0ebf6a30cdf35",
+      "width": 1374,
+      "height": 1145,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_effect_drone.png",
+      "sha256": "45097665396d93e27673d094ca066960b1b0486922365bc35ef35c4dfa10629e",
+      "width": 1510,
+      "height": 1041,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_effect_rocket.png",
+      "sha256": "356d3600d84bece1944c9d976956e6b3e8274a8b56829f55da49e88560cf9b9e",
+      "width": 1006,
+      "height": 1564,
+      "packedWidth": 1024,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_motion_counter_success.png",
+      "sha256": "45addb32eb0ea603e3773d50a0c0e3393c755f6c747741f7c12511155800c621",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_motion_dodge.png",
+      "sha256": "8f1721a8aa8420fcdac55a147b36f25019d03435a7674d2b11e56ebb3ce49c3e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_motion_fall.png",
+      "sha256": "72a2852686934ac45b6f5ab6986b8543baf7f78cadaa8777c5d2e75297234679",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_motion_hit_heavy.png",
+      "sha256": "2d4ff1e5bc3cca1e6048ab527311d721fde832b51713e138faf865cee51ace37",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_motion_hit_light.png",
+      "sha256": "3e2e9dd282b4fa1eb8e4d4d73b3bd07294a174f7e849ae9fb9a9d6084fa6206b",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_motion_jump.png",
+      "sha256": "22302bf00c01bcf60e01c6a31e406ffafb5710871d6a05c161eddaa360e866d1",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_motion_run.png",
+      "sha256": "4ef392e82c2151ae2924fd460c3e990594a2e286d903976c89a04b4ece07041d",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_normal1_impact.png",
+      "sha256": "76c2891d015867fa4713354f274e7da3fd8bc50d753d8f9be344a3e9c2f9f674",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_normal1_prepare.png",
+      "sha256": "d80dbfc27c101468d5300b1e7e84ec407368ad41e3a2e80843f5db6edc491fd4",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_normal2_impact.png",
+      "sha256": "36dc91a432f9e6d7ca86224c7e66590a0f913b40335afe30c0d0a4c3d945c65f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_normal2_prepare.png",
+      "sha256": "266c233aaa48ff159ead3bd7dd3ef5209f69b5beb9b45482583a86f934f7e098",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_normal3_impact.png",
+      "sha256": "bc87a951ab467d8a6021e9ee15a4eed70a67fb3186064f3502660fe27118d20a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_normal3_prepare.png",
+      "sha256": "0cd7fade3080c586adc6b84e551319a3c1a0b74876d4362c28f9c4abd6445fe3",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_special_impact.png",
+      "sha256": "5ed63490ad0740e6ba2d0ed3c7a828f532e4919c4cee897bcd2e94ea00197d30",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_special_prepare.png",
+      "sha256": "e181a75ea06006b0324607a74f1958ad81eb925aaa540b0933a6e284700c33a4",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_super_impact.png",
+      "sha256": "4413f769fc0d360bb84259fa2b4847eb973216d9b0b541ba8c81688da5a290aa",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_super_prepare.png",
+      "sha256": "b181000cdc238158b9bc6a450ecc7676d72ed723be820454b1493b5038990b55",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_up_impact.png",
+      "sha256": "afa746d1db39fbfd91b13feabcfebf384db0faa8857c0a504e4ef27009ddaadc",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/toma_up_prepare.png",
+      "sha256": "9047291062b99e3b804bd78b0630543322b3ca9f4d0667d313930c5398268a28",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_air_impact.png",
+      "sha256": "1d2fea67acd5c6827bd6fe0a853eec158e092be39a89d80b8246d0dfb79647bb",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_charge.png",
+      "sha256": "4c6188ff80dc5b68704fd7aaf20b19c1c8698eab6ad1ea464442c7c467ffdaab",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_down_impact.png",
+      "sha256": "1fc856e5025320aa77568368f10f1ec3edac0540793ec65cb05b393e2648c370",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_effect_magic.png",
+      "sha256": "cb8766d36865ed8fd419c556b47e6562010d5adc64806a2d7441e1e42aa7d37a",
+      "width": 1536,
+      "height": 1024,
+      "packedWidth": 2048,
+      "packedHeight": 1024,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_effect_tap.png",
+      "sha256": "7a78a41be3d785acba20eea06f7b56d67bd2d73c54ae7209b0c64e1ffabb3dfa",
+      "width": 1254,
+      "height": 1254,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_motion_counter_success.png",
+      "sha256": "2cc208c1267073fcfcf44ec5f38718aceb34ed8ebf49fd21bbe9b9f42d168aa8",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_motion_dodge.png",
+      "sha256": "5fd5739f6bd47c100563f48252eb5f82edac24496dc8825740858f07459b2e5a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_motion_fall.png",
+      "sha256": "3411551d54cc5dacba1ba1ee66edd128bc5d04be59892c2265a2cba12f2c19b6",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_motion_hit_heavy.png",
+      "sha256": "674dd9a9d417c9a2172efd0880492cbdedb967872a3968a083ba4c1111d8777b",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_motion_hit_light.png",
+      "sha256": "d9434199510020336068fda25f5126952aa1c12ef41f1c5460ab983df56af7d9",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_motion_jump.png",
+      "sha256": "198e26575ba3fde4f5b65c3992f8ab1563ac45099eabe90acc7b90c31825781d",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_motion_run.png",
+      "sha256": "375a2c8f4f4e8ff22af3a3b412297bd0564e31f82cff8a62008c628b3f737d55",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_normal1_impact.png",
+      "sha256": "ad1f3f8ad98c310a4becc484882f49a4b0bc50b033699b6c71471deb956390b5",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_normal1_prepare.png",
+      "sha256": "ed18b34cbe461f74b618a78254bdaf45c63087ec96c42a96ebbd85eb77c2332f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_normal3_impact.png",
+      "sha256": "3b0b637c6c89b7bdd77cf7fec36384c3116c234efcfce025ad505cab92e0c6b3",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_normal3_prepare.png",
+      "sha256": "558998dbbd849d99bcede23bba342cd2818d27b6cfcbbb4e57afa05d51531390",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_special_impact.png",
+      "sha256": "44f0b1af0ac70669389e1fc1948073962002127bf227d88abc7825d124922528",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_super_prepare.png",
+      "sha256": "0241a7a825dc0b48a811b495c76ba29dfc2c43fda22e04f614e790b10a3f1414",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperAction/yui_up_impact.png",
+      "sha256": "4bdb048ab64b7918fc855500d8f1fca1e5da1abbf91a54e6aec5a675a5c65a1c",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/akatsuki_counter.png",
+      "sha256": "24c34aea7af47602f0ddfc5ae9f336ce63c47daf4eb4987c504c5c5f309af18b",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/akatsuki_crouch.png",
+      "sha256": "5a57b8239a1d9be43697891da56bd9b0b0b5c6faf3bd41afc8bfa52c659495ba",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/akatsuki_guard.png",
+      "sha256": "737537b07ddfc7f6a38c18040f2eafabefc722613cbf963ade4c40c63db3d997",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/akatsuki_lose.png",
+      "sha256": "2e9c940395eb4e06be221fe8157db7092e65c57d55edd53ee9ba8b233814e9a2",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/akatsuki_win.png",
+      "sha256": "f3d3d7c0e5e0c8c6e9faad945d6fa796359be9f6c09fdfd59ae9a169c1f03fae",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/king_counter.png",
+      "sha256": "5e06263cce967cf45ca8c053c3692ad83038ac665b93993a13ae07104dc93b62",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/king_crouch.png",
+      "sha256": "312eaa8e0d6c38f3c99e26d2169a564f961ea3045b172a2775434bafea50399c",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/king_guard.png",
+      "sha256": "72bfc8b69f985142459786c0f347f1859a60804858ab10528b7c27044c18f1a7",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/king_lose.png",
+      "sha256": "65d9f8c0419608583fd303172673b144cd715e1755d12faf616760066b9a1e15",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/king_win.png",
+      "sha256": "3848a597d6a3acedd319a9c7f3088e301c0de00d64919436d63ce149f34dc76a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/minato_counter.png",
+      "sha256": "47d85bab5e31a41a7619b346581488b8871de917bf49441618553e0642d9666c",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/minato_crouch.png",
+      "sha256": "c617db59bef8f72c9723d208bf9635e6e5d76fa1c6c47f5497496319a330e257",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/minato_guard.png",
+      "sha256": "6350f48e675f35749f6356846d17ae97280028e834527834b95904d1458db68a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/minato_lose.png",
+      "sha256": "2a8583fa14425e1090f92317f5526057a4dd968dba1c701796bc83627339403f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/minato_win.png",
+      "sha256": "93b27c3786ebaf92a769a0becc0aac55acb6b9ff1aba1a4d4159cd3ea095a153",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ren_counter.png",
+      "sha256": "27b59f8e14634b860ccf33105dd14dc6faa6c74936378cb99a6e4590b717ebaa",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ren_crouch.png",
+      "sha256": "8d545749149187e20710c9b0525c31eb60805f749c944c11c01444ee195b23f9",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ren_guard.png",
+      "sha256": "eb163926b15333b1d4670e90c5857e23f00fa2392b4d3207691fb7353d4ad65e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ren_lose.png",
+      "sha256": "7aa8310f6bf891f7b2c1e10ba888aac9591857d9d2049abcc6032530b319aedc",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ren_win.png",
+      "sha256": "a30576efbcb7abe66dd3bc13cee5eb6543f55866c4a19832499f58a97cfbe7f1",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ryuta_counter.png",
+      "sha256": "78f652da1dc17a5d23a628b885b9309916953f1aee94ad39fa74531989f0afb7",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ryuta_crouch.png",
+      "sha256": "600fbc1647b996ce991a079554a648759b377ed95dfa8e1f1fc84e94b8dea2c5",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ryuta_guard.png",
+      "sha256": "2b515e57aebec4f69b5df0a5fce7a6e055b7fce18b638509c40e646ca63280c4",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ryuta_lose.png",
+      "sha256": "53807366f19fde975fdeaede13988f892ec6c577d61cfc546db0e032b611e3f8",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/ryuta_win.png",
+      "sha256": "4152fdcbe4e4abe11e22c1e225f4e37a3931482bca6c189cb548a01050a526a9",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/shiro_counter.png",
+      "sha256": "e4368c12410a15ea3cfcba10f35b5463f6060f86be7dacc63fe96f112a30e672",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/shiro_crouch.png",
+      "sha256": "1ad691966b537594d12870457bd8b4b8b65dfbc404eaf873544cc064794259f4",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/shiro_guard.png",
+      "sha256": "2375962ed519e439ddcc506319a5897d1d2c33b2b6f5d5519383b7dfb60cb76f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/shiro_lose.png",
+      "sha256": "bf3fe08336f5fea00a4796118f148dcbed2b70a4d69f052dd4b73dec30354b81",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/shiro_win.png",
+      "sha256": "c50f09c2d83d999e1109dc79e7e39a142ea121a090ca75e1369d31be211d97e0",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/toma_counter.png",
+      "sha256": "2882310b12c191f5835e081070906824de42e2eeab7931fc252b581e7a23c027",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/toma_crouch.png",
+      "sha256": "02fd2fb250ba8cb21e65e483ce800ddb8d17f3376dbeb1581a768cba5d4483b6",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/toma_guard.png",
+      "sha256": "026e1b189d4b7656924321629c098a5fa4b0c83c367d4bed5a994f65fd3970a6",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/toma_lose.png",
+      "sha256": "5e41438a2885161ae60003006d94739f2566e883abe405bbfc6a7551f85aea2d",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/toma_win.png",
+      "sha256": "5aad06f801933e575ab08ed03a66763e93ee6d0d739d38838407f2e9ba0083aa",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/yui_counter.png",
+      "sha256": "4e1df353a50b98c5282fa86c164382e1d888fdc15be54300e3b7d3579177f577",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/yui_crouch.png",
+      "sha256": "51ec703f5a7ef6e90ed442848522d1e2a4f4f4108ee7593ebcf25a516f4f326a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/yui_guard.png",
+      "sha256": "5127eea5950fa2642668eaeb66d533f0e7d28098be0cb2905072d01068a79e6f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/yui_lose.png",
+      "sha256": "fc632f7cac95860908794d30c99b30a0f4e046d2e8b9f62f6f45ebf67ae8ef38",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperCore/yui_win.png",
+      "sha256": "b787575c38db85419e7c27c46b165694e2dda11ac96bdccc19e774cc09cfa1f7",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperEnsemble/ensemble.png",
+      "sha256": "b94c5f60062dfcaffdbc45562fb6060d990127424dd38ebe3e53010b165ad27d",
+      "width": 1672,
+      "height": 941,
+      "packedWidth": 1672,
+      "packedHeight": 944,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperRoster/akatsuki_idle.png",
+      "sha256": "eae40aa2874589169045a2223c02b49f16ba01ad75290131cf237135f00efc4e",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperRoster/chizuru_idle.png",
+      "sha256": "16b1c35870c40dce23304c8b9d9b9d827ee47313aa17558734b2ea0a9105320c",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperRoster/king_idle.png",
+      "sha256": "2094de5b1c27614ef9877807b64927996ba3a27b3acc00a29a95af721f90400f",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperRoster/minato_idle.png",
+      "sha256": "e4d286fbe83182881d79b23fa723f44ff0a42ef03f7ac231bbc3d9174e4e3f0a",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperRoster/ren_idle.png",
+      "sha256": "be94ef030e8a53ce9ab00e345136ce953fa40e6e003346040bf10cd08a188c8c",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperRoster/ryuta_idle.png",
+      "sha256": "99c457a9d628f5ed679f2b784fc897f2ec3d68ae8f60bd818f2a1fe4d17f8121",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperRoster/shiro_idle.png",
+      "sha256": "dee47999eda41dd5971c9b45ff8bcb57624443dcbd5381d6b200b391ac6ef404",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperRoster/toma_idle.png",
+      "sha256": "bba2647bbe44fb6ab05b5a57f2ca9f6bf74ce05ec3490403ce6bb6f33f8e79ed",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/PaperRoster/yui_idle.png",
+      "sha256": "fd701d3d2864351d48e61d2793d5dc2e90ef829414cdc5b104a0a54b4301edbf",
+      "width": 1304,
+      "height": 1450,
+      "packedWidth": 2048,
+      "packedHeight": 2048,
+      "mipmaps": true,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/air_attack.png",
+      "sha256": "a1cac80e6fb64b88b6854b3a9347a8d5f99516b6d05f862b192d4eb6a38cfd81",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/air_back.png",
+      "sha256": "09c84b14830cb2a61620e6810f2b65c991dffd06bf09e5706748a7d1eed2324e",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/air_down.png",
+      "sha256": "4e4cb1c181a46915f92cf5d5cd358265122710505f712f8bbec1dfaea52f9a8a",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/air_forward.png",
+      "sha256": "bf5994329ebc5daa9f3d21fce49a5bfc507be2cbf23a9cc3a3ca622d8bb46822",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/air_forward_down.png",
+      "sha256": "f5e8c8ffade18bfaa374fa469515b4e17bbf208d9120ab9c387bf62d5b456069",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/air_forward_up.png",
+      "sha256": "f1c6012e7807e2eee70ab45c91c5da425b209c55d9690a2ce27b0cb71157b4bf",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/air_neutral.png",
+      "sha256": "ee576b4e2d1f53746327e1324314cf208cd49cb5001b3f21cf521c5b22fe02fd",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/air_up.png",
+      "sha256": "84ec189c0dc6b308362ab2fd641039da97c9c6808f4cfed923ee4fdccd7bd67e",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/attack1.png",
+      "sha256": "acb56911c26682cd39d92d1cb7c48a4a269eb042eb7944afb809f9e6e535394d",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/attack2.png",
+      "sha256": "f9b94c920c7a431cb2e24f1e117f9f460b45d290fd4835c1ac5956536582806e",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/attack3.png",
+      "sha256": "af2fdbe791df00e1a81e358e40e323754e7680a593ebafeea86f2d372ebc9679",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/back_attack.png",
+      "sha256": "c0f762bef90743a3a7fb2d451a46bc6295693ddc006ec377e0319281bfc6f8cd",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/bag_throw.png",
+      "sha256": "8051d2abff964feee9c14865519b24c6785272e4dda93d49069b94913cb1c7e4",
+      "width": 896,
+      "height": 160,
+      "packedWidth": 896,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/counter.png",
+      "sha256": "680402abf6e30c34949ed3ef048494d5f1ade9377bc0ecb44d436e59415b3ffc",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/crouch.png",
+      "sha256": "9b801005c82813deba78a4b145e3e53720bd5a0546e1bc0c26144eacc594d02b",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/crouch_attack.png",
+      "sha256": "4b62665e8829418eb60bde312f940ffcc299236f0ec4c5dcb3423bd6d5837831",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/curry_wave.png",
+      "sha256": "3bf192579f775f56ee481d846ce628b02ec25c4c206f27564d652fd0fb2a6ce4",
+      "width": 896,
+      "height": 160,
+      "packedWidth": 896,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/dash.png",
+      "sha256": "ab106134a61569c730684079825da3f13639edfd9eae9b7d2e4d0674b5670589",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/dodge.png",
+      "sha256": "2ae163eb25bdcd0152766acaeed9ec06ac752765b927f456fd1f943e4465027c",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/fall.png",
+      "sha256": "15c214eb3026344639e432bf9ab3236c20f245896d861a396e96b1ceab3deb62",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/guard.png",
+      "sha256": "281e2af1320c9c7493998698ecb412e10536fdecb1951f8a4d1e5322820d5783",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/hitstun.png",
+      "sha256": "b66113ac53170273b700b821f0bd1e7d621eed9575cceeee3c3ff5d275a527a8",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/idle.png",
+      "sha256": "004f49883f1082faf5f34ef32bbb9b1eba02a03d795ba01aaf6f82cc0ae86bab",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/jump.png",
+      "sha256": "ac3105994d319c6da74830372ffc4799020cbb7b9bfb4ca1fbb8c5bf96879588",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/knockback.png",
+      "sha256": "5fffad50b0f79a25d8294f824948402363863b4b5c34978b875bf5964ae23e1f",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/ko.png",
+      "sha256": "c95ad846ab3d444f3d503df68d0f094dfc970c13f3da00c9b93a5d8304c88818",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/land.png",
+      "sha256": "982af76a54e26af4c37a745a11b23474eb691e47c866a62b28026270104c77d4",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/lose.png",
+      "sha256": "aa3b4d58893ecbcb7236b255ac8736de589b65b9658adb155c6934615068ec09",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/mogu.png",
+      "sha256": "413fd83e8fc1a5bf8dee9454644ab060edbd1c5b33c9ade2e146489178359f2f",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/rice_ball.png",
+      "sha256": "360754f3cf651f9075f08f90454e75f552a1c170d94a1f9a0aa7e6679c4944ec",
+      "width": 896,
+      "height": 160,
+      "packedWidth": 896,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/special_down.png",
+      "sha256": "5773dbaabc0d27470914f782980f37c29a2864c91afc320bd44720ab225b2272",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/special_neutral.png",
+      "sha256": "2d1b6dbcee86b8271ab66c66feca86cbe29849609598787e13ff9a367fe6b4c1",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/special_side.png",
+      "sha256": "330b83aa0062ab3622207782df5a547c2b3e3f958d4c3c571869b72901697b09",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/special_up.png",
+      "sha256": "c55ddaad53513e528f085415e7ae9d0b0433c04b170ecd889dad45252e2e0715",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/ultimate.png",
+      "sha256": "df80f89c7458b10e4470052c18182929224305bca4a3c0e7209f02f050cec4fa",
+      "width": 896,
+      "height": 160,
+      "packedWidth": 896,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/walk.png",
+      "sha256": "d33aff7158d9eb5a40b7b3b51a8b5aa5176779c610938344ff2136dadfee7be3",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/chizuru/win.png",
+      "sha256": "936f7094d41c0fa856317afbf8d405b41496e3bd3df915d8135274fcd48c2d20",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/air_attack.png",
+      "sha256": "9fabd36bb6f814386883d7325705da697b2cd15bc0d6827a34b4130187a82ad3",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/air_back.png",
+      "sha256": "3eea54408cb3c5571b1bae4ce4db752b3a0ea1436661a506aad1fe76071fc7a2",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/air_down.png",
+      "sha256": "31f49959e9d225ba70c86a3f7bb6035418fe0f9dbfa7620b8f96473a0b0b59fc",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/air_forward.png",
+      "sha256": "bb284da71a991998950754fe7194a15fb745b86e690dc2a7777281c67bb837b0",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/air_forward_down.png",
+      "sha256": "8583e661c0cca1605141bd6e835e18fe6d610064ae8f8b862049e508e153b5c7",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/air_forward_up.png",
+      "sha256": "0a5fc6429a214805bc62e9a31b8b4fa14638ea661a1e02d31e868234d5f34307",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/air_neutral.png",
+      "sha256": "ec1109133d7ecef04aa973640353d32fca6471685efd2acb3d5cf417566126e9",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/air_up.png",
+      "sha256": "310b8a80cf08d4a3ff5dd2a8e556aae982c19622f171b86ca870bf680b2a89d5",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/attack1.png",
+      "sha256": "e7b04c32fc11eac96c1ba10aebcd6b19605b095443171189d8fc64f6930b3a6c",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/attack2.png",
+      "sha256": "5c6dd7af79cb481afcf211372dfacbf290e0ac5c9e370ce70c49371053769b3c",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/attack3.png",
+      "sha256": "124255dda4826777ae0c2323a405be8be821cfe14cb262277fcf91268a88cd2e",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/back_attack.png",
+      "sha256": "f6db1e760a3bf7a80dd26bcd8736e155173a63b709c09f126a38810ef649bca1",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/counter.png",
+      "sha256": "9f0993e32ce6516bc08a87b6d890aaf028790e5905beda9f66e268197f8cc081",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/cross_light.png",
+      "sha256": "f9c124e16754a29155ac3aaf7a09cd88142aa72ed2e8e358b93a8f5b73428921",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/crouch.png",
+      "sha256": "3b6015f578ee803d5978bf887813cb52cc9823b420500aa02e11c2c1c374307f",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/crouch_attack.png",
+      "sha256": "53b380f13af7155e63264e2703cab6e3e3070c82ff9b76d10e37b681b0366c36",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/dash.png",
+      "sha256": "45daead18806a2d472c782fbc7a502f8dc6238ea193f1c08173a104abec21ea5",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/dodge.png",
+      "sha256": "586b1b93568e5732f020b0de76e2abb2d62e791faec67d3c40c5f22c39780c47",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/fall.png",
+      "sha256": "7df1025eaee7c49dd86fa8c983617cd63d8863db35e7a2b8f63b090053bb4ebc",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/guard.png",
+      "sha256": "8e6834c7df7c659a6e7ab63b8bda918e9916d730634d517f5ffc1aab488455bf",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/hitstun.png",
+      "sha256": "5d62f41737b26769a47abfefe20a4e414f4e5f9003cc8243d14805964d969870",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/idle.png",
+      "sha256": "35fa3d07d25c9f55b0947fdd64ada883f6e4ab9d34836c4d1c927ba639655dc5",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/jump.png",
+      "sha256": "e23d55e537509e7e8efaa8d5619043b6517929f1cf9944c97a1312a79ac0d2af",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/knockback.png",
+      "sha256": "8d995a9bd89703dcc96bfb68c1f2b82aa363da3b3e8e2dd2bc756b50371d5e36",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/ko.png",
+      "sha256": "cf8d30ca0e6b6b2f71e63f83783833598e17fd191e54cd17851a9e22235539fb",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/land.png",
+      "sha256": "71958256fefecb9e87be9251150364138a691c54d4836182d37759c3c2d7a4f3",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/lose.png",
+      "sha256": "c65a883cf906550cc7097e255dbcf6ee8645e3a6f1551e9920e257c28eebb60a",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/special_down.png",
+      "sha256": "abd9289590883df0a3cec353f18c46cdb580118af3538cf9482058b0490bfb9e",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/special_neutral.png",
+      "sha256": "a558b25ab2bfba5a12766e2da278d9d6d6816caf7a2c8168b9dee8de79c675f8",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/special_side.png",
+      "sha256": "cf6a4ff3802052ab56415b38aa69a64fd58cafa7f77e03ae46f8080eabe4e8b8",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/special_up.png",
+      "sha256": "1251daa9390b54f410bc9007f82572a313176cd6eca7852c6a6200781195d2d4",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/ultimate.png",
+      "sha256": "aaaa28f2a70ea061e10d7c85826314662f28cd743fa4c24258dff39c84b630dc",
+      "width": 896,
+      "height": 160,
+      "packedWidth": 896,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/walk.png",
+      "sha256": "2f6018d3b02e9166d86febd7fcf1b52521ab9475c58fb4a3ab5526f95550f541",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/ren/win.png",
+      "sha256": "5818d5df96d9db7f2a84473d8ac13b74b86c53060a8735b01f0ca531d79e1d96",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/air_attack.png",
+      "sha256": "209be5fdd57c0f7891715dd54e1da989f7348e58e0033b7509c4db9a8e75cd20",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/air_back.png",
+      "sha256": "49dd7c9f804c81f99246208d5958b4ccdc119a920244f7b9690787d2daa6540d",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/air_down.png",
+      "sha256": "59db2c23163af6fa882e06b85e58068ba2c66ce3d0c19f82cc2d957412cbe3e0",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/air_forward.png",
+      "sha256": "cbc1293d8390b626372deeb14f48fbea058eb8d21f28547e2d5b7c0dddcdb7c2",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/air_forward_down.png",
+      "sha256": "dc8d3ac46eaef145fd91353932295ebb4586ab2bf0c18bd4f0de3afc20a724c0",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/air_forward_up.png",
+      "sha256": "95d34b19d508f90562ec866514be2c198b053fa3d6bc7ab88b76b14dbd96a267",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/air_neutral.png",
+      "sha256": "966e6a41bc1f3c5ac196ef02d40b1be5e24a6d9baea35f01e4a8a06c08bb0f1b",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/air_up.png",
+      "sha256": "666dd1df42cd007819d33811a0bbe928413560b7e567cc832a3ffc23e6066ff7",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/attack1.png",
+      "sha256": "d212d3df2745c7c274535a99741ea4d60218f71de9f113f463075949f0876960",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/attack2.png",
+      "sha256": "02493bbd4e1b1b58e3f4d30363793193ce702789b2c9667a94a8435e32f43f35",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/attack3.png",
+      "sha256": "efd313ca01ffaed312c3130a333a90252474f3d713505999d28144efae86f0ed",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/back_attack.png",
+      "sha256": "43e0bd081fc06e0340b9872dd0c70023f0eb81e38bcb87069396b9a90b517f68",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/boundary_glow.png",
+      "sha256": "196cb76f2e11a1a3948b09be84dd3cc0fa5c4166ae0fe441a378440a059073d1",
+      "width": 896,
+      "height": 160,
+      "packedWidth": 896,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/counter.png",
+      "sha256": "90bad87fa36c161e5c5edb78803400613c0ce41e177c941fb342ed9bafb42493",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/crouch.png",
+      "sha256": "24aec6018acd32bdfa96679379697d4754c15f05e4ebe6a077fe7c5e7535fb2d",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/crouch_attack.png",
+      "sha256": "79db03875fe11b8516e87600d0183bda23c02e260eda063afd0b977ffee6f87c",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/dash.png",
+      "sha256": "ed8530acbe15cbaa3d62a72f34360cbf0c71742b095ee57d6483cb2d76ebf88d",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/dodge.png",
+      "sha256": "8ceca8d1ff50371118456cc15b5313cab59b969f743814e5132f2e9b0c06c8a0",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/drone_hover.png",
+      "sha256": "13d913fe6851cfd6bb4cceb1a67350853ee4bad908907dcf4e535729c3293efc",
+      "width": 896,
+      "height": 160,
+      "packedWidth": 896,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/fall.png",
+      "sha256": "284b6f297f5958fdb1d5762890017d976bacfa4a51533f9d03e3b1e8323b656d",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/field.png",
+      "sha256": "6ed744d96e60df11f076804d479cbd9ee8eee2270efebb11bd1c35d67dfec41c",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/guard.png",
+      "sha256": "156125e99c41ae54dd096ef9f402c9622cd6f78c577c6ad862a5835cd10abbdf",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/hitstun.png",
+      "sha256": "5eaf95f79fff39ee7563f9dfbaae136e19b41e4e9cc9d200b8fff2df2aad5397",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/idle.png",
+      "sha256": "337b7f42ea550bcde4b6c48d7744bbd3ffb3365ebca247400ac57c21b83bd507",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/jump.png",
+      "sha256": "8096c9046fee03eaf1525a5e08a5db8aca753c7cd5fba27f56e7b7d1e61d33b2",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/knockback.png",
+      "sha256": "0c2dc73959dae8517e4be453405a4a0c5497a637794a1ce6f127a176aa8d28a0",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/ko.png",
+      "sha256": "7f967ab0a172d7723ace5c29859d0edf5ff7b518e5525ec309e19f32733e0b39",
+      "width": 672,
+      "height": 160,
+      "packedWidth": 672,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/land.png",
+      "sha256": "0051e8401e682c8dd7f9cac6170aaf288f96e30f9adbbcedb699da2b456d8944",
+      "width": 448,
+      "height": 160,
+      "packedWidth": 448,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/lose.png",
+      "sha256": "5a6ff8dad531eb6cc5ee2fb5ab334e63d24650e6d01373e95ebfdbe01ff8a3a8",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/pulse.png",
+      "sha256": "ed4e4f2fde43320486ef3a9b2215e984c5fe59907a7643bebfd552c4600b3bd5",
+      "width": 896,
+      "height": 160,
+      "packedWidth": 896,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/special_down.png",
+      "sha256": "cf97e39f9dd6f3442fb982f91665b4dbefe0e9855111834f04a89ab27d1010ab",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/special_neutral.png",
+      "sha256": "6b3ecd3f2cfbdbc4967460721708aa306fcea2e907515ca9828cced5567f9bd6",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/special_side.png",
+      "sha256": "3a0f0e07fab23397fcc50f97e03dbd0bc488847e55a22dc46016b3b882aaa0e2",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/special_up.png",
+      "sha256": "c99d8fc5e17527d34c4079eaa383356d15af979136eb8ecfb705ed0881a61cfc",
+      "width": 1344,
+      "height": 160,
+      "packedWidth": 1344,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/ultimate.png",
+      "sha256": "84fa14f1e10bbc7457332a2b886c552220497904056116171dbfac8f9b98ad98",
+      "width": 896,
+      "height": 160,
+      "packedWidth": 896,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/walk.png",
+      "sha256": "f7ded7f34696d017492963fc48a508836c3b428215e204116d0ca030269542c2",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Sprites/toma/win.png",
+      "sha256": "520ef07db8ced905c8bb69c75bf3f209c2c9a605d1a5cf9266f2bb45805d6b33",
+      "width": 1792,
+      "height": 160,
+      "packedWidth": 1792,
+      "packedHeight": 160,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/paper_stage_0.png",
+      "sha256": "0125ebbaff4f235c71fd5df44a4402182a09f5f6788fe2004a2042ba8579b8c0",
+      "width": 480,
+      "height": 270,
+      "packedWidth": 480,
+      "packedHeight": 272,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/paper_stage_1.png",
+      "sha256": "03e37f91a136950cd8797cd8002100d77c3c2dcd51e8e00c85e74451a42eea67",
+      "width": 480,
+      "height": 270,
+      "packedWidth": 480,
+      "packedHeight": 272,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/paper_stage_2.png",
+      "sha256": "cdd82e41b9d1e2fbdec4b6dbc91c6fa763dd5ec9e814d4c15fa145609dda260d",
+      "width": 480,
+      "height": 270,
+      "packedWidth": 480,
+      "packedHeight": 272,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/phase6b_0_background.png",
+      "sha256": "4a2f76368ef7e96457edc049486674382c4fc92560244342b4231fd7278ae24a",
+      "width": 1280,
+      "height": 720,
+      "packedWidth": 1280,
+      "packedHeight": 720,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/phase6b_0_thumbnail.png",
+      "sha256": "20a155f27c0ba042d3f7ae6bfcd827d3c1b40eb0f636d852252f57037939df56",
+      "width": 480,
+      "height": 270,
+      "packedWidth": 480,
+      "packedHeight": 272,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/phase6b_1_background.png",
+      "sha256": "7ca822063a6e1079b1fe28f49728884243d5f75b7f9e385c9363ba85d64947ec",
+      "width": 1280,
+      "height": 720,
+      "packedWidth": 1280,
+      "packedHeight": 720,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/phase6b_1_thumbnail.png",
+      "sha256": "cafd88309aba44ca2a78e3da1d5316ad4f75b3299e679984ea6e8bf1b9415e04",
+      "width": 480,
+      "height": 270,
+      "packedWidth": 480,
+      "packedHeight": 272,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/phase6b_2_background.png",
+      "sha256": "a3a3365032056a8354ed2e423ab5f13cebdd4e5c7ee4eb39abe1b3b91d9f51f7",
+      "width": 1280,
+      "height": 720,
+      "packedWidth": 1280,
+      "packedHeight": 720,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/phase6b_2_thumbnail.png",
+      "sha256": "55ac9710216a610ed7fca6f605b999d75cec57f58556c2deb3fc680603bd0301",
+      "width": 480,
+      "height": 270,
+      "packedWidth": 480,
+      "packedHeight": 272,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/stage_0.png",
+      "sha256": "7c64ec2f4b9424a0f15703f39cd2cd1384e38ef212ccf597a137ca2842c8e90a",
+      "width": 480,
+      "height": 270,
+      "packedWidth": 480,
+      "packedHeight": 272,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/stage_1.png",
+      "sha256": "585ca8b43242d5128e29bf39c9edd0d5ac39beec1cbe6d53e4f02c17dbee19cc",
+      "width": 480,
+      "height": 270,
+      "packedWidth": 480,
+      "packedHeight": 272,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    },
+    {
+      "source": "AniBato/Assets/_Project/Art/Stages/stage_2.png",
+      "sha256": "15f1b064bcebd862c1b8c413c486830925fb4ece9df97a86985a0d1928f5eb50",
+      "width": 480,
+      "height": 270,
+      "packedWidth": 480,
+      "packedHeight": 272,
+      "mipmaps": false,
+      "rgbaPreserved": true
+    }
+  ],
+  "checked": 435,
+  "failed": 0
+}

@@ -29,9 +29,12 @@ MonoBehaviour:
       ShotOrigin: 2
       ProjectileCount: 0
       ProjectileSpacing: 0
+      ProjectilePullRadius: 10
+      ProjectilePullSpeed: 26
       AllowZeroProjectileSpeed: 1
       ReplaceOwnProjectiles: 1
       ProjectileAtDamageFrame: 1
+      IndependentNormalProjectile: 0
       Look: 4
     Kind: 2
     IsCloseRange: 0

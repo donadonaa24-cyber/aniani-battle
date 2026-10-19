@@ -169,8 +169,9 @@ namespace AniBato.Tests
         [Test]
         public void BlackHolePersistsAfterRecoveryAndDamagesOnContactOnce()
         {
-            var sim = Create(3, true, 8); Fire(sim, true); Assert.That(sim.Projectiles.Count, Is.EqualTo(1));
+            var sim = Create(3, true, 12); Fire(sim, true); Assert.That(sim.Projectiles.Count, Is.EqualTo(1));
             var shot = sim.Projectiles[0]; var position = shot.Position;
+            Assert.That(shot.Attack.Definition.Ability.ProjectilePullRadius, Is.LessThan(12), "引力範囲外で持続と接触のみを検査する");
             BattleTestFactory.Idle(sim, 50); Assert.That(sim.P1.Attack, Is.Null); Assert.That(sim.Projectiles.Count, Is.EqualTo(1));
             Assert.That(shot.Position, Is.EqualTo(position)); Assert.That(sim.P2.Hearts, Is.EqualTo(3));
             sim.P2.Position = new BattleVector(0, 1.1f); sim.Tick(default, default);

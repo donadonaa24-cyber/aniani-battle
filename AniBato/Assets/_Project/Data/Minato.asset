@@ -47,6 +47,8 @@ MonoBehaviour:
         ShotOrigin: 0
         ProjectileCount: 0
         ProjectileSpacing: 0
+        ProjectilePullRadius: 0
+        ProjectilePullSpeed: 0
         AllowZeroProjectileSpeed: 0
         ReplaceOwnProjectiles: 0
         ProjectileAtDamageFrame: 0
@@ -148,6 +150,8 @@ MonoBehaviour:
         ShotOrigin: 0
         ProjectileCount: 0
         ProjectileSpacing: 0
+        ProjectilePullRadius: 0
+        ProjectilePullSpeed: 0
         AllowZeroProjectileSpeed: 0
         ReplaceOwnProjectiles: 0
         ProjectileAtDamageFrame: 0
@@ -227,7 +231,7 @@ MonoBehaviour:
   DamageReactionSchemaVersion: 1
   NormalThrowSchemaVersion: 1
   NormalWeaponSchemaVersion: 0
-  MoveSetSchemaVersion: 1
+  MoveSetSchemaVersion: 2
   ActionArtworkSchemaVersion: 1
   DirectionalNormals:
   - {fileID: 0}

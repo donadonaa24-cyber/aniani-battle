@@ -1,3 +1,11 @@
+## 最新（2026-10-19）：湊のブラックホール引力、Unity/Web実装完了
+
+指示書docs/codex_tasks/MINATO_BLACK_HOLE_ATTRACTION.md。半径10u・26u/sで対戦相手を中心へ継続的に引く純C#外部移動成分を追加。通常の足場AABBへ通し、自分・範囲外・消滅後・接触済み・保護中・停止中へ作用しない。接触時2ハートと既存防御／多重ヒット防止、静止場の5×4u・位置・180tickは維持。湊のみMoveSetSchemaVersion1→2へ一度移行し、再生成後の調整値を保持。
+
+今回のminato_pull_2はBuildAll成功／Edit614/614／Play84/84／Windows成功（失敗・スキップ0）。左右・両プレイヤー・離れる歩き/ダッシュ・空中・範囲外・一度だけ2ハート・ジャスト防御・停止/保護・固体壁・決定性・移行の反復を確認。PlayModeの実キーでも左右で吸い寄せ、3→1ハートになる流れを合格。6PNGはdocs/screenshots/minato_pull_2/、実件数とSHAはdocs/codex_logs/minato_pull_verification.json。初回minato_pull_1のコンパイルエラーは修正後に全工程を再実行済み。
+
+minato_pull_webも実ビルド成功（123,660,664bytes／234.127秒）、Windowsへ復帰成功。435/435画像のRGBA保持を監査。実ブラウザで湊本人x=-5を維持し、相手x=5→4.5688→2.8467へ吸引・接触Hitstunを確認。練習のFreezeHeartsによりWeb画面のハートは固定されるため、2ハート減少の証跡は左右の実Unity PlayModeを使用。音声running、console error/warn 0。証跡はdocs/screenshots/minato_pull_web/。開始HEAD3052c3b、同時編集なし。原画生成なし。半減45判定・ゲージ14/10・全原画・カバン予備・Webメモリ512/4096は維持。次はユーザー追加のBGM/SE改修へ。
+
 ## 最新（2026-10-19）：溜め原画9人分・龍太の左拳2件、Unity/Webへ実装完了
 
 全9人の溜め中専用1原画を生成して接続。溜め中だけ専用絵を保持し、既存の傾き・沈み・色変化・紙片を併用。解除後は既存の方向別攻撃原画へ。art_source/paper_charge/に原画・全文条件・参照・SHA・部位比較・現在採用を保存し、progress.jsonはcomplete。日本語の現採用画像はイラスト確認/現在ゲームで採用中/各人物/溜め中.png。採用後のゲーム接続とユーザーの美術最終承認は区別する。
@@ -723,3 +731,4 @@ Unityのシーン／.asset／.meta／実行ファイルは5Bで再生成して�
 6fc196aの通常45件の判定半減とゲージ14／10を確認。未commitのStageBackgroundView／PaperStageSceneryを保持して続行。新指示PAPER_ROSTER_SELECTで9人一覧と追加6人の作品別共通技の試作参戦を追加。固有技の完成とは扱わない。
 
 paper_stage_roster_1／2のコンパイルエラーを修正。現在paper_stage_roster_3を実行中：BuildAll成功、EditMode466/466、PlayMode／ビルドは未確定。全4工程が通るまで合格扱いにしない。次の横振り／おにぎり／判定表示は舞台区切りの後。
+

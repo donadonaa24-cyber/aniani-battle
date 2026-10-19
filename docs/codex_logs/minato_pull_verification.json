@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "task": "MINATO_BLACK_HOLE_ATTRACTION",
+  "nativeComplete": true,
+  "attraction": {
+    "radius": 10,
+    "speed": 26,
+    "units": "u / u/s",
+    "durationTicks": 180,
+    "damageHearts": 2,
+    "contactOnce": true
+  },
+  "regression": {
+    "tag": "minato_pull_2",
+    "EditMode": {
+      "total": 614,
+      "passed": 614,
+      "failed": 0,
+      "skipped": 0,
+      "source": "TestResults/minato_pull_2_EditMode.xml",
+      "sha256": "66c17eb5d97784f58485ac03a283724c318d6550b438c4a47b13d229b80b5e1e"
+    },
+    "PlayMode": {
+      "total": 84,
+      "passed": 84,
+      "failed": 0,
+      "skipped": 0,
+      "source": "TestResults/minato_pull_2_PlayMode.xml",
+      "sha256": "b0cff0e49b86216cae0422a7666db99dab69f4624c1e6358ad9652ce62b87921"
+    },
+    "BuildAll": {
+      "success": true,
+      "source": "TestResults/minato_pull_2_buildall.log",
+      "sha256": "8d07d5db9e28842c183165bebeaf844899bd5e34e165ef6c0e50c5ff162bafcf"
+    },
+    "Windows": {
+      "success": true,
+      "source": "TestResults/minato_pull_2_build.log",
+      "sha256": "52e4294bc0e1da21ff9253c28dd102477cab908099a4551102bc09971a8aa3f9"
+    }
+  },
+  "screenshots": [
+    "docs/screenshots/minato_pull_2/pull_before_-1.png",
+    "docs/screenshots/minato_pull_2/pull_before_1.png",
+    "docs/screenshots/minato_pull_2/pull_contact_two_hearts_-1.png",
+    "docs/screenshots/minato_pull_2/pull_contact_two_hearts_1.png",
+    "docs/screenshots/minato_pull_2/pull_moving_-1.png",
+    "docs/screenshots/minato_pull_2/pull_moving_1.png"
+  ],
+  "web": {
+    "status": "complete",
+    "buildTag": "minato_pull_web",
+    "bytes": 123660664,
+    "seconds": 234.127387,
+    "restoreWindows": true,
+    "preservedImages": 435,
+    "browserAttraction": true,
+    "browserPracticeHeartsLocked": true,
+    "twoHeartsNativePlayMode": true,
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "proof": "docs/screenshots/minato_pull_web/browser-verification.json"
+  }
+}

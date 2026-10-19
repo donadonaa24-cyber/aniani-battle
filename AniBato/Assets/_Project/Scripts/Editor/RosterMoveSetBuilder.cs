@@ -16,6 +16,7 @@ namespace AniBato.EditorTools
                 if (data.MoveSetSchemaVersion >= 1)
                 {
                     if (i == 0 && data.MoveSetSchemaVersion < 2) GunProjectileSlot(data);
+                    if (i == 3 && data.MoveSetSchemaVersion < 2) BlackHoleAttraction(data);
                     continue;
                 }
                 if (i != 2)
@@ -38,6 +39,7 @@ namespace AniBato.EditorTools
                 data.PrototypeSharedMoves = false; data.ActionArtworkPending = true;
                 data.MoveSetSchemaVersion = 1; EditorUtility.SetDirty(data);
                 if (i == 0) GunProjectileSlot(data);
+                if (i == 3) BlackHoleAttraction(data);
             }
         }
         private static void GunProjectileSlot(CharacterData data)
@@ -50,6 +52,14 @@ namespace AniBato.EditorTools
             }
             data.MoveSetSchemaVersion = 2; EditorUtility.SetDirty(data);
         }
+        private static void BlackHoleAttraction(CharacterData data)
+        {
+            var value = data.Ultimate.Definition; SetBlackHoleAttraction(ref value);
+            value.Validate(); data.Ultimate.Definition = value; EditorUtility.SetDirty(data.Ultimate);
+            data.MoveSetSchemaVersion = 2; EditorUtility.SetDirty(data);
+        }
+        private static void SetBlackHoleAttraction(ref AttackDefinition value)
+        { value.Ability.ProjectilePullRadius = 10; value.Ability.ProjectilePullSpeed = 26; }
         private static AttackData[] Normals(CharacterData owner, AttackData[] source, string label, int index)
         {
             var result = new AttackData[source.Length];
