@@ -40,6 +40,11 @@ MonoBehaviour:
   ChargeSink: 0.09
   ChargeSparkSize: 0.11
   ChargePulseTicks: 6
+  TeleportBlue: {r: 0.15, g: 0.7, b: 1, a: 1}
+  TeleportDissolveTicks: 10
+  TeleportAssembleTicks: 16
+  TeleportFlashTicks: 22
+  TeleportScatter: 0.65
   ProjectileTint: {r: 1, g: 0.65, b: 0.2, a: 1}
   PopupSeconds: 0.7
   PopupHeight: 2.6

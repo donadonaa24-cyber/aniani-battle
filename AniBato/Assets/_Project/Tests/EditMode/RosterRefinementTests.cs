@@ -41,14 +41,15 @@ namespace AniBato.Tests
             Assert.That(sim.Projectiles, Is.Empty); Assert.That(sim.P1.Hearts, Is.EqualTo(3)); Assert.That(sim.P1.NormalHitCount, Is.Zero);
         }
         [TestCase(1)] [TestCase(-1)]
-        public void KingConvergesFromThreeDirectionsButDealsOnlyTwoSecondParalysis(int facing)
+        public void KingMarchesInHisFacingDirectionAndDealsOnlyTwoSecondParalysis(int facing)
         {
-            var sim = Create(6); sim.P1.Facing = facing; var first = Fire(sim, false);
+            var sim = Create(6); sim.P1.Facing = facing; sim.P2.Position=new BattleVector(sim.P1.Position.X+facing*7,sim.P2.Position.Y);var first = Fire(sim, false);
             var shots = sim.Projectiles.ToArray(); Assert.That(shots.Length, Is.EqualTo(3));
-            Assert.That(shots[0].Position.X, Is.LessThan(sim.P2.Position.X)); Assert.That(shots[1].Position.X, Is.GreaterThan(sim.P2.Position.X));
-            Assert.That(shots[2].Position.Y, Is.GreaterThan(sim.P2.Position.Y)); Assert.That(shots.Select(p => p.Attack).Distinct().Count(), Is.EqualTo(1));
+            Assert.That(shots.All(p=>p.RoyalMarch&&p.Facing==facing&&!p.CanDamage),Is.True);
+            Assert.That(shots.All(p=>System.Math.Abs(p.Position.X-sim.P1.Position.X)<2),Is.True);
+            Assert.That(shots.Select(p => p.Attack).Distinct().Count(), Is.EqualTo(1));
             int hits = 0;
-            for (int tick = 0; tick < 185; tick++)
+            for (int tick = 0; tick < 310; tick++)
             {
                 sim.Tick(default, default);
                 foreach (var hit in sim.Events.Where(e => e.Kind == BattleEventKind.Hit))
@@ -118,12 +119,12 @@ namespace AniBato.Tests
             Assert.That(sim.P1.Position.X, Is.GreaterThan(1.5f));
         }
         [Test]
-        public void PyramidLandsOnAnUpperPlatformWithoutDamagingTheFighterBelowIt()
+        public void PyramidPassesTheUpperPlatformAndHitsTheFighterOnTheMainFloor()
         {
             var sim=Create(7);sim.P2.Position=new BattleVector(8,1.1f);var shot=Fire(sim,true);
             for(int tick=0;!shot.Landed&&tick<150;tick++)sim.Tick(default,default);
-            Assert.That(shot.Landed,Is.True);Assert.That(shot.Hitbox.Bottom,Is.EqualTo(sim.Stage[2].Bounds.Top).Within(.001f));
-            Assert.That(shot.RemainingFrames,Is.EqualTo(600));Assert.That(sim.P2.Hearts,Is.EqualTo(3));
+            Assert.That(shot.Landed,Is.True);Assert.That(shot.Hitbox.Bottom,Is.EqualTo(sim.Stage[0].Bounds.Top).Within(.001f));
+            Assert.That(shot.RemainingFrames,Is.EqualTo(600));Assert.That(sim.P2.Hearts,Is.EqualTo(1));
             Assert.That(sim.P2.NormalHitCount,Is.Zero);Assert.That(shot.CanDamage,Is.False);
         }
         [Test]

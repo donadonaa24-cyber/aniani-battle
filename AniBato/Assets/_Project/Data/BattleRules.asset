@@ -32,6 +32,10 @@ MonoBehaviour:
       MinimumTravelFraction: 0.3
       VerticalSpeed: 4
       EdgeInset: 0.05
+      MaximumTravelBeyondFloor: 10
+      BlastLineInset: 4
+      MaximumVerticalSpeed: 24
+      MaximumHitstunFrames: 36
     CombatInput:
       SingleAerialNormal: 1
       FlowingAerialNormal: 1
@@ -44,7 +48,7 @@ MonoBehaviour:
     DropThroughSpeed: 8
     DirectionThreshold: 0.5
     EnableRingOut: 1
-    SchemaVersion: 11
+    SchemaVersion: 12
     Defense:
       GuardReleaseFrames: 6
       GuardStunFrames: 10

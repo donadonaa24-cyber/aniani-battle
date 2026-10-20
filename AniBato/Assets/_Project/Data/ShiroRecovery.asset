@@ -48,8 +48,47 @@ MonoBehaviour:
       Speed: 0
       Distance: 7.5
       HorizontalSpeed: 0
+      MaximumChargeDistance: 12
+      MotionTimeScale: 0
+      MinimumChargeFrames: 30
+      MaximumChargeFrames: 60
       BurstFrames: 0
       SecondStartFrame: 0
+    AbilityCharge:
+      MinimumFrames: 0
+      MaximumFrames: 0
+      MaximumRangeScale: 0
+      MaximumStageWidthFraction: 0
+      MaximumKnockbackScale: 0
+      WidthOnly: 0
+      FormationOnly: 0
+    ProjectileBehavior:
+      Homing: 0
+      ConsumeOnHit: 0
+      WallAfterLanding: 0
+      MainPlatformOnly: 0
+      ExplodeOnLanding: 0
+      ExplosionSize:
+        X: 0
+        Y: 0
+      ExplosionFrames: 0
+      FormationVerticalSpread: 0
+      HomingSpeed: 0
+      FormationRadius: 0
+      VisualScale: 0
+      VisualOffset:
+        X: 0
+        Y: 0
+      StaggerFrames: 0
+      WallFrames: 0
+      RepeatIntervalFrames: 0
+      Formation: 0
+    Aftermath:
+      LifetimeFrames: 0
+      RepeatIntervalFrames: 0
+      Size:
+        X: 0
+        Y: 0
     DamageMode: 1
     SelfEffectsOnComplete: 0
     Kind: 1
@@ -57,10 +96,10 @@ MonoBehaviour:
     NormalDirection: 0
     BreaksGuard: 0
     LandingRecoveryFrames: 0
-    StartupFrames: 6
+    StartupFrames: 30
     ActiveFrames: 3
     DamageDelayFrames: 0
-    RecoveryFrames: 16
+    RecoveryFrames: 24
     Hitbox:
       Center:
         X: 0
@@ -101,6 +140,7 @@ MonoBehaviour:
     MarkFrames: 0
     SelfHealNormalHits: 0
     SelfBuff:
+      Channel: 0
       DurationFrames: 0
       MoveMultiplier: 0
       DashMultiplier: 0

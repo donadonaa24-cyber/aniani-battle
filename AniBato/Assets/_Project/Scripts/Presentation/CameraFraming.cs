@@ -15,6 +15,8 @@ namespace AniBato.Presentation
     // Display-only framing. Never changes world coordinates, hurtboxes or simulation state.
     public static class CameraFraming
     {
+        public static BattleVector Subject(StageGeometry stage,BattleVector position,bool maximumChargeLaunch) =>
+            maximumChargeLaunch ? new BattleVector(Math.Max(stage[0].Bounds.Left,Math.Min(stage[0].Bounds.Right,position.X)),position.Y) : position;
         public static CameraFrame Calculate(StageGeometry stage, BattleVector p1, BattleVector p2,
             float aspect, bool overview, float minimum, float padding, float boundaryInset, float headroom)
         {

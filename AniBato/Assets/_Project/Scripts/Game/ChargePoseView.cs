@@ -20,14 +20,18 @@ namespace AniBato.Game
         }
         public float Apply(SpriteRenderer body, FighterState fighter, in ChargeAttackDefinition rules)
         {
-            bool charging = fighter.Mode == FighterMode.Charging && fighter.Grounded;
+            bool abilityCharge = AbilityChargeSystem.IsCharging(fighter);
+            bool charging = fighter.Mode == FighterMode.Charging && fighter.Grounded || abilityCharge;
             for (int i = 0; i < scraps.Length; i++) scraps[i].enabled = charging;
             if (!charging) return 0;
-            float amount = Mathf.Clamp01(fighter.ChargeFrames / (float)rules.MaximumFrames);
-            int pulse = fighter.ChargeFrames / Mathf.Max(1, settings.ChargePulseTicks) % 2;
+            int frames = abilityCharge ? fighter.Attack.AbilityChargeFrames : fighter.ChargeFrames;
+            float amount = abilityCharge ? Mathf.Clamp01(frames / (float)fighter.Attack.Definition.AbilityCharge.MaximumFrames) :
+                Mathf.Clamp01(frames / (float)rules.MaximumFrames);
+            int pulse = frames / Mathf.Max(1, settings.ChargePulseTicks) % 2;
             float sink = settings.ChargeSink * (.3f + .7f * amount);
             body.transform.localRotation = Quaternion.Euler(0, 0, -fighter.Facing * settings.ChargeTiltDegrees * (.4f + .6f * amount));
-            body.transform.localPosition = new Vector3(0, -fighter.Definition.HurtboxSize.Y * .5f - sink, 0);
+            if (!abilityCharge) body.transform.localPosition = new Vector3(0, -fighter.Definition.HurtboxSize.Y * .5f - sink, 0);
+            else if (fighter.Grounded) body.transform.localPosition += Vector3.down * sink;
             body.color = Color.Lerp(Color.white, settings.ChargeTint, (.2f + .55f * amount) * (pulse == 0 ? 1 : .7f));
             for (int i = 0; i < scraps.Length; i++)
             {

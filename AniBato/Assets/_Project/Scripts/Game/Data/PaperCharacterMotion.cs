@@ -59,6 +59,7 @@ namespace AniBato.Game
         public Sprite Sprite;
         public float Scale = 1;
         public Vector2 Offset;
+        public Vector2 VisibleSize;
         public Sprite AnticipationSprite;
         public float AnticipationScale = 1;
         public bool UseAnticipationOffset, UnmirroredArtwork;
@@ -79,6 +80,8 @@ namespace AniBato.Game
     [CreateAssetMenu(menuName = "あにバト/紙人形の待機・歩行")]
     public sealed class PaperCharacterMotion : ScriptableObject
     {
+        public Sprite SummonRift;
+        public bool SuppressNormalAttackOverlays;
         public int SchemaVersion;
         public int PerformanceSchemaVersion;
         public PaperPerformanceSettings Performance = PaperPerformanceSettings.Default;

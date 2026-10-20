@@ -16,8 +16,9 @@ namespace AniBato.Tests
         private static BattleSimulation Create(int index, bool ultimate = false, float targetX = 1.5f)
         {
             var c = Setup.Character(index).ToDefinition(); c.UltimateCutInFrames = 0;
-            if (ultimate) { var a = c.Ultimate; a.StartupFrames = 0; c.Ultimate = a; }
-            else { var a = c.Specials[0]; a.StartupFrames = 0; c.Specials[0] = a; }
+            // These fixtures isolate the released move. Charge timing has its own real-definition tests.
+            if (ultimate) { var a = c.Ultimate; a.StartupFrames = 0; a.AbilityCharge=default; c.Ultimate = a; }
+            else { var a = c.Specials[0]; a.StartupFrames = 0; a.AbilityCharge=default; c.Specials[0] = a; }
             var sim = BattleTestFactory.Create(true, Rules, c);
             sim.P2.Position = new BattleVector(targetX, sim.P2.Position.Y); sim.P1.Gauge = Rules.Gauge.Maximum;
             return sim;
@@ -123,7 +124,7 @@ namespace AniBato.Tests
             var wide = c; wide.HurtboxSize = new BattleVector(5, wide.HurtboxSize.Y);
             var sim = new BattleSimulation(c, wide, Rules, PhaseOneDefaults.Stage()); Fire(sim, false);
             Assert.That(sim.Projectiles.Count, Is.EqualTo(3)); Assert.That(sim.Projectiles.Select(p => p.Attack).Distinct().Count(), Is.EqualTo(1));
-            int hits = 0; for (int i = 0; i < 110; i++) { sim.Tick(default, default); hits += sim.Events.Count(e => e.Kind == BattleEventKind.Hit); }
+            int hits = 0; for (int i = 0; i < 160; i++) { sim.Tick(default, default); hits += sim.Events.Count(e => e.Kind == BattleEventKind.Hit); }
             Assert.That(hits, Is.EqualTo(1)); Assert.That(sim.P2.Hearts, Is.EqualTo(3));
             Assert.That(sim.P2.NormalHitCount, Is.Zero); Assert.That(sim.P2.ParalysisRemaining, Is.GreaterThan(0));
         }
@@ -191,9 +192,10 @@ namespace AniBato.Tests
         [TestCase(4)] [TestCase(8)]
         public void AlmaAndBookSpellHoldTheirCueBeforeTheDamageWindow(int character)
         {
-            var sim = Create(character, true); var definition = sim.P1.Definition.Ultimate;
+            var c = Setup.Character(character).ToDefinition();c.UltimateCutInFrames=0;
+            var sim=BattleTestFactory.Create(true,Rules,c);sim.P1.Gauge=Rules.Gauge.Maximum;var definition=c.Ultimate;
             Fire(sim, true); Assert.That(sim.P2.Hearts, Is.EqualTo(3));
-            for (int i = 1; i < definition.DamageDelayFrames; i++) { sim.Tick(default, default); Assert.That(sim.P2.Hearts, Is.EqualTo(3)); }
+            for (int i = 1; i < definition.StartupFrames+definition.DamageDelayFrames; i++) { sim.Tick(default, default); Assert.That(sim.P2.Hearts, Is.EqualTo(3)); }
             sim.Tick(default, default); Assert.That(sim.P2.Hearts, Is.EqualTo(1));
         }
         [Test]

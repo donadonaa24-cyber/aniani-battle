@@ -52,10 +52,11 @@ namespace AniBato.Tests
                 Assert.That(body.sprite,Is.Not.SameAs(pose.Frames.Last()));Assert.That(text.gameObject.activeSelf,Is.False);Capture(name+"_released",true,"rework_r4_king");
             }
         }
-        [UnityTest] public IEnumerator KingSummonsThreeNamedSupportsOnConvergingOrAlternatingPathsWithOneFinisher()
+        // The new special-N march is covered in RoyalMarchSceneTests with emergence/command/exit checks.
+        [UnityTest] public IEnumerator KingUltimateSummonsThreeNamedSupportsOnAlternatingPathsWithOneFinisher()
         {
             var data=runner.Setup.Character(6);var keys=controller.Bindings.P1;var projectiles=Object.FindAnyObjectByType<ProjectileView>();
-            foreach(bool ultimate in new[]{false,true})foreach(int facing in new[]{1,-1})
+            foreach(bool ultimate in new[]{true})foreach(int facing in new[]{1,-1})
             {
                 runner.BeginMatch(data,runner.Setup.Character(2),runner.CurrentStage,false);var sim=runner.Simulation;
                 Set(sim.P1,"Position",new BattleVector(-facing*4,sim.P1.Position.Y));Set(sim.P1,"Facing",facing);Set(sim.P1,"Gauge",sim.Rules.Gauge.Maximum);
@@ -82,7 +83,7 @@ namespace AniBato.Tests
                     Assert.That(renderers.Length,Is.EqualTo(sim.Projectiles.Count(p=>p.Visible)));
                     for(int i=0;i<sim.Projectiles.Count;i++)
                     {
-                        var shot=sim.Projectiles[i];var renderer=projectiles.transform.GetChild(i).GetComponent<SpriteRenderer>();int variant=registry.Index(shot);
+                        var shot=sim.Projectiles[i];var renderer=projectiles.GetComponentsInChildren<SpriteRenderer>().Where(s=>s.name=="Projectile").ElementAt(i);int variant=registry.Index(shot);
                         Assert.That(renderer.enabled,Is.EqualTo(shot.Visible));if(!shot.Visible)continue;
                         Assert.That(renderer.sprite,Is.SameAs(art.SpriteFor(variant)));Assert.That(renderer.flipX,Is.EqualTo(shot.Facing<0));
                         Assert.That(renderer.transform.localScale.x,Is.EqualTo(art.ScaleFor(shot.Hitbox.Size,variant)).Within(.00001f));

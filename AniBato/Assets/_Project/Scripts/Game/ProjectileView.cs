@@ -9,6 +9,7 @@ namespace AniBato.Game
         [SerializeField] private BattleRunner runner;
         [SerializeField] private PresentationSettings presentation;
         private readonly List<SpriteRenderer> sprites = new List<SpriteRenderer>();
+        private readonly List<SpriteRenderer> rifts = new List<SpriteRenderer>();
         private readonly ProjectileArtworkSlots artworkSlots=new ProjectileArtworkSlots();
         public void Configure(BattleRunner value, PresentationSettings settings) { runner = value; presentation = settings; }
         private void LateUpdate()
@@ -17,10 +18,14 @@ namespace AniBato.Game
             var projectiles = runner.Simulation.Projectiles;
             artworkSlots.Refresh(projectiles);
             while (sprites.Count < projectiles.Count)
+            {
                 sprites.Add(ProceduralSprites.Create(transform, "Projectile", Vector2.one, presentation.ProjectileTint, true, 7));
+                rifts.Add(ProceduralSprites.Create(transform,"Royal Summon Rift",Vector2.one,Color.white,sortingOrder:6));
+            }
             for (int i = 0; i < sprites.Count; i++)
             {
                 sprites[i].enabled = i < projectiles.Count;
+                rifts[i].enabled = false;
                 if (i >= projectiles.Count) continue;
                 var projectile = projectiles[i];
                 if (!projectile.Visible) { sprites[i].enabled = false; continue; }
@@ -67,6 +72,35 @@ namespace AniBato.Game
                     sprites[i].transform.localScale = Vector3.one * art.ScaleFor(projectile.Hitbox.Size,variant);
                 }
                 if (behavior.VisualScale > 0) sprites[i].transform.localScale *= behavior.VisualScale;
+                if (art != null && projectile.Attack.AbilityChargeReleased && !projectile.Attack.Definition.AbilityCharge.FormationOnly && !behavior.ExplodeOnLanding)
+                {
+                    var size = art.VariantVisibleSizes != null && art.VariantVisibleSizes.Length > 0 ?
+                        art.VariantVisibleSizes[artworkSlots.Index(projectile)%art.VariantVisibleSizes.Length] : art.VisibleSize;
+                    if (size.x > 0 && size.y > 0)
+                        sprites[i].transform.localScale = new Vector3(projectile.Hitbox.Size.X/size.x,projectile.Hitbox.Size.Y/size.y,1);
+                }
+                if (projectile.Exploded)
+                {
+                    sprites[i].sprite = PaperBurstSprite.Sprite; sprites[i].color = Color.white;
+                    sprites[i].transform.localRotation = Quaternion.identity;
+                    sprites[i].transform.localScale = new Vector3(projectile.Hitbox.Size.X,projectile.Hitbox.Size.Y,1);
+                }
+                if (projectile.RoyalMarch)
+                {
+                    float emergence=Mathf.Clamp01(projectile.MarchAge/(float)behavior.MarchSpawnFrames);
+                    float exit=projectile.MarchExitAge<0?0:Mathf.Clamp01(projectile.MarchExitAge/(float)behavior.MarchExitFrames);
+                    sprites[i].color=new Color(1,1,1,emergence*(1-exit));
+                    float step=projectile.MarchAge/8%2==0?-3:3;
+                    sprites[i].transform.localRotation=Quaternion.Euler(0,0,projectile.CanDamage?step:0);
+                    sprites[i].transform.position+=Vector3.right*projectile.Facing*(-.5f*(1-emergence)+exit*.3f);
+                    if (paper && paper.SummonRift && (emergence<1||exit>0))
+                    {
+                        var rift=rifts[i];rift.enabled=true;rift.sprite=paper.SummonRift;rift.color=Color.white;
+                        rift.transform.position=new Vector3(position.X,position.Y,0);
+                        float opening=exit>0?1-exit:Mathf.Min(1,emergence*3);
+                        rift.transform.localScale=new Vector3(opening*.75f,1,1)*(projectile.Hitbox.Size.Y*1.2f/paper.SummonRift.bounds.size.y);
+                    }
+                }
             }
         }
     }

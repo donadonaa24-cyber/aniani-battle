@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f04ae4ddab5441aaf7819b587e1ea, type: 3}
   m_Name: ryutaCorePaperMotion
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
+  SummonRift: {fileID: 0}
+  SuppressNormalAttackOverlays: 1
   SchemaVersion: 3
   PerformanceSchemaVersion: 1
   Performance:
@@ -283,27 +285,27 @@ MonoBehaviour:
     SwitchOnProjectileRelease: 0
     TiltDegrees: 0
     FrameHeadHeights:
-    - 2.1592624
-    - 2.39772
+    - 2.3357584
+    - 2.35829
     FrameFootBaseYs: []
     FrameFootMinXs:
-    - -0.8768483
-    - -0.8712154
+    - -0.36425817
+    - -0.66279966
     FrameFootMaxXs:
-    - 1.0871416
-    - 1.0833864
+    - 0.1445767
+    - -0.18212909
     FrameOriginYs:
     - 0
     - 0
-    HeadHeight: 2.1592624
+    HeadHeight: 2.3357584
     FootBaseY: 0
-    FootMinX: -0.8768483
-    FootMaxX: 1.0871416
+    FootMinX: -0.36425817
+    FootMaxX: 0.1445767
   - Key: up
     States: 1e000000i
     Frames:
-    - {fileID: 21300000, guid: 8a5db95b4f38a2749836448eb9e6b545, type: 3}
-    - {fileID: 21300000, guid: af68bec256a9b5c4298b05cfe8b20569, type: 3}
+    - {fileID: 21300000, guid: 8634a7d1b11a7814abe2a291666e0874, type: 3}
+    - {fileID: 21300000, guid: 67bfbef2f41d53c43aa3d02bbaa569df, type: 3}
     HoldTicks: 8
     Airborne: 0
     ReverseFacing: 0
@@ -638,6 +640,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 79f16684e3f18524e95713047f658703, type: 3}
     Scale: 0.6361001
     Offset: {x: 1, y: 0.15}
+    VisibleSize: {x: 1.5227493, y: 1.7292875}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -655,6 +658,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: c23427cfd082f8c47a40b0742ca5f172, type: 3}
     Scale: 0.8934396
     Offset: {x: 1.3, y: 0.2}
+    VisibleSize: {x: 2.2381222, y: 2.0146856}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -672,6 +676,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 162eed47e8b5a324e96171da108ec219, type: 3}
     Scale: 2.130357
     Offset: {x: 2.5, y: 0}
+    VisibleSize: {x: 3.285834, y: 1.5922213}
     AnticipationSprite: {fileID: 21300000, guid: 2f2ea6b8da07b7541bb71354dfe3787d, type: 3}
     AnticipationScale: 0.722155
     UseAnticipationOffset: 1
@@ -689,6 +694,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 79f16684e3f18524e95713047f658703, type: 3}
     Scale: 0.6361001
     Offset: {x: 1, y: 0.15}
+    VisibleSize: {x: 1.5227493, y: 1.7292875}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -706,6 +712,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 79f16684e3f18524e95713047f658703, type: 3}
     Scale: 0.9252366
     Offset: {x: -0.2, y: 1}
+    VisibleSize: {x: 1.5227493, y: 1.7292875}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -723,6 +730,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 79f16684e3f18524e95713047f658703, type: 3}
     Scale: 0.6361001
     Offset: {x: 1, y: 0.15}
+    VisibleSize: {x: 1.5227493, y: 1.7292875}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0

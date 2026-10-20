@@ -36,13 +36,15 @@ namespace AniBato.Tests
                     bool impact=attack.Frame>=attack.Definition.StartupFrames+attack.Definition.DamageDelayFrames;
                     Assert.That(body.sprite,Is.SameAs(pose.Frames[pose.Frames.Length==1?0:impact?1:0]));
                     Assert.That(body.flipX,Is.EqualTo(view.RenderedSample.FlipX^pose.ReverseFacing));
-                    Assert.That(effect.enabled,Is.EqualTo(art!=null&&art.Visible(view.RenderedSample)));
+                    Assert.That(effect.enabled,Is.EqualTo(!attack.Definition.IsNormal&&art!=null&&art.Visible(view.RenderedSample)));
                     if(effect.enabled)
                     {
                         Assert.That(effect.sprite,Is.SameAs(art.SpriteFor(view.RenderedSample)));
                         Assert.That(effect.flipX,Is.EqualTo(body.flipX&&!art.UnmirroredArtwork));
                         var offset=art.OffsetFor(view.RenderedSample);var expected=body.bounds.center+new Vector3((body.flipX?-1:1)*offset.x,offset.y,0);
-                        Assert.That(Vector3.Distance(effect.transform.position,expected),Is.LessThan(.0001f));
+                        if(attack.AbilityChargeReleased&&!art.Anticipating(view.RenderedSample))
+                            AssertCueFitsChargedHitbox(attack,sim.P1,art,effect);
+                        else Assert.That(Vector3.Distance(effect.transform.position,expected),Is.LessThan(.0001f));
                     }
                     if(!impact){prep++;if(!p){Capture(name+"_prepare",true,"rework_r4_ryuta");if(effect.enabled)CaptureActionEffects("rework_r4_ryuta",name+"_effect_prepare",body,effect);p=true;}}
                     else if(attack.IsActive){active++;if(!a){Capture(name+"_impact",true,"rework_r4_ryuta");if(effect.enabled)CaptureActionEffects("rework_r4_ryuta",name+"_effect",body,effect);a=true;}}
@@ -80,7 +82,7 @@ namespace AniBato.Tests
                         if(!hit)Capture("hit_"+action+"_"+facing,false,"rework_r4_ryuta");hit=true;
                     }
                     if(attack.Frame>=attack.Definition.StartupFrames+attack.Definition.ActiveFrames)
-                    {Assert.That(hit,Is.True);Assert.That(view.transform.Find("Paper Ability").GetComponent<SpriteRenderer>().enabled,Is.True);recovery=true;}
+                    {Assert.That(hit,Is.True);Assert.That(view.transform.Find("Paper Ability").GetComponent<SpriteRenderer>().enabled,Is.EqualTo(action!=0));recovery=true;}
                     Tick();
                 }
                 Assert.That(limit,Is.LessThan(200));Assert.That(hit&&recovery,Is.True);Assert.That(sim.Projectiles.Count,Is.Zero);

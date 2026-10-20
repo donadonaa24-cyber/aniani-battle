@@ -46,11 +46,12 @@ namespace AniBato.Battle
                 events.Add(new BattleEvent(BattleEventKind.ComboFinish, tick, source.PlayerIndex, target.PlayerIndex, attack.Id));
             }
             bool charged = rules.Charge.Enabled && attack.ChargeFrames >= rules.Charge.MinimumFrames && stage != null;
+            target.MaximumChargeLaunch=charged && attack.ChargeFrames>=rules.Charge.MaximumFrames && rules.Charge.MaximumTravelBeyondFloor>0;
             if (charged)
             {
                 knockback = ChargedAttack.Knockback(target, contact.Facing, attack.ChargeFrames, stage, rules.Charge);
                 target.Velocity = new BattleVector(knockback.X * contact.Facing, knockback.Y);
-                target.HitstunRemaining = rules.Charge.HitstunFrames;
+                target.HitstunRemaining = ChargedAttack.Hitstun(attack.ChargeFrames,rules.Charge);
                 target.DamageRecoilRemaining = 0; target.DamageRecoilSpeed = 0;
             }
             if (target.Velocity.Y > 0) { target.Grounded = false; target.GroundPlatform = -1; }

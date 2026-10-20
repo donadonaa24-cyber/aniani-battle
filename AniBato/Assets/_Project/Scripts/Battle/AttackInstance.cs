@@ -6,17 +6,24 @@ namespace AniBato.Battle
     {
         private readonly HashSet<int> hitTargets = new HashSet<int>();
         public long Id { get; }
-        public AttackDefinition Definition { get; }
+        public AttackDefinition Definition { get; internal set; }
+        public int AbilityChargeFrames { get; internal set; }
+        public bool AbilityChargeReleased { get; internal set; }
+        public float AbilityRangeScale { get; internal set; } = 1;
         public int ChainIndex { get; }
         public bool AirborneAttack { get; }
         public int ChargeFrames { get; internal set; }
+        public int PlannedStaminaCost { get; internal set; }
         public bool Clashed { get; internal set; }
         public int Frame { get; internal set; }
         public bool NextQueued { get; internal set; }
         internal bool ProjectileSpawned;
         internal bool SelfEffectApplied;
         internal bool AbilityApplied;
-        internal bool RecoveryStarted;
+        public bool RecoveryStarted { get; internal set; }
+        public int RecoveryChargeFrames { get; internal set; }
+        public BattleVector RecoveryOrigin { get; internal set; }
+        public BattleVector RecoveryDestination { get; internal set; }
         internal bool AftermathSpawned;
         internal BattleVector RecoveryDirection;
         internal int ErasuresRemaining;

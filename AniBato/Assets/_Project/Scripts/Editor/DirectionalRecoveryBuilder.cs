@@ -11,7 +11,7 @@ namespace AniBato.EditorTools
         {
             for (int i = 0; i < roster.Length; i++)
             {
-                var data = roster[i]; if (data.RecoverySchemaVersion >= 3) continue;
+                var data = roster[i]; if (data.RecoverySchemaVersion >= 4) continue;
                 string path = "Assets/_Project/Data/" + data.name + "Recovery.asset";
                 var asset = AssetDatabase.LoadAssetAtPath<AttackData>(path);
                 if (!asset)
@@ -30,8 +30,14 @@ namespace AniBato.EditorTools
                     definition.ActiveFrames = updated.ActiveFrames; definition.RecoveryFrames = updated.RecoveryFrames;
                     asset.Definition = definition; EditorUtility.SetDirty(asset);
                 }
+                if (i == 3 || i == 4)
+                {
+                    var definition = asset.Definition; var updated = Up(i);
+                    definition.StartupFrames = updated.StartupFrames; definition.Recovery = updated.Recovery;
+                    definition.Validate(); asset.Definition = definition; EditorUtility.SetDirty(asset);
+                }
                 var slots = (AttackData[])data.Specials.Clone(); slots[(int)SpecialSlot.Up] = asset; data.Specials = slots;
-                data.RecoverySchemaVersion = 3; EditorUtility.SetDirty(data);
+                data.RecoverySchemaVersion = 4; EditorUtility.SetDirty(data);
             }
         }
         public static AttackDefinition Up(int index)
@@ -46,7 +52,9 @@ namespace AniBato.EditorTools
                 case 1: a.Name = "飛車・天昇"; a.Recovery = new RecoveryDefinition { Style = RecoveryStyle.VerticalLaunch, Speed = 36 }; a.ActiveFrames = 24; a.RecoveryFrames = 4; a.Ability.Look = AbilityLook.Rook; break;
                 case 2: a.Name = "風船リフト"; a.Recovery = Float(9, 3); a.ActiveFrames = 60; break;
                 case 3: case 4:
-                    a.Name = "意識接続・方向転移"; a.Recovery = new RecoveryDefinition { Style = RecoveryStyle.DirectionalTeleport, Distance = 7.5f };
+                    a.Name = "意識接続・方向転移"; a.StartupFrames = 30;
+                    a.Recovery = new RecoveryDefinition { Style = RecoveryStyle.DirectionalTeleport, Distance = 7.5f,
+                        MinimumChargeFrames = 30, MaximumChargeFrames = 60, MaximumChargeDistance = 12f };
                     a.ActiveFrames = 3; a.Ability.Look = AbilityLook.Teleport; a.Ability.Conscious = true; break;
                 case 5: a.Name = "角・斜め天昇"; a.Recovery = new RecoveryDefinition { Style = RecoveryStyle.DiagonalLaunch, Speed = 32, HorizontalSpeed = 18 }; a.Ability.Look = AbilityLook.Bishop; break;
                 case 6:

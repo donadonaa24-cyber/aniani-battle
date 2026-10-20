@@ -52,6 +52,7 @@ namespace AniBato.EditorTools
                 var sprite=ImportEntry(e);
                 return new PaperAbilityArt { State=state,Look=look,Sprite=sprite,Scale=Scale(e),
                     Offset=new Vector2(e.offsetX,e.offsetY),
+                    VisibleSize=new Vector2((e.native.bounds.right-e.native.bounds.left+1)/PaperActionArtworkBuilder.PixelsPerUnit,Height(e)),
                     AnticipationSprite=prepare==null?null:ImportEntry(prepare),AnticipationScale=prepare==null?1:Scale(prepare),
                     UseAnticipationOffset=prepare!=null&&prepare.separateAnticipationOffset,
                     AnticipationOffset=prepare==null?Vector2.zero:new Vector2(prepare.offsetX,prepare.offsetY),

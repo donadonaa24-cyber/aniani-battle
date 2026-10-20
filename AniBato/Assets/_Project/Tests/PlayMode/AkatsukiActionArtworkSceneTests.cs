@@ -69,7 +69,8 @@ namespace AniBato.Tests
                 {
                     projectiles.SendMessage("LateUpdate");var renderer=projectiles.GetComponentsInChildren<SpriteRenderer>().Single(s=>s.enabled);
                     Assert.That(renderer.sprite,Is.SameAs(art.Sprite));Assert.That(renderer.flipX,Is.False);
-                    Assert.That(renderer.transform.localScale.x,Is.EqualTo(art.Scale).Within(.00001f));
+                    if(ultimate){Assert.That(renderer.transform.localScale.x*art.VisibleSize.x,Is.EqualTo(shot.Hitbox.Size.X).Within(.00001f));Assert.That(renderer.transform.localScale.y*art.VisibleSize.y,Is.EqualTo(shot.Hitbox.Size.Y).Within(.00001f));}
+                    else Assert.That(renderer.transform.localScale.x,Is.EqualTo(art.Scale).Within(.00001f));
                     if(ultimate){Assert.That(shot.Position.Y,Is.LessThanOrEqualTo(oldY));oldY=shot.Position.Y;}
                     if(ultimate&&shot.Landed&&!landedWall){landedWall=true;landingLife=shot.RemainingFrames;Assert.That(sim.Stage.IsActive(sim.Stage.CollisionPlatformCount-1),Is.True);}
                     if(ultimate&&shot.Landed&&shot.RemainingFrames<600&&!groundedArtwork)

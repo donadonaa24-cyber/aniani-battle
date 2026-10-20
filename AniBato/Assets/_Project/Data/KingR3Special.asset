@@ -33,7 +33,7 @@ MonoBehaviour:
       ProjectilePullSpeed: 0
       AllowZeroProjectileSpeed: 1
       ReplaceOwnProjectiles: 1
-      ProjectileAtDamageFrame: 1
+      ProjectileAtDamageFrame: 0
       IndependentNormalProjectile: 0
       ProjectileChannel: 0
       PlacementLimit: 0
@@ -48,14 +48,40 @@ MonoBehaviour:
       Speed: 0
       Distance: 0
       HorizontalSpeed: 0
+      MaximumChargeDistance: 0
+      MotionTimeScale: 0
+      MinimumChargeFrames: 0
+      MaximumChargeFrames: 0
       BurstFrames: 0
       SecondStartFrame: 0
+    AbilityCharge:
+      MinimumFrames: 0
+      MaximumFrames: 0
+      MaximumRangeScale: 0
+      MaximumStageWidthFraction: 0
+      MaximumKnockbackScale: 0
+      WidthOnly: 0
+      FormationOnly: 0
     ProjectileBehavior:
-      Homing: 1
+      Homing: 0
       ConsumeOnHit: 0
       WallAfterLanding: 0
-      HomingSpeed: 8
-      FormationRadius: 6
+      MainPlatformOnly: 0
+      ExplodeOnLanding: 0
+      ExplosionSize:
+        X: 0
+        Y: 0
+      ExplosionFrames: 0
+      FormationVerticalSpread: 0
+      MarchSpawnFrames: 60
+      MarchCommandFrames: 24
+      MarchTravelFrames: 180
+      MarchExitFrames: 24
+      MarchWidth0: 2.2069159
+      MarchWidth1: 2.189304
+      MarchWidth2: 2.105503
+      HomingSpeed: 0
+      FormationRadius: 0
       VisualScale: 0
       VisualOffset:
         X: 0
@@ -63,7 +89,7 @@ MonoBehaviour:
       StaggerFrames: 0
       WallFrames: 0
       RepeatIntervalFrames: 0
-      Formation: 1
+      Formation: 3
     Aftermath:
       LifetimeFrames: 0
       RepeatIntervalFrames: 0
@@ -77,17 +103,17 @@ MonoBehaviour:
     NormalDirection: 0
     BreaksGuard: 0
     LandingRecoveryFrames: 0
-    StartupFrames: 24
-    ActiveFrames: 5
-    DamageDelayFrames: 0
-    RecoveryFrames: 22
+    StartupFrames: 1
+    ActiveFrames: 85
+    DamageDelayFrames: 60
+    RecoveryFrames: 16
     Hitbox:
       Center:
         X: 0
         Y: 0
       Size:
-        X: 1.2
-        Y: 1.4
+        X: 1.6718323
+        Y: 2.388332
     HitstopFrames: 4
     HitstunFrames: 14
     Knockback:
@@ -95,8 +121,8 @@ MonoBehaviour:
       Y: 0
     PiercesNormalDodge: 0
     SpawnProjectile: 1
-    ProjectileSpeed: 8
-    ProjectileLifetimeFrames: 180
+    ProjectileSpeed: 0
+    ProjectileLifetimeFrames: 300
     ActiveVelocity:
       X: 0
       Y: 0
@@ -127,7 +153,7 @@ MonoBehaviour:
       DashMultiplier: 0
       StartupMultiplier: 0
     KnockbackMultiplier: 0
-    CooldownFrames: 240
+    CooldownFrames: 300
     ProjectileEraseCount: 0
     GuardedRecoveryFrames: 0
     RequiresFollowup: 0

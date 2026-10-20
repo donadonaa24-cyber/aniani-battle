@@ -43,7 +43,8 @@ namespace AniBato.Tests
                     if(effect.enabled)
                     {
                         Assert.That(effect.sprite,Is.SameAs(art.SpriteFor(view.RenderedSample)));
-                        Assert.That(effect.transform.localScale,Is.EqualTo(Vector3.one*art.ScaleFor(view.RenderedSample)));
+                        if(attack.AbilityChargeReleased&&!art.Anticipating(view.RenderedSample))AssertCueFitsChargedHitbox(attack,sim.P1,art,effect);
+                        else Assert.That(effect.transform.localScale,Is.EqualTo(Vector3.one*art.ScaleFor(view.RenderedSample)));
                         Assert.That(effect.sortingOrder,Is.LessThan(body.sortingOrder));
                     }
                     bool binary=action==4&&!impact;

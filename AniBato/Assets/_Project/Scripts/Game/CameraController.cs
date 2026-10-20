@@ -27,6 +27,8 @@ namespace AniBato.Game
             if (cameraComponent.aspect != previousAspect) { snap = true; previousAspect = cameraComponent.aspect; }
             if (runner.Paused && !snap) return;
             BattleVector p1 = runner.RenderPosition(0), p2 = runner.RenderPosition(1);
+            p1=CameraFraming.Subject(runner.Simulation.Stage,p1,runner.Simulation.P1.MaximumChargeLaunch);
+            p2=CameraFraming.Subject(runner.Simulation.Stage,p2,runner.Simulation.P2.MaximumChargeLaunch);
             var frame = CameraFraming.Calculate(runner.Simulation.Stage, p1, p2, cameraComponent.aspect,
                 runner.Simulation.Match.TickCount == 0, presentation.CameraMinSize, presentation.CameraPadding,
                 presentation.CameraBoundaryInset, presentation.CameraHeadroom);

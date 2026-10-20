@@ -84,6 +84,11 @@ namespace AniBato.EditorTools
             DirectionalSpecialBuilder.Apply(setup.Characters);
             DirectionalRecoveryBuilder.Apply(setup.Characters);
             DirectionalSpecialArtworkBuilder.Apply(setup.Characters);
+            ReadableAbilityTempoBuilder.Apply(setup.Characters);
+            RoyalMarchBuilder.Apply(setup.Characters[6]);
+            ProjectileEconomyBuilder.Apply(setup.Characters);
+            RyutaKickBuilder.Apply(setup.Characters[8]);
+            AttackStaminaBuilder.Apply(setup.Characters);
             if (setup.Stages == null || setup.Stages.Length == 0) setup.Stages = stages;
             if (setup.CpuDifficulties == null || setup.CpuDifficulties.Length == 0) setup.CpuDifficulties = cpuDifficulties;
             if (setup.CpuDifficulties.Length != 3) throw new InvalidOperationException("CPU difficulty assets must have three entries.");
@@ -137,6 +142,11 @@ namespace AniBato.EditorTools
             if (definition.SchemaVersion < 9) { definition.CombatInput = CombatInputDefinition.Default; definition.SchemaVersion = 9; }
             if (definition.SchemaVersion < 10) { definition.CombatInput.DownSpecialEnabled = true; definition.SchemaVersion = 10; }
             if (definition.SchemaVersion < 11) { definition.CombatInput.UpRecoveryEnabled = true; definition.SchemaVersion = 11; }
+            if (definition.SchemaVersion < 12)
+            {
+                definition.Charge.MaximumTravelBeyondFloor=10;definition.Charge.BlastLineInset=4;
+                definition.Charge.MaximumVerticalSpeed=24;definition.Charge.MaximumHitstunFrames=36;definition.SchemaVersion=12;
+            }
             asset.Definition = definition;
         }
         private static void UpgradeBindings(InputBindings asset)
@@ -468,6 +478,18 @@ namespace AniBato.EditorTools
             hud.Configure(runner, camera, presentation, left, right, time, result, new[] { counter1, counter2 });
             hud.ConfigurePopups(new[] { popup1, popup2 });
             hud.ConfigureLearning(help, bars);
+            var statuses = new Text[2];
+            for (int i = 0; i < 2; i++)
+            {
+                var panel = new GameObject("Player " + (i + 1) + " Special Cooldowns", typeof(RectTransform));
+                panel.transform.SetParent(go.transform, false); var rect = panel.GetComponent<RectTransform>();
+                rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(i, 1);
+                rect.anchoredPosition = new Vector2(i == 0 ? 36 : -36, -188); rect.sizeDelta = new Vector2(680, 108);
+                panel.AddComponent<SpecialCooldownHud>().Configure(runner, i);
+                statuses[i] = CreateText(go.transform,font,"P" + (i+1) + " Status",20,new Vector2(i,1),new Vector2(i,1),
+                    new Vector2(i==0?36:-36,-158),new Vector2(720,26),i==0?TextAnchor.UpperLeft:TextAnchor.UpperRight);
+            }
+            hud.ConfigureStatuses(statuses);
             BuildCutIn(go, runner, font);
             return go;
         }

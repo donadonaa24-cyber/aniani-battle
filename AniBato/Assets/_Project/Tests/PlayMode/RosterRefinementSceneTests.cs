@@ -29,7 +29,8 @@ namespace AniBato.Tests
                 projectiles.SendMessage("LateUpdate");var renderer=projectiles.GetComponentsInChildren<SpriteRenderer>().Single(s=>s.enabled);
                 var art=runner.Setup.Character(2).PaperMotion.Projectile(AbilityLook.CurryResidue);
                 Assert.That(renderer.sprite,Is.SameAs(art.Sprite));Assert.That(renderer.sprite.texture.width,Is.EqualTo(2172));Assert.That(renderer.sprite.texture.height,Is.EqualTo(724));
-                Assert.That(renderer.transform.localScale.x,Is.EqualTo(art.ScaleFor(residue.Hitbox.Size)).Within(.0001f));Assert.That(renderer.sortingOrder,Is.EqualTo(3));
+                Assert.That(renderer.transform.localScale.x*art.VisibleSize.x,Is.EqualTo(residue.Hitbox.Size.X).Within(.0001f));
+                Assert.That(renderer.transform.localScale.y*art.VisibleSize.y,Is.EqualTo(residue.Hitbox.Size.Y).Within(.0001f));Assert.That(renderer.sortingOrder,Is.EqualTo(3));
                 Capture("curry_residue_"+facing,false,"special_refinement");
                 Set(sim.P2,"Position",new BattleVector(residue.Position.X,sim.P2.Definition.HurtboxSize.Y*.5f));Set(sim.P2,"Velocity",default(BattleVector));Tick();
                 Assert.That(sim.P2.NormalHitCount,Is.EqualTo(1));Assert.That(sim.P2.Hearts,Is.EqualTo(3));
@@ -50,7 +51,7 @@ namespace AniBato.Tests
                 {
                     Set(sim.P1,"Position",new BattleVector(facing*(index==0?-4:4),sim.P1.Definition.HurtboxSize.Y*.5f));
                     yield return Key(keys.Down,true);yield return Key(keys.Special,true);Tick();yield return Key(keys.Special,false);yield return Key(keys.Down,false);
-                    for(int tick=0;tick<125;tick++)Tick();
+                    for(int tick=0;tick<305;tick++)Tick();
                 }
                 Assert.That(sim.P1.PlacedCount,Is.EqualTo(2));var traps=sim.Projectiles.ToArray();
                 yield return Key(keys.Down,true);yield return Key(keys.Special,true);Tick();yield return Key(keys.Special,false);yield return Key(keys.Down,false);

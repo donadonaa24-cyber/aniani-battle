@@ -1,11 +1,11 @@
 {
   "key": "ryuta",
   "name": "龍太",
-  "unityVerifiedTag": "rework_r4_ryuta_2",
+  "unityVerifiedTag": "stamina_final_3",
   "motionAsset": "AniBato/Assets/_Project/Data/ryutaCorePaperMotion.asset",
   "completeAttackArtwork": true,
   "bodyFrames": 12,
-  "uniqueBodyImages": 10,
+  "uniqueBodyImages": 12,
   "entries": [
     {
       "id": "normal1_prepare",
@@ -25,27 +25,27 @@
       "id": "normal3_prepare",
       "title": "通常3段_予備",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_prepare.png",
-      "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
+      "sha256": "c09100e266b537861e09b2d0b4db3d2ec8f701548ac3790ffef40e81918ad1bf",
       "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/通常3段_予備.png"
     },
     {
       "id": "normal3_impact",
       "title": "通常3段_当てる",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_impact.png",
-      "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
+      "sha256": "6dab2a6834a7d97c3f8a364f359743d1b69d803c0a77e7e827fe369b91b293f0",
       "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/通常3段_当てる.png"
     },
     {
       "id": "up_prepare",
       "title": "上攻撃_予備",
-      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_up_prepare.png",
       "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
       "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/上攻撃_予備.png"
     },
     {
       "id": "up_impact",
       "title": "上攻撃_当てる",
-      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_up_impact.png",
       "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
       "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/上攻撃_当てる.png"
     },
@@ -93,5 +93,6 @@
     }
   ],
   "extraVariants": "追加指示後",
-  "artApproved": false
+  "artApproved": false,
+  "previousUnityVerifiedTag": "rework_r4_ryuta_2"
 }

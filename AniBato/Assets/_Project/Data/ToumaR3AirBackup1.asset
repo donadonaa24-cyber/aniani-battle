@@ -29,11 +29,75 @@ MonoBehaviour:
       ShotOrigin: 0
       ProjectileCount: 0
       ProjectileSpacing: 0
+      ProjectilePullRadius: 0
+      ProjectilePullSpeed: 0
       AllowZeroProjectileSpeed: 0
       ReplaceOwnProjectiles: 1
       ProjectileAtDamageFrame: 1
       IndependentNormalProjectile: 1
+      ProjectileChannel: 0
+      PlacementLimit: 0
+      GroundOnly: 0
+      PlaceOnGround: 0
+      ConsumePlacementOnHit: 0
+      SuperGuard: 0
+      Conscious: 0
       Look: 1
+    Recovery:
+      Style: 0
+      Speed: 0
+      Distance: 0
+      HorizontalSpeed: 0
+      MaximumChargeDistance: 0
+      MotionTimeScale: 0
+      MinimumChargeFrames: 0
+      MaximumChargeFrames: 0
+      BurstFrames: 0
+      SecondStartFrame: 0
+    AbilityCharge:
+      MinimumFrames: 0
+      MaximumFrames: 0
+      MaximumRangeScale: 0
+      MaximumStageWidthFraction: 0
+      MaximumKnockbackScale: 0
+      WidthOnly: 0
+      FormationOnly: 0
+    ProjectileBehavior:
+      Homing: 0
+      ConsumeOnHit: 0
+      WallAfterLanding: 0
+      MainPlatformOnly: 0
+      ExplodeOnLanding: 0
+      ExplosionSize:
+        X: 0
+        Y: 0
+      ExplosionFrames: 0
+      FormationVerticalSpread: 0
+      MarchSpawnFrames: 0
+      MarchCommandFrames: 0
+      MarchTravelFrames: 0
+      MarchExitFrames: 0
+      MarchWidth0: 0
+      MarchWidth1: 0
+      MarchWidth2: 0
+      HomingSpeed: 0
+      FormationRadius: 0
+      VisualScale: 0
+      VisualOffset:
+        X: 0
+        Y: 0
+      StaggerFrames: 0
+      WallFrames: 0
+      RepeatIntervalFrames: 0
+      Formation: 0
+    Aftermath:
+      LifetimeFrames: 0
+      RepeatIntervalFrames: 0
+      Size:
+        X: 0
+        Y: 0
+    DamageMode: 0
+    SelfEffectsOnComplete: 0
     Kind: 0
     IsCloseRange: 0
     NormalDirection: 0
@@ -42,7 +106,7 @@ MonoBehaviour:
     StartupFrames: 5
     ActiveFrames: 3
     DamageDelayFrames: 0
-    RecoveryFrames: 8
+    RecoveryFrames: 12
     Hitbox:
       Center:
         X: 1.1
@@ -83,6 +147,7 @@ MonoBehaviour:
     MarkFrames: 0
     SelfHealNormalHits: 0
     SelfBuff:
+      Channel: 0
       DurationFrames: 0
       MoveMultiplier: 0
       DashMultiplier: 0

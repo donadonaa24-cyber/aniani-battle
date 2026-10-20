@@ -82,7 +82,8 @@ namespace AniBato.Tests
             var sim=runner.Simulation;var shot=sim.Projectiles.Single();var view=Object.FindAnyObjectByType<ProjectileView>();view.SendMessage("LateUpdate");
             var sprite=view.transform.GetChild(0).GetComponent<SpriteRenderer>();var art=runner.Character(0).PaperMotion.Projectile(AbilityLook.BlackHole);
             Assert.That(sprite.enabled,Is.True);Assert.That(sprite.sprite,Is.SameAs(art.Sprite));Assert.That(sprite.color,Is.EqualTo(Color.white));
-            Assert.That(sprite.transform.localScale,Is.EqualTo(Vector3.one*art.Scale));Assert.That(sprite.flipX,Is.False);
+            Assert.That(sprite.transform.localScale.x*art.VisibleSize.x,Is.EqualTo(shot.Hitbox.Size.X).Within(.0001f));
+            Assert.That(sprite.transform.localScale.y*art.VisibleSize.y,Is.EqualTo(shot.Hitbox.Size.Y).Within(.0001f));Assert.That(sprite.flipX,Is.False);
             Assert.That(sprite.sortingOrder,Is.EqualTo(art.SortingOrder).And.LessThan(body.sortingOrder));
             var pos=runner.RenderPosition(shot);Assert.That(sprite.transform.position,Is.EqualTo(new Vector3(pos.X,pos.Y,0)));
         }

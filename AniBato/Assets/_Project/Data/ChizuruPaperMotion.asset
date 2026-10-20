@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f04ae4ddab5441aaf7819b587e1ea, type: 3}
   m_Name: ChizuruPaperMotion
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
+  SummonRift: {fileID: 0}
+  SuppressNormalAttackOverlays: 0
   SchemaVersion: 2
   PerformanceSchemaVersion: 1
   Performance:

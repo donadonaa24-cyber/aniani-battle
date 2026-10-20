@@ -38,8 +38,9 @@ namespace AniBato.Tests
                 else Assert.That(body.sprite, Is.SameAs(data.PaperMotion.Find(AnimationState.Dodge).Frames[0]));
                 if (index == 3 || index == 4) Assert.That(body.color.b, Is.GreaterThan(.9f));
                 Object.FindAnyObjectByType<AniBato.Game.HUDController>().SendMessage("LateUpdate");
-                var hud = Object.FindObjectsByType<Text>().Single(t => t.name == "Player 1 HUD");
-                Assert.That(hud.text, Does.Contain("↑")); Assert.That(hud.text, Does.Contain("秒"));
+                foreach(var cooldown in Object.FindObjectsByType<AniBato.Game.SpecialCooldownHud>())cooldown.Refresh();
+                var hud = Object.FindObjectsByType<Text>().Single(t => t.name == "P1 Special Status 2");
+                Assert.That(hud.text, Does.Contain("↑ 復帰")); Assert.That(hud.text, Does.Contain("秒"));
                 Capture("recovery_" + index + "_" + side, true, "directional_recovery");
             }
         }

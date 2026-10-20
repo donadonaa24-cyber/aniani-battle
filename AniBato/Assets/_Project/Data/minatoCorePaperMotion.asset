@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f04ae4ddab5441aaf7819b587e1ea, type: 3}
   m_Name: minatoCorePaperMotion
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
+  SummonRift: {fileID: 0}
+  SuppressNormalAttackOverlays: 0
   SchemaVersion: 3
   PerformanceSchemaVersion: 1
   Performance:
@@ -659,6 +661,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: bd9715f5cfa2aa845895fc4f54177d4d, type: 3}
     Scale: 1.2547916
     Offset: {x: 0, y: 0}
+    VisibleSize: {x: 1.5302598, y: 2.1517518}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -676,6 +679,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 2ca31a17b46f0b248a161dd8d684654a, type: 3}
     Scale: 1.0370306
     Offset: {x: 0, y: 0}
+    VisibleSize: {x: 1.7987593, y: 2.7000167}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0

@@ -5,7 +5,7 @@ namespace AniBato.Battle
     public sealed class FighterStateMachine
     {
         private long nextAttackId = 1;
-        public void Step(FighterState fighter, in FrameInput input, int tick, in BattleRuleDefinition rules)
+        public void Step(FighterState fighter, in FrameInput input, int tick, in BattleRuleDefinition rules, StageGeometry stage = null)
         {
             if (fighter.Mode != FighterMode.JumpStartup) fighter.JumpStartupRemaining = 0;
             if (fighter.Mode != FighterMode.Charging) fighter.ChargeFrames = 0;
@@ -21,6 +21,8 @@ namespace AniBato.Battle
             fighter.FrozenThisTick = fighter.HitstopRemaining > 0;
             if (fighter.FrozenThisTick) { fighter.HitstopRemaining--; return; }
             if (fighter.Mode == FighterMode.KO) return;
+            if(fighter.MaximumChargeLaunch && fighter.HitstunRemaining==0 && (fighter.Grounded || stage!=null &&
+                fighter.Position.X>=stage[0].Bounds.Left && fighter.Position.X<=stage[0].Bounds.Right)) fighter.MaximumChargeLaunch=false;
             if (fighter.DropThroughRemaining > 0) fighter.DropThroughRemaining--;
             if (fighter.HitstunRemaining > 0)
             {
@@ -47,13 +49,14 @@ namespace AniBato.Battle
                 if (!fighter.Grounded) { fighter.ChargeFrames = 0; fighter.Mode = FighterMode.Fall; return; }
                 if (input.IsHeld(InputButtons.Attack)) { fighter.ChargeFrames = Math.Min(rules.Charge.MaximumFrames, fighter.ChargeFrames + 1); return; }
                 int frames = fighter.ChargeFrames; fighter.ChargeFrames = 0;
-                StartNormal(fighter, 0, false, fighter.ChargeDirection, rules);
-                if (frames >= rules.Charge.MinimumFrames) fighter.Attack.ChargeFrames = frames;
+                StartNormal(fighter, 0, false, fighter.ChargeDirection, rules, frames >= rules.Charge.MinimumFrames ? frames : 0);
                 fighter.InputBuffer.ClearActions(); return;
             }
             if (StepDefense(fighter, input, rules)) return;
             if (fighter.Attack != null)
             {
+                if (AbilityChargeSystem.IsCharging(fighter) && AbilityChargeSystem.Hold(fighter, input, stage)) return;
+                if (RecoveryMotionSystem.Charge(fighter, input)) return;
                 var stance = fighter.Attack;
                 if (stance.Definition.RequiresFollowup && stance.Frame == stance.Definition.StartupFrames - 1)
                 {
@@ -194,18 +197,24 @@ namespace AniBato.Battle
             fighter.Velocity = new BattleVector(direction * fighter.Definition.MoveSpeed * fighter.MoveMultiplier, fighter.Definition.JumpSpeed);
             fighter.FastFalling = false; fighter.DashRemaining = 0; fighter.Mode = FighterMode.Jump;
         }
-        private void StartNormal(FighterState fighter, int chain, bool air, NormalDirection direction, in BattleRuleDefinition rules)
+        private void StartNormal(FighterState fighter, int chain, bool air, NormalDirection direction, in BattleRuleDefinition rules, int chargeFrames=0)
         {
-            var attacks = air ? fighter.Definition.AirNormals : fighter.Definition.GroundNormals;
-            StartAttack(fighter, DirectionalAttackSelector.Attack(fighter.Definition, direction, chain, air), chain, air, rules);
+            var attack=DirectionalAttackSelector.Attack(fighter.Definition,direction,chain,air);
+            int cost=StaminaSystem.NormalCost(fighter,attack,chain,air,chargeFrames,rules.Charge);
+            bool deferred=attack.SpawnProjectile && attack.Ability.ProjectileChannel==ProjectileChannel.Shared;
+            if(cost>0 && (deferred ? !StaminaSystem.CanSpend(fighter,cost) : !StaminaSystem.Spend(fighter,cost)))
+            {StaminaSystem.Reject(fighter);StopRejectedAction(fighter);return;}
+            StartAttack(fighter,attack,chain,air,rules);
+            fighter.Attack.ChargeFrames=chargeFrames;fighter.Attack.PlannedStaminaCost=cost;
         }
         private void StartAttack(FighterState fighter, in AttackDefinition attack, int chain, bool air, in BattleRuleDefinition rules)
         {
             var adjusted = attack;
-            if (fighter.BuffRemaining > 0)
+            if (fighter.BuffRemaining > 0 && !attack.Recovery.ChargedTeleport && !attack.AbilityCharge.Enabled)
                 adjusted.StartupFrames = (int)Math.Ceiling(attack.StartupFrames * fighter.StartupMultiplier);
             if (adjusted.RequiresFollowup) adjusted.StartupFrames = Math.Max(1, adjusted.StartupFrames);
             fighter.Attack = new AttackInstance(nextAttackId++, adjusted, chain, air);
+            if (attack.Recovery.ChargedTeleport || attack.AbilityCharge.Enabled) fighter.Velocity = default;
             if (!(air && attack.IsNormal && rules.CombatInput.FlowingAerialNormal)) fighter.Velocity = new BattleVector(0, fighter.Velocity.Y);
             fighter.DashRemaining = 0;
             fighter.Mode = attack.IsNormal ? FighterMode.Attack : FighterMode.Special;

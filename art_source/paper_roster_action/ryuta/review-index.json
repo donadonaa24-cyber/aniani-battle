@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
   "key": "ryuta",
-  "tag": "rework_r4_ryuta_2",
+  "tag": "stamina_final_3",
   "bodyFrames": 12,
-  "uniqueBodyImages": 10,
+  "uniqueBodyImages": 12,
   "effectBindings": 7,
   "uniqueEffectImages": 4,
   "artApproved": false,
   "buildAll": "success",
   "edit": {
-    "total": 574,
-    "passed": 574,
+    "total": 773,
+    "passed": 773,
     "failed": 0,
-    "skipped": 0
+    "sha256": "cd4db4ee3fdbbbf5ae31e9dd0e39564b5cf3c97714fa3d400a8affe089a9cdd6"
   },
   "play": {
-    "total": 79,
-    "passed": 79,
+    "total": 96,
+    "passed": 96,
     "failed": 0,
-    "skipped": 0
+    "sha256": "16fbe7112dedf741c8d2b02ab7cae25528ef23c48a8165ca81888292f1b07102"
   },
   "windowsBuild": "success",
   "screenshots": "docs/screenshots/rework_r4_ryuta_2/rework_r4_ryuta/",
@@ -42,27 +42,27 @@
       "id": "normal3_prepare",
       "title": "通常3段_予備",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_prepare.png",
-      "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
+      "sha256": "c09100e266b537861e09b2d0b4db3d2ec8f701548ac3790ffef40e81918ad1bf",
       "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/通常3段_予備.png"
     },
     {
       "id": "normal3_impact",
       "title": "通常3段_当てる",
       "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_impact.png",
-      "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
+      "sha256": "6dab2a6834a7d97c3f8a364f359743d1b69d803c0a77e7e827fe369b91b293f0",
       "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/通常3段_当てる.png"
     },
     {
       "id": "up_prepare",
       "title": "上攻撃_予備",
-      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_prepare.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_up_prepare.png",
       "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
       "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/上攻撃_予備.png"
     },
     {
       "id": "up_impact",
       "title": "上攻撃_当てる",
-      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_normal3_impact.png",
+      "runtime": "AniBato/Assets/_Project/Art/PaperAction/ryuta_up_impact.png",
       "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
       "reviewFile": "イラスト確認/現在ゲームで採用中/龍太/上攻撃_当てる.png"
     },
@@ -186,5 +186,6 @@
       }
     }
   ],
-  "remaining": "9人の専用攻撃は接続・検証済み。追加の溜め・被弾・他差分はユーザー追加指示後。"
+  "remaining": "9人の専用攻撃は接続・検証済み。追加の溜め・被弾・他差分はユーザー追加指示後。",
+  "latestNote": "通常3段は蹴り2原画、通常1/2・上攻撃は維持。龍太通常の追加オーバーレイのみ非表示。"
 }

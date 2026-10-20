@@ -43,6 +43,59 @@ MonoBehaviour:
       SuperGuard: 0
       Conscious: 0
       Look: 18
+    Recovery:
+      Style: 0
+      Speed: 0
+      Distance: 0
+      HorizontalSpeed: 0
+      MaximumChargeDistance: 0
+      MotionTimeScale: 0
+      MinimumChargeFrames: 0
+      MaximumChargeFrames: 0
+      BurstFrames: 0
+      SecondStartFrame: 0
+    AbilityCharge:
+      MinimumFrames: 0
+      MaximumFrames: 0
+      MaximumRangeScale: 0
+      MaximumStageWidthFraction: 0
+      MaximumKnockbackScale: 0
+      WidthOnly: 0
+      FormationOnly: 0
+    ProjectileBehavior:
+      Homing: 0
+      ConsumeOnHit: 0
+      WallAfterLanding: 0
+      MainPlatformOnly: 0
+      ExplodeOnLanding: 0
+      ExplosionSize:
+        X: 0
+        Y: 0
+      ExplosionFrames: 0
+      FormationVerticalSpread: 0
+      MarchSpawnFrames: 0
+      MarchCommandFrames: 0
+      MarchTravelFrames: 0
+      MarchExitFrames: 0
+      MarchWidth0: 0
+      MarchWidth1: 0
+      MarchWidth2: 0
+      HomingSpeed: 0
+      FormationRadius: 0
+      VisualScale: 0
+      VisualOffset:
+        X: 0
+        Y: 0
+      StaggerFrames: 0
+      WallFrames: 0
+      RepeatIntervalFrames: 0
+      Formation: 0
+    Aftermath:
+      LifetimeFrames: 0
+      RepeatIntervalFrames: 0
+      Size:
+        X: 0
+        Y: 0
     DamageMode: 1
     SelfEffectsOnComplete: 0
     Kind: 1
@@ -50,7 +103,7 @@ MonoBehaviour:
     NormalDirection: 0
     BreaksGuard: 0
     LandingRecoveryFrames: 0
-    StartupFrames: 12
+    StartupFrames: 60
     ActiveFrames: 1
     DamageDelayFrames: 0
     RecoveryFrames: 18
@@ -94,12 +147,13 @@ MonoBehaviour:
     MarkFrames: 0
     SelfHealNormalHits: 0
     SelfBuff:
+      Channel: 0
       DurationFrames: 0
       MoveMultiplier: 0
       DashMultiplier: 0
       StartupMultiplier: 0
     KnockbackMultiplier: 0
-    CooldownFrames: 120
+    CooldownFrames: 300
     ProjectileEraseCount: 0
     GuardedRecoveryFrames: 0
     RequiresFollowup: 0

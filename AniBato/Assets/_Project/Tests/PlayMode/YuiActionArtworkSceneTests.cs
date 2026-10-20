@@ -47,9 +47,10 @@ namespace AniBato.Tests
                     {
                         Assert.That(effect.sprite,Is.SameAs(art.Sprite));Assert.That(effect.flipX,Is.EqualTo(body.flipX));
                         Assert.That(effect.sortingOrder,Is.LessThan(body.sortingOrder));
-                        Assert.That(effect.transform.position,Is.EqualTo(body.bounds.center+new Vector3((body.flipX?-1:1)*art.Offset.x,art.Offset.y,0)));
+                        if(attack.AbilityChargeReleased&&!art.Anticipating(view.RenderedSample))AssertCueFitsChargedHitbox(attack,sim.P1,art,effect);
+                        else Assert.That(effect.transform.position,Is.EqualTo(body.bounds.center+new Vector3((body.flipX?-1:1)*art.Offset.x,art.Offset.y,0)));
                     }
-                    Assert.That(text.gameObject.activeSelf,Is.EqualTo((action==3||action==4)&&!impact));
+                    Assert.That(text.gameObject.activeSelf,Is.EqualTo(action==3&&!impact));
                     if(!impact){prep++;if(!p){Capture(name+"_prepare",true,"rework_r4_yui");p=true;}}
                     else if(attack.IsActive)
                     {

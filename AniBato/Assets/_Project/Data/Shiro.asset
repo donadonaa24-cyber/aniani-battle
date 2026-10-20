@@ -66,12 +66,38 @@ MonoBehaviour:
         Speed: 0
         Distance: 0
         HorizontalSpeed: 0
+        MaximumChargeDistance: 0
+        MotionTimeScale: 0
+        MinimumChargeFrames: 0
+        MaximumChargeFrames: 0
         BurstFrames: 0
         SecondStartFrame: 0
+      AbilityCharge:
+        MinimumFrames: 0
+        MaximumFrames: 0
+        MaximumRangeScale: 0
+        MaximumStageWidthFraction: 0
+        MaximumKnockbackScale: 0
+        WidthOnly: 0
+        FormationOnly: 0
       ProjectileBehavior:
         Homing: 0
         ConsumeOnHit: 0
         WallAfterLanding: 0
+        MainPlatformOnly: 0
+        ExplodeOnLanding: 0
+        ExplosionSize:
+          X: 0
+          Y: 0
+        ExplosionFrames: 0
+        FormationVerticalSpread: 0
+        MarchSpawnFrames: 0
+        MarchCommandFrames: 0
+        MarchTravelFrames: 0
+        MarchExitFrames: 0
+        MarchWidth0: 0
+        MarchWidth1: 0
+        MarchWidth2: 0
         HomingSpeed: 0
         FormationRadius: 0
         VisualScale: 0
@@ -152,9 +178,9 @@ MonoBehaviour:
       StanceFrames: 0
     Stamina:
       Maximum: 90
-      GroundRecoveryPerSecond: 34
-      ActiveRecoveryPerSecond: 7
-      RecoveryDelayFrames: 24
+      GroundRecoveryPerSecond: 18
+      ActiveRecoveryPerSecond: 2
+      RecoveryDelayFrames: 45
       JumpCost: 6
       AirJumpCost: 10
       GroundDashCost: 7
@@ -166,6 +192,14 @@ MonoBehaviour:
       UltimateGuardCost: 70
       GuardBreakFrames: 18
       GuardLockFrames: 36
+      NormalProjectileCost: 6
+      SpecialProjectileCost: 18
+      NormalFirstCost: 4
+      NormalSecondCost: 5
+      NormalThirdCost: 8
+      DirectionalNormalCost: 6
+      ChargeMinimumCost: 10
+      ChargeMaximumCost: 15
     CrouchHeightRatio: 0.55
     DiagonalThreshold: 0.45
     DiagonalFallbackVertical: 1
@@ -206,12 +240,38 @@ MonoBehaviour:
         Speed: 0
         Distance: 0
         HorizontalSpeed: 0
+        MaximumChargeDistance: 0
+        MotionTimeScale: 0
+        MinimumChargeFrames: 0
+        MaximumChargeFrames: 0
         BurstFrames: 0
         SecondStartFrame: 0
+      AbilityCharge:
+        MinimumFrames: 0
+        MaximumFrames: 0
+        MaximumRangeScale: 0
+        MaximumStageWidthFraction: 0
+        MaximumKnockbackScale: 0
+        WidthOnly: 0
+        FormationOnly: 0
       ProjectileBehavior:
         Homing: 0
         ConsumeOnHit: 0
         WallAfterLanding: 0
+        MainPlatformOnly: 0
+        ExplodeOnLanding: 0
+        ExplosionSize:
+          X: 0
+          Y: 0
+        ExplosionFrames: 0
+        FormationVerticalSpread: 0
+        MarchSpawnFrames: 0
+        MarchCommandFrames: 0
+        MarchTravelFrames: 0
+        MarchExitFrames: 0
+        MarchWidth0: 0
+        MarchWidth1: 0
+        MarchWidth2: 0
         HomingSpeed: 0
         FormationRadius: 0
         VisualScale: 0
@@ -307,8 +367,13 @@ MonoBehaviour:
   NormalThrowSchemaVersion: 1
   NormalWeaponSchemaVersion: 0
   MoveSetSchemaVersion: 1
-  DirectionalSpecialSchemaVersion: 3
-  RecoverySchemaVersion: 3
+  DirectionalSpecialSchemaVersion: 5
+  RecoverySchemaVersion: 4
+  AbilityTempoSchemaVersion: 1
+  RoyalMarchSchemaVersion: 0
+  ProjectileEconomySchemaVersion: 1
+  AttackStaminaSchemaVersion: 1
+  KickSchemaVersion: 0
   RefinementSchemaVersion: 1
   ActionArtworkSchemaVersion: 1
   DirectionalNormals:

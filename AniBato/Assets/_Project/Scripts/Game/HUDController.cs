@@ -16,6 +16,8 @@ namespace AniBato.Game
         [SerializeField] private Text timer;
         [SerializeField] private Text result;
         [SerializeField] private Text[] counters;
+        [SerializeField] private Text[] statuses;
+        public void ConfigureStatuses(Text[] value) => statuses = value;
         private readonly float[] bounceUntil = new float[2];
         private readonly float[] breakUntil = new float[2];
         private RectTransform canvasRect;
@@ -93,22 +95,26 @@ namespace AniBato.Game
         private void UpdatePlayer(FighterState fighter, Text hud, int index, int threshold)
         {
             hud.text = fighter.Definition.Name + "\n" + new string('♥', fighter.Hearts) + new string('♡', runner.Simulation.Rules.InitialHearts - fighter.Hearts) +
-                "   " + fighter.NormalHitCount + "/" + threshold + "\nSTAMINA " + Mathf.FloorToInt(fighter.Stamina) + "/" + fighter.Definition.Stamina.Maximum + "\nLINK " + fighter.Gauge + "/" + runner.Simulation.Rules.Gauge.Maximum +
-                (fighter.UnlimitedUltimates ? "  超必殺 無制限" : GaugeSystem.CanUseUltimate(fighter, runner.Simulation.Rules) ? "  超必殺 READY" : fighter.UltimateUses > 0 ? "  超必殺 使用済" : "");
-            hud.text += "\n特殊  " + SpecialCooldownDisplay.Text(fighter, runner.Simulation.Rules.CombatInput);
-            if (fighter.BuffRemaining > 0) hud.text += "  機動強化 " + Mathf.CeilToInt(fighter.BuffRemaining / 60f) + "秒";
+                "   " + fighter.NormalHitCount + "/" + threshold + "\nST " + Mathf.FloorToInt(fighter.Stamina) + "/" + fighter.Definition.Stamina.Maximum +
+                "  通常 " + fighter.Definition.Stamina.NormalFirstCost + "/" + fighter.Definition.Stamina.NormalSecondCost + "/" + fighter.Definition.Stamina.NormalThirdCost +
+                "\nLINK " + fighter.Gauge + "/" + runner.Simulation.Rules.Gauge.Maximum;
+            string status = fighter.BuffRemaining > 0 ? "機動強化 " + Mathf.CeilToInt(fighter.BuffRemaining / 60f) + "秒" : "";
+            if(fighter.Stamina < fighter.Definition.Stamina.Maximum && fighter.Attack==null && fighter.Mode!=FighterMode.Charging && fighter.Mode!=FighterMode.Guard)
+                status += fighter.StaminaDelayRemaining>0 ? "  ST回復まで " + (fighter.StaminaDelayRemaining/60f).ToString("0.0") + "秒" : "  ST回復中";
+            if (fighter.StaminaRejectedRemaining>0) status+="  スタミナ不足";
             if (staminaBars != null)
             {
                 float fraction = fighter.Definition.Stamina.Maximum > 0 ? fighter.Stamina / fighter.Definition.Stamina.Maximum : 1;
                 staminaBars[index].rectTransform.sizeDelta = new Vector2(300 * fraction, 8);
                 staminaBars[index].color = fighter.StaminaRejectedRemaining > 0 && fighter.StaminaRejectedRemaining % 8 < 4 ? Color.red : new Color(.3f, .85f, .65f);
             }
-            if (fighter.MarkRemaining > 0) hud.text += "  解析マーク";
-            if (fighter.ParalysisRemaining > 0) hud.text += "  麻痺";
+            if (fighter.MarkRemaining > 0) status += "  解析マーク";
+            if (fighter.ParalysisRemaining > 0) status += "  麻痺";
             if (fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0)
-                hud.text += "  食事中";
+                status += "  食事中";
             if (fighter.Attack != null && fighter.Attack.Definition.RequiresFollowup && !fighter.Attack.IsActive)
-                hud.text += "  構え: 通常/特殊で急襲";
+                status += "  構え: 通常/特殊で急襲";
+            if (statuses != null && statuses.Length > index) statuses[index].text = status;
             var counter = counters[index];
             bool breaking = Time.unscaledTime < breakUntil[index];
             counter.text = breaking ? "BREAK!" : fighter.NormalHitCount + "/" + threshold;

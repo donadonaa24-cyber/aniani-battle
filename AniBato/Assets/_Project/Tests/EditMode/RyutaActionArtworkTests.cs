@@ -17,14 +17,14 @@ namespace AniBato.Tests
         private static CharacterData Data=>Setup.Character(8);
         private static readonly AnimationState[] States={AnimationState.Attack1,AnimationState.Attack3,AnimationState.AirUp,
             AnimationState.CrouchAttack,AnimationState.AirNeutral,AnimationState.SpecialNeutral,AnimationState.Ultimate};
-        [Test] public void RyutaTwelveSlotsUseTenNativeKeysAndKeepBasicPoses()
+        [Test] public void RyutaTwelveSlotsUseTwelveNativeKeysWithKickSeparatedFromUpAttack()
         {
             var paper=Data.PaperMotion;var poses=States.Select(s=>paper.Find(s)).ToArray();
             Assert.That(Data.ActionArtworkSchemaVersion,Is.EqualTo(1));Assert.That(poses.Sum(p=>p.Frames.Length),Is.EqualTo(12));
-            Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(10));
+            Assert.That(poses.SelectMany(p=>p.Frames).Distinct().Count(),Is.EqualTo(12));
             Assert.That(paper.Find(AnimationState.Attack2).Frames,Is.EqualTo(poses[0].Frames));
             Assert.That(paper.Find(AnimationState.BackAttack).Frames,Is.EqualTo(poses[0].Frames));Assert.That(paper.Find(AnimationState.BackAttack).ReverseFacing,Is.True);
-            Assert.That(poses[2].Frames,Is.EqualTo(poses[1].Frames));
+            Assert.That(poses[2].Frames.Intersect(poses[1].Frames),Is.Empty,"上のアッパーと通常3の新しい蹴りを分離");
             foreach(var pose in poses)
             {
                 Assert.That(pose.Valid,Is.True);Assert.That(pose.Frames.Length,Is.EqualTo(pose.Key=="down"||pose.Key=="air"?1:2));
@@ -62,15 +62,16 @@ namespace AniBato.Tests
         [Test] public void SpellSwitchesAtDelayedDamageAndLettersKeepTheirOwnPositions()
         {
             var spell=Data.Ultimate.Definition;var bat=Data.Specials[0].Definition;var art=Data.PaperMotion.AbilityEffect(AnimationState.Ultimate);
-            Assert.That(new[]{spell.StartupFrames,spell.ActiveFrames,spell.RecoveryFrames,spell.DamageDelayFrames},Is.EqualTo(new[]{34,20,30,8}));
+            Assert.That(new[]{spell.StartupFrames,spell.ActiveFrames,spell.RecoveryFrames,spell.DamageDelayFrames},Is.EqualTo(new[]{60,20,30,8}));
             Assert.That(spell.Hitbox.Size,Is.EqualTo(new BattleVector(7,4.5f)));Assert.That(spell.SpawnProjectile,Is.False);
-            Assert.That(new[]{bat.StartupFrames,bat.ActiveFrames,bat.RecoveryFrames},Is.EqualTo(new[]{15,5,22}));Assert.That(bat.SpawnProjectile,Is.False);
+            Assert.That(new[]{bat.StartupFrames,bat.ActiveFrames,bat.RecoveryFrames},Is.EqualTo(new[]{18,5,22}));Assert.That(bat.SpawnProjectile,Is.False);
+            Assert.That(bat.AbilityCharge.MaximumFrames,Is.EqualTo(60));
             Assert.That(art.UseAnticipationOffset&&art.UnmirroredArtwork,Is.True);
             Assert.That(art.AnticipationOffset,Is.EqualTo(new Vector2(.4f,.5f)));Assert.That(art.Offset,Is.EqualTo(new Vector2(2.5f,0)));
-            var sample=new AnimationSample{State=AnimationState.Ultimate,IsAttack=true,Startup=34,Active=20,Recovery=30,DamageDelay=8};
-            foreach(int frame in new[]{0,33,34,41,42,53,54,83})
+            var sample=new AnimationSample{State=AnimationState.Ultimate,IsAttack=true,Startup=60,Active=20,Recovery=30,DamageDelay=8};
+            foreach(int frame in new[]{0,59,60,67,68,79,80,109})
             {
-                sample.AttackFrame=frame;bool prep=frame<42;Assert.That(art.Visible(sample),Is.True);
+                sample.AttackFrame=frame;bool prep=frame<68;Assert.That(art.Visible(sample),Is.True);
                 Assert.That(art.SpriteFor(sample),Is.SameAs(prep?art.AnticipationSprite:art.Sprite));
                 Assert.That(art.OffsetFor(sample),Is.EqualTo(prep?art.AnticipationOffset:art.Offset));
             }

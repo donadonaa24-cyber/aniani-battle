@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f04ae4ddab5441aaf7819b587e1ea, type: 3}
   m_Name: akatsukiCorePaperMotion
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
+  SummonRift: {fileID: 0}
+  SuppressNormalAttackOverlays: 0
   SchemaVersion: 3
   PerformanceSchemaVersion: 1
   Performance:
@@ -660,6 +662,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 7053b2caead8d8e48bc7bbf77595f898, type: 3}
     Scale: 0.71571314
     Offset: {x: 0.85, y: 0.15}
+    VisibleSize: {x: 2.0259514, y: 1.5283822}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -677,6 +680,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: e51f3125b13ad1547a1a1d8419ea21bf, type: 3}
     Scale: 0.5789014
     Offset: {x: 0.25, y: -0.05}
+    VisibleSize: {x: 1.9001509, y: 0.6496563}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -694,6 +698,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 7053b2caead8d8e48bc7bbf77595f898, type: 3}
     Scale: 0.71571314
     Offset: {x: 0.85, y: 0.15}
+    VisibleSize: {x: 2.0259514, y: 1.5283822}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -711,6 +716,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 7053b2caead8d8e48bc7bbf77595f898, type: 3}
     Scale: 0.71571314
     Offset: {x: 0.85, y: 0.15}
+    VisibleSize: {x: 2.0259514, y: 1.5283822}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0

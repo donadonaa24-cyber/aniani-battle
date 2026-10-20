@@ -1,4 +1,18 @@
-## 最新（2026-10-20）：方向特殊のB/C/D/Eを実装・検証・完了
+## 最新（2026-10-21）：先行ST・技改修の実Unity/Web検証完了、紙HUD・崖・サポートへ
+
+stamina_final_3でBuildAll成功／Edit773/773／Play96/96／Windows成功、失敗・スキップ0。最終648試合も調整版と同値。stamina_web_finalはWebGL成功128,081,814bytes／239.0197202秒、Windows設定復帰成功、445/445PNGの原画RGBA保持。内蔵ブラウザの実キーで通常ST100→93・特殊100→82、湊の溜め転移/青分解、王3部下の裂け目→号令→固定方向行進/退場を確認、警告エラー0。証跡docs/codex_logs/readable_stamina_verification.json、readable_stamina_requirements_audit.md。代表画像docs/screenshots/readable_stamina/とreadable_stamina_web/。対人バランス/美術の最終承認、実機パッド/通常Chrome・Edge/低メモリ端末は別範囲。
+
+次は追加指示書docs/codex_tasks/SUPPORT_ITEMS_LEDGE_AND_PAPER_HUD.md：検証済み先行差分の通常保存→紙台紙HUDと英語ルビ（白ST棒の保存参照不具合も修正）→崖つかまり9人原画/消費/復帰/下攻撃限定/居座り防止→8サポート即時取得/画像生成/出現・再使用管理。新規2システムと紙HUDは未実装。数値質問は回答待ち、独立したHUDから進める。各区切りで実Unity全4とWeb確認・引継ぎ・通常保存。
+
+Windows最新Build/stamina_final_3、Web Build/WebGL・8799。実行中の旧special_refinement_3は保持。現Assetsが正本。保護カバン・龍太承認v5・半減45判定・14/10ゲージを維持。以下の「実行中」は過去履歴であり、この冒頭が最新。
+
+## 最新（2026-10-21）：追加演出と攻撃スタミナ調整を最終検証中
+
+指示書はcodex_tasks/CHARGED_TELEPORT_AND_COOLDOWN_HUD.md。上復帰を見やすい1.5倍時間へ、湊/シロ溜め転移、全特殊HUD、溜め超必殺、王の裂け目/号令/部下行進、場外拡張、設置1秒/後隙0.3秒/2個/CD5秒、龍太蹴り2原画、通常最大3秒の画面外打ち出し、通常攻撃のST消費・回復調整を追加。基準648試合→調整648試合で透真84.7→61.1%、王81.9→66.0%。提案値と限界はSTAMINA_BALANCE_20261021.md。
+
+残りの順序：実Unity全4工程→画面と原画採用の照合→最終版648試合→WebGL/Windows設定復帰→原画RGBA監査→実ブラウザ確認→RESUME/STATUS/採用表の確定→通常commit/push。新しい追加を含む工程は未完了。既存完了分を重複生成しない。
+
+## 保存済み（2026-10-20）：方向特殊のB/C/D/Eを実装・検証・完了
 
 特殊下9人→上復帰9人→固有技/スタミナ→最終Web監査の全工程を完了。UnityはBuildAll/Edit697/697/Windows special_refinement_3、旧テスト参照だけ直した全Play91/91 special_refinement_5で合格。WebGL directional_specials_web実ビルド/Windows復帰成功、442/442RGBA監査と内蔵ブラウザの実キー/音/console0を確認。実タグの区別と証跡はRESUME冒頭、directional_specials_final_verification.json、directional_requirements_audit.md。
 

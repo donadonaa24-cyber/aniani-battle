@@ -31,6 +31,9 @@ namespace AniBato.Game
         public Color ChargeTint = new Color(1, .5f, .12f);
         public float ChargeTiltDegrees = 10, ChargeSink = .09f, ChargeSparkSize = .11f;
         public int ChargePulseTicks = 6;
+        public Color TeleportBlue = new Color(.15f, .7f, 1);
+        public int TeleportDissolveTicks = 10, TeleportAssembleTicks = 16, TeleportFlashTicks = 22;
+        public float TeleportScatter = .65f;
         public Color ProjectileTint = new Color(1, 0.65f, 0.2f);
         public float PopupSeconds = 0.7f;
         public float PopupHeight = 2.6f;

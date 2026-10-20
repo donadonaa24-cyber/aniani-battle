@@ -19,6 +19,7 @@ namespace AniBato.Tests
                 runner.BeginMatch(character, runner.Setup.Character(2), runner.CurrentStage, false); view.RenderFrame();
                 var sim = runner.Simulation; Set(sim.P1, "Facing", facing); var start = sim.P1.Position; var hurtbox = sim.P1.Hurtbox;
                 var idle = body.sprite; var scale = body.transform.localScale;
+                Set(sim.P2,"Position",new BattleVector(start.X-facing*8,sim.P2.Position.Y));
                 yield return Key(keys.Attack, true);
                 for (int i = 1; i <= 200; i++)
                 {
@@ -46,6 +47,7 @@ namespace AniBato.Tests
                 Assert.That(view.transform.Find("Charge Paper 0").GetComponent<SpriteRenderer>().enabled, Is.False);
                 for (int i = 0; i < 120; i++) Tick();
                 Assert.That(sim.P1.ChargeFrames, Is.Zero); Assert.That(sim.P1.Attack, Is.Null);
+                Assert.That(sim.Match.IsFinished,Is.False,"原画の復帰確認では対戦相手を射線の後ろへ隔離する");
                 Assert.That(body.color, Is.EqualTo(Color.white)); Assert.That(sim.P1.Mode, Is.EqualTo(FighterMode.Idle));
                 Assert.That(body.sprite, Is.SameAs(idle));
             }

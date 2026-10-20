@@ -40,6 +40,7 @@
         public int UltimateUses { get; internal set; }
         public bool UnlimitedUltimates { get; internal set; }
         public int ChargeFrames { get; internal set; }
+        public bool MaximumChargeLaunch { get; internal set; }
         internal NormalDirection ChargeDirection;
         public bool UpSpecialUsed { get; internal set; }
         public int PlacedCount { get; internal set; }

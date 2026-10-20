@@ -24,21 +24,21 @@
     },
     {
       "id": "normal3_prepare",
-      "prepared": "art_source/paper_roster_action/ryuta/prepared/normal3_prepare.png",
-      "sha256": "ddddec50bffe0571824972a444699d5f90ae43c59f2e7ae26603fce2fb36026a",
-      "headTopY": 178,
-      "footMinX": 185,
-      "footMaxX": 1231,
+      "prepared": "art_source/ryuta_kick/prepare_packed.png",
+      "sha256": "c09100e266b537861e09b2d0b4db3d2ec8f701548ac3790ffef40e81918ad1bf",
+      "headTopY": 84,
+      "footMinX": 458,
+      "footMaxX": 729,
       "groundFootAnchor": 708,
       "originOffsetY": 0
     },
     {
       "id": "normal3_impact",
-      "prepared": "art_source/paper_roster_action/ryuta/prepared/normal3_impact.png",
-      "sha256": "d48582e52107048eac6fec3f9bb7d3dcb9c8e061096d58544308fa8093b9de95",
-      "headTopY": 51,
-      "footMinX": 188,
-      "footMaxX": 1229,
+      "prepared": "art_source/ryuta_kick/impact_packed.png",
+      "sha256": "6dab2a6834a7d97c3f8a364f359743d1b69d803c0a77e7e827fe369b91b293f0",
+      "headTopY": 72,
+      "footMinX": 299,
+      "footMaxX": 555,
       "groundFootAnchor": 708,
       "originOffsetY": 0
     },
@@ -126,5 +126,5 @@
   "complete": true,
   "reviewed": true,
   "gameConnected": true,
-  "verifiedTag": "rework_r4_ryuta_2"
+  "verifiedTag": "stamina_final_3"
 }

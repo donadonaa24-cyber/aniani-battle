@@ -14,6 +14,8 @@ namespace AniBato.Game
         private ChargePoseView chargePose;
         private readonly AniBato.Presentation.PaperUltimatePoseHold ultimatePoseHold=new AniBato.Presentation.PaperUltimatePoseHold();
         private AbilityCueView abilityCue;
+        private TeleportPhaseView teleportPhase;
+        private SummonCommandView summonCommand;
         private float flashUntil, headY;
         private int curryLastActiveTick=-1;
         public int PlayerIndex => playerIndex;
@@ -41,12 +43,15 @@ namespace AniBato.Game
             field = ProceduralSprites.Create(transform, "Blocking Field", Vector2.one, Color.white, sortingOrder: 7);
             chargePose = new ChargePoseView(transform, presentation);
             abilityCue = new AbilityCueView(transform);
+            teleportPhase = new TeleportPhaseView(transform, presentation);
+            summonCommand = new SummonCommandView(transform);
             arm.enabled = secondArm.enabled = food.enabled = mogu.enabled = wave.enabled = field.enabled = false;
             ApplyCharacter();
         }
         private void OnEnable() { if (runner) { runner.EventProduced += OnBattleEvent; runner.MatchRestarted += OnRestart; } }
         private void OnDisable() { if (runner) { runner.EventProduced -= OnBattleEvent; runner.MatchRestarted -= OnRestart; } }
-        private void OnRestart() { flashUntil = 0; curryLastActiveTick=-1; ultimatePoseHold.Reset(); if (body) ApplyCharacter(); }
+        private void OnRestart() { flashUntil = 0; curryLastActiveTick=-1; ultimatePoseHold.Reset(); teleportPhase?.Reset(); if (body) ApplyCharacter(); }
+        private void OnDestroy() => teleportPhase?.Dispose();
         private void ApplyCharacter()
         {
             character = runner.Character(playerIndex);
@@ -78,6 +83,8 @@ namespace AniBato.Game
                 if (ability.SuperGuard) sample.State = fighter.Attack.IsActive ? AniBato.Presentation.AnimationState.SpecialNeutral : AniBato.Presentation.AnimationState.Guard;
                 else if (ability.Look == AbilityLook.Reading) { sample.State = AniBato.Presentation.AnimationState.Ultimate; sample.Startup = sample.DamageDelay = 0; }
                 else if (ability.Conscious) sample.State = AniBato.Presentation.AnimationState.Dodge;
+                if (ability.ProjectileChannel == ProjectileChannel.Placed && ability.PlaceOnGround)
+                    sample.State = AniBato.Presentation.AnimationState.Crouch;
             }
             bool recovering = fighter.Attack != null && fighter.Attack.Definition.Recovery.Style != RecoveryStyle.None;
             if (recovering && (fighter.Attack.Definition.Ability.Look == AbilityLook.Rook || fighter.Attack.Definition.Ability.Look == AbilityLook.Bishop || fighter.Attack.Definition.Ability.Look == AbilityLook.King))
@@ -164,6 +171,8 @@ namespace AniBato.Game
             bool generatedTransformation=UsesPaperSprite&&paperPose!=null&&paperPose.Frames.Length==2&&
                 paperPose.Frames[1]==body.sprite&&(paperPose.Key=="special"||paperPose.Key=="super");
             abilityCue.Apply(fighter, body, runner.Simulation.Match.IsFinished,UsesPaperSprite?character.PaperMotion:null,sample,generatedTransformation);
+            teleportPhase.Apply(fighter, body, runner.Simulation.Match.TickCount, runner.Simulation.Match.IsFinished);
+            summonCommand.Apply(fighter,runner.Simulation.Projectiles,headY,runner.Simulation.Match.IsFinished);
             food.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0;
             if (food.enabled) food.transform.localPosition = new Vector3(0.45f, 0.35f + Mathf.Sin(fighter.Attack.Frame * 0.5f) * 0.08f, 0);
             arm.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.IsActive && !fighter.Attack.Definition.SpawnProjectile;
@@ -193,6 +202,12 @@ namespace AniBato.Game
             Vector2 waveOffset = effects == null ? presentation.CurryWaveOffset : effects.UltimateOffset;
             wave.flipX = sample.FlipX; wave.transform.localScale = new Vector3(waveScale, waveScale, 1);
             wave.transform.localPosition = new Vector3((sample.FlipX ? -1 : 1) * waveOffset.x, waveOffset.y, 0);
+            if (wave.enabled && fighter.Attack != null && fighter.Attack.AbilityChargeReleased)
+            {
+                var box = fighter.Attack.WorldHitbox(fighter); var size = wave.sprite.bounds.size;
+                wave.transform.position = new Vector3(box.Center.X, box.Center.Y, 0);
+                wave.transform.localScale = new Vector3(box.Size.X/size.x,box.Size.Y/size.y,1);
+            }
             field.sprite = character.Animations && effects != null ? character.Animations.Effect(effects.DownSpecialClip, effectAge) : null;
             field.enabled = UsesAnimationSprites && sample.State == AniBato.Presentation.AnimationState.SpecialDown && fighter.Attack != null && fighter.Attack.IsActive && field.sprite;
             field.flipX = sample.FlipX;

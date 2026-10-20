@@ -17,6 +17,11 @@ namespace AniBato.Game
         public int MoveSetSchemaVersion;
         public int DirectionalSpecialSchemaVersion;
         public int RecoverySchemaVersion;
+        public int AbilityTempoSchemaVersion;
+        public int RoyalMarchSchemaVersion;
+        public int ProjectileEconomySchemaVersion;
+        public int AttackStaminaSchemaVersion;
+        public int KickSchemaVersion;
         public int RefinementSchemaVersion;
         public int ActionArtworkSchemaVersion;
         public AttackData[] DirectionalNormals;

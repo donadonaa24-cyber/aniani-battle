@@ -38,19 +38,22 @@ namespace AniBato.Battle
                 fighter.FastFalling = true;
             BattleVector oldPosition = fighter.Position;
             float vertical = fighter.Velocity.Y;
-            bool recoveryFloat = fighter.Attack != null && fighter.Attack.IsActive && fighter.Attack.Definition.Recovery.IgnoresGravity;
+            bool recoveryFloat = RecoveryMotionSystem.IsCharging(fighter) || AbilityChargeSystem.IsCharging(fighter) ||
+                fighter.Attack != null && fighter.Attack.IsActive && fighter.Attack.Definition.Recovery.IgnoresGravity;
+            float motionScale = fighter.Attack != null && fighter.Attack.Definition.Recovery.MotionTimeScale > 0 ?
+                fighter.Attack.Definition.Recovery.MotionTimeScale : 1;
             if (!fighter.Grounded && fighter.Mode != FighterMode.Dash && fighter.Mode != FighterMode.Dodge && !recoveryFloat)
             {
-                vertical = Math.Max(vertical - fighter.Definition.Gravity * BattleRuleDefinition.TickSeconds,
+                vertical = Math.Max(vertical - fighter.Definition.Gravity * BattleRuleDefinition.TickSeconds * motionScale,
                     -(fighter.FastFalling ? fighter.Definition.FastFallSpeed : fighter.Definition.MaxFallSpeed));
                 if (fighter.FastFalling) vertical = -fighter.Definition.FastFallSpeed;
             }
             fighter.Velocity = new BattleVector(fighter.Velocity.X, vertical);
             // Persistent fields add displacement through the same swept collisions, not stored momentum.
-            vertical += externalVelocity.Y;
+            vertical = vertical * motionScale + externalVelocity.Y;
             float recoil = fighter.DamageRecoilRemaining > 0 ? fighter.DamageRecoilSpeed : 0;
             if (fighter.DamageRecoilRemaining > 0) fighter.DamageRecoilRemaining--;
-            fighter.Position += new BattleVector(fighter.Velocity.X + recoil + externalVelocity.X, vertical) * BattleRuleDefinition.TickSeconds;
+            fighter.Position += new BattleVector(fighter.Velocity.X * motionScale + recoil + externalVelocity.X, vertical) * BattleRuleDefinition.TickSeconds;
             fighter.Grounded = false; fighter.GroundPlatform = -1;
 
             // Swept AABB against solid platforms; one-way platforms only catch descending feet.

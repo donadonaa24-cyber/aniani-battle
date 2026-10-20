@@ -21,7 +21,7 @@ namespace AniBato.Tests
         private static void StartDown(BattleSimulation sim) => sim.Tick(new FrameInput(y: -1, pressed: InputButtons.Special), default);
         private static Projectile Place(BattleSimulation sim)
         {
-            StartDown(sim); for (int tick = 0; sim.Projectiles.Count == 0 && tick < 40; tick++) sim.Tick(default, default);
+            StartDown(sim); for (int tick = 0; sim.Projectiles.Count == 0 && tick < sim.P1.Definition.Special(SpecialSlot.Down).StartupFrames+5; tick++) sim.Tick(default, default);
             Assert.That(sim.Projectiles.Count, Is.GreaterThan(0)); return sim.Projectiles.Last();
         }
         [TestCase(0)] [TestCase(1)] [TestCase(2)] [TestCase(3)] [TestCase(4)] [TestCase(5)] [TestCase(6)] [TestCase(7)] [TestCase(8)]
@@ -91,7 +91,7 @@ namespace AniBato.Tests
         [Test]
         public void AkatsukiHasTwoTrapsAndCannotStartAThirdUntilOneIsConsumed()
         {
-            var sim = Create(7, 0); Place(sim); BattleTestFactory.Idle(sim, 40); StartDown(sim); BattleTestFactory.Idle(sim, 40);
+            var sim = Create(7, 0); Place(sim); BattleTestFactory.Idle(sim, 40); StartDown(sim); BattleTestFactory.Idle(sim, 80);
             Assert.That(sim.P1.PlacedCount, Is.EqualTo(2)); Assert.That(sim.Projectiles.Count, Is.EqualTo(2));
             StartDown(sim); Assert.That(sim.P1.Attack, Is.Null); Assert.That(sim.Projectiles.Count, Is.EqualTo(2));
             Assert.That(SpecialCooldownDisplay.Text(sim.P1, sim.Rules.CombatInput), Does.Contain("設置 2/2"));
@@ -113,7 +113,7 @@ namespace AniBato.Tests
             for (int count = 0; count < 2; count++)
             {
                 var down = new FrameInput(y: -1, pressed: InputButtons.Special);
-                sim.Tick(down, down); BattleTestFactory.Idle(sim, 40);
+                sim.Tick(down, down); BattleTestFactory.Idle(sim, 80);
             }
             Assert.That(sim.Projectiles.Count, Is.EqualTo(4));
             Assert.That(sim.P1.PlacedCount, Is.EqualTo(2)); Assert.That(sim.P2.PlacedCount, Is.EqualTo(2));

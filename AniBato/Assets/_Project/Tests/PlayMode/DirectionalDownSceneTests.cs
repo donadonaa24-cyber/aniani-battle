@@ -25,8 +25,9 @@ namespace AniBato.Tests
                 for (int tick = 0; tick < expected.StartupFrames + 1; tick++) Tick();
                 yield return null; view.RenderFrame(); Assert.That(view.UsesPaperSprite, Is.True);
                 var hud = Object.FindAnyObjectByType<HUDController>(); hud.SendMessage("LateUpdate");
-                var text = Object.FindObjectsByType<Text>().Single(t => t.name == "Player 1 HUD");
-                Assert.That(text.text, Does.Contain("特殊  N")); Assert.That(text.text, Does.Contain("↓")); Assert.That(text.text, Does.Contain("秒"));
+                foreach(var cooldown in Object.FindObjectsByType<SpecialCooldownHud>())cooldown.Refresh();
+                var text = Object.FindObjectsByType<Text>().Single(t => t.name == "P1 Special Status 1");
+                Assert.That(text.text, Does.Contain("↓ 特殊")); Assert.That(text.text, Does.Contain("秒"));
                 if (character == 3 || character == 7) Assert.That(text.text, Does.Contain("設置 1/"));
                 if (character == 0 || character == 4) Assert.That(body.color.b, Is.GreaterThan(.9f));
                 Capture("down_" + character + "_" + facing, false, "directional_down");

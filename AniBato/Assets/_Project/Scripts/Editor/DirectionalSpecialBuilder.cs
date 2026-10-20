@@ -12,7 +12,7 @@ namespace AniBato.EditorTools
         {
             for (int i = 0; i < roster.Length; i++)
             {
-                var data = roster[i]; if (data.DirectionalSpecialSchemaVersion >= 3) continue;
+                var data = roster[i]; if (data.DirectionalSpecialSchemaVersion >= 5) continue;
                 string path = "Assets/_Project/Data/" + data.name + "DirectionalDown.asset";
                 var asset = AssetDatabase.LoadAssetAtPath<AttackData>(path);
                 if (!asset)
@@ -27,8 +27,12 @@ namespace AniBato.EditorTools
                 }
                 if (i == 8 && data.DirectionalSpecialSchemaVersion >= 1 && data.DirectionalSpecialSchemaVersion < 3)
                 { var definition = asset.Definition; definition.SelfBuff.Channel = BuffChannel.MovementBoost; asset.Definition = definition; EditorUtility.SetDirty(asset); }
+                if (i == 3 || i == 7)
+                { var definition=asset.Definition;definition.StartupFrames=60;definition.ActiveFrames=1;definition.RecoveryFrames=18;
+                    definition.CooldownFrames=300;definition.Ability.PlacementLimit=2;
+                    definition.Validate();asset.Definition=definition;EditorUtility.SetDirty(asset); }
                 var slots = (AttackData[])data.Specials.Clone(); slots[(int)SpecialSlot.Down] = asset; data.Specials = slots;
-                data.DirectionalSpecialSchemaVersion = 3; EditorUtility.SetDirty(data);
+                data.DirectionalSpecialSchemaVersion = 5; EditorUtility.SetDirty(data);
             }
         }
         public static AttackDefinition Down(int character)
@@ -53,10 +57,11 @@ namespace AniBato.EditorTools
                     a.SelfEffectsOnComplete = true; a.SelfHealNormalHits = 1; a.CooldownFrames = 1200;
                     a.Ability = new AttackAbility { GroundOnly = true, Look = AbilityLook.Meal }; break;
                 case 3: case 7:
+                    a.StartupFrames=60;
                     a.Name = character == 3 ? "意識地雷" : "設置・罠カード"; a.SpawnProjectile = true; a.IsCloseRange = false;
-                    a.Hitbox = Box(.75f, 0, 1.2f, .4f); a.ProjectileLifetimeFrames = 1200; a.CooldownFrames = character == 3 ? 300 : 120;
+                    a.Hitbox = Box(.75f, 0, 1.2f, .4f); a.ProjectileLifetimeFrames = 1200; a.CooldownFrames = 300;
                     a.Ability = new AttackAbility { AllowZeroProjectileSpeed = true, ProjectileAtDamageFrame = true,
-                        GroundOnly = true, PlaceOnGround = true, ConsumePlacementOnHit = true, PlacementLimit = character == 3 ? 1 : 2,
+                        GroundOnly = true, PlaceOnGround = true, ConsumePlacementOnHit = true, PlacementLimit = 2,
                         ProjectileChannel = ProjectileChannel.Placed, Look = character == 3 ? AbilityLook.Mine : AbilityLook.TrapCard };
                     break;
                 case 8:

@@ -7,6 +7,7 @@ namespace AniBato.Game
     public sealed class StageGeometryData : ScriptableObject
     {
         public StagePlatform[] Platforms;
+        public int BlastZoneSchemaVersion;
         public float LeftBlastLine, RightBlastLine, BottomBlastLine;
         public BattleVector SpawnP1, SpawnP2;
         public StageGeometry ToGeometry() => new StageGeometry(Platforms, LeftBlastLine, RightBlastLine, BottomBlastLine, SpawnP1, SpawnP2);

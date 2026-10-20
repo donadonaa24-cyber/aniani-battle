@@ -24,6 +24,7 @@ namespace AniBato.Game
         {
             var attack = finished ? null : fighter.Attack;
             var art=paper?(paper.AbilityEffect(sample.State)??(attack==null?null:paper.AbilityEffect(attack.Definition.Ability.Look))):null;
+            if (paper && paper.SuppressNormalAttackOverlays && attack != null && attack.Definition.IsNormal) art=null;
             if (attack != null && (attack.Definition.Ability.SuperGuard || attack.Definition.Ability.Look == AbilityLook.Reading)) art = null;
             bool recovering = attack != null && attack.Definition.Recovery.Style != RecoveryStyle.None;
             if (recovering) art = null;
@@ -37,9 +38,25 @@ namespace AniBato.Game
                 artwork.transform.localScale=Vector3.one*art.ScaleFor(sample);
                 float turn=sample.AttackFrame/Mathf.Max(1,art.StepTicks)%2==0?-art.RockDegrees:art.RockDegrees;
                 artwork.transform.localRotation=Quaternion.Euler(0,0,turn);
+                if (attack != null && attack.AbilityChargeReleased && !art.Anticipating(sample) && !attack.Definition.SpawnProjectile)
+                {
+                    var box = attack.WorldHitbox(fighter); var size = art.VisibleSize;
+                    if (size.x <= 0 || size.y <= 0) size = artwork.sprite.bounds.size;
+                    artwork.transform.position = new Vector3(box.Center.X,box.Center.Y,0);
+                    artwork.transform.localRotation = Quaternion.identity;
+                    artwork.transform.localScale = new Vector3(box.Size.X/size.x,box.Size.Y/size.y,1);
+                }
+            }
+            else if (attack != null && attack.IsActive && attack.AbilityChargeReleased && attack.Definition.Ability.Look == AbilityLook.Rook)
+            {
+                var box = attack.WorldHitbox(fighter); artwork.enabled = true; artwork.sprite = PaperBurstSprite.Sprite;
+                artwork.color = new Color(.65f,.9f,1,.8f); artwork.sortingOrder = body.sortingOrder-1;
+                artwork.transform.position = new Vector3(box.Center.X,box.Center.Y,0);
+                artwork.transform.localRotation = Quaternion.identity;
+                artwork.transform.localScale = new Vector3(box.Size.X,box.Size.Y,1);
             }
             string text = "";
-            bool binary=artwork.enabled&&art.Anticipating(sample)&&!string.IsNullOrEmpty(art.AnticipationText);
+            bool binary=art!=null&&artwork.enabled&&art.Anticipating(sample)&&!string.IsNullOrEmpty(art.AnticipationText);
             if(binary)text=sample.AttackFrame/Mathf.Max(1,art.StepTicks)%2==0||string.IsNullOrEmpty(art.AlternateAnticipationText)?art.AnticipationText:art.AlternateAnticipationText;
             if (attack != null && art == null && !recovering)
             {

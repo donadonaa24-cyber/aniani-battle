@@ -35,7 +35,7 @@ namespace AniBato.Tests
                         if(index==5||index==6||index==8)
                         {
                             var art=data.PaperMotion.AbilityEffect(state);var effect=view.transform.Find("Paper Ability").GetComponent<SpriteRenderer>();
-                            Assert.That(effect.enabled,Is.EqualTo(!anticipation));if(effect.enabled)Assert.That(effect.sprite,Is.SameAs(art.Sprite));
+                            Assert.That(effect.enabled,Is.EqualTo(index!=8&&!anticipation));if(effect.enabled)Assert.That(effect.sprite,Is.SameAs(art.Sprite));
                         }
                         string name=data.Movement.Name+"_"+stage+"_"+facing;
                         if(anticipation&&!prep){prep=true;Capture(name+"_prepare",true,"rework_fourkeys");}

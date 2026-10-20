@@ -67,8 +67,8 @@ namespace AniBato.Battle
             int usesP1 = P1.UltimateUses, usesP2 = P2.UltimateUses;
             long attackP1 = P1.Attack == null ? 0 : P1.Attack.Id, attackP2 = P2.Attack == null ? 0 : P2.Attack.Id;
             P1.PlacedCount = projectileSystem.PlacedCount(P1); P2.PlacedCount = projectileSystem.PlacedCount(P2);
-            stateMachine.Step(P1, p1, Match.TickCount, Rules);
-            stateMachine.Step(P2, p2, Match.TickCount, Rules);
+            stateMachine.Step(P1, p1, Match.TickCount, Rules, Stage);
+            stateMachine.Step(P2, p2, Match.TickCount, Rules, Stage);
             EmitAttack(P1, attackP1); EmitAttack(P2, attackP2);
             EmitUltimate(P1, usesP1); EmitUltimate(P2, usesP2);
             if (CutInRemainingFrames > 0)

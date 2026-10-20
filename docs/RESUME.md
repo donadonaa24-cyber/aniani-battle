@@ -1,4 +1,26 @@
-## 最新（2026-10-20）：方向特殊・復帰・固有技をWindows/Webへ実装・全要求完了
+## 最新（2026-10-21）：先行ST・技改修の実Unity/Web検証完了、紙HUD・崖・サポートへ
+
+stamina_final_3でBuildAll成功／Edit773/773／Play96/96／Windows成功、失敗・スキップ0。最終648試合も調整版と同値。stamina_web_finalはWebGL成功128,081,814bytes／239.0197202秒、Windows設定復帰成功、445/445PNGの原画RGBA保持。内蔵ブラウザの実キーで通常ST100→93・特殊100→82、湊の溜め転移/青分解、王3部下の裂け目→号令→固定方向行進/退場を確認、警告エラー0。証跡docs/codex_logs/readable_stamina_verification.json、readable_stamina_requirements_audit.md。代表画像docs/screenshots/readable_stamina/とreadable_stamina_web/。対人バランス/美術の最終承認、実機パッド/通常Chrome・Edge/低メモリ端末は別範囲。
+
+次は追加指示書docs/codex_tasks/SUPPORT_ITEMS_LEDGE_AND_PAPER_HUD.md：検証済み先行差分の通常保存→紙台紙HUDと英語ルビ（白ST棒の保存参照不具合も修正）→崖つかまり9人原画/消費/復帰/下攻撃限定/居座り防止→8サポート即時取得/画像生成/出現・再使用管理。新規2システムと紙HUDは未実装。数値質問は回答待ち、独立したHUDから進める。各区切りで実Unity全4とWeb確認・引継ぎ・通常保存。
+
+Windows最新Build/stamina_final_3、Web Build/WebGL・8799。実行中の旧special_refinement_3は保持。現Assetsが正本。保護カバン・龍太承認v5・半減45判定・14/10ゲージを維持。以下の「実行中」は過去履歴であり、この冒頭が最新。
+
+## 最新（2026-10-21）：ST調整済み、全4工程のstamina_final_3を実行中
+
+基準648試合で透真84.7%/王81.9%、通常費用・回復を調整後648試合で透真61.1%/王66.0%。採用値と測定の限界はSTAMINA_BALANCE_20261021.md。通常費用7/8/12（透真/王）、基本4/5/8、龍太3/4/6。射撃を二重取りせず発射時の総額、特殊18、攻撃中回復0、硬直後0.6〜1秒待ちで地上14〜20/秒・空中2/秒。歩行と上復帰のST0救済は維持。HUDへ費用/回復待ち追加。通常最大3秒は足場端+10u/場外4u内側/上24/拘束36、最大時だけカメラ追跡の水平位置を足場までに抑え実際に画面外へ出す。復帰で戻れば通常追跡。
+
+実Unity：stamina_final_2 BuildAll/Windows成功、Edit767/770とPlay86/96。主に旧仕様の時刻/アッパー共有/効果の固定倍率の検査を厳密な新値・実判定との一致へ更新。実不具合として結衣の追加超必殺アートが特殊の文字表示を奪う問題と、原画なしの蓮超必殺でnull参照する箇所を修正。stamina_revised_focus Edit44/44、Play8/10まで確認し、残り2（王の新裂け目と投射のプール参照/結衣）の修正後に全4をstamina_final_3で実行中。旧tag2の画像はTestResults/stamina_final_2/capturesへ保管し過去の資料画像の自動上書きは戻した。新tag3は最初からTestResults/stamina_final_3/capturesへ。
+
+次：tag3の全件結果→必要な修理→finalize_readable_skills.cjsで採用/SHAと全4証跡→最終648試合（ANIBATO_BALANCE_LABEL=final）→実WebGL/Windows復帰→audit_webgl_padding.cjs→実ブラウザ→全要求/引継ぎ/通常commit/push。内蔵ブラウザ旧タブは閉じられており、更新後に新しく開く。まだcommit/push不可。作業ツリーに現在工程一式があり、破棄しない。
+
+## 履歴（2026-10-20）：追加演出・溜め・部下行進・設置・スタミナ再調整を作業中
+
+現main b12d006以降に未コミット差分あり。ユーザー追加指定はdocs/codex_tasks/CHARGED_TELEPORT_AND_COOLDOWN_HUD.mdに随時集約。上復帰1.5倍時間、湊/シロ0.5〜1秒溜め転移7.5〜12uと青い分解/白縦閃光、全特殊HUD、8人の溜め超必殺/龍太溜めバット、ピラミッドは下段へ、ロケット着弾爆発、王の既存3部下を同程度身長・1秒登場→号令→片側へ3秒横断速度→裂け目退場、場外±32/-16、射撃6/特殊18の発射時コスト、湊/暁の設置1秒+後隙0.3秒/各2個/CD5秒を実装中。裂け目と龍太3段目の蹴り2原画はbuilt-in image_gen生成済み、原本/全文プロンプトはart_source/king_marchとryuta_kick。龍太の通常オーバーレイのみ停止。通常最大3秒は確定KOではなく画面外へ大きく打ち出し復帰余地を残す追加設定。
+
+追加前の重点実Unityはreadable_focus_2 Edit97/97、王追加後readable_focus_3 Edit100/100。ただしその後の設置/射撃ST/蹴り/最大溜めは未検証。readable_skills_1/2のBuildAll成功。readable_skills_final/3/4はユーザー追加を取り込むため自身のタグのUnity/ランチャーだけ停止、全4成功の証跡ではない。最新の全4工程とWeb反映が必要。現在はさらに通常全攻撃をスタミナ消費へ変える再バランスを依頼され、基準版のCPU対戦測定→最強暫定候補→消費/回復調整→再測定の順で進める。Stageは共通地形SOを移行し、旧PhaseOneDefaults fixtureのblastlineは維持。通常半減45判定/14・10ゲージ/原画4枚と下空中1枚/承認龍太v5/保護カバンは維持。
+
+## 保存済み（2026-10-20）：b12d006以前の方向特殊・復帰・固有技の全要求完了
 
 コード66b5e0aを通常commit/push済み。特殊下9人、上復帰9人、透真/王/暁/龍太/千鶴の固有技改修、9人スタミナ、必要な原画と採用一覧、CD/HUDまで完了。暁の罠は相手だけに蓄積1、命中したカード消滅、各自2枚、未命中20秒。ガードでは消費しない。全要求対照はdocs/codex_logs/directional_requirements_audit.md、最終証跡はdirectional_specials_final_verification.json。
 

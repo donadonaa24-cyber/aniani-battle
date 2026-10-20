@@ -16,6 +16,8 @@ namespace AniBato.EditorTools
                 geometry.LeftBlastLine = original.LeftBlastLine; geometry.RightBlastLine = original.RightBlastLine;
                 geometry.BottomBlastLine = original.BottomBlastLine; geometry.SpawnP1 = original.SpawnP1; geometry.SpawnP2 = original.SpawnP2;
             }
+            if (geometry.BlastZoneSchemaVersion < 1)
+            { geometry.LeftBlastLine=-32;geometry.RightBlastLine=32;geometry.BottomBlastLine=-16;geometry.BlastZoneSchemaVersion=1; }
             original.SharedGeometry = geometry; EditorUtility.SetDirty(original); EditorUtility.SetDirty(geometry);
             var stages = new[] { original, Asset<StageData>("StageBoard"), Asset<StageData>("StageFestival") };
             string[] names = { "星の終わり", "推し駒Battle", "Battle à la carte" };

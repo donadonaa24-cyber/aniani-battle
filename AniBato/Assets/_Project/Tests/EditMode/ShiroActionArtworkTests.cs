@@ -68,20 +68,21 @@ namespace AniBato.Tests
         public void AlmaBinaryPreludeSwitchesAtActualDelayedDamageWindowAndEmpKeepsItsWindow()
         {
             var data=Setup.Character(4);var paper=data.PaperMotion;var emp=paper.AbilityEffect(AbilityLook.Emp);var alma=paper.AbilityEffect(AbilityLook.Alma);
-            Assert.That(data.Specials[0].Definition.StartupFrames,Is.EqualTo(18));Assert.That(data.Specials[0].Definition.ActiveFrames,Is.EqualTo(8));
+            Assert.That(data.Specials[0].Definition.StartupFrames,Is.EqualTo(12));Assert.That(data.Specials[0].Definition.ActiveFrames,Is.EqualTo(8));
             Assert.That(data.Specials[0].Definition.Hitbox.Size,Is.EqualTo(new BattleVector(6,4)));
             Assert.That(data.Specials[0].Definition.ParalysisFrames,Is.EqualTo(12));
-            Assert.That(data.Ultimate.Definition.StartupFrames,Is.EqualTo(24));Assert.That(data.Ultimate.Definition.DamageDelayFrames,Is.EqualTo(24));
+            Assert.That(data.Ultimate.Definition.StartupFrames,Is.EqualTo(30));Assert.That(data.Ultimate.Definition.DamageDelayFrames,Is.Zero);
+            Assert.That(data.Ultimate.Definition.AbilityCharge.MaximumFrames,Is.EqualTo(120));
             Assert.That(data.Ultimate.Definition.Hitbox.Size,Is.EqualTo(new BattleVector(9,5)));
             Assert.That(alma.AnticipationSprite,Is.Not.Null.And.Not.SameAs(alma.Sprite));
             Assert.That(alma.AnticipationText.Split('\n').Length,Is.EqualTo(4));
             Assert.That(alma.AnticipationText.All(c=>c=='0'||c=='1'||c==' '||c=='\n'),Is.True);
             Assert.That(alma.AlternateAnticipationText,Is.Not.EqualTo(alma.AnticipationText));
-            var sample=new AnimationSample{State=AnimationState.Ultimate,IsAttack=true,Startup=24,Active=36,Recovery=30,DamageDelay=24};
-            foreach(int frame in new[]{0,23,24,47}){sample.AttackFrame=frame;Assert.That(alma.Visible(sample),Is.True);Assert.That(alma.SpriteFor(sample),Is.SameAs(alma.AnticipationSprite));}
-            foreach(int frame in new[]{48,59,60,89}){sample.AttackFrame=frame;Assert.That(alma.Visible(sample),Is.True);Assert.That(alma.SpriteFor(sample),Is.SameAs(alma.Sprite));Assert.That(alma.Anticipating(sample),Is.False);}
-            sample.State=AnimationState.SpecialNeutral;sample.Startup=18;sample.Active=8;sample.DamageDelay=0;
-            foreach(int frame in new[]{0,17,18,25,26}){sample.AttackFrame=frame;Assert.That(emp.Visible(sample),Is.EqualTo(frame>=18&&frame<26));}
+            var sample=new AnimationSample{State=AnimationState.Ultimate,IsAttack=true,Startup=30,Active=36,Recovery=30,DamageDelay=0};
+            foreach(int frame in new[]{0,1,28,29}){sample.AttackFrame=frame;Assert.That(alma.Visible(sample),Is.True);Assert.That(alma.SpriteFor(sample),Is.SameAs(alma.AnticipationSprite));}
+            foreach(int frame in new[]{30,65,66,95}){sample.AttackFrame=frame;Assert.That(alma.Visible(sample),Is.True);Assert.That(alma.SpriteFor(sample),Is.SameAs(alma.Sprite));Assert.That(alma.Anticipating(sample),Is.False);}
+            sample.State=AnimationState.SpecialNeutral;sample.Startup=12;sample.Active=8;sample.DamageDelay=0;
+            foreach(int frame in new[]{0,11,12,19,20}){sample.AttackFrame=frame;Assert.That(emp.Visible(sample),Is.EqualTo(frame>=12&&frame<20));}
             sample.State=AnimationState.Hitstun;Assert.That(emp.Visible(sample),Is.False);
         }
         [Test]

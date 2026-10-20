@@ -1,0 +1,94 @@
+{
+  "entries": [
+    {
+      "id": "normal3_prepare",
+      "key": "ryuta",
+      "character": "龍太",
+      "pose": "normal3",
+      "phase": "prepare",
+      "label": "通常3段の前蹴り予備",
+      "version": 2,
+      "source": "art_source/ryuta_kick/prepare_v1.png",
+      "references": [
+        "art_source/paper_roster_action/ryuta/generated/normal1_impact_v3.png"
+      ],
+      "referenceRoles": [
+        "採用待機：直接の編集対象、容姿・部位実寸・倍率の基準"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit target/reference: the attached existing Ryuta anime game sprite. Create the ANTICIPATION key illustration for a powerful third-hit FRONT KICK, facing screen-right. Preserve EXACTLY this same boy: blond swept hair tied into a short low ponytail, red eyes, gold hoop earring, open black Japanese school uniform, untucked white shirt, loosened striped red tie, black trousers and black loafers. Keep the original anime cel-shading style, cream sticker outline, face identity, head/hair size and shoe size; same bodily proportions and illustration scale as the reference. Change pose: left supporting leg is planted with a slight knee bend, right knee is lifted high close to the chest to chamber a strong forward kick; right foot is clearly tucked under its knee, torso leans slightly back, both hands are natural closed defensive fists near chest with correct left/right anatomy. Show exactly two arms and two legs, each attached correctly. A readable strong preparation silhouette, no attack effect or motion lines. Full body including both shoes inside transparent canvas with clear padding, no cropping or ground. Keep reference canvas 1189x1323 if possible and head/shoe pixel sizes unchanged; do not enlarge a crouched character to fill the canvas. Actual transparent background. No text, aura, magic, impact, particles, weapon, extra limbs.\n",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "c27d6962ec56917ba6938d82f5cc12078e4384163b2086e3b9121ef595822bd1",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 243,
+          "top": 26,
+          "right": 948,
+          "bottom": 1270
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/ryuta_kick/prepare_packed.png",
+      "preparedSha256": "c09100e266b537861e09b2d0b4db3d2ec8f701548ac3790ffef40e81918ad1bf",
+      "offsetX": 57,
+      "offsetY": 58,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "promptFile": "art_source/ryuta_kick/prepare_prompt.txt",
+      "noResampling": true,
+      "unityVerifiedTag": "stamina_final_3"
+    },
+    {
+      "id": "normal3_impact",
+      "key": "ryuta",
+      "character": "龍太",
+      "pose": "normal3",
+      "phase": "impact",
+      "label": "通常3段の前蹴り",
+      "version": 4,
+      "source": "art_source/ryuta_kick/impact_v1.png",
+      "references": [
+        "art_source/ryuta_kick/prepare_v1.png",
+        "art_source/paper_roster_action/ryuta/generated/normal1_impact_v3.png"
+      ],
+      "referenceRoles": [
+        "編集対象。画像左の腰へ引いた右拳を同じ右肩から上げる。画像右の左拳は胸のガード"
+      ],
+      "prompt": "Use case: precise-object-edit. Input image 1 is Ryuta's newly approved-style kick preparation pose; image 2 is the original adopted character identity and scale reference. Make the IMPACT key illustration that follows image 1: a strong waist/chest-height straight FRONT KICK to screen-right. The same right leg that is raised in image 1 now extends fully forward toward screen-right, with a clearly shaped black loafer contacting the imaginary opponent; the sole/heel lead and the knee bends in a physically correct direction. His left supporting leg stays planted beneath/slightly behind his hips. Slight backward lean for balance, natural defensive closed fists near chest, exactly two arms and two legs, correctly attached. Full-body clean anime sprite with no added attack effects. Preserve the identical face, blond swept hair with short low ponytail, red eyes, gold hoop earring, black open school uniform, untucked white shirt, loosened striped red tie, black trousers and loafers; identical head/hair size and shoe size to both references. Maintain existing crisp anime cel shading and cream sticker outline. Keep 1189x1323 canvas and the character at the same illustration scale; place the torso left enough for the extended kicking foot to fit with padding. Actual transparent background, no ground/shadow, no text, streaks, glowing aura, impacts, weapons or particles. Preserve visible room around every extremity and do not crop or shrink the entire character to fit the kick.\n",
+      "tool": "built-in image_gen",
+      "status": "game_adopted_unapproved",
+      "sha256": "e37f3b17d0350c1fff2bffcc516b54b87e5238092caafc3629fd6eb32f7cab68",
+      "native": {
+        "width": 1189,
+        "height": 1323,
+        "bounds": {
+          "left": 44,
+          "top": 18,
+          "right": 1177,
+          "bottom": 1274
+        }
+      },
+      "artApproved": false,
+      "gameConnected": true,
+      "prepared": "art_source/ryuta_kick/impact_packed.png",
+      "preparedSha256": "6dab2a6834a7d97c3f8a364f359743d1b69d803c0a77e7e827fe369b91b293f0",
+      "offsetX": 57,
+      "offsetY": 54,
+      "sourceRgbaPreserved": true,
+      "rgbaWithinCanvasPreserved": true,
+      "croppedOutsideAlphaOnePixels": 0,
+      "promptFile": "art_source/ryuta_kick/impact_prompt.txt",
+      "noResampling": true,
+      "unityVerifiedTag": "stamina_final_3"
+    }
+  ],
+  "gameConnected": true,
+  "artApproved": false,
+  "noResampling": true,
+  "notes": "Third normal attack becomes a right front kick, with a chambered preparation. Stages 1/2 unchanged.",
+  "unityVerifiedTag": "stamina_final_3"
+}

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f04ae4ddab5441aaf7819b587e1ea, type: 3}
   m_Name: shiroCorePaperMotion
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
+  SummonRift: {fileID: 0}
+  SuppressNormalAttackOverlays: 0
   SchemaVersion: 3
   PerformanceSchemaVersion: 1
   Performance:
@@ -637,6 +639,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: ea4736d6f2a4b204693aad84ec0a99fe, type: 3}
     Scale: 2.179765
     Offset: {x: 0, y: 0}
+    VisibleSize: {x: 2.7525902, y: 1.4194803}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -654,6 +657,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: ac5d07deb02f6ff42987409ecac3f7d8, type: 3}
     Scale: 2.9245293
     Offset: {x: 0, y: 0}
+    VisibleSize: {x: 3.0774183, y: 1.494585}
     AnticipationSprite: {fileID: 21300000, guid: fd8f3a5d3dd4bef4cb7068082ecd1a5b, type: 3}
     AnticipationScale: 3.2387187
     UseAnticipationOffset: 0

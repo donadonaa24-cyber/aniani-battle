@@ -12,15 +12,23 @@ namespace AniBato.Battle
         public int VariantIndex { get; }
         public int DelayRemaining { get; private set; }
         public bool Landed { get; private set; }
+        public bool Exploded { get; private set; }
+        public int MarchAge { get; private set; }
+        public int MarchExitAge { get; private set; } = -1;
+        public bool RoyalMarch => Attack.Definition.ProjectileBehavior.Formation == ProjectileFormation.RoyalMarch;
+        public bool MarchCommand => RoyalMarch && MarchAge >= Attack.Definition.ProjectileBehavior.MarchSpawnFrames &&
+            MarchAge < Attack.Definition.ProjectileBehavior.MarchSpawnFrames + Attack.Definition.ProjectileBehavior.MarchCommandFrames;
         public bool Visible => DelayRemaining == 0;
-        public bool CanDamage => Visible && !Landed;
+        public bool CanDamage => Visible && (!Landed || Exploded) && (!RoyalMarch ||
+            MarchAge >= Attack.Definition.ProjectileBehavior.MarchSpawnFrames + Attack.Definition.ProjectileBehavior.MarchCommandFrames && MarchExitAge < 0);
         private readonly FighterState target;
         private readonly StageGeometry stage;
         private int wallIndex = -1;
         public int RemainingFrames { get; private set; }
         public BattleVector Velocity { get; private set; }
         internal int ContactCooldown;
-        public BattleRect Hitbox => new BattleRect(Position, Attack.Definition.Hitbox.Size);
+        public BattleRect Hitbox => new BattleRect(Position, RoyalMarch ? new BattleVector(Attack.Definition.ProjectileBehavior.MarchWidth(VariantIndex),
+            Attack.Definition.Hitbox.Size.Y) : Attack.Definition.Hitbox.Size);
         internal Projectile(FighterState owner, AttackInstance attack, FighterState target = null, StageGeometry stage = null, float offsetX = 0, int variantIndex = 0, BattleVector? fixedPosition = null, AttackInstance group = null, int delayFrames = 0)
         {
             Owner = owner; Attack = attack; Group=group??attack; this.target = target; this.stage = stage; VariantIndex = variantIndex;
@@ -46,7 +54,15 @@ namespace AniBato.Battle
             Velocity = new BattleVector(Facing * attack.Definition.ProjectileSpeed + Facing * attack.Definition.ProjectileLaunchVelocity.X,
                 attack.Definition.ProjectileLaunchVelocity.Y);
             var behavior=attack.Definition.ProjectileBehavior;
-            if(behavior.Formation!=ProjectileFormation.Default&&target!=null)
+            if (behavior.Formation == ProjectileFormation.RoyalMarch && stage != null)
+            {
+                var floor=stage[0].Bounds; float half=behavior.MarchWidth(variantIndex)*.5f;
+                float x=owner.Position.X+(variantIndex-1)*1.8f;
+                Position=new BattleVector(System.Math.Max(floor.Left+half,System.Math.Min(floor.Right-half,x)),floor.Top+attack.Definition.Hitbox.Size.Y*.5f);
+                RemainingFrames=behavior.MarchSpawnFrames+behavior.MarchCommandFrames+behavior.MarchTravelFrames+behavior.MarchExitFrames+4;
+                Velocity=default;
+            }
+            else if(behavior.Formation!=ProjectileFormation.Default&&target!=null)
             {
                 Position=ProjectileFormationMotion.Spawn(behavior,target.Position,variantIndex);
                 DelayRemaining=variantIndex*behavior.StaggerFrames; RemainingFrames+=DelayRemaining;
@@ -60,6 +76,7 @@ namespace AniBato.Battle
         internal void Step()
         {
             if (ContactCooldown > 0) ContactCooldown--;
+            if (RoyalMarch) { StepMarch(); return; }
             if(DelayRemaining>0)
             {
                 if(Attack.Definition.Ability.ProjectileChannel==ProjectileChannel.Aftermath&&Owner.Attack==Group&&Owner.IsFrozenThisTick)return;
@@ -75,24 +92,50 @@ namespace AniBato.Battle
             var previous=Position;
             Velocity = new BattleVector(Velocity.X, Velocity.Y - Attack.Definition.ProjectileGravity * BattleRuleDefinition.TickSeconds);
             Position += Velocity * BattleRuleDefinition.TickSeconds;
-            if(behavior.WallAfterLanding&&stage!=null&&Velocity.Y<0)
+            if((behavior.WallAfterLanding || behavior.ExplodeOnLanding)&&stage!=null&&Velocity.Y<0)
             {
                 float halfWidth=Hitbox.Size.X*.5f,halfHeight=Hitbox.Size.Y*.5f,best=float.NegativeInfinity;
                 for(int i=0;i<stage.CollisionPlatformCount;i++)
                 {
-                    if(!stage.IsActive(i))continue;var floor=stage[i].Bounds;
+                    if(!stage.IsActive(i) || behavior.MainPlatformOnly && i != 0)continue;var floor=stage[i].Bounds;
                     if(Position.X+halfWidth>floor.Left&&Position.X-halfWidth<floor.Right&&previous.Y-halfHeight>=floor.Top&&Position.Y-halfHeight<=floor.Top)
                         best=System.Math.Max(best,floor.Top);
                 }
                 if(!float.IsNegativeInfinity(best))
                 {
                     Position=new BattleVector(Position.X,best+halfHeight);Velocity=default;Landed=true;
-                    RemainingFrames=behavior.WallFrames;wallIndex=stage.AddSolid(Hitbox);return;
+                    if (behavior.ExplodeOnLanding)
+                    { Position=new BattleVector(Position.X,best); Explode(); }
+                    else {RemainingFrames=behavior.WallFrames;wallIndex=stage.AddSolid(Hitbox);} return;
                 }
             }
             RemainingFrames--;
         }
+        private void StepMarch()
+        {
+            MarchAge++; RemainingFrames--; var behavior=Attack.Definition.ProjectileBehavior;
+            if(MarchExitAge>=0)
+            { if(++MarchExitAge>=behavior.MarchExitFrames)RemainingFrames=0; return; }
+            if(MarchAge < behavior.MarchSpawnFrames+behavior.MarchCommandFrames)return;
+            var floor=stage[0].Bounds; float half=Hitbox.Size.X*.5f;
+            float edge=Facing>0?floor.Right-half:floor.Left+half;
+            float speed=floor.Size.X*BattleRuleDefinition.TickRate/behavior.MarchTravelFrames;
+            float next=Position.X+Facing*speed*BattleRuleDefinition.TickSeconds;
+            bool arrived=Facing>0?next>=edge:next<=edge;
+            Position=new BattleVector(arrived?edge:next,floor.Top+Hitbox.Size.Y*.5f);
+            Velocity=arrived?default:new BattleVector(Facing*speed,0);
+            if(arrived)MarchExitAge=0;
+        }
         internal void Dispose(){if(wallIndex>=0){stage.DeactivatePlatform(wallIndex);wallIndex=-1;}}
+        internal void Explode()
+        {
+            if (Exploded) return;
+            Exploded = Landed = true; Velocity = default;
+            var definition = Attack.Definition; definition.Hitbox = new BattleRect(default,definition.ProjectileBehavior.ExplosionSize);
+            if (stage!=null && Position.X+definition.Hitbox.Size.X*.5f>stage[0].Bounds.Left && Position.X-definition.Hitbox.Size.X*.5f<stage[0].Bounds.Right)
+                Position=new BattleVector(Position.X,System.Math.Max(Position.Y,stage[0].Bounds.Top+definition.Hitbox.Size.Y*.5f));
+            Attack.Definition = definition; RemainingFrames = definition.ProjectileBehavior.ExplosionFrames;
+        }
     }
 
     public sealed class ProjectileSystem
@@ -110,6 +153,7 @@ namespace AniBato.Battle
             var projectile = contact.Projectile;
             if(projectile==null)return;
             var behavior=projectile.Attack.Definition.ProjectileBehavior;
+            if (hit && behavior.ExplodeOnLanding && !projectile.Exploded) projectile.Explode();
             if(hit&&behavior.ConsumeOnHit){projectile.Dispose();projectiles.Remove(projectile);return;}
             if(behavior.RepeatIntervalFrames>0)
             { projectile.Attack.ForgetHit(contact.Target.PlayerIndex);projectile.ContactCooldown=behavior.RepeatIntervalFrames;return; }
@@ -150,15 +194,18 @@ namespace AniBato.Battle
             attack.ProjectileSpawned = true;
             bool normalSlot = attack.Definition.Ability.IndependentNormalProjectile;
             var channel = attack.Definition.Ability.ProjectileChannel;
-            if (attack.Definition.Ability.ReplaceOwnProjectiles)
-                RemoveWhere(p => p.Owner == owner && p.Attack.Definition.Ability.ProjectileChannel == channel &&
-                    (attack.Definition.IsUltimate || p.Attack.Definition.Ability.IndependentNormalProjectile == normalSlot));
             // A formation is one attack for the owner's limit and shared hit history.
             var instances = new HashSet<AttackInstance>();
             foreach (var shot in projectiles)
-                if (shot.Owner == owner && shot.Attack.Definition.Ability.ProjectileChannel == channel && shot.Attack.Definition.Ability.IndependentNormalProjectile == normalSlot) instances.Add(shot.Group);
+                if (!attack.Definition.Ability.ReplaceOwnProjectiles && shot.Owner == owner && shot.Attack.Definition.Ability.ProjectileChannel == channel && shot.Attack.Definition.Ability.IndependentNormalProjectile == normalSlot) instances.Add(shot.Group);
             int limit = attack.Definition.Ability.PlacementLimit > 0 ? attack.Definition.Ability.PlacementLimit : maximum;
             if (limit > 0 && instances.Count >= limit) return;
+            int cost=attack.Definition.IsNormal && channel!=ProjectileChannel.Shared ? 0 :
+                System.Math.Max(StaminaSystem.ProjectileCost(owner,attack.Definition),attack.PlannedStaminaCost);
+            if(cost>0&&!StaminaSystem.Spend(owner,cost))return;
+            if (attack.Definition.Ability.ReplaceOwnProjectiles)
+                RemoveWhere(p => p.Owner == owner && p.Attack.Definition.Ability.ProjectileChannel == channel &&
+                    (attack.Definition.IsUltimate || p.Attack.Definition.Ability.IndependentNormalProjectile == normalSlot));
             int requested = System.Math.Max(1, attack.Definition.Ability.ProjectileCount);
             for (int i = 0; i < requested; i++)
             {
@@ -170,6 +217,7 @@ namespace AniBato.Battle
                     if(i<requested-1)
                     {definition.DamageMode=AttackDamageMode.StatusOnly;definition.Knockback=default;definition.HitstunFrames=24;definition.HitstopFrames=3;}
                     member=new AttackInstance(-(attack.Id*32+i+1),definition,0,false);
+                    member.AbilityChargeReleased=attack.AbilityChargeReleased; member.AbilityRangeScale=attack.AbilityRangeScale;
                 }
                 projectiles.Add(new Projectile(owner, member, target, stage, offset, i, group:attack));
             }
@@ -198,6 +246,7 @@ namespace AniBato.Battle
             definition.ProjectileBehavior=new ProjectileBehaviorDefinition{RepeatIntervalFrames=effect.RepeatIntervalFrames};
             RemoveWhere(p=>p.Owner==owner&&p.Attack.Definition.Ability.ProjectileChannel==ProjectileChannel.Aftermath);
             var attack=new AttackInstance(-(source.Id*32+31),definition,0,false);
+            attack.AbilityChargeReleased=source.AbilityChargeReleased; attack.AbilityRangeScale=source.AbilityRangeScale;
             int delay=source.Definition.StartupFrames+source.Definition.ActiveFrames-source.Frame;
             projectiles.Add(new Projectile(owner,attack,stage:stage,fixedPosition:new BattleVector(x,top+effect.Size.Y*.5f),group:source,delayFrames:delay));
         }

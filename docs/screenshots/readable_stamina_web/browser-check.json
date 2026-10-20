@@ -1,0 +1,20 @@
+{
+  "buildTag": "stamina_web_final",
+  "nativeTag": "stamina_final_3",
+  "url": "http://127.0.0.1:8799/",
+  "browser": "ChatGPT in-app browser",
+  "viewport": "default 805x828; no override",
+  "input": "actual tab key input; P1 WASD/J/K, P, practice 2",
+  "observed": [
+    "title horizontal menu and all 9 selection cards",
+    "Touma normal shot 100 to 93 and drone 100 to 82",
+    "both players normal-cost and four cooldown cards",
+    "Minato up-special charge readout, blue fragmented silhouette and recovery",
+    "King summon 130 to 112 for all three minions",
+    "generated rifts/emergence, command balloon, march, owner retreat while minions continue forward, disappearance"
+  ],
+  "warningOrErrorCount": 0,
+  "logs": [],
+  "pausedPractice": true,
+  "notRechecked": "individual Chrome/Edge, physical gamepad, low-memory devices; all 9 full move coverage is native Unity"
+}

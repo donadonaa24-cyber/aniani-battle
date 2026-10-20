@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f04ae4ddab5441aaf7819b587e1ea, type: 3}
   m_Name: kingCorePaperMotion
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
+  SummonRift: {fileID: 21300000, guid: 3f6009fc05be4b14aac5475b720df7c5, type: 3}
+  SuppressNormalAttackOverlays: 0
   SchemaVersion: 3
   PerformanceSchemaVersion: 1
   Performance:
@@ -641,7 +643,7 @@ MonoBehaviour:
     - {x: 2.215591, y: 2.39772}
     - {x: 2.1479967, y: 2.343269}
     - {x: 2.1386085, y: 2.4258842}
-    Scale: 0.54161626
+    Scale: 0.75457627
     FitToHitbox: 1
     VisibleSize: {x: 2.215591, y: 2.39772}
     RotateWithVelocity: 0
@@ -654,6 +656,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 33a5624ab244be448a601c53d7b2898c, type: 3}
     Scale: 0.5895823
     Offset: {x: 0.85, y: 0.15}
+    VisibleSize: {x: 1.9020284, y: 2.0353394}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -671,6 +674,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: f39edeb0eed1cd74696a1ecc025774e9, type: 3}
     Scale: 0.7501258
     Offset: {x: 0.8, y: 0.55}
+    VisibleSize: {x: 1.7180218, y: 1.5997317}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -688,6 +692,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 33a5624ab244be448a601c53d7b2898c, type: 3}
     Scale: 0.5895823
     Offset: {x: 0.85, y: 0.15}
+    VisibleSize: {x: 1.9020284, y: 2.0353394}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -705,6 +710,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 33a5624ab244be448a601c53d7b2898c, type: 3}
     Scale: 0.5895823
     Offset: {x: 0.85, y: 0.15}
+    VisibleSize: {x: 1.9020284, y: 2.0353394}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0

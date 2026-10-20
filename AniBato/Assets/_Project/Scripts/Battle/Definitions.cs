@@ -12,6 +12,7 @@ namespace AniBato.Battle
         public string Name;
         public AttackAbility Ability;
         public RecoveryDefinition Recovery;
+        public AbilityChargeDefinition AbilityCharge;
         public ProjectileBehaviorDefinition ProjectileBehavior;
         public AftermathDefinition Aftermath;
         public AttackDamageMode DamageMode;
@@ -76,6 +77,7 @@ namespace AniBato.Battle
             SelfBuff.Validate();
             Ability.Validate();
             Recovery.Validate();
+            AbilityCharge.Validate();
             ProjectileBehavior.Validate(); Aftermath.Validate();
         }
     }

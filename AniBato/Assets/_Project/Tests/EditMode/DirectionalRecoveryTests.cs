@@ -54,7 +54,7 @@ namespace AniBato.Tests
         [TestCase(0)] [TestCase(1)] [TestCase(2)] [TestCase(3)] [TestCase(4)] [TestCase(5)] [TestCase(6)] [TestCase(7)] [TestCase(8)]
         public void AirborneReuseFailsUntilAnActualLandingEvenAfterCooldownEnds(int index)
         {
-            var sim = Create(index); Air(sim.P1, 0, 1000); Start(sim); BattleTestFactory.Idle(sim, 100);
+            var sim = Create(index); Air(sim.P1, 0, 1000); Start(sim); BattleTestFactory.Idle(sim, System.Math.Max(100,sim.P1.Attack.Definition.TotalFrames + 10));
             Assert.That(sim.P1.Attack, Is.Null); Assert.That(sim.P1.Grounded, Is.False); Assert.That(sim.P1.SpecialCooldown(SpecialSlot.Up), Is.Zero);
             Start(sim); Assert.That(sim.P1.Attack, Is.Null);
             Air(sim.P1, 0, 1.12f); sim.P1.Velocity = new BattleVector(0, -2); sim.Tick(default, default);
@@ -65,12 +65,12 @@ namespace AniBato.Tests
         public void RookRisesVerticallyBishopRisesDiagonallyAndFloatCanSteer(int side)
         {
             var rook = Create(1); var bishop = Create(5); Start(rook, side); Start(bishop, side);
-            BattleTestFactory.Idle(rook, 12); BattleTestFactory.Idle(bishop, 12);
+            BattleTestFactory.Idle(rook, 18); BattleTestFactory.Idle(bishop, 18);
             Assert.That(rook.P1.Position.X, Is.EqualTo(0)); Assert.That(rook.P1.Position.Y, Is.GreaterThan(102));
             Assert.That(bishop.P1.Position.X * side, Is.GreaterThan(1)); Assert.That(bishop.P1.Position.Y, Is.GreaterThan(102));
             foreach (int index in new[] { 0, 2, 7 })
             {
-                var sim = Create(index); Start(sim); BattleTestFactory.Idle(sim, 6);
+                var sim = Create(index); Start(sim); BattleTestFactory.Idle(sim, sim.P1.Attack.Definition.StartupFrames);
                 sim.Tick(new FrameInput(side), default); Assert.That(sim.P1.Velocity.X * side, Is.GreaterThan(0));
                 sim.Tick(new FrameInput(-side), default); Assert.That(sim.P1.Velocity.X * side, Is.LessThan(0));
                 sim.Tick(default, default); Assert.That(sim.P1.Velocity.X, Is.Zero); Assert.That(sim.P1.Velocity.Y, Is.GreaterThan(0));
@@ -79,11 +79,11 @@ namespace AniBato.Tests
         [Test]
         public void KingChangesDirectionForSecondBurstAndStopsDuringTheBriefGap()
         {
-            var sim = Create(6); Start(sim, 1); BattleTestFactory.Idle(sim, 6);
+            var sim = Create(6); Start(sim, 1); BattleTestFactory.Idle(sim, sim.P1.Attack.Definition.StartupFrames);
             float x = sim.P1.Position.X; Assert.That(sim.P1.Velocity.X, Is.GreaterThan(0));
-            while (sim.P1.Attack.Frame < sim.P1.Attack.Definition.StartupFrames + 8) sim.Tick(default, default);
+            while (sim.P1.Attack.Frame < sim.P1.Attack.Definition.StartupFrames + sim.P1.Attack.Definition.Recovery.BurstFrames) sim.Tick(default, default);
             Assert.That(sim.P1.Velocity, Is.EqualTo(default(BattleVector)));
-            while (sim.P1.Attack.Frame < sim.P1.Attack.Definition.StartupFrames + 15) sim.Tick(default, default);
+            while (sim.P1.Attack.Frame < sim.P1.Attack.Definition.StartupFrames + sim.P1.Attack.Definition.Recovery.SecondStartFrame - 1) sim.Tick(default, default);
             sim.Tick(new FrameInput(-1, 0), default); Assert.That(sim.P1.Velocity.X, Is.LessThan(0)); Assert.That(sim.P1.Velocity.Y, Is.Zero);
             Assert.That(sim.P1.Position.X, Is.GreaterThan(x));
         }
@@ -94,16 +94,16 @@ namespace AniBato.Tests
             var stage = new StageGeometry(new[] { new StagePlatform(new BattleRect(new BattleVector(0,-1), new BattleVector(20,2)), false),
                 new StagePlatform(new BattleRect(new BattleVector(3,10), new BattleVector(1,20)), false) }, -50,50,-50,new BattleVector(0,10),new BattleVector(-8,10));
             var sim = new BattleSimulation(c,c,r,stage); Start(sim);
-            for (int i=0;i<6;i++)sim.Tick(new FrameInput(1),default);
+            for (int i=0;i<30;i++)sim.Tick(new FrameInput(1),default);
             Assert.That(sim.P1.Position.X, Is.EqualTo(7.5f).Within(.001));
             var blockedStage = new StageGeometry(new[] {stage[0],new StagePlatform(new BattleRect(new BattleVector(7.5f,10),new BattleVector(1,20)),false)},
                 -50,50,-50,new BattleVector(0,10),new BattleVector(-8,10));
             var blocked = new BattleSimulation(c,c,r,blockedStage); Start(blocked);
-            for(int i=0;i<6;i++)blocked.Tick(new FrameInput(1),default);
+            for(int i=0;i<30;i++)blocked.Tick(new FrameInput(1),default);
             Assert.That(blocked.P1.Position.X,Is.GreaterThan(6));
             Assert.That(blocked.P1.Position.X,Is.LessThanOrEqualTo(7-c.HurtboxSize.X*.5f));
             Assert.That(blocked.P1.Hurtbox.Overlaps(blocked.Stage[1].Bounds),Is.False);
-            var free = Create(index); Start(free); for(int i=0;i<6;i++)free.Tick(new FrameInput(-1),default);
+            var free = Create(index); Start(free); for(int i=0;i<30;i++)free.Tick(new FrameInput(-1),default);
             Assert.That(free.P1.Position.X, Is.EqualTo(-7.5f).Within(.001));
         }
         [Test]
@@ -115,7 +115,7 @@ namespace AniBato.Tests
                 Assert.That(pose.Valid, Is.True); Assert.That(pose.Frames.Length, Is.EqualTo(1));
                 Assert.That(pose.Frames[0].pixelsPerUnit, Is.EqualTo(532.5893f).Within(.001));
             }
-            var sim = Create(6); Start(sim); BattleTestFactory.Idle(sim,100);
+            var sim = Create(6); Start(sim); BattleTestFactory.Idle(sim,150);
             Assert.That(SpecialCooldownDisplay.Text(sim.P1,sim.Rules.CombatInput),Does.Contain("↑ 着地待ち"));
         }
         [TestCase(3)] [TestCase(4)]
@@ -125,7 +125,7 @@ namespace AniBato.Tests
             {
                 if(x==0&&y==0)continue;
                 var sim=Create(index); Start(sim);
-                BattleTestFactory.Idle(sim,5); var before=sim.P1.Position;
+                BattleTestFactory.Idle(sim,29); var before=sim.P1.Position;
                 sim.Tick(new FrameInput(x,y),default);
                 var direction=RecoveryMotionSystem.Direction(x,y,default);
                 Assert.That(sim.P1.Position.X-before.X,Is.EqualTo(direction.X*7.5f).Within(.001));
@@ -149,9 +149,9 @@ namespace AniBato.Tests
         {
             var rules=Create(3).Rules; rules.EnableRingOut=true;
             var sim=BattleTestFactory.Create(false,rules,Setup.Character(3).ToDefinition());
-            Air(sim.P1,20,20); Start(sim); for(int i=0;i<6;i++)sim.Tick(new FrameInput(1),default);
+            Air(sim.P1,20,20); Start(sim); for(int i=0;i<30;i++)sim.Tick(new FrameInput(1),default);
             Assert.That(sim.P1.Position.X,Is.EqualTo(27.5f).Within(.001)); Assert.That(sim.P1.Mode,Is.EqualTo(FighterMode.KO));
-            var pass=Create(3); Air(pass.P1,8,1.1f); Start(pass); BattleTestFactory.Idle(pass,6);
+            var pass=Create(3); Air(pass.P1,8,1.1f); Start(pass); BattleTestFactory.Idle(pass,30);
             Assert.That(pass.P1.Position.Y,Is.GreaterThan(pass.Stage[2].Bounds.Top+pass.P1.Definition.HurtboxSize.Y));
         }
         [Test]

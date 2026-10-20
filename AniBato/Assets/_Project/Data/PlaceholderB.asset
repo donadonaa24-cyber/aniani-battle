@@ -66,12 +66,38 @@ MonoBehaviour:
         Speed: 0
         Distance: 0
         HorizontalSpeed: 0
+        MaximumChargeDistance: 0
+        MotionTimeScale: 0
+        MinimumChargeFrames: 0
+        MaximumChargeFrames: 0
         BurstFrames: 0
         SecondStartFrame: 0
+      AbilityCharge:
+        MinimumFrames: 0
+        MaximumFrames: 0
+        MaximumRangeScale: 0
+        MaximumStageWidthFraction: 0
+        MaximumKnockbackScale: 0
+        WidthOnly: 0
+        FormationOnly: 0
       ProjectileBehavior:
         Homing: 0
         ConsumeOnHit: 0
         WallAfterLanding: 0
+        MainPlatformOnly: 0
+        ExplodeOnLanding: 0
+        ExplosionSize:
+          X: 0
+          Y: 0
+        ExplosionFrames: 0
+        FormationVerticalSpread: 0
+        MarchSpawnFrames: 0
+        MarchCommandFrames: 0
+        MarchTravelFrames: 0
+        MarchExitFrames: 0
+        MarchWidth0: 0
+        MarchWidth1: 0
+        MarchWidth2: 0
         HomingSpeed: 0
         FormationRadius: 0
         VisualScale: 0
@@ -166,6 +192,14 @@ MonoBehaviour:
       UltimateGuardCost: 0
       GuardBreakFrames: 0
       GuardLockFrames: 0
+      NormalProjectileCost: 0
+      SpecialProjectileCost: 0
+      NormalFirstCost: 0
+      NormalSecondCost: 0
+      NormalThirdCost: 0
+      DirectionalNormalCost: 0
+      ChargeMinimumCost: 0
+      ChargeMaximumCost: 0
     CrouchHeightRatio: 0
     DiagonalThreshold: 0
     DiagonalFallbackVertical: 0
@@ -206,12 +240,38 @@ MonoBehaviour:
         Speed: 0
         Distance: 0
         HorizontalSpeed: 0
+        MaximumChargeDistance: 0
+        MotionTimeScale: 0
+        MinimumChargeFrames: 0
+        MaximumChargeFrames: 0
         BurstFrames: 0
         SecondStartFrame: 0
+      AbilityCharge:
+        MinimumFrames: 0
+        MaximumFrames: 0
+        MaximumRangeScale: 0
+        MaximumStageWidthFraction: 0
+        MaximumKnockbackScale: 0
+        WidthOnly: 0
+        FormationOnly: 0
       ProjectileBehavior:
         Homing: 0
         ConsumeOnHit: 0
         WallAfterLanding: 0
+        MainPlatformOnly: 0
+        ExplodeOnLanding: 0
+        ExplosionSize:
+          X: 0
+          Y: 0
+        ExplosionFrames: 0
+        FormationVerticalSpread: 0
+        MarchSpawnFrames: 0
+        MarchCommandFrames: 0
+        MarchTravelFrames: 0
+        MarchExitFrames: 0
+        MarchWidth0: 0
+        MarchWidth1: 0
+        MarchWidth2: 0
         HomingSpeed: 0
         FormationRadius: 0
         VisualScale: 0
@@ -309,6 +369,11 @@ MonoBehaviour:
   MoveSetSchemaVersion: 0
   DirectionalSpecialSchemaVersion: 0
   RecoverySchemaVersion: 0
+  AbilityTempoSchemaVersion: 0
+  RoyalMarchSchemaVersion: 0
+  ProjectileEconomySchemaVersion: 0
+  AttackStaminaSchemaVersion: 0
+  KickSchemaVersion: 0
   RefinementSchemaVersion: 0
   ActionArtworkSchemaVersion: 0
   DirectionalNormals: []

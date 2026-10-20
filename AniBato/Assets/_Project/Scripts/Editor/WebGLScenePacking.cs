@@ -89,6 +89,7 @@ namespace AniBato.EditorTools
                 if(c.HeavyDamage?.Frames!=null)c.HeavyDamage.Frames=c.HeavyDamage.Frames.Select(s=>(Sprite)Copy(s)).ToArray();
                 if(c.Charging?.Frames!=null)c.Charging.Frames=c.Charging.Frames.Select(s=>(Sprite)Copy(s)).ToArray();
                 if(c.UpRecovery?.Frames!=null)c.UpRecovery.Frames=c.UpRecovery.Frames.Select(s=>(Sprite)Copy(s)).ToArray();
+                c.SummonRift=(Sprite)Copy(c.SummonRift);
                 c.Sprite=(Sprite)Copy(c.Sprite);c.RiceBall=(Sprite)Copy(c.RiceBall);c.Mogu=(Sprite)Copy(c.Mogu);c.CurryWave=(Sprite)Copy(c.CurryWave);
                 if(c.Projectiles!=null)foreach(var art in c.Projectiles)
                 { art.Sprite=(Sprite)Copy(art.Sprite);if(art.Variants!=null)art.Variants=art.Variants.Select(s=>(Sprite)Copy(s)).ToArray(); }

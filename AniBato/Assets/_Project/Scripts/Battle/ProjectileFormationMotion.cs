@@ -13,7 +13,7 @@ namespace AniBato.Battle
                     index % 3 == 1 ? new BattleVector(radius,radius*.55f) : new BattleVector(0,radius);
                 return target + offset;
             }
-            return target + new BattleVector(index % 2 == 0 ? -radius : radius, 0);
+            return target + new BattleVector(index % 2 == 0 ? -radius : radius, (index - 1) * behavior.FormationVerticalSpread);
         }
         public static BattleVector Toward(BattleVector from, BattleVector target, float speed)
         {

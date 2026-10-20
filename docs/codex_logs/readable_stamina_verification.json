@@ -1,0 +1,43 @@
+{
+  "tag": "stamina_final_3",
+  "buildAll": {
+    "success": true,
+    "sha256": "5eed97cf5d2fc8f8ebe3e1ae1635af525736674e47102d7fdd72ff58cfccee36"
+  },
+  "edit": {
+    "total": 773,
+    "passed": 773,
+    "failed": 0,
+    "sha256": "cd4db4ee3fdbbbf5ae31e9dd0e39564b5cf3c97714fa3d400a8affe089a9cdd6"
+  },
+  "play": {
+    "total": 96,
+    "passed": 96,
+    "failed": 0,
+    "sha256": "16fbe7112dedf741c8d2b02ab7cae25528ef23c48a8165ca81888292f1b07102"
+  },
+  "windows": {
+    "success": true,
+    "sha256": "44daf59a8b70dcb5afe6124dcb3b7801ea7e9d064f7d70b1ecef3f2a41423582"
+  },
+  "artwork": {
+    "kick": "art_source/ryuta_kick/adoption.json",
+    "rift": "art_source/king_march/adoption.json",
+    "artApproved": false
+  },
+  "baseline": "docs/codex_logs/stamina_baseline.json",
+  "tuning": "docs/codex_logs/stamina_final.json",
+  "notes": "All stages actually executed on this tag. No personal absolute paths. Existing illustration versions retained.",
+  "web": {
+    "tag": "stamina_web_final",
+    "success": true,
+    "bytes": 128081814,
+    "durationSeconds": 239.0197202,
+    "restoredWindows": true,
+    "nativePixelsPreserved": 445,
+    "nativePixelsTotal": 445,
+    "pixelReport": "docs/codex_logs/readable_stamina_web_pixels.json",
+    "browserReport": "docs/screenshots/readable_stamina_web/browser-check.json",
+    "browserWarningsAndErrors": 0
+  }
+}

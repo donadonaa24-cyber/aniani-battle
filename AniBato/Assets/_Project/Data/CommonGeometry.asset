@@ -37,9 +37,10 @@ MonoBehaviour:
         X: 7
         Y: 0.35
     OneWay: 1
-  LeftBlastLine: -24
-  RightBlastLine: 24
-  BottomBlastLine: -10
+  BlastZoneSchemaVersion: 1
+  LeftBlastLine: -32
+  RightBlastLine: 32
+  BottomBlastLine: -16
   SpawnP1:
     X: -5
     Y: 1.1

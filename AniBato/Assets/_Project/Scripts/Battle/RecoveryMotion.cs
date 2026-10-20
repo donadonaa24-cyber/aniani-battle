@@ -8,14 +8,24 @@ namespace AniBato.Battle
     {
         public RecoveryStyle Style;
         public float Speed, Distance, HorizontalSpeed;
+        public float MaximumChargeDistance;
+        public float MotionTimeScale;
+        public int MinimumChargeFrames, MaximumChargeFrames;
         public int BurstFrames, SecondStartFrame;
+        public bool ChargedTeleport => Style == RecoveryStyle.DirectionalTeleport && MinimumChargeFrames > 0;
+        public float DistanceForCharge(int frames) => !ChargedTeleport ? Distance : Distance + (MaximumChargeDistance - Distance) *
+            Math.Max(0f, Math.Min(1f, (frames - MinimumChargeFrames) / (float)(MaximumChargeFrames - MinimumChargeFrames)));
         public bool IgnoresGravity => Style == RecoveryStyle.Float || Style == RecoveryStyle.DoubleBurst;
         public void Validate()
         {
             if (Style == RecoveryStyle.None) return;
             if (Speed < 0 || Distance < 0 || HorizontalSpeed < 0 || !Finite(Speed) || !Finite(Distance) || !Finite(HorizontalSpeed) ||
+                !Finite(MotionTimeScale) || MotionTimeScale < 0 || MotionTimeScale > 1 ||
                 Style == RecoveryStyle.DirectionalTeleport && Distance <= 0 ||
                 Style != RecoveryStyle.DirectionalTeleport && Speed <= 0 ||
+                MinimumChargeFrames < 0 || MaximumChargeFrames < 0 ||
+                MinimumChargeFrames > 0 && (Style != RecoveryStyle.DirectionalTeleport || MaximumChargeFrames <= MinimumChargeFrames ||
+                    !Finite(MaximumChargeDistance) || MaximumChargeDistance < Distance) ||
                 Style == RecoveryStyle.DoubleBurst && (BurstFrames < 1 || SecondStartFrame <= BurstFrames))
                 throw new ArgumentException("復帰の方向・速さ・持続が不正です。");
         }
@@ -23,6 +33,24 @@ namespace AniBato.Battle
     }
     public static class RecoveryMotionSystem
     {
+        public static bool IsCharging(FighterState self) => self.Attack != null && self.Attack.Definition.Recovery.ChargedTeleport &&
+            !self.Attack.RecoveryStarted && self.Attack.Frame < self.Attack.Definition.StartupFrames;
+
+        // Called only on unfrozen action ticks. A quick tap still commits to the minimum charge.
+        internal static bool Charge(FighterState self, in FrameInput input)
+        {
+            if (!IsCharging(self)) return false;
+            var attack = self.Attack; var recovery = attack.Definition.Recovery;
+            attack.RecoveryChargeFrames++;
+            attack.RecoveryDirection = Direction(input.X, input.Y, attack.RecoveryDirection);
+            self.Velocity = default;
+            attack.Frame = Math.Min(attack.RecoveryChargeFrames, attack.Definition.StartupFrames - 1);
+            bool waiting = attack.RecoveryChargeFrames < recovery.MinimumChargeFrames ||
+                input.IsHeld(InputButtons.Special) && attack.RecoveryChargeFrames < recovery.MaximumChargeFrames;
+            // The caller advances to the first active frame on release.
+            if (!waiting) attack.Frame = attack.Definition.StartupFrames - 1;
+            return waiting;
+        }
         public static BattleVector Direction(float x, float y, BattleVector fallback)
         {
             if (Math.Abs(x) + Math.Abs(y) < .2f) return fallback;
@@ -42,7 +70,9 @@ namespace AniBato.Battle
                 if (recovery.Style == RecoveryStyle.DirectionalTeleport)
                 {
                     var direction = Direction(input.X, input.Y, attack.RecoveryDirection);
-                    self.Position = Destination(self, direction * recovery.Distance, stage); self.Velocity = default;
+                    attack.RecoveryOrigin = self.Position;
+                    self.Position = Destination(self, direction * recovery.DistanceForCharge(attack.RecoveryChargeFrames), stage);
+                    attack.RecoveryDestination = self.Position; self.Velocity = default;
                 }
                 else if (recovery.Style == RecoveryStyle.VerticalLaunch)
                     self.Velocity = new BattleVector(0, recovery.Speed);

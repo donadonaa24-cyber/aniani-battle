@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3f04ae4ddab5441aaf7819b587e1ea, type: 3}
   m_Name: yuiCorePaperMotion
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperCharacterMotion
+  SummonRift: {fileID: 0}
+  SuppressNormalAttackOverlays: 0
   SchemaVersion: 3
   PerformanceSchemaVersion: 1
   Performance:
@@ -637,6 +639,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 98f1df418d21aeb4d8263263bb4e688b, type: 3}
     Scale: 0.9947788
     Offset: {x: 1.05, y: 0.15}
+    VisibleSize: {x: 1.3068231, y: 1.0533445}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -654,6 +657,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 833c3198da27ff54ea9c81543f3fdd9e, type: 3}
     Scale: 0.73348176
     Offset: {x: 1.05, y: 0.15}
+    VisibleSize: {x: 2.4540486, y: 1.1678792}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -671,6 +675,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 98f1df418d21aeb4d8263263bb4e688b, type: 3}
     Scale: 0.9947788
     Offset: {x: 1.05, y: 0.15}
+    VisibleSize: {x: 1.3068231, y: 1.0533445}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -688,6 +693,7 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 98f1df418d21aeb4d8263263bb4e688b, type: 3}
     Scale: 0.9947788
     Offset: {x: 1.05, y: 0.15}
+    VisibleSize: {x: 1.3068231, y: 1.0533445}
     AnticipationSprite: {fileID: 0}
     AnticipationScale: 1
     UseAnticipationOffset: 0
@@ -700,3 +706,21 @@ MonoBehaviour:
     DuringRecovery: 1
     StepTicks: 6
     RockDegrees: 3
+  - State: 14
+    Look: 0
+    Sprite: {fileID: 21300000, guid: 833c3198da27ff54ea9c81543f3fdd9e, type: 3}
+    Scale: 0.73348176
+    Offset: {x: 1.05, y: 0.15}
+    VisibleSize: {x: 2.4540486, y: 1.1678792}
+    AnticipationSprite: {fileID: 0}
+    AnticipationScale: 1
+    UseAnticipationOffset: 0
+    UnmirroredArtwork: 0
+    AnticipationOffset: {x: 0, y: 0}
+    AnticipationText: 
+    AlternateAnticipationText: 
+    AnticipationTextSize: 0.08
+    DuringStartup: 0
+    DuringRecovery: 0
+    StepTicks: 6
+    RockDegrees: 0
