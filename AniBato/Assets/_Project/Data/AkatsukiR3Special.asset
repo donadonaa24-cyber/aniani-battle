@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AkatsukiR3Special
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u30AB\u30FC\u30C9\u6295\u3052"
     Ability:
       Motion: 0

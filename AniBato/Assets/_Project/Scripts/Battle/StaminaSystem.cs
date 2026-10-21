@@ -64,7 +64,7 @@ namespace AniBato.Battle
             if (fighter.StaminaRejectedRemaining > 0) fighter.StaminaRejectedRemaining--;
             if (fighter.GuardLockRemaining > 0) fighter.GuardLockRemaining--;
             var data = fighter.Definition.Stamina;
-            if (!data.Enabled || fighter.HitstopRemaining > 0 || fighter.Mode == FighterMode.KO) return;
+            if (!data.Enabled || fighter.HitstopRemaining > 0 || fighter.Mode == FighterMode.KO || LedgeSystem.Attached(fighter)) return;
             if (fighter.Mode == FighterMode.Guard)
             {
                 fighter.StaminaUnits = Math.Max(0, fighter.StaminaUnits - data.GuardDrainPerSecond);

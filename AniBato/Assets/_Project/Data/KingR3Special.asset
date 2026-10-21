@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: KingR3Special
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u738B\u5909\u8EAB\u30FB\u90E8\u4E0B\u62DB\u96C6"
     Ability:
       Motion: 0

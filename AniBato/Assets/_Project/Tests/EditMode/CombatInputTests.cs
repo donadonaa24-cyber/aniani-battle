@@ -155,7 +155,8 @@ namespace AniBato.Tests
         public void CurrentRulesAndTutorialRequireOnlyCurrentAvailableInputs()
         {
             var r = AssetDatabase.LoadAssetAtPath<BattleRules>("Assets/_Project/Data/BattleRules.asset").ToDefinition();
-            Assert.That(r.SchemaVersion, Is.EqualTo(12)); Assert.That(r.CombatInput.SingleAerialNormal && r.CombatInput.FlowingAerialNormal && r.CombatInput.SingleSpecial && r.CombatInput.NormalClashes, Is.True);
+            Assert.That(r.SchemaVersion, Is.EqualTo(14)); Assert.That(r.CombatInput.SingleAerialNormal && r.CombatInput.FlowingAerialNormal && r.CombatInput.SingleSpecial && r.CombatInput.NormalClashes, Is.True);
+            Assert.That(r.Ledge.Enabled,Is.True);Assert.That(r.Ledge.MaximumHoldFrames,Is.EqualTo(300));
             Assert.That(r.CombatInput.UpRecoveryEnabled, Is.True);
             Assert.That(r.CombatInput.DownSpecialEnabled, Is.True);
             var sim = BattleTestFactory.Create(false, r, Setup.Characters[0].ToDefinition()); var t = new TutorialSession { Step = TutorialStep.Directional };

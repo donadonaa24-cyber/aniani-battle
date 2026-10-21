@@ -64,6 +64,7 @@ namespace AniBato.Battle
             if (self.Mode != FighterMode.Recovery) recoveryQueued = false;
             // Let stun/hitstop finish; do not generate hidden buffered defenses during freezes.
             if (self.HitstopRemaining > 0 || self.ParalysisRemaining > 0) return default;
+            if(self.Mode==FighterMode.LedgeHang) return new FrameInput(-self.LedgeSide);
             if (samples > Definition.ReactionFrames && self.Position.X >= left && self.Position.X <= right &&
                 (self.HitstunRemaining == sim.Rules.InputBufferFrames || self.Mode == FighterMode.Recovery && self.ActionFrames > 0 && self.ActionFrames <= sim.Rules.InputBufferFrames && !recoveryQueued) &&
                 Math.Abs(seen.Position.X - self.Position.X) < Definition.MediumDistance &&

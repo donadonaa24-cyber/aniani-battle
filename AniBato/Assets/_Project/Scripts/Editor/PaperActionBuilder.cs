@@ -46,6 +46,8 @@ namespace AniBato.EditorTools
                 }
                 poses.Add(pose);
             }
+            if(!covered.Contains(AnimationState.LedgeHang))
+            { poses.Add(PaperLedgeBuilder.HangingPose(2));covered.Add(AnimationState.LedgeHang); }
             foreach (AnimationState state in Enum.GetValues(typeof(AnimationState)))
                 if (!covered.Contains(state)) throw new InvalidOperationException("紙ポーズが未対応です: " + state);
             data.Poses = poses.ToArray();

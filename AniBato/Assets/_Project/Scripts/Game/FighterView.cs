@@ -96,6 +96,8 @@ namespace AniBato.Game
             UsesAnimationSprites = character.Animations && character.Animations.TrySprite(sample, out sprite);
             PaperPose paperPose = null; Sprite paperSprite = null;
             UsesPaperSprite = character.PaperMotion && character.PaperMotion.TrySprite(sample, fighter.LastDamageLostHeart, out paperSprite, out paperPose);
+            bool hanging=fighter.Mode==FighterMode.LedgeHang && !runner.Simulation.Match.IsFinished && character.PaperMotion && character.PaperMotion.LedgeHang;
+            if(hanging) { paperSprite=character.PaperMotion.LedgeHang; paperPose=null; UsesPaperSprite=true; }
             if (recovering && character.PaperMotion && character.PaperMotion.UpRecovery != null && character.PaperMotion.UpRecovery.Valid)
             { paperPose = character.PaperMotion.UpRecovery; paperSprite = paperPose.Frames[0]; UsesPaperSprite = true; }
             if (UsesPaperSprite) { sprite = paperSprite; UsesAnimationSprites = true; }
@@ -168,6 +170,13 @@ namespace AniBato.Game
             if (Time.unscaledTime < flashUntil && Mathf.FloorToInt(Time.unscaledTime * 40) % 2 == 0)
                 body.color = UsesAnimationSprites ? new Color(1, 1, 1, presentation.SpriteHitFlashOpacity) : Color.white;
             headY += chargePose.Apply(body, fighter, runner.Simulation.Rules.Charge);
+            if(hanging)
+            {
+                body.transform.localRotation=Quaternion.identity; body.transform.localScale=Vector3.one;
+                body.flipX=fighter.Facing<0;
+                body.transform.localPosition=new Vector3(fighter.LedgePoint.X-position.X-fighter.LedgeSide*.06f,fighter.LedgePoint.Y-position.Y,0);
+                headY=body.bounds.max.y;
+            }
             bool generatedTransformation=UsesPaperSprite&&paperPose!=null&&paperPose.Frames.Length==2&&
                 paperPose.Frames[1]==body.sprite&&(paperPose.Key=="special"||paperPose.Key=="super");
             abilityCue.Apply(fighter, body, runner.Simulation.Match.IsFinished,UsesPaperSprite?character.PaperMotion:null,sample,generatedTransformation);

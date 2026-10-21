@@ -79,10 +79,12 @@ namespace AniBato.Battle
             }
             AbilityMotionSystem.Step(P1, P2, Stage); AbilityMotionSystem.Step(P2, P1, Stage);
             RecoveryMotionSystem.Step(P1, p1, Stage); RecoveryMotionSystem.Step(P2, p2, Stage);
+            LedgeSystem.JumpCarry(P1,p1,Rules.Ledge); LedgeSystem.JumpCarry(P2,p2,Rules.Ledge);
             // Sample both fields before moving either fighter, so player order cannot change the pull.
             var pullP1 = ProjectileAttractionSystem.Velocity(P1, Projectiles);
             var pullP2 = ProjectileAttractionSystem.Velocity(P2, Projectiles);
             movement.Step(P1, p1, Stage, Rules, pullP1); movement.Step(P2, p2, Stage, Rules, pullP2);
+            LedgeSystem.TryCatch(P1,p1,Stage,Rules); LedgeSystem.TryCatch(P2,p2,Stage,Rules);
             projectileSystem.Step(P1, P2, Rules.ProjectileLimitPerOwner, Stage);
             if (Rules.CombatInput.NormalClashes)
             { clash.Resolve(P1, P2, Projectiles, Match.TickCount, Rules.CombatInput, events); projectileSystem.RemoveClashed(); }

@@ -321,3 +321,11 @@ EMPの切り絵の輪、ALMA接続の空枠、六角形の核と左右へ広が�
 内蔵image_genで8サポートと本・銀・歩・財布・矢・紙羽根バリアの計14素材候補を制作。咲と花はv1の等身が高いためゲームの等身に近づけたv2を候補にする。art_source/paper_support_items/progress.jsonへ原画・全文条件・参照役割・SHA・未接続状態を保存。カードと次元の裂け目は既存の生成済み採用素材の再利用を予定。未実装のため現在のAssetsにはコピーしていない。
 
 両群の原画は真の透過PNG。PNGをリサイズ・描画加工せず保存し、イラスト確認/追加予定_未実装/の日本語名コピーは同一SHA。監査art_source/support_and_ledge_candidate_audit.json、再現tools/verify/audit_support_candidates.cjs。旧候補も保持。接続後には部位寸法・手の左右・実接点・ゲーム/Web梱包の別監査が必要。
+### 崖つかまり9人：ユーザー指定Aの片手原画（2026-10-22）
+全9人の片手全身原画を内蔵image_genで生成。最終の指配置は、ユーザーが比較図を見て質問の再表示後に回答した「A：親指が画面左」を採用した。先のB回答/画像右の案は取り消し。握った4本指の内側が見える見せ方を維持する。これは具体的な形の選択記録であり、左右の解剖学の自動判定ではない。
+
+生成済みA候補を変更せず明示名hang_user_A_v1.pngへ保存した。原本・元の全文プロンプトと選択後の追記はart_source/paper_ledge/、各9人の参照先とSHAはprogress.json。基準reference_user_A.pngは透真のA原本から切り出した原寸の一部。拡大手元一覧は確認用の整数2倍で、ゲーム素材の編集ではない。湊は義手、シロは前脚、蓮/結衣はミトン。その他の顔・服・身体・脚の寸法を保持。カバン予備と承認済み龍太被弾v5は未変更。
+
+pack_ledge_art.cjsは原寸RGBAを1304×1450の透過固定枠へそのままコピーし、PPU532.5893と個別の手支点で表示。adoption.jsonのhandPattern=A/ thumbSide=image-left/ userShapeConfirmedはBuilderとテストでも照合し、Bを誤採用しない。最終選択はselect_ledge_left_grips.cjs。採用外の候補はart_source/rejected/へローカル保管し、ゲームと日本語採用フォルダに混ぜない。画像の目視、元RGBAの監査、動作検証は別に記録する。
+
+8サポートは引き続き未接続。美桜の候補のみ六本指を直したsupport_v2へ変更、他の候補は既存採用候補を維持。原画14候補/全文条件/参照/SHAsは同progress/adoption.json、出典はdocs/art_reference/support_items/sources.json。サポート効果や画面表示の実装が完成した記録ではない。

@@ -10,6 +10,7 @@ namespace AniBato.Battle
             var source = contact.Attacker;
             var target = contact.Target;
             if (target.HeartRecoveryRemaining > 0) return;
+            LedgeSystem.Interrupt(target);
             int beforeHearts = target.Hearts;
             var attack = contact.Attack;
             if (target.Mode == FighterMode.Guard && attack.Definition.IsUltimate &&

@@ -38,6 +38,12 @@ namespace AniBato.EditorTools
                     bindings.Add(binding);
                 }
             }
+            // Preserve legacy pixel sheets; the paper roster supplies the dedicated hanging illustration.
+            if(!bindings.Any(b=>b.State==AniBato.Presentation.AnimationState.LedgeHang))
+            {
+                var hanging=bindings.Single(b=>b.State==AniBato.Presentation.AnimationState.Jump);
+                hanging.State=AniBato.Presentation.AnimationState.LedgeHang;bindings.Add(hanging);
+            }
             foreach (AniBato.Presentation.AnimationState state in Enum.GetValues(typeof(AniBato.Presentation.AnimationState)))
                 if (!bindings.Any(binding => binding.State == state)) throw new InvalidOperationException("Missing animation state: " + state);
             string assetPath = "Assets/_Project/Data/" + character + "AnimationSet.asset";

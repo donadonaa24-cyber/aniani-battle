@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GroundNormal3
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u5730\u4E0A3\u6BB5"
     Ability:
       Motion: 0

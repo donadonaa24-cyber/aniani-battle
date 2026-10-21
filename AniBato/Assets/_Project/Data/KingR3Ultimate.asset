@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: KingR3Ultimate
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u738B\u5C06\u30FB\u99D2\u8ECD\u52E2\u7DCF\u653B\u6483"
     Ability:
       Motion: 0
@@ -73,6 +74,13 @@ MonoBehaviour:
         Y: 0
       ExplosionFrames: 0
       FormationVerticalSpread: 1.8
+      MarchSpawnFrames: 0
+      MarchCommandFrames: 0
+      MarchTravelFrames: 0
+      MarchExitFrames: 0
+      MarchWidth0: 0
+      MarchWidth1: 0
+      MarchWidth2: 0
       HomingSpeed: 0
       FormationRadius: 7
       VisualScale: 0

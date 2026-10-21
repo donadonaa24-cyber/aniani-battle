@@ -22,6 +22,7 @@ namespace AniBato.Game
         public int ProjectileEconomySchemaVersion;
         public int AttackStaminaSchemaVersion;
         public int KickSchemaVersion;
+        public int LedgeSchemaVersion;
         public int RefinementSchemaVersion;
         public int ActionArtworkSchemaVersion;
         public AttackData[] DirectionalNormals;

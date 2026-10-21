@@ -1,3 +1,9 @@
+## 現在工程（2026-10-22）：指定Aの崖つかまり完了→8サポート
+
+PAPER_LEDGE_THUMB_A.mdのA（親指が画面左）を9人へ採用。paper_ledge_AはBuildAll/Edit797/797/Play101/101/Windows全合格、paper_ledge_A_webはWebGL/Windows復帰/454原画RGBA保持/実ブラウザつかまり・復帰/console0を確認。証跡codex_logs/paper_ledge_verification.json。通常保存後はAの再生成・再反転を繰り返さない。
+
+次はPAPER_SUPPORT_ITEMS.md：8種類の即時取得、承認済みの出現間隔・袋・再取得CD・状態効果・14原画の表示を接続する。現状は生成候補/草稿で、ゲーム未接続。既存ST/技数値と保護原画を維持する。以下は保存済み履歴。
+
 ## 最新（2026-10-21）：紙HUD完了、次は崖つかまり→8サポート
 
 紙台紙・紙ハート・ST/LINK・英語ルビ・特殊CD札、カメラのHUD回避を実装。paper_hud_6は実Unity BuildAll/Edit773/773/Play98/98/Windows全合格。paper_hud_web_finalはWebGL成功128,092,777bytes、445/445原画画素保持、Windows復帰のUnity子プロセスexit0。実ブラウザで透真通常ST100→93と相手蓄積1/3、警告エラー0。証跡codex_logs/paper_hud_verification.json、screenshots/paper_hud_web/hud_stamina.png。

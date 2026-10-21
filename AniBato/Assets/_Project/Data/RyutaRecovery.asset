@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RyutaRecovery
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u30D6\u30C3\u30AF\u30FB\u30B8\u30E3\u30F3\u30D7"
     Ability:
       Motion: 0
@@ -73,6 +74,13 @@ MonoBehaviour:
         Y: 0
       ExplosionFrames: 0
       FormationVerticalSpread: 0
+      MarchSpawnFrames: 0
+      MarchCommandFrames: 0
+      MarchTravelFrames: 0
+      MarchExitFrames: 0
+      MarchWidth0: 0
+      MarchWidth1: 0
+      MarchWidth2: 0
       HomingSpeed: 0
       FormationRadius: 0
       VisualScale: 0

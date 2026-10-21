@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MinatoDirectionalDown
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u610F\u8B58\u5730\u96F7"
     Ability:
       Motion: 0

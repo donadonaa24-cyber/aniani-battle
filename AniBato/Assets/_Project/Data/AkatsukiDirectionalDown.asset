@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AkatsukiDirectionalDown
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u8A2D\u7F6E\u30FB\u7F60\u30AB\u30FC\u30C9"
     Ability:
       Motion: 0

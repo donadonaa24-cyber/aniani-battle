@@ -564,6 +564,26 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.6271249
     FootMaxX: 0.79611063
+  - Key: ledge
+    States: 23000000i
+    Frames:
+    - {fileID: 21300000, guid: 34399b3166cb8cf42bb5303b59b6fa14, type: 3}
+    HoldTicks: 8
+    Airborne: 1
+    ReverseFacing: 0
+    RotateWithRush: 0
+    UnmirroredImpact: 0
+    SwitchOnProjectileRelease: 0
+    TiltDegrees: 0
+    FrameHeadHeights: []
+    FrameFootBaseYs: []
+    FrameFootMinXs: []
+    FrameFootMaxXs: []
+    FrameOriginYs: []
+    HeadHeight: 0
+    FootBaseY: 0
+    FootMinX: 0
+    FootMaxX: 0
   HeavyDamage:
     Key: hit_heavy
     States: 
@@ -629,6 +649,7 @@ MonoBehaviour:
     FootBaseY: 0
     FootMinX: -0.582062
     FootMaxX: 0.20653814
+  LedgeHang: {fileID: 21300000, guid: 34399b3166cb8cf42bb5303b59b6fa14, type: 3}
   Bag: {fileID: 0}
   RiceBall: {fileID: 0}
   Mogu: {fileID: 0}

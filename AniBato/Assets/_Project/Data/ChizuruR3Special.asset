@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ChizuruR3Special
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u304A\u306B\u304E\u308A\u6295\u3052"
     Ability:
       Motion: 0

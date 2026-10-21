@@ -20,7 +20,7 @@ namespace AniBato.Battle
         public void Gather(FighterState attacker, FighterState target, List<HitContact> contacts)
         {
             AttackInstance attack = attacker.Attack;
-            if (attack == null || !attack.IsDamageActive || attack.HasHit(target.PlayerIndex) ||
+            if (attack == null || !LedgeSystem.CanHit(target,attack.Definition) || !attack.IsDamageActive || attack.HasHit(target.PlayerIndex) ||
                 attack.Definition.SpawnProjectile || attack.Definition.NonDamaging || target.ImmunityFrom(attacker.PlayerIndex) > 0 ||
                 attacker.FrozenThisTick || attacker.Mode == FighterMode.KO || target.Mode == FighterMode.KO || target.HeartRecoveryRemaining > 0) return;
             if (attack.Overlaps(attacker, target.Hurtbox) && attack.MarkHit(target.PlayerIndex))
@@ -28,7 +28,7 @@ namespace AniBato.Battle
         }
         public void Gather(Projectile projectile, FighterState target, List<HitContact> contacts)
         {
-            if (!projectile.CanDamage || projectile.Owner == target || projectile.ContactCooldown > 0 || projectile.Attack.Clashed || projectile.RemainingFrames <= 0 || projectile.Attack.HasHit(target.PlayerIndex) || target.Mode == FighterMode.KO ||
+            if (!LedgeSystem.CanHit(target,projectile.Attack.Definition) || !projectile.CanDamage || projectile.Owner == target || projectile.ContactCooldown > 0 || projectile.Attack.Clashed || projectile.RemainingFrames <= 0 || projectile.Attack.HasHit(target.PlayerIndex) || target.Mode == FighterMode.KO ||
                 target.ImmunityFrom(projectile.Owner.PlayerIndex) > 0 || target.HeartRecoveryRemaining > 0) return;
             if (projectile.Hitbox.Overlaps(target.Hurtbox) && projectile.Attack.MarkHit(target.PlayerIndex))
                 contacts.Add(new HitContact(projectile.Owner, target, projectile.Attack, true, projectile.Facing, projectile));

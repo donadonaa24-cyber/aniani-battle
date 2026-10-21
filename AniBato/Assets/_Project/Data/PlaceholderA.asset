@@ -31,6 +31,7 @@ MonoBehaviour:
     AirNormals: []
     DirectionalNormals: []
     UpNormal:
+      CanHitLedge: 0
       Name: 
       Ability:
         Motion: 0
@@ -205,6 +206,7 @@ MonoBehaviour:
     DiagonalFallbackVertical: 0
     Specials: []
     Ultimate:
+      CanHitLedge: 0
       Name: 
       Ability:
         Motion: 0
@@ -374,6 +376,7 @@ MonoBehaviour:
   ProjectileEconomySchemaVersion: 0
   AttackStaminaSchemaVersion: 0
   KickSchemaVersion: 0
+  LedgeSchemaVersion: 0
   RefinementSchemaVersion: 0
   ActionArtworkSchemaVersion: 0
   DirectionalNormals: []

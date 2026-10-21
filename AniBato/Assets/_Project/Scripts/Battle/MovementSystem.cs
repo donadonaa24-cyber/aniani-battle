@@ -19,7 +19,7 @@ namespace AniBato.Battle
         public void Step(FighterState fighter, in FrameInput input, StageGeometry stage, in BattleRuleDefinition rules, BattleVector externalVelocity = default)
         {
             InvalidateGround(fighter, stage);
-            if (fighter.FrozenThisTick || fighter.Mode == FighterMode.KO) return;
+            if (fighter.FrozenThisTick || fighter.Mode == FighterMode.KO || LedgeSystem.Attached(fighter)) return;
             ResolveNewWalls(fighter, stage);
             bool canControl = fighter.CanControlMovement;
             bool flowing = rules.CombatInput.FlowingAerialNormal && fighter.Attack != null && fighter.Attack.AirborneAttack &&

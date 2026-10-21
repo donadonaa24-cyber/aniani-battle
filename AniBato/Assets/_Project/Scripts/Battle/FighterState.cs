@@ -1,6 +1,6 @@
 ﻿namespace AniBato.Battle
 {
-    public enum FighterMode { Idle, Move, Dash, Jump, Fall, Attack, Special, Guard, Dodge, Counter, Hitstun, Knockback, Recovery, KO, Crouch, JumpStartup, Charging }
+    public enum FighterMode { Idle, Move, Dash, Jump, Fall, Attack, Special, Guard, Dodge, Counter, Hitstun, Knockback, Recovery, KO, Crouch, JumpStartup, Charging, LedgeHang, LedgeClimb }
 
     public sealed class FighterState
     {
@@ -21,6 +21,12 @@
         internal float DamageRecoilSpeed;
         public bool LastDamageLostHeart { get; internal set; }
         public int JumpsUsed { get; internal set; }
+        public int LedgeSide { get; internal set; }
+        public BattleVector LedgePoint { get; internal set; }
+        public int LedgeAge { get; internal set; }
+        public bool LedgeRegrabBlocked { get; internal set; }
+        internal BattleVector LedgeStart;
+        internal int LedgeJumpCarryRemaining, LedgeJumpDirection;
         public int JumpStartupRemaining { get; internal set; }
         internal float JumpStartupDirection;
         public int AirDashesUsed { get; internal set; }
@@ -68,7 +74,7 @@
         internal readonly System.Collections.Generic.HashSet<long> PreDefenseOverlaps = new System.Collections.Generic.HashSet<long>();
         internal readonly System.Collections.Generic.HashSet<long> JustExcludedAttacks = new System.Collections.Generic.HashSet<long>();
         public int ImmunityFrom(int attacker) => FollowupImmunity[attacker];
-        public bool CanControlMovement => Attack == null && HitstunRemaining == 0 && ParalysisRemaining == 0 && !ParalyzedThisTick &&
+        public bool CanControlMovement => !LedgeSystem.Attached(this) && Attack == null && HitstunRemaining == 0 && ParalysisRemaining == 0 && !ParalyzedThisTick &&
             Mode != FighterMode.Guard && Mode != FighterMode.Dodge && Mode != FighterMode.Counter && Mode != FighterMode.Recovery && Mode != FighterMode.JumpStartup && Mode != FighterMode.Charging;
         internal bool FrozenThisTick;
         public bool IsFrozenThisTick => FrozenThisTick;

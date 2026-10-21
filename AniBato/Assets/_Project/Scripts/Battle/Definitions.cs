@@ -9,6 +9,7 @@ namespace AniBato.Battle
     [Serializable]
     public struct AttackDefinition
     {
+        public bool CanHitLedge;
         public string Name;
         public AttackAbility Ability;
         public RecoveryDefinition Recovery;
@@ -171,6 +172,7 @@ namespace AniBato.Battle
         public int GroundJumpStartupFrames;
         public ChargeAttackDefinition Charge;
         public CombatInputDefinition CombatInput;
+        public LedgeDefinition Ledge;
         public float DropThroughSpeed;
         public float DirectionThreshold;
         public bool EnableRingOut;
@@ -193,7 +195,7 @@ namespace AniBato.Battle
                 throw new ArgumentException("対戦ルールの定義が不正です。");
             _ = DurationTicks;
             Defense.Validate(); Gauge.Validate(); Charge.Validate(); CombatInput.Validate();
-            Shrink.Validate();
+            Shrink.Validate(); Ledge.Validate();
             if (ComboFinishHitstunFrames < 1 || FollowupImmunityFrames < 1 || HeartRecoveryFrames < 0 || ProjectileLimitPerOwner < 0 || HeartRecoveryKnockback.X < 0 || HeartRecoveryKnockback.Y < 0)
                 throw new ArgumentException("フィニッシュの定義が不正です。");
         }

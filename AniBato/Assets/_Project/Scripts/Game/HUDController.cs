@@ -27,11 +27,13 @@ namespace AniBato.Game
         [SerializeField] private Image[] staminaBars;
         [SerializeField] private Text help;
         private GameFlowController flow;
+        private InputController inputController;
         public void ConfigureLearning(Text hint, Image[] bars) { help = hint; staminaBars = bars; }
         private void Start()
         {
             fighterViews = Object.FindObjectsByType<FighterView>();
             flow = Object.FindAnyObjectByType<GameFlowController>();
+            inputController=runner.GetComponent<InputController>();
             foreach (var text in GetComponentsInChildren<Text>(true)) text.font = RuntimeFonts.Japanese;
         }
         private Text[] popups;
@@ -103,9 +105,11 @@ namespace AniBato.Game
                 "  通常 " + fighter.Definition.Stamina.NormalFirstCost + "/" + fighter.Definition.Stamina.NormalSecondCost + "/" + fighter.Definition.Stamina.NormalThirdCost +
                 "\nLINK " + fighter.Gauge + "/" + runner.Simulation.Rules.Gauge.Maximum;
             string status = fighter.BuffRemaining > 0 ? "機動強化 " + Mathf.CeilToInt(fighter.BuffRemaining / 60f) + "秒" : "";
-            if(fighter.Stamina < fighter.Definition.Stamina.Maximum && fighter.Attack==null && fighter.Mode!=FighterMode.Charging && fighter.Mode!=FighterMode.Guard)
+            if(fighter.Stamina < fighter.Definition.Stamina.Maximum && fighter.Attack==null && fighter.Mode!=FighterMode.Charging && fighter.Mode!=FighterMode.Guard && !LedgeSystem.Attached(fighter))
                 status += fighter.StaminaDelayRemaining>0 ? "  ST回復まで " + (fighter.StaminaDelayRemaining/60f).ToString("0.0") + "秒" : "  ST回復中";
             if (fighter.StaminaRejectedRemaining>0) status+="  スタミナ不足";
+            if(fighter.Mode==FighterMode.LedgeHang) status="崖 ST消費 / "+inputController.Label(index,ControlAction.Jump)+"・内側で復帰  "+(LedgeSystem.HoldFramesLeft(fighter,runner.Simulation.Rules.Ledge)/60f).ToString("0.0")+"秒";
+            if(fighter.Mode==FighterMode.LedgeClimb) status="崖から復帰中";
             if (staminaBars != null && staminaBars.Length > index && staminaBars[index])
             {
                 float fraction = fighter.Definition.Stamina.Maximum > 0 ? fighter.Stamina / fighter.Definition.Stamina.Maximum : 1;

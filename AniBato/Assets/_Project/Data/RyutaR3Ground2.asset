@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RyutaR3Ground2
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u524D\u8E74\u308A\u30FB\u4E09\u6BB5\u76EE"
     Ability:
       Motion: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: YuiR3Direction2
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u80CC\u5F8C\u3078\u306E\u30B9\u30C6\u30C3\u30AD\u6253\u6483"
     Ability:
       Motion: 0

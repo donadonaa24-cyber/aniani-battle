@@ -33,6 +33,7 @@ namespace AniBato.Battle
             }
             if (fighter.ParalysisRemaining > 0)
             { fighter.ParalysisRemaining--; fighter.Mode = FighterMode.Hitstun; return; }
+            if (LedgeSystem.StepAttached(fighter,input,stage,rules)) return;
             if (fighter.Mode == FighterMode.JumpStartup)
             {
                 if (!fighter.Grounded)

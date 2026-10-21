@@ -89,6 +89,7 @@ namespace AniBato.EditorTools
             ProjectileEconomyBuilder.Apply(setup.Characters);
             RyutaKickBuilder.Apply(setup.Characters[8]);
             AttackStaminaBuilder.Apply(setup.Characters);
+            PaperLedgeBuilder.Apply(setup.Characters);
             if (setup.Stages == null || setup.Stages.Length == 0) setup.Stages = stages;
             if (setup.CpuDifficulties == null || setup.CpuDifficulties.Length == 0) setup.CpuDifficulties = cpuDifficulties;
             if (setup.CpuDifficulties.Length != 3) throw new InvalidOperationException("CPU difficulty assets must have three entries.");
@@ -147,6 +148,9 @@ namespace AniBato.EditorTools
                 definition.Charge.MaximumTravelBeyondFloor=10;definition.Charge.BlastLineInset=4;
                 definition.Charge.MaximumVerticalSpeed=24;definition.Charge.MaximumHitstunFrames=36;definition.SchemaVersion=12;
             }
+            if(definition.SchemaVersion<13) { definition.Ledge=LedgeDefinition.Default; definition.SchemaVersion=13; }
+            if(definition.SchemaVersion<14)
+            { var ledge=definition.Ledge;ledge.MaximumHoldFrames=300;definition.Ledge=ledge;definition.SchemaVersion=14; }
             asset.Definition = definition;
         }
         private static void UpgradeBindings(InputBindings asset)

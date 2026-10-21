@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ToumaR3Special
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 0
     Name: "\u30C9\u30ED\u30FC\u30F3\u7279\u653B"
     Ability:
       Motion: 0

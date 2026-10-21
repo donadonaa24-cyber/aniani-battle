@@ -45,10 +45,23 @@ MonoBehaviour:
       UpRecoveryEnabled: 1
       ClashStopFrames: 5
       ClashRecoveryFrames: 10
+    Ledge:
+      Enabled: 1
+      MaximumHoldFrames: 300
+      StaminaPerSecond: 25
+      ClimbFrames: 18
+      JumpCarryFrames: 24
+      CatchReach: 0.65
+      CatchAbove: 0.3
+      CatchBelow: 0.65
+      BodyGap: 0.08
+      HangHeadBelow: 0.15
+      JumpInwardMultiplier: 0.7
+      JumpVerticalMultiplier: 1.1
     DropThroughSpeed: 8
     DirectionThreshold: 0.5
     EnableRingOut: 1
-    SchemaVersion: 12
+    SchemaVersion: 14
     Defense:
       GuardReleaseFrames: 6
       GuardStunFrames: 10

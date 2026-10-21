@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "task": "PAPER_LEDGE_LEFT_HAND",
+  "nativeTag": "paper_ledge_A",
+  "native": {
+    "EditMode": {
+      "total": 797,
+      "passed": 797,
+      "failed": 0,
+      "skipped": 0,
+      "results": "TestResults/paper_ledge_A_EditMode.xml",
+      "sha256": "3767a943b5c55c2f4117361b9d80ba7c95a18a5d91156202c0a57e09f70de42d"
+    },
+    "PlayMode": {
+      "total": 101,
+      "passed": 101,
+      "failed": 0,
+      "skipped": 0,
+      "results": "TestResults/paper_ledge_A_PlayMode.xml",
+      "sha256": "242d9a1c55bf9677320888e9d2c01870a60bff69d8ae0496168210818d45a541"
+    },
+    "BuildAll": {
+      "exitCode": 0,
+      "log": "TestResults/paper_ledge_A_buildall.log",
+      "sha256": "747620b6c2565daf85942119ddcbee2296552ccdb295d80a5a446c2e33c0888b"
+    },
+    "Windows": {
+      "exitCode": 0,
+      "log": "TestResults/paper_ledge_A_build.log",
+      "sha256": "6eeebf1928b068b0161bd03ab22ccd435f69ffaa4e3d3efbfdee6951f9759a82"
+    }
+  },
+  "images": [
+    {
+      "key": "toma",
+      "source": "art_source/paper_ledge/toma/hang_user_A_v1.png",
+      "sourceSha256": "f3de77d991d460401c8e595b6f8f158e8ef9d1aaf3494211cf9f7c334c63503a",
+      "game": "AniBato/Assets/_Project/Art/PaperAction/toma_ledge_hang.png",
+      "gameSha256": "a0f715310fa3a27f460f4e857a074380e183133e9c0c4a43605393faead34439",
+      "grippingHands": 1,
+      "grippingHand": "left",
+      "handX": 975,
+      "handY": 158,
+      "nativePixelsPreserved": true,
+      "ppu": 532.5893,
+      "manualPalmReview": true
+    },
+    {
+      "key": "ren",
+      "source": "art_source/paper_ledge/ren/hang_user_A_v1.png",
+      "sourceSha256": "ce4903b1d92f550d1358178a87fe246e59a20792b0f59004b20bb6e7cb06b1e6",
+      "game": "AniBato/Assets/_Project/Art/PaperAction/ren_ledge_hang.png",
+      "gameSha256": "d45d11b39e5f12259e0885451c5691d7b175698f4772d9ccaa178db7c9430721",
+      "grippingHands": 1,
+      "grippingHand": "left",
+      "handX": 1064,
+      "handY": 237,
+      "nativePixelsPreserved": true,
+      "ppu": 532.5893,
+      "manualPalmReview": true
+    },
+    {
+      "key": "chizuru",
+      "source": "art_source/paper_ledge/chizuru/hang_user_A_v1.png",
+      "sourceSha256": "383cc61c13a780b6effdcd73e421ddf661f248a97f7b201a2a8cf8d7576a4d6d",
+      "game": "AniBato/Assets/_Project/Art/PaperAction/chizuru_ledge_hang.png",
+      "gameSha256": "7cde8231d83194f785ab642852d13aa705e8ac36cab13ad528a67280fce7a4cd",
+      "grippingHands": 1,
+      "grippingHand": "left",
+      "handX": 948,
+      "handY": 164,
+      "nativePixelsPreserved": true,
+      "ppu": 532.5893,
+      "manualPalmReview": true
+    },
+    {
+      "key": "minato",
+      "source": "art_source/paper_ledge/minato/hang_user_A_v1.png",
+      "sourceSha256": "5bdaa9131bc039bbf4e34f86f525a9cb296f8cbf6beb175cdd7434669ad8e281",
+      "game": "AniBato/Assets/_Project/Art/PaperAction/minato_ledge_hang.png",
+      "gameSha256": "13e72318310bc7896dc82759cbea252e693af3cf347fa8f3ce2e2b4defd6e439",
+      "grippingHands": 1,
+      "grippingHand": "left",
+      "handX": 1080,
+      "handY": 159,
+      "nativePixelsPreserved": true,
+      "ppu": 532.5893,
+      "manualPalmReview": true
+    },
+    {
+      "key": "shiro",
+      "source": "art_source/paper_ledge/shiro/hang_user_A_v1.png",
+      "sourceSha256": "73325d084eac0d0f28a7407845c5e483ba4ef9259e13a85c805cc469173a6c71",
+      "game": "AniBato/Assets/_Project/Art/PaperAction/shiro_ledge_hang.png",
+      "gameSha256": "d06228caca1acfc00c61e376d8a871f8fb6f38ccc7228592413b97eb248b89bc",
+      "grippingHands": 1,
+      "grippingHand": "left",
+      "handX": 1206,
+      "handY": 204,
+      "nativePixelsPreserved": true,
+      "ppu": 532.5893,
+      "manualPalmReview": true
+    },
+    {
+      "key": "yui",
+      "source": "art_source/paper_ledge/yui/hang_user_A_v1.png",
+      "sourceSha256": "e3be80d7c70d7d41f314296e4b1c6ea976fbb57c4b8ce6b418a1f47c86f8b092",
+      "game": "AniBato/Assets/_Project/Art/PaperAction/yui_ledge_hang.png",
+      "gameSha256": "41f92b85de3205d3107664071c8d5199a32e1f7b39d7fdc9a26cdf564f9221c3",
+      "grippingHands": 1,
+      "grippingHand": "left",
+      "handX": 1147,
+      "handY": 248,
+      "nativePixelsPreserved": true,
+      "ppu": 532.5893,
+      "manualPalmReview": true
+    },
+    {
+      "key": "king",
+      "source": "art_source/paper_ledge/king/hang_user_A_v1.png",
+      "sourceSha256": "6e05d84ec59e39bcd624e0a1b46073129e3a5efd51bd0ad21c7cb02b00f913a9",
+      "game": "AniBato/Assets/_Project/Art/PaperAction/king_ledge_hang.png",
+      "gameSha256": "568db1859b12b9d9aa66c92cdd97c6fe362b6191cf4a21a26efdce630f383f59",
+      "grippingHands": 1,
+      "grippingHand": "left",
+      "handX": 1107,
+      "handY": 193,
+      "nativePixelsPreserved": true,
+      "ppu": 532.5893,
+      "manualPalmReview": true
+    },
+    {
+      "key": "akatsuki",
+      "source": "art_source/paper_ledge/akatsuki/hang_user_A_v1.png",
+      "sourceSha256": "4656ff7a5a55936a25f2f5c40c563cd6d55f959d4cacf1913b4bdd6d62dbc130",
+      "game": "AniBato/Assets/_Project/Art/PaperAction/akatsuki_ledge_hang.png",
+      "gameSha256": "1562d4d95baa26779e81efcc9629f72577dbd647b049949e5a8a1e8f90ad8d1c",
+      "grippingHands": 1,
+      "grippingHand": "left",
+      "handX": 1031,
+      "handY": 142,
+      "nativePixelsPreserved": true,
+      "ppu": 532.5893,
+      "manualPalmReview": true
+    },
+    {
+      "key": "ryuta",
+      "source": "art_source/paper_ledge/ryuta/hang_user_A_v1.png",
+      "sourceSha256": "7dbca227fc3464c0d820d1d1f609f13d6bc14e5186c79e5eab945cb6d583285f",
+      "game": "AniBato/Assets/_Project/Art/PaperAction/ryuta_ledge_hang.png",
+      "gameSha256": "e200dc20c97f87c79489093437fce550e69ecc8eacef8ede2022f4922ac4a3d5",
+      "grippingHands": 1,
+      "grippingHand": "left",
+      "handX": 1095,
+      "handY": 147,
+      "nativePixelsPreserved": true,
+      "ppu": 532.5893,
+      "manualPalmReview": true
+    }
+  ],
+  "supersedes": [
+    "paper_ledge_final",
+    "paper_ledge_left",
+    "paper_ledge_correct"
+  ],
+  "userRequestedView": "Comparison A: thumb at native image-left, inside of curled fingers visible",
+  "handPattern": "A",
+  "thumbSide": "image-left",
+  "userShapeConfirmed": true,
+  "behavior": {
+    "maximumHoldFrames": 300,
+    "staminaPerSecond": 25,
+    "regrabUntilLanding": false,
+    "normalAttacksBlocked": true,
+    "downwardAttacksAllowed": true
+  },
+  "web": {
+    "status": "verified",
+    "tag": "paper_ledge_A_web",
+    "build": {
+      "result": "success",
+      "bytes": 131422888,
+      "seconds": 158.9267803,
+      "files": 6
+    },
+    "windowsRestored": true,
+    "nativeTexturesChecked": 454,
+    "rgbaPreserved": true,
+    "browser": {
+      "method": "Real keyboard inputs through in-app browser after reloading the new build",
+      "scenario": "Practice / Chizuru vs Ren / Star stage / ledge hang with ST drain / Space ledge jump and return to Idle",
+      "warnings": 0,
+      "errors": 0,
+      "screenshots": [
+        {
+          "file": "docs/screenshots/paper_ledge_A_web/chizuru_left_hang.png",
+          "sha256": "3f7f1147accb9bf73365d51a36e904534f817cb34cc91d8cbeeeb8da9eaf19fa"
+        },
+        {
+          "file": "docs/screenshots/paper_ledge_A_web/chizuru_jump_return.png",
+          "sha256": "615cebdd73f4e161439209c02cb6e26610f38795ad0038a05225150f267604e7"
+        }
+      ]
+    }
+  },
+  "balancePreservation": {
+    "baseline": "eace794",
+    "attacksCompared": 153,
+    "existingNumericFieldsCompared": 13040,
+    "differences": []
+  }
+}

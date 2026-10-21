@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ToumaR3Ultimate
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
+    CanHitLedge: 1
     Name: "\u753B\u9762\u5916\u30ED\u30B1\u30C3\u30C8"
     Ability:
       Motion: 0
@@ -73,6 +74,13 @@ MonoBehaviour:
         Y: 3.5
       ExplosionFrames: 18
       FormationVerticalSpread: 0
+      MarchSpawnFrames: 0
+      MarchCommandFrames: 0
+      MarchTravelFrames: 0
+      MarchExitFrames: 0
+      MarchWidth0: 0
+      MarchWidth1: 0
+      MarchWidth2: 0
       HomingSpeed: 0
       FormationRadius: 0
       VisualScale: 1.6

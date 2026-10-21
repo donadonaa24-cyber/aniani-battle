@@ -58,7 +58,8 @@ namespace AniBato.Tests
             var manifest = JsonUtility.FromJson<AniBato.EditorTools.PaperActionBuilder.Manifest>(File.ReadAllText(AniBato.EditorTools.PaperActionBuilder.ManifestPath));
             var motion = AssetDatabase.LoadAssetAtPath<PaperCharacterMotion>(AniBato.EditorTools.PaperCharacterBuilder.DataPath);
             Assert.That(manifest.poses.Length, Is.EqualTo(30)); Assert.That(manifest.effects.Length, Is.EqualTo(4));
-            Assert.That(motion.Poses.Length, Is.EqualTo(29));
+            Assert.That(motion.Poses.Length, Is.EqualTo(30));
+            Assert.That(System.Array.Find(motion.Poses,p=>p.Key=="ledge").Frames[0],Is.SameAs(motion.LedgeHang));
             foreach (var row in manifest.poses)
             {
                 var pose = row.key == "hit_heavy" ? motion.HeavyDamage : System.Array.Find(motion.Poses, p => p.Key == row.key);
