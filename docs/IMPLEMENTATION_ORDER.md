@@ -1,4 +1,10 @@
-## 最新（2026-10-21）：先行ST・技改修の実Unity/Web検証完了、紙HUD・崖・サポートへ
+## 最新（2026-10-21）：紙HUD完了、次は崖つかまり→8サポート
+
+紙台紙・紙ハート・ST/LINK・英語ルビ・特殊CD札、カメラのHUD回避を実装。paper_hud_6は実Unity BuildAll/Edit773/773/Play98/98/Windows全合格。paper_hud_web_finalはWebGL成功128,092,777bytes、445/445原画画素保持、Windows復帰のUnity子プロセスexit0。実ブラウザで透真通常ST100→93と相手蓄積1/3、警告エラー0。証跡codex_logs/paper_hud_verification.json、screenshots/paper_hud_web/hud_stamina.png。
+
+次：codex_tasks/PAPER_LEDGE_RECOVERY.mdの崖ロジック/9人原画接続/消費/下攻撃限定/復帰検証→8サポートの即時取得と効果/演出。原画は9人＋14素材の候補のみで、両システムはまだ未実装。回答待ちの調整値は仮値と明示し、SOから差し替えられる形にする。既存の保護原画・45半減判定・14/10ゲージを維持。
+
+## 保存済み（2026-10-21）：先行ST・技改修の実Unity/Web検証完了、紙HUD・崖・サポートへ
 
 stamina_final_3でBuildAll成功／Edit773/773／Play96/96／Windows成功、失敗・スキップ0。最終648試合も調整版と同値。stamina_web_finalはWebGL成功128,081,814bytes／239.0197202秒、Windows設定復帰成功、445/445PNGの原画RGBA保持。内蔵ブラウザの実キーで通常ST100→93・特殊100→82、湊の溜め転移/青分解、王3部下の裂け目→号令→固定方向行進/退場を確認、警告エラー0。証跡docs/codex_logs/readable_stamina_verification.json、readable_stamina_requirements_audit.md。代表画像docs/screenshots/readable_stamina/とreadable_stamina_web/。対人バランス/美術の最終承認、実機パッド/通常Chrome・Edge/低メモリ端末は別範囲。
 

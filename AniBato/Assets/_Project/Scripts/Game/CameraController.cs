@@ -15,8 +15,13 @@ namespace AniBato.Game
         private Vector3 previousShake;
         private bool snap = true;
         private float previousAspect;
+        private RectTransform hudRect;
         public void Configure(BattleRunner value, PresentationSettings settings) { runner = value; presentation = settings; }
-        private void Awake() { cameraComponent = GetComponent<Camera>(); effects = runner.GetComponent<BattleEffectsView>(); }
+        private void Awake()
+        {
+            cameraComponent = GetComponent<Camera>(); effects = runner.GetComponent<BattleEffectsView>();
+            var hud=Object.FindAnyObjectByType<HUDController>(FindObjectsInactive.Include); if(hud)hudRect=hud.GetComponent<RectTransform>();
+        }
         private void OnEnable() { snap = true; if (runner) runner.MatchRestarted += ResetTarget; }
         private void OnDisable() { if (runner) runner.MatchRestarted -= ResetTarget; }
         private void ResetTarget() => snap = true;
@@ -39,6 +44,14 @@ namespace AniBato.Game
             cameraComponent.orthographicSize = CameraFraming.ContainingSize(frame,
                 new BattleVector(transform.position.x, transform.position.y), cameraComponent.aspect,
                 Mathf.Lerp(cameraComponent.orthographicSize, frame.Size, factor));
+            if(hudRect && hudRect.rect.height>0 && (!frozen || factor==1))
+            {
+                float highest=Mathf.Max(p1.Y+runner.Simulation.P1.Definition.HurtboxSize.Y*.5f,
+                    p2.Y+runner.Simulation.P2.Definition.HurtboxSize.Y*.5f)+presentation.CounterHeadPadding;
+                var safe=CameraFraming.BelowHud(new CameraFrame(new BattleVector(transform.position.x,transform.position.y),cameraComponent.orthographicSize,frame.Required),
+                    highest,PaperFighterHud.SafeTopHeight/hudRect.rect.height);
+                transform.position=new Vector3(safe.Center.X,safe.Center.Y,transform.position.z);cameraComponent.orthographicSize=safe.Size;
+            }
             if (!runner.Paused && effects && effects.ScreenShakeEnabled && effects.Feedback.ShakeRemaining > 0)
             {
                 float strength = presentation.ShakeStrength * Mathf.Clamp01(effects.Feedback.ShakeRemaining / presentation.ShakeSeconds);

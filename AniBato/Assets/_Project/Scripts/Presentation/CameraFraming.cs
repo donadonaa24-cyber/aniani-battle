@@ -51,5 +51,12 @@ namespace AniBato.Presentation
             float y = Math.Max(Math.Abs(frame.Required.Bottom - actualCenter.Y), Math.Abs(frame.Required.Top - actualCenter.Y));
             return Math.Max(desired, Math.Max(x / aspect, y));
         }
+        public static CameraFrame BelowHud(CameraFrame frame, float highestHead, float reservedFraction)
+        {
+            float reserved=Math.Max(0,Math.Min(.65f,reservedFraction));
+            float size=Math.Max(frame.Size,(highestHead-frame.Required.Bottom)/(2*(1-reserved)));
+            float center=Math.Max(frame.Center.Y,highestHead-size*(1-2*reserved));
+            return new CameraFrame(new BattleVector(frame.Center.X,center),size,frame.Required);
+        }
     }
 }

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "references": [
+    {
+      "key": "alma",
+      "name": "アルマ",
+      "copy": "docs\\art_reference\\support_items\\alma.png",
+      "origin": "../あにあにの遊び場/images/gacha/bunko/alma.png",
+      "sha256": "c64f18388de9421f86636be07d75e79b6a5c39fcee2a0ea9dfbd6dd1925dba67",
+      "identityRecord": "あにあにの遊び場/trial-gacha-data.js",
+      "note": "容姿の参照のみ。サポートの動作と効果は本ゲーム独自のクロスオーバー演出。元プロジェクトは読み取り専用。"
+    },
+    {
+      "key": "shion",
+      "name": "朝倉志遠",
+      "copy": "docs\\art_reference\\support_items\\shion.png",
+      "origin": "../あにあにの遊び場/images/gacha/bunko/shion.png",
+      "sha256": "ac669c59bc12ea35577492b7a15596075c889a1d977e94850021975f16eddaba",
+      "identityRecord": "あにあにの遊び場/trial-gacha-data.js",
+      "note": "容姿の参照のみ。サポートの動作と効果は本ゲーム独自のクロスオーバー演出。元プロジェクトは読み取り専用。"
+    },
+    {
+      "key": "saki",
+      "name": "咲",
+      "copy": "docs\\art_reference\\support_items\\saki.png",
+      "origin": "../あにあにの遊び場/images/gacha/bunko/saki-home.png",
+      "sha256": "52dde429722e031a9b57f0205b17a3178ee9c343c72c4b3a830d57eb67452632",
+      "identityRecord": "あにあにの遊び場/trial-gacha-data.js",
+      "note": "容姿の参照のみ。サポートの動作と効果は本ゲーム独自のクロスオーバー演出。元プロジェクトは読み取り専用。"
+    },
+    {
+      "key": "hana",
+      "name": "花",
+      "copy": "docs\\art_reference\\support_items\\hana.png",
+      "origin": "../あにあにの遊び場/images/gacha/bunko/hana.png",
+      "sha256": "ec3dd0ef5d5a61b541461611704913f0c112380f4fc90df3faa0fe767a96d87d",
+      "identityRecord": "あにあにの遊び場/trial-gacha-data.js",
+      "note": "容姿の参照のみ。サポートの動作と効果は本ゲーム独自のクロスオーバー演出。元プロジェクトは読み取り専用。"
+    },
+    {
+      "key": "sara",
+      "name": "紗良",
+      "copy": "docs\\art_reference\\support_items\\sara.png",
+      "origin": "../あにあにの遊び場/images/gacha/bunko/sara.png",
+      "sha256": "bf9b57ddedb8c2ebc9dade8ab5cded5250c36d45e9eff39b06614e0d68c220a2",
+      "identityRecord": "あにあにの遊び場/trial-gacha-data.js",
+      "note": "容姿の参照のみ。サポートの動作と効果は本ゲーム独自のクロスオーバー演出。元プロジェクトは読み取り専用。"
+    },
+    {
+      "key": "mai",
+      "name": "舞依・弓道着",
+      "copy": "docs\\art_reference\\support_items\\mai.webp",
+      "origin": "../あにあにの遊び場/images/gacha/battle/mai-kyudo-standing-alpha.webp",
+      "sha256": "ff09326da42be563143d8f76fdeba82466c191e6b6c39932751ba1dca420a896",
+      "identityRecord": "あにあにの遊び場/trial-gacha-data.js",
+      "note": "容姿の参照のみ。サポートの動作と効果は本ゲーム独自のクロスオーバー演出。元プロジェクトは読み取り専用。"
+    },
+    {
+      "key": "tsuyoshi",
+      "name": "剛・サマービーチ",
+      "copy": "docs\\art_reference\\support_items\\tsuyoshi.webp",
+      "origin": "../あにあにの遊び場/images/gacha/battle/tsuyoshi-summer-standing-alpha.webp",
+      "sha256": "1045ef0b5694d3d28b1d6a95ba20fe9773aabff0c4ed6e573cf9333e4aaeb902",
+      "identityRecord": "あにあにの遊び場/trial-gacha-data.js",
+      "note": "容姿の参照のみ。サポートの動作と効果は本ゲーム独自のクロスオーバー演出。元プロジェクトは読み取り専用。"
+    },
+    {
+      "key": "mio",
+      "name": "美桜",
+      "copy": "docs\\art_reference\\support_items\\mio.webp",
+      "origin": "../あにあにの遊び場/images/gacha/oshikoma/mio.webp",
+      "sha256": "1a576911a28b2d52433ec65bd074fda95a8db2c75f8e5f7f5ebb4a76aaaebff5",
+      "identityRecord": "あにあにの遊び場/trial-gacha-data.js",
+      "note": "容姿の参照のみ。サポートの動作と効果は本ゲーム独自のクロスオーバー演出。元プロジェクトは読み取り専用。"
+    },
+    {
+      "key": "hota",
+      "name": "歩太",
+      "copy": "docs\\art_reference\\support_items\\hota.webp",
+      "origin": "../あにあにの遊び場/images/gacha/oshikoma/honoka.webp",
+      "sha256": "ee19d574f44695259c087c7279a4aa89bc06f49d65687bd0bbc6077fca675ec9",
+      "identityRecord": "あにあにの遊び場/trial-gacha-data.js",
+      "note": "容姿の参照のみ。サポートの動作と効果は本ゲーム独自のクロスオーバー演出。元プロジェクトは読み取り専用。"
+    }
+  ]
+}

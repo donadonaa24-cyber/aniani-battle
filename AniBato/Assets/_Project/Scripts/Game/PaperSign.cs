@@ -7,11 +7,13 @@ namespace AniBato.Game
     {
         [SerializeField] private Text text;
         [SerializeField] private RectTransform root;
-        public static PaperSign Attach(Text label, string name)
+        [SerializeField] private Vector2 padding = new Vector2(130,45);
+        public static PaperSign Attach(Text label, string name, Vector2? textPadding = null)
         {
             var go=new GameObject(name,typeof(RectTransform));go.transform.SetParent(label.transform.parent,false);
             go.transform.SetSiblingIndex(label.transform.GetSiblingIndex());
             var sign=go.AddComponent<PaperSign>();sign.text=label;sign.root=go.GetComponent<RectTransform>();
+            if(textPadding.HasValue)sign.padding=textPadding.Value;
             Panel(go.transform,"Paper Shadow",new Vector2(8,-10),new Color(.06f,.05f,.08f,.9f),new Vector2(16,16));
             Panel(go.transform,"Paper Cut Edge",Vector2.zero,new Color(.95f,.88f,.68f),Vector2.zero);
             Panel(go.transform,"Paper Ink",Vector2.zero,new Color(.2f,.25f,.32f),new Vector2(-14,-14));
@@ -35,9 +37,10 @@ namespace AniBato.Game
             bool show=text&&text.enabled&&!string.IsNullOrEmpty(text.text);
             foreach(var image in GetComponentsInChildren<Image>())image.enabled=show;
             if(!show)return;
-            var source=text.rectTransform;root.anchoredPosition=source.anchoredPosition;
-            root.sizeDelta=new Vector2(Mathf.Min(source.sizeDelta.x,text.preferredWidth+130),Mathf.Min(source.sizeDelta.y,text.preferredHeight+45));
+            var source=text.rectTransform;root.anchorMin=source.anchorMin;root.anchorMax=source.anchorMax;root.pivot=source.pivot;root.anchoredPosition=source.anchoredPosition;
+            root.sizeDelta=new Vector2(Mathf.Min(source.sizeDelta.x,text.preferredWidth+padding.x),Mathf.Min(source.sizeDelta.y,text.preferredHeight+padding.y));
             root.localRotation=Quaternion.Euler(0,0,-2);root.localScale=source.localScale;
+            foreach(var image in GetComponentsInChildren<Image>())if(image.name=="Tape")image.rectTransform.localScale=Vector3.one*Mathf.Clamp(root.sizeDelta.x/400,.25f,1);
         }
     }
 }

@@ -443,51 +443,50 @@ namespace AniBato.EditorTools
             Child("Player 2").AddComponent<FighterView>().Configure(runner, p2, presentation, 1);
             Child("Projectiles").AddComponent<ProjectileView>().Configure(runner, presentation);
             Child("Hitboxes").AddComponent<HitboxDebugView>().Configure(runner, presentation);
-            var hud = BuildHud(runner, camera, presentation);
+            var hud = BuildHud(runner, camera, presentation, rules.Definition.InitialHearts);
             if (isTitle) GameFlowBuilder.Build(runner, input, setup, flowSettings, world, hud, stageView);
             string path = isTitle ? TitleScenePath : ScenePath;
             if (!EditorSceneManager.SaveScene(scene, path)) throw new InvalidOperationException("シーンを保存できませんでした。");
         }
-        private static GameObject BuildHud(BattleRunner runner, Camera camera, PresentationSettings presentation)
+        private static GameObject BuildHud(BattleRunner runner, Camera camera, PresentationSettings presentation, int heartCount)
         {
             var go = new GameObject("Battle HUD", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler));
             go.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             var scaler = go.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1920, 1080); scaler.matchWidthOrHeight = 0.5f;
             Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            Text left = CreateText(go.transform, font, "Player 1 HUD", 30, new Vector2(0, 1), new Vector2(0, 1), new Vector2(36, -24), new Vector2(720, 210), TextAnchor.UpperLeft);
-            Text right = CreateText(go.transform, font, "Player 2 HUD", 30, new Vector2(1, 1), new Vector2(1, 1), new Vector2(-36, -24), new Vector2(720, 210), TextAnchor.UpperRight);
+            var cards = new[] { PaperFighterHud.Create(go.transform,0,heartCount,font),
+                PaperFighterHud.Create(go.transform,1,heartCount,font) };
+            Text left = cards[0].NameLabel, right = cards[1].NameLabel;
             Text time = CreateText(go.transform, font, "Timer", 58, new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -24), new Vector2(200, 100), TextAnchor.UpperCenter);
+            PaperSign.Attach(time,"Timer Paper Sign",new Vector2(32,12));
             Text result = CreateText(go.transform, font, "Match Result", 48, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(1500, 360), TextAnchor.MiddleCenter);
             result.enabled = false;
             Text counter1 = CreateText(go.transform, font, "P1 Head Counter", 28, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(200, 60), TextAnchor.MiddleCenter);
             Text counter2 = CreateText(go.transform, font, "P2 Head Counter", 28, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(200, 60), TextAnchor.MiddleCenter);
+            PaperSign.Attach(counter1,"P1 Counter Paper",new Vector2(24,12)); PaperSign.Attach(counter2,"P2 Counter Paper",new Vector2(24,12));
             Text popup1 = CreateText(go.transform, font, "P1 Battle Popup", 30, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(400, 110), TextAnchor.MiddleCenter);
             Text popup2 = CreateText(go.transform, font, "P2 Battle Popup", 30, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(400, 110), TextAnchor.MiddleCenter);
             popup1.enabled = popup2.enabled = false;
             Text help = CreateText(go.transform, font, "Controls", 22, new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 16), new Vector2(1880, 88), TextAnchor.LowerCenter);
             help.text = "";
-            var bars = new Image[2];
-            for (int i = 0; i < 2; i++)
-            {
-                bars[i] = CreateImage(go.transform, "P" + (i + 1) + " Stamina", Vector2.zero, new Vector2(300, 8));
-                var rect = bars[i].rectTransform; rect.anchorMin = rect.anchorMax = new Vector2(i, 1);
-                rect.pivot = new Vector2(i, .5f); rect.anchoredPosition = new Vector2(i == 0 ? 36 : -36, -118);
-            }
             var hud = go.AddComponent<HUDController>();
             hud.Configure(runner, camera, presentation, left, right, time, result, new[] { counter1, counter2 });
+            hud.ConfigureCards(cards);
             hud.ConfigurePopups(new[] { popup1, popup2 });
-            hud.ConfigureLearning(help, bars);
+            hud.ConfigureLearning(help, null);
             var statuses = new Text[2];
             for (int i = 0; i < 2; i++)
             {
                 var panel = new GameObject("Player " + (i + 1) + " Special Cooldowns", typeof(RectTransform));
                 panel.transform.SetParent(go.transform, false); var rect = panel.GetComponent<RectTransform>();
                 rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(i, 1);
-                rect.anchoredPosition = new Vector2(i == 0 ? 36 : -36, -188); rect.sizeDelta = new Vector2(680, 108);
+                rect.anchoredPosition = new Vector2(i == 0 ? 28 : -28, -284); rect.sizeDelta = new Vector2(680, 96);
                 panel.AddComponent<SpecialCooldownHud>().Configure(runner, i);
-                statuses[i] = CreateText(go.transform,font,"P" + (i+1) + " Status",20,new Vector2(i,1),new Vector2(i,1),
-                    new Vector2(i==0?36:-36,-158),new Vector2(720,26),i==0?TextAnchor.UpperLeft:TextAnchor.UpperRight);
+                var statusBase=PaperFighterHud.Shape(go.transform,"P"+(i+1)+" Status Paper",Vector2.zero,new Vector2(680,34),PaperFighterHud.Ink);
+                statusBase.rectTransform.anchorMin=statusBase.rectTransform.anchorMax=statusBase.rectTransform.pivot=new Vector2(i,1);
+                statusBase.rectTransform.anchoredPosition=new Vector2(i==0?28:-28,-246);
+                statuses[i]=PaperFighterHud.Label(statusBase.transform,"P" + (i+1) + " Status",Vector2.zero,new Vector2(658,30),21,"",PaperFighterHud.Paper);
             }
             hud.ConfigureStatuses(statuses);
             BuildCutIn(go, runner, font);

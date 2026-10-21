@@ -249,6 +249,21 @@ namespace AniBato.Tests
             yield return ReleaseKeys(dashKey, pad.leftStickButton);
         }
         [UnityTest]
+        public IEnumerator TitleToBattleKeepsUpperFighterBelowTheOpaquePaperHud()
+        {
+            yield return SelectLocalBattle(); Flow.enabled=false;Flow.Runner.SetPaused(true);
+            var sim=Flow.Runner.Simulation;var f=sim.P1;var upper=sim.Stage[1].Bounds;
+            typeof(FighterState).GetProperty("Position").SetValue(f,new BattleVector(upper.Center.X,upper.Top+f.Definition.HurtboxSize.Y*.5f));
+            Flow.Runner.RenderState.Reset(sim);int tick=sim.Match.TickCount;var position=f.Position;
+            var camera=Camera.main;var controller=camera.GetComponent<CameraController>();
+            var canvas=Object.FindAnyObjectByType<HUDController>().GetComponent<RectTransform>();
+            controller.enabled=false;controller.enabled=true;yield return null;yield return null;
+            var head=camera.WorldToViewportPoint(new Vector3(f.Position.X,f.Position.Y+f.Definition.HurtboxSize.Y*.5f,0));
+            Assert.That(head.y,Is.GreaterThan(0).And.LessThan(1-PaperFighterHud.SafeTopHeight/canvas.rect.height));
+            Assert.That(Object.FindObjectsByType<PaperFighterHud>().Length,Is.EqualTo(2));
+            Assert.That(sim.Match.TickCount,Is.EqualTo(tick));Assert.That(f.Position,Is.EqualTo(position));
+        }
+        [UnityTest]
         public IEnumerator CameraAndBoardBackdropFitThreeAspectRatiosWithoutChangingBattle()
         {
             yield return SelectLocalBattle(); Flow.enabled = false; Flow.Runner.SetPaused(true);

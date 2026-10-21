@@ -9,6 +9,7 @@ namespace AniBato.Game
     {
         [SerializeField] private Text[] labels = new Text[5];
         [SerializeField] private Image[] bars = new Image[5], cards = new Image[5];
+        [SerializeField] private PaperHudShape[] paperCards = new PaperHudShape[5];
         private readonly SpecialSlot[] slots = new SpecialSlot[4];
         [SerializeField] private BattleRunner runner;
         [SerializeField] private int player;
@@ -20,9 +21,12 @@ namespace AniBato.Game
             {
                 var card = new GameObject("Cooldown " + i, typeof(RectTransform), typeof(Image));
                 card.transform.SetParent(transform, false); cards[i] = card.GetComponent<Image>(); cards[i].raycastTarget = false;
+                cards[i].color = Color.clear;
+                paperCards[i]=PaperFighterHud.Shape(card.transform,"Cooldown Paper",Vector2.zero,Vector2.zero,PaperFighterHud.Paper);
+                var face=paperCards[i].rectTransform; face.anchorMin=Vector2.zero; face.anchorMax=Vector2.one; face.sizeDelta=Vector2.zero;
                 var text = new GameObject("P" + (player + 1) + " Special Status " + i, typeof(RectTransform), typeof(Text));
                 text.transform.SetParent(card.transform, false); labels[i] = text.GetComponent<Text>();
-                labels[i].font = RuntimeFonts.Japanese; labels[i].fontSize = 20; labels[i].alignment = TextAnchor.UpperCenter;
+                labels[i].font = RuntimeFonts.Japanese; labels[i].fontSize = 22; labels[i].alignment = TextAnchor.UpperCenter;
                 labels[i].raycastTarget = false; labels[i].supportRichText = false;
                 var rect = labels[i].rectTransform; rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one;
                 rect.offsetMin = new Vector2(3, 12); rect.offsetMax = new Vector2(-3, -5);
@@ -46,7 +50,7 @@ namespace AniBato.Game
             {
                 cards[i].gameObject.SetActive(i <= count); if (i > count) continue;
                 var rect = cards[i].rectTransform; rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0, 1);
-                rect.anchoredPosition = new Vector2(i * (width + Gap), 0); rect.sizeDelta = new Vector2(width, 120);
+                rect.anchoredPosition = new Vector2(i * (width + Gap), 0); rect.sizeDelta = new Vector2(width, 124);
                 bool ready; float progress; string title, state;
                 if (i == count)
                 {
@@ -83,9 +87,9 @@ namespace AniBato.Game
                         progress = Mathf.Clamp01(frames/(float)maximum); ready = false;
                     }
                 }
-                labels[i].color = ready ? new Color(.65f, 1, .8f) : new Color(1, .85f, .58f);
-                cards[i].color = new Color(.035f, .055f, .10f, .9f);
-                bars[i].color = ready ? new Color(.3f, .9f, .65f) : new Color(.45f, .65f, 1);
+                labels[i].color = ready ? PaperFighterHud.Teal : PaperFighterHud.Ink;
+                if(paperCards[i])paperCards[i].color=ready?PaperFighterHud.Paper:new Color(.83f,.78f,.67f,1);
+                bars[i].color = ready ? PaperFighterHud.Teal : PaperFighterHud.Link;
                 bars[i].rectTransform.sizeDelta = new Vector2((width - 12) * progress, 5);
             }
         }

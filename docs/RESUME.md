@@ -1,3 +1,13 @@
+## 最新（2026-10-21）：紙HUDを実装・検証完了、崖と8サポートへ継続
+
+先行ST/技改修はb400d8dで保存済み。紙HUDを追加し、名前・紙ハート・被弾蓄積・ST・LINK・特殊CDを不透明な台紙へ整理、英語名を日本語の上に表示。白棒はSTで、旧HUDの未保存参照が原因。カメラは上段キャラを台紙の下に保ち、タイトルから起動時の非表示HUDも取得する。戦闘数値は変更なし。
+
+今回paper_hud_6：実Unity BuildAll成功／Edit773/773／Play98/98／Windows成功、失敗・スキップ0。paper_hud_web_final：WebGL成功128,092,777bytes／229.4416739秒、445/445原画RGBA保持、Windows復帰のUnity子プロセスexit0。補助PowerShellは終了後のコンソールタイトルでパイプエラーになったが、Webと復帰のUnityログ双方でreturn0を独立確認。内蔵ブラウザの実キーでタイトル→練習→透真/蓮→星の終わり、通常ST100→93、相手蓄積1/3、警告エラー0。証跡docs/codex_logs/paper_hud_verification.json、3比率画像docs/screenshots/paper_hud/、実Web画像paper_hud_web/hud_stamina.png。
+
+次はdocs/codex_tasks/PAPER_LEDGE_RECOVERY.mdの崖つかまり9人/消費/復帰/下攻撃限定/居座り防止、続いてSUPPORT_ITEMS_LEDGE_AND_PAPER_HUD.mdの8サポート。崖原画9人（湊/結衣v2）とサポート8組＋道具6点（咲と花v2）はart_source/paper_ledge/・paper_support_items/に全文条件と保存済み、透明PNG。ゲーム接続false・最終部位/手/接点審査はこれから。日本語候補はイラスト確認/追加予定_未実装/。原作容姿9資料と出典はdocs/art_reference/support_items/。候補生成のみを実装済み扱いしない。
+
+3件の任意調整質問は未回答。提示案を暫定値として明記し、SOで変更可能に進める。現ゲームに崖つかまり・8サポートはまだない。保護カバン・龍太承認通常被弾v5・半減45判定・14/10ゲージを保持。Windows最新Build/paper_hud_6、Web Build/WebGLと8799。検証タブ2は練習静止。各次工程も実Unity全4とWeb反映・引継ぎ・通常保存まで行う。
+
 ## 最新（2026-10-21）：先行ST・技改修の実Unity/Web検証完了、紙HUD・崖・サポートへ
 
 stamina_final_3でBuildAll成功／Edit773/773／Play96/96／Windows成功、失敗・スキップ0。最終648試合も調整版と同値。stamina_web_finalはWebGL成功128,081,814bytes／239.0197202秒、Windows設定復帰成功、445/445PNGの原画RGBA保持。内蔵ブラウザの実キーで通常ST100→93・特殊100→82、湊の溜め転移/青分解、王3部下の裂け目→号令→固定方向行進/退場を確認、警告エラー0。証跡docs/codex_logs/readable_stamina_verification.json、readable_stamina_requirements_audit.md。代表画像docs/screenshots/readable_stamina/とreadable_stamina_web/。対人バランス/美術の最終承認、実機パッド/通常Chrome・Edge/低メモリ端末は別範囲。

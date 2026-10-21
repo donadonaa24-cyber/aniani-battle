@@ -17,13 +17,15 @@ namespace AniBato.Game
         [SerializeField] private Text result;
         [SerializeField] private Text[] counters;
         [SerializeField] private Text[] statuses;
+        [SerializeField] private PaperFighterHud[] playerCards;
+        public void ConfigureCards(PaperFighterHud[] cards) => playerCards = cards;
         public void ConfigureStatuses(Text[] value) => statuses = value;
         private readonly float[] bounceUntil = new float[2];
         private readonly float[] breakUntil = new float[2];
         private RectTransform canvasRect;
         private FighterView[] fighterViews;
-        private Image[] staminaBars;
-        private Text help;
+        [SerializeField] private Image[] staminaBars;
+        [SerializeField] private Text help;
         private GameFlowController flow;
         public void ConfigureLearning(Text hint, Image[] bars) { help = hint; staminaBars = bars; }
         private void Start()
@@ -94,7 +96,9 @@ namespace AniBato.Game
         }
         private void UpdatePlayer(FighterState fighter, Text hud, int index, int threshold)
         {
-            hud.text = fighter.Definition.Name + "\n" + new string('♥', fighter.Hearts) + new string('♡', runner.Simulation.Rules.InitialHearts - fighter.Hearts) +
+            bool paper = playerCards != null && playerCards.Length > index && playerCards[index];
+            if (paper) playerCards[index].Refresh(fighter, runner.Simulation.Rules);
+            else hud.text = fighter.Definition.Name + "\n" + new string('♥', fighter.Hearts) + new string('♡', runner.Simulation.Rules.InitialHearts - fighter.Hearts) +
                 "   " + fighter.NormalHitCount + "/" + threshold + "\nST " + Mathf.FloorToInt(fighter.Stamina) + "/" + fighter.Definition.Stamina.Maximum +
                 "  通常 " + fighter.Definition.Stamina.NormalFirstCost + "/" + fighter.Definition.Stamina.NormalSecondCost + "/" + fighter.Definition.Stamina.NormalThirdCost +
                 "\nLINK " + fighter.Gauge + "/" + runner.Simulation.Rules.Gauge.Maximum;
@@ -102,7 +106,7 @@ namespace AniBato.Game
             if(fighter.Stamina < fighter.Definition.Stamina.Maximum && fighter.Attack==null && fighter.Mode!=FighterMode.Charging && fighter.Mode!=FighterMode.Guard)
                 status += fighter.StaminaDelayRemaining>0 ? "  ST回復まで " + (fighter.StaminaDelayRemaining/60f).ToString("0.0") + "秒" : "  ST回復中";
             if (fighter.StaminaRejectedRemaining>0) status+="  スタミナ不足";
-            if (staminaBars != null)
+            if (staminaBars != null && staminaBars.Length > index && staminaBars[index])
             {
                 float fraction = fighter.Definition.Stamina.Maximum > 0 ? fighter.Stamina / fighter.Definition.Stamina.Maximum : 1;
                 staminaBars[index].rectTransform.sizeDelta = new Vector2(300 * fraction, 8);

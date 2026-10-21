@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "phase": "paper_hud",
+  "nativeTag": "paper_hud_6",
+  "buildAll": "success",
+  "editMode": {
+    "passed": 773,
+    "total": 773,
+    "failed": 0
+  },
+  "playMode": {
+    "passed": 98,
+    "total": 98,
+    "failed": 0
+  },
+  "windowsBuild": "success",
+  "web": {
+    "restoreWindowsChildExit": 0,
+    "bytes": 128092777,
+    "screenshot": "docs/screenshots/paper_hud_web/hud_stamina.png",
+    "rgbaChecked": 445,
+    "tag": "paper_hud_web_final",
+    "result": "success",
+    "warningErrors": 0,
+    "observed": [
+      "Real title/menu/character/stage navigation",
+      "Opaque paper boards, hearts, English ruby, ST and LINK",
+      "Toma normal shot ST 100 to 93 with proportional fill",
+      "Normal accumulation 1/3 on the opponent"
+    ],
+    "rgbaFailed": 0,
+    "browser": "in-app localhost",
+    "wrapperNote": "PowerShell console-title pipe error occurred after child processes completed; both Unity logs independently confirm exit 0.",
+    "seconds": 229.4416739
+  },
+  "screenshots": [
+    "docs/screenshots/paper_hud/1920x1080.png",
+    "docs/screenshots/paper_hud/1600x1200.png",
+    "docs/screenshots/paper_hud/2520x1080.png"
+  ],
+  "pending": [
+    "Ledge simulation and sprite connection",
+    "Support item simulation and sprite connection",
+    "Optional balance question answers"
+  ],
+  "evidence": [
+    {
+      "sha256": "15df1e3413ea080072de712d1886e64e4debe1823b76c8f0fb312f9ee4008d0e",
+      "file": "TestResults/paper_hud_6_EditMode.xml"
+    },
+    {
+      "sha256": "9ee439afcc0ae6600f8e8c52784b5751e28c9721b413b6f4448c63a43dc8d72c",
+      "file": "TestResults/paper_hud_6_PlayMode.xml"
+    },
+    {
+      "sha256": "fda7ee8c2cae6dccf8dd6060026f4c8084a9fd0bbe0973d98c0f91ce2ce65f5a",
+      "file": "TestResults/paper_hud_6_BuildAll.log"
+    },
+    {
+      "sha256": "ab9a36d042a4e53238f60d0185aae75c5bd5b6943733ec7c548832a475390826",
+      "file": "TestResults/paper_hud_web_final_WebGL.log"
+    },
+    {
+      "sha256": "2a1fbad2949b8200e20dc4d34f88006dd4453e80686f8d595204c2f1ab10df59",
+      "file": "TestResults/paper_hud_web_final_RestoreWindows.log"
+    },
+    {
+      "sha256": "99c8c7af9c2b6ea27dd36b2e676af93f11e89e437ae88255a9ba7e2f9814c5be",
+      "file": "TestResults/paper_hud_6_build.log"
+    }
+  ]
+}
