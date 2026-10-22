@@ -12,6 +12,8 @@ namespace AniBato.Presentation
             switch (value.Kind)
             {
                 case BattleEventKind.Hit: return value.AttackKind == AttackKind.Normal ? SoundCue.NormalHit : SoundCue.SpecialHit;
+                case BattleEventKind.SupportCollected: case BattleEventKind.SupportWalletCollected: return SoundCue.Confirm;
+                case BattleEventKind.BarrierAbsorbed: return SoundCue.Guard;
                 case BattleEventKind.Guarded: case BattleEventKind.Clash: return SoundCue.Guard;
                 case BattleEventKind.JustGuard: case BattleEventKind.JustDodge: return SoundCue.Just;
                 case BattleEventKind.CounterSuccess: return SoundCue.Counter;

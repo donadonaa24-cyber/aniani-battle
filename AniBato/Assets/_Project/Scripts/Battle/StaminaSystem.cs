@@ -27,10 +27,10 @@ namespace AniBato.Battle
     public static class StaminaSystem
     {
         public const int UnitsPerPoint = 60;
-        public static bool CanSpend(FighterState fighter, int cost) => !fighter.Definition.Stamina.Enabled || fighter.StaminaUnits >= cost * UnitsPerPoint;
+        public static bool CanSpend(FighterState fighter, int cost) => SupportStatus.Infinite(fighter) || !fighter.Definition.Stamina.Enabled || fighter.StaminaUnits >= cost * UnitsPerPoint;
         public static bool Spend(FighterState fighter, int cost, bool groundJumpRescue = false)
         {
-            if (!fighter.Definition.Stamina.Enabled) return true;
+            if (!fighter.Definition.Stamina.Enabled || SupportStatus.Infinite(fighter)) return true;
             if (!CanSpend(fighter, cost) && !groundJumpRescue) { Reject(fighter); return false; }
             fighter.StaminaUnits = Math.Max(0, fighter.StaminaUnits - cost * UnitsPerPoint);
             fighter.StaminaDelayRemaining = fighter.Definition.Stamina.RecoveryDelayFrames;
@@ -64,7 +64,7 @@ namespace AniBato.Battle
             if (fighter.StaminaRejectedRemaining > 0) fighter.StaminaRejectedRemaining--;
             if (fighter.GuardLockRemaining > 0) fighter.GuardLockRemaining--;
             var data = fighter.Definition.Stamina;
-            if (!data.Enabled || fighter.HitstopRemaining > 0 || fighter.Mode == FighterMode.KO || LedgeSystem.Attached(fighter)) return;
+            if (SupportStatus.Infinite(fighter) || !data.Enabled || fighter.HitstopRemaining > 0 || fighter.Mode == FighterMode.KO || LedgeSystem.Attached(fighter)) return;
             if (fighter.Mode == FighterMode.Guard)
             {
                 fighter.StaminaUnits = Math.Max(0, fighter.StaminaUnits - data.GuardDrainPerSecond);

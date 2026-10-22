@@ -32,6 +32,7 @@ MonoBehaviour:
     DirectionalNormals: []
     UpNormal:
       CanHitLedge: 0
+      StaminaDamage: 0
       Name: 
       Ability:
         Motion: 0
@@ -207,6 +208,7 @@ MonoBehaviour:
     Specials: []
     Ultimate:
       CanHitLedge: 0
+      StaminaDamage: 0
       Name: 
       Ability:
         Motion: 0
@@ -410,6 +412,12 @@ MonoBehaviour:
   Silhouette: 0
   Portrait: {fileID: 21300000, guid: a7e99e79650aa0445aede8d31faab6ad, type: 3}
   SelectionSprite: {fileID: 21300000, guid: a7e99e79650aa0445aede8d31faab6ad, type: 3}
+  HudPortraitRegion:
+    serializedVersion: 2
+    x: 0.26624924
+    y: 0.3448276
+    width: 0.5636503
+    height: 0.50689656
   PrototypeSharedMoves: 0
   ActionArtworkPending: 1
   Animations: {fileID: 11400000, guid: 186f32daae7136f489084393ef0417c5, type: 2}

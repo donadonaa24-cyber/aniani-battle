@@ -35,6 +35,7 @@ namespace AniBato.Game
             flow = Object.FindAnyObjectByType<GameFlowController>();
             inputController=runner.GetComponent<InputController>();
             foreach (var text in GetComponentsInChildren<Text>(true)) text.font = RuntimeFonts.Japanese;
+            foreach(var counter in counters)foreach(var shadow in counter.GetComponents<Shadow>())shadow.enabled=false;
         }
         private Text[] popups;
         private readonly float[] popupUntil = new float[2];
@@ -56,6 +57,7 @@ namespace AniBato.Game
             if (battleEvent.Kind == BattleEventKind.Break) breakUntil[target] = Time.unscaledTime + presentation.BreakSeconds;
             string label = battleEvent.Kind == BattleEventKind.CounterSuccess ? "COUNTER!" :
                 battleEvent.Kind == BattleEventKind.JustGuard ? "JUST GUARD!" : battleEvent.Kind == BattleEventKind.JustDodge ? "JUST DODGE!" :
+                battleEvent.Kind == BattleEventKind.SupportCollected ? PaperSupportArt.DisplayName((SupportKind)battleEvent.Value)+" 登場！" :
                 battleEvent.Kind == BattleEventKind.ComboFinish ? "COMBO FINISH!" : battleEvent.Kind == BattleEventKind.Break ? "BREAK!" : battleEvent.Kind == BattleEventKind.GuardBroken ? "GUARD BREAK!" : null;
             if (label != null)
             {
@@ -99,7 +101,7 @@ namespace AniBato.Game
         private void UpdatePlayer(FighterState fighter, Text hud, int index, int threshold)
         {
             bool paper = playerCards != null && playerCards.Length > index && playerCards[index];
-            if (paper) playerCards[index].Refresh(fighter, runner.Simulation.Rules);
+            if (paper) playerCards[index].Refresh(fighter, runner.Simulation.Rules,runner.Simulation.Supports.Pickup,runner.Character(index));
             else hud.text = fighter.Definition.Name + "\n" + new string('♥', fighter.Hearts) + new string('♡', runner.Simulation.Rules.InitialHearts - fighter.Hearts) +
                 "   " + fighter.NormalHitCount + "/" + threshold + "\nST " + Mathf.FloorToInt(fighter.Stamina) + "/" + fighter.Definition.Stamina.Maximum +
                 "  通常 " + fighter.Definition.Stamina.NormalFirstCost + "/" + fighter.Definition.Stamina.NormalSecondCost + "/" + fighter.Definition.Stamina.NormalThirdCost +
@@ -116,6 +118,9 @@ namespace AniBato.Game
                 staminaBars[index].rectTransform.sizeDelta = new Vector2(300 * fraction, 8);
                 staminaBars[index].color = fighter.StaminaRejectedRemaining > 0 && fighter.StaminaRejectedRemaining % 8 < 4 ? Color.red : new Color(.3f, .85f, .65f);
             }
+            if(fighter.SupportInfiniteRemaining>0)status+="  ST∞ "+(fighter.SupportInfiniteRemaining/60f).ToString("0.0")+"秒";
+            if(fighter.SupportSlowRemaining>0)status+="  スロー "+(fighter.SupportSlowRemaining/60f).ToString("0.0")+"秒";
+            if(fighter.SupportBarrierRemaining>0)status+="  バリア "+fighter.SupportBarrierUnits+"/"+runner.Simulation.Rules.Support.BarrierUnits+" "+(fighter.SupportBarrierRemaining/60f).ToString("0.0")+"秒";
             if (fighter.MarkRemaining > 0) status += "  解析マーク";
             if (fighter.ParalysisRemaining > 0) status += "  麻痺";
             if (fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0)

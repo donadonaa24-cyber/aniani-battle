@@ -16,6 +16,7 @@ namespace AniBato.Game
         private AbilityCueView abilityCue;
         private TeleportPhaseView teleportPhase;
         private SummonCommandView summonCommand;
+        private FighterEntranceView entrance;
         private float flashUntil, headY;
         private int curryLastActiveTick=-1;
         public int PlayerIndex => playerIndex;
@@ -45,6 +46,7 @@ namespace AniBato.Game
             abilityCue = new AbilityCueView(transform);
             teleportPhase = new TeleportPhaseView(transform, presentation);
             summonCommand = new SummonCommandView(transform);
+            entrance = new FighterEntranceView(transform,runner);
             arm.enabled = secondArm.enabled = food.enabled = mogu.enabled = wave.enabled = field.enabled = false;
             ApplyCharacter();
         }
@@ -182,6 +184,7 @@ namespace AniBato.Game
             abilityCue.Apply(fighter, body, runner.Simulation.Match.IsFinished,UsesPaperSprite?character.PaperMotion:null,sample,generatedTransformation);
             teleportPhase.Apply(fighter, body, runner.Simulation.Match.TickCount, runner.Simulation.Match.IsFinished);
             summonCommand.Apply(fighter,runner.Simulation.Projectiles,headY,runner.Simulation.Match.IsFinished);
+            entrance.Apply(body,fighter.Facing);
             food.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0;
             if (food.enabled) food.transform.localPosition = new Vector3(0.45f, 0.35f + Mathf.Sin(fighter.Attack.Frame * 0.5f) * 0.08f, 0);
             arm.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.IsActive && !fighter.Attack.Definition.SpawnProjectile;

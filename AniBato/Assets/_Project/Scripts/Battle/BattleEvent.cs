@@ -2,7 +2,7 @@ namespace AniBato.Battle
 {
     public enum BattleEventKind { Hit, HeartLost, Break, KO, RingOut, TimeUp, MatchEnded,
         Guarded, Dodged, CounterSuccess, JustGuard, JustDodge, ComboFinish, GaugeChanged, UltimateStarted,
-        StageShrinkWarning, StageShrinkStarted, StageSegmentWarning, StageShrunk, AttackStarted, GuardBroken, Clash }
+        StageShrinkWarning, StageShrinkStarted, StageSegmentWarning, StageShrunk, AttackStarted, GuardBroken, Clash, SupportCollected, BarrierAbsorbed, SupportWalletCollected }
     public readonly struct BattleEvent
     {
         public readonly BattleEventKind Kind;

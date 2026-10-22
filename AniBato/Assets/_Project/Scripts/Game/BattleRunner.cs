@@ -22,6 +22,7 @@ namespace AniBato.Game
         public BattleVector RenderPosition(Projectile shot) => RenderState.ProjectilePosition(shot, clock.Fraction, Paused);
         private int suppressInputFrame = -1;
         private int finishHoldRemaining = -1;
+        private uint supportMatchSequence;
         private ICpuBrain cpuBrain;
         public CpuDifficulty Difficulty { get; private set; }
         public ICpuBrain CpuBrain => cpuBrain;
@@ -90,7 +91,9 @@ namespace AniBato.Game
         {
             if (!p1 || !p2 || !rules || !stage || !input)
                 throw new InvalidOperationException("BattleRunnerの設定が欠落しています。BuildAllを実行してください。");
-            Simulation = new BattleSimulation(p1.ToDefinition(), p2.ToDefinition(), rules.ToDefinition(), stage.ToGeometry());
+            var definition=rules.ToDefinition();
+            uint supportSeed=unchecked(definition.Support.Seed+(supportMatchSequence++)*0x9e3779b9u);
+            Simulation = new BattleSimulation(p1.ToDefinition(), p2.ToDefinition(), definition, stage.ToGeometry(),supportSeed);
             Simulation.Practice = Practice; Tutorial?.Reset(); LastPlayerInput = default; LastMoveName = "";
             if (CpuOpponent)
             {

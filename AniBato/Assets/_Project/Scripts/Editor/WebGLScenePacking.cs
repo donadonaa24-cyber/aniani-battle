@@ -57,6 +57,12 @@ namespace AniBato.EditorTools
                 c.Far=(Sprite)Copy(c.Far);c.Mid=(Sprite)Copy(c.Mid);c.Frame=(Sprite)Copy(c.Frame);
                 c.Main=(Sprite)Copy(c.Main);c.Upper=(Sprite)Copy(c.Upper);c.Warning=(Sprite)Copy(c.Warning);c.Removal=(Sprite)Copy(c.Removal);return c;
             }
+            if(source is PaperSupportArt support)
+            {
+                var c=Object.Instantiate(support);copies.Add(source,c);
+                c.Entries=support.Entries.Select(e=>new SupportSprite{Key=e.Key,Height=e.Height,VisibleSize=e.VisibleSize,Sprite=(Sprite)Copy(e.Sprite)}).ToArray();
+                c.Rift=(Sprite)Copy(c.Rift);c.Card=(Sprite)Copy(c.Card);return c;
+            }
             if(source is PaperEnsembleArt ensemble)
             {
                 var c=Object.Instantiate(ensemble);copies.Add(source,c);c.Artwork=(Sprite)Copy(c.Artwork);return c;
@@ -101,6 +107,7 @@ namespace AniBato.EditorTools
             if(source is BattleSetup setup)
             {
                 var c=Object.Instantiate(setup);copies.Add(source,c);
+                c.SupportArt=(PaperSupportArt)Copy(setup.SupportArt);
                 c.Characters=setup.Characters.Select(v=>(CharacterData)Copy(v)).ToArray();
                 c.Stages=setup.Stages.Select(v=>(StageData)Copy(v)).ToArray();return c;
             }

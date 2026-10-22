@@ -17,8 +17,13 @@ namespace AniBato.Tests
             var hud=Object.FindAnyObjectByType<HUDController>();
             var cards=Object.FindObjectsByType<PaperFighterHud>().OrderBy(c=>c.name).ToArray();
             Assert.That(cards.Length,Is.EqualTo(2));
+            Assert.That(GameObject.Find("P1 Counter Paper"),Is.Null,"頭上の黒い台紙・影は表示しない");
+            Assert.That(GameObject.Find("P2 Counter Paper"),Is.Null);
+            foreach(var counter in hud.GetComponentsInChildren<Text>().Where(t=>t.name.EndsWith("Head Counter")))
+                Assert.That(counter.GetComponents<Shadow>().All(s=>!s.enabled),Is.True,"数字の黒い縁・影も除去");
             foreach(var card in cards)
             {
+                Assert.That(card.transform.localScale.x,Is.EqualTo(1f/3).Within(.0001));
                 Assert.That(card.transform.Find("Opaque Paper Base").GetComponent<PaperHudShape>().color.a,Is.EqualTo(1));
                 Assert.That(card.GetComponentsInChildren<PaperHudShape>().All(s=>!s.raycastTarget),Is.True);
                 Assert.That(card.GetComponentsInChildren<PaperHudShape>().All(s=>s.GetComponent<CanvasRenderer>()!=null),Is.True,"紙台紙の描画部品はシーン再読込後も必要");
@@ -32,6 +37,11 @@ namespace AniBato.Tests
                 Assert.That(ruby.text,Is.EqualTo(PaperFighterHud.EnglishName(runner.Simulation.P1.Definition.Name)));
                 Assert.That(ruby.text,Does.Match("^[A-Z]+$"));
                 Assert.That(ruby.rectTransform.anchoredPosition.y,Is.GreaterThan(cards[0].NameLabel.rectTransform.anchoredPosition.y));
+                var icon=cards[0].transform.Find("Portrait Paper/Standing Portrait").GetComponent<Image>();
+                Assert.That(icon.sprite,Is.Not.Null);
+                Assert.That(icon.sprite.texture,Is.SameAs(runner.Setup.Character(i).PaperMotion.Sprite.texture),"本人の採用待機原画を使う");
+                Assert.That(icon.sprite.rect.width,Is.GreaterThan(100));
+                Assert.That(icon.sprite.rect.width,Is.LessThan(runner.Setup.Character(i).PaperMotion.Sprite.rect.width),"全身を小さく押し込まず顔を切り出す");
                 Assert.That(cards[0].StaminaFraction,Is.EqualTo(1));
                 Assert.That(cards[0].LinkFraction,Is.Zero);
                 foreach(var text in cards.SelectMany(c=>c.GetComponentsInChildren<Text>()).Where(t=>!string.IsNullOrEmpty(t.text)))
@@ -84,7 +94,11 @@ namespace AniBato.Tests
                 {
                     card.GetComponent<RectTransform>().GetWorldCorners(corners);
                     foreach(var corner in corners){var p=camera.WorldToViewportPoint(corner);Assert.That(p.x,Is.InRange(0f,1f));Assert.That(p.y,Is.InRange(0f,1f));}
+                    var span=corners[2]-corners[0];
+                    Assert.That(span.x/canvas.transform.lossyScale.x,Is.EqualTo(680f/3).Within(.1),"台紙の実表示横幅は従来の3分の1");
                 }
+                foreach(var cooldown in Object.FindObjectsByType<SpecialCooldownHud>())
+                    Assert.That(cooldown.transform.localScale.x,Is.EqualTo(1f/3).Within(.0001),"CDも縮小して巨大な旧領域を残さない");
                 var fighter=runner.Simulation.P1;var head=camera.WorldToViewportPoint(new Vector3(fighter.Position.X,fighter.Position.Y+fighter.Definition.HurtboxSize.Y*.5f,0));
                 Assert.That(head.y,Is.LessThan(1-PaperFighterHud.SafeTopHeight/canvas.GetComponent<RectTransform>().rect.height),"上段のキャラは不透明HUDの下に収まる");
                 Assert.That(head.y,Is.GreaterThan(0));

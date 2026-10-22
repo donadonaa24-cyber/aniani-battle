@@ -58,10 +58,51 @@ MonoBehaviour:
       HangHeadBelow: 0.15
       JumpInwardMultiplier: 0.7
       JumpVerticalMultiplier: 1.1
+    Support:
+      Enabled: 1
+      Seed: 175225456
+      FirstMinimumFrames: 480
+      FirstMaximumFrames: 720
+      IntervalMinimumFrames: 600
+      IntervalMaximumFrames: 960
+      PickupLifetimeFrames: 900
+      ReuseFrames: 600
+      EffectFrames: 300
+      PortalFrames: 45
+      ActorHoldFrames: 90
+      ExitFrames: 24
+      WalletLifetimeFrames: 480
+      CarTravelFrames: 180
+      CarParalysisFrames: 120
+      ArrowLifetimeFrames: 180
+      PawnCount: 6
+      PawnStaminaDamage: 15
+      PawnIntervalFrames: 16
+      PawnLifetimeFrames: 180
+      BarrierUnits: 3
+      HealHearts: 1
+      ProjectileHitstopFrames: 4
+      ProjectileHitstunFrames: 12
+      SlowMultiplier: 0.6
+      PickupSize: 0.7
+      WalletSize: 0.6
+      SpawnMargin: 1.5
+      CarWidth: 3.6
+      CarHeight: 1.45
+      ArrowSpeed: 20
+      PawnSpeed: 10
+      PawnSize: 0.7
+      PawnSpawnHeight: 10
+      ArrowSize:
+        X: 1.3
+        Y: 0.28
+      ArrowKnockback:
+        X: 5
+        Y: 4
     DropThroughSpeed: 8
     DirectionThreshold: 0.5
     EnableRingOut: 1
-    SchemaVersion: 14
+    SchemaVersion: 15
     Defense:
       GuardReleaseFrames: 6
       GuardStunFrames: 10

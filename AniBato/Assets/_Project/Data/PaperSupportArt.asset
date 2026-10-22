@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308fc17e1bf84924ca6ed80b73f87550, type: 3}
+  m_Name: PaperSupportArt
+  m_EditorClassIdentifier: AniBato.Game::AniBato.Game.PaperSupportArt
+  Entries:
+  - Key: alma
+    Sprite: {fileID: 21300000, guid: bdb24fb4516efab45b259c6c9cf66adb, type: 3}
+    Height: 3.2
+    VisibleSize: {x: 1.4420117, y: 2.807041}
+  - Key: shion_car
+    Sprite: {fileID: 21300000, guid: 99d992c1d0caaa34896a230407d0470a, type: 3}
+    Height: 2.2
+    VisibleSize: {x: 2.8352053, y: 1.7424308}
+  - Key: saki_hana
+    Sprite: {fileID: 21300000, guid: 7539c43bbfae259498dbe0f903a0995a, type: 3}
+    Height: 2.55
+    VisibleSize: {x: 1.7912489, y: 1.879497}
+  - Key: sara
+    Sprite: {fileID: 21300000, guid: f71e1b748d989d947a8f02f80a44ce0c, type: 3}
+    Height: 2.6
+    VisibleSize: {x: 1.6504275, y: 2.8201845}
+  - Key: mai
+    Sprite: {fileID: 21300000, guid: 2b38f55b2f80dc7488ed3c8f95072e8f, type: 3}
+    Height: 2.4
+    VisibleSize: {x: 1.7386756, y: 1.8625984}
+  - Key: tsuyoshi
+    Sprite: {fileID: 21300000, guid: b0103101195161c47ae2efff97dc6800, type: 3}
+    Height: 2.6
+    VisibleSize: {x: 1.8456999, y: 2.797653}
+  - Key: mio
+    Sprite: {fileID: 21300000, guid: 3c7f26b6cd5b2594abaa79b6c92543b0, type: 3}
+    Height: 2.45
+    VisibleSize: {x: 1.8963956, y: 2.5873597}
+  - Key: hota
+    Sprite: {fileID: 21300000, guid: d5f32d458a74c02429026034f054799f, type: 3}
+    Height: 2.35
+    VisibleSize: {x: 1.8119028, y: 2.7826319}
+  - Key: pickup_book
+    Sprite: {fileID: 21300000, guid: 77ffb9f5ff710c24897e61879f30c201, type: 3}
+    Height: 0.7
+    VisibleSize: {x: 1.731165, y: 1.6147527}
+  - Key: pickup_silver
+    Sprite: {fileID: 21300000, guid: 94eaa0e9b5c543c4f847002929a0e286, type: 3}
+    Height: 0.7
+    VisibleSize: {x: 1.2955574, y: 1.494585}
+  - Key: pickup_pawn
+    Sprite: {fileID: 21300000, guid: 5dfa7032e4003394aa931c5468487185, type: 3}
+    Height: 0.7
+    VisibleSize: {x: 1.3500084, y: 1.6016093}
+  - Key: wallet
+    Sprite: {fileID: 21300000, guid: 74b9a239fa377d34694c8cbc879af310, type: 3}
+    Height: 0.7
+    VisibleSize: {x: 1.2655154, y: 1.2373512}
+  - Key: mai_arrow
+    Sprite: {fileID: 21300000, guid: 5fb007b5dac43524b8643aea06464a9a, type: 3}
+    Height: 0.7
+    VisibleSize: {x: 2.679363, y: 0.23658004}
+  - Key: mio_barrier
+    Sprite: {fileID: 21300000, guid: d574c3277da3c50468a0ff580c076335, type: 3}
+    Height: 0.7
+    VisibleSize: {x: 1.7499413, y: 2.2906957}
+  Rift: {fileID: 21300000, guid: 3f6009fc05be4b14aac5475b720df7c5, type: 3}
+  Card: {fileID: 21300000, guid: 04789595966f09d4ab53ed8c974fe5fb, type: 3}
+  FieldShader: {fileID: 4800000, guid: ac8efa38eb83452449456d93ba5b0334, type: 3}

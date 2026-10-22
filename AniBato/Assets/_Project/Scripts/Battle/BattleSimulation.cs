@@ -22,6 +22,7 @@ namespace AniBato.Battle
         public MatchState Match { get; }
         public StageGeometry Stage { get; }
         public StageShrinkController Shrink { get; }
+        public SupportSystem Supports { get; }
         public BattleRuleDefinition Rules { get; }
         public IReadOnlyList<BattleEvent> Events { get; }
         public ComboTracker ComboP1 => comboP1;
@@ -42,10 +43,12 @@ namespace AniBato.Battle
             }
         }
 
-        public BattleSimulation(in CharacterDefinition p1, in CharacterDefinition p2, in BattleRuleDefinition rules, StageGeometry stage)
+        public BattleSimulation(in CharacterDefinition p1, in CharacterDefinition p2, in BattleRuleDefinition rules, StageGeometry stage, uint? supportSeed = null)
         {
             rules.Validate(); Rules = rules; Stage = (stage ?? throw new System.ArgumentNullException(nameof(stage))).Snapshot();
             Shrink = new StageShrinkController(Stage, rules.Shrink);
+            var support=rules.Support; if(supportSeed.HasValue)support.Seed=supportSeed.Value;
+            Supports=new SupportSystem(support);
             P1 = new FighterState(0, p1, stage.SpawnP1, rules.InitialHearts);
             P2 = new FighterState(1, p2, stage.SpawnP2, rules.InitialHearts);
             Match = new MatchState(rules.DurationTicks); Events = events.AsReadOnly();
@@ -86,6 +89,7 @@ namespace AniBato.Battle
             movement.Step(P1, p1, Stage, Rules, pullP1); movement.Step(P2, p2, Stage, Rules, pullP2);
             LedgeSystem.TryCatch(P1,p1,Stage,Rules); LedgeSystem.TryCatch(P2,p2,Stage,Rules);
             projectileSystem.Step(P1, P2, Rules.ProjectileLimitPerOwner, Stage);
+            Supports.Step(P1,P2,Stage,Rules,Match.TickCount,projectileSystem,events);
             if (Rules.CombatInput.NormalClashes)
             { clash.Resolve(P1, P2, Projectiles, Match.TickCount, Rules.CombatInput, events); projectileSystem.RemoveClashed(); }
             contacts.Clear();

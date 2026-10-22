@@ -21,6 +21,11 @@ for(const file of files){
   fields++;if(now[key]!==value)differences.push({file,key,before:value,after:now[key]});
  }
 }
-const result={baseline,attacksCompared:attacks,existingNumericFieldsCompared:fields,differences};
+const requestedRocket=process.argv.includes('--rocket-main-only');
+const approvedDifferences=requestedRocket?differences.filter(d=>d.file==='AniBato/Assets/_Project/Data/ToumaR3Ultimate.asset'&&
+ d.key==='MonoBehaviour.Definition.ProjectileBehavior.MainPlatformOnly'&&d.before===0&&d.after===1):[];
+const unexpectedDifferences=differences.filter(d=>!approvedDifferences.includes(d));
+const result={baseline,attacksCompared:attacks,existingNumericFieldsCompared:fields,differences,approvedDifferences,unexpectedDifferences};
 fs.writeFileSync(path.join(root,'TestResults/ledge-balance-preservation.json'),JSON.stringify(result,null,2)+'\n');
-console.log(JSON.stringify({attacks,fields,differences:differences.length}));if(differences.length)process.exitCode=1;
+console.log(JSON.stringify({attacks,fields,differences:differences.length,approved:approvedDifferences.length,unexpected:unexpectedDifferences.length}));
+if(unexpectedDifferences.length||requestedRocket&&approvedDifferences.length!==1)process.exitCode=1;

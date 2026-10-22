@@ -90,6 +90,8 @@ namespace AniBato.EditorTools
             RyutaKickBuilder.Apply(setup.Characters[8]);
             AttackStaminaBuilder.Apply(setup.Characters);
             PaperLedgeBuilder.Apply(setup.Characters);
+            PaperSupportBuilder.Apply(setup);
+            PaperHudPortraitBuilder.Apply(setup.Characters);
             if (setup.Stages == null || setup.Stages.Length == 0) setup.Stages = stages;
             if (setup.CpuDifficulties == null || setup.CpuDifficulties.Length == 0) setup.CpuDifficulties = cpuDifficulties;
             if (setup.CpuDifficulties.Length != 3) throw new InvalidOperationException("CPU difficulty assets must have three entries.");
@@ -151,6 +153,7 @@ namespace AniBato.EditorTools
             if(definition.SchemaVersion<13) { definition.Ledge=LedgeDefinition.Default; definition.SchemaVersion=13; }
             if(definition.SchemaVersion<14)
             { var ledge=definition.Ledge;ledge.MaximumHoldFrames=300;definition.Ledge=ledge;definition.SchemaVersion=14; }
+            if(definition.SchemaVersion<15) { definition.Support=SupportDefinition.Default; definition.SchemaVersion=15; }
             asset.Definition = definition;
         }
         private static void UpgradeBindings(InputBindings asset)
@@ -446,6 +449,8 @@ namespace AniBato.EditorTools
             Child("Player 1").AddComponent<FighterView>().Configure(runner, p1, presentation, 0);
             Child("Player 2").AddComponent<FighterView>().Configure(runner, p2, presentation, 1);
             Child("Projectiles").AddComponent<ProjectileView>().Configure(runner, presentation);
+            var support=Child("Support Items").AddComponent<SupportView>();support.Configure(runner);
+            cameraObject.AddComponent<SupportFieldFilter>().Configure(runner,support,setup.SupportArt.FieldShader);
             Child("Hitboxes").AddComponent<HitboxDebugView>().Configure(runner, presentation);
             var hud = BuildHud(runner, camera, presentation, rules.Definition.InitialHearts);
             if (isTitle) GameFlowBuilder.Build(runner, input, setup, flowSettings, world, hud, stageView);
@@ -468,7 +473,6 @@ namespace AniBato.EditorTools
             result.enabled = false;
             Text counter1 = CreateText(go.transform, font, "P1 Head Counter", 28, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(200, 60), TextAnchor.MiddleCenter);
             Text counter2 = CreateText(go.transform, font, "P2 Head Counter", 28, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(200, 60), TextAnchor.MiddleCenter);
-            PaperSign.Attach(counter1,"P1 Counter Paper",new Vector2(24,12)); PaperSign.Attach(counter2,"P2 Counter Paper",new Vector2(24,12));
             Text popup1 = CreateText(go.transform, font, "P1 Battle Popup", 30, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(400, 110), TextAnchor.MiddleCenter);
             Text popup2 = CreateText(go.transform, font, "P2 Battle Popup", 30, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(400, 110), TextAnchor.MiddleCenter);
             popup1.enabled = popup2.enabled = false;
@@ -485,14 +489,17 @@ namespace AniBato.EditorTools
                 var panel = new GameObject("Player " + (i + 1) + " Special Cooldowns", typeof(RectTransform));
                 panel.transform.SetParent(go.transform, false); var rect = panel.GetComponent<RectTransform>();
                 rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(i, 1);
-                rect.anchoredPosition = new Vector2(i == 0 ? 28 : -28, -284); rect.sizeDelta = new Vector2(680, 96);
+                rect.anchoredPosition = new Vector2(i == 0 ? 28 : -28, -18-266*PaperFighterHud.CompactScale); rect.sizeDelta = new Vector2(680, 124);
+                rect.localScale=Vector3.one*PaperFighterHud.CompactScale;
                 panel.AddComponent<SpecialCooldownHud>().Configure(runner, i);
                 var statusBase=PaperFighterHud.Shape(go.transform,"P"+(i+1)+" Status Paper",Vector2.zero,new Vector2(680,34),PaperFighterHud.Ink);
                 statusBase.rectTransform.anchorMin=statusBase.rectTransform.anchorMax=statusBase.rectTransform.pivot=new Vector2(i,1);
-                statusBase.rectTransform.anchoredPosition=new Vector2(i==0?28:-28,-246);
+                statusBase.rectTransform.anchoredPosition=new Vector2(i==0?28:-28,-18-228*PaperFighterHud.CompactScale);
+                statusBase.rectTransform.localScale=Vector3.one*PaperFighterHud.CompactScale;
                 statuses[i]=PaperFighterHud.Label(statusBase.transform,"P" + (i+1) + " Status",Vector2.zero,new Vector2(658,30),21,"",PaperFighterHud.Paper);
             }
             hud.ConfigureStatuses(statuses);
+            go.AddComponent<SupportNoticeHud>().Configure(runner);
             BuildCutIn(go, runner, font);
             return go;
         }

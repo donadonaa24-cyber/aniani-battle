@@ -1,3 +1,17 @@
+## 最新完了（2026-10-22）：8サポートとHUD/入場/ロケット追加
+
+8サポート即時取得/承認済み効果/14原画を接続。HUD約3分の1・頭上黒台紙/文字影除去・9待機原画アイコン/斜め目盛りゲージ・取得効果説明4.5秒・9人の裂け目入場・透真ロケット上段貫通/下段爆発を追加。paper_compact_finalは全4成功（BuildAll/Edit817/817/Play104/104/Windows、失敗・スキップ0）。paper_compact_webは138768890bytes/237.0874934秒で成功、Windows復帰/468RGBA保持、実ブラウザの入場/HUD/舞依・歩太・紗良説明/矢の命中/console0も確認。証跡docs/codex_logs/paper_support_verification.json、画像docs/screenshots/paper_compact/・paper_support_web/。説明docs/SUPPORT_ITEMS.md。既存153攻撃/13040数値の差分は依頼ロケット着弾フラグ1件のみ。崖A・保護カバン・龍太承認v5・45半減・14/10を保持。この区切りの必須残なし。通常保存後は次のユーザー指示へ。
+
+以下は追加前の履歴。
+
+## 履歴（2026-10-22）：8サポートの接続・重点Unity検証
+
+崖つかまりAはe83eb28でcommit/push済み。現在はPAPER_SUPPORT_ITEMS.md。承認済み値のSupportDefinition/System/Status、即時接触取得・8種袋・本人CD・各効果・固有投射・安全な場内配置・原画14素材・紙HUD・ALMAの世界だけの淡い歪みを接続した。既存攻撃は変更せず、Support独立チャネル/IDを使用。Support有効化はBattleRules schema15への一回移行。原画は生成済み候補を原寸のまま取り込み、再生成していない。
+
+未コミット差分あり。paper_support_1の初回BuildAllは新テストのVector2.X/Y表記だけでcompile失敗、x/yへ修理済み。paper_support_focusはBuildAll成功、重点Edit17/17・Play2/2合格。8組の原画撮影も完了。画角を原画の位置へ合わせ、取得名/方向/SEを補い、paper_support_finalの実Unity全4が合格（BuildAll成功/Edit814/814/Play103/103/Windows成功、失敗・スキップ0）。14素材はnative接続済みへ更新。paper_support_webは138765051bytes/271.4275161秒で成功、Windows復帰/468RGBA保持も成功。実ブラウザのカード取得→剛/財布/CDを確認した。その後、敵と逆方向へ移動して取得した舞依の表示方向を矢と一致させ、投射もヒットストップ中に止める修理を追加。paper_support_final_2の実Unity全4はBuildAll成功/Edit815/815/Play103/103/Windows成功、失敗・スキップ0。反対向きで拾った舞依も弓/矢の方向一致を実Play確認。現在paper_support_web_finalで最終Webを再ビルド中。完了扱いしない。次は重点失敗の修理→実Unity全4→WebGL/Windows復帰→468原画RGBA監査→実ブラウザの拾得と効果→採用/証跡/引継ぎ→通常commit/push。
+
+次の担当は実行中Unityの終了を待ってからAssetsを編集。TestResults/support_draftは古い草稿で、現在の正本はAssets内。サポート進捗はnative接続済み/Web待ち。Webの実行・468RGBA監査・ブラウザ拾得/効果・最後の通常保存が残る。保存済みAの原画と握り指定、保護カバン、龍太承認被弾v5を保持する。
+
 ## 最新完了（2026-10-22）：指定Aの片手つかまり9人をWindows/Webへ反映
 
 最終回答「A：親指が画面左」を採用。先のB回答は取り消し。握った指の内側が見えるAの原画を9人ともhang_user_A_v1として固定し、Builder・採用表・製品テストもAを要求する。左右の言葉で再解釈しない。原寸RGBA/1304×1450/PPU532.5893/手支点を維持。確認用はイラスト確認/ゲーム採用/崖つかまり_採用A/（9人PNG・手元/全身一覧）。全体の美術承認とAの形の選択は区別して記録。

@@ -55,6 +55,12 @@ namespace AniBato.EditorTools
                     EditorUtility.SetDirty(data.Specials[0]); EditorUtility.SetDirty(data.Ultimate);
                     data.AbilityTempoSchemaVersion = 1; EditorUtility.SetDirty(data);
                 }
+                // Explicit landing rule also applies to already migrated assets without resetting their tuning.
+                if (i == 0 && !data.Ultimate.Definition.ProjectileBehavior.MainPlatformOnly)
+                {
+                    var rocket=data.Ultimate.Definition; rocket.ProjectileBehavior.MainPlatformOnly=true;
+                    data.Ultimate.Definition=rocket; EditorUtility.SetDirty(data.Ultimate);
+                }
                 // Art builders import fresh manifests every BuildAll. Reconnect this game's magic overlay afterward.
                 if (i == 5 && data.PaperMotion)
                 {

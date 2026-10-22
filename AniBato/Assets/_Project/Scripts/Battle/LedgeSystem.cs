@@ -27,7 +27,7 @@ namespace AniBato.Battle
         public static int HoldFramesLeft(FighterState f,in LedgeDefinition d)
         {
             int remaining=Math.Max(0,d.MaximumHoldFrames-f.LedgeAge);
-            return !f.Definition.Stamina.Enabled?remaining:Math.Min(remaining,(f.StaminaUnits+d.StaminaPerSecond-1)/d.StaminaPerSecond);
+            return !f.Definition.Stamina.Enabled || SupportStatus.Infinite(f)?remaining:Math.Min(remaining,(f.StaminaUnits+d.StaminaPerSecond-1)/d.StaminaPerSecond);
         }
         public static void Interrupt(FighterState f)
         {
@@ -84,12 +84,12 @@ namespace AniBato.Battle
             }
             if(input.X*f.LedgeSide < -rules.DirectionThreshold)
             { f.Mode=FighterMode.LedgeClimb; f.LedgeStart=f.Position; f.LedgeAge=0; return true; }
-            if(f.Definition.Stamina.Enabled)
+            if(f.Definition.Stamina.Enabled && !SupportStatus.Infinite(f))
             {
                 f.StaminaUnits=Math.Max(0,f.StaminaUnits-d.StaminaPerSecond);
                 f.StaminaDelayRemaining=f.Definition.Stamina.RecoveryDelayFrames;
             }
-            if(++f.LedgeAge>=d.MaximumHoldFrames || f.Definition.Stamina.Enabled && f.StaminaUnits==0) Drop(f);
+            if(++f.LedgeAge>=d.MaximumHoldFrames || f.Definition.Stamina.Enabled && !SupportStatus.Infinite(f) && f.StaminaUnits==0) Drop(f);
             return true;
         }
         public static void JumpCarry(FighterState f,in FrameInput input,in LedgeDefinition d)
@@ -108,7 +108,7 @@ namespace AniBato.Battle
             if(!d.Enabled || !stage.IsActive(0) || stage.IsOutside(f.Position) || f.LedgeRegrabBlocked || Attached(f) ||
                 f.IsFrozenThisTick || f.Mode==FighterMode.KO || f.HitstunRemaining>0 || f.ParalysisRemaining>0 ||
                 f.Mode==FighterMode.Dodge || f.Mode==FighterMode.Counter || f.Mode==FighterMode.Guard ||
-                input.Y < -rules.DirectionThreshold || f.Definition.Stamina.Enabled && f.StaminaUnits==0 ||
+                input.Y < -rules.DirectionThreshold || f.Definition.Stamina.Enabled && !SupportStatus.Infinite(f) && f.StaminaUnits==0 ||
                 f.Attack!=null && f.Attack.Definition.Recovery.Style==RecoveryStyle.None) return;
             var floor=stage[0].Bounds; float half=f.Definition.HurtboxSize.X*.5f;
             int side=f.Position.X<=floor.Left?-1:f.Position.X>=floor.Right?1:0;

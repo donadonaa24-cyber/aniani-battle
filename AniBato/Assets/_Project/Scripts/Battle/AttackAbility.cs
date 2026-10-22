@@ -3,9 +3,9 @@ using System;
 namespace AniBato.Battle
 {
     public enum AbilityMotion { None, Teleport, TwoPhaseRush, TeleportBehind }
-    public enum ProjectileChannel { Shared, Placed, Aftermath }
+    public enum ProjectileChannel { Shared, Placed, Aftermath, Support }
     public enum ShotOrigin { Owner, OpponentAbove, StageCenter }
-    public enum AbilityLook { Default, Bullet, Drone, Rocket, BlackHole, Emp, Alma, Rook, Bishop, King, Card, Pyramid, Spell, Curry, Teleport, RiceBall, Bat, Mine, TrapCard, Meal, Reading, CurryResidue }
+    public enum AbilityLook { Default, Bullet, Drone, Rocket, BlackHole, Emp, Alma, Rook, Bishop, King, Card, Pyramid, Spell, Curry, Teleport, RiceBall, Bat, Mine, TrapCard, Meal, Reading, CurryResidue, SupportCar, SupportArrow, SupportPawn }
     [Serializable]
     public struct AttackAbility
     {

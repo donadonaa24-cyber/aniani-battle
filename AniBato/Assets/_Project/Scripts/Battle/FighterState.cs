@@ -59,14 +59,21 @@
         public ICounterEffect CounterEffect { get; set; }
         public int ParalysisRemaining { get; internal set; }
         public int MarkRemaining { get; internal set; }
+        public int SupportReuseRemaining { get; internal set; }
+        public int SupportSlowRemaining { get; internal set; }
+        public float SupportSlowMultiplier { get; internal set; } = 1;
+        public int SupportInfiniteRemaining { get; internal set; }
+        public int SupportBarrierRemaining { get; internal set; }
+        public int SupportBarrierUnits { get; internal set; }
+        private float SupportMoveMultiplier => SupportSlowRemaining > 0 ? SupportSlowMultiplier : 1;
         public int BuffRemaining { get => System.Math.Max(NormalBuffRemaining, SpeedBuffRemaining); internal set => NormalBuffRemaining = value; }
         internal int NormalBuffRemaining, SpeedBuffRemaining;
         internal BuffDefinition SpeedBuff;
         public BuffDefinition Buff { get; internal set; }
         private float BaseMoveMultiplier => NormalBuffRemaining > 0 ? SkillSystem.Multiplier(Buff.MoveMultiplier) : 1;
         private float BaseDashMultiplier => NormalBuffRemaining > 0 ? SkillSystem.Multiplier(Buff.DashMultiplier) : 1;
-        public float MoveMultiplier => SpeedBuffRemaining > 0 ? System.Math.Max(BaseMoveMultiplier, SkillSystem.Multiplier(SpeedBuff.MoveMultiplier)) : BaseMoveMultiplier;
-        public float DashMultiplier => SpeedBuffRemaining > 0 ? System.Math.Max(BaseDashMultiplier, SkillSystem.Multiplier(SpeedBuff.DashMultiplier)) : BaseDashMultiplier;
+        public float MoveMultiplier => (SpeedBuffRemaining > 0 ? System.Math.Max(BaseMoveMultiplier, SkillSystem.Multiplier(SpeedBuff.MoveMultiplier)) : BaseMoveMultiplier) * SupportMoveMultiplier;
+        public float DashMultiplier => (SpeedBuffRemaining > 0 ? System.Math.Max(BaseDashMultiplier, SkillSystem.Multiplier(SpeedBuff.DashMultiplier)) : BaseDashMultiplier) * SupportMoveMultiplier;
         public float StartupMultiplier => NormalBuffRemaining > 0 ? SkillSystem.Multiplier(Buff.StartupMultiplier) : 1;
         public int SpecialCooldown(SpecialSlot slot) => SpecialCooldowns[(int)slot];
         internal readonly int[] SpecialCooldowns = new int[4];

@@ -55,6 +55,8 @@ namespace AniBato.Game
         public BattleRunner Runner => runner;
         public int CpuRow => SelectionPlayer;
         public bool Ready(int player) => Selection.Picks(player).Count == Selection.Required;
+        public float FighterEntranceProgress => Screen==GameScreen.Countdown || Screen==GameScreen.Pause ?
+            Mathf.Clamp01(countdownElapsed/Mathf.Max(.1f,settings.CountdownNumberSeconds*1.5f)) : 1;
         public string CountdownText => countdownElapsed < settings.CountdownNumberSeconds * 3 ?
             (3 - Mathf.FloorToInt(countdownElapsed / settings.CountdownNumberSeconds)).ToString() : "FIGHT!";
         public void Configure(BattleRunner battle, InputController controller, BattleSetup roster, GameFlowSettings timing,

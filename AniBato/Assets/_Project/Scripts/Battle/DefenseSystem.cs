@@ -64,7 +64,8 @@ namespace AniBato.Battle
                 case DefenseOutcome.Counter:
                     int previousHearts = source.Hearts;
                     counterCombo.RegisterHit(tick, rules, false);
-                    damage.AccumulateNormal(source, counterCombo, target.PlayerIndex, contact.Attack.Id, tick, rules, events);
+                    if(!SupportStatus.Absorb(new HitContact(target,source,contact.Attack,false,-contact.Facing),tick,rules,events))
+                        damage.AccumulateNormal(source, counterCombo, target.PlayerIndex, contact.Attack.Id, tick, rules, events);
                     DamageSystem.BeginRecoil(source, contact.Attack.Definition, -contact.Facing);
                     source.LastDamageLostHeart = source.Hearts < previousHearts;
                     source.Attack = null; source.DashRemaining = 0;

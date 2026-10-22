@@ -1,3 +1,21 @@
+## 最新完了（2026-10-22）：8サポート＋小型HUD/アイコン/説明/裂け目入場/ロケット下段着弾
+
+PAPER_SUPPORT_ITEMS.mdとCOMPACT_PAPER_HUD_AND_ROCKET.mdの区切りを完了。8種類の即時接触取得/CD/各効果と14原画を導入。HUD全体を約3分の1、頭上の黒い台紙と文字影を削除、9待機原画の顔アイコンと斜め目盛りゲージ、取得時の下部説明4.5秒、全9人のカウント中の裂け目入場を実装。透真のロケットは上段/設置壁を通過し、途中の相手接触では爆発せずメイン足場で爆発する。説明はdocs/SUPPORT_ITEMS.md。
+
+今回paper_compact_final：実Unity BuildAll成功/Edit817/817/Play104/104/Windows成功、失敗・スキップ0。paper_compact_web：WebGL成功138768890bytes/237.0874934秒、Windows復帰成功、468/468原画RGBA保持。実ブラウザの実キーで透真/蓮の入場、小型HUD・アイコン・影なし数値、舞依/歩太/紗良の取得説明、舞依の矢で1ハート減少を確認。警告・エラー0。証跡docs/codex_logs/paper_support_verification.json、要件監査paper_compact_requirements.md、Native画像docs/screenshots/paper_compact/・paper_support/、実Web画像paper_support_web/。重点Play初回の行高2件と検査対象指定1件は修理しfocus_2で4/4合格後に全4を通した。
+
+Windows最新Build/paper_compact_final、Web Build/WebGLとlocalhost8799。採用原画はイラスト確認/ゲーム採用/アイテムサポート/。旧候補は生成履歴へ分離。崖はe83eb28の採用A（親指画面左）を保持し、再生成/再反転しない。既存153攻撃の13040数値は依頼されたロケットMainPlatformOnly:0→1だけ差分、その他0。保護カバン・龍太承認被弾v5・45半減判定・14/10ゲージを保持。この指示書の必須残なし、通常commit/pushを行う。次担当は過去の「未接続/検証中」を現状と混同せず、ユーザーの見た目/対人バランスの次指示から進める。原画の最終美術承認や実機パッドの追加審査は別記録。古いraw検証は容量規則で整理、最新全4/前サポートfinal_2/重点focus_2と草稿を保持。
+
+以下は今回の追加前の進行履歴。
+
+## 履歴（2026-10-22）：8サポートの接続・重点Unity検証
+
+崖つかまりAはe83eb28でcommit/push済み。現在はPAPER_SUPPORT_ITEMS.md。承認済み値のSupportDefinition/System/Status、即時接触取得・8種袋・本人CD・各効果・固有投射・安全な場内配置・原画14素材・紙HUD・ALMAの世界だけの淡い歪みを接続した。既存攻撃は変更せず、Support独立チャネル/IDを使用。Support有効化はBattleRules schema15への一回移行。原画は生成済み候補を原寸のまま取り込み、再生成していない。
+
+未コミット差分あり。paper_support_1の初回BuildAllは新テストのVector2.X/Y表記だけでcompile失敗、x/yへ修理済み。paper_support_focusはBuildAll成功、重点Edit17/17・Play2/2合格。8組の原画撮影も完了。画角を原画の位置へ合わせ、取得名/方向/SEを補い、paper_support_finalの実Unity全4が合格（BuildAll成功/Edit814/814/Play103/103/Windows成功、失敗・スキップ0）。14素材はnative接続済みへ更新。paper_support_webは138765051bytes/271.4275161秒で成功、Windows復帰/468RGBA保持も成功。実ブラウザのカード取得→剛/財布/CDを確認した。その後、敵と逆方向へ移動して取得した舞依の表示方向を矢と一致させ、投射もヒットストップ中に止める修理を追加。paper_support_final_2の実Unity全4はBuildAll成功/Edit815/815/Play103/103/Windows成功、失敗・スキップ0。反対向きで拾った舞依も弓/矢の方向一致を実Play確認。現在paper_support_web_finalで最終Webを再ビルド中。完了扱いしない。次は重点失敗の修理→実Unity全4→WebGL/Windows復帰→468原画RGBA監査→実ブラウザの拾得と効果→採用/証跡/引継ぎ→通常commit/push。
+
+次の担当は実行中Unityの終了を待ってからAssetsを編集。TestResults/support_draftは古い草稿で、現在の正本はAssets内。サポート進捗はnative接続済み/Web待ち。Webの実行・468RGBA監査・ブラウザ拾得/効果・最後の通常保存が残る。保存済みAの原画と握り指定、保護カバン、龍太承認被弾v5を保持する。
+
 ## 最新完了（2026-10-22）：指定Aの片手つかまり9人をWindows/Webへ反映
 
 最終回答「A：親指が画面左」を採用。先のB回答は取り消し。握った指の内側が見えるAの原画を9人ともhang_user_A_v1として固定し、Builder・採用表・製品テストもAを要求する。左右の言葉で再解釈しない。原寸RGBA/1304×1450/PPU532.5893/手支点を維持。確認用はイラスト確認/ゲーム採用/崖つかまり_採用A/（9人PNG・手元/全身一覧）。全体の美術承認とAの形の選択は区別して記録。

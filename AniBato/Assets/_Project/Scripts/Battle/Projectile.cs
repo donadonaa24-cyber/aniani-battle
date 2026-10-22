@@ -29,7 +29,7 @@ namespace AniBato.Battle
         internal int ContactCooldown;
         public BattleRect Hitbox => new BattleRect(Position, RoyalMarch ? new BattleVector(Attack.Definition.ProjectileBehavior.MarchWidth(VariantIndex),
             Attack.Definition.Hitbox.Size.Y) : Attack.Definition.Hitbox.Size);
-        internal Projectile(FighterState owner, AttackInstance attack, FighterState target = null, StageGeometry stage = null, float offsetX = 0, int variantIndex = 0, BattleVector? fixedPosition = null, AttackInstance group = null, int delayFrames = 0)
+        internal Projectile(FighterState owner, AttackInstance attack, FighterState target = null, StageGeometry stage = null, float offsetX = 0, int variantIndex = 0, BattleVector? fixedPosition = null, AttackInstance group = null, int delayFrames = 0, int facingOverride = 0)
         {
             Owner = owner; Attack = attack; Group=group??attack; this.target = target; this.stage = stage; VariantIndex = variantIndex;
             Facing = attack.Definition.NormalDirection == NormalDirection.Back || attack.Definition.NormalDirection == NormalDirection.AirBack ? -owner.Facing : owner.Facing;
@@ -50,6 +50,7 @@ namespace AniBato.Battle
                 float x = System.Math.Max(platform.Left + half, System.Math.Min(platform.Right - half, Position.X));
                 Position = new BattleVector(x, platform.Top + attack.Definition.Hitbox.Size.Y * .5f);
             }
+            if(facingOverride!=0)Facing=facingOverride;
             RemainingFrames = attack.Definition.ProjectileLifetimeFrames;
             Velocity = new BattleVector(Facing * attack.Definition.ProjectileSpeed + Facing * attack.Definition.ProjectileLaunchVelocity.X,
                 attack.Definition.ProjectileLaunchVelocity.Y);
@@ -146,6 +147,8 @@ namespace AniBato.Battle
         private void RemoveWhere(System.Predicate<Projectile> predicate)
         { for(int i=projectiles.Count-1;i>=0;i--)if(predicate(projectiles[i])){projectiles[i].Dispose();projectiles.RemoveAt(i);} }
         public void RemoveClashed() => RemoveWhere(p => p.Attack.Clashed);
+        internal void AddSupport(FighterState owner, AttackInstance attack, FighterState target, StageGeometry stage, BattleVector position, int facing)
+        { projectiles.Add(new Projectile(owner,attack,target,stage,fixedPosition:position,facingOverride:facing)); }
         public int PlacedCount(FighterState owner)
         { int count = 0; foreach (var p in projectiles) if (p.Owner == owner && p.Attack.Definition.Ability.ProjectileChannel == ProjectileChannel.Placed) count++; return count; }
         public void ResolvePlacedContact(in HitContact contact, bool hit)
@@ -153,7 +156,7 @@ namespace AniBato.Battle
             var projectile = contact.Projectile;
             if(projectile==null)return;
             var behavior=projectile.Attack.Definition.ProjectileBehavior;
-            if (hit && behavior.ExplodeOnLanding && !projectile.Exploded) projectile.Explode();
+            if (hit && behavior.ExplodeOnLanding && !behavior.MainPlatformOnly && !projectile.Exploded) projectile.Explode();
             if(hit&&behavior.ConsumeOnHit){projectile.Dispose();projectiles.Remove(projectile);return;}
             if(behavior.RepeatIntervalFrames>0)
             { projectile.Attack.ForgetHit(contact.Target.PlayerIndex);projectile.ContactCooldown=behavior.RepeatIntervalFrames;return; }
@@ -166,6 +169,8 @@ namespace AniBato.Battle
         {
             for (int i = projectiles.Count - 1; i >= 0; i--)
             {
+                if(projectiles[i].Attack.Definition.Ability.ProjectileChannel==ProjectileChannel.Support &&
+                    (p1.IsFrozenThisTick||p2.IsFrozenThisTick))continue;
                 projectiles[i].Step();
                 if (projectiles[i].RemainingFrames <= 0 || projectiles[i].Attack.Clashed || projectiles[i].Owner.Mode == FighterMode.KO)
                 { projectiles[i].Dispose();projectiles.RemoveAt(i); }

@@ -1,8 +1,8 @@
-## 現在工程（2026-10-22）：指定Aの崖つかまり完了→8サポート
+## 現在工程完了（2026-10-22）：崖A→8サポート→小型HUD/説明/入場/ロケット
 
 PAPER_LEDGE_THUMB_A.mdのA（親指が画面左）を9人へ採用。paper_ledge_AはBuildAll/Edit797/797/Play101/101/Windows全合格、paper_ledge_A_webはWebGL/Windows復帰/454原画RGBA保持/実ブラウザつかまり・復帰/console0を確認。証跡codex_logs/paper_ledge_verification.json。通常保存後はAの再生成・再反転を繰り返さない。
 
-次はPAPER_SUPPORT_ITEMS.md：8種類の即時取得、承認済みの出現間隔・袋・再取得CD・状態効果・14原画の表示を接続する。現状は生成候補/草稿で、ゲーム未接続。既存ST/技数値と保護原画を維持する。以下は保存済み履歴。
+PAPER_SUPPORT_ITEMS.mdとCOMPACT_PAPER_HUD_AND_ROCKET.mdも完了。承認済み8種類/14原画、取得効果説明、小型HUD/9アイコン、裂け目入場、ロケット下段着弾を接続。paper_compact_finalは実Unity全4/Edit817/Play104、paper_compact_webはWebGL/Windows復帰/468RGBA保持/実ブラウザ/console0まで合格。証跡codex_logs/paper_support_verification.json。次はユーザーの見た目・対人バランスの指摘を受けた小工程へ。崖Aと保護原画を再生成しない。以下は保存済み履歴であり、過去の未接続は現在の残課題ではない。
 
 ## 最新（2026-10-21）：紙HUD完了、次は崖つかまり→8サポート
 

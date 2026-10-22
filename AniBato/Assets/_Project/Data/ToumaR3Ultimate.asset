@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: AniBato.Game::AniBato.Game.AttackData
   Definition:
     CanHitLedge: 1
+    StaminaDamage: 0
     Name: "\u753B\u9762\u5916\u30ED\u30B1\u30C3\u30C8"
     Ability:
       Motion: 0
@@ -67,7 +68,7 @@ MonoBehaviour:
       Homing: 0
       ConsumeOnHit: 0
       WallAfterLanding: 0
-      MainPlatformOnly: 0
+      MainPlatformOnly: 1
       ExplodeOnLanding: 1
       ExplosionSize:
         X: 6

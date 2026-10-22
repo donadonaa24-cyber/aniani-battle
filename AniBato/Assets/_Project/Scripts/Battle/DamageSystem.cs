@@ -10,6 +10,14 @@ namespace AniBato.Battle
             var source = contact.Attacker;
             var target = contact.Target;
             if (target.HeartRecoveryRemaining > 0) return;
+            if (SupportStatus.Absorb(contact,tick,rules,events)) return;
+            if (!SupportStatus.Infinite(target)) target.StaminaUnits = Math.Max(0,target.StaminaUnits-contact.Attack.Definition.StaminaDamage*StaminaSystem.UnitsPerPoint);
+            if(contact.Attack.Definition.StaminaDamage>0 && contact.Attack.Definition.DamageMode==AttackDamageMode.StatusOnly && contact.Attack.Definition.ParalysisFrames==0)
+            {
+                // Pawn rain changes stamina only: no stun, attack cancellation, or heart loss.
+                events.Add(new BattleEvent(BattleEventKind.Hit,tick,source.PlayerIndex,target.PlayerIndex,contact.Attack.Id,attackKind:contact.Attack.Definition.Kind));
+                return;
+            }
             LedgeSystem.Interrupt(target);
             int beforeHearts = target.Hearts;
             var attack = contact.Attack;

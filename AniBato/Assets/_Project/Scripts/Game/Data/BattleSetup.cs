@@ -7,6 +7,7 @@ namespace AniBato.Game
     public sealed class BattleSetup : ScriptableObject
     {
         public CharacterData[] Characters;
+        public PaperSupportArt SupportArt;
         public StageData[] Stages;
         public CpuDifficultyData[] CpuDifficulties;
         public uint CpuSeed = 20261012;

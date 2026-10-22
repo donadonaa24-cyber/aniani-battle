@@ -121,5 +121,32 @@ namespace AniBato.Tests
             Assert.That(SpecialCooldownDisplay.State(sim.P1,SpecialSlot.Down),Does.Contain("設置上限"));
             Assert.That(SpecialCooldownDisplay.Ready(sim.P1,SpecialSlot.Down),Is.False);
         }
+        [TestCase(true)] [TestCase(false)]
+        public void RocketPassesUpperPlatformsAndPlacedWallsThenExplodesOnMainFloor(bool oneWay)
+        {
+            var definition=Setup.Character(0).Ultimate.Definition;
+            Assert.That(definition.ProjectileBehavior.MainPlatformOnly,Is.True,"移行済みの保存済みロケットにも下段着弾を適用");
+            var sim=Create(0);
+            var stage=new StageGeometry(new[]{
+                new StagePlatform(new BattleRect(new BattleVector(0,-.5f),new BattleVector(20,1)),false),
+                new StagePlatform(new BattleRect(new BattleVector(0,5),new BattleVector(10,.5f)),oneWay)
+            },-30,30,-20,default,default);
+            stage.AddSolid(new BattleRect(new BattleVector(0,3),new BattleVector(8,1)));
+            var attack=new AttackInstance(999,definition,0,false);
+            var rocket=new Projectile(sim.P1,attack,sim.P2,stage,fixedPosition:new BattleVector(0,12));
+            new ProjectileSystem().ResolvePlacedContact(new HitContact(sim.P1,sim.P2,attack,true,projectileRef:rocket),true);
+            Assert.That(rocket.Exploded,Is.False,"途中の接触で上空爆発に戻らない");
+            bool crossedUpper=false,crossedWall=false;
+            for(int i=0;i<100&&!rocket.Exploded;i++)
+            {
+                rocket.Step();
+                if(rocket.Position.Y+rocket.Hitbox.Size.Y*.5f<4.75f&&!rocket.Exploded)crossedUpper=true;
+                if(rocket.Hitbox.Bottom<3.5f&&!rocket.Exploded)crossedWall=true;
+                if(!rocket.Exploded)Assert.That(rocket.Landed,Is.False);
+            }
+            Assert.That(crossedUpper,Is.True);Assert.That(crossedWall,Is.True);
+            Assert.That(rocket.Exploded,Is.True);Assert.That(rocket.Hitbox.Bottom,Is.EqualTo(stage[0].Bounds.Top).Within(.001));
+            Assert.That(rocket.RemainingFrames,Is.EqualTo(definition.ProjectileBehavior.ExplosionFrames));
+        }
     }
 }

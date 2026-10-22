@@ -42,7 +42,7 @@ namespace AniBato.Tests
             Assert.That(simulation.Match.RemainingTicks, Is.EqualTo(4200));
             Assert.That(AssetDatabase.LoadAssetAtPath<SceneAsset>(ProjectBuilder.ScenePath), Is.Not.Null);
             Assert.That(EditorBuildSettings.scenes[0].path, Is.EqualTo(ProjectBuilder.TitleScenePath));
-            Assert.That(rules.Definition.SchemaVersion, Is.EqualTo(14));
+            Assert.That(rules.Definition.SchemaVersion, Is.EqualTo(15));
             Assert.That(rules.Definition.Ledge.Enabled,Is.True);
             Assert.That(rules.Definition.Charge.Enabled, Is.True);
             Assert.That(rules.Definition.Charge.MinimumFrames, Is.EqualTo(60));

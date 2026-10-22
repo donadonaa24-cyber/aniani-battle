@@ -10,6 +10,7 @@ namespace AniBato.Battle
     public struct AttackDefinition
     {
         public bool CanHitLedge;
+        public int StaminaDamage;
         public string Name;
         public AttackAbility Ability;
         public RecoveryDefinition Recovery;
@@ -63,7 +64,7 @@ namespace AniBato.Battle
 
         public void Validate()
         {
-            if (LandingRecoveryFrames < 0 || StartupFrames < 0 || ActiveFrames < 1 || DamageDelayFrames < 0 || DamageDelayFrames >= ActiveFrames || RecoveryFrames < 0 || HitstopFrames < 0 ||
+            if (StaminaDamage < 0 || LandingRecoveryFrames < 0 || StartupFrames < 0 || ActiveFrames < 1 || DamageDelayFrames < 0 || DamageDelayFrames >= ActiveFrames || RecoveryFrames < 0 || HitstopFrames < 0 ||
                 HitstunFrames < 0 || Hitbox.Size.X <= 0 || Hitbox.Size.Y <= 0 ||
                 (SpawnProjectile && (ProjectileSpeed < 0 || ProjectileSpeed == 0 && !Ability.AllowZeroProjectileSpeed || ProjectileLifetimeFrames < 1)) ||
                 (Ability.IndependentNormalProjectile && (!SpawnProjectile || !IsNormal)) ||
@@ -173,6 +174,7 @@ namespace AniBato.Battle
         public ChargeAttackDefinition Charge;
         public CombatInputDefinition CombatInput;
         public LedgeDefinition Ledge;
+        public SupportDefinition Support;
         public float DropThroughSpeed;
         public float DirectionThreshold;
         public bool EnableRingOut;
@@ -195,7 +197,7 @@ namespace AniBato.Battle
                 throw new ArgumentException("対戦ルールの定義が不正です。");
             _ = DurationTicks;
             Defense.Validate(); Gauge.Validate(); Charge.Validate(); CombatInput.Validate();
-            Shrink.Validate(); Ledge.Validate();
+            Shrink.Validate(); Ledge.Validate(); Support.Validate();
             if (ComboFinishHitstunFrames < 1 || FollowupImmunityFrames < 1 || HeartRecoveryFrames < 0 || ProjectileLimitPerOwner < 0 || HeartRecoveryKnockback.X < 0 || HeartRecoveryKnockback.Y < 0)
                 throw new ArgumentException("フィニッシュの定義が不正です。");
         }

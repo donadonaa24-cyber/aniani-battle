@@ -329,3 +329,11 @@ EMPの切り絵の輪、ALMA接続の空枠、六角形の核と左右へ広が�
 pack_ledge_art.cjsは原寸RGBAを1304×1450の透過固定枠へそのままコピーし、PPU532.5893と個別の手支点で表示。adoption.jsonのhandPattern=A/ thumbSide=image-left/ userShapeConfirmedはBuilderとテストでも照合し、Bを誤採用しない。最終選択はselect_ledge_left_grips.cjs。採用外の候補はart_source/rejected/へローカル保管し、ゲームと日本語採用フォルダに混ぜない。画像の目視、元RGBAの監査、動作検証は別に記録する。
 
 8サポートは引き続き未接続。美桜の候補のみ六本指を直したsupport_v2へ変更、他の候補は既存採用候補を維持。原画14候補/全文条件/参照/SHAsは同progress/adoption.json、出典はdocs/art_reference/support_items/sources.json。サポート効果や画面表示の実装が完成した記録ではない。
+
+### 8サポートのゲーム接続（2026-10-22）
+
+上記14候補のうち美桜v2/咲と花v2、他は既存v1を採用。原本PNGをsupport_<key>.pngへ同一バイトで取り込み、PPU532.5893と測定した可視部/足元支点を使用する。ゲーム表示の倍率はサポート専用設定で、元PNGを再サンプルしていない。カード裏面と王の次元の裂け目は既存採用素材を共有。ALMAの淡い青白い歪みは本作自作のSupportConscious.shaderで、HUDは加工しない。拾得/バリアSEは本作の手続き生成Confirm/Guardを使用。原画のユーザー最終承認とゲーム接続・画素監査の記録は分ける。Nativeの証跡はpaper_support_verification.json、Webは同報告の実行状態を参照。
+
+### 小型HUDの9人アイコン・入場裂け目（2026-10-22）
+
+名前横のアイコンは各本人の採用済みPaperCharacterMotion.Sprite待機PNGをUIの矩形で切り出して表示する。PaperHudPortraitBuilderが原画の不透明部分から顔領域を記録し、PNG本体を加工・再生成しない。Webの透明梱包後も同じ領域を参照。ST/LINKの斜め端・明暗・目盛りは自作PaperHudShapeのUI頂点で描く。試合カウント中の9人の入場は、既存の王/サポートと同じ生成済み裂け目を共有し、人物全身1枚の移動/段階的表示で演出する。原画の手や身体を変更しない。

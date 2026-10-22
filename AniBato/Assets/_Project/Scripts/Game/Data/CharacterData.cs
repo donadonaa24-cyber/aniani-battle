@@ -36,6 +36,7 @@ namespace AniBato.Game
         public int Silhouette; // 0: equipment, 1: dog ears, 2: chef hat (crossover placeholders).
         public Sprite Portrait;
         public Sprite SelectionSprite;
+        public Rect HudPortraitRegion;
         public bool PrototypeSharedMoves;
         public bool ActionArtworkPending;
         public CharacterAnimationSet Animations;

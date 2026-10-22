@@ -1,0 +1,22 @@
+{
+  "baseline": "eace794",
+  "attacksCompared": 153,
+  "existingNumericFieldsCompared": 13040,
+  "differences": [
+    {
+      "file": "AniBato/Assets/_Project/Data/ToumaR3Ultimate.asset",
+      "key": "MonoBehaviour.Definition.ProjectileBehavior.MainPlatformOnly",
+      "before": 0,
+      "after": 1
+    }
+  ],
+  "approvedDifferences": [
+    {
+      "file": "AniBato/Assets/_Project/Data/ToumaR3Ultimate.asset",
+      "key": "MonoBehaviour.Definition.ProjectileBehavior.MainPlatformOnly",
+      "before": 0,
+      "after": 1
+    }
+  ],
+  "unexpectedDifferences": []
+}

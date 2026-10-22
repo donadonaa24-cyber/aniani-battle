@@ -85,6 +85,17 @@ namespace AniBato.Game
                     sprites[i].transform.localRotation = Quaternion.identity;
                     sprites[i].transform.localScale = new Vector3(projectile.Hitbox.Size.X,projectile.Hitbox.Size.Y,1);
                 }
+                if(look==AbilityLook.SupportCar || look==AbilityLook.SupportArrow || look==AbilityLook.SupportPawn)
+                {
+                    var support=runner.Setup.SupportArt;var key=look==AbilityLook.SupportCar?"shion_car":look==AbilityLook.SupportArrow?"mai_arrow":"pickup_pawn";
+                    var entry=support.Find(key);sprites[i].sprite=entry.Sprite;sprites[i].color=Color.white;sprites[i].sortingOrder=7;
+                    sprites[i].flipX=look!=AbilityLook.SupportPawn&&projectile.Facing<0;
+                    sprites[i].transform.localRotation=Quaternion.identity;
+                    float height=look==AbilityLook.SupportCar?projectile.Hitbox.Size.Y*1.45f:look==AbilityLook.SupportArrow ? .45f : projectile.Hitbox.Size.Y;
+                    float fit=look==AbilityLook.SupportArrow?projectile.Hitbox.Size.X/entry.VisibleSize.x:height/entry.VisibleSize.y;
+                    sprites[i].transform.localScale=Vector3.one*fit;
+                    sprites[i].transform.position=new Vector3(position.X,position.Y-projectile.Hitbox.Size.Y*.5f,0);
+                }
                 if (projectile.RoyalMarch)
                 {
                     float emergence=Mathf.Clamp01(projectile.MarchAge/(float)behavior.MarchSpawnFrames);
