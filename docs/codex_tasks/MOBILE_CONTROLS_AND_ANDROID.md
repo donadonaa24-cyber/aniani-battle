@@ -13,3 +13,7 @@
 7. 最新のRESUME/STATUS・検証証跡・次の手順へ引継ぎ、合格した区切りを通常commit/pushする。
 
 既存の崖A・龍太承認被弾v5・保護カバン・半減45判定・14/10ゲージ・戦闘数値・Free構成・既存159枚/ガチャ所持を保持する。
+
+## 完了記録（2026-10-23）
+
+実装・Native全4（Edit834/Play111）・WebGL/468RGBA保持・実ブラウザのボタン操作・ポータル公開・ARM64 APK生成/署名/ABI/最低API・Windows復帰・一時割当解除を完了。実Android/別回線は未確認。タグと失敗修理の経緯、実件数はRESUME冒頭とmobile_android_verification.jsonを正とする。

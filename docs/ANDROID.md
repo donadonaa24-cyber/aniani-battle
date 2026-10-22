@@ -19,4 +19,8 @@ ARM64・IL2CPP・ETC2 RGBAでビルド。原画は縮小せず透明余白を追
 
 ## 確認状況
 
-タッチの実Unity重点4件と最終全4工程（Edit834/Play111）、Web再構築・468原画保持・実ブラウザのボタン操作を確認済み。APKの生成/署名/ABI検査は進行中。Android実機での起動・操作・発熱・メモリ使用量は未確認。
+タッチの実Unity重点4件と最終全4工程（Edit834/Play111）、Web再構築・468原画保持・実ブラウザのボタン操作を確認済み。APK生成（161961932bytes）、署名v2・ARM64・最低API26/対象API36・起動Activity・Unity/IL2CPPライブラリの検査も成功。Windowsを元のフォルダへ復帰し、一時ドライブ解除と修理済みスクリプトの自動解除検査も成功。Android実機での起動・操作・発熱・メモリ使用量は未確認。
+
+日本語パスはAndroidツールの制約で拒否されたため、スクリプトは同じ作業フォルダを一時的な英字ドライブとして参照する。[Microsoftのsubst仕様](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/subst)に基づき、ファイルを移動せず、固有マーカーを照合して割当を解除する。既存のドライブ割当は上書きしない。単独の割当/自動解除検査は `-AliasCheckOnly`。
+
+実行証跡：`docs/codex_logs/mobile_android_verification.json`。試作APKのSHA-256は `138f9e9e1395d2056bbd0e054cfa82bf7dc6dd2e91fc43dc391c334bdd978571`。

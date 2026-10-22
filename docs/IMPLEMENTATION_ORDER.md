@@ -1,3 +1,7 @@
+## 最新完了（2026-10-23）：無料公開→タッチ操作→Android APK
+
+無料オンライン/ホーム/紙ガチャ公開と、MOBILE_CONTROLS_AND_ANDROID.mdの実装を完了。Native全4（Edit834/Play111）・実WebGL/468RGBA・実ブラウザ操作・署名済みARM64 APK/内容検査・Windows復帰と一時割当解除まで確認。公開版はポータルPR19/20、Pages8a363325。次は任意のAndroid実機/別回線検証またはユーザーの追加依頼。詳細はRESUME冒頭。
+
 ## 最新（2026-10-23）：無料公開→タッチ操作→Android APK
 
 無料オンライン/ホーム/紙ガチャ公開は完了（ポータルPR18）。追加のMOBILE_CONTROLS_AND_ANDROID.mdはNative全4/実WebGL/468RGBA/実ブラウザのタッチ操作まで完了。現在Android APKをビルド中。次にAPK署名/ABI/内容・Windows復帰とポータル更新を完了する。最新タグと実件数はRESUME冒頭。実スマホは未確認。

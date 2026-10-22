@@ -1,5 +1,5 @@
 {
-  "status": "native_and_web_verified_android_building",
+  "status": "complete",
   "date": "2026-10-23",
   "native": {
     "buildAll": {
@@ -40,11 +40,57 @@
   "android": {
     "deviceConnected": false,
     "deviceVerified": false,
-    "nativeOnline": false
+    "nativeOnline": false,
+    "buildTag": "android_ascii",
+    "build": {
+      "result": "success",
+      "abi": "arm64-v8a",
+      "package": "com.aniani.anibato",
+      "bytes": 161961932,
+      "seconds": 775.7597966,
+      "minimumApi": 26,
+      "releaseSigned": false
+    },
+    "inspection": {
+      "apk": "Build/Android/AniBato-arm64.apk",
+      "bytes": 161961932,
+      "sha256": "138f9e9e1395d2056bbd0e054cfa82bf7dc6dd2e91fc43dc391c334bdd978571",
+      "signatureVerified": true,
+      "minimumApi": 26,
+      "package": "com.aniani.anibato",
+      "abi": "arm64-v8a",
+      "il2cpp": true,
+      "unityRuntime": true,
+      "manifest": [
+        "package: name='com.aniani.anibato' versionCode='1' versionName='1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+        "sdkVersion:'26'",
+        "targetSdkVersion:'36'",
+        "application: label='あにあにバトル！！' icon='res/Qu.xml'",
+        "launchable-activity: name='com.unity3d.player.UnityPlayerGameActivity'  label='' icon=''",
+        "native-code: 'arm64-v8a'"
+      ],
+      "signatureSchemes": [
+        "Verified using v1 scheme (JAR signing): false",
+        "Verified using v2 scheme (APK Signature Scheme v2): true",
+        "Verified using v3 scheme (APK Signature Scheme v3): false",
+        "Verified using v3.1 scheme (APK Signature Scheme v3.1): false",
+        "Verified using v4 scheme (APK Signature Scheme v4): false"
+      ],
+      "deviceVerified": false
+    },
+    "cleanup": {
+      "originalPathRestore": 0,
+      "temporaryAliasRemoved": true,
+      "currentHelperAliasCheck": true,
+      "residualMarkers": 0
+    },
+    "fontLicenseResource": "Assets/_Project/Resources/NotoSansJP-LICENSE.txt",
+    "initialFailure": "android_final: non-ASCII project path; ETC2 textures verified before failure",
+    "pathWorkaround": "Temporary ASCII drive to this same workspace, no file move; original path/Windows restored, alias detached and current helper check passed."
   },
   "web": {
     "browserOnline": true,
-    "published": false,
+    "published": true,
     "result": "success",
     "bytes": 138814613,
     "seconds": 236.3447617,
@@ -74,7 +120,15 @@
       "hiddenPads": 0,
       "resumedAfterToggle": true,
       "consoleErrors": []
-    }
+    },
+    "portalCommit": "ade32b435dfc07e954741d7014328e64b83b9a44",
+    "portalMerge": "13a4195e2471f5ef656362161a6cb19cd2cc0cc0",
+    "controllerFixCommit": "44484d4",
+    "portalFinalMerge": "8a36332579647178a9adfd20faf86149cda09cdf",
+    "pagesStatus": "built",
+    "controllerUpdateTests": "5 cases passed",
+    "publicBootAndTouchMenu": true,
+    "publicConsoleErrors": 0
   },
   "unchanged": [
     "battle definitions",
@@ -85,5 +139,7 @@
     "half reach 45",
     "gauge 14/10",
     "existing gacha inventory and rates"
-  ]
+  ],
+  "productCodeCommit": "872fb2c",
+  "csharpUnchangedSinceNativeVerification": true
 }

@@ -1,3 +1,25 @@
+## 最新完了（2026-10-23）：半透明タッチ操作・Android APK・公開更新
+
+MOBILE_CONTROLS_AND_ANDROID.mdを完了。左右下の半透明パッド、複数指/長押し・解放、メニュー決定/戻る、セーフエリア、フォーカス解除、物理パッド復元、背後のキャラ誤選択抑制を実装。製品C#は872fb2cから変更なし。実Unityはmobile_final_2のBuildAll/Edit834/834/Windows成功と、同じ製品コードで検査待ちを修理したmobile_play_finalのPlay111/111成功。失敗・スキップ0、アサーション弱化なし。
+
+mobile_web_final：WebGL 138814613bytes/236.3447617秒、Windows復帰成功、468/468原画RGBA保持。実844×390枠でタッチのみのメニュー/選択/練習/移動/通常/1400ms長押し解放/ポーズ/ON-OFFと解除、390px案内枠の横はみ出しなし、console error0。ポータルPR19はade32b4→13a4195、読込controller切替待ちのPR20は44484d4→8a363325へCI成功後に通常merge、Pages built。最終公開の起動/タッチ決定/集合絵メニューとconsole0も確認。ゲームWasm/16分割データは2438e123759e0b4bのまま。新旧controller・初回・現行・時間切れ解除はNode検査5経路成功。
+
+android_ascii：Unity Androidビルド成功、161961932bytes/775.7597966秒、arm64-v8a/IL2CPP/最低API26/対象API36、パッケージcom.aniani.anibato、起動Activityあり。APKはBuild/Android/AniBato-arm64.apk、README.txtとThirdPartyNotices.txtも同所。署名v2・Unity/IL2CPPライブラリ・ABI・最低APIを実APKから検査。SHA256 138f9e9e1395d2056bbd0e054cfa82bf7dc6dd2e91fc43dc391c334bdd978571。試作用署名、Android実機は接続なしで未確認。ネイティブ招待対戦は今回追加せず、招待はブラウザ版で利用する。
+
+初回android_finalはETC2原寸468枚の準備後、日本語パスでUnityが拒否。フォルダを移動せず一時英字ドライブで再実行し成功。元パスでのWindows復帰0、固有マーカー照合で割当解除。修理したbuild_android.ps1の割当/マーカー/自動解除もAliasCheckOnlyで実確認。残留ドライブ/マーカー0。最終の468RGBA監査とC#同一性も確認。証跡codex_logs/mobile_android_verification.json、実Web画像screenshots/mobile_android/、利用/再現はANDROID.md。
+
+必須残作業なし。次の確認範囲は実Android端末での起動・タッチ・メモリ/発熱と、別回線間のWeb招待。今回の実装検証と区別する。Free制限・ガチャ176枚/旧159枚/所持/レア率・戦闘Data・崖A・龍太被弾v5・保護カバン・45半減/14-10は維持。旧生成画像と2シーンは破棄せず保持し、本工程の必要差分だけ通常保存する。過去の「実行中」は以下の履歴。
+
+## 実行中（2026-10-23）：タッチ版公開済み、Androidを英字パスで再ビルド
+
+Native/Webのタッチ実装は872fb2cでmainへpush済み。ポータルPR19はade32b4→通常merge13a4195、Pages builtと実公開の起動/集合絵/タッチ決定/console0を確認。配信更新で旧ready/controllerが残る競合も修理し、Node検査5経路成功、ポータルPR20（44484d4）をCI成功後8a363325へ通常merge、Pages更新待ち。Wasm・16分割データ・原画は同じ。Rootのtools/webgl/index.htmlと新test_webgl_payload_update.cjsは未コミット。Assets側のHTMLへは実行中Unityが終わってから正本を同期する。
+
+初回android_finalは468枚ETC2_RGBA8・原寸保持を確認した後、Unityの非ASCIIプロジェクトパス制約で失敗。Windows復帰0。現在android_ascii（実行セッション86582）で、この同じフォルダをQドライブとして一時参照し、APKを再ビルド中。ログTestResults/android_ascii_Android.log。Unity終了までAssets編集禁止。元フォルダは移動しない。
+
+注意：現在実行中のPowerShellは後片付け修理前のASTなので、終了時にQの割当を残す可能性がある。TestResults/android_current_alias_guard.txtを原本とQ側で比較して同じ固有内容なら、自分が作ったQの割当のみsubst /dで解除する（ファイル削除ではない）。元パスでWin64設定復帰も確認する。保存したbuild_android.ps1の最新版は、固有マーカーで対象を確かめて自動解除し、元パスへWindows復帰する形へ修理済み。
+
+残り：APK成功→inspect_android.ps1の署名/ABI/minAPI/起動対象→原画監査/Windows復帰/一時割当解除→公開PR20反映と起動→引継ぎ/通常保存。Android実機は接続なし、ネイティブ招待対戦は未実装（招待はブラウザを利用）。従来の旧画像/2シーンは保持し、今回の必要差分だけ保存する。
+
 ## 最新区切り（2026-10-23）：半透明タッチ操作のNative/Web検証完了、Androidビルド中
 
 MOBILE_CONTROLS_AND_ANDROID.mdの左右下パッド、メニュー決定/戻る、セーフエリア、複数指/長押し解放、フォーカス解除、物理パッド復元、背後のキャラ選択クリック抑制を接続。最終製品コードはmobile_final_2でBuildAll成功/Edit834/834/Windows成功、同じ製品コードで検査の配置/マウス位置反映待ちだけ修理したmobile_play_finalはPlay111/111成功、失敗・スキップ0。初期の登録切替不具合と検査待ち不足を修理し、アサーションの弱化なし。
