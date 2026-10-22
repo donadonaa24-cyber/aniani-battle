@@ -1,0 +1,3 @@
+# Only the dedicated, capability-protected signalling endpoint is public.
+[functions.anibato-free-rooms]
+verify_jwt = false

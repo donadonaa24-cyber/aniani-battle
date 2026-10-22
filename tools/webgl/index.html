@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>あにあにバトル！！</title>
+<link rel="stylesheet" href="online.css">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#152334;color:#fff3d8;font-family:system-ui,sans-serif;text-align:center}
 header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 3%;background:#372a26;border-bottom:4px solid #ad7547}
@@ -10,11 +11,23 @@ canvas{display:block;width:100%;height:100%;outline:0}#curtain{position:absolute
 #player.expanded{position:fixed;inset:0;z-index:10;background:#152334;overflow:auto}#player.expanded #stage{width:min(100vw,calc((100dvh - 64px)*1.77778))}
 </style></head><body>
 <div id="player">
-<header><h1>あにあにバトル！！</h1><div><button id="pause" disabled>ポーズ</button> <button id="fullscreen" disabled>全画面</button></div></header>
+<header><h1>あにあにバトル！！</h1><span id="online-active" aria-live="polite"></span><div><button id="online-open" disabled>オンライン対戦</button> <button id="online-exit" hidden>対戦を終了</button> <button id="pause" disabled>ポーズ</button> <button id="fullscreen" disabled>全画面</button></div></header>
 <main id="stage"><canvas id="unity-canvas" width="1920" height="1080" tabindex="0" aria-label="あにあにバトル！！ ゲーム画面"></canvas>
 <div id="curtain"><p id="load">紙の舞台へようこそ！</p><progress id="progress" max="1" value="0" hidden></progress><button id="boot">ゲームを読み込む</button><button id="play" hidden>音を有効にして開演！</button></div></main></div>
 <footer>PC・キーボード／ゲームパッド向け。ゲーム画面をクリックして操作。<br>P1：WASD 移動・J 通常・K 特殊・U 超必殺・Space ジャンプ　／　P2：矢印・テンキー0〜6　／　P ポーズ・選択中 M 技表<br>練習：1 速度・2 静止・3 コマ送り・4 判定表示。戻る：K／Esc。全画面の解除：Esc／上のボタン。 <a href="ThirdPartyNotices.txt" style="color:inherit">ライセンス</a></footer>
 <pre id="verify" hidden></pre>
+<script id="anibato-payload-config" type="application/json">null</script>
+<section id="online-dialog" role="dialog" aria-modal="true" aria-labelledby="online-title" hidden><div class="online-paper">
+<div class="online-top"><h2 id="online-title">無料オンライン対戦・試験版</h2><button id="online-close" aria-label="オンライン設定を閉じる">閉じる</button></div>
+<p>自分の3人を選び、招待コードで友だちと対戦。同じキャラはチーム内で重複できません。<br>どちらもP1のキー・ゲームパッドを使います。</p>
+<div id="online-team" aria-label="自分のチームを選択"></div><p id="online-selection"></p>
+<label>部屋を作る側のステージ <select id="online-stage"><option value="0">星の終わり</option><option value="1">推し駒Battle</option><option value="2">Battle à la carte</option></select></label>
+<p class="online-row"><button id="online-create">部屋を作る</button><button id="online-ready" disabled>対戦の準備完了</button></p>
+<div id="online-invite" hidden><label for="online-code">相手に渡す招待コード（2分間有効）</label><input id="online-code" readonly><button id="online-copy">招待コードをコピー</button></div>
+<div class="online-row"><label for="online-join-code">相手の招待コード</label><input id="online-join-code" autocomplete="off" maxlength="69" spellcheck="false"><button id="online-join">参加する</button></div>
+<p id="online-message" role="status">ゲームを読み込んで開演した後、3人を選んでください。</p>
+<p class="online-caution">PCブラウザ向け。接続できた後はプレイヤー同士の直接通信です。無料の接続枠には上限があります。有料中継・自動課金は使いません。回線の制限により接続できない場合があります。対戦中のポーズは使えず、通信待ちでは試合を止めます。招待コードは対戦相手だけに渡してください。コイン報酬はありません。</p>
+</div></section>
 <section id="pad-test" hidden aria-label="仮想ゲームパッドAPIの検査"><p>仮想ゲームパッドAPIの検査（実機ではありません）</p>
 <button id="pad-connect">仮想パッド接続</button><button id="pad-disconnect">仮想パッド切断</button>
 <button data-pad="12">パッド上</button><button data-pad="13">パッド下</button><button data-pad="14">パッド左</button><button data-pad="15">パッド右</button>
@@ -38,10 +51,19 @@ if(verification){
   setTimeout(()=>{b.pressed=b.touched=false;b.value=0;pad.timestamp=performance.now();},250);
  };
 }
-window.AniBatoStatus=json=>{if(verification)document.querySelector('#verify').textContent=json+'\n音声: '+(window.AniBatoAudioState||'未開始');};
+window.AniBatoBuild='{{{ DATA_FILENAME }}}';
+window.AniBatoStatus=json=>{window.AniBatoOnline?.onStatus(JSON.parse(json));if(verification)document.querySelector('#verify').textContent=json+'\n音声: '+(window.AniBatoAudioState||'未開始');};
 const send=(method,arg)=>window.unityInstance?.SendMessage('Web Player',method,arg);
-document.querySelector('#boot').onclick=()=>{
+async function preparePayload(){
+ const split=JSON.parse(document.querySelector('#anibato-payload-config').textContent);if(!split)return;
+ if(!('serviceWorker' in navigator))throw Error('この配信版はService Worker対応のPCブラウザが必要です。');
+ await navigator.serviceWorker.register('payload-worker.js?v='+split.version,{scope:'./'});
+ await navigator.serviceWorker.ready;
+ if(!navigator.serviceWorker.controller)await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('ゲーム配信の準備に失敗しました。ページを再読み込みしてください。')),10000);navigator.serviceWorker.addEventListener('controllerchange',()=>{clearTimeout(timer);resolve();},{once:true});});
+}
+document.querySelector('#boot').onclick=async()=>{
  document.querySelector('#boot').hidden=true;progress.hidden=false;load.textContent='舞台を準備しています…';
+ try{await preparePayload();}catch(error){load.textContent=error.message;progress.hidden=true;document.querySelector('#boot').hidden=false;return;}
  const script=document.createElement('script');script.src='Build/{{{ LOADER_FILENAME }}}';
  script.onload=()=>createUnityInstance(canvas,{
   dataUrl:'Build/{{{ DATA_FILENAME }}}',frameworkUrl:'Build/{{{ FRAMEWORK_FILENAME }}}',codeUrl:'Build/{{{ CODE_FILENAME }}}',
@@ -52,7 +74,7 @@ document.querySelector('#boot').onclick=()=>{
  }).catch(error=>load.textContent='読み込みに失敗しました：'+error.message);
  script.onerror=()=>load.textContent='読み込みファイルを取得できません。HTTPサーバーから開いてください。';document.body.appendChild(script);
 };
-document.querySelector('#play').onclick=()=>{curtain.remove();send('BeginAudio');canvas.focus();document.querySelector('#pause').disabled=false;document.querySelector('#fullscreen').disabled=false;};
+document.querySelector('#play').onclick=()=>{curtain.remove();send('BeginAudio');canvas.focus();document.querySelector('#pause').disabled=false;document.querySelector('#fullscreen').disabled=false;document.querySelector('#online-open').disabled=false;};
 document.querySelector('#pause').onclick=()=>{send('BrowserPause');canvas.focus();};
 // Keep DOM controls and the canvas aspect ratio together. The page-sized fallback also
 // works in embedded browsers that do not expose the native Fullscreen API.
@@ -71,4 +93,4 @@ canvas.addEventListener('blur',()=>send('BrowserFocus','0'));
 canvas.addEventListener('pointerdown',()=>{canvas.focus();send('BeginAudio');});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)send('BrowserFocus','0');});
 window.addEventListener('keydown',e=>{if(document.activeElement===canvas&&!e.metaKey&&['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Home','End','PageUp','PageDown','Delete','Tab'].includes(e.code))e.preventDefault();});
-</script></body></html>
+</script><script src="online.js"></script></body></html>

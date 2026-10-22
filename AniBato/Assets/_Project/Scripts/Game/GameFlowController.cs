@@ -22,6 +22,8 @@ namespace AniBato.Game
         public InputController Input => input;
         public bool PracticeMode { get; private set; }
         public bool TutorialMode { get; private set; }
+        public OnlineBattleBridge Online { get; private set; }
+        public bool OnlineMode => Online && Online.Active;
         public PracticeOptions Practice { get; } = new PracticeOptions();
         public int CommandCharacter { get; private set; }
         public int CommandPage { get; private set; }
@@ -71,6 +73,7 @@ namespace AniBato.Game
             FramePacing.Load();
             BasicHintsEnabled = PlayerPrefs.GetInt("AniBato.BasicHints", 1) != 0;
             audioManager = runner.GetComponent<AudioManager>(); effects = runner.GetComponent<BattleEffectsView>();
+            var onlineObject = new GameObject("OnlineBridge"); Online = onlineObject.AddComponent<OnlineBattleBridge>(); Online.Configure(this); runner.OnlineBridge = Online;
             Player1Index = setup.Player1Index; Player2Index = setup.Player2Index;
             Selection = new TeamSelection(setup.Characters.Length);
             Difficulty = (CpuDifficulty)Mathf.Clamp(PlayerPrefs.GetInt("AniBato.CpuDifficulty", 1), 0, 2);
@@ -100,7 +103,7 @@ namespace AniBato.Game
             { if (input.AnyMenuKeyPressed || confirm || first.Start || second.Start) Show(GameScreen.MainMenu, true, MenuAction.AnyKey | MenuAction.Confirm | MenuAction.Start); }
             else if (Screen == GameScreen.Countdown)
             {
-                if (first.Start || second.Start) { Show(GameScreen.Pause, true, MenuAction.Start); return; }
+                if (!OnlineMode && (first.Start || second.Start)) { Show(GameScreen.Pause, true, MenuAction.Start); return; }
                 countdownElapsed += Time.unscaledDeltaTime;
                 if (CountdownText != previousCountdown) { previousCountdown = CountdownText; if (audioManager) audioManager.Play(CountdownText == "FIGHT!" ? SoundCue.Fight : SoundCue.Countdown); }
                 if (countdownElapsed >= settings.CountdownNumberSeconds * 3 + settings.FightBannerSeconds)
@@ -113,7 +116,7 @@ namespace AniBato.Game
                     if (!resultRecorded) { Series?.Record(runner.Simulation.Match.Result); resultRecorded = true; }
                     resultElapsed += Time.unscaledDeltaTime; if (resultElapsed >= settings.ResultDelaySeconds) Show(GameScreen.Result, false);
                 }
-                else if (first.Start || second.Start) Show(GameScreen.Pause, true, MenuAction.Start);
+                else if (!OnlineMode && (first.Start || second.Start)) Show(GameScreen.Pause, true, MenuAction.Start);
             }
             else if (Screen == GameScreen.CharacterSelect)
             { if (input.CommandListPressed) OpenCommands(); else CharacterInput(first, second); }
@@ -164,7 +167,9 @@ namespace AniBato.Game
             }
             else
             {
-                int count = Screen == GameScreen.Pause ? 6 : Screen == GameScreen.MainMenu ? 5 : 3;
+                if (OnlineMode && Screen == GameScreen.Result)
+                { if (confirm) Online.ReadyNext(); view.Render(this); return; }
+                int count = Screen == GameScreen.Pause ? 6 : Screen == GameScreen.MainMenu ? (WebInputPolicy.Enabled ? 6 : 5) : 3;
                 MenuIndex = Wrap(MenuIndex + (Screen == GameScreen.MainMenu ? (horizontal != 0 ? horizontal : vertical) : vertical), count);
                 if (cancel)
                 {
@@ -232,7 +237,8 @@ namespace AniBato.Game
         {
             if (Screen == GameScreen.MainMenu)
             {
-                if (MenuIndex < 3)
+                if (MenuIndex == 5 && WebInputPolicy.Enabled) Online.OpenLobby();
+                else if (MenuIndex < 3)
                 { CpuMode = MenuIndex != 1; PracticeMode = MenuIndex == 2; TutorialMode = false; BeginSelection(); }
                 else if (MenuIndex == 3) OpenSettings();
                 else
@@ -288,6 +294,7 @@ namespace AniBato.Game
             world.SetActive(true); hud.SetActive(true);
             runner.Practice = PracticeMode ? Practice : null; runner.Tutorial = TutorialMode ? new TutorialSession() : null;
             runner.BeginMatch(setup.Character(Player1Index), setup.Character(Player2Index), setup.Stages[StageIndex], CpuMode, Difficulty);
+            if (OnlineMode) Online.NewRound(Series.RoundNumber);
             runner.SetDebugBoxes(PracticeMode&&Practice.DebugDefault||PlayerPrefs.GetInt("AniBato.DebugBoxes",0)!=0,false);
             stageView.Rebuild(setup.Stages[StageIndex]); countdownElapsed = resultElapsed = 0; previousCountdown = null;
             Show(GameScreen.Countdown);
@@ -310,9 +317,21 @@ namespace AniBato.Game
         }
         private void OnApplicationFocus(bool focus)
         {
-            if (!focus && (Screen == GameScreen.Battle || Screen == GameScreen.Countdown) && runner.Simulation != null && !runner.Simulation.Match.IsFinished)
+            if (!OnlineMode && !focus && (Screen == GameScreen.Battle || Screen == GameScreen.Countdown) && runner.Simulation != null && !runner.Simulation.Match.IsFinished)
                 Show(GameScreen.Pause, false);
         }
+        public void BeginOnlineMatch(int[] first, int[] second, int selectedStage)
+        {
+            CpuMode = PracticeMode = TutorialMode = false; StageIndex = selectedStage;
+            Series = new TeamSeries(first, second); runner.ResetOnlineSequence(); StartRound();
+        }
+        public void ContinueOnlineRound()
+        {
+            if (Screen != GameScreen.Result || Series == null) return;
+            if (HasNextRound) Series.Advance(); else Series.Reset();
+            StartRound();
+        }
+        public void EndOnlineMatch() { Show(GameScreen.Title, false); }
         private static int Wrap(int value, int count) => (value % count + count) % count;
     }
 }

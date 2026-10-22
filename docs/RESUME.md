@@ -1,3 +1,17 @@
+## 最新区切り（2026-10-23）：無料オンラインと紙ガチャの公開、次はスマホ/Android
+
+無料の招待対戦を実装。専用SQL/Edge Functionはユーザーの明示承認後に既存Free/Nanoへ適用済み、SQL権限ROLLBACK検査PASS・実HTTP9件PASS。専用2表/3関数のみで共通10表/コイン変更なし。待機同時4室/UTC日80室/120秒、試合は直接WebRTC・20分、6フレーム遅延・入力欠損で停止・120フレームごと照合。引き分け再戦も通信番号を更新する。
+
+今回free_online_final：実BuildAll成功/Edit834/834/Play107/107/Windows成功、失敗/skip0。free_online_web_final：WebGL成功138808146bytes/237.7127948秒、Windows復帰成功、468/468RGBA保持。最終実ブラウザ2画面で4200tick時間切れ一致、引き分け再戦、特殊技ダメージ、場外勝敗一致、ラウンド2の湊/蓮への交代、切断Title、console error0。別回線間のNAT/遅延は未確認。証跡docs/codex_logs/free_online_verification.json、画像/通信値docs/screenshots/free_online/。
+
+公開ポータルは最新20c5a1fからcloneしたTestResults/portal_release。作業branch codex/free-online-paper-release、commit f138f35、PR18をCI成功後に通常merge（3530191）。GitHub Pagesは反映処理中、実公開URLの起動を確認してから最終更新する。9SSR+8SRで176枚、旧159データ/保存キー/レア率を保持。採用待機・通常3段目・集合絵・8サポートをホームへ反映。npm test全通過、ローカルHTTP6件成功/symlink権限のみ1skip、390px実表示枠で紹介/ガチャ拡大を確認。
+
+追加依頼：docs/codex_tasks/MOBILE_CONTROLS_AND_ANDROID.md。左右下の半透明パッドを複数タッチ/メニュー/長押しに対応させ、WebとAndroidの入力へ接続。Unity付属AndroidPlayer/SDK/NDK/OpenJDKあり。ARM64 APKをまず制作し、実機未確認なら明記。ネイティブAndroidの招待通信は今回追加しない。Web招待はブラウザで利用。新コードはまだ未実装。次は公開URL確認→この区切り保存→モバイル入力/実Unity全4/Web/Androidビルド/公開差分更新。
+
+注意：検証で再生成された旧スクリーンショット群と2シーンは作業ツリーに残る。画像の一括git restoreは自動承認審査で拒否されたため破棄しない。TestResults/free_online_generated_outputs.jsonにパスと現SHAを記録し、製品commitには含めない。シーンはID/文書順以外の600/773オブジェクト値がHEADと一致することをcompare_generated_scenes.cjsで確認した。新規の他モーション画像フォルダも検査出力で、本工程の原画生成ではない。保護カバン・龍太被弾v5・崖A・45半減・14/10・戦闘Dataは基準24ddaa0から変更なし。
+
+以下は以前の区切り記録。
+
 ## 最新完了（2026-10-22）：8サポート＋小型HUD/アイコン/説明/裂け目入場/ロケット下段着弾
 
 PAPER_SUPPORT_ITEMS.mdとCOMPACT_PAPER_HUD_AND_ROCKET.mdの区切りを完了。8種類の即時接触取得/CD/各効果と14原画を導入。HUD全体を約3分の1、頭上の黒い台紙と文字影を削除、9待機原画の顔アイコンと斜め目盛りゲージ、取得時の下部説明4.5秒、全9人のカウント中の裂け目入場を実装。透真のロケットは上段/設置壁を通過し、途中の相手接触では爆発せずメイン足場で爆発する。説明はdocs/SUPPORT_ITEMS.md。

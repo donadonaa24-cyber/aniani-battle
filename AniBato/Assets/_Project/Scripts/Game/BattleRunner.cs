@@ -23,6 +23,9 @@ namespace AniBato.Game
         private int suppressInputFrame = -1;
         private int finishHoldRemaining = -1;
         private uint supportMatchSequence;
+        public OnlineBattleBridge OnlineBridge { get; set; }
+        private double onlineAccumulator;
+        private FrameInput onlineFirst, onlineSecond;
         private ICpuBrain cpuBrain;
         public CpuDifficulty Difficulty { get; private set; }
         public ICpuBrain CpuBrain => cpuBrain;
@@ -92,7 +95,7 @@ namespace AniBato.Game
             if (!p1 || !p2 || !rules || !stage || !input)
                 throw new InvalidOperationException("BattleRunnerの設定が欠落しています。BuildAllを実行してください。");
             var definition=rules.ToDefinition();
-            uint supportSeed=unchecked(definition.Support.Seed+(supportMatchSequence++)*0x9e3779b9u);
+            uint supportSeed=OnlineBridge && OnlineBridge.Active ? unchecked(OnlineBridge.Seed + (uint)(supportMatchSequence++)*0x9e3779b9u) : unchecked(definition.Support.Seed+(supportMatchSequence++)*0x9e3779b9u);
             Simulation = new BattleSimulation(p1.ToDefinition(), p2.ToDefinition(), definition, stage.ToGeometry(),supportSeed);
             Simulation.Practice = Practice; Tutorial?.Reset(); LastPlayerInput = default; LastMoveName = "";
             if (CpuOpponent)
@@ -107,7 +110,9 @@ namespace AniBato.Game
             finishHoldRemaining = -1;
             PracticeRateIndex=0;PracticePlaybackPaused=false;
             clock.Reset(); RenderState.Reset(Simulation); input.Clear(); animations[0].Reset(Simulation.P1, Simulation.Match); animations[1].Reset(Simulation.P2, Simulation.Match); MatchRestarted?.Invoke();
+            onlineAccumulator = 0;
         }
+        public void ResetOnlineSequence() => supportMatchSequence = 0;
         private void Update()
         {
             if (Time.frameCount == suppressInputFrame) { input.Clear(); return; }
@@ -135,7 +140,24 @@ namespace AniBato.Game
             AdvanceRenderFrame(Time.unscaledDeltaTime);
         }
         public void AdvanceRenderFrame(double elapsedSeconds)
-        { if (!Paused && Simulation != null) clock.Advance(Practice==null?elapsedSeconds:PracticePlayback.Scale(elapsedSeconds,PracticeRateIndex,PracticePlaybackPaused,presentation.PracticeRates), AdvanceTick, MaximumCatchupTicks); }
+        {
+            if (Paused || Simulation == null) return;
+            if (OnlineBridge && OnlineBridge.Active && !Simulation.Match.IsFinished)
+            {
+                onlineAccumulator = Math.Min(.1, onlineAccumulator + elapsedSeconds);
+                for (int i = 0; i < MaximumCatchupTicks && onlineAccumulator >= 1d/60; i++)
+                {
+                    var buffer = OnlineBridge.Inputs;
+                    if (buffer == null) break;
+                    if (!buffer.LocalQueued) OnlineBridge.Queue(input.Consume(0));
+                    if (!buffer.TryTake(out onlineFirst, out onlineSecond)) { OnlineBridge.SetWaiting(true); onlineAccumulator = Math.Min(onlineAccumulator, 1d/60); break; }
+                    OnlineBridge.SetWaiting(false); onlineAccumulator -= 1d/60; AdvanceTick(); OnlineBridge.AfterTick();
+                    if (!OnlineBridge.Active || Simulation.Match.IsFinished) break;
+                }
+                return;
+            }
+            clock.Advance(Practice==null?elapsedSeconds:PracticePlayback.Scale(elapsedSeconds,PracticeRateIndex,PracticePlaybackPaused,presentation.PracticeRates), AdvanceTick, MaximumCatchupTicks);
+        }
         private void AdvanceTick()
         {
             if (Simulation.Match.IsFinished)
@@ -147,7 +169,8 @@ namespace AniBato.Game
                 animations[1].Advance(Simulation.P2, Simulation.Match, false, false, false); return;
             }
             bool cinematic = Simulation.CutInRemainingFrames > 0;
-            var first = input.Consume(0); var second = input.Consume(1);
+            bool online = OnlineBridge && OnlineBridge.Active;
+            var first = online ? onlineFirst : input.Consume(0); var second = online ? onlineSecond : input.Consume(1);
             LastPlayerInput = first; Tutorial?.Prepare(Simulation);
             if (Tutorial != null) second = Tutorial.CoachInput(Simulation);
             else if (Practice != null) second = Practice.Opponent == PracticeOpponent.Cpu ? cpuBrain.NextInput(Simulation, 1) : Practice.DummyInput(Simulation);

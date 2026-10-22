@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-23",
+  "native": {
+    "tag": "free_online_final",
+    "BuildAllExit": 0,
+    "EditMode": {
+      "total": 834,
+      "passed": 834,
+      "failed": 0,
+      "skipped": 0
+    },
+    "PlayMode": {
+      "total": 107,
+      "passed": 107,
+      "failed": 0,
+      "skipped": 0
+    },
+    "WindowsExit": 0
+  },
+  "web": {
+    "tag": "free_online_web_final",
+    "result": "success",
+    "bytes": 138808146,
+    "seconds": 237.71279479999998,
+    "files": 10,
+    "WindowsRestoreExit": 0,
+    "rgbaChecked": 468,
+    "rgbaFailed": 0,
+    "payloadVersion": "cfa17f99678a3875",
+    "parts": 16,
+    "exactCompressedBytesPreserved": true
+  },
+  "supabase": {
+    "approvedAndApplied": "2026-10-22",
+    "plan": "Free",
+    "compute": "Nano",
+    "commonTablesChanged": false,
+    "sqlRollbackChecks": "PASS",
+    "liveChecks": {
+      "at": "2026-10-22T14:28:48.554Z",
+      "project": "bjrewemniqfchggrrkdd",
+      "checks": 9,
+      "pass": true,
+      "publicClientContainsNoApiKey": true,
+      "commonTablesNotWritten": true,
+      "temporaryRoomClosed": true
+    }
+  },
+  "browser": {
+    "localFinalPeerEvidence": "docs/screenshots/free_online/local_peer_final.json",
+    "samePc": true,
+    "drawReplay": true,
+    "specialDamage": true,
+    "roundChanges": true,
+    "disconnectReturnsToTitle": true,
+    "remoteNatTested": false
+  },
+  "portal": {
+    "published": false,
+    "cards": 176,
+    "oldCardsUnchanged": 159,
+    "newSSR": 9,
+    "newSR": 8,
+    "rarityRatesUnchanged": true,
+    "inventoryKeyUnchanged": true,
+    "npmTestPassed": true,
+    "localHttpPassed": 6,
+    "localHttpSkipped": 1,
+    "skipReason": "Windows symlink creation privilege only",
+    "source": "TestResults/portal_release",
+    "branch": "codex/free-online-paper-release",
+    "commit": "f138f35",
+    "mergeCommit": "3530191129ce1944b9c5b60d43ec464d6857b523",
+    "pullRequest": 18,
+    "ci": "SUCCESS",
+    "pages": "building"
+  },
+  "retainedGeneratedOutputs": {
+    "path": "TestResults/free_online_generated_outputs.json",
+    "committed": false,
+    "reason": "Bulk restore rejected by automatic approval review; all images retained in place. Scene object graph equivalence verified: Battle 600 / Title 773."
+  }
+}

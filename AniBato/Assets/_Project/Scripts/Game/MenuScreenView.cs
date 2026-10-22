@@ -80,7 +80,7 @@ namespace AniBato.Game
             {
                 heading.text = "あにあにバトル！！"; subtitle.text = "モードを選択";
                 options.rectTransform.anchoredPosition=new Vector2(0,-392);options.rectTransform.sizeDelta=new Vector2(1740,80);
-                options.text=Choices(flow.MenuIndex,"CPUチーム対戦","2人チーム対戦","練習モード","設定","終了").Replace("\n","    ");
+                options.text=(WebInputPolicy.Enabled ? Choices(flow.MenuIndex,"CPUチーム対戦","2人チーム対戦","練習モード","設定","終了","オンライン") : Choices(flow.MenuIndex,"CPUチーム対戦","2人チーム対戦","練習モード","設定","終了")).Replace("\n","    ");
                 footer.text="左右で選択　"+input.ConfirmLabel(0)+" 決定　／　Esc 戻る";
             }
             else if (screen == GameScreen.CharacterSelect) Characters(flow);
@@ -131,7 +131,12 @@ namespace AniBato.Game
             else if (screen == GameScreen.PracticeSettings)
             { heading.text = "練習設定"; subtitle.text = "練習中：F5 速度／F6 静止／F7 1コマ進める／F9 判定表示"; options.text = Choices(flow.MenuIndex, "相手  " + new[] { "棒立ち", "ガード", "ジャンプ", "ふつうCPU" }[(int)flow.Practice.Opponent], "ハート固定  " + (flow.Practice.FreezeHearts ? "ON" : "OFF"), "時間固定  " + (flow.Practice.FreezeTimer ? "ON" : "OFF"),"練習で判定表示  "+(flow.Practice.DebugDefault?"ON":"OFF"),"速度  "+flow.Runner.PracticeRateLabel,"静止  "+(flow.Runner.PracticePlaybackPaused?"ON":"OFF"),"1コマ進める（静止中）"); }
             if (screen != GameScreen.Controls) options.fontSize = screen == GameScreen.KeyConfig ? 26 : screen == GameScreen.CommandList || screen == GameScreen.Pause || screen == GameScreen.Settings ? 30 : 38;
-            if(screen==GameScreen.MainMenu)options.fontSize=28;
+            if(screen==GameScreen.MainMenu)options.fontSize=WebInputPolicy.Enabled ? 24 : 28;
+            if(flow.OnlineMode)
+            {
+                if(screen==GameScreen.Battle && flow.Online.Waiting) banner.text="通信待ち…　相手の入力が届くまで停止中";
+                if(screen==GameScreen.Result) { options.text="両者の決定で次へ　"+flow.Online.Notice; footer.text="退出はブラウザ上の「対戦を終了」"; }
+            }
             if(WebInputPolicy.Enabled)
             {
                 heading.text=WebInputPolicy.Text(heading.text);subtitle.text=WebInputPolicy.Text(subtitle.text);

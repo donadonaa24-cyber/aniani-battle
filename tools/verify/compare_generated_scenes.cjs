@@ -1,0 +1,12 @@
+// Compare generated Unity scenes while ignoring only local object identifiers/document order.
+const fs=require('node:fs'),{execFileSync}=require('node:child_process'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+function canonical(text){
+const docs=new Map();
+for(const m of text.replaceAll('\r','').matchAll(/^--- !u!(\d+) &(\d+)\n([\s\S]*?)(?=^--- !u!|$(?![\s\S]))/gm))docs.set(m[2],{type:m[1],body:m[3]});
+const paths=new Map();
+function goPath(id){if(paths.has(id))return paths.get(id);const go=docs.get(id);if(go.type!=='1')throw Error('Not a GameObject');const name=go.body.match(/^  m_Name: (.*)$/m)[1];const components=Array.from(go.body.matchAll(/^  - component: \{fileID: (\d+)\}/gm));const transform=components.map(m=>docs.get(m[1])).find(d=>d.type==='4'||d.type==='224');const parent=transform?.body.match(/^  m_Father: \{fileID: (\d+)\}/m)?.[1];const parentGo=parent&&parent!=='0'?docs.get(parent).body.match(/^  m_GameObject: \{fileID: (\d+)\}/m)[1]:null;const ownTransform=components.find(m=>docs.get(m[1])===transform)?.[1];const children=parent&&parent!=='0'?docs.get(parent).body.match(/  m_Children:([\s\S]*?)  m_Father:/)?.[1]:Array.from(docs.values()).find(d=>d.type==='1660057539')?.body;const siblings=Array.from((children||'').matchAll(/fileID: (\d+)/g),m=>m[1]);const key=(parentGo?goPath(parentGo)+'/':'')+name+'['+siblings.indexOf(ownTransform)+']';paths.set(id,key);return key;}
+const names=new Map(),seen=new Set();
+for(const [id,d] of docs){let key=d.type==='1'?goPath(id):d.type;const go=d.body.match(/^  m_GameObject: \{fileID: (\d+)\}/m)?.[1];if(go&&go!=='0')key=goPath(go)+'::'+d.type;const script=d.body.match(/^  m_Script: .*guid: ([a-f0-9]+)/m)?.[1];if(script)key+='::'+script;if(seen.has(key))throw Error('Ambiguous scene key '+key);seen.add(key);names.set(id,key);}
+return Array.from(docs,([id,d])=>[names.get(id),d.body.replace(/fileID: (\d+)/g,(all,n)=>names.has(n)?'fileID: '+names.get(n):all)]).sort((a,b)=>a[0].localeCompare(b[0]));
+}
+for(const file of ['AniBato/Assets/_Project/Scenes/Battle.unity','AniBato/Assets/_Project/Scenes/Title.unity']){const old=canonical(execFileSync('git',['show','HEAD:'+file],{encoding:'utf8',maxBuffer:10*1024*1024})),next=canonical(fs.readFileSync(file,'utf8'));assert.deepEqual(next,old,'Scene values changed beyond IDs/order: '+file);console.log(JSON.stringify({file,objects:next.length,semanticSha256:crypto.createHash('sha256').update(JSON.stringify(next)).digest('hex'),equivalent:true}));}
