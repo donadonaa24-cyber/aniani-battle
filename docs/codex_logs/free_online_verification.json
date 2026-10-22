@@ -56,7 +56,7 @@
     "remoteNatTested": false
   },
   "portal": {
-    "published": false,
+    "published": true,
     "cards": 176,
     "oldCardsUnchanged": 159,
     "newSSR": 9,
@@ -73,7 +73,15 @@
     "mergeCommit": "3530191129ce1944b9c5b60d43ec464d6857b523",
     "pullRequest": 18,
     "ci": "SUCCESS",
-    "pages": "building"
+    "pages": "built",
+    "publicBrowserGameStarted": true,
+    "publicGachaTotal": 176,
+    "publicConsoleErrors": 0,
+    "urls": {
+      "game": "https://donadonaa24-cyber.github.io/aniani-asobiba/games/anibato/",
+      "home": "https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/",
+      "gacha": "https://donadonaa24-cyber.github.io/aniani-asobiba/#trial-gacha"
+    }
   },
   "retainedGeneratedOutputs": {
     "path": "TestResults/free_online_generated_outputs.json",
