@@ -23,6 +23,7 @@ namespace AniBato.Game
         public bool PracticeMode { get; private set; }
         public bool TutorialMode { get; private set; }
         public OnlineBattleBridge Online { get; private set; }
+        public MobileControlsView TouchControls { get; private set; }
         public bool OnlineMode => Online && Online.Active;
         public PracticeOptions Practice { get; } = new PracticeOptions();
         public int CommandCharacter { get; private set; }
@@ -74,6 +75,8 @@ namespace AniBato.Game
             BasicHintsEnabled = PlayerPrefs.GetInt("AniBato.BasicHints", 1) != 0;
             audioManager = runner.GetComponent<AudioManager>(); effects = runner.GetComponent<BattleEffectsView>();
             var onlineObject = new GameObject("OnlineBridge"); Online = onlineObject.AddComponent<OnlineBattleBridge>(); Online.Configure(this); runner.OnlineBridge = Online;
+            var touchObject = new GameObject("Mobile Controls"); touchObject.transform.SetParent(transform, false);
+            TouchControls = touchObject.AddComponent<MobileControlsView>(); TouchControls.Configure(this);
             Player1Index = setup.Player1Index; Player2Index = setup.Player2Index;
             Selection = new TeamSelection(setup.Characters.Length);
             Difficulty = (CpuDifficulty)Mathf.Clamp(PlayerPrefs.GetInt("AniBato.CpuDifficulty", 1), 0, 2);

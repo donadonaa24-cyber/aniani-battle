@@ -1,3 +1,7 @@
+## 最新（2026-10-23）：無料公開→タッチ操作→Android APK
+
+無料オンライン/ホーム/紙ガチャ公開は完了（ポータルPR18）。追加のMOBILE_CONTROLS_AND_ANDROID.mdはNative全4/実WebGL/468RGBA/実ブラウザのタッチ操作まで完了。現在Android APKをビルド中。次にAPK署名/ABI/内容・Windows復帰とポータル更新を完了する。最新タグと実件数はRESUME冒頭。実スマホは未確認。
+
 ## 現在工程完了（2026-10-22）：崖A→8サポート→小型HUD/説明/入場/ロケット
 
 PAPER_LEDGE_THUMB_A.mdのA（親指が画面左）を9人へ採用。paper_ledge_AはBuildAll/Edit797/797/Play101/101/Windows全合格、paper_ledge_A_webはWebGL/Windows復帰/454原画RGBA保持/実ブラウザつかまり・復帰/console0を確認。証跡codex_logs/paper_ledge_verification.json。通常保存後はAの再生成・再反転を繰り返さない。

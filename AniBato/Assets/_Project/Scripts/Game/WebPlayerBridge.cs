@@ -30,12 +30,13 @@ namespace AniBato.Game
 #if UNITY_WEBGL && !UNITY_EDITOR
             WebGLInput.captureAllKeyboardInput=value=="1";
 #endif
-            if(value!="1")BrowserPause();input?.Clear();
+            if(value!="1"){BrowserPause();if(flow&&flow.TouchControls)flow.TouchControls.ReleaseAll();}input?.Clear();
         }
         public void BrowserPause()
         {
             if(flow)flow.SendMessage("OnApplicationFocus",false);input?.Clear();
         }
+        public void TouchControls(string value) { if (flow && flow.TouchControls) flow.TouchControls.SetEnabled(value == "1"); }
         private void Update()
         {
             if(!WebInputPolicy.Enabled||!flow)return;
@@ -49,7 +50,8 @@ namespace AniBato.Game
                 hearts1=sim?.P1.Hearts??0,hearts2=sim?.P2.Hearts??0,result=sim?.Match.Result.ToString()??"",reason=sim?.Match.EndReason.ToString()??"",
                 round=flow.Series?.RoundNumber??0,score1=flow.Series?.Score(0)??0,score2=flow.Series?.Score(1)??0,
                 bgm=flow.Audio?flow.Audio.BgmVolume:0,se=flow.Audio?flow.Audio.SeVolume:0,fps=frames/Mathf.Max(.001f,elapsed),pads=Gamepad.all.Count,
-                attackKey=input.EffectiveKeys(0).Attack.ToString(),practice=flow.PracticeMode,practicePaused=flow.Runner.PracticePlaybackPaused
+                attackKey=input.EffectiveKeys(0).Attack.ToString(),practice=flow.PracticeMode,practicePaused=flow.Runner.PracticePlaybackPaused,
+                touchControls=flow.TouchControls&&flow.TouchControls.Visible
             };
 #if UNITY_WEBGL && !UNITY_EDITOR
             AniBatoStatus(JsonUtility.ToJson(status));
@@ -59,7 +61,7 @@ namespace AniBato.Game
         {
             public string screen,picks1,picks2,p1mode,p2mode,result,reason,attackKey;
             public int menu,player1,player2,selectionPlayer,stage,tick,shrinks,hearts1,hearts2,round,score1,score2,pads;
-            public double remaining;public float p1x,p2x,bgm,se,fps;public bool practice,practicePaused;
+            public double remaining;public float p1x,p2x,bgm,se,fps;public bool practice,practicePaused,touchControls;
         }
 #if UNITY_WEBGL && !UNITY_EDITOR
         [DllImport("__Internal")] private static extern void AniBatoResumeAudio();

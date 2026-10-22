@@ -59,6 +59,7 @@ namespace AniBato.Tests
         public IEnumerator SetUp()
         {
             var oldFlow = Object.FindAnyObjectByType<GameFlowController>(); if (oldFlow) oldFlow.enabled = false;
+            if (oldFlow && oldFlow.TouchControls) oldFlow.TouchControls.SetEnabled(false);
             var oldRunner = Object.FindAnyObjectByType<BattleRunner>(); if (oldRunner) oldRunner.enabled = false;
             var oldInput = Object.FindAnyObjectByType<InputController>(); if (oldInput) oldInput.enabled = false;
             IsolateInput();
@@ -87,6 +88,7 @@ namespace AniBato.Tests
             var runner = Object.FindAnyObjectByType<BattleRunner>();
             if (runner) runner.enabled = false;
             var input = Object.FindAnyObjectByType<InputController>();
+            if (flow && flow.TouchControls) flow.TouchControls.SetEnabled(false);
             if (input) input.enabled = false;
             foreach (var device in InputSystem.devices.ToArray()) InputSystem.RemoveDevice(device);
             dualSenseButtons.Clear();

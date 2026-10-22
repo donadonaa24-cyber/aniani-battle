@@ -91,6 +91,7 @@ namespace AniBato.Game
         {
             if(!flow||flow.Screen!=GameScreen.CharacterSelect||Mouse.current==null||!Mouse.current.leftButton.wasPressedThisFrame)return;
             var p=Mouse.current.position.ReadValue();
+            if(flow.TouchControls&&flow.TouchControls.ContainsButtonPoint(p))return;
             for(int i=0;i<backgrounds.Length;i++)if(RectTransformUtility.RectangleContainsScreenPoint(backgrounds[i].rectTransform,p))
             {flow.SelectRosterCard(i);break;}
         }

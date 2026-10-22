@@ -1,0 +1,89 @@
+{
+  "status": "native_and_web_verified_android_building",
+  "date": "2026-10-23",
+  "native": {
+    "buildAll": {
+      "tag": "mobile_final_2",
+      "success": true
+    },
+    "edit": {
+      "tag": "mobile_final_2",
+      "total": 834,
+      "passed": 834,
+      "failed": 0,
+      "skipped": 0,
+      "xmlSha256": "bc92981689435db8ce7a51bb80ad9d2d86332e015692dd6390726228c5511374"
+    },
+    "play": {
+      "tag": "mobile_play_final",
+      "total": 111,
+      "passed": 111,
+      "failed": 0,
+      "skipped": 0,
+      "xmlSha256": "e848527b763da15e0ae9313ca331b0a68ac08388df0522d1cad3563d2b9d287a"
+    },
+    "windows": {
+      "tag": "mobile_final_2",
+      "success": true
+    },
+    "notes": "製品コードが同じmobile_final_2のBuildAll/Edit/Windowsと、検査のUI反映待ちを修理したmobile_play_finalを組み合わせる。アサーションの弱化なし。"
+  },
+  "scriptsSha256": "dfa8d3a891fce2255185267cda03621dfb55d9c67604f4a514708c2e3af87fcd",
+  "mobile": {
+    "focusedTests": 4,
+    "realTouchContactsTested": true,
+    "chargeReleaseTested": true,
+    "physicalPadsRestored": true,
+    "underlyingRosterClickBlocked": true,
+    "guideViewport": 390
+  },
+  "android": {
+    "deviceConnected": false,
+    "deviceVerified": false,
+    "nativeOnline": false
+  },
+  "web": {
+    "browserOnline": true,
+    "published": false,
+    "result": "success",
+    "bytes": 138814613,
+    "seconds": 236.3447617,
+    "files": 11,
+    "pixelPreservation": "468/468",
+    "payloadVersion": "2438e123759e0b4b",
+    "browser": {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "actualFrameWidth": 844,
+      "contentWidth": 829,
+      "menuNavigation": true,
+      "rosterDirectionDoesNotPick": true,
+      "practiceCharacters": [
+        2,
+        1
+      ],
+      "movedFrom": -5,
+      "movedTo": 7.060004711151123,
+      "normalModeObserved": "Attack",
+      "heldAttackMilliseconds": 1400,
+      "releaseModeObserved": "Attack",
+      "idleAfterRelease": true,
+      "pauseObserved": true,
+      "hiddenPads": 0,
+      "resumedAfterToggle": true,
+      "consoleErrors": []
+    }
+  },
+  "unchanged": [
+    "battle definitions",
+    "native artwork pixels",
+    "ledge A",
+    "approved Ryuta hit v5",
+    "Chizuru bag backup",
+    "half reach 45",
+    "gauge 14/10",
+    "existing gacha inventory and rates"
+  ]
+}

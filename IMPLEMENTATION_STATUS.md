@@ -1,3 +1,21 @@
+## 最新区切り（2026-10-23）：半透明タッチ操作のNative/Web検証完了、Androidビルド中
+
+MOBILE_CONTROLS_AND_ANDROID.mdの左右下パッド、メニュー決定/戻る、セーフエリア、複数指/長押し解放、フォーカス解除、物理パッド復元、背後のキャラ選択クリック抑制を接続。最終製品コードはmobile_final_2でBuildAll成功/Edit834/834/Windows成功、同じ製品コードで検査の配置/マウス位置反映待ちだけ修理したmobile_play_finalはPlay111/111成功、失敗・スキップ0。初期の登録切替不具合と検査待ち不足を修理し、アサーションの弱化なし。
+
+mobile_web_finalはWebGL成功138814613bytes/236.3447617秒、Windows復帰成功、468/468原画RGBA保持。実ブラウザ844×390pxの枠でタッチだけのメニュー/選択/練習/移動/通常/1400ms長押し解放/ポーズ/表示切替と入力解除を確認、console error0。390px案内枠にも横はみ出しなし。証跡codex_logs/mobile_android_verification.json、screenshots/mobile_android/。
+
+AndroidBuilder/build_android.ps1を実行中（android_final、TestResults/android_final_Android.log）。Unityのこのプロジェクトが終了するまでAssetsを編集しない。ARM64/IL2CPP/ETC2、試作APKをBuild/Android/AniBato-arm64.apkへ出力する。実機接続なし、APK成功/署名/ABI検査・Windows復帰はまだ未完了。ネイティブ招待対戦は今回の対象外で、招待はブラウザ版を使う。
+
+ポータルはTestResults/portal_releaseのcodex/mobile-controls-android（基準origin/main3530191）、タッチ説明と新WebGLを検証済み。配信版2438e123759e0b4b、8MiB×16片。公開更新はまだ。次はポータルの通常PR/CI/公開表示確認と、APK結果/署名/内容の検査、最終引継ぎと通常保存。既存Free構成・ガチャ所持/レア率・保護原画・戦闘Dataは変更なし。旧生成画像と2シーンは破棄せず、必要な差分だけ保存する。
+
+以下は以前の記録。
+
+## 実行中（2026-10-23）：半透明タッチ操作・Android APK
+
+MOBILE_CONTROLS_AND_ANDROID.mdを実装中。MobileControlsView/Buttonの左右下配置、メニュー決定/戻る、セーフエリア、複数指・長押し、フォーカス喪失の解放、物理パッド復元を接続。初回重点4件でInput Systemの有効中の再バインド登録が失敗、無効化してから切り替える修理後mobile_focus_2は実Play4/4合格。BuildAllも成功。mobile_finalは実全4合格（834/111）。キャラ選択の背後へのクリック抑制を追加し、mobile_roster_focus_2は実Play4/4合格。mobile_final_2はBuildAll/Edit834/Windows合格、Play110/111で追加マウス検査の初期化待ち1件だけ失敗。製品コードは変更せず検査へ配置反映/デバイス位置待ちを追加し、現在mobile_play_finalで全Play111件を再実行中。AssetsはUnity終了まで編集しない。
+
+AndroidBuilder/build_android.ps1を追加、付属SDK36/NDK/OpenJDKでARM64/IL2CPP/ETC2の試作APKを作る準備済み。WebGLScenePackingの一時コピーをAndroidにも適用し、元原画は変更しない。APK・Web更新・公開更新はまだ未完了。Android実機なし、ネイティブ招待対戦は今回の対象外（ブラウザで利用）。公開ポータル作業はTestResults/portal_releaseのcodex/mobile-controls-android、origin/main3530191から開始。旧生成画像/2シーンの破棄拒否後の保持方針と既存保護指定を維持。
+
 ## 最新区切り（2026-10-23）：無料オンラインと紙ガチャの公開、次はスマホ/Android
 
 無料の招待対戦を実装。専用SQL/Edge Functionはユーザーの明示承認後に既存Free/Nanoへ適用済み、SQL権限ROLLBACK検査PASS・実HTTP9件PASS。専用2表/3関数のみで共通10表/コイン変更なし。待機同時4室/UTC日80室/120秒、試合は直接WebRTC・20分、6フレーム遅延・入力欠損で停止・120フレームごと照合。引き分け再戦も通信番号を更新する。

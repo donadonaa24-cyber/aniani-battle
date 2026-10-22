@@ -30,7 +30,9 @@ namespace AniBato.EditorTools
             for(int y=0;y<height;y++)Array.Copy(source,y*width,pixels,y*packedWidth,width);
             return pixels;
         }
-        public static void Prepare()
+        public static void Prepare() => PreparePlatform("WebGL", TextureImporterFormat.DXT5, TextureFormat.DXT5);
+        public static void PrepareAndroid() => PreparePlatform("Android", TextureImporterFormat.ETC2_RGBA8, TextureFormat.ETC2_RGBA8);
+        private static void PreparePlatform(string platform, TextureImporterFormat format, TextureFormat expected)
         {
             Enabled=true;textures.Clear();const string folder="Assets/_WebGLPacked";Directory.CreateDirectory(folder);
             foreach(string guid in AssetDatabase.FindAssets("t:Texture2D",new[]{"Assets/_Project/Art"}))
@@ -56,20 +58,21 @@ namespace AniBato.EditorTools
                 AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
                 var importer=(TextureImporter)AssetImporter.GetAtPath(path);
                 var filtering=mipmaps?FilterMode.Trilinear:((TextureImporter)AssetImporter.GetAtPath(source)).filterMode;
-                if(importer.textureType!=TextureImporterType.Sprite||importer.textureCompression!=TextureImporterCompression.CompressedHQ||importer.mipmapEnabled!=mipmaps||importer.filterMode!=filtering)
+                var platformSettings=importer.GetPlatformTextureSettings(platform);
+                if(importer.textureType!=TextureImporterType.Sprite||importer.textureCompression!=TextureImporterCompression.CompressedHQ||importer.mipmapEnabled!=mipmaps||importer.filterMode!=filtering||!platformSettings.overridden||platformSettings.format!=format)
                 {
                     importer.textureType=TextureImporterType.Sprite;importer.spriteImportMode=SpriteImportMode.Single;
                     importer.npotScale=TextureImporterNPOTScale.None;importer.maxTextureSize=16384;importer.mipmapEnabled=mipmaps;
                     importer.filterMode=filtering;
                     importer.alphaIsTransparency=true;importer.isReadable=false;importer.textureCompression=TextureImporterCompression.CompressedHQ;
-                    var p=importer.GetPlatformTextureSettings("WebGL");p.name="WebGL";p.overridden=true;p.format=TextureImporterFormat.DXT5;p.maxTextureSize=16384;
+                    var p=importer.GetPlatformTextureSettings(platform);p.name=platform;p.overridden=true;p.format=format;p.maxTextureSize=16384;
                     importer.SetPlatformTextureSettings(p);importer.SaveAndReimport();
                 }
                 textures[source]=AssetDatabase.LoadAssetAtPath<Texture2D>(path);
             }
             foreach(var pair in textures)
-                if(pair.Value.format!=TextureFormat.DXT5&&pair.Value.format!=TextureFormat.DXT1)throw new InvalidOperationException("Web画像がGPU圧縮されていません: "+pair.Key+" "+pair.Value.format);
-            Debug.Log("WEB_PACKED_TEXTURES "+textures.Count+" native pixels preserved; DXT compression confirmed");
+                if(pair.Value.format!=expected&&!(expected==TextureFormat.DXT5&&pair.Value.format==TextureFormat.DXT1))throw new InvalidOperationException(platform+"画像がGPU圧縮されていません: "+pair.Key+" "+pair.Value.format);
+            Debug.Log(platform.ToUpperInvariant()+"_PACKED_TEXTURES "+textures.Count+" native pixels preserved; "+expected+" compression confirmed");
         }
         public static Sprite Copy(Sprite source)
         {

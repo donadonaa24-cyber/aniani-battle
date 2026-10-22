@@ -31,7 +31,7 @@ namespace AniBato.EditorTools
         private static bool Retired(AnimationState s)=>s==AnimationState.AirForward||s==AnimationState.AirBack||s==AnimationState.AirDown||s==AnimationState.AirForwardUp||s==AnimationState.AirForwardDown||s==AnimationState.SpecialSide||s==AnimationState.SpecialUp||s==AnimationState.SpecialDown;
         public void OnProcessScene(Scene scene,BuildReport report)
         {
-            if(report==null||report.summary.platform!=BuildTarget.WebGL)return;
+            if(report==null||(report.summary.platform!=BuildTarget.WebGL&&report.summary.platform!=BuildTarget.Android))return;
             foreach(var root in scene.GetRootGameObjects())foreach(var component in root.GetComponentsInChildren<MonoBehaviour>(true))
             {
                 if(!component)continue;var serialized=new SerializedObject(component);var property=serialized.GetIterator();
@@ -42,7 +42,7 @@ namespace AniBato.EditorTools
                 }
                 serialized.ApplyModifiedPropertiesWithoutUndo();
             }
-            Debug.Log("WebGL build-only asset copies: "+copies.Count);
+            Debug.Log(report.summary.platform+" build-only asset copies: "+copies.Count);
         }
         private static Object Copy(Object source)
         {
