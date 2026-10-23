@@ -75,6 +75,12 @@
     "mergeCommit": "7cb2706af8ab8b3c6aba79e2f2288adbfb884a27",
     "ci": "passed",
     "pages": "built",
+    "documentationFollowup": {
+      "pullRequest": 22,
+      "ci": "passed in 20 seconds",
+      "mergeCommit": "36d3a05ed6d203f08779368cd587c55cc463bed0",
+      "siteFilesUnchanged": true
+    },
     "entryPoints": [
       "works",
       "detail",
