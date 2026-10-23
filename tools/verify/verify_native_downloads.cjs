@@ -8,7 +8,9 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 (async () => {
   const results = [];
   for (const file of manifest.files) {
-    const expected = `https://github.com/donadonaa24-cyber/aniani-battle/releases/download/${manifest.version}/${file.name}`;
+    const version = file.version || manifest.version;
+    assert.match(version, /^v[0-9A-Za-z.\-]+$/);
+    const expected = `https://github.com/donadonaa24-cyber/aniani-battle/releases/download/${version}/${file.name}`;
     assert.equal(file.url, expected, 'verify only this game release');
     const response = await fetch(file.url, {signal: AbortSignal.timeout(300000)});
     assert.equal(response.status, 200, file.name);

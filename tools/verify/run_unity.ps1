@@ -60,7 +60,7 @@ foreach ($plat in 'EditMode', 'PlayMode') {
 if ($Only -in 'all', 'build') {
     $log = Join-Path $Results "${Tag}_build.log"
     $exe = Join-Path $Root "Build\$Tag\AniBato.exe"
-    $code = Invoke-Unity @('-batchmode', '-quit', '-projectPath', (Q $Project), '-buildWindows64Player', (Q $exe), '-logFile', (Q $log))
+    $code = Invoke-Unity @('-batchmode', '-quit', '-projectPath', (Q $Project), '-buildTarget', 'Win64', '-executeMethod', 'AniBato.EditorTools.WindowsBuilder.Build', '-anibatoWindowsOutput', (Q $exe), '-logFile', (Q $log))
     Write-Host "winbuild=$code"
     if($code -eq 0 -and (Test-Path (Join-Path $Root 'art_source/fonts/OFL-NotoCJK.txt'))){
         Copy-Item -LiteralPath (Join-Path $Root 'art_source/fonts/OFL-NotoCJK.txt') -Destination (Join-Path (Split-Path $exe) 'ThirdPartyNotices.txt') -Force

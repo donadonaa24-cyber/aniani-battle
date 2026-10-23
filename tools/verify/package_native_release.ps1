@@ -1,7 +1,8 @@
 param(
-    [string]$WindowsBuild = 'Build/mobile_final_2',
+    [string]$WindowsBuild = 'Build/size_lossless_final',
     [string]$AndroidApk = 'Build/Android/AniBato-arm64.apk',
-    [string]$Version = 'v0.1.0-trial.20261023'
+    [string]$Version = 'v0.1.1-trial.20261023',
+    [string]$AndroidVersion = 'v0.1.0-trial.20261023'
 )
 $ErrorActionPreference = 'Stop'
 $taskRoot = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
@@ -9,6 +10,7 @@ $windowsRoot = (Resolve-Path (Join-Path $taskRoot $WindowsBuild)).Path
 $apkPath = (Resolve-Path (Join-Path $taskRoot $AndroidApk)).Path
 $releaseRoot = Join-Path $taskRoot "Build/Distribution/$Version"
 if ($Version -notmatch '^v[0-9A-Za-z.\-]+$') { throw 'Invalid version' }
+if ($AndroidVersion -notmatch '^v[0-9A-Za-z.\-]+$') { throw 'Invalid Android version' }
 if (!$windowsRoot.StartsWith($taskRoot + [IO.Path]::DirectorySeparatorChar)) { throw 'Build must be inside workspace' }
 if (!$apkPath.StartsWith($taskRoot + [IO.Path]::DirectorySeparatorChar)) { throw 'APK must be inside workspace' }
 foreach ($required in @('AniBato.exe','UnityPlayer.dll','AniBato_Data','MonoBleedingEdge','ThirdPartyNotices.txt')) {
@@ -17,7 +19,8 @@ foreach ($required in @('AniBato.exe','UnityPlayer.dll','AniBato_Data','MonoBlee
 if (Test-Path -LiteralPath $releaseRoot) { throw 'Release directory exists; never overwrite published packages' }
 New-Item -ItemType Directory -Path $releaseRoot -Force | Out-Null
 $zipPath = Join-Path $releaseRoot "AniBato-Windows-x64-$Version.zip"
-$publicApk = Join-Path $releaseRoot "AniBato-Android-arm64-$Version.apk"
+$androidRoot = Join-Path $taskRoot "Build/Distribution/$AndroidVersion"
+$publicApk = Join-Path $androidRoot "AniBato-Android-arm64-$AndroidVersion.apk"
 $readme = @"
 あにあにバトル！！ / $Version（無料試作版）
 
@@ -28,6 +31,7 @@ AniBato_DataやDLLを含む同じフォルダのファイル一式が必要で�
 Android版：Android 8.0以降・64bit ARM端末向け。APKを端末で開いてインストールします。
 Google Play外の試作用署名です。端末に応じてダウンロード元アプリのインストール許可が必要です。
 横持ちの半透明タッチパッドに対応。Android実機の動作・発熱・メモリ使用量は未確認です。
+Android版のファイルは $AndroidVersion を継続利用しています。
 
 ダウンロード版はCPU対戦・練習・ローカル操作向けです。
 招待コードによるオンライン対戦はブラウザ版をご利用ください。
@@ -39,18 +43,27 @@ https://donadonaa24-cyber.github.io/aniani-asobiba/games/anibato/
 フォントライセンスはThirdPartyNotices.txt（APKではResources内）に含まれます。
 "@
 [IO.File]::WriteAllText((Join-Path $releaseRoot 'README.txt'), $readme, [Text.UTF8Encoding]::new($false))
-Copy-Item -LiteralPath $apkPath -Destination $publicApk
+if ($AndroidVersion -eq $Version) { Copy-Item -LiteralPath $apkPath -Destination $publicApk }
+elseif (!(Test-Path -LiteralPath $publicApk) -or (Get-FileHash -LiteralPath $apkPath).Hash -ne (Get-FileHash -LiteralPath $publicApk).Hash) {
+    throw 'Existing Android release must exactly match the verified APK; do not duplicate or relabel it.'
+}
 Add-Type -AssemblyName System.IO.Compression
 $sourceFiles = @(Get-ChildItem -LiteralPath $windowsRoot -Recurse -File)
 if ($sourceFiles | Where-Object { $_.Extension -in @('.pdb','.mdb','.log','.apk','.zip') -or $_.Name -match '^(\.env|supabase\.txt)$' }) { throw 'Unexpected private/debug/archive file in build' }
+# .NET 6+ can spend more CPU for a smaller, still lossless ZIP. Fall back on
+# Windows PowerShell's older runtime without changing the package format.
+$taskCompression = [IO.Compression.CompressionLevel]::Optimal
+if ([Enum]::GetNames([IO.Compression.CompressionLevel]) -contains 'SmallestSize') {
+    $taskCompression = [Enum]::Parse([IO.Compression.CompressionLevel], 'SmallestSize')
+}
 $stream = [IO.File]::Open($zipPath, [IO.FileMode]::CreateNew)
 $archive = [IO.Compression.ZipArchive]::new($stream, [IO.Compression.ZipArchiveMode]::Create)
 try {
     foreach ($file in $sourceFiles) {
         $relative = $file.FullName.Substring($windowsRoot.Length + 1).Replace('\','/')
-        [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($archive, $file.FullName, "AniBato/$relative", [IO.Compression.CompressionLevel]::Optimal) | Out-Null
+        [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($archive, $file.FullName, "AniBato/$relative", $taskCompression) | Out-Null
     }
-    [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($archive, (Join-Path $releaseRoot 'README.txt'), 'AniBato/README.txt', [IO.Compression.CompressionLevel]::Optimal) | Out-Null
+    [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($archive, (Join-Path $releaseRoot 'README.txt'), 'AniBato/README.txt', $taskCompression) | Out-Null
 } finally { $archive.Dispose(); $stream.Dispose() }
 $zip = [IO.Compression.ZipFile]::OpenRead($zipPath)
 try {
@@ -72,10 +85,11 @@ try {
 $files = @($zipPath,$publicApk) | ForEach-Object {
     $file = Get-Item -LiteralPath $_
     if ($file.Length -ge 2GB) { throw 'GitHub Release asset exceeds 2 GiB' }
-    [ordered]@{ name=$file.Name; bytes=$file.Length; sha256=(Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash.ToLowerInvariant() }
+    $fileVersion = if ($file.Extension -eq '.apk') { $AndroidVersion } else { $Version }
+    [ordered]@{ name=$file.Name; version=$fileVersion; bytes=$file.Length; sha256=(Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash.ToLowerInvariant() }
 }
 $checksums = ($files | ForEach-Object { "$($_.sha256)  $($_.name)" }) -join "`n"
 [IO.File]::WriteAllText((Join-Path $releaseRoot 'SHA256SUMS.txt'), $checksums + "`n", [Text.UTF8Encoding]::new($false))
-$manifest = [ordered]@{ version=$Version; sourceCommit=(git -C $taskRoot rev-parse HEAD); windowsBuild=$WindowsBuild; zipEntries=$sourceFiles.Count+1; zipAllEntriesVerified=$true; androidDeviceVerified=$false; files=$files }
+$manifest = [ordered]@{ version=$Version; sourceCommit=(git -C $taskRoot rev-parse HEAD); windowsBuild=$WindowsBuild; zipCompression=$taskCompression.ToString(); zipEntries=$sourceFiles.Count+1; zipAllEntriesVerified=$true; androidDeviceVerified=$false; files=$files }
 $manifest | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $releaseRoot 'manifest.json') -Encoding utf8
 $manifest | ConvertTo-Json -Depth 6

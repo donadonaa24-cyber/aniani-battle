@@ -23,15 +23,22 @@ namespace AniBato.EditorTools
             copies.Clear();
             WebGLSpritePacking.Reset();
         }
-        public void OnPreprocessBuild(BuildReport report){copies.Clear();}
+        public void OnPreprocessBuild(BuildReport report)
+        {
+            copies.Clear();
+            // A failed mobile build in the same Editor must not leak its texture overrides
+            // into the lossless Windows build.
+            if(report.summary.platform==BuildTarget.StandaloneWindows64)WebGLSpritePacking.Reset();
+        }
         public void OnPostprocessBuild(BuildReport report)
         {
             ReleaseCopies();
         }
         private static bool Retired(AnimationState s)=>s==AnimationState.AirForward||s==AnimationState.AirBack||s==AnimationState.AirDown||s==AnimationState.AirForwardUp||s==AnimationState.AirForwardDown||s==AnimationState.SpecialSide||s==AnimationState.SpecialUp||s==AnimationState.SpecialDown;
+        public static bool SupportsTarget(BuildTarget target)=>target==BuildTarget.WebGL||target==BuildTarget.Android||target==BuildTarget.StandaloneWindows64;
         public void OnProcessScene(Scene scene,BuildReport report)
         {
-            if(report==null||(report.summary.platform!=BuildTarget.WebGL&&report.summary.platform!=BuildTarget.Android))return;
+            if(report==null||!SupportsTarget(report.summary.platform))return;
             foreach(var root in scene.GetRootGameObjects())foreach(var component in root.GetComponentsInChildren<MonoBehaviour>(true))
             {
                 if(!component)continue;var serialized=new SerializedObject(component);var property=serialized.GetIterator();

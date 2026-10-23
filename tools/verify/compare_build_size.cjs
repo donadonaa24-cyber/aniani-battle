@@ -1,0 +1,15 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'../..'),baseline=require('../../TestResults/size_optimization_baseline.json');
+const report=require('../../TestResults/size_StandaloneWindows64.json');
+const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
+const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)]);
+const expandedBytes=walk(path.join(root,process.argv[2]||'Build/size_lossless_final')).reduce((n,p)=>n+fs.statSync(p).size,0);
+for(const file of [...baseline.art,...baseline.data])assert.equal(hash(file.path),file.sha256,'Source changed: '+file.path);
+const used=new Set(report.entries.map(e=>e.path));
+const before=new Set(baseline.windows.usedAssets);
+const removed=[...before].filter(p=>p.endsWith('.png')&&!used.has(p));
+const added=[...used].filter(p=>p.endsWith('.png')&&!before.has(p));
+assert.equal(added.length,0,'Lossless Windows build must use only the original imported PNGs');
+const result={date:'2026-10-23',sourcePixelsAndDataUnchanged:true,originalPngs:baseline.art.length,dataAssets:baseline.data.length,windows:{beforeExpandedBytes:baseline.windows.expandedBytes,afterExpandedBytes:expandedBytes,reportedBytes:report.bytes,expandedReductionPercent:100*(1-expandedBytes/baseline.windows.expandedBytes),beforePngs:baseline.windows.usedPngs,afterPngs:[...used].filter(p=>p.endsWith('.png')).length,excludedPngs:removed,addedPngs:added,options:report.options},android:{bytes:baseline.android.apkBytes,usedPngs:baseline.android.usedAssets.filter(p=>p.endsWith('.png')).length,unchanged:true},web:{bytes:baseline.web.bytes,unchanged:true}};
+fs.writeFileSync(path.join(root,'TestResults/size_optimization_comparison.json'),JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify({...result,windows:{...result.windows,excludedPngs:removed.length}}));
