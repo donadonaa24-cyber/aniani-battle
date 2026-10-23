@@ -1,3 +1,13 @@
+## 最新完了（2026-10-23）：ポータルからWindows・Androidを配布
+
+所有者の公開依頼により、Windows x64 ZIP約509MB（展開後約2.5GB）・Android ARM64 APK約162MBをゲーム本体のGitHub Releases v0.1.0-trial.20261023 へ公開。ポータルの作品一覧/作品詳細/紹介ページに直接ダウンロードと導入手順を追加。案内URLは https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads 。PR21はee79a72→通常merge7cb2706、CI成功、Pages built、実公開の両リンク・導入案内への移動・PC1366pxの2列/390pxの1列/横はみ出しなし/console0を確認。
+
+Windows ZIPの165エントリ（Data/DLL/ランタイム/ライセンス/README）を照合し、公開ZIP/APKを認証なしで全バイト読み取り、サイズとSHA-256がローカル梱包物と一致。README/チェックサムもHTTP200。証跡codex_logs/native_downloads_verification.json、公開画像screenshots/native_downloads/public_downloads.png。梱包/検証ツールと詳細はNATIVE_DOWNLOADS.md。
+
+今回Unity/C#/戦闘Data/原画/WebGLは変更せず、前工程の実BuildAll/Edit834/Play111/Windows成功とAPK署名/ABI検査を引き継ぐ。Unity再実行ではない。Androidは試作用署名・実機未確認、招待対戦はブラウザ版のみ。既存ガチャ176枚/旧159枚/所持/レア率・Free通信・崖A・龍太v5・カバン予備・45半減/14-10を維持。旧生成画像/2シーンは保持。必須残作業なし。任意の次工程はAndroid実機と別回線の招待テスト。
+
+以下は保存済み履歴。
+
 ## 最新完了（2026-10-23）：無料公開→タッチ操作→Android APK
 
 無料オンライン/ホーム/紙ガチャ公開と、MOBILE_CONTROLS_AND_ANDROID.mdの実装を完了。Native全4（Edit834/Play111）・実WebGL/468RGBA・実ブラウザ操作・署名済みARM64 APK/内容検査・Windows復帰と一時割当解除まで確認。公開版はポータルPR19/20、Pages8a363325。次は任意のAndroid実機/別回線検証またはユーザーの追加依頼。詳細はRESUME冒頭。

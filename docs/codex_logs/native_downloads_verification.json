@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-23",
+  "status": "complete",
+  "releaseUrl": "https://github.com/donadonaa24-cyber/aniani-battle/releases/tag/v0.1.0-trial.20261023",
+  "package": {
+    "version": "v0.1.0-trial.20261023",
+    "sourceCommit": "e9593928c577ba5fa68037b862b609de986b33fc",
+    "windowsBuild": "Build/mobile_final_2",
+    "zipEntries": 165,
+    "zipAllEntriesVerified": true,
+    "androidDeviceVerified": false,
+    "files": [
+      {
+        "name": "AniBato-Windows-x64-v0.1.0-trial.20261023.zip",
+        "bytes": 509049136,
+        "sha256": "6625b8d052fddf263c3fc9795724b80af02a26dadbed02e8a5a43475dc592a12"
+      },
+      {
+        "name": "AniBato-Android-arm64-v0.1.0-trial.20261023.apk",
+        "bytes": 161961932,
+        "sha256": "138f9e9e1395d2056bbd0e054cfa82bf7dc6dd2e91fc43dc391c334bdd978571"
+      }
+    ]
+  },
+  "http": {
+    "date": "2026-10-23",
+    "version": "v0.1.0-trial.20261023",
+    "publicAnonymousGet": true,
+    "files": [
+      {
+        "name": "AniBato-Windows-x64-v0.1.0-trial.20261023.zip",
+        "status": 200,
+        "bytes": 509049136,
+        "sha256": "6625b8d052fddf263c3fc9795724b80af02a26dadbed02e8a5a43475dc592a12",
+        "verified": true
+      },
+      {
+        "name": "AniBato-Android-arm64-v0.1.0-trial.20261023.apk",
+        "status": 200,
+        "bytes": 161961932,
+        "sha256": "138f9e9e1395d2056bbd0e054cfa82bf7dc6dd2e91fc43dc391c334bdd978571",
+        "verified": true
+      }
+    ],
+    "checksumsStatus": 200,
+    "readmeStatus": 200
+  },
+  "browser": {
+    "date": "2026-10-23",
+    "publicUrl": "https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads",
+    "desktopWidth": 1366,
+    "desktopColumns": 2,
+    "mobile": {
+      "buttons": [
+        {
+          "text": "Windows版 ZIPをダウンロード約509MB ／ 展開後 約2.5GB",
+          "width": 299
+        },
+        {
+          "text": "Android版 APKをダウンロード約162MB ／ 試作版",
+          "width": 299
+        }
+      ],
+      "columns": "343px",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    "detailPlatformsVisible": true,
+    "guideKeyboardNavigation": true,
+    "consoleErrors": 0
+  },
+  "portal": {
+    "pullRequest": 21,
+    "sourceCommit": "ee79a728bf74bb6f0d16616e402622aa6fb80bf9",
+    "mergeCommit": "7cb2706af8ab8b3c6aba79e2f2288adbfb884a27",
+    "ci": "passed",
+    "pages": "built",
+    "entryPoints": [
+      "works",
+      "detail",
+      "intro"
+    ]
+  },
+  "unity": {
+    "rerunThisTask": false,
+    "productUnchangedFrom": "e959392",
+    "previousVerification": "mobile_android_verification.json",
+    "edit": 834,
+    "play": 111
+  },
+  "androidDeviceVerified": false
+}

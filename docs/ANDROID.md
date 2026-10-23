@@ -1,5 +1,7 @@
 # Android試作版
 
+公開配布（2026-10-23所有者指定）：[あにあにポータルのダウンロード欄](https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads)からAPKを取得できる。Windows版と配布・検証手順は[NATIVE_DOWNLOADS.md](NATIVE_DOWNLOADS.md)を参照。
+
 ## 成果物と操作
 
 - ビルド先：`Build/Android/AniBato-arm64.apk`。Android 8以降、64bit ARM端末向け。
