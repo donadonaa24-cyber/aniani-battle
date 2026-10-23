@@ -1,5 +1,5 @@
 param(
-    [string]$WindowsBuild = 'Build/size_lossless_final',
+    [string]$WindowsBuild = 'Build/size_native_final',
     [string]$AndroidApk = 'Build/Android/AniBato-arm64.apk',
     [string]$Version = 'v0.1.1-trial.20261023',
     [string]$AndroidVersion = 'v0.1.0-trial.20261023'

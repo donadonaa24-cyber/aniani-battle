@@ -28,7 +28,7 @@ namespace AniBato.EditorTools
             copies.Clear();
             // A failed mobile build in the same Editor must not leak its texture overrides
             // into the lossless Windows build.
-            if(report.summary.platform==BuildTarget.StandaloneWindows64)WebGLSpritePacking.Reset();
+            if(report.summary.platform==BuildTarget.StandaloneWindows64&&WebGLSpritePacking.Platform!="Standalone")WebGLSpritePacking.Reset();
         }
         public void OnPostprocessBuild(BuildReport report)
         {

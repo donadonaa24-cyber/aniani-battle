@@ -1,3 +1,11 @@
+## 実行中（2026-10-23）：容量最適化の検証完了・配布準備
+
+Windowsは展開2520696705→276859563bytes（約89％減）、使用PNG432→312（旧参照120枚除外）。原PNG468枚とゲームData248件のSHAは不変。原寸305画像はBC7最高品質、誤差の大きい7画像は元形式。元のフィルタ/ミップ/支点を保持。新規・変更・未測定画像は元形式へ安全に戻る。
+
+実Unity size_balanced_finalのBuildAll/Edit836/836/Play111/111/Windowsが成功。その後のEditorのみのSampler修理をsize_native_focus Edit2/2、size_native_final Windows成功、size_native_quality 全312画像/324支点検査成功で確認（最小PSNR35.4401dB、平均誤差1.0822/255）。最終Windows実15秒バッチ起動成功、起動エラー0。ゲーム内容/戦闘コード/原PNGは変更なし。
+
+これから新ZIPの照合→v0.1.1試作Release→ポータル更新→公開ファイルSHAと画面確認。Android v0.1.0 APKとWebは現行を継続。可逆比較ZIPはBuild/Benchmarks/v0.1.1-lossless.20261023に保持。既存の未コミット2シーンと生成スクショ、カバン予備、龍太v5、崖A、45半減/14-10は保持。
+
 ## 最新完了（2026-10-23）：ポータルからWindows・Androidを配布
 
 所有者の公開依頼により、Windows x64 ZIP約509MB（展開後約2.5GB）・Android ARM64 APK約162MBをゲーム本体のGitHub Releases v0.1.0-trial.20261023 へ公開。ポータルの作品一覧/作品詳細/紹介ページに直接ダウンロードと導入手順を追加。案内URLは https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads 。PR21はee79a72→通常merge7cb2706、CI成功、Pages built、実公開の両リンク・導入案内への移動・PC1366pxの2列/390pxの1列/横はみ出しなし/console0を確認。

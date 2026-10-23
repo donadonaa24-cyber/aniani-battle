@@ -14,6 +14,7 @@ namespace AniBato.EditorTools
     {
         private static readonly Dictionary<string,Texture2D> textures=new Dictionary<string,Texture2D>();
         public static bool Enabled {get;private set;}
+        public static string Platform {get;private set;}
         public static Color32[] Pad(Color32[] source,int width,int height,out int packedWidth,out int packedHeight)
         {
             packedWidth=(width+3)/4*4;packedHeight=(height+3)/4*4;
@@ -32,16 +33,24 @@ namespace AniBato.EditorTools
         }
         public static void Prepare() => PreparePlatform("WebGL", TextureImporterFormat.DXT5, TextureFormat.DXT5);
         public static void PrepareAndroid() => PreparePlatform("Android", TextureImporterFormat.ETC2_RGBA8, TextureFormat.ETC2_RGBA8);
+        public static void PrepareWindows() => PreparePlatform("Standalone", TextureImporterFormat.BC7, TextureFormat.BC7);
         private static void PreparePlatform(string platform, TextureImporterFormat format, TextureFormat expected)
         {
-            Enabled=true;textures.Clear();const string folder="Assets/_WebGLPacked";Directory.CreateDirectory(folder);
+            Enabled=true;Platform=platform;textures.Clear();const string folder="Assets/_WebGLPacked";Directory.CreateDirectory(folder);
             foreach(string guid in AssetDatabase.FindAssets("t:Texture2D",new[]{"Assets/_Project/Art"}))
             {
                 string source=AssetDatabase.GUIDToAssetPath(guid);if(!source.EndsWith(".png",StringComparison.OrdinalIgnoreCase))continue;
-                byte[] bytes=File.ReadAllBytes(source);string hash;
-                using(var sha=SHA256.Create())hash=BitConverter.ToString(sha.ComputeHash(bytes)).Replace("-","").Substring(0,12);
-                bool mipmaps=UsesMipmaps(source);
-                string path=folder+"/"+guid+"_"+hash+(mipmaps?"_mip1":"")+".png";
+                byte[] bytes=File.ReadAllBytes(source);string fullHash;
+                using(var sha=SHA256.Create())fullHash=BitConverter.ToString(sha.ComputeHash(bytes)).Replace("-","");
+                string hash=fullHash.Substring(0,12);
+                if(platform=="Standalone"&&!WindowsTextureQualityPolicy.Allows(source,fullHash))
+                {
+                    textures[source]=AssetDatabase.LoadAssetAtPath<Texture2D>(source);continue;
+                }
+                var sourceImporter=(TextureImporter)AssetImporter.GetAtPath(source);
+                bool mipmaps=platform=="Standalone"?sourceImporter.mipmapEnabled:UsesMipmaps(source);
+                string suffix=(platform=="Standalone"?"_win_native":"")+(mipmaps?"_mip1":"");
+                string path=folder+"/"+guid+"_"+hash+suffix+".png";
                 if(!File.Exists(path))
                 {
                     var decoded=new Texture2D(2,2,TextureFormat.RGBA32,false);Texture2D padded=null;
@@ -57,27 +66,32 @@ namespace AniBato.EditorTools
                 }
                 AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
                 var importer=(TextureImporter)AssetImporter.GetAtPath(path);
-                var filtering=mipmaps?FilterMode.Trilinear:((TextureImporter)AssetImporter.GetAtPath(source)).filterMode;
+                var filtering=platform=="Standalone"?sourceImporter.filterMode:mipmaps?FilterMode.Trilinear:sourceImporter.filterMode;
                 var platformSettings=importer.GetPlatformTextureSettings(platform);
-                if(importer.textureType!=TextureImporterType.Sprite||importer.textureCompression!=TextureImporterCompression.CompressedHQ||importer.mipmapEnabled!=mipmaps||importer.filterMode!=filtering||!platformSettings.overridden||platformSettings.format!=format)
+                if(importer.textureType!=TextureImporterType.Sprite||importer.textureCompression!=TextureImporterCompression.CompressedHQ||importer.mipmapEnabled!=mipmaps||importer.filterMode!=filtering||!platformSettings.overridden||platformSettings.format!=format||(platform=="Standalone"&&platformSettings.compressionQuality!=100))
                 {
                     importer.textureType=TextureImporterType.Sprite;importer.spriteImportMode=SpriteImportMode.Single;
                     importer.npotScale=TextureImporterNPOTScale.None;importer.maxTextureSize=16384;importer.mipmapEnabled=mipmaps;
                     importer.filterMode=filtering;
                     importer.alphaIsTransparency=true;importer.isReadable=false;importer.textureCompression=TextureImporterCompression.CompressedHQ;
                     var p=importer.GetPlatformTextureSettings(platform);p.name=platform;p.overridden=true;p.format=format;p.maxTextureSize=16384;
+                    if(platform=="Standalone")p.compressionQuality=100;
                     importer.SetPlatformTextureSettings(p);importer.SaveAndReimport();
                 }
                 textures[source]=AssetDatabase.LoadAssetAtPath<Texture2D>(path);
             }
             foreach(var pair in textures)
+            {
+                if(platform=="Standalone"&&AssetDatabase.GetAssetPath(pair.Value)==pair.Key)continue;
                 if(pair.Value.format!=expected&&!(expected==TextureFormat.DXT5&&pair.Value.format==TextureFormat.DXT1))throw new InvalidOperationException(platform+"画像がGPU圧縮されていません: "+pair.Key+" "+pair.Value.format);
+            }
             Debug.Log(platform.ToUpperInvariant()+"_PACKED_TEXTURES "+textures.Count+" native pixels preserved; "+expected+" compression confirmed");
         }
         public static Sprite Copy(Sprite source)
         {
             if(!Enabled||!source)return source;
             if(!textures.TryGetValue(AssetDatabase.GetAssetPath(source.texture),out var texture))return source;
+            if(texture==source.texture)return source;
             return CopyIntoTexture(source,texture);
         }
         public static Sprite CopyIntoTexture(Sprite source,Texture2D texture)
@@ -86,6 +100,6 @@ namespace AniBato.EditorTools
             var copy=Sprite.Create(texture,r,new Vector2(source.pivot.x/r.width,source.pivot.y/r.height),source.pixelsPerUnit,0,SpriteMeshType.FullRect,source.border);
             copy.name=source.name;return copy;
         }
-        public static void Reset(){Enabled=false;textures.Clear();}
+        public static void Reset(){Enabled=false;Platform=null;textures.Clear();}
     }
 }

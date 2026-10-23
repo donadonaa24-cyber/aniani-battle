@@ -8,7 +8,15 @@ namespace AniBato.EditorTools
 {
     public static class WindowsBuilder
     {
-        public const BuildOptions Options = BuildOptions.CompressWithLz4HC | BuildOptions.DetailedBuildReport;
+        // Scene processing depends on the selected transient texture map. Unity's
+        // incremental scene cache cannot see that map, so rebuild those dependencies.
+        public const BuildOptions Options = BuildOptions.CompressWithLz4HC | BuildOptions.DetailedBuildReport | BuildOptions.CleanBuildCache;
+        public static void BuildHighQuality()
+        {
+            WebGLSpritePacking.PrepareWindows();
+            AssetDatabase.SaveAssets();
+            Build();
+        }
         public static void Build()
         {
             if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.StandaloneWindows64)

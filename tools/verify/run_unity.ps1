@@ -10,7 +10,8 @@ param(
     [Parameter(Mandatory = $true)][string]$Tag,
     [ValidateSet('all', 'buildall', 'editmode', 'playmode', 'build', 'summary')][string]$Only = 'all',
     [string]$Filter = '',
-    [string]$CaptureRoot = ''
+    [string]$CaptureRoot = '',
+    [ValidateSet('Lossless','BC7')][string]$WindowsTextures = 'BC7'
 )
 $ErrorActionPreference = 'Stop'
 $Root = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
@@ -60,7 +61,8 @@ foreach ($plat in 'EditMode', 'PlayMode') {
 if ($Only -in 'all', 'build') {
     $log = Join-Path $Results "${Tag}_build.log"
     $exe = Join-Path $Root "Build\$Tag\AniBato.exe"
-    $code = Invoke-Unity @('-batchmode', '-quit', '-projectPath', (Q $Project), '-buildTarget', 'Win64', '-executeMethod', 'AniBato.EditorTools.WindowsBuilder.Build', '-anibatoWindowsOutput', (Q $exe), '-logFile', (Q $log))
+    $windowsMethod = if ($WindowsTextures -eq 'BC7') { 'AniBato.EditorTools.WindowsBuilder.BuildHighQuality' } else { 'AniBato.EditorTools.WindowsBuilder.Build' }
+    $code = Invoke-Unity @('-batchmode', '-quit', '-projectPath', (Q $Project), '-buildTarget', 'Win64', '-executeMethod', $windowsMethod, '-anibatoWindowsOutput', (Q $exe), '-logFile', (Q $log))
     Write-Host "winbuild=$code"
     if($code -eq 0 -and (Test-Path (Join-Path $Root 'art_source/fonts/OFL-NotoCJK.txt'))){
         Copy-Item -LiteralPath (Join-Path $Root 'art_source/fonts/OFL-NotoCJK.txt') -Destination (Join-Path (Split-Path $exe) 'ThirdPartyNotices.txt') -Force

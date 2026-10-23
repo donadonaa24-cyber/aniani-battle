@@ -1,4 +1,4 @@
-param([string]$Build = 'Build/size_lossless_final', [int]$Seconds = 15)
+param([string]$Build = 'Build/size_native_final', [int]$Seconds = 15)
 $ErrorActionPreference = 'Stop'
 $taskRoot = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 $taskExe = (Resolve-Path (Join-Path $taskRoot "$Build/AniBato.exe")).Path

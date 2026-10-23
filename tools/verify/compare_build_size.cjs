@@ -3,13 +3,19 @@ const root=path.resolve(__dirname,'../..'),baseline=require('../../TestResults/s
 const report=require('../../TestResults/size_StandaloneWindows64.json');
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
 const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)]);
-const expandedBytes=walk(path.join(root,process.argv[2]||'Build/size_lossless_final')).reduce((n,p)=>n+fs.statSync(p).size,0);
+const expandedBytes=walk(path.join(root,process.argv[2]||'Build/size_native_final')).reduce((n,p)=>n+fs.statSync(p).size,0);
 for(const file of [...baseline.art,...baseline.data])assert.equal(hash(file.path),file.sha256,'Source changed: '+file.path);
-const used=new Set(report.entries.map(e=>e.path));
+const sources=new Map(baseline.art.map(f=>[fs.readFileSync(path.join(root,f.path+'.meta'),'utf8').match(/^guid: (\w+)/m)[1],f.path.replace(/^AniBato\//,'')]));
+const packed=report.entries.filter(e=>e.path.startsWith('Assets/_WebGLPacked/')&&e.path.endsWith('.png'));
+const used=new Set(report.entries.map(e=>{
+    const match=e.path.match(/^Assets\/_WebGLPacked\/([a-f0-9]{32})_/i);
+    if(!match)return e.path;
+    assert(sources.has(match[1]),'Packed image must map to an original source');return sources.get(match[1]);
+}));
 const before=new Set(baseline.windows.usedAssets);
 const removed=[...before].filter(p=>p.endsWith('.png')&&!used.has(p));
 const added=[...used].filter(p=>p.endsWith('.png')&&!before.has(p));
-assert.equal(added.length,0,'Lossless Windows build must use only the original imported PNGs');
+assert.equal(added.length,0,'Windows build must use only the existing source artwork');
 const result={date:'2026-10-23',sourcePixelsAndDataUnchanged:true,originalPngs:baseline.art.length,dataAssets:baseline.data.length,windows:{beforeExpandedBytes:baseline.windows.expandedBytes,afterExpandedBytes:expandedBytes,reportedBytes:report.bytes,expandedReductionPercent:100*(1-expandedBytes/baseline.windows.expandedBytes),beforePngs:baseline.windows.usedPngs,afterPngs:[...used].filter(p=>p.endsWith('.png')).length,excludedPngs:removed,addedPngs:added,options:report.options},android:{bytes:baseline.android.apkBytes,usedPngs:baseline.android.usedAssets.filter(p=>p.endsWith('.png')).length,unchanged:true},web:{bytes:baseline.web.bytes,unchanged:true}};
 fs.writeFileSync(path.join(root,'TestResults/size_optimization_comparison.json'),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify({...result,windows:{...result.windows,excludedPngs:removed.length}}));
