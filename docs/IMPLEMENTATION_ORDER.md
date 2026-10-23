@@ -1,3 +1,17 @@
+## 最新完了（2026-10-23）：容量最適化・再ビルド・公開確認
+
+BUILD_SIZE_OPTIMIZATION.mdを完了。Windows ZIP509049136→204935031bytes（約509→205MB、約60％減）、展開2520696705→276859563bytes（約2.52GB→277MB、約89％減）。主因はWindowsの画像データと未採用参照。旧姿勢/旧背景など120枚を配布時だけ除外（使用PNG432→312）。原PNG468枚とゲームData248件はSHA不変、戦闘コードも変更なし。
+
+原寸305画像は最高品質BC7、誤差の大きい7画像は元形式。元フィルタ/ミップ・スプライト支点/PPU/範囲を維持。SHA許可表にない新規/変更画像は元形式へ戻る。GPU画像は完全可逆ではなく、保存データだけ可逆LZ4HC。可逆だけの比較版はZIP474MB/展開602MBで削減が少なかったため採用せず、Build/Benchmarks/v0.1.1-lossless.20261023に記録を保持。
+
+実Unity size_balanced_finalはBuildAll/Edit836/836/Play111/111/Windows成功。最後のEditorのSampler修理後はsize_native_focus Edit2/2、size_native_final Windows再ビルド、size_native_quality 全312画像/324スプライト検査成功（最小PSNR35.4401dB、平均誤差1.0822/255）、実Windows15秒バッチ起動エラー0を追加確認。ネイティブ全操作の手動確認ではなく、戦闘シナリオはUnity PlayModeで確認。ZIP156エントリを元ファイルとSHA照合。
+
+コードはc1ee48f→6d03f30で通常保存・push。Windows v0.1.1-trial.20261023をGitHub Releasesへ公開。Android v0.1.0 APK161961932bytes・Web138814613bytesは現行を継続し、同じAPKを重複アップロードしない。公開ZIP/APKを匿名で全バイト読み、サイズ/全SHA一致、README/チェックサム200を確認。案内：https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads 。
+
+ポータルPR23は1e534dd→最新mainを保持して統合8eda595→通常merge c5ea60b9。Linux CI20秒成功、Pages built。PC1366pxの2列/390pxの1列・横はみ出しなし・console error0、作品一覧/詳細の4リンクと公開マニフェスト一致を確認。別作品の容量表示更新も保持。証跡codex_logs/build_size_optimization.json、公開画像screenshots/build_size/public_downloads.png・public_downloads_mobile.png、原画比較texture_compare.png。再現はNATIVE_DOWNLOADS.md。
+
+必須残作業なし。Android実機/別回線招待は引き続き未確認（本工程とは区別）。既存の未コミット2シーン/生成スクショは破棄せず保持。カバン予備・龍太v5・崖A・45半減/14-10・ガチャ176枚/旧159枚/所持/レア率・Free設定を維持。Claudeは完了済み最適化や原画を再生成せず、次の所有者指示から進める。
+
 ## 最新完了（2026-10-23）：ポータルからWindows・Androidを配布
 
 所有者の公開依頼により、Windows x64 ZIP約509MB（展開後約2.5GB）・Android ARM64 APK約162MBをゲーム本体のGitHub Releases v0.1.0-trial.20261023 へ公開。ポータルの作品一覧/作品詳細/紹介ページに直接ダウンロードと導入手順を追加。案内URLは https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads 。PR21はee79a72→通常merge7cb2706、CI成功、Pages built、実公開の両リンク・導入案内への移動・PC1366pxの2列/390pxの1列/横はみ出しなし/console0を確認。
