@@ -32,6 +32,6 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
   const readme = await fetch(manifest.readme);
   assert.equal(readme.status, 200);
   assert((await readme.text()).includes('すべて展開'));
-  const result = {date:'2026-10-23', version:manifest.version, publicAnonymousGet:true, files:results, checksumsStatus:sums.status, readmeStatus:readme.status};
+  const result = {date:new Date().toISOString().slice(0,10), version:manifest.version, publicAnonymousGet:true, files:results, checksumsStatus:sums.status, readmeStatus:readme.status};
   fs.writeFileSync(output, JSON.stringify(result,null,2)+'\n');
 })().catch(error => { console.error(error.message); process.exitCode=1; });

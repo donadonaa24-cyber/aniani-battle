@@ -2,7 +2,8 @@ param(
     [string]$WindowsBuild = 'Build/size_native_final',
     [string]$AndroidApk = 'Build/Android/AniBato-arm64.apk',
     [string]$Version = 'v0.1.1-trial.20261023',
-    [string]$AndroidVersion = 'v0.1.0-trial.20261023'
+    [string]$AndroidVersion = 'v0.1.0-trial.20261023',
+    [string]$AndroidDeviceNote = 'This APK has not been tested on a physical Android device.'
 )
 $ErrorActionPreference = 'Stop'
 $taskRoot = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
@@ -30,15 +31,17 @@ AniBato_DataやDLLを含む同じフォルダのファイル一式が必要で�
 
 Android版：Android 8.0以降・64bit ARM端末向け。APKを端末で開いてインストールします。
 Google Play外の試作用署名です。端末に応じてダウンロード元アプリのインストール許可が必要です。
-横持ちの半透明タッチパッドに対応。Android実機の動作・発熱・メモリ使用量は未確認です。
-Android版のファイルは $AndroidVersion を継続利用しています。
+横持ちの半透明タッチ操作に対応。Android版：$AndroidVersion
+$AndroidDeviceNote
+設定の「操作・HUDの配置」から位置・大きさ・不透明度を編集できます。
+残像は設定からOFFへ戻せます。
 
 ダウンロード版はCPU対戦・練習・ローカル操作向けです。
 招待コードによるオンライン対戦はブラウザ版をご利用ください。
 https://donadonaa24-cyber.github.io/aniani-asobiba/games/anibato/
 導入案内：https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads
 
-検証済みWindowsビルドとAndroid APKを梱包。ゲーム内容・原画は変更していません。
+検証済みWindowsビルドとAndroid APKを梱包。原画はそのまま使用しています。
 キャラクター等のイラストは生成AIを使用しています。
 フォントライセンスはThirdPartyNotices.txt（APKではResources内）に含まれます。
 "@

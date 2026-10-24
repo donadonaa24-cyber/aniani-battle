@@ -44,7 +44,32 @@ namespace AniBato.Game
         public void Configure(BattleRunner value, Camera cameraValue, PresentationSettings settings,
             Text left, Text right, Text time, Text matchResult, Text[] headCounters)
         { runner = value; battleCamera = cameraValue; presentation = settings; p1Hud = left; p2Hud = right; timer = time; result = matchResult; counters = headCounters; }
-        private void Awake() => canvasRect = GetComponent<RectTransform>();
+        private readonly Vector3[] layoutCorners = new Vector3[4];
+        private UiLayoutTarget[] layoutTargets;
+        private Canvas layoutCanvas;
+        private void Awake()
+        {
+            canvasRect = GetComponent<RectTransform>();
+            if (!GetComponent<GraphicRaycaster>()) gameObject.AddComponent<GraphicRaycaster>();
+            layoutTargets = HudLayoutGroup.Ensure(transform); layoutCanvas = GetComponent<Canvas>();
+        }
+        public float TopHudFraction
+        {
+            get
+            {
+                float fraction = 0;
+                var uiCamera = layoutCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : layoutCanvas.worldCamera;
+                foreach (var target in layoutTargets)
+                {
+                    target.Rect.GetWorldCorners(layoutCorners);
+                    float height = uiCamera && uiCamera.targetTexture ? uiCamera.targetTexture.height : Screen.height;
+                    float top = RectTransformUtility.WorldToScreenPoint(uiCamera, layoutCorners[2]).y / Mathf.Max(1, height);
+                    float bottom = RectTransformUtility.WorldToScreenPoint(uiCamera, layoutCorners[0]).y / Mathf.Max(1, height);
+                    if (top > .9f) fraction = Mathf.Max(fraction, 1 - bottom);
+                }
+                return Mathf.Clamp(fraction, 0, .35f);
+            }
+        }
         private void OnEnable() { if (runner) { runner.EventProduced += OnBattleEvent; runner.MatchRestarted += OnRestart; } }
         private void OnDisable() { if (runner) { runner.EventProduced -= OnBattleEvent; runner.MatchRestarted -= OnRestart; } }
         private void OnRestart()

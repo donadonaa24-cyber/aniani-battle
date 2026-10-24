@@ -18,6 +18,13 @@ namespace AniBato.Game
         private readonly FixedTickClock clock = new FixedTickClock();
         public RenderSnapshots RenderState { get; } = new RenderSnapshots();
         public double RenderFraction => clock.Fraction;
+        public const string MotionTrailsPreference = "AniBato.MotionTrails";
+        public bool MotionTrailsEnabled { get; private set; } = true;
+        public void SetMotionTrails(bool value, bool save = true)
+        {
+            MotionTrailsEnabled = value;
+            if (save) { PlayerPrefs.SetInt(MotionTrailsPreference, value ? 1 : 0); PlayerPrefs.Save(); }
+        }
         public BattleVector RenderPosition(int player) => RenderState.FighterPosition(player, clock.Fraction, Paused);
         public BattleVector RenderPosition(Projectile shot) => RenderState.ProjectilePosition(shot, clock.Fraction, Paused);
         private int suppressInputFrame = -1;
@@ -68,7 +75,7 @@ namespace AniBato.Game
         { presentation = value; RenderState.DiscontinuityDistance = value.InterpolationDiscontinuityDistance; }
         private int MaximumCatchupTicks => presentation ? System.Math.Max(1, presentation.MaximumCatchupTicks) : 5;
         public void SetManagedByFlow() { ManagedByFlow = true; SetPaused(true); }
-        private void Awake() { DebugBoxes=PlayerPrefs.GetInt("AniBato.DebugBoxes",0)!=0;if (presentation) RenderState.DiscontinuityDistance = presentation.InterpolationDiscontinuityDistance; }
+        private void Awake() { MotionTrailsEnabled = PlayerPrefs.GetInt(MotionTrailsPreference, 1) != 0; DebugBoxes=PlayerPrefs.GetInt("AniBato.DebugBoxes",0)!=0;if (presentation) RenderState.DiscontinuityDistance = presentation.InterpolationDiscontinuityDistance; }
         public void SetPaused(bool value)
         { Paused = value; suppressInputFrame = Time.frameCount; clock.Reset(); if (Simulation != null) RenderState.Reset(Simulation); if (input) input.Clear(); }
         public void BeginMatch(CharacterData first, CharacterData second, StageData selectedStage, bool cpu, CpuDifficulty difficulty = CpuDifficulty.Normal)

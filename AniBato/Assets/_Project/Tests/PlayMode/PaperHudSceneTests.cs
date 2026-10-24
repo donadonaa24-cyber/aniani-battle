@@ -23,7 +23,8 @@ namespace AniBato.Tests
                 Assert.That(counter.GetComponents<Shadow>().All(s=>!s.enabled),Is.True,"数字の黒い縁・影も除去");
             foreach(var card in cards)
             {
-                Assert.That(card.transform.localScale.x,Is.EqualTo(1f/3).Within(.0001));
+                Assert.That(card.transform.localScale.x,Is.EqualTo(1).Within(.0001));
+                Assert.That(card.transform.parent.localScale.x,Is.EqualTo(2f/3).Within(.0001),"既定は旧HUDの2倍");
                 Assert.That(card.transform.Find("Opaque Paper Base").GetComponent<PaperHudShape>().color.a,Is.EqualTo(1));
                 Assert.That(card.GetComponentsInChildren<PaperHudShape>().All(s=>!s.raycastTarget),Is.True);
                 Assert.That(card.GetComponentsInChildren<PaperHudShape>().All(s=>s.GetComponent<CanvasRenderer>()!=null),Is.True,"紙台紙の描画部品はシーン再読込後も必要");
@@ -95,12 +96,12 @@ namespace AniBato.Tests
                     card.GetComponent<RectTransform>().GetWorldCorners(corners);
                     foreach(var corner in corners){var p=camera.WorldToViewportPoint(corner);Assert.That(p.x,Is.InRange(0f,1f));Assert.That(p.y,Is.InRange(0f,1f));}
                     var span=corners[2]-corners[0];
-                    Assert.That(span.x/canvas.transform.lossyScale.x,Is.EqualTo(680f/3).Within(.1),"台紙の実表示横幅は従来の3分の1");
+                    Assert.That(span.x/canvas.transform.lossyScale.x,Is.EqualTo(680f*2/3).Within(.1),"台紙は旧表示の2倍で原寸比を保持");
                 }
                 foreach(var cooldown in Object.FindObjectsByType<SpecialCooldownHud>())
-                    Assert.That(cooldown.transform.localScale.x,Is.EqualTo(1f/3).Within(.0001),"CDも縮小して巨大な旧領域を残さない");
+                    Assert.That(cooldown.transform.localScale.x*cooldown.transform.parent.localScale.x,Is.EqualTo(2f/3).Within(.0001),"CDもHUDと同じ倍率");
                 var fighter=runner.Simulation.P1;var head=camera.WorldToViewportPoint(new Vector3(fighter.Position.X,fighter.Position.Y+fighter.Definition.HurtboxSize.Y*.5f,0));
-                Assert.That(head.y,Is.LessThan(1-PaperFighterHud.SafeTopHeight/canvas.GetComponent<RectTransform>().rect.height),"上段のキャラは不透明HUDの下に収まる");
+                Assert.That(head.y,Is.LessThan(1-canvas.GetComponent<HUDController>().TopHudFraction),"上段のキャラは拡大した不透明HUDの下に収まる");
                 Assert.That(head.y,Is.GreaterThan(0));
                 CaptureFile.Write(Path.GetFullPath(Path.Combine(Application.dataPath,"../../docs/screenshots/paper_hud",width+"x"+height+".png")),image.EncodeToPNG());
             }

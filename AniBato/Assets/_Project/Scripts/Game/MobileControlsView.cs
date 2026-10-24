@@ -19,6 +19,8 @@ namespace AniBato.Game
         private readonly Dictionary<string, ControlAction> actions = new Dictionary<string, ControlAction>();
         private Gamepad savedFirst, savedSecond;
         private bool requested, lastCombat;
+        private bool editing;
+        public MobileStick Stick { get; private set; }
         private int lastBindings;
         public bool Visible => panel && panel.activeSelf;
         public Gamepad VirtualPad => bootstrap && bootstrap.control != null ? bootstrap.control.device as Gamepad : null;
@@ -35,10 +37,7 @@ namespace AniBato.Game
             safe = safeObject.GetComponent<RectTransform>(); safe.offsetMin = safe.offsetMax = Vector2.zero;
             var device = new GameObject("Virtual Device Anchor", typeof(OnScreenButton)); device.transform.SetParent(panel.transform, false);
             bootstrap = device.GetComponent<OnScreenButton>(); bootstrap.controlPath = "<Gamepad>/buttonSouth";
-            Add("left", "◀", ControlAction.Left, false, new Vector2(35, 110), 70);
-            Add("right", "▶", ControlAction.Right, false, new Vector2(185, 110), 70);
-            Add("up", "▲", ControlAction.Up, false, new Vector2(110, 185), 70);
-            Add("down", "▼", ControlAction.Down, false, new Vector2(110, 35), 70);
+            AddStick();
             Add("dash", "ダッシュ", ControlAction.Dash, false, new Vector2(235, 35), 70);
             Add("jump", "跳ぶ", ControlAction.Jump, true, new Vector2(-55, 55), 84);
             Add("attack", "通常", ControlAction.Attack, true, new Vector2(-150, 55), 84);
@@ -47,8 +46,22 @@ namespace AniBato.Game
             Add("dodge", "回避", ControlAction.Dodge, true, new Vector2(-245, 145), 70);
             Add("counter", "反撃", ControlAction.Counter, true, new Vector2(-150, 155), 70);
             Add("ultimate", "超必殺", ControlAction.Ultimate, true, new Vector2(-55, 250), 70);
-            Add("pause", "ポーズ", ControlAction.Pause, false, new Vector2(110, 270), 70, 38);
-            Add("commands", "技表", null, false, new Vector2(235, 235), 70, 38);
+            Add("pause", "ポーズ", ControlAction.Pause, false, new Vector2(110, 270), 62);
+            Add("commands", "技表", null, false, new Vector2(235, 235), 62);
+        }
+        private void AddStick()
+        {
+            // Parent under the inactive panel before adding OnScreenControl. Otherwise
+            // its default path briefly creates a device and reserves a physical pad slot.
+            var go = new GameObject("Touch stick", typeof(RectTransform), typeof(Image), typeof(Outline)); go.transform.SetParent(safe, false);
+            var rect = (RectTransform)go.transform; rect.anchorMin = rect.anchorMax = Vector2.zero; rect.anchoredPosition = new Vector2(110, 110); rect.sizeDelta = new Vector2(170, 170);
+            var image = go.GetComponent<Image>(); image.sprite = MobileControlArt.Circle; image.alphaHitTestMinimumThreshold = .1f;
+            var edge = go.GetComponent<Outline>(); edge.effectColor = new Color(1, .92f, .75f, .48f); edge.effectDistance = new Vector2(2, -2);
+            var handle = new GameObject("Stick thumb", typeof(RectTransform), typeof(Image)); handle.transform.SetParent(go.transform, false);
+            var knob = (RectTransform)handle.transform; knob.sizeDelta = new Vector2(66, 66);
+            handle.GetComponent<Image>().sprite = MobileControlArt.Circle; handle.GetComponent<Image>().raycastTarget = false;
+            Stick = go.AddComponent<MobileStick>(); Stick.Configure(image, knob);
+            flow.LayoutEditor.Register(rect, "control.stick", "移動スティック", .24f, Stick.SetOpacity);
         }
         private void Add(string key, string title, ControlAction? action, bool right, Vector2 position, float width, float height = 0)
         {
@@ -56,6 +69,7 @@ namespace AniBato.Game
             go.transform.SetParent(safe, false);
             var rect = go.GetComponent<RectTransform>(); rect.anchorMin = rect.anchorMax = new Vector2(right ? 1 : 0, 0);
             rect.anchoredPosition = position; rect.sizeDelta = new Vector2(width, height == 0 ? width : height);
+            var image = go.GetComponent<Image>(); image.sprite = MobileControlArt.Circle; image.alphaHitTestMinimumThreshold = .1f;
             var outline = go.GetComponent<Outline>(); outline.effectColor = new Color(1, .92f, .75f, .48f); outline.effectDistance = new Vector2(2, -2);
             var words = new GameObject("Label", typeof(RectTransform), typeof(Text)); words.transform.SetParent(go.transform, false);
             var text = words.GetComponent<Text>(); text.font = RuntimeFonts.Japanese; text.text = title; text.fontSize = key == "dash" || key == "pause" ? 14 : 20;
@@ -64,8 +78,10 @@ namespace AniBato.Game
             text.rectTransform.offsetMin = text.rectTransform.offsetMax = Vector2.zero;
             var button = go.GetComponent<MobileControlButton>(); button.controlPath = "<Gamepad>/buttonSouth"; button.Configure(go.GetComponent<Image>(), text);
             buttons.Add(key, button); if (action.HasValue) actions.Add(key, action.Value);
+            flow.LayoutEditor.Register(rect, "control." + key, title, .24f, button.SetOpacity);
         }
-        public void SetEnabled(bool value) { requested = value; SetVisible(value); }
+        public void SetEnabled(bool value) { requested = value; SetVisible(value || editing); }
+        public void SetEditing(bool value) { ReleaseAll(); editing = value; SetVisible(requested || editing); lastBindings = int.MinValue; BindButtons(); }
         private void EnsureEvents()
         {
             if (EventSystem.current) return;
@@ -102,7 +118,7 @@ namespace AniBato.Game
         private void LateUpdate()
         {
             if (!flow) return;
-            SetVisible(requested);
+            SetVisible(requested || editing);
             if (!Visible) return;
             var area = Screen.safeArea;
             ApplySafeArea(area, Screen.width, Screen.height);
@@ -117,7 +133,7 @@ namespace AniBato.Game
         private void BindButtons()
         {
             if (VirtualPad == null || !VirtualPad.added) return;
-            bool combat = flow.Screen == GameScreen.Battle || flow.Screen == GameScreen.Countdown;
+            bool combat = flow.Screen == GameScreen.Battle || flow.Screen == GameScreen.Countdown || editing;
             int hash = 17; var profile = flow.Input.Configuration.Profile(0, true);
             for (int i = 0; i < 13; i++) hash = unchecked(hash * 31 + profile[(ControlAction)i]);
             if (hash == lastBindings && combat == lastCombat) return;
@@ -147,6 +163,7 @@ namespace AniBato.Game
         }
         public void ReleaseAll()
         {
+            if (Stick) Stick.ReleaseContact();
             foreach (var button in buttons.Values) if (button) button.ReleaseContacts();
             if (VirtualPad != null && VirtualPad.added) InputSystem.ResetDevice(VirtualPad);
             if (flow && flow.Input) flow.Input.Clear();
@@ -154,8 +171,9 @@ namespace AniBato.Game
         public bool ContainsButtonPoint(Vector2 point)
         {
             if (!Visible) return false;
+            if (Stick && Stick.gameObject.activeInHierarchy && RectTransformUtility.RectangleContainsScreenPoint((RectTransform)Stick.transform, point) && Stick.GetComponent<Image>().IsRaycastLocationValid(point, null)) return true;
             foreach (var button in buttons.Values)
-                if (button.gameObject.activeInHierarchy && RectTransformUtility.RectangleContainsScreenPoint((RectTransform)button.transform, point)) return true;
+                if (button.gameObject.activeInHierarchy && RectTransformUtility.RectangleContainsScreenPoint((RectTransform)button.transform, point) && button.GetComponent<Image>().IsRaycastLocationValid(point, null)) return true;
             return false;
         }
         private void OnApplicationFocus(bool focus) { if (!focus) ReleaseAll(); }

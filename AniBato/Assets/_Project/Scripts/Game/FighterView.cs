@@ -17,6 +17,8 @@ namespace AniBato.Game
         private TeleportPhaseView teleportPhase;
         private SummonCommandView summonCommand;
         private FighterEntranceView entrance;
+        private FighterAfterimageView afterimages;
+        public int AfterimageCount => afterimages == null ? 0 : afterimages.VisibleCount;
         private float flashUntil, headY;
         private int curryLastActiveTick=-1;
         public int PlayerIndex => playerIndex;
@@ -47,13 +49,14 @@ namespace AniBato.Game
             teleportPhase = new TeleportPhaseView(transform, presentation);
             summonCommand = new SummonCommandView(transform);
             entrance = new FighterEntranceView(transform,runner);
+            afterimages = new FighterAfterimageView(transform);
             arm.enabled = secondArm.enabled = food.enabled = mogu.enabled = wave.enabled = field.enabled = false;
             ApplyCharacter();
         }
         private void OnEnable() { if (runner) { runner.EventProduced += OnBattleEvent; runner.MatchRestarted += OnRestart; } }
-        private void OnDisable() { if (runner) { runner.EventProduced -= OnBattleEvent; runner.MatchRestarted -= OnRestart; } }
-        private void OnRestart() { flashUntil = 0; curryLastActiveTick=-1; ultimatePoseHold.Reset(); teleportPhase?.Reset(); if (body) ApplyCharacter(); }
-        private void OnDestroy() => teleportPhase?.Dispose();
+        private void OnDisable() { afterimages?.Clear(); if (runner) { runner.EventProduced -= OnBattleEvent; runner.MatchRestarted -= OnRestart; } }
+        private void OnRestart() { afterimages?.Clear(); flashUntil = 0; curryLastActiveTick=-1; ultimatePoseHold.Reset(); teleportPhase?.Reset(); if (body) ApplyCharacter(); }
+        private void OnDestroy() { teleportPhase?.Dispose(); afterimages?.Dispose(); }
         private void ApplyCharacter()
         {
             character = runner.Character(playerIndex);
@@ -185,6 +188,14 @@ namespace AniBato.Game
             teleportPhase.Apply(fighter, body, runner.Simulation.Match.TickCount, runner.Simulation.Match.IsFinished);
             summonCommand.Apply(fighter,runner.Simulation.Projectiles,headY,runner.Simulation.Match.IsFinished);
             entrance.Apply(body,fighter.Facing);
+            bool normalStrike = fighter.Attack != null && fighter.Attack.Definition.Kind == AttackKind.Normal && fighter.Attack.IsDamageActive;
+            bool clearTrail = !UsesPaperSprite || runner.Simulation.Match.IsFinished || runner.Simulation.CutInRemainingFrames > 0 ||
+                fighter.Mode == FighterMode.Hitstun || fighter.Mode == FighterMode.Knockback || fighter.Mode == FighterMode.KO ||
+                fighter.Mode == FighterMode.LedgeHang || fighter.Mode == FighterMode.LedgeClimb || fighter.Mode == FighterMode.Special ||
+                fighter.Mode == FighterMode.Recovery || fighter.Mode == FighterMode.Charging;
+            afterimages.Render(body, (runner.Simulation.Match.TickCount + runner.RenderFraction) / 60d, presentation.MotionTrails,
+                runner.MotionTrailsEnabled, runner.Paused || fighter.IsFrozenThisTick || fighter.HitstopRemaining > 0,
+                fighter.Mode == FighterMode.Dash || normalStrike, clearTrail);
             food.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.Definition.NonDamaging && fighter.Attack.Definition.SelfHealNormalHits > 0;
             if (food.enabled) food.transform.localPosition = new Vector3(0.45f, 0.35f + Mathf.Sin(fighter.Attack.Frame * 0.5f) * 0.08f, 0);
             arm.enabled = !UsesAnimationSprites && fighter.Attack != null && fighter.Attack.IsActive && !fighter.Attack.Definition.SpawnProjectile;

@@ -56,7 +56,7 @@ namespace AniBato.Game
         }
         public void Render(GameFlowController flow)
         {
-            gameObject.SetActive(flow.Screen!=GameScreen.Battle&&flow.Screen!=GameScreen.Countdown&&flow.Screen!=GameScreen.Pause);
+            gameObject.SetActive(flow.Screen!=GameScreen.Battle&&flow.Screen!=GameScreen.Countdown&&flow.Screen!=GameScreen.Pause&&flow.Screen!=GameScreen.LayoutEditor);
             if(!ensemble)return;
             bool title=flow.Screen==GameScreen.Title,top=flow.Screen==GameScreen.MainMenu;
             if(flow.Screen!=previous)

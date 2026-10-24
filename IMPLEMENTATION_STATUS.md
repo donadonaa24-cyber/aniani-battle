@@ -1,3 +1,27 @@
+## 最新実行中（2026-10-24）：操作・HUD・カメラ接続済み、全4検証
+
+新しいスティック/丸ボタン、操作とP1/P2 HUDの配置・倍率・不透明度を個別に保存編集する画面、既定2倍HUD、先行0.4秒の瞬間移動カメラを接続。表示/入力のみで戦闘の数値・原画は変更しない。使い方はdocs/UI_CUSTOMIZATION.md。非表示スティックの物理パッド枠予約と選択枠を修理。最終ui_motion_releaseは実BuildAll0・Edit843/843・Play117/117・Windows成功、失敗/スキップ0。続いてWindows実起動/WebGL/Android/許可済み公開更新。ポータルは最新main/別作品更新を保持した専用ブランチで準備中、まだ公開していない。詳細はdocs/RESUME.md冒頭。
+
+## 実行中（2026-10-24）：残像→操作/HUD編集→瞬間移動カメラ
+
+未完了の同一作業を継続する。PAPER_MOTION_TRAILS_TRIAL.mdとTOUCH_STICK_AND_CUSTOM_LAYOUT.mdが今回の指示書。所有者追加：十字をスティック、丸ボタン、操作とP1/P2 HUDの個別サイズ/位置/不透明度を保存編集、HUDは既定約2倍、全ビルド共通。旧Android APKのユーザー実機起動成功はANDROID.mdへ記録済み。必要なホームページ/ポータル更新も今回許可済み。瞬間移動は行き先に関係なく発動受付から先行して滑らかにフィールド全景へ引き、移動後の即拡大を避ける。
+
+残像実装は未コミット。motion_trails_trialはBuildAll0/Edit840/840/Windows0、Play114件中112成功。失敗2件は既存タッチ検査が人工移動したボタンと別ボタンを重ねた配置、および新しいUI検査のPauseキー指定。アサーションを維持し、前者は試験対象のSiblingを手前にして戻す、後者は既存対応のEscapeを使うよう修理。重点2件をmotion_trails_focus（セッション39582）で実行中。Unity終了までAssetsを編集しない。残像の9人・ON/OFF描画不変・原寸プール/減衰/停止検査は成功。比較画像はTestResults/motion_trails_captures/motion_trailsにある。
+
+重点確認後に操作/HUD編集とカメラを実装し、最終全4とWebGL/Android/Windowsを通す。元版は公開v0.1.1/コミットd0f7485/Build/size_native_final、残像OFFで元の体の描画。現在のWindows試作はBuild/motion_trails_trial。公開反映は全機能完成後に新バージョンとして行い、旧版を上書きしない。既存2シーン/大量スクショの未コミット差分は保持・コミット対象に混ぜない。純C# Battle/戦闘Data/原PNG/ガチャ/Free設定は変更しない（Presentation.assetの残像表示値のみ追加済み）。
+
+## 追加工程（2026-10-24）：スティック・丸ボタン・HUD配置編集
+
+所有者追加依頼を受け、TOUCH_STICK_AND_CUSTOM_LAYOUT.mdを作成。先行の残像全4（motion_trails_trial、セッション67781）の終了後、固定円形スティック/丸ボタンと個別の位置・サイズ・不透明度の保存編集、旧HUD約2倍、初期化/キャンセルを全プラットフォーム共通で実装する。Windows/WebGL/Androidを再構築する。所有者から旧APKのAndroid実機起動成功の報告あり。全検証後の既存Release/ポータル反映も今回許可された。
+
+## 実行中（2026-10-24）：残像ON/OFFで比較できる試作
+
+指示書codex_tasks/PAPER_MOTION_TRAILS_TRIAL.md。通常位置は既存補間を維持。ダッシュ/通常攻撃の振り抜きに最大2枚・0.1秒の薄い残像を追加し、設定の残像OFFで元の描画へ戻す。戦闘ロジック・原画・判定・硬直は変更しない。プール再利用、共有Sprite/Material、停止/瞬間移動/崖/被弾/決着/再戦での持越しを検査する。
+
+初回追加テストのKey型名衝突を別名で修理。現在実Unity motion_trails_trial（セッション67781）でBuildAll/Edit/Play/Windowsを実行中。Unity終了までAssetsを編集しない。終了後に失敗確認→ON/OFF比較画像→実起動→必要ならローカルWebGL試作。公開版v0.1.1と比較元Windows Build/size_native_finalを保持し、ポータルは差し替えない。
+
+既存の未コミット2シーン/スクショ、原画、カバン予備/龍太v5/崖A/45半減/14-10/無料通信/ガチャを保持。
+
 ## 最新完了（2026-10-23）：容量最適化・再ビルド・公開確認
 
 BUILD_SIZE_OPTIMIZATION.mdを完了。Windows ZIP509049136→204935031bytes（約509→205MB、約60％減）、展開2520696705→276859563bytes（約2.52GB→277MB、約89％減）。主因はWindowsの画像データと未採用参照。旧姿勢/旧背景など120枚を配布時だけ除外（使用PNG432→312）。原PNG468枚とゲームData248件はSHA不変、戦闘コードも変更なし。

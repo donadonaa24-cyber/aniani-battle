@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AniBato.Game
 {
-    public enum GameScreen { Title, MainMenu, CharacterSelect, StageSelect, Countdown, Battle, Pause, Result, Controls, CommandList, KeyConfig, PracticeSettings, Settings }
+    public enum GameScreen { Title, MainMenu, CharacterSelect, StageSelect, Countdown, Battle, Pause, Result, Controls, CommandList, KeyConfig, PracticeSettings, Settings, LayoutEditor }
     public enum CpuDifficulty { Easy, Normal, Hard }
 
     [DefaultExecutionOrder(-100)]
@@ -24,6 +24,8 @@ namespace AniBato.Game
         public bool TutorialMode { get; private set; }
         public OnlineBattleBridge Online { get; private set; }
         public MobileControlsView TouchControls { get; private set; }
+        public UiCustomizationView LayoutEditor { get; private set; }
+        public Transform HudRoot => hud.transform;
         public bool OnlineMode => Online && Online.Active;
         public PracticeOptions Practice { get; } = new PracticeOptions();
         public int CommandCharacter { get; private set; }
@@ -75,6 +77,8 @@ namespace AniBato.Game
             BasicHintsEnabled = PlayerPrefs.GetInt("AniBato.BasicHints", 1) != 0;
             audioManager = runner.GetComponent<AudioManager>(); effects = runner.GetComponent<BattleEffectsView>();
             var onlineObject = new GameObject("OnlineBridge"); Online = onlineObject.AddComponent<OnlineBattleBridge>(); Online.Configure(this); runner.OnlineBridge = Online;
+            var layoutObject = new GameObject("UI Layout Editor"); layoutObject.transform.SetParent(transform, false);
+            LayoutEditor = layoutObject.AddComponent<UiCustomizationView>(); LayoutEditor.Configure(this);
             var touchObject = new GameObject("Mobile Controls"); touchObject.transform.SetParent(transform, false);
             TouchControls = touchObject.AddComponent<MobileControlsView>(); TouchControls.Configure(this);
             Player1Index = setup.Player1Index; Player2Index = setup.Player2Index;
@@ -90,6 +94,11 @@ namespace AniBato.Game
             bool cancel = input.EscapePressed || first.Cancel || second.Cancel || Screen == GameScreen.Pause && (first.Start || second.Start);
             int vertical = first.Vertical != 0 ? first.Vertical : second.Vertical;
             int horizontal = first.Horizontal != 0 ? first.Horizontal : second.Horizontal;
+            if (Screen == GameScreen.LayoutEditor)
+            {
+                if (cancel) LayoutEditor.Cancel();
+                return;
+            }
             if (Screen == GameScreen.KeyConfig && CapturingBinding)
             {
                 if (input.EscapePressed) { CapturingBinding = false; input.GuardScreenTransition(MenuAction.Cancel); }
@@ -164,7 +173,7 @@ namespace AniBato.Game
             }
             else if (Screen == GameScreen.Settings)
             {
-                MenuIndex = Wrap(MenuIndex + vertical, 12);
+                MenuIndex = Wrap(MenuIndex + vertical, 14);
                 if (cancel) Show(settingsReturn, true, MenuAction.Cancel);
                 else if (horizontal != 0 || confirm) SettingsAction(horizontal == 0 ? 1 : horizontal, confirm);
             }
@@ -234,7 +243,20 @@ namespace AniBato.Game
             else if (confirm && MenuIndex == 8) { panelReturn = GameScreen.Settings; Show(GameScreen.KeyConfig); }
             else if (confirm && MenuIndex == 9) Controls();
             else if (confirm && MenuIndex == 10) { CpuMode = PracticeMode = TutorialMode = true; BeginSelection(); }
-            else if (confirm && MenuIndex == 11) Show(settingsReturn);
+            else if (MenuIndex == 11) runner.SetMotionTrails(!runner.MotionTrailsEnabled);
+            else if (confirm && MenuIndex == 12) OpenLayout();
+            else if (confirm && MenuIndex == 13) Show(settingsReturn);
+        }
+        private void OpenLayout()
+        {
+            world.SetActive(true); hud.SetActive(true);
+            if (runner.Simulation == null)
+            {
+                runner.BeginMatch(setup.Character(Player1Index), setup.Character(Player2Index), setup.Stages[0], false, Difficulty);
+                stageView.Rebuild(setup.Stages[0]);
+            }
+            Show(GameScreen.LayoutEditor);
+            LayoutEditor.Open(() => Show(GameScreen.Settings));
         }
         private void ActivateMenu()
         {
@@ -308,7 +330,7 @@ namespace AniBato.Game
             if (Screen == GameScreen.MainMenu) mainMenuIndex = MenuIndex;
             if (Screen == GameScreen.Settings) settingsMenuIndex = MenuIndex;
             Screen = screen; MenuIndex = screen == GameScreen.MainMenu ? mainMenuIndex : screen == GameScreen.Settings ? settingsMenuIndex : 0; if (guardInput) input.GuardScreenTransition(action); else input.Clear();
-            bool visible = screen == GameScreen.Battle || screen == GameScreen.Countdown || screen == GameScreen.Pause || screen == GameScreen.Result ||
+            bool visible = screen == GameScreen.Battle || screen == GameScreen.Countdown || screen == GameScreen.Pause || screen == GameScreen.Result || screen == GameScreen.LayoutEditor ||
                 screen == GameScreen.Settings && settingsReturn == GameScreen.Pause ||
                 screen == GameScreen.Controls && (controlsReturn == GameScreen.Pause || controlsReturn == GameScreen.Settings && settingsReturn == GameScreen.Pause) ||
                 (screen == GameScreen.CommandList || screen == GameScreen.KeyConfig || screen == GameScreen.PracticeSettings) && (panelReturn == GameScreen.Pause || panelReturn == GameScreen.Settings && settingsReturn == GameScreen.Pause);

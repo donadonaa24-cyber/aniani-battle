@@ -1,3 +1,5 @@
+2026-10-24所有者報告：公開済みAndroid版の実機起動をユーザーが確認。端末名・OS版・操作/発熱/メモリの詳細は未提供であり、開発側の実機検査や、今後更新するAPKの確認済みとは区別する。現在はスティック/丸ボタン/操作・HUD配置編集を全プラットフォーム共通で追加中。
+
 # Android試作版
 
 公開配布（2026-10-23所有者指定）：[あにあにポータルのダウンロード欄](https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads)からAPKを取得できる。Windows版と配布・検証手順は[NATIVE_DOWNLOADS.md](NATIVE_DOWNLOADS.md)を参照。

@@ -51,11 +51,11 @@ namespace AniBato.Game
                 cards[i].rectTransform.localScale = Vector3.one;
                 cardLabels[i].rectTransform.anchoredPosition = new Vector2(x, -100);
             }
-            bool battle = screen == GameScreen.Battle || screen == GameScreen.Countdown;
+            bool battle = screen == GameScreen.Battle || screen == GameScreen.Countdown || screen == GameScreen.LayoutEditor;
             shade.enabled = !battle;
             shade.color = new Color(0.09f, 0.12f, 0.18f, screen == GameScreen.Pause || screen == GameScreen.Controls ? 0.94f : 1);
             heading.enabled = subtitle.enabled = options.enabled = footer.enabled = !battle;
-            banner.enabled = battle;
+            banner.enabled = battle && screen != GameScreen.LayoutEditor;
             banner.text = screen == GameScreen.Countdown ? flow.CountdownText : "";
             if (screen == GameScreen.Battle && !flow.Runner.Simulation.Match.IsFinished && flow.Runner.Simulation.Shrink.WarningIssued)
             {
@@ -101,7 +101,7 @@ namespace AniBato.Game
                     "フレームレート  " + FramePacing.Label, "画面揺れ  " + (flow.ScreenShakeEnabled ? "ON" : "OFF"),
                     "開始ヒント  " + (flow.BasicHintsEnabled ? "ON" : "OFF"), LearningText.DashSetting(input),
                     "攻撃判定表示  " + (flow.Runner.DebugBoxes ? "ON" : "OFF"), "CPU難易度  " + Difficulty(flow.Difficulty),
-                    "キーコンフィグ", "操作説明", "チュートリアル", "戻る");
+                    "キーコンフィグ", "操作説明", "チュートリアル", "残像  " + (flow.Runner.MotionTrailsEnabled ? "ON" : "OFF（元の表示）"), "操作・HUDの配置", "戻る");
             }
             else if (screen == GameScreen.Result) Result(flow);
             else if (screen == GameScreen.Controls)

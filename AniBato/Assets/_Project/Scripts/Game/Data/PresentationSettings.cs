@@ -18,6 +18,7 @@ namespace AniBato.Game
         public float CameraBoundaryInset = 2;
         public float CameraHeadroom = 2.5f;
         public float CameraFollowSpeed = 8;
+        public float TeleportCameraLeadSeconds = .4f, TeleportCameraHoldSeconds = .5f, TeleportCameraReturnSpeed = 2.5f;
         public Vector2 CameraXLimits = new Vector2(-8, 8);
         public Vector2 CameraYLimits = new Vector2(-1, 7);
         public float CounterHeight = 1.7f;
@@ -47,6 +48,7 @@ namespace AniBato.Game
         public float DebugTraceSeconds = .5f;
         public float[] PracticeRates = {1,.5f,.25f};
         public bool ScreenShake = true;
+        public AfterimageSettings MotionTrails = AfterimageSettings.Default;
         public int MaximumCatchupTicks = 5;
         public float InterpolationDiscontinuityDistance = 5;
         public float ShakeSeconds = .16f;

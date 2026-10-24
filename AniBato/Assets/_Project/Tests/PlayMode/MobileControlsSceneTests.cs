@@ -15,6 +15,17 @@ namespace AniBato.Tests
     public sealed partial class GameFlowSceneTests
     {
         private static Vector2 TouchPoint(MobileControlButton button) => RectTransformUtility.WorldToScreenPoint(null, button.transform.position);
+        private static Vector2 StickPoint(MobileStick stick, Vector2 direction) => RectTransformUtility.WorldToScreenPoint(null,
+            stick.transform.TransformPoint(direction * 60));
+        private IEnumerator MobileDirection(Vector2 direction, Touchscreen screen)
+        {
+            var stick = Flow.TouchControls.Stick; var point = StickPoint(stick, direction);
+            BeginTouch(1, point, queueEventOnly: true, screen: screen);
+            yield return WaitFor(() => stick.Held && stick.Value.sqrMagnitude > .8f, "スティック方向が届かない");
+            yield return null;
+            EndTouch(1, point, queueEventOnly: true, screen: screen);
+            yield return WaitFor(() => !stick.Held, "スティック解放"); yield return null;
+        }
         private IEnumerator MobileTap(string key, Touchscreen screen, int id = 1)
         {
             var button = Flow.TouchControls.Buttons[key]; var point = TouchPoint(button);
@@ -35,15 +46,16 @@ namespace AniBato.Tests
             yield return MobileTap("jump", screen);
             yield return WaitFor(() => Flow.Screen == GameScreen.MainMenu, "タッチ決定からメニューへ");
             int first = Flow.MenuIndex;
-            yield return MobileTap("right", screen);
+            yield return MobileDirection(Vector2.right, screen);
             Assert.That(Flow.MenuIndex, Is.Not.EqualTo(first), "横並びメニューの左右操作");
-            yield return MobileTap("left", screen); yield return MobileTap("jump", screen);
+            yield return MobileDirection(Vector2.left, screen); yield return MobileTap("jump", screen);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CharacterSelect));
             // A browser may also deliver a mouse event for a touch. It must not select the card beneath a pad button.
-            var mouse = InputSystem.AddDevice<Mouse>(); var up = view.Buttons["up"];
+            var mouse = InputSystem.AddDevice<Mouse>(); var up = view.Stick;
             var covered = Object.FindObjectsByType<Image>().First(i => i.name.StartsWith("Roster Card "));
+            int originalSibling = up.transform.GetSiblingIndex(); up.transform.SetAsLastSibling();
             var originalPosition = up.transform.position; up.transform.position = covered.transform.position;
-            var point = TouchPoint(up);
+            var point = StickPoint(up, Vector2.zero);
             Assert.That(RectTransformUtility.RectangleContainsScreenPoint(covered.rectTransform, point), Is.True, "背後のカードと重なる位置で検査");
             Canvas.ForceUpdateCanvases();
             Set(mouse.position, point, queueEventOnly: true);
@@ -56,7 +68,7 @@ namespace AniBato.Tests
             yield return WaitFor(() => up.Held, "マウス由来のタッチパッド押下"); yield return null;
             Assert.That(Flow.Selection.Picks(0).Count, Is.Zero, "タッチ方向の裏にいるキャラを勝手に選ばない");
             Release(mouse.leftButton, queueEventOnly: true); yield return WaitFor(() => !up.Held, "方向の解放"); yield return null;
-            up.transform.position = originalPosition;
+            up.transform.position = originalPosition; up.transform.SetSiblingIndex(originalSibling);
             yield return MobileTap("jump", screen); Assert.That(Flow.Selection.Picks(0).Count, Is.EqualTo(1));
             yield return MobileTap("special", screen); yield return MobileTap("special", screen);
             yield return MobileTap("special", screen);
@@ -70,15 +82,15 @@ namespace AniBato.Tests
             Flow.enabled = false; Flow.Runner.enabled = false;
             var input = Flow.Input; var view = Flow.TouchControls;
             var screen = InputSystem.AddDevice<Touchscreen>(); view.SetEnabled(true); yield return null;
-            var right = view.Buttons["right"]; var attack = view.Buttons["attack"];
-            BeginTouch(1, TouchPoint(right), queueEventOnly: true, screen: screen);
+            var right = view.Stick; var attack = view.Buttons["attack"];
+            BeginTouch(1, StickPoint(right, Vector2.right), queueEventOnly: true, screen: screen);
             BeginTouch(2, TouchPoint(attack), queueEventOnly: true, screen: screen);
-            yield return WaitFor(() => right.Held && attack.Held && view.VirtualPad.buttonWest.isPressed && view.VirtualPad.dpad.right.isPressed, "方向と攻撃の同時押し");
+            yield return WaitFor(() => right.Held && attack.Held && view.VirtualPad.buttonWest.isPressed && view.VirtualPad.leftStick.x.ReadValue() > .9f, "方向と攻撃の同時押し");
             input.Capture(); var both = input.Consume(0);
             Assert.That(both.X, Is.EqualTo(1)); Assert.That(both.IsHeld(InputButtons.Attack), Is.True);
             Assert.That(input.Consume(1).IsHeld(InputButtons.Attack), Is.False, "P2へ漏れない");
-            EndTouch(1, TouchPoint(right), queueEventOnly: true, screen: screen);
-            yield return WaitFor(() => !right.Held && !view.VirtualPad.dpad.right.isPressed, "方向だけ離す");
+            EndTouch(1, StickPoint(right, Vector2.right), queueEventOnly: true, screen: screen);
+            yield return WaitFor(() => !right.Held && view.VirtualPad.leftStick.ReadValue() == Vector2.zero, "方向だけ離す");
             input.Capture(); var held = input.Consume(0);
             Assert.That(held.X, Is.Zero); Assert.That(held.IsHeld(InputButtons.Attack), Is.True);
             view.SendMessage("OnApplicationFocus", false); yield return null;
@@ -125,7 +137,7 @@ namespace AniBato.Tests
             view.SetEnabled(false); yield return null;
             Assert.That(attack.Held, Is.False); Assert.That(view.VirtualPad, Is.Null);
             Assert.That(Flow.Input.AssignedGamepad(0), Is.SameAs(p1)); Assert.That(Flow.Input.AssignedGamepad(1), Is.SameAs(p2));
-            Assert.That(view.Buttons["right"].GetComponent<Image>().color.a, Is.LessThan(.3f));
+            Assert.That(view.Stick.GetComponent<Image>().color.a, Is.LessThan(.3f));
         }
     }
 }

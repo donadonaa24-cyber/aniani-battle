@@ -145,7 +145,7 @@ namespace AniBato.Tests
         private IEnumerator SettingsItem(int index)
         {
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Settings));
-            for (int i = 0; i < 12 && Flow.MenuIndex != index; i++) yield return Tap(keyboard.sKey);
+            for (int i = 0; i < 14 && Flow.MenuIndex != index; i++) yield return Tap(keyboard.sKey);
             Assert.That(Flow.MenuIndex, Is.EqualTo(index));
         }
         private IEnumerator Pick(params int[] characters)
@@ -261,7 +261,7 @@ namespace AniBato.Tests
             var canvas=Object.FindAnyObjectByType<HUDController>().GetComponent<RectTransform>();
             controller.enabled=false;controller.enabled=true;yield return null;yield return null;
             var head=camera.WorldToViewportPoint(new Vector3(f.Position.X,f.Position.Y+f.Definition.HurtboxSize.Y*.5f,0));
-            Assert.That(head.y,Is.GreaterThan(0).And.LessThan(1-PaperFighterHud.SafeTopHeight/canvas.rect.height));
+            Assert.That(head.y,Is.GreaterThan(0).And.LessThan(1-Object.FindAnyObjectByType<HUDController>().TopHudFraction));
             Assert.That(Object.FindObjectsByType<PaperFighterHud>().Length,Is.EqualTo(2));
             Assert.That(sim.Match.TickCount,Is.EqualTo(tick));Assert.That(f.Position,Is.EqualTo(position));
         }

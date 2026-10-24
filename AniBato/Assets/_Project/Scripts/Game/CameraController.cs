@@ -15,21 +15,29 @@ namespace AniBato.Game
         private Vector3 previousShake;
         private bool snap = true;
         private float previousAspect;
-        private RectTransform hudRect;
+        private HUDController hud;
+        private readonly TeleportCameraCue teleport = new TeleportCameraCue();
+        private float returnRemaining;
         public void Configure(BattleRunner value, PresentationSettings settings) { runner = value; presentation = settings; }
         private void Awake()
         {
             cameraComponent = GetComponent<Camera>(); effects = runner.GetComponent<BattleEffectsView>();
-            var hud=Object.FindAnyObjectByType<HUDController>(FindObjectsInactive.Include); if(hud)hudRect=hud.GetComponent<RectTransform>();
+            hud = Object.FindAnyObjectByType<HUDController>(FindObjectsInactive.Include);
         }
         private void OnEnable() { snap = true; if (runner) runner.MatchRestarted += ResetTarget; }
         private void OnDisable() { if (runner) runner.MatchRestarted -= ResetTarget; }
-        private void ResetTarget() => snap = true;
+        private void ResetTarget() { snap = true; teleport.Reset(); returnRemaining = 0; }
+        private static bool Teleporting(FighterState fighter)
+        {
+            if (fighter.Attack == null) return false;
+            var move = fighter.Attack.Definition;
+            return move.Recovery.ChargedTeleport || move.Ability.Motion == AbilityMotion.Teleport || move.Ability.Motion == AbilityMotion.TeleportBehind;
+        }
         private void LateUpdate()
         {
             if (runner.Simulation == null) return;
             transform.position -= previousShake; previousShake = Vector3.zero;
-            if (cameraComponent.aspect != previousAspect) { snap = true; previousAspect = cameraComponent.aspect; }
+            if (cameraComponent.aspect != previousAspect) { ResetTarget(); previousAspect = cameraComponent.aspect; }
             if (runner.Paused && !snap) return;
             BattleVector p1 = runner.RenderPosition(0), p2 = runner.RenderPosition(1);
             p1=CameraFraming.Subject(runner.Simulation.Stage,p1,runner.Simulation.P1.MaximumChargeLaunch);
@@ -38,18 +46,34 @@ namespace AniBato.Game
                 runner.Simulation.Match.TickCount == 0, presentation.CameraMinSize, presentation.CameraPadding,
                 presentation.CameraBoundaryInset, presentation.CameraHeadroom);
             bool frozen = runner.Simulation.P1.IsFrozenThisTick || runner.Simulation.P2.IsFrozenThisTick || runner.Simulation.CutInRemainingFrames > 0;
-            float factor = snap ? 1 : frozen ? 0 : 1 - Mathf.Exp(-presentation.CameraFollowSpeed * Time.unscaledDeltaTime);
+            float delta = frozen || runner.Paused ? 0 : Time.unscaledDeltaTime;
+            bool requested = Teleporting(runner.Simulation.P1) || Teleporting(runner.Simulation.P2);
+            if (!snap && (requested || teleport.Active))
+            {
+                var stage = runner.Simulation.Stage;
+                var overview = CameraFraming.Calculate(stage, new BattleVector(stage[0].Bounds.Left, 0), new BattleVector(stage[0].Bounds.Right, 0),
+                    cameraComponent.aspect, true, presentation.CameraMinSize, presentation.CameraPadding, presentation.CameraBoundaryInset, presentation.CameraHeadroom);
+                overview = CameraFraming.BelowHud(overview, overview.Required.Top, hud ? hud.TopHudFraction : 0);
+                var current = new CameraFrame(new BattleVector(transform.position.x, transform.position.y), cameraComponent.orthographicSize, frame.Required);
+                var cue = teleport.Advance(requested, delta, current, overview, presentation.TeleportCameraLeadSeconds, presentation.TeleportCameraHoldSeconds);
+                transform.position = new Vector3(cue.Center.X, cue.Center.Y, -10); cameraComponent.orthographicSize = cue.Size;
+                returnRemaining = 1;
+                return;
+            }
+            returnRemaining = Mathf.Max(0, returnRemaining - delta);
+            float speed = returnRemaining > 0 ? presentation.TeleportCameraReturnSpeed : presentation.CameraFollowSpeed;
+            float factor = snap ? 1 : frozen ? 0 : 1 - Mathf.Exp(-speed * delta);
             snap = false;
             transform.position = Vector3.Lerp(transform.position, new Vector3(frame.Center.X, frame.Center.Y, -10), factor);
             cameraComponent.orthographicSize = CameraFraming.ContainingSize(frame,
                 new BattleVector(transform.position.x, transform.position.y), cameraComponent.aspect,
                 Mathf.Lerp(cameraComponent.orthographicSize, frame.Size, factor));
-            if(hudRect && hudRect.rect.height>0 && (!frozen || factor==1))
+            if(hud && (!frozen || factor==1))
             {
                 float highest=Mathf.Max(p1.Y+runner.Simulation.P1.Definition.HurtboxSize.Y*.5f,
                     p2.Y+runner.Simulation.P2.Definition.HurtboxSize.Y*.5f)+presentation.CounterHeadPadding;
                 var safe=CameraFraming.BelowHud(new CameraFrame(new BattleVector(transform.position.x,transform.position.y),cameraComponent.orthographicSize,frame.Required),
-                    highest,PaperFighterHud.SafeTopHeight/hudRect.rect.height);
+                    highest,hud.TopHudFraction);
                 transform.position=new Vector3(safe.Center.X,safe.Center.Y,transform.position.z);cameraComponent.orthographicSize=safe.Size;
             }
             if (!runner.Paused && effects && effects.ScreenShakeEnabled && effects.Feedback.ShakeRemaining > 0)
