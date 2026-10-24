@@ -21,6 +21,7 @@ namespace AniBato.EditorTools
             PlayerSettings.allowedAutorotateToLandscapeLeft = true; PlayerSettings.allowedAutorotateToLandscapeRight = true;
             PlayerSettings.allowedAutorotateToPortrait = false; PlayerSettings.allowedAutorotateToPortraitUpsideDown = false;
             PlayerSettings.Android.useCustomKeystore = false; // Local trial APK; never read or create a private release signing credential.
+            AppIconBuilder.ConfigureAndroid();
             EditorUserBuildSettings.buildAppBundle = false;
             EditorUserBuildSettings.androidBuildSubtarget = MobileTextureSubtarget.ETC2;
             WebGLSpritePacking.PrepareAndroid(); AssetDatabase.SaveAssets();

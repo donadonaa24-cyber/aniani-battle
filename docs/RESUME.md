@@ -1,3 +1,19 @@
+## 最新追加（2026-10-24）：Android専用アイコンを配布更新へ含める
+
+最終ui_motion_icon_finalは実BuildAll0・Edit844/844・Play117/117・Windows成功、失敗/スキップ0。Windows成果物はBuild/ui_motion_icon_final。ここまでのアイコン設定/原本/検査ツールを通常保存してpushし、そのコミットでAndroidを再構築する。続いて実APK内画像の照合/マスク表示、Windows起動、配布梱包と公開確認を行う。WebGLは戦闘/表示コードが同じc59c018の検証済みui_motion_web_retryを使用する（新規変更はEditorのアイコン設定のみ）。
+
+更新：ui_motion_iconはBuildAll成功・Edit843/844（新規アイコン検査のみ失敗）。使用Unity 6000.6はAndroidにAdaptive6密度だけを公開し、旧Legacy/Round専用枠はないことを実APIと公式6.6資料で確認。新規テストの存在しない枠への前提を修正し、「対応全枠の前景/背景6密度＋平面画像用Default」の契約へ具体化した。既存843件のアサーションは変更していない。自分のバッチPlayMode/runnerだけを確認して停止し、ui_motion_icon_final（93894）でBuildAllから全4を再実行中。APKの実PNG照合とマスク表示検査ツールを追加。
+
+ポータル作業コピーは準備commit aaf4ada、最新main96a75c0（別作品Android軽量版のPR25）を通常merge f5b13e7。記事とcacheキーの競合3件を両方の新記事/別作品の新リンクを残して解決。Node全検査成功（Windows symlink1skip、Linux CI待ち）。未公開。新APK/Windows完成後のRelease→manifest更新→最終npm→PR/CI/Pages/公開確認が残る。
+
+所有者追加依頼を受けANDROID_APP_ICON.mdを作成。組み込みimage_genで専用「あにバト！！」原画を生成し、art_source/app_iconへ原本/全文プロンプトを保存。BrandingのLegacy/Adaptive前景/背景をAppIconBuilderからBuildAll/AndroidBuilderへ設定。実Unity全4 ui_motion_icon（セッション18584）を実行中。Unity終了までAssetsを編集しない。
+
+先行c59c018のWebGL ui_motion_web_retry成功（138832721bytes、468/468原PNG監査）、Android ui_motion_androidも成功（161990592bytes、Windows復元0）。ただしアイコン追加前なのでAndroidは必ず再ビルドする。先行の実ブラウザではスティック/丸ボタン/保存再読込/復帰カメラを確認、console error0。新しいUI画面はdocs/screenshots/ui_motionへ保存済み。
+
+ポータル作業コピーはTestResults/portal_releaseの専用ブランチ。Web payload 7d842dbdd0a8e211を梱包済み、変更説明/記事/実ブラウザ画像2枚を準備済み。未公開。新Windows/APKを検査・梱包・v0.1.2へRelease後、TestResults/update_ui_portal.cjsを1度実行し、npm全検査→PR/CI/Pages/公開確認まで完了する。前版のAPKユーザー実機起動報告は旧v0.1.0のみ。アイコン追加後の実機ホーム画面は未確認とする。
+
+以下は同工程の履歴。
+
 ## 最新実行中（2026-10-24）：操作・HUD・カメラ接続済み、全4検証
 
 スティック/丸ボタン/13要素の配置・大きさ・不透明度編集と端末内保存・取消・初期化を接続。P1/P2 HUD既定2倍、上部の実占有領域をカメラが避ける。瞬間移動受付から約0.4秒の先行全景/技後0.5秒保持/ゆっくり戻す表示を追加。戦闘コード/戦闘Data/原画は変更なし。使い方UI_CUSTOMIZATION.md。
@@ -7,6 +23,12 @@
 ui_motion_finalは実BuildAll/Windows成功・Edit843/843・Play117件中116成功。PCタッチ非表示時にもスティックのOnEnableが一瞬パッドを作り物理再接続枠を予約する問題を修理（非表示の親へ配置した後でOnScreenControlを追加）。選択枠の塗りつぶしも4辺の線へ変更し、スライダーの線を分離、共有128pxの滑らかな丸形を使用。ui_motion_reconnectは実Play6/6成功（物理再接続・配置保存/取消・タッチメニュー・同時入力・復元・残像設定）、画像で選択枠を確認済み。
 
 ui_motion_releaseは最終実BuildAll0・Edit843/843・Play117/117・Windows成功、失敗/スキップ0。選択枠と両スライダーの最終画像も確認した。WindowsはBuild/ui_motion_release。続き：Windows実起動→WebGL実ブラウザ/Android再ビルド/Windows復帰→新Release v0.1.2-trial.20261024・許可済みポータル反映。旧版/既存未コミット画像・2シーンを保持。Build/size_native_finalとmotion_trails_trialは最新2ビルド保持規則で削除されたが、元ZIPと公開旧Releaseは保持。
+
+実装48件だけを明示して確認後、c59c018で通常保存・mainへpush済み。自動審査は当初のディレクトリ一括追加を止めたが、ファイル単位の48件・無関係な差分なし・秘密情報なし・全Unity成功を確認してステージ→ローカル保存→pushを分けた後は承認済み。追加のユーザー許可待ちではない。Windows実起動15秒/エラー0/約484MB、TestResults/ui_motion_windows_smoke.json。WebGL ui_motion_web（15469）実行中、完了後にaudit_webgl_padding.cjs（bundled NODE_PATHでsharp）→AndroidビルドRestoreWindows→inspect_android。今のWebGL-build.jsonは以前の値なのでログの新しい成功を確認するまで流用しない。
+
+更新：ui_motion_webはC#エラーではなくUnity Beeの「Backend has requested a buildprogram run 6 times」で失敗。WebGLの生成DAG Playera54dc12bの7ファイルだけ、絶対パスが作業範囲内であることを確認してTestResults/ui_motion_web_bee_backupへ退避した（削除なし、Artifactsは保持）。同じc59c018コードでui_motion_web_retry（20057）を再実行中。まだ新Web成功とは扱わない。完了後に上記ピクセル監査→Android等へ進む。Unity実行中はAssetsを編集しない。以前の公開Webと配布ZIP/APKは変更していない。
+
+公開用の新配布物はまだ作っていない。TestResults/update_ui_portal.cjsを準備済みで、v0.1.2のBuild/Distribution/.../manifest.json作成後に実行すると旧v0.1.1案内から新しいURL/実サイズ/SHA/旧APK起動報告/テストを更新する。一度だけ実行する。Web payloadはpack_portal_webgl.cjs。ポータルNode検査は外側実行で成功（Windowsのsymlink1件は標準スキップ、Linux CIで全確認）。aniani.jsはLFへローカル正規化し、cacheキーを20261024anibatostick1へ更新済み。追加した記事の作成日時は公開時に現在日時へ更新するとよい。
 
 ポータル作業コピーTestResults/portal_releaseは最新main9a410f8からcodex/anibato-controls-20261024を作成済み。PR24の別作品更新を保持。使い方・旧APKのユーザー起動報告・新記事だけ準備済みで未公開。新配布物のmanifest/サイズ/SHAとWeb payloadは全ビルド後に更新する。npm testはaniani.jsのCRLFをローカルでLFへ揃えるとソース検査を通過し、サーバー検査がsandboxのloopback EACCESで失敗。最終npm testはサンドボックス外で実行し、Linux CIも通す。テストのアサーションは変更していない。
 

@@ -1,3 +1,11 @@
+## 最新実行中（2026-10-24）：専用アイコンと操作更新の最終ビルド
+
+専用「あにバト！！」アイコンを生成・設定。Unity 6000.6のAndroid Adaptive6密度の前景/背景と平面Defaultへ接続し、BuildAll/AndroidBuilderで維持する。原本・全文プロンプト・再現方法はdocs/APP_ICON.md。ui_motion_icon_finalは実BuildAll0・Edit844/844・Play117/117・Windows成功、失敗/スキップ0。既存戦闘Data/原画は変更なし。
+
+操作/残像/カメラ実装c59c018のWindows/WebGL/Androidは成功済み。WebGLの468原PNG監査と実ブラウザの操作/保存再読込/復帰カメラ、console error0を確認。現在はアイコン追加後の新Windows/APKと公開更新を仕上げる。ポータルは最新mainの別作品更新を保持して準備済み。まだ公開していない。
+
+以下は同工程の履歴。
+
 ## 最新実行中（2026-10-24）：操作・HUD・カメラ接続済み、全4検証
 
 新しいスティック/丸ボタン、操作とP1/P2 HUDの配置・倍率・不透明度を個別に保存編集する画面、既定2倍HUD、先行0.4秒の瞬間移動カメラを接続。表示/入力のみで戦闘の数値・原画は変更しない。使い方はdocs/UI_CUSTOMIZATION.md。非表示スティックの物理パッド枠予約と選択枠を修理。最終ui_motion_releaseは実BuildAll0・Edit843/843・Play117/117・Windows成功、失敗/スキップ0。続いてWindows実起動/WebGL/Android/許可済み公開更新。ポータルは最新main/別作品更新を保持した専用ブランチで準備中、まだ公開していない。詳細はdocs/RESUME.md冒頭。

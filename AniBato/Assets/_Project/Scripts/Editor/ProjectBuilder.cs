@@ -22,6 +22,7 @@ namespace AniBato.EditorTools
             if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             EnsureFolder(DataRoot); EnsureFolder("Assets/_Project/Scenes");
             ConfigurePlayerSettings();
+            AppIconBuilder.ConfigureAndroid();
             var rules = LoadOrCreate<BattleRules>("BattleRules");
             if (rules.Definition.MatchSeconds == 0) rules.Definition = PhaseSixADefaults.Rules();
             UpgradeRules(rules);
