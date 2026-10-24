@@ -1,0 +1,340 @@
+{
+  "date": "2026-10-24",
+  "runtimeCommit": "c59c018",
+  "iconCommit": "cdb87495f8f0a93c9892fd5e9b18a6c19037bb9e",
+  "packagingCommit": "e2016eee46df5499380b3a191fd69020484edecf",
+  "features": [
+    "optional short pooled afterimages",
+    "analog stick and round buttons",
+    "per-control and P1/P2 HUD local position/size/opacity with cancel/reset",
+    "default HUD twice previous size",
+    "0.4s smooth teleport framing lead and gradual return",
+    "original branded Android launcher"
+  ],
+  "unity": {
+    "tag": "ui_motion_icon_final",
+    "buildAll": "success",
+    "editMode": {
+      "total": 844,
+      "passed": 844,
+      "failed": 0,
+      "skipped": 0
+    },
+    "playMode": {
+      "total": 117,
+      "passed": 117,
+      "failed": 0,
+      "skipped": 0
+    },
+    "windows": "success"
+  },
+  "windowsStartup": {
+    "build": "Build/ui_motion_icon_final",
+    "seconds": 15,
+    "runtimeStarted": true,
+    "stayedAlive": true,
+    "startupErrors": 0,
+    "peakWorkingSetBytes": 488017920,
+    "mode": "CLI batch; startup only; gameplay covered by Unity PlayMode suite"
+  },
+  "web": {
+    "sourceCommit": "c59c018",
+    "result": "success",
+    "bytes": 138832721,
+    "seconds": 153.38562629999998,
+    "files": 11,
+    "sourcePixelAudit": {
+      "checked": 468,
+      "failed": 0
+    },
+    "payloadVersion": "7d842dbdd0a8e211"
+  },
+  "android": {
+    "result": "success",
+    "abi": "arm64-v8a",
+    "package": "com.aniani.anibato",
+    "bytes": 162327300,
+    "seconds": 280.1237858,
+    "minimumApi": 26,
+    "releaseSigned": false,
+    "launcherFinalized": true,
+    "launcherSeconds": 26.2423163
+  },
+  "androidInspection": {
+    "apk": "Build/Android/AniBato-arm64.apk",
+    "bytes": 162327300,
+    "sha256": "468d348d8d0b5ccdb28aa4507c1e1b82331ef409ddb1c5ce4a2307193d0e0fbb",
+    "signatureVerified": true,
+    "minimumApi": 26,
+    "package": "com.aniani.anibato",
+    "abi": "arm64-v8a",
+    "il2cpp": true,
+    "unityRuntime": true,
+    "manifest": [
+      "package: name='com.aniani.anibato' versionCode='1' versionName='1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sdkVersion:'26'",
+      "targetSdkVersion:'36'",
+      "application: label='あにあにバトル！！' icon='res/Qu.xml'",
+      "launchable-activity: name='com.unity3d.player.UnityPlayerGameActivity'  label='' icon=''",
+      "native-code: 'arm64-v8a'"
+    ],
+    "signatureSchemes": [
+      "Verified using v1 scheme (JAR signing): false",
+      "Verified using v2 scheme (APK Signature Scheme v2): true",
+      "Verified using v3 scheme (APK Signature Scheme v3): false",
+      "Verified using v3.1 scheme (APK Signature Scheme v3.1): false",
+      "Verified using v4 scheme (APK Signature Scheme v4): false"
+    ],
+    "deviceVerified": false
+  },
+  "launcher": {
+    "apk": "Build/Android/AniBato-arm64.apk",
+    "adaptiveLauncher": true,
+    "bitmaps": [
+      {
+        "kind": "ic_launcher_background",
+        "width": 81,
+        "height": 81,
+        "meanPremultipliedByteError": 0
+      },
+      {
+        "kind": "ic_launcher_foreground",
+        "width": 81,
+        "height": 81,
+        "meanPremultipliedByteError": 1.4660323797487749
+      },
+      {
+        "kind": "app_icon",
+        "width": 48,
+        "height": 48,
+        "meanPremultipliedByteError": 0
+      },
+      {
+        "kind": "ic_launcher_background",
+        "width": 108,
+        "height": 108,
+        "meanPremultipliedByteError": 0
+      },
+      {
+        "kind": "ic_launcher_foreground",
+        "width": 108,
+        "height": 108,
+        "meanPremultipliedByteError": 0.6618434532015927
+      },
+      {
+        "kind": "ic_launcher_background",
+        "width": 162,
+        "height": 162,
+        "meanPremultipliedByteError": 0
+      },
+      {
+        "kind": "ic_launcher_foreground",
+        "width": 162,
+        "height": 162,
+        "meanPremultipliedByteError": 0.3473996629901959
+      },
+      {
+        "kind": "ic_launcher_background",
+        "width": 216,
+        "height": 216,
+        "meanPremultipliedByteError": 0
+      },
+      {
+        "kind": "ic_launcher_foreground",
+        "width": 216,
+        "height": 216,
+        "meanPremultipliedByteError": 0.3936801087622544
+      },
+      {
+        "kind": "ic_launcher_background",
+        "width": 324,
+        "height": 324,
+        "meanPremultipliedByteError": 0
+      },
+      {
+        "kind": "ic_launcher_foreground",
+        "width": 324,
+        "height": 324,
+        "meanPremultipliedByteError": 0.3423706054687488
+      },
+      {
+        "kind": "ic_launcher_background",
+        "width": 432,
+        "height": 432,
+        "meanPremultipliedByteError": 0
+      },
+      {
+        "kind": "ic_launcher_foreground",
+        "width": 432,
+        "height": 432,
+        "meanPremultipliedByteError": 0.4005541034773303
+      }
+    ],
+    "deviceVerified": false,
+    "preview": "docs/screenshots/ui_motion/android_icon_masks.png"
+  },
+  "androidUpdate": {
+    "sameSigningCertificate": true,
+    "uninstallRequired": false,
+    "previousVersion": "v0.1.0-trial.20261023",
+    "deviceUpdateTested": false
+  },
+  "launcherFinalization": {
+    "gamePayloadUnchanged": true,
+    "gradleOffline": true,
+    "source": "art_source/app_icon/legacy-mdpi.png",
+    "adaptiveUnchanged": true,
+    "protectedGameEntries": 1506,
+    "bytes": 162327300
+  },
+  "release": {
+    "version": "v0.1.2-trial.20261024",
+    "sourceCommit": "e2016eee46df5499380b3a191fd69020484edecf",
+    "windowsBuild": "Build/ui_motion_icon_final",
+    "zipCompression": "SmallestSize",
+    "zipEntries": 156,
+    "zipAllEntriesVerified": true,
+    "androidDeviceVerified": false,
+    "files": [
+      {
+        "name": "AniBato-Windows-x64-v0.1.2-trial.20261024.zip",
+        "version": "v0.1.2-trial.20261024",
+        "bytes": 205149208,
+        "sha256": "36dbdbb88f3c20cbdf3baa692d21e49791e71ad7f3417ee50d5e941a3ab6fd6e"
+      },
+      {
+        "name": "AniBato-Android-arm64-v0.1.2-trial.20261024.apk",
+        "version": "v0.1.2-trial.20261024",
+        "bytes": 162327300,
+        "sha256": "468d348d8d0b5ccdb28aa4507c1e1b82331ef409ddb1c5ce4a2307193d0e0fbb"
+      }
+    ]
+  },
+  "publicDownloads": {
+    "date": "2026-10-24",
+    "version": "v0.1.2-trial.20261024",
+    "publicAnonymousGet": true,
+    "files": [
+      {
+        "name": "AniBato-Windows-x64-v0.1.2-trial.20261024.zip",
+        "status": 200,
+        "bytes": 205149208,
+        "sha256": "36dbdbb88f3c20cbdf3baa692d21e49791e71ad7f3417ee50d5e941a3ab6fd6e",
+        "verified": true
+      },
+      {
+        "name": "AniBato-Android-arm64-v0.1.2-trial.20261024.apk",
+        "status": 200,
+        "bytes": 162327300,
+        "sha256": "468d348d8d0b5ccdb28aa4507c1e1b82331ef409ddb1c5ce4a2307193d0e0fbb",
+        "verified": true
+      }
+    ],
+    "checksumsStatus": 200,
+    "readmeStatus": 200
+  },
+  "publicHttp": {
+    "version": "v0.1.2-trial.20261024",
+    "payloadVersion": "7d842dbdd0a8e211",
+    "rootDownloadLinks": 4,
+    "newArticle": true,
+    "otherProjectAndroidUpdatePreserved": true,
+    "status": 200
+  },
+  "publication": {
+    "pullRequest": "https://github.com/donadonaa24-cyber/aniani-asobiba/pull/26",
+    "head": "9e3dae260940179cf6edce458afc7b2b8dd3f3d3",
+    "merge": "07b7ccb242dd9ae4d62ab03ae0926183e3d3e196",
+    "ci": {
+      "run": 40070216109,
+      "result": "success",
+      "seconds": 22
+    },
+    "mainCi": {
+      "run": 40070331926,
+      "result": "success"
+    },
+    "pages": {
+      "run": 40070330591,
+      "status": "built",
+      "commit": "07b7ccb242dd9ae4d62ab03ae0926183e3d3e196"
+    },
+    "url": "https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads",
+    "desktop": {
+      "viewport": "1366x900",
+      "columns": 2,
+      "horizontalOverflow": false
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "columns": 1,
+      "horizontalOverflow": false
+    },
+    "consoleErrors": 0,
+    "publicGameBoot": {
+      "viewport": "844x390",
+      "mainMenu": true,
+      "nineCharacterEnsemble": true,
+      "stickAndRoundButtons": true,
+      "consoleErrors": 0
+    },
+    "newNativeLinks": true,
+    "otherProjectUpdatesPreserved": true
+  },
+  "preservedOriginalArt": {
+    "checked": 468,
+    "changed": 0,
+    "newBrandingArtSeparate": true
+  },
+  "priorAndroidStartupReport": {
+    "version": "v0.1.0-trial.20261023",
+    "source": "owner report; startup only"
+  },
+  "updatedApkDeviceVerified": false,
+  "browserChecks": {
+    "localGameViewport": "844x390",
+    "desktopLayoutViewport": "1366x768",
+    "controlInput": true,
+    "saveAndReload": true,
+    "reset": true,
+    "teleportCamera": true,
+    "consoleErrors": 0,
+    "androidDeviceEmulation": false
+  },
+  "screenshots": [
+    "docs/screenshots/ui_motion/android_icon_masks.png",
+    "docs/screenshots/ui_motion/public_downloads.png",
+    "docs/screenshots/ui_motion/public_downloads_mobile.png",
+    "docs/screenshots/ui_motion/public_game_menu.png",
+    "docs/screenshots/ui_motion/browser_battle_mobile.png",
+    "docs/screenshots/ui_motion/browser_layout_desktop.png",
+    "docs/screenshots/ui_motion/browser_layout_mobile.png",
+    "docs/screenshots/ui_motion/dash_on.png",
+    "docs/screenshots/ui_motion/dash_off.png",
+    "docs/screenshots/ui_motion/layout_editor.png"
+  ],
+  "preserved": [
+    "Battle simulation",
+    "combat Data",
+    "character artwork",
+    "bag backup",
+    "approved Ryuta hurt v5",
+    "ledge A",
+    "half-width hitboxes",
+    "gauge 14/10",
+    "176 gacha cards and previous 159/inventory/rates",
+    "Free networking limits",
+    "previous release packages",
+    "other portal projects"
+  ],
+  "rollback": {
+    "afterimages": "Settings OFF",
+    "layout": "Reset or cancel before saving",
+    "release": "Previous GitHub Releases retained"
+  },
+  "limitations": [
+    "Updated APK not verified on physical Android device",
+    "Windows automated startup and Unity gameplay suites; no physical controller verification",
+    "No new separate-network invite test"
+  ]
+}

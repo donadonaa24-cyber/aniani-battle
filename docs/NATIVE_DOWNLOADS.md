@@ -1,14 +1,24 @@
 # Windows・Android試作版の公開配布
 
 - 案内：[ポータルのダウンロード欄](https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads)
-- Windows最新版：[v0.1.1-trial.20261023](https://github.com/donadonaa24-cyber/aniani-battle/releases/tag/v0.1.1-trial.20261023)
-- Windows x64 ZIP：204935031 bytes（約205MB）、展開後276859563 bytes（約277MB）。全展開し、AniBato/AniBato.exeを起動。Data・DLLも同じフォルダに必要。
-- Android ARM64 APK：[v0.1.0-trial.20261023を継続](https://github.com/donadonaa24-cyber/aniani-battle/releases/tag/v0.1.0-trial.20261023)、161961932 bytes（約162MB）。Android8以降、試作用署名、実機は未確認。
+- Windows・Android最新配布版：[v0.1.2-trial.20261024](https://github.com/donadonaa24-cyber/aniani-battle/releases/tag/v0.1.2-trial.20261024)
+- Windows x64 ZIP：205149208 bytes（約205MB）、展開後276883383 bytes（約277MB）。全展開し、AniBato/AniBato.exeを起動。Data・DLLも同じフォルダに必要。
+- Android ARM64 APK：162327300 bytes（約162MB）。Android8以降、試作用署名。旧v0.1.0はユーザーの実機起動報告あり。今回の更新APKの実機操作・アイコン表示・発熱・メモリ使用量は未確認。旧版と同じ署名で削除せず更新する。
 - 招待対戦はブラウザ版のみ。ダウンロード版はCPU対戦・練習・ローカル操作向け。
 
 GitHub Releasesで配布し、バイナリをGit履歴・Supabase Storageへ追加しない。課金サービスなし。旧版は上書きせず保持する。
 
-## 容量最適化
+## 最新版の検証（2026-10-24）
+
+スティック/丸ボタン・操作とHUDの保存編集・既定約2倍HUD・残像ON/OFF・先行する瞬間移動カメラを全3版へ反映。専用アイコンはAPP_ICON.md。実Unity ui_motion_icon_finalはBuildAll0/Edit844/844/Play117/117/Windows成功、失敗/スキップ0。Windows15秒起動の例外0。WebGLは同じ表示/戦闘コードc59c018の検証済みビルド。
+
+AndroidはUnityとGradleで成功。固定の互換画像を専用画像に再構築した前後で、全ゲーム本体1506エントリの内容SHAが一致。署名/ABI/起動先と13アイコンを検査。配布ZIP156エントリを元ファイルと照合し、公開ZIP/APKも認証なしで全バイト取得しサイズ/全SHA一致、README/チェックサム200。証跡codex_logs/ui_motion_controls.json。
+
+Windows SHA-256：36dbdbb88f3c20cbdf3baa692d21e49791e71ad7f3417ee50d5e941a3ab6fd6e
+
+Android SHA-256：468d348d8d0b5ccdb28aa4507c1e1b82331ef409ddb1c5ce4a2307193d0e0fbb
+
+## 旧版の容量最適化（2026-10-23の記録）
 
 旧WindowsのZIP509049136→204935031bytes（約60％減）、展開2520696705→276859563bytes（約89％減）。旧姿勢・旧背景等120枚をビルド時の参照から除外（432→312枚）。原PNG468枚とゲームData248件はSHA不変で、原画・カバン予備も開発側に保持。
 

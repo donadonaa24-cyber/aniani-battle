@@ -14,3 +14,11 @@
 APKの署名・ARM64・起動Activityに加え、実リソースのAdaptive XMLと前景/背景、Legacy PNGを検査する。最終結果はRESUMEと検証記録へ記載。実Androidホーム画面での確認は所有者の実機確認と区別する。
 
 Unity 6.6の対応形式は [Android Player settings公式資料](https://docs.unity3d.com/6000.6/Documentation/Manual/class-PlayerSettingsAndroid.html#Icon) と実APIで確認した。以前のUnityのLegacy/Round専用枠が必ず存在すると仮定しない。
+
+## 確認結果
+
+配布APKは162327300bytes。実APKのAdaptive XMLと13画像（6密度の前景/背景＋互換mdpi）を照合し、最大平均可視画素誤差は1.466/255。署名・起動Activity・ARM64・API26成功。Gradle再構築前後のゲーム本体1506エントリは内容SHAが完全一致し、旧v0.1.0 APKと同じ署名で更新できる。端末上の更新動作そのものは未確認。
+
+![実APK画像を使った丸型・角丸型プレビュー](screenshots/ui_motion/android_icon_masks.png)
+
+上図はAPKリソースに一般的なランチャーマスクを適用したプレビューで、Android実機の撮影ではない。

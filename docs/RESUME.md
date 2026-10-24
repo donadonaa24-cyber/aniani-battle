@@ -1,3 +1,21 @@
+## 最新完了（2026-10-24）：操作更新・専用アイコン・全3版の公開確認
+
+今回の必須作業は完了。残像ON/OFF、アナログスティック/丸ボタン、各操作とP1/P2 HUDの位置/大きさ/不透明度の端末保存編集（破棄/初期化）、既定約2倍HUD、瞬間移動受付から0.4秒で先行して引くカメラを全3版へ反映。Androidは生成した専用「あにバト！！」アイコンを設定。操作はUI_CUSTOMIZATION.md、原画と全文プロンプトはAPP_ICON.md。
+
+実行した最終全4 ui_motion_icon_final：BuildAll0、Edit844/844、Play117/117、Windows0、失敗/スキップ0。Windows15秒起動エラー0。WebGL ui_motion_web_retryは138832721bytes、468原PNGのRGBA監査成功。表示/戦闘コードc59c018、アイコン設定cdb8749、互換アイコン最終梱包e2016ee。これらは保存済み結果の参照だけでなく、この工程で実際に実行した検証。最後のビルドツール変更後はUnity全4を再実行せず、Gradle再構築前後の全ゲーム本体1506エントリの内容SHA完全一致とAPK再検査で確認した。
+
+Android ui_motion_icon_androidはBuild0/RestoreWindows0。Unity6.6の固定互換画像を、build_android.ps1の後段で同じGradleにより専用48px画像へ再構築。APK162327300bytes、署名/起動Activity/ARM64/API26/全13アイコンを確認（最大平均可視画素誤差1.466/255）。旧v0.1.0と署名一致。画像はscreenshots/ui_motion/android_icon_masks.pngで、実機撮影ではない。通常再現はbuild_android.ps1を使う。Qの一時別名は検査して解除済み。
+
+公開Release v0.1.2-trial.20261024はe2016ee。WindowsZIP205149208bytes/展開276883383bytes、APK162327300bytes。ZIP156エントリを照合し、匿名で公開ZIP/APK全バイトを読みサイズと全SHA一致、README/チェックサム200。前版も保持。
+
+ポータルは準備aaf4ada→最新main96a75c0の別作品Android軽量化を保持して通常merge f5b13e7→配布案内9e3dae2→PR26を通常merge07b7ccb。Linux CI22秒成功、main検査成功、Pages built。公開ページで新アイコン/新配布URL、PC1366pxで2列・390pxで1列/横はみ出しなし/console0、トップ4DLリンク/新記事/別作品リンク維持、WebGL7d842dbdd0a8e211の起動と9人メニュー/新スティックを確認。URL：https://donadonaa24-cyber.github.io/aniani-asobiba/anibato/#downloads 。
+
+証跡codex_logs/ui_motion_controls.json、今回10画像はscreenshots/ui_motion/（公開DLのPC/スマホ、公開ゲーム、APK丸/角丸、配置編集、残像比較）。既存の未コミット2シーンと過去スクショは保持し、今回の保存対象へ混ぜていない。戦闘Data/コード・元PNG468枚（SHA一致）・保護原画・45半減/14-10・ガチャ176/旧159/所持/率・Free制限を維持。
+
+Claudeへ：完了済みの原画や公開工程を重複しない。新APKの実機操作/アイコン表示/発熱/メモリ、物理パッド、別回線の招待対戦は未確認。ユーザーの旧v0.1.0起動報告と今回APKを混同しない。次は所有者の新しい指示/実機フィードバックから進める。
+
+以下は同工程の履歴。
+
 ## 最新追加（2026-10-24）：Android専用アイコンを配布更新へ含める
 
 更新：ui_motion_icon_android（90920）Android0/RestoreWindows0、APK元162322224bytes。Unity 6000.6が固定出力する互換mdpiだけUnityロゴだったため、build_androidの後段にfinalize_android_icons.ps1を追加。同じGradleをofflineで再ビルド・署名し、全assets/lib/classes/Manifest1506エントリの内容SHAを完全一致確認。Unity C#/戦闘/原画は変更なし。FinalizeIconsOnly（58618）成功、最終APK162327300bytes。署名/ABI/起動先/旧APKとの同署名を再検査し、実APKの13画像すべてを専用画像と照合成功（最大平均可視画素誤差1.466/255）。丸/角丸プレビューはscreenshots/ui_motion/android_icon_masks.png、実機撮影ではない。
