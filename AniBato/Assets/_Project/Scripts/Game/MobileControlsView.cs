@@ -20,6 +20,12 @@ namespace AniBato.Game
         private Gamepad savedFirst, savedSecond;
         private bool requested, lastCombat;
         private bool editing;
+        private RectTransform movement;
+        private GameObject directionalPad;
+        private Image directionCenter;
+        public TouchMovementSettings MovementSettings { get; private set; }
+        public TouchMovementMode ActiveMovementMode { get; private set; }
+        public UiLayoutTarget MovementLayout { get; private set; }
         public MobileStick Stick { get; private set; }
         private int lastBindings;
         public bool Visible => panel && panel.activeSelf;
@@ -27,7 +33,7 @@ namespace AniBato.Game
         public IReadOnlyDictionary<string, MobileControlButton> Buttons => buttons;
         public void Configure(GameFlowController controller)
         {
-            flow = controller; requested = Application.isMobilePlatform;
+            flow = controller; requested = Application.isMobilePlatform; MovementSettings = TouchMovementSettings.Load();
             panel = new GameObject("Translucent Mobile Controls", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             panel.SetActive(false); panel.transform.SetParent(transform, false);
             var canvas = panel.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.sortingOrder = 1000;
@@ -48,27 +54,67 @@ namespace AniBato.Game
             Add("ultimate", "超必殺", ControlAction.Ultimate, true, new Vector2(-55, 250), 70);
             Add("pause", "ポーズ", ControlAction.Pause, false, new Vector2(110, 270), 62);
             Add("commands", "技表", null, false, new Vector2(235, 235), 62);
+            ApplyMovementMode(MovementSettings.Menu);
         }
         private void AddStick()
         {
+            var root = new GameObject("Touch movement pad", typeof(RectTransform)); root.transform.SetParent(safe, false);
+            movement = (RectTransform)root.transform; movement.anchorMin = movement.anchorMax = Vector2.zero;
+            movement.anchoredPosition = new Vector2(110, 110); movement.sizeDelta = new Vector2(170, 170);
             // Parent under the inactive panel before adding OnScreenControl. Otherwise
             // its default path briefly creates a device and reserves a physical pad slot.
-            var go = new GameObject("Touch stick", typeof(RectTransform), typeof(Image), typeof(Outline)); go.transform.SetParent(safe, false);
-            var rect = (RectTransform)go.transform; rect.anchorMin = rect.anchorMax = Vector2.zero; rect.anchoredPosition = new Vector2(110, 110); rect.sizeDelta = new Vector2(170, 170);
+            var go = new GameObject("Touch stick", typeof(RectTransform), typeof(Image), typeof(Outline)); go.transform.SetParent(movement, false);
+            var rect = (RectTransform)go.transform; rect.sizeDelta = new Vector2(170, 170);
             var image = go.GetComponent<Image>(); image.sprite = MobileControlArt.Circle; image.alphaHitTestMinimumThreshold = .1f;
             var edge = go.GetComponent<Outline>(); edge.effectColor = new Color(1, .92f, .75f, .48f); edge.effectDistance = new Vector2(2, -2);
             var handle = new GameObject("Stick thumb", typeof(RectTransform), typeof(Image)); handle.transform.SetParent(go.transform, false);
             var knob = (RectTransform)handle.transform; knob.sizeDelta = new Vector2(66, 66);
             handle.GetComponent<Image>().sprite = MobileControlArt.Circle; handle.GetComponent<Image>().raycastTarget = false;
             Stick = go.AddComponent<MobileStick>(); Stick.Configure(image, knob);
-            flow.LayoutEditor.Register(rect, "control.stick", "移動スティック", .24f, Stick.SetOpacity);
+            directionalPad = new GameObject("Touch directional pad", typeof(RectTransform)); directionalPad.transform.SetParent(movement, false);
+            ((RectTransform)directionalPad.transform).sizeDelta = new Vector2(170, 170);
+            AddDirection("left", "◀", new Vector2(-56, 0)); AddDirection("right", "▶", new Vector2(56, 0));
+            AddDirection("up", "▲", new Vector2(0, 56)); AddDirection("down", "▼", new Vector2(0, -56));
+            var center = new GameObject("D-pad center", typeof(RectTransform), typeof(Image)); center.transform.SetParent(directionalPad.transform, false);
+            ((RectTransform)center.transform).sizeDelta = new Vector2(50, 50); directionCenter = center.GetComponent<Image>(); directionCenter.raycastTarget = false;
+            MovementLayout = root.AddComponent<UiLayoutTarget>();
+            // Keep the old ID so existing stick positions, size and opacity work in both modes.
+            MovementLayout.Initialize("control.stick", "移動パッド（共通）", .24f, SetMovementOpacity, true);
+            flow.LayoutEditor.Register(MovementLayout);
         }
+        private void AddDirection(string key, string label, Vector2 position)
+        {
+            var button = CreateButton(directionalPad.transform, key, label, new Vector2(.5f, .5f), position, new Vector2(56, 56));
+            button.GetComponent<Image>().sprite = null;
+        }
+        private void SetMovementOpacity(float value)
+        {
+            Stick.SetOpacity(value);
+            foreach (string key in new[] { "left", "right", "up", "down" }) buttons[key].SetOpacity(value);
+            directionCenter.color = new Color(1, .89f, .65f, value * .6f);
+        }
+        private static bool Direction(string key) => key == "left" || key == "right" || key == "up" || key == "down";
+        private void ApplyMovementMode(TouchMovementMode mode)
+        {
+            ActiveMovementMode = mode; Stick.gameObject.SetActive(mode == TouchMovementMode.Stick);
+            directionalPad.SetActive(mode == TouchMovementMode.DirectionalPad);
+            Stick.GetComponent<Image>().raycastTarget = !editing;
+            foreach (string key in new[] { "left", "right", "up", "down" }) buttons[key].GetComponent<Image>().raycastTarget = !editing;
+            MovementLayout.Apply();
+        }
+        public void SetMovementMode(bool combat, TouchMovementMode mode)
+        { MovementSettings.Set(combat, mode); lastBindings = int.MinValue; BindButtons(); }
         private void Add(string key, string title, ControlAction? action, bool right, Vector2 position, float width, float height = 0)
         {
-            var go = new GameObject("Touch " + key, typeof(RectTransform), typeof(Image), typeof(Outline), typeof(MobileControlButton));
-            go.transform.SetParent(safe, false);
-            var rect = go.GetComponent<RectTransform>(); rect.anchorMin = rect.anchorMax = new Vector2(right ? 1 : 0, 0);
-            rect.anchoredPosition = position; rect.sizeDelta = new Vector2(width, height == 0 ? width : height);
+            var button = CreateButton(safe, key, title, new Vector2(right ? 1 : 0, 0), position, new Vector2(width, height == 0 ? width : height));
+            if (action.HasValue) actions.Add(key, action.Value);
+            flow.LayoutEditor.Register((RectTransform)button.transform, "control." + key, title, .24f, button.SetOpacity);
+        }
+        private MobileControlButton CreateButton(Transform parent, string key, string title, Vector2 anchor, Vector2 position, Vector2 size)
+        {
+            var go = new GameObject("Touch " + key, typeof(RectTransform), typeof(Image), typeof(Outline)); go.transform.SetParent(parent, false);
+            var rect = go.GetComponent<RectTransform>(); rect.anchorMin = rect.anchorMax = anchor;
+            rect.anchoredPosition = position; rect.sizeDelta = size;
             var image = go.GetComponent<Image>(); image.sprite = MobileControlArt.Circle; image.alphaHitTestMinimumThreshold = .1f;
             var outline = go.GetComponent<Outline>(); outline.effectColor = new Color(1, .92f, .75f, .48f); outline.effectDistance = new Vector2(2, -2);
             var words = new GameObject("Label", typeof(RectTransform), typeof(Text)); words.transform.SetParent(go.transform, false);
@@ -76,9 +122,8 @@ namespace AniBato.Game
             text.alignment = TextAnchor.MiddleCenter; text.raycastTarget = false;
             text.rectTransform.anchorMin = Vector2.zero; text.rectTransform.anchorMax = Vector2.one;
             text.rectTransform.offsetMin = text.rectTransform.offsetMax = Vector2.zero;
-            var button = go.GetComponent<MobileControlButton>(); button.controlPath = "<Gamepad>/buttonSouth"; button.Configure(go.GetComponent<Image>(), text);
-            buttons.Add(key, button); if (action.HasValue) actions.Add(key, action.Value);
-            flow.LayoutEditor.Register(rect, "control." + key, title, .24f, button.SetOpacity);
+            var button = go.AddComponent<MobileControlButton>(); button.controlPath = "<Gamepad>/buttonSouth"; button.Configure(go.GetComponent<Image>(), text);
+            buttons.Add(key, button); return button;
         }
         public void SetEnabled(bool value) { requested = value; SetVisible(value || editing); }
         public void SetEditing(bool value) { ReleaseAll(); editing = value; SetVisible(requested || editing); lastBindings = int.MinValue; BindButtons(); }
@@ -136,8 +181,10 @@ namespace AniBato.Game
             bool combat = flow.Screen == GameScreen.Battle || flow.Screen == GameScreen.Countdown || editing;
             int hash = 17; var profile = flow.Input.Configuration.Profile(0, true);
             for (int i = 0; i < 13; i++) hash = unchecked(hash * 31 + profile[(ControlAction)i]);
-            if (hash == lastBindings && combat == lastCombat) return;
+            var mode = MovementSettings.ForContext(combat);
+            if (hash == lastBindings && combat == lastCombat && mode == ActiveMovementMode) return;
             ReleaseAll(); lastBindings = hash; lastCombat = combat;
+            ApplyMovementMode(mode);
             foreach (var pair in buttons)
             {
                 string key = pair.Key; var button = pair.Value;
@@ -147,7 +194,7 @@ namespace AniBato.Game
                 if (key == "commands") path = "<Gamepad>/select";
                 else if (!combat && key == "jump") path = "<Gamepad>/buttonSouth";
                 else if (!combat && key == "special") path = "<Gamepad>/buttonEast";
-                else if (!combat && (key == "left" || key == "right" || key == "up" || key == "down")) path = "<Gamepad>/dpad/" + key;
+                else if (Direction(key)) path = "<Gamepad>/dpad/" + key;
                 else
                 {
                     var control = ControlConfiguration.PadButton(VirtualPad, profile[actions[key]]);

@@ -23,7 +23,7 @@ namespace AniBato.Game
             background.color = new Color(1, .89f, .65f, opacity);
             thumb.color = new Color(1, .95f, .82f, Mathf.Min(1, opacity + .3f));
         }
-        private bool Editing { get { if (!layout) layout = GetComponent<UiLayoutTarget>(); return layout && layout.Editing; } }
+        private bool Editing { get { if (!layout) layout = GetComponentInParent<UiLayoutTarget>(); return layout && layout.Editing; } }
         public void OnPointerDown(PointerEventData e)
         {
             if (!isActiveAndEnabled || Editing || Held) return;

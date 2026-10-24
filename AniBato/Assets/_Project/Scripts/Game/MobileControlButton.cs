@@ -20,7 +20,7 @@ namespace AniBato.Game
         public void SetLabel(string value) { if (label) label.text = value; }
         public new void OnPointerDown(PointerEventData data)
         {
-            if (!layout) layout = GetComponent<UiLayoutTarget>();
+            if (!layout) layout = GetComponentInParent<UiLayoutTarget>();
             if (layout && layout.Editing) return;
             if (!isActiveAndEnabled || !contacts.Add(data.pointerId)) return;
             if (contacts.Count == 1) base.OnPointerDown(data);

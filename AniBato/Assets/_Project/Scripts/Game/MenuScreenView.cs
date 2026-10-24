@@ -101,7 +101,9 @@ namespace AniBato.Game
                     "フレームレート  " + FramePacing.Label, "画面揺れ  " + (flow.ScreenShakeEnabled ? "ON" : "OFF"),
                     "開始ヒント  " + (flow.BasicHintsEnabled ? "ON" : "OFF"), LearningText.DashSetting(input),
                     "攻撃判定表示  " + (flow.Runner.DebugBoxes ? "ON" : "OFF"), "CPU難易度  " + Difficulty(flow.Difficulty),
-                    "キーコンフィグ", "操作説明", "チュートリアル", "残像  " + (flow.Runner.MotionTrailsEnabled ? "ON" : "OFF（元の表示）"), "操作・HUDの配置", "戻る");
+                    "キーコンフィグ", "操作説明", "チュートリアル", "残像  " + (flow.Runner.MotionTrailsEnabled ? "ON" : "OFF（元の表示）"), "操作・HUDの配置",
+                    "タッチ移動（戦闘中）  " + TouchMovementSettings.Label(flow.TouchControls.MovementSettings.Combat),
+                    "タッチ移動（戦闘以外）  " + TouchMovementSettings.Label(flow.TouchControls.MovementSettings.Menu), "戻る");
             }
             else if (screen == GameScreen.Result) Result(flow);
             else if (screen == GameScreen.Controls)

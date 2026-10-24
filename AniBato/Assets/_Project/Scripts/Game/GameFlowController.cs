@@ -173,7 +173,7 @@ namespace AniBato.Game
             }
             else if (Screen == GameScreen.Settings)
             {
-                MenuIndex = Wrap(MenuIndex + vertical, 14);
+                MenuIndex = Wrap(MenuIndex + vertical, 16);
                 if (cancel) Show(settingsReturn, true, MenuAction.Cancel);
                 else if (horizontal != 0 || confirm) SettingsAction(horizontal == 0 ? 1 : horizontal, confirm);
             }
@@ -245,7 +245,12 @@ namespace AniBato.Game
             else if (confirm && MenuIndex == 10) { CpuMode = PracticeMode = TutorialMode = true; BeginSelection(); }
             else if (MenuIndex == 11) runner.SetMotionTrails(!runner.MotionTrailsEnabled);
             else if (confirm && MenuIndex == 12) OpenLayout();
-            else if (confirm && MenuIndex == 13) Show(settingsReturn);
+            else if (MenuIndex == 13 || MenuIndex == 14)
+            {
+                bool combat = MenuIndex == 13; var current = TouchControls.MovementSettings.ForContext(combat);
+                TouchControls.SetMovementMode(combat, current == TouchMovementMode.Stick ? TouchMovementMode.DirectionalPad : TouchMovementMode.Stick);
+            }
+            else if (confirm && MenuIndex == 15) Show(settingsReturn);
         }
         private void OpenLayout()
         {

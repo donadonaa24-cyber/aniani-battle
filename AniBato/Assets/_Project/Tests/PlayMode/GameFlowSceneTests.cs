@@ -26,6 +26,7 @@ namespace AniBato.Tests
         private int? doubleTapPref;
         private int? debugPref;
         private int? difficultyPref;
+        private readonly System.Collections.Generic.Dictionary<string, int?> touchModePrefs = new System.Collections.Generic.Dictionary<string, int?>();
         // The Unity Test Framework runs [UnitySetUp] BEFORE [SetUp] (and [UnityTearDown] after [TearDown]),
         // so the fixture's automatic Setup/TearDown would isolate input too late. Suppress them and run the
         // isolation explicitly at the start of UnitySetUp / end of UnityTearDown instead.
@@ -63,6 +64,8 @@ namespace AniBato.Tests
             var oldRunner = Object.FindAnyObjectByType<BattleRunner>(); if (oldRunner) oldRunner.enabled = false;
             var oldInput = Object.FindAnyObjectByType<InputController>(); if (oldInput) oldInput.enabled = false;
             IsolateInput();
+            foreach (string key in new[] { TouchMovementSettings.CombatStorage, TouchMovementSettings.MenuStorage })
+            { touchModePrefs[key] = PlayerPrefs.HasKey(key) ? PlayerPrefs.GetInt(key) : (int?)null; PlayerPrefs.DeleteKey(key); }
             difficultyPref = PlayerPrefs.HasKey("AniBato.CpuDifficulty") ? PlayerPrefs.GetInt("AniBato.CpuDifficulty") : (int?)null; PlayerPrefs.DeleteKey("AniBato.CpuDifficulty");
             doubleTapPref = PlayerPrefs.HasKey(ControlConfiguration.DoubleTapStorage) ? PlayerPrefs.GetInt(ControlConfiguration.DoubleTapStorage) : (int?)null;
             debugPref=PlayerPrefs.HasKey("AniBato.DebugBoxes")?PlayerPrefs.GetInt("AniBato.DebugBoxes"):(int?)null;PlayerPrefs.DeleteKey("AniBato.DebugBoxes");
@@ -99,6 +102,8 @@ namespace AniBato.Tests
             }
             finally
             {
+                foreach (var entry in touchModePrefs) { if (entry.Value.HasValue) PlayerPrefs.SetInt(entry.Key, entry.Value.Value); else PlayerPrefs.DeleteKey(entry.Key); }
+                touchModePrefs.Clear();
                 if (difficultyPref.HasValue) PlayerPrefs.SetInt("AniBato.CpuDifficulty", difficultyPref.Value); else PlayerPrefs.DeleteKey("AniBato.CpuDifficulty");
                 if (doubleTapPref.HasValue) PlayerPrefs.SetInt(ControlConfiguration.DoubleTapStorage, doubleTapPref.Value);
                 else PlayerPrefs.DeleteKey(ControlConfiguration.DoubleTapStorage);
@@ -145,7 +150,7 @@ namespace AniBato.Tests
         private IEnumerator SettingsItem(int index)
         {
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Settings));
-            for (int i = 0; i < 14 && Flow.MenuIndex != index; i++) yield return Tap(keyboard.sKey);
+            for (int i = 0; i < 16 && Flow.MenuIndex != index; i++) yield return Tap(keyboard.sKey);
             Assert.That(Flow.MenuIndex, Is.EqualTo(index));
         }
         private IEnumerator Pick(params int[] characters)

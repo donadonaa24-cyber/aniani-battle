@@ -19,6 +19,11 @@ namespace AniBato.Tests
             stick.transform.TransformPoint(direction * 60));
         private IEnumerator MobileDirection(Vector2 direction, Touchscreen screen)
         {
+            if (Flow.TouchControls.ActiveMovementMode == TouchMovementMode.DirectionalPad)
+            {
+                string key = direction.x > 0 ? "right" : direction.x < 0 ? "left" : direction.y > 0 ? "up" : "down";
+                yield return MobileTap(key, screen); yield break;
+            }
             var stick = Flow.TouchControls.Stick; var point = StickPoint(stick, direction);
             BeginTouch(1, point, queueEventOnly: true, screen: screen);
             yield return WaitFor(() => stick.Held && stick.Value.sqrMagnitude > .8f, "スティック方向が届かない");
@@ -51,11 +56,11 @@ namespace AniBato.Tests
             yield return MobileDirection(Vector2.left, screen); yield return MobileTap("jump", screen);
             Assert.That(Flow.Screen, Is.EqualTo(GameScreen.CharacterSelect));
             // A browser may also deliver a mouse event for a touch. It must not select the card beneath a pad button.
-            var mouse = InputSystem.AddDevice<Mouse>(); var up = view.Stick;
+            var mouse = InputSystem.AddDevice<Mouse>(); var up = view.Buttons["up"];
             var covered = Object.FindObjectsByType<Image>().First(i => i.name.StartsWith("Roster Card "));
             int originalSibling = up.transform.GetSiblingIndex(); up.transform.SetAsLastSibling();
             var originalPosition = up.transform.position; up.transform.position = covered.transform.position;
-            var point = StickPoint(up, Vector2.zero);
+            var point = TouchPoint(up);
             Assert.That(RectTransformUtility.RectangleContainsScreenPoint(covered.rectTransform, point), Is.True, "背後のカードと重なる位置で検査");
             Canvas.ForceUpdateCanvases();
             Set(mouse.position, point, queueEventOnly: true);

@@ -1,3 +1,15 @@
+## 最新実行中（2026-10-25）：戦闘とメニューでのタッチ移動方式
+
+更新：touch_context_finalはBuildAll0・Edit845/845・Windows0。Play119件中118成功、失敗1件は新規テストがChooseMainでCPU選択へ確定した後に同じ確定を繰り返した手順誤り。最初をタイトル→メニューの1回に直し、MainMenuのアサーションを追加。Unityコードは変更せずtouch_context_focusで当該1件を実再実行して1/1成功。これにより現行の全119シナリオを確認済み（同一の全119件を再実行したとは扱わない）。撮影はfinalのseparate_settings、focusのmenu_dpad/battle_stick。WebGL touch_context_web（35006）を実行中、Assetsを編集しない。
+
+新指示TOUCH_PAD_CONTEXT_SETTINGS.md。戦闘/練習/開幕はスティック、その他は十字キーを既定にし、設定の13/14行から各々を独立変更・端末保存する。配置編集12行を維持し、戻るは15行、全16行。旧control.stickの配置/倍率/不透明度を共通の親に適用し、DpadとStickの切替で保持入力を解除する。戦闘Data/コード/原画は変更しない。
+
+実装差分は未コミット。新規TouchMovementSettingsとEdit1/Play2件、既存メニュータッチのDpad化・既存スティック検査の方式明示・設定の戻る行更新・テスト用Prefs復元を追加。touch_contextは新規テスト入力手順の調整のため自分のバッチのみ停止し、touch_context_final（4440）でBuildAll/Edit/Play/Windowsを実行中。Unity終了までAssetsを編集しない。CaptureRootはTestResults/touch_context_final_captures。
+
+残り：全4結果確認→必要な修理→実ブラウザで既定2方式/設定/保存/配置を確認→全3版のビルド・v0.1.3配布更新とポータル反映→最終証跡保存。旧v0.1.2と既存2シーン/大量スクショ差分を保持する。アイコンの互換PNG再構築は最新build_android.ps1に組込み済みで、全13画像を監査する。
+
+以下は保存済み履歴。
+
 ## 最新完了（2026-10-24）：操作更新・専用アイコン・全3版の公開確認
 
 今回の必須作業は完了。残像ON/OFF、アナログスティック/丸ボタン、各操作とP1/P2 HUDの位置/大きさ/不透明度の端末保存編集（破棄/初期化）、既定約2倍HUD、瞬間移動受付から0.4秒で先行して引くカメラを全3版へ反映。Androidは生成した専用「あにバト！！」アイコンを設定。操作はUI_CUSTOMIZATION.md、原画と全文プロンプトはAPP_ICON.md。

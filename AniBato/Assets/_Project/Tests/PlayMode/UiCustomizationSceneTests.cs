@@ -46,6 +46,7 @@ namespace AniBato.Tests
         }
         [UnityTest] public IEnumerator StickDeadZoneDragAndForeignFingerDoNotStick()
         {
+            Flow.TouchControls.SetMovementMode(false, TouchMovementMode.Stick);
             Flow.TouchControls.SetEnabled(true); yield return null;
             var stick = Flow.TouchControls.Stick;
             var p = new PointerEventData(EventSystem.current) {pointerId=3,position=StickPoint(stick,Vector2.zero)};

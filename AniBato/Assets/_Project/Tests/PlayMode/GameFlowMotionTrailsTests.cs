@@ -25,7 +25,7 @@ namespace AniBato.Tests
                 Assert.That(Flow.Runner.MotionTrailsEnabled, Is.True);
                 Assert.That(PlayerPrefs.GetInt(BattleRunner.MotionTrailsPreference), Is.EqualTo(1));
                 CaptureScreen("settings", 720, "motion_trails");
-                yield return SettingsItem(13); yield return Tap(keyboard.enterKey);
+                yield return SettingsItem(15); yield return Tap(keyboard.enterKey);
                 Assert.That(Flow.Screen, Is.EqualTo(GameScreen.MainMenu));
                 yield return PracticeToBattle(); yield return Tap(keyboard.escapeKey);
                 Assert.That(Flow.Screen, Is.EqualTo(GameScreen.Pause));
