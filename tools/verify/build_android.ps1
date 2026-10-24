@@ -1,4 +1,4 @@
-param([string]$Tag='android', [switch]$RestoreWindows, [switch]$AliasCheckOnly)
+param([string]$Tag='android', [switch]$RestoreWindows, [switch]$AliasCheckOnly, [switch]$FinalizeIconsOnly)
 $ErrorActionPreference='Stop'
 $taskRoot=(Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 $taskProject=Join-Path $taskRoot 'AniBato'
@@ -44,8 +44,10 @@ try{
  }
  if($AliasCheckOnly){$taskCode=0;Write-Host 'ASCII alias marker check passed.'}
  else{
-  $taskCode=Invoke-Target 'Android' 'AniBato.EditorTools.AndroidBuilder.Build' (Join-Path $taskResults ($Tag+'_Android.log'))
+  if($FinalizeIconsOnly){$taskCode=0}
+  else{$taskCode=Invoke-Target 'Android' 'AniBato.EditorTools.AndroidBuilder.Build' (Join-Path $taskResults ($Tag+'_Android.log'))}
   Write-Host "Android=$taskCode"
+  if($taskCode -eq 0){& (Join-Path $PSScriptRoot 'finalize_android_icons.ps1') -Project $taskProject -Tag $Tag}
   if($RestoreWindows){$taskProject=$taskOriginalProject;$taskRestore=Invoke-Target 'Win64' '' (Join-Path $taskResults ($Tag+'_RestoreWindows.log'));Write-Host "RestoreWindows=$taskRestore";if($taskRestore -ne 0){$taskCode=$taskRestore}}
  }
 }finally{

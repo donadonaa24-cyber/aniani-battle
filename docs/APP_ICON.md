@@ -8,6 +8,8 @@
 - 原画からの梱包は `tools/art/build_app_icon.cjs`（Sharp）。リサイズと透明余白の追加だけを行う。原画を保持する。
 - `AppIconBuilder.ConfigureAndroid`をBuildAllとAndroidBuilderから呼び、対応する全アイコン枠へ設定する。使用するUnity 6000.6はAndroidのAdaptiveを6密度で公開するため、全枠の背景/前景と、平面画像用の共通Defaultアイコンを指定する。丸型表示もAdaptiveをOSがマスクする。
 - AdaptiveはOSの72/108ビューポートとランチャーの丸/角丸マスクを考慮し、主題を中央へ収める。Unityロゴを使わない。
+- Unity 6000.6では、Adaptiveを設定してもGradleの互換用mdpi画像がUnityロゴのまま出力された。`build_android.ps1`が `finalize_android_icons.ps1`を呼び、生成済みGradleプロジェクトのその1画像だけを専用48px画像へ置換し、同じGradleで再ビルド・署名する。ZIPを後加工して署名を壊す方式は使わない。全assets/lib/classes/Manifestの内容SHAを比較し、ゲーム本体の変更があれば採用しない。
+- 互換画像も `tools/art/build_app_icon.cjs`から `art_source/app_icon/legacy-mdpi.png`へ再現できる。通常は `build_android.ps1`だけを実行する。検査済みビルドの互換画像だけ再梱包する場合は `-FinalizeIconsOnly`を使う。ASCII別名の同一フォルダ検査と終了時解除も共通。
 
 APKの署名・ARM64・起動Activityに加え、実リソースのAdaptive XMLと前景/背景、Legacy PNGを検査する。最終結果はRESUMEと検証記録へ記載。実Androidホーム画面での確認は所有者の実機確認と区別する。
 

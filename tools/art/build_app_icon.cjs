@@ -8,6 +8,7 @@ const output = path.join(root, 'AniBato/Assets/_Project/Art/Branding');
 async function main() {
   fs.mkdirSync(output, { recursive: true });
   await sharp(source).resize(1024, 1024).png().toFile(path.join(output, 'app-icon-legacy.png'));
+  await sharp(source).resize(48, 48).png().toFile(path.join(root, 'art_source/app_icon/legacy-mdpi.png'));
   // Adaptive icons expose a 72/108 viewport; leave enough space for launcher masks.
   const foreground = await sharp(source).resize(656, 656).png().toBuffer();
   await sharp({create:{width:1024,height:1024,channels:4,background:'#092342'}})

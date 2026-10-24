@@ -1,5 +1,7 @@
 ## 最新実行中（2026-10-24）：専用アイコンと操作更新の最終ビルド
 
+最終APK162327300bytes、署名/ARM64/API26/起動Activity成功。Adaptive6密度＋互換PNGの全13画像を原画と照合（最大平均誤差1.466/255）、丸/角丸プレビューを確認。Unityの固定互換アイコンだけを同じGradleで再構築し、ゲーム本体1506エントリの内容SHAを完全一致確認。旧v0.1.0と同じ署名で、削除せず更新する方式。最終APKの実機表示は未確認。Windows15秒起動エラー0。現在はv0.1.2の梱包・ポータル公開待ち。
+
 専用「あにバト！！」アイコンを生成・設定。Unity 6000.6のAndroid Adaptive6密度の前景/背景と平面Defaultへ接続し、BuildAll/AndroidBuilderで維持する。原本・全文プロンプト・再現方法はdocs/APP_ICON.md。ui_motion_icon_finalは実BuildAll0・Edit844/844・Play117/117・Windows成功、失敗/スキップ0。既存戦闘Data/原画は変更なし。
 
 操作/残像/カメラ実装c59c018のWindows/WebGL/Androidは成功済み。WebGLの468原PNG監査と実ブラウザの操作/保存再読込/復帰カメラ、console error0を確認。現在はアイコン追加後の新Windows/APKと公開更新を仕上げる。ポータルは最新mainの別作品更新を保持して準備済み。まだ公開していない。

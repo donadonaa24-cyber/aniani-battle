@@ -1,5 +1,9 @@
 ## 最新追加（2026-10-24）：Android専用アイコンを配布更新へ含める
 
+更新：ui_motion_icon_android（90920）Android0/RestoreWindows0、APK元162322224bytes。Unity 6000.6が固定出力する互換mdpiだけUnityロゴだったため、build_androidの後段にfinalize_android_icons.ps1を追加。同じGradleをofflineで再ビルド・署名し、全assets/lib/classes/Manifest1506エントリの内容SHAを完全一致確認。Unity C#/戦闘/原画は変更なし。FinalizeIconsOnly（58618）成功、最終APK162327300bytes。署名/ABI/起動先/旧APKとの同署名を再検査し、実APKの13画像すべてを専用画像と照合成功（最大平均可視画素誤差1.466/255）。丸/角丸プレビューはscreenshots/ui_motion/android_icon_masks.png、実機撮影ではない。
+
+ビルドツールの最後の変更についてUnity全4を重複実行せず、保存済みui_motion_icon_finalの844/117成功とゲーム本体1506ファイルの完全一致を組み合わせて確認。Windows15秒起動もエラー0（ui_motion_icon_windows_smoke.json）。新配布v0.1.2は下書きReleaseを作成済み、まだファイル添付/公開前。新しいsourceCommitで梱包してRelease対象も更新する。手順は上述の梱包→manifest→npm→PR/CI/Pages/公開確認。
+
 最終ui_motion_icon_finalは実BuildAll0・Edit844/844・Play117/117・Windows成功、失敗/スキップ0。Windows成果物はBuild/ui_motion_icon_final。ここまでのアイコン設定/原本/検査ツールを通常保存してpushし、そのコミットでAndroidを再構築する。続いて実APK内画像の照合/マスク表示、Windows起動、配布梱包と公開確認を行う。WebGLは戦闘/表示コードが同じc59c018の検証済みui_motion_web_retryを使用する（新規変更はEditorのアイコン設定のみ）。
 
 更新：ui_motion_iconはBuildAll成功・Edit843/844（新規アイコン検査のみ失敗）。使用Unity 6000.6はAndroidにAdaptive6密度だけを公開し、旧Legacy/Round専用枠はないことを実APIと公式6.6資料で確認。新規テストの存在しない枠への前提を修正し、「対応全枠の前景/背景6密度＋平面画像用Default」の契約へ具体化した。既存843件のアサーションは変更していない。自分のバッチPlayMode/runnerだけを確認して停止し、ui_motion_icon_final（93894）でBuildAllから全4を再実行中。APKの実PNG照合とマスク表示検査ツールを追加。
