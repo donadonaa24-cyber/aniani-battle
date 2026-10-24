@@ -1,14 +1,16 @@
-## 最新実行中（2026-10-25）：戦闘とメニューでのタッチ移動方式
+## 最新完了（2026-10-25）：戦闘とメニューでのタッチ移動方式
 
-更新：touch_context_finalはBuildAll0・Edit845/845・Windows0。Play119件中118成功、失敗1件は新規テストがChooseMainでCPU選択へ確定した後に同じ確定を繰り返した手順誤り。最初をタイトル→メニューの1回に直し、MainMenuのアサーションを追加。Unityコードは変更せずtouch_context_focusで当該1件を実再実行して1/1成功。これにより現行の全119シナリオを確認済み（同一の全119件を再実行したとは扱わない）。撮影はfinalのseparate_settings、focusのmenu_dpad/battle_stick。WebGL touch_context_web（35006）を実行中、Assetsを編集しない。
+戦闘・練習・開幕カウントはスティック、それ以外のタイトル/選択/ポーズ/設定/リザルトは十字キーを既定に変更。設定の「タッチ移動（戦闘中）」「タッチ移動（戦闘以外）」から各々を独立変更・端末保存でき、両方スティック/両方十字キーにもできる。旧control.stickの位置・倍率・不透明度を共通の移動パッドへ引き継ぎ、戦闘/メニューと方式の切替で保持入力を解除。物理キー/パッドと戦闘コード/Data/原画は変更なし。ゲームコード337674eは保存/push済み。
 
-新指示TOUCH_PAD_CONTEXT_SETTINGS.md。戦闘/練習/開幕はスティック、その他は十字キーを既定にし、設定の13/14行から各々を独立変更・端末保存する。配置編集12行を維持し、戻るは15行、全16行。旧control.stickの配置/倍率/不透明度を共通の親に適用し、DpadとStickの切替で保持入力を解除する。戦闘Data/コード/原画は変更しない。
+実Unity：touch_context_finalのBuildAll0・Edit845/845・Windows0。初回Playの新規テスト手順1件を修理後、touch_context_regressionで全119件を再実行し119/119（失敗/スキップ0）。最初の118/119と重点1/1だけを最終合格扱いにはしていない。Windows15秒起動エラー0。WebGLはBeeの生成DAGエラー後、該当Playera54dc12bの7キャッシュだけ退避しtouch_context_web_retryで成功。138833283bytes、全471PNGのRGBA保持を確認。
 
-実装差分は未コミット。新規TouchMovementSettingsとEdit1/Play2件、既存メニュータッチのDpad化・既存スティック検査の方式明示・設定の戻る行更新・テスト用Prefs復元を追加。touch_contextは新規テスト入力手順の調整のため自分のバッチのみ停止し、touch_context_final（4440）でBuildAll/Edit/Play/Windowsを実行中。Unity終了までAssetsを編集しない。CaptureRootはTestResults/touch_context_final_captures。
+Android touch_context_androidはBuild0/RestoreWindows0、専用互換アイコンを同じGradleで再構築後もゲーム本体1506エントリの内容SHA一致。署名/起動先/ARM64/API26/全13アイコンと旧v0.1.0との署名一致を確認。今回の更新APKの実機操作・表示・発熱等は未確認（旧版のユーザー起動報告とは区別）。
 
-残り：全4結果確認→必要な修理→実ブラウザで既定2方式/設定/保存/配置を確認→全3版のビルド・v0.1.3配布更新とポータル反映→最終証跡保存。旧v0.1.2と既存2シーン/大量スクショ差分を保持する。アイコンの互換PNG再構築は最新build_android.ps1に組込み済みで、全13画像を監査する。
+Windows/Android v0.1.3-trial.20261025とブラウザ版を公開完了。ZIP205150711bytes（展開276886462bytes）/APK162329904bytes。ZIP156エントリを元ファイルと照合、公開ZIP/APKも匿名全バイト取得でサイズ/全SHA一致。旧v0.1.2以前は保持。ポータルPR28はLinux CI23秒合格、通常マージd0808a5、Pages built。新記事/6配布リンク/操作説明/公開WebGL識別子d64a629e8efa79efをHTTP照合。PC1366pxの2列・スマホ390pxの1列/横はみ出しなし・console0を確認。
 
-以下は保存済み履歴。
+実Edgeブラウザでメニュー十字キー、独立設定でメニューだけスティックへ変更、再読込後の保持、既定へ戻す操作を確認。IABの接続不調時はEdgeを使用。画像docs/screenshots/touch_context/（Unityとブラウザ撮影、実機撮影ではない）。証跡docs/codex_logs/touch_pad_context.json。
+
+引継ぎ：今回要求の未実装なし。次は所有者の実機操作感の確認。既存2シーンと大量の旧スクショの未コミット差分は本作業に含めず維持。攻撃の半減判定/ゲージ14・10/カバン予備/龍太被弾v5/つかまりA/ガチャ/Free通信制限/別作品PR27も維持。指示書TOUCH_PAD_CONTEXT_SETTINGS.md、使い方UI_CUSTOMIZATION.md。Claudeに確認を依頼する必須残件なし。
 
 ## 最新完了（2026-10-24）：操作更新・専用アイコン・全3版の公開確認
 
